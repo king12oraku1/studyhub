@@ -44,19 +44,19 @@ const NotesDatabase = {
     MTH102: {
         level: "100",
         semester: "First",
-        title: "Calculus I",
+        title: "Elementry Mathematics II",
         pdf: "assets/notes/MTH102.pdf"
     },
     PHY102: {
         level: "100",
         semester: "First",
-        title: "General Physics I",
+        title: "General Physics II: Behaviour of Matter",
         pdf: "assets/notes/PHY102.pdf"
     },
-    GST102: {
+    GST112: {
         level: "100",
         semester: "First",
-        title: "Use of English I",
+        title: "Nigerian People and Culture",
         pdf: "assets/notes/GST102.pdf"
     },
     // COS101: {

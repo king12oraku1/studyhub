@@ -9557,7 +9557,7 @@ const PHY102_Questions = [
 // PASTE NEW GST101 QUESTIONS BELOW
 // ======================================
 
-const GST102_Questions = [
+const GST112_Questions = [
     {
     question: "What is culture?",
     options: [
@@ -14287,6 +14287,6 @@ const QuestionBanks = {
     COS102: COS102_Questions,
     MTH102: MTH102_Questions,
     PHY102: PHY102_Questions,
-    GST102: GST102_Questions
+    GST102: GST112_Questions
     
 };
