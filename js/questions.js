@@ -9554,7 +9554,7 @@ const PHY102_Questions = [
 
 // ======================================
 // GST101 QUESTIONS
-// PASTE NEW GST101 QUESTIONS BELOW
+// PASTE NEW GST112 QUESTIONS BELOW
 // ======================================
 
 const GST112_Questions = [
@@ -14287,6 +14287,6 @@ const QuestionBanks = {
     COS102: COS102_Questions,
     MTH102: MTH102_Questions,
     PHY102: PHY102_Questions,
-    GST102: GST112_Questions
+    GST112: GST112_Questions
     
 };
