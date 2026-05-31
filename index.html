@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudiyHub - University Learning Platform</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
 </head>
-<body>
+<body data-page="home">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">StudiyHub</a>
+            <a href="index.html" class="logo">StudiyHub</a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#notes" class="nav-link">Notes</a></li>
-                <li><a href="#past-questions" class="nav-link">Past Questions</a></li>
-                <li><a href="#quiz" class="nav-link">Practice Quiz</a></li>
-                <li><a href="#courses" class="nav-link">Courses</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="notes.html" class="nav-link">Notes</a></li>
+                <li><a href="past-questions.html" class="nav-link">Past Questions</a></li>
+                <li><a href="quiz.html" class="nav-link">Practice Quiz</a></li>
+                <li><a href="index.html#courses" class="nav-link">Courses</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
         </div>
@@ -36,7 +38,7 @@
             <p>Your complete university learning companion. Access course notes, past questions, and practice quizzes — all in one place.</p>
             <div class="hero-buttons">
                 <a href="#courses" class="btn btn-primary">Explore Courses</a>
-                <a href="#quiz" class="btn btn-secondary">Start Quiz</a>
+                <a href="quiz.html" class="btn btn-secondary">Start Quiz</a>
             </div>
         </div>
     </section>
@@ -76,126 +78,17 @@
                 </select>
                 <input type="text" id="courseSearch" placeholder="Search courses...">
             </div>
-            <div class="course-grid" id="courseGrid"></div>
+            <div class="course-carousel-wrapper">
+                <button class="carousel-button prev" id="coursePrev" aria-label="Previous courses">‹</button>
+                <div class="course-carousel">
+                    <div class="course-grid" id="courseGrid"></div>
+                </div>
+                <button class="carousel-button next" id="courseNext" aria-label="Next courses">›</button>
+            </div>
+            <div class="course-dashboard hidden" id="courseDashboard"></div>
         </div>
     </section>
 
-    <!-- Notes -->
-    <section id="notes" class="notes">
-        <div class="container">
-            <h2 class="section-title">Course Notes</h2>
-            <div class="content-selector">
-                <select id="notesLevel">
-                    <option value="">Select Level</option>
-                </select>
-                <select id="notesSemester">
-                    <option value="">Select Semester</option>
-                </select>
-                <select id="notesCourse">
-                    <option value="">Select Course</option>
-                </select>
-            </div>
-            <div class="pdf-viewer-container" id="notesViewer">
-                <p class="placeholder-text">Select a course above to view notes</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Past Questions -->
-    <section id="past-questions" class="past-questions">
-        <div class="container">
-            <h2 class="section-title">Past Questions</h2>
-            <div class="content-selector">
-                <select id="pqCourse">
-                    <option value="">Select Course</option>
-                </select>
-                <select id="pqYear">
-                    <option value="">Select Year</option>
-                </select>
-            </div>
-            <div class="pdf-viewer-container" id="pqViewer">
-                <p class="placeholder-text">Select a course and year to view past questions</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quiz -->
-    <section id="quiz" class="quiz-section">
-        <div class="container">
-            <h2 class="section-title">Practice Quiz</h2>
-
-            <!-- Quiz Setup -->
-            <div class="quiz-setup" id="quizSetup">
-                <div class="setup-card">
-                    <h3>Configure Your Quiz</h3>
-                    <div class="setup-group">
-                        <label for="quizCourse">Course</label>
-                        <select id="quizCourse"></select>
-                    </div>
-                    <div class="setup-group">
-                        <label for="quizCount">Number of Questions</label>
-                        <select id="quizCount">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="30">30</option>
-                            <option value="50">50</option>
-                        </select>
-                    </div>
-                    <div class="setup-group">
-                        <label for="quizDuration">Duration</label>
-                        <select id="quizDuration">
-                            <option value="5">5 Minutes</option>
-                            <option value="10">10 Minutes</option>
-                            <option value="20">20 Minutes</option>
-                            <option value="30">30 Minutes</option>
-                            <option value="60">60 Minutes</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
-                </div>
-            </div>
-
-            <!-- Quiz Interface -->
-            <div class="quiz-interface hidden" id="quizInterface">
-                <div class="quiz-header">
-                    <div class="quiz-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill"></div>
-                        </div>
-                        <span id="questionCounter">1 / 10</span>
-                    </div>
-                    <div class="quiz-timer" id="quizTimer">10:00</div>
-                </div>
-                <div class="quiz-body">
-                    <div class="question-card">
-                        <h3 id="questionText">Question text here</h3>
-                        <div class="options-grid" id="optionsGrid"></div>
-                    </div>
-                </div>
-                <div class="quiz-footer">
-                    <button class="btn btn-outline" id="prevBtn">Previous</button>
-                    <button class="btn btn-primary" id="nextBtn">Next</button>
-                    <button class="btn btn-success hidden" id="submitBtn">Submit Quiz</button>
-                </div>
-            </div>
-           
-           <div class="question-navigator" id="questionNavigator"></div>
-
-            <!-- Quiz Results -->
-            <div class="quiz-results hidden" id="quizResults">
-                <div class="results-card">
-                    <h3>Quiz Results</h3>
-                    <div class="results-summary" id="resultsSummary"></div>
-                    <div class="results-details" id="resultsDetails"></div>
-                    <div class="results-actions">
-                        <button class="btn btn-primary" id="retakeBtn">Retake Quiz</button>
-                        <button class="btn btn-secondary" id="newQuizBtn">New Quiz</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- About -->
     <section id="about" class="about">
@@ -237,10 +130,13 @@
         </div>
     </footer>
 
-    <script src="js/questions.js"></script>
-    <script src="js/notes.js"></script>
-    <script src="js/pastQuestions.js"></script>
-    <script src="js/quiz.js"></script>
-    <script src="js/app.js"></script>
+    <!-- KaTeX scripts (loaded once globally) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <script defer src="js/questions.js"></script>
+    <script defer src="js/notes.js"></script>
+    <script defer src="js/pastQuestions.js"></script>
+    <script defer src="js/app.js"></script>
 </body>
 </html>

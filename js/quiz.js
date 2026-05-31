@@ -4,6 +4,38 @@
    Results, Review, Explanations
    ====================================== */
 
+// Helper: safe HTML escape while preserving LaTeX delimiters, then run KaTeX auto-render
+function _escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function safeRenderMathInto(element, raw) {
+    element.innerHTML = '';
+    const container = document.createElement('span');
+    // escape HTML but keep $ and backslashes for LaTeX
+    container.innerHTML = _escapeHtml(raw);
+    element.appendChild(container);
+    if (typeof renderMathInElement === 'function') {
+        try {
+            renderMathInElement(container, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        } catch (e) {
+            // ignore render errors and leave escaped content
+        }
+    }
+}
+
 class QuizEngine {
     constructor() {
         this.questions = [];
@@ -110,13 +142,21 @@ class QuizEngine {
 
     renderQuestion() {
         const q = this.questions[this.currentIndex];
-        this.questionText.textContent = `${this.currentIndex + 1}. ${q.question}`;
-        this.optionsGrid.innerHTML = '';
+        // Render question number and text (safe, then KaTeX render)
+        this.questionText.innerHTML = '';
+        const qnum = document.createElement('strong');
+        qnum.textContent = `${this.currentIndex + 1}. `;
+        this.questionText.appendChild(qnum);
+        const qspan = document.createElement('span');
+        safeRenderMathInto(qspan, q.question);
+        this.questionText.appendChild(qspan);
 
+        // Render options and support math inside options
+        this.optionsGrid.innerHTML = '';
         q.options.forEach((opt, idx) => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
-            btn.textContent = opt;
+            safeRenderMathInto(btn, opt);
             if (this.answers[this.currentIndex] === idx) {
                 btn.classList.add('selected');
             }
@@ -220,12 +260,45 @@ class QuizEngine {
 
             const div = document.createElement('div');
             div.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
-            div.innerHTML = `
-                <p class="review-question"><strong>Q${idx + 1}.</strong> ${q.question}</p>
-                <p class="review-answer"><span>Your Answer:</span> ${userAnswer}</p>
-                <p class="review-correct"><span>Correct Answer:</span> ${q.correctAnswer}</p>
-                <p class="review-explanation">${q.explanation}</p>
-            `;
+
+            // Question
+            const pQ = document.createElement('p');
+            pQ.className = 'review-question';
+            const strong = document.createElement('strong');
+            strong.textContent = `Q${idx + 1}.`;
+            pQ.appendChild(strong);
+            pQ.appendChild(document.createTextNode(' '));
+            const qspan = document.createElement('span');
+            safeRenderMathInto(qspan, q.question);
+            pQ.appendChild(qspan);
+            div.appendChild(pQ);
+
+            // Your Answer
+            const pA = document.createElement('p');
+            pA.className = 'review-answer';
+            pA.innerHTML = '<span>Your Answer:</span> ';
+            const asp = document.createElement('span');
+            safeRenderMathInto(asp, userAnswer);
+            pA.appendChild(asp);
+            div.appendChild(pA);
+
+            // Correct Answer
+            const pC = document.createElement('p');
+            pC.className = 'review-correct';
+            pC.innerHTML = '<span>Correct Answer:</span> ';
+            const csp = document.createElement('span');
+            safeRenderMathInto(csp, q.correctAnswer);
+            pC.appendChild(csp);
+            div.appendChild(pC);
+
+            // Explanation
+            const pE = document.createElement('p');
+            pE.className = 'review-explanation';
+            const esp = document.createElement('span');
+            safeRenderMathInto(esp, q.explanation);
+            pE.appendChild(esp);
+            div.appendChild(pE);
+
             details.appendChild(div);
         });
 
