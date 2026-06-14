@@ -70,14 +70,18 @@ const NotesDatabase = {
         semester: "Second",
         title: "Computer Hardware & Assembly Language Programming",
         pdf: "assets/notes/BUT-CSC 104 NOT.pdf"
-        
-
     },
      BUT_BIO102: {
         level: "100",
         semester: "Second",
         title: "General Biology II",
         pdf: "assets/notes/BUT_BIO102.pdf"
+    },
+     BUT_ICT118: {
+        level: "100",
+        semester: "Second",
+        title: "Web Design and Development",
+        pdf: "assets/notes/BUT_ICT118.pdf"
     },
     
 };

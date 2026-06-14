@@ -23271,8 +23271,2214 @@ const BUT_BIO102_Questions = [
   },
   
 ];
+// ======================================
+// BUT_ICT118 QUESTION
+// PASTE NEW BUT_ICT118 QUESTIONS BELOW
+// =======================================
+ 
+const BUT_ICT118_Questions = [
+{
+        "question": "Which of the following HTML elements is used to embed a standalone piece of content that could be independently distributable or reusable, such as a forum post or newspaper article?",
+        "options": [
+            "<section>",
+            "<article>",
+            "<div>",
+            "<aside>"
+        ],
+        "correctAnswer": "<article>",
+        "explanation": "The <article> element is a semantic HTML5 tag designed explicitly for self-contained compositions that can be independently distributed or syndicated. Unlike <section>, which groups related content together, an <article> should make sense on its own if removed from the context of the page."
+    },
+    {
+        "question": "What is the primary technical difference between the 'id' attribute and the 'class' attribute in HTML?",
+        "options": [
+            "An 'id' can only be used on block-level elements, while 'class' is for inline elements.",
+            "An 'id' must be unique within the entire document, whereas a 'class' can be shared across multiple elements.",
+            "An 'id' is only recognized by JavaScript, while a 'class' is only recognized by CSS.",
+            "A 'class' attribute overrides 'id' styles due to its higher specificity in CSS Cascading rules."
+        ],
+        "correctAnswer": "An 'id' must be unique within the entire document, whereas a 'class' can be shared across multiple elements.",
+        "explanation": "According to HTML standards, an 'id' attribute must have a value that is completely unique within the entire DOM structure of a page, making it ideal for targeting a single specific element. A 'class' attribute can be assigned to multiple elements to apply uniform styling or behavior across them."
+    },
+    {
+        "question": "If an HTML image element missing an 'alt' attribute is processed by a screen reader, what is the typical fallback behavior?",
+        "options": [
+            "The screen reader will completely skip the image and read nothing.",
+            "The screen reader will announce 'Image' followed by the file name or source URL of the image.",
+            "The screen reader will automatically describe the image contents using basic built-in AI vision.",
+            "The page will throw a fatal JavaScript runtime error and stop rendering."
+        ],
+        "correctAnswer": "The screen reader will announce 'Image' followed by the file name or source URL of the image.",
+        "explanation": "When the 'alt' (alternative text) attribute is missing, screen readers for visually impaired users generally fall back to reading the image's source filename. This creates a poor user experience, as filenames like 'IMG_4829.jpg' offer no useful context, emphasizing why 'alt' tags are crucial for web accessibility."
+    },
+    {
+        "question": "Which HTML5 attribute can be added to an <input> element to ensure the user provides a value before submitting the form?",
+        "options": [
+            "validate",
+            "required",
+            "important",
+            "mandatory"
+        ],
+        "correctAnswer": "required",
+        "explanation": "The 'required' attribute is a boolean attribute in HTML5. When present, it instructs the browser to block form submission and display a native validation popup message if the user leaves that specific input field empty."
+    },
+    {
+        "question": "What does the 'target=\"_blank\"' attribute do when applied to an HTML anchor (<a>) tag?",
+        "options": [
+            "It opens the linked document in the background without switching tabs.",
+            "It opens the linked document in a completely new browser tab or window.",
+            "It clears the current window cache before loading the new link.",
+            "It forces the browser to download the linked file instead of opening it."
+        ],
+        "correctAnswer": "It opens the linked document in a completely new browser tab or window.",
+        "explanation": "The 'target' attribute specifies where to display the linked resource. Setting it to '_blank' tells the browser to spawn a brand new tab or window to load the destination URL, preserving the user's current position on the original page."
+    },
+    {
+        "question": "In the CSS Box Model, which layer sits directly between the element's padding and its margin?",
+        "options": [
+            "The content area",
+            "The outline",
+            "The border",
+            "The box-shadow"
+        ],
+        "correctAnswer": "The border",
+        "explanation": "Moving from the innermost layer outwards, the standard CSS Box Model consists of: Content -> Padding -> Border -> Margin. Therefore, the border is the layer positioned directly outside the padding and inside the margin."
+    },
+    {
+        "question": "Which of the following CSS declarations changes the layout calculation so that an element's total width and height include its padding and borders?",
+        "options": [
+            "box-sizing: content-box;",
+            "box-sizing: border-box;",
+            "display: flex-box;",
+            "layout-model: inclusive;"
+        ],
+        "correctAnswer": "box-sizing: border-box;",
+        "explanation": "By default, CSS uses 'content-box', where padding and borders add to the specified width of an element. Switching to 'box-sizing: border-box;' forces the browser to incorporate padding and borders *inside* the declared width and height, making responsive layouts much easier to calculate."
+    },
+    {
+        "question": "What is the CSS specificity hierarchy order from highest priority to lowest priority for general selectors?",
+        "options": [
+            "Inline styles -> IDs -> Classes/Attributes -> Elements/Pseudo-elements",
+            "IDs -> Inline styles -> Elements/Pseudo-elements -> Classes/Attributes",
+            "Classes/Attributes -> IDs -> Inline styles -> Elements/Pseudo-elements",
+            "Elements/Pseudo-elements -> Classes/Attributes -> IDs -> Inline styles"
+        ],
+        "correctAnswer": "Inline styles -> IDs -> Classes/Attributes -> Elements/Pseudo-elements",
+        "explanation": "CSS Specificity acts as a weighting system. Inline styles (written directly in the HTML element) have the highest weight, followed by ID selectors (#id), then class selectors (.class), attribute selectors, and pseudo-classes, and finally element/tag selectors (like div, p) with the lowest weight."
+    },
+    {
+        "question": "In CSS Flexbox, what is the default value of the 'flex-direction' property if it is not explicitly declared?",
+        "options": [
+            "column",
+            "row-reverse",
+            "row",
+            "wrap"
+        ],
+        "correctAnswer": "row",
+        "explanation": "When you establish a flex container using 'display: flex;', the default orientation for laying out flex items is 'row'. This aligns all direct children horizontally from left to right (or right to left in RTL language setups)."
+    },
+    {
+        "question": "Which CSS property is specifically designed to control the alignment of flex items along the *cross axis* of a flex container?",
+        "options": [
+            "justify-content",
+            "align-items",
+            "flex-direction",
+            "text-align"
+        ],
+        "correctAnswer": "align-items",
+        "explanation": "In Flexbox, 'justify-content' aligns items along the main axis (usually horizontal), while 'align-items' controls how items are positioned along the cross axis (usually vertical, perpendicular to the main axis)."
+    },
+    {
+        "question": "What type of scope does a JavaScript variable declared with the 'let' keyword have?",
+        "options": [
+            "Global scope only",
+            "Function scope only",
+            "Block scope",
+            "No scope boundary constraints"
+        ],
+        "correctAnswer": "Block scope",
+        "explanation": "Variables declared with 'let' and 'const' (introduced in ES6) are block-scoped. This means they are only accessible within the nearest pair of curly braces {} in which they are defined, such as inside an 'if' statement or a 'for' loop, unlike 'var' which is function-scoped."
+    },
+    {
+        "question": "What will be the exact output of the JavaScript expression: console.log(typeof null);",
+        "options": [
+            "\"null\"",
+            "\"undefined\"",
+            "\"object\"",
+            "\"error\""
+        ],
+        "correctAnswer": "\"object\"",
+        "explanation": "This is a famous, long-standing bug/quirk in JavaScript dating back to its first version. In JS binary representations, objects had a type tag of 0, and because 'null' was represented as a null pointer (0x00), 'typeof null' incorrectly evaluates to the string 'object'."
+    },
+    {
+        "question": "What is the primary difference between the strict equality operator (===) and the loose equality operator (==) in JavaScript?",
+        "options": [
+            "=== compares only variable names, while == compares values.",
+            "=== performs implicit type coercion before comparing, while == does not.",
+            "=== checks both the value and the data type without coercion, while == performs type coercion if the types differ.",
+            "=== is used only for strings, while == is used for numerical evaluations."
+        ],
+        "correctAnswer": "=== checks both the value and the data type without coercion, while == performs type coercion if the types differ.",
+        "explanation": "The loose equality operator (==) will attempt to convert operands to a common type before executing a value comparison. The strict equality operator (===) does not perform type conversion; if the data types of the two values being compared are different, it immediately evaluates to false."
+    },
+    {
+        "question": "Which built-in JavaScript array method creates a new array populated with the results of calling a provided function on every element in the calling array?",
+        "options": [
+            "array.forEach()",
+            "array.filter()",
+            "array.map()",
+            "array.reduce()"
+        ],
+        "correctAnswer": "array.map()",
+        "explanation": "The .map() method iterates through an array, runs a transformation callback function on each element, and returns a brand-new array of identical length containing the transformed data. Methods like .forEach() just loop over the array without returning a new array."
+    },
+    {
+        "question": "What is JavaScript 'hoisting'?",
+        "options": [
+            "A security feature that prevents scripts from accessing local file storage.",
+            "The browser behavior where variable and function declarations are conceptually moved to the top of their containing scope before code execution.",
+            "The optimization process of compressing external JS files into a single bundle.",
+            "The real-time synchronization of state between the client and server side."
+        ],
+        "correctAnswer": "The browser behavior where variable and function declarations are conceptually moved to the top of their containing scope before code execution.",
+        "explanation": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope during the compilation phase. This allows functions to be invoked in code blocks prior to the lines where they are formally declared."
+    },
+    {
+        "question": "Which HTML tag is explicitly used to link an external CSS style sheet to an HTML document?",
+        "options": [
+            "<style>",
+            "<script>",
+            "<link>",
+            "<href>"
+        ],
+        "correctAnswer": "<link>",
+        "explanation": "The <link> element is used inside the HTML <head> section to specify relationships between the current document and external resources. To hook up an external stylesheet, you use <link rel=\"stylesheet\" href=\"styles.css\">."
+    },
+    {
+        "question": "What is the correct way to write a single-line comment inside a standard CSS file?",
+        "options": [
+            "// This is a comment",
+            "/* This is a comment */",
+            "",
+            "# This is a comment"
+        ],
+        "correctAnswer": "/* This is a comment */",
+        "explanation": "CSS does not officially support double-slash (//) single-line comments. Instead, both single-line and multi-line comments must be wrapped using the /* comment content here */ syntax structure."
+    },
+    {
+        "question": "Which CSS unit of measurement is relative to the font-size of the root HTML element (usually the <html> tag)?",
+        "options": [
+            "em",
+            "rem",
+            "px",
+            "vh"
+        ],
+        "correctAnswer": "rem",
+        "explanation": "The 'rem' unit stands for 'Root EM'. It calculates sizing relative to the font-size of the root element (<html>). If the root font-size is 16px, 2rem evaluates exactly to 32px. The 'em' unit, on the other hand, is relative to its immediate parent element's font size."
+    },
+    {
+        "question": "What is the primary role of the DOM (Document Object Model) in web development?",
+        "options": [
+            "It acts as a secure database engine embedded within modern web browsers.",
+            "It is a programming interface that represents HTML documents as a tree structure, allowing scripts to dynamically access and update content and style.",
+            "It is a specific protocol used to compress media files during transit over HTTP.",
+            "It is a network firewall configuration that prevents unauthorized cross-site scripting attacks."
+        ],
+        "correctAnswer": "It is a programming interface that represents HTML documents as a tree structure, allowing scripts to dynamically access and update content and style.",
+        "explanation": "The DOM is a structured tree representation of your HTML layout generated by the browser. It exposes the document as objects, giving scripting languages like JavaScript the power to modify element nodes, alter styling properties, and handle event interactions dynamically."
+    },
+    {
+        "question": "Which of the following values will evaluate to 'false' when converted to a Boolean condition in JavaScript (i.e., is 'falsy')?",
+        "options": [
+            "\"0\" (a string containing zero)",
+            "[] (an empty array)",
+            "NaN (Not-a-Number)",
+            "{} (an empty object)"
+        ],
+        "correctAnswer": "NaN (Not-a-Number)",
+        "explanation": "JavaScript has a specific set of 'falsy' values: false, 0, -0, 0n (BigInt zero), \"\" (empty string), null, undefined, and NaN. Empty arrays [] and empty objects {}, as well as non-empty strings like \"0\", always evaluate to 'truthy'."
+    },
+    {
+        "question": "In JavaScript, how do you prevent an event from bubbling up the DOM tree hierarchy?",
+        "options": [
+            "event.preventDefault()",
+            "event.stopPropagation()",
+            "event.stopBubbling()",
+            "return false;"
+        ],
+        "correctAnswer": "event.stopPropagation()",
+        "explanation": "Event bubbling causes an event triggered on a child element to pass up to its parent elements. Calling event.stopPropagation() intercepts this behavior, halting the journey of the event object further up the nesting chain."
+    },
+    {
+        "question": "What will be the result of executing the code snippet: console.log(1 + \"2\" + 3);",
+        "options": [
+            "6",
+            "\"123\"",
+            "\"33\"",
+            "NaN"
+        ],
+        "correctAnswer": "\"123\"",
+        "explanation": "JavaScript processes operations from left to right. First, the number 1 is added to the string \"2\". Due to type coercion, 1 is converted to a string, resulting in \"12\". Then, \"12\" is added to the number 3, converting 3 to a string, resulting in the final string \"123\"."
+    },
+    {
+        "question": "Which HTML5 tag is used to display a preformatted block of text where line breaks and spaces are preserved exactly as typed in the source code?",
+        "options": [
+            "<code>",
+            "<samp>",
+            "<pre>",
+            "<output>"
+        ],
+        "correctAnswer": "<pre>",
+        "explanation": "The <pre> element defines preformatted text. Text wrapped inside this element is rendered in a fixed-width/monospace font by default, and it structurally preserves tabs, multiple consecutive spaces, and line breaks."
+    },
+    {
+        "question": "Which CSS property controls what happens to content that is too large to fit within its explicitly defined block container area?",
+        "options": [
+            "clip-path",
+            "visibility",
+            "overflow",
+            "display-control"
+        ],
+        "correctAnswer": "overflow",
+        "explanation": "The 'overflow' property manages content layout when elements spill out of their containing boundary boxes. It can accept values like 'visible' (default), 'hidden' (crops content), 'scroll' (forces scrollbars), or 'auto' (shows scrollbars only if content overflows)."
+    },
+    {
+        "question": "What does the keyword 'this' typically refer to when used inside a standard method of a custom JavaScript object?",
+        "options": [
+            "The global Window object in all contexts.",
+            "The current function block itself.",
+            "The object that currently owns or is executing the active method.",
+            "The parent DOM element of the script tag."
+        ],
+        "correctAnswer": "The object that currently owns or is executing the active method.",
+        "explanation": "Inside a standard object method, the 'this' keyword dynamically resolves to point directly to the object instance executing the method. This allows code inside the object to read and mutate its own properties."
+    },
+     {
+        "question": "Which of the following is the correct HTML syntax for creating a hyperlink that points to an email address?",
+        "options": [
+            "<a href=\"email:support@example.com\">Support</a>",
+            "<a href=\"mailto:support@example.com\">Support</a>",
+            "<a url=\"support@example.com\">Support</a>",
+            "<a href=\"send:support@example.com\">Support</a>"
+        ],
+        "correctAnswer": "<a href=\"mailto:support@example.com\">Support</a>",
+        "explanation": "The 'mailto:' URL scheme is recognized by web browsers as a command to open the user's default local desktop or web-based email client with the specified recipient's address pre-filled in the 'To' field."
+    },
+    {
+        "question": "What is the primary architectural purpose of the HTML5 <header> element?",
+        "options": [
+            "To define a sticky navigation bar that remains frozen at the top of the viewport during scrolling.",
+            "To house introductory content, steering layout aids, or navigational links for its nearest sectioning ancestor.",
+            "To force search engine web crawlers to categorize text inside it as the primary title of the website.",
+            "To contain technical metadata, external script tags, and stylesheet references exclusively."
+        ],
+        "correctAnswer": "To house introductory content, steering layout aids, or navigational links for its nearest sectioning ancestor.",
+        "explanation": "The <header> tag is a structural, semantic container. It does not possess default fixed styling (like sticky bars) but indicates to browsers and assistive tools that its children contain introductory or navigation-assisting materials."
+    },
+    {
+        "question": "How do you associate an HTML <label> element explicitly with an <input> element to maximize accessibility and form click targets?",
+        "options": [
+            "By setting the 'name' attribute of the label to match the 'class' of the input.",
+            "By setting the 'for' attribute of the label to match the 'id' attribute of the input.",
+            "By setting the 'id' of the label to match the 'value' attribute of the input.",
+            "By ensuring the label element is placed completely outside the formal <form> container tags."
+        ],
+        "correctAnswer": "By setting the 'for' attribute of the label to match the 'id' attribute of the input.",
+        "explanation": "Matching the label's 'for' attribute with the input's 'id' establishes a programmatic relationship. When a user clicks or taps the label text, the browser automatically focuses or toggles the linked input element, which helps users with motor impairments."
+    },
+    {
+        "question": "Which HTML tag is used to embed client-side executable programming scripts directly into an HTML document structure?",
+        "options": [
+            "<javascript>",
+            "<codeblock>",
+            "<script>",
+            "<program>"
+        ],
+        "correctAnswer": "<script>",
+        "explanation": "The <script> tag embeds or references executable client-side scripts. While it is predominantly used for JavaScript, it can theoretically hold other scripting languages or data structures like JSON configuration strings."
+    },
+    {
+        "question": "What occurs when an HTML document includes multiple tags with identical 'id' attribute values?",
+        "options": [
+            "The browser crashes immediately and presents a blank error diagnostic screen.",
+            "The document is still rendered by the browser, but it violates standard validation specifications and breaks targeted CSS selectors or DOM JavaScript lookups like document.getElementById().",
+            "The browser automatically updates the duplicate names by appending incrementing numbers behind the scenes.",
+            "The duplicate IDs are stripped out and converted into normal paragraph text nodes automatically."
+        ],
+        "correctAnswer": "The document is still rendered by the browser, but it violates standard validation specifications and breaks targeted CSS selectors or DOM JavaScript lookups like document.getElementById().",
+        "explanation": "Browsers rely heavily on error-correction algorithms and will display the page anyway. However, having non-unique IDs triggers unexpected behavior in JavaScript, where methods like document.getElementById() will only ever return the very first matching element node found."
+    },
+    {
+        "question": "In the standard CSS display layout models, how do 'inline' elements differ fundamentally from 'block' elements?",
+        "options": [
+            "Inline elements always begin on a fresh line, whereas block elements continue horizontally on the same line.",
+            "Inline elements sit horizontally next to each other and only take up as much width as their content requires, ignoring top/bottom margin and height properties.",
+            "Inline elements automatically stretch to span the entire horizontal width of their parent containers.",
+            "Inline elements are forbidden from containing text characters inside their opening and closing tags."
+        ],
+        "correctAnswer": "Inline elements sit horizontally next to each other and only take up as much width as their content requires, ignoring top/bottom margin and height properties.",
+        "explanation": "Elements with 'display: inline' (like <span>, <a>) flow horizontally alongside text. They do not respect explicit height or top/bottom layout properties, unlike 'block' elements (like <div>, <p>), which claim an entire horizontal line for themselves."
+    },
+    {
+        "question": "Which of the following values completely removes an element from the document layout flow, causing neighboring elements to fill the vacant space as if it didn't exist?",
+        "options": [
+            "visibility: hidden;",
+            "opacity: 0;",
+            "display: none;",
+            "transform: scale(0);"
+        ],
+        "correctAnswer": "display: none;",
+        "explanation": "Using 'display: none;' removes the targeted element from the accessibility and rendering layout tree. Conversely, 'visibility: hidden;' and 'opacity: 0;' hide the element from sight but preserve its physical geometry and space in the structural layout flow."
+    },
+    {
+        "question": "What is the primary role of the '@media' rule declaration block in custom CSS configurations?",
+        "options": [
+            "To establish a communication proxy route to fetch asset graphics from secure multimedia servers.",
+            "To apply specific structural styling configurations conditionally depending on characteristics like viewport width, resolution, or device orientation.",
+            "To encode vector font file packages into readable text strings inside the stylesheet.",
+            "To combine video audio streams with active page animations."
+        ],
+        "correctAnswer": "To apply specific structural styling configurations conditionally depending on characteristics like viewport width, resolution, or device orientation.",
+        "explanation": "The `@media` rule is the foundational core of responsive web design (RWD). It tests screen properties (e.g., max-width: 768px) and triggers a subset of targeted design configurations only if those conditional constraints are met."
+    },
+    {
+        "question": "In CSS Grid Layout, which property is applied directly to a grid container to establish the exact number and sizing of structural columns?",
+        "options": [
+            "grid-template-columns",
+            "grid-column-gap",
+            "grid-auto-flow",
+            "columns-count"
+        ],
+        "correctAnswer": "grid-template-columns",
+        "explanation": "The 'grid-template-columns' property defines the explicit design columns of the grid container. It accepts space-separated sizing values or functions like 'repeat()' and the fractional unit 'fr'."
+    },
+    {
+        "question": "What does a position value of 'absolute' mean relative to element rendering placement in CSS layout engines?",
+        "options": [
+            "The element is positioned strictly relative to the primary browser viewport screen boundaries.",
+            "The element is positioned relative to its nearest ancestor element that has a position property value other than 'static'.",
+            "The element is structurally forced to stay at its natural, unaltered layout flow sequence location.",
+            "The element cannot be adjusted using top, bottom, left, or right coordinate parameters."
+        ],
+        "correctAnswer": "The element is positioned relative to its nearest ancestor element that has a position property value other than 'static'.",
+        "explanation": "An element with 'position: absolute' breaks out of normal layout positioning. It aligns its coordinates using top/left/right/bottom based on its closest relative, absolute, or fixed positioned ancestor. If none exist, it aligns with the initial containing block (the viewport)."
+    },
+    {
+        "question": "What unique data value is returned when declaring a variable in JavaScript without initializing it with an explicit assignment?",
+        "options": [
+            "null",
+            "undefined",
+            "NaN",
+            "false"
+        ],
+        "correctAnswer": "undefined",
+        "explanation": "In JavaScript, 'undefined' is a primitive type that acts as a default placeholder indicating a variable has been officially declared but has not yet been assigned a concrete value."
+    },
+    {
+        "question": "Which of the following choices represents an invalid method for naming a custom variable identifier in JavaScript?",
+        "options": [
+            "let user_age = 25;",
+            "let $totalAmount = 100;",
+            "let 2ndPlaceWinner = \"John\";",
+            "let _internalConfig = true;"
+        ],
+        "correctAnswer": "let 2ndPlaceWinner = \"John\";",
+        "explanation": "JavaScript identifier naming rules strictly dictate that variable names must begin with a letter, an underscore (_), or a dollar sign ($). Variable names are absolutely forbidden from starting with a numerical digit."
+    },
+    {
+        "question": "What is the primary operational difference between declaring an array via 'const' versus using the 'let' keyword in JavaScript?",
+        "options": [
+            "An array declared with 'const' can never have its internal elements modified or mutated.",
+            "An array declared with 'const' cannot be reassigned to point to a completely different array reference or data type.",
+            "An array declared with 'let' is instantly wiped out from local memory when loops finish execution.",
+            "An array declared with 'const' is treated strictly as an immutable string sequence."
+        ],
+        "correctAnswer": "An array declared with 'const' cannot be reassigned to point to a completely different array reference or data type.",
+        "explanation": "Declaring a reference type (like an array or object) with 'const' creates an immutable binding to that specific variable reference. However, the value itself is still mutable, meaning you can push, pop, or change elements inside the array without throwing errors."
+    },
+    {
+        "question": "Which native JavaScript window method prompts the user with a structural modal dialog containing an optional message and waits for text input from the user?",
+        "options": [
+            "window.alert()",
+            "window.confirm()",
+            "window.prompt()",
+            "window.input()"
+        ],
+        "correctAnswer": "window.prompt()",
+        "explanation": "The 'window.prompt()' method halts code execution to open a dialog box with a text field. It returns the exact string entered by the user, or returns 'null' if the user clicks 'Cancel'."
+    },
+    {
+        "question": "What is the expected resulting value of the JavaScript operation evaluating: \"5\" - 2?",
+        "options": [
+            "\"52\"",
+            "3",
+            "NaN",
+            "\"3\""
+        ],
+        "correctAnswer": "3",
+        "explanation": "Unlike the addition operator (+), which triggers string concatenation when string variables are encountered, the subtraction operator (-) cannot be applied to strings. JavaScript coercively converts the string \"5\" into the actual numeric value 5, resulting in 3."
+    },
+    {
+        "question": "Which structural HTML tag pair is used to construct individual individual row records inside a standardized visual data layout table?",
+        "options": [
+            "<td>...</td>",
+            "<th>...</th>",
+            "<tr>...</td>",
+            "<tr>...</tr>"
+        ],
+        "correctAnswer": "<tr>...</tr>",
+        "explanation": "The '<tr>' tag stands explicitly for 'Table Row'. It acts as a structural horizontal envelope container designed to host functional cell entries like header titles (<th>) or data values (<td>)."
+    },
+    {
+        "question": "What does the 'srcset' attribute do when added to an HTML <img> tag?",
+        "options": [
+            "It establishes an encrypted backup connection fallback chain for secure image downloads.",
+            "It provides a list of different image source files along with their widths or pixel densities, allowing the browser to select the most appropriate image asset for the device screen size.",
+            "It stitches multiple small images into an individual compound element canvas map.",
+            "It sets global grayscale percentage values directly onto vector image shapes."
+        ],
+        "correctAnswer": "It provides a list of different image source files along with their widths or pixel densities, allowing the browser to select the most appropriate image asset for the device screen size.",
+        "explanation": "The 'srcset' attribute enables native responsive images. Instead of forcing a mobile device to download a heavy desktop-sized image, the browser evaluates the 'srcset' parameters and downloads only the image asset that matches the user's viewport width."
+    },
+    {
+        "question": "Which CSS property is used to alter the typography weight of text characters, enabling thin or heavy block appearances?",
+        "options": [
+            "font-style",
+            "text-transform",
+            "font-weight",
+            "font-size"
+        ],
+        "correctAnswer": "font-weight",
+        "explanation": "The 'font-weight' property sets how thick or thin characters in a text section should be displayed. It accepts keyword descriptions (e.g., 'normal', 'bold') or numeric values ranging from 100 to 900."
+    },
+    {
+        "question": "What is the functional purpose of utilizing the CSS keyword declaration '!important' appended to a value identifier?",
+        "options": [
+            "It registers a styling rule to be executed with specialized graphics processor acceleration.",
+            "It overrides any other style declaration rules on that element, bypassing the standard specificity hierarchy calculation cascade rules.",
+            "It flags text to be spoken louder by assistive technologies and screen reader engines.",
+            "It causes an element layout animation sequence to loop endlessly."
+        ],
+        "correctAnswer": "It overrides any other style declaration rules on that element, bypassing the standard specificity hierarchy calculation cascade rules.",
+        "explanation": "The '!important' keyword acts as an emergency escape hatch in the CSS cascade. When applied, it elevates that specific property's priority above normal specificity calculation weights, making it override competing instructions."
+    },
+    {
+        "question": "Which JavaScript native array mechanism allows you to extract a shallow copy of a portion of an array into a new array object without modifying the original array?",
+        "options": [
+            "array.splice()",
+            "array.slice()",
+            "array.shift()",
+            "array.push()"
+        ],
+        "correctAnswer": "array.slice()",
+        "explanation": "The '.slice()' method safely duplicates sections of an array within start and end indexes, leaving the original array intact. On the other hand, '.splice()' is a destructive method that actively alters, removes, or injects elements directly within the original source array."
+    },
+    {
+        "question": "What is the structural objective behind utilizing an Arrow Function expression syntax () => {} introduced in modern JavaScript ES6?",
+        "options": [
+            "They process mathematical computations faster than traditional functions.",
+            "They provide a shorter syntax layout and do not bind their own separate value for the 'this' context keyword.",
+            "They can only be used safely when handling asynchronous network requests.",
+            "They prevent functions from encountering local runtime execution context errors."
+        ],
+        "correctAnswer": "They provide a shorter syntax layout and do not bind their own separate value for the 'this' context keyword.",
+        "explanation": "Arrow functions offer a compact syntax footprint. Crucially, they lack a local 'this' binding context; instead, they lexically inherit the 'this' value from their surrounding parent block context, solving many scope bugs."
+    },
+    {
+        "question": "Which DOM manipulation method allows JavaScript to create a brand-new element node that can later be attached into the visual page tree hierarchy?",
+        "options": [
+            "document.createElement()",
+            "document.attachElement()",
+            "document.getElementById()",
+            "document.appendNode()"
+        ],
+        "correctAnswer": "document.createElement()",
+        "explanation": "The 'document.createElement(tagName)' method instantiates a new element node in memory based on the tag name specified (e.g., 'div', 'p'). It exists detached from the active DOM tree until added to the page using methods like '.appendChild()'."
+    },
+    {
+        "question": "What is the purpose of the 'async' attribute when included inside an external HTML <script> tag structure?",
+        "options": [
+            "It forces the script file download to wait until the entire HTML document is fully parsed.",
+            "It allows the script file to download in the background without blocking HTML parsing, and then runs the script the exact moment the download finishes.",
+            "It enforces strict execution safety rules directly over experimental web engine protocols.",
+            "It splits long-running code processes into multi-threaded operating engine executions."
+        ],
+        "correctAnswer": "It allows the script file to download in the background without blocking HTML parsing, and then runs the script the exact moment the download finishes.",
+        "explanation": "The 'async' attribute enables non-blocking script downloads. The browser downloads the file in parallel while continuing to build the DOM, but it will pause parsing to execute the script immediately once downloaded, meaning async scripts can execute out of order."
+    },
+    {
+        "question": "Which structural mechanism allows JavaScript developers to intercept runtime errors gracefully without causing the entire application engine to crash?",
+        "options": [
+            "if/else conditional paths",
+            "switch/case evaluation parameters",
+            "try/catch/finally code blocks",
+            "throw new Error declarations"
+        ],
+        "correctAnswer": "try/catch/finally code blocks",
+        "explanation": "The 'try...catch' block isolates code execution that could potentially fail. If an error surfaces inside the 'try' block, the execution thread stops there and jumps safely into the 'catch' block where the error object can be resolved gracefully."
+    },
+    {
+        "question": "What is the functional purpose of the HTML5 <noscript> tag?",
+        "options": [
+            "It completely blocks malicious external scripts from injecting hidden execution scripts into forms.",
+            "It contains alternative content that is displayed to users only if JavaScript execution is disabled or unsupported in their web browser configuration.",
+            "It compresses data structures into alternative lighter payloads when handling slow network speeds.",
+            "It provides a clear coding area for writing inline cascading style definitions safely."
+        ],
+        "correctAnswer": "It contains alternative content that is displayed to users only if JavaScript execution is disabled or unsupported in their web browser configuration.",
+        "explanation": "The <noscript> element acts as a fallback interface indicator. If a visitor turns off JavaScript or uses a browser that lacks script parsing engines, any text or elements placed inside <noscript> will render on screen to guide them."
+    },
+    {
+        "question": "Which of the following attributes is used within an HTML <audio> or <video> tag to display browser-native playback controls like Play, Pause, and Volume?",
+        "options": [
+            "interface=\"true\"",
+            "controls",
+            "show-buttons",
+            "autoplay"
+        ],
+        "correctAnswer": "controls",
+        "explanation": "The 'controls' attribute is a boolean attribute. When present, it tells the browser to render its built-in media player user interface, which includes buttons for playing, pausing, scrubbing through the timeline, and adjusting volume level metrics."
+    },
+    {
+        "question": "What does the HTML element <meta charset=\"UTF-8\"> specify inside a web document setup?",
+        "options": [
+            "It establishes a secure firewall protocol for handling form submission requests.",
+            "It declares the character encoding standard for the document, ensuring text and special symbols render correctly across different devices.",
+            "It tells search engines how many keywords are present on the website page layout.",
+            "It sets the maximum layout grid dimensions for desktop viewport scaling."
+        ],
+        "correctAnswer": "It declares the character encoding standard for the document, ensuring text and special symbols render correctly across different devices.",
+        "explanation": "The 'charset' meta tag tells the browser which character encoding table to use when translating source code bytes into viewable glyphs. UTF-8 is the universal standard for the modern web, as it supports almost all characters, emojis, and symbols from every language."
+    },
+    {
+        "question": "Which HTML5 structural layout element is specifically designed to contain tangential or secondary content, such as sidebars, advertising blocks, or callouts, that is indirectly related to the main page content?",
+        "options": [
+            "<section>",
+            "<aside>",
+            "<summary>",
+            "<div>"
+        ],
+        "correctAnswer": "<aside>",
+        "explanation": "The <aside> element provides structural semantics for content that moves parallel to the primary layout. It represents a section of a page that contains content only tangentially related to the main text, making it ideal for sidebars or callout boxes."
+    },
+    {
+        "question": "What is the primary visual difference between an ordered list (<ol>) and an unordered list (<ul>) when rendered by default in a browser?",
+        "options": [
+            "An ordered list organizes items using sequential numbers, while an unordered list organizes items using bullet points.",
+            "An ordered list displays items horizontally, while an unordered list arranges items vertically.",
+            "An ordered list forces all text characters inside it to transform into uppercase capital letters.",
+            "An ordered list cannot accept more than ten total list item (<li>) child entries."
+        ],
+        "correctAnswer": "An ordered list organizes items using sequential numbers, while an unordered list organizes items using bullet points.",
+        "explanation": "Both tags require list items (<li>) as direct children. By default, browsers render an ordered list (<ol>) using a numeric tracking sequence (1, 2, 3...) and an unordered list (<ul>) with stylistic bullet markers."
+    },
+    {
+        "question": "Which HTML5 form input type is explicitly designed to accept a user's web domain or link destination, checking automatically for proper prefix formatting during submission rules?",
+        "options": [
+            "type=\"link\"",
+            "type=\"text\"",
+            "type=\"url\"",
+            "type=\"web\""
+        ],
+        "correctAnswer": "type=\"url\"",
+        "explanation": "The 'url' input type enforces basic structural client-side validation rules. If a user tries to submit the form without typing a valid URL structure (e.g., omitting 'http://' or 'https://'), the browser blocks the action and displays an error tip."
+    },
+    {
+        "question": "In the CSS cascade processing model, what does the term 'inheritance' refer to?",
+        "options": [
+            "The calculation mechanism that weights selectors using specific ID, class, and tag values.",
+            "The process by which certain CSS properties applied to a parent element are automatically passed down to its nested descendant elements.",
+            "The method used to load multiple stylesheet files asynchronously from different servers.",
+            "The browser optimization routine that compresses duplicate style declarations."
+        ],
+        "correctAnswer": "The process by which certain CSS properties applied to a parent element are automatically passed down to its nested descendant elements.",
+        "explanation": "Many text-related properties (like font-family, color, and line-height) automatically cascade downwards to child nodes from their structural wrappers via inheritance. Layout-driven properties like margins, borders, and paddings are never inherited."
+    },
+    {
+        "question": "Which CSS position layout value keeps an element strictly locked at a precise coordinate location relative to the browser viewport, ensuring it remains in place even when the user scrolls down the page?",
+        "options": [
+            "position: absolute;",
+            "position: fixed;",
+            "position: relative;",
+            "position: static;"
+        ],
+        "correctAnswer": "position: fixed;",
+        "explanation": "An element configured with 'position: fixed;' is completely extracted from the natural layout framework. It maps its structural coordinates relative directly to the digital viewing screen window (viewport), making it ideal for persistent headers or floating action buttons."
+    },
+    {
+        "question": "What is the correct syntax for writing a universal selector in CSS to apply styling parameters to every single element node across an entire HTML page structure?",
+        "options": [
+            "all { }",
+            "* { }",
+            "body { }",
+            ".universal { }"
+        ],
+        "correctAnswer": "* { }",
+        "explanation": "The asterisk (*) character represents the universal selector in CSS. It targets every structural node present in the DOM tree, and it is most commonly used in global resets to strip out default browser margins and paddings."
+    },
+    {
+        "question": "Which CSS property allows developers to change the spacing gap distance between individual inline text letters inside a paragraph or header container?",
+        "options": [
+            "word-spacing",
+            "line-height",
+            "letter-spacing",
+            "text-indent"
+        ],
+        "correctAnswer": "letter-spacing",
+        "explanation": "The 'letter-spacing' property tracks typographic kerning adjustments. It increases or decreases the horizontal spacing gaps between characters. To adjust the space between whole words, you use the 'word-spacing' property."
+    },
+    {
+        "question": "What is the primary capability of using the CSS function calc() within a style layout declaration rule?",
+        "options": [
+            "It enables developers to perform mathematical calculations dynamically to mix different units of measurement (e.g., mixing percentages and pixels) for property values.",
+            "It counts the exact total number of child elements located inside a parent container structure.",
+            "It automatically recalculates image color spectrum distributions for dark mode environments.",
+            "It measures network latency speeds before downloading external web fonts."
+        ],
+        "correctAnswer": "It enables developers to perform mathematical calculations dynamically to mix different units of measurement (e.g., mixing percentages and pixels) for property values.",
+        "explanation": "The 'calc()' utility allows mathematical expressions for layout properties. For example, 'width: calc(100% - 40px);' computes a fluid layout width that automatically factors in a fixed pixel offset across changing screens."
+    },
+    {
+        "question": "Which native JavaScript primitive data type is designed to represent logical entities that can only possess one of two distinct states: true or false?",
+        "options": [
+            "String",
+            "Number",
+            "Boolean",
+            "Symbol"
+        ],
+        "correctAnswer": "Boolean",
+        "explanation": "A Boolean is a core primitive data type named after mathematician George Boole. It can only store the binary logic states of 'true' or 'false', making it perfect for managing control flow paths and conditional flags."
+    },
+    {
+        "question": "What will be the exact string result of executing the JavaScript expression: console.log(typeof NaN);",
+        "options": [
+            "\"NaN\"",
+            "\"undefined\"",
+            "\"number\"",
+            "\"null\""
+        ],
+        "correctAnswer": "\"number\"",
+        "explanation": "Even though 'NaN' stands literally for 'Not-a-Number', its underlying structural definition within the IEEE 754 floating-point specification classifies it as a numerical data type. It represents an unrepresentable or undefined numerical result from an invalid mathematical operation (e.g., dividing 0 by 0)."
+    },
+    {
+        "question": "Which built-in JavaScript array method deletes the very last element entry from an array and returns that deleted item value to the executing scope?",
+        "options": [
+            "array.shift()",
+            "array.pop()",
+            "array.unshift()",
+            "array.push()"
+        ],
+        "correctAnswer": "array.pop()",
+        "explanation": "The '.pop()' method targets the tail end of an array, mutating its structure by pulling away the last element and returning it. Conversely, '.shift()' removes the very first element from the beginning of the array."
+    },
+    {
+        "question": "What is the primary functional behavior of the JavaScript 'logical OR' operator (||) when evaluating two expressions?",
+        "options": [
+            "It evaluates to true only if both expressions resolve to a truthy value state.",
+            "It evaluates to true if at least one of the expressions resolves to a truthy value state.",
+            "It reverses the boolean truthiness value of the target expression statement.",
+            "It checks whether the two expressions point to identical memory addresses."
+        ],
+        "correctAnswer": "It evaluates to true if at least one of the expressions resolves to a truthy value state.",
+        "explanation": "The logical OR operator (||) checks operands from left to right. It will return 'true' if either side passes a truthy evaluation check. It only returns 'false' if both conditional inputs are completely falsy."
+    },
+    {
+        "question": "Which modern JavaScript looping construct is specifically optimized to iterate sequentially through the actual *values* contained inside an iterable object structure, like an array?",
+        "options": [
+            "for...in",
+            "for...of",
+            "while...loop",
+            "do...while"
+        ],
+        "correctAnswer": "for...of",
+        "explanation": "The 'for...of' loop statement (introduced in ES6) loops through the values of iterable collections like Arrays, Strings, or Maps. The 'for...in' loop is designed to iterate through the *enumerable property keys* of an object instead."
+    },
+    {
+        "question": "Which HTML tag is used to display a drop-down selection list component containing multiple pre-configured structural user options?",
+        "options": [
+            "<dropdown>",
+            "<select>",
+            "<listbox>",
+            "<input type=\"menu\">"
+        ],
+        "correctAnswer": "<select>",
+        "explanation": "The <select> element acts as the wrapper container for a dropdown form component. Inside the <select> tag, individual choice items are defined using separate nested <option> tags."
+    },
+    {
+        "question": "What does the 'controls' attribute do when applied to an HTML5 <video> tag?",
+        "options": [
+            "It enables developers to script video playback using external game controller accessories.",
+            "It commands the browser to display default playback buttons like Play, Pause, Volume, and Fullscreen toggle tools.",
+            "It forces the video file to loop infinitely from the beginning without stopping.",
+            "It compresses the visual pixel output quality to match slow mobile device network connections."
+        ],
+        "correctAnswer": "It commands the browser to display default playback buttons like Play, Pause, Volume, and Fullscreen toggle tools.",
+        "explanation": "The 'controls' attribute is a native browser configuration shortcut. Without it, a video element renders as a static image unless you manually build user controls using the JavaScript HTMLMediaElement API."
+    },
+    {
+        "question": "Which CSS layout property manages how multiple flex item lines wrap along the cross axis when there is extra space inside a Flexbox container?",
+        "options": [
+            "justify-content",
+            "align-content",
+            "flex-wrap",
+            "align-items"
+        ],
+        "correctAnswer": "align-content",
+        "explanation": "While 'align-items' governs how individual items align within a single layout line, 'align-content' defines how multiple separate rows or lines of items wrap and space themselves out along the cross axis inside the flex container."
+    },
+    {
+        "question": "What is the default layout alignment behavior of block-level elements if no explicit 'width' property is declared in your CSS configuration?",
+        "options": [
+            "They shrink down horizontally to match the exact size boundary of their content.",
+            "They expand horizontally to fill 100% of the available width space of their parent container element.",
+            "They set their physical dimensions to a fixed factory default of 300px.",
+            "They refuse to render visually until an explicit width property is specified."
+        ],
+        "correctAnswer": "They expand horizontally to fill 100% of the available width space of their parent container element.",
+        "explanation": "Block-level elements (such as <div>, <p>, and <section>) naturally claim the entire horizontal line they occupy. Their default layout behavior stretches their box boundary width to match 100% of their parent element's content width."
+    },
+    {
+        "question": "Which CSS property is used to create a clear spatial buffer zone *inside* an element, sitting directly between its visible content and its outer border line?",
+        "options": [
+            "margin",
+            "padding",
+            "outline",
+            "border-width"
+        ],
+        "correctAnswer": "padding",
+        "explanation": "Padding acts as internal breathing room, pushing the boundaries of an element outward from its core content while staying inside the border framework. Margin, by contrast, generates external spatial separation outside the border."
+    },
+    {
+        "question": "What is the primary difference between global variables and local variables within a standard JavaScript application environment?",
+        "options": [
+            "Global variables can be accessed from any scope block throughout the script execution, whereas local variables are restricted to the specific function or block where they were defined.",
+            "Global variables can only handle text strings, while local variables handle numbers exclusively.",
+            "Global variables consume zero system memory resources compared to local variables.",
+            "Global variables require compiling procedures before they can be read by a web browser engine."
+        ],
+        "correctAnswer": "Global variables can be accessed from any scope block throughout the script execution, whereas local variables are restricted to the specific function or block where they were defined.",
+        "explanation": "Scope defines the visibility and accessibility limits of variables. Global variables sit at the root level and can be read anywhere. Local variables are protected inside their native scope block boundary (like a function body), making them inaccessible from outer scopes."
+    },
+    {
+        "question": "Which built-in JavaScript object method converts a valid JSON-formatted data string directly into a usable client-side JavaScript object or array structure?",
+        "options": [
+            "JSON.stringify()",
+            "JSON.parse()",
+            "JSON.toObject()",
+            "JSON.serialize()"
+        ],
+        "correctAnswer": "JSON.parse()",
+        "explanation": "The 'JSON.parse()' utility parses raw JSON strings transmitted across network requests and reconstitutes them into live JavaScript data structures. To turn a JavaScript object back into a string, you use 'JSON.stringify()'."
+    },
+    {
+        "question": "What will be the exact console log output when evaluating the JavaScript math operation: console.log(10 % 3);",
+        "options": [
+            "3",
+            "1",
+            "0.333",
+            "0"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The percent symbol (%) represents the Modulo (Remainder) arithmetic operator in JavaScript. It divides the first number by the second number and returns only the leftover remainder value. Since 3 goes into 10 exactly three times with 1 left over (3 * 3 = 9), the modulo output is 1."
+    },
+    {
+        "question": "In JavaScript event handling, what does the method event.preventDefault() explicitly do?",
+        "options": [
+            "It crashes the script execution thread immediately to shield data security parameters.",
+            "It instructs the browser engine to halt its default built-in behavioral actions associated with that specific user event (e.g., blocking a link from redirecting or a form from reloading).",
+            "It wipes out the browser cache storage logs.",
+            "It stops an event from bubbling upwards through parent DOM element containers."
+        ],
+        "correctAnswer": "It instructs the browser engine to halt its default built-in behavioral actions associated with that specific user event (e.g., blocking a link from redirecting or a form from reloading).",
+        "explanation": "Calling 'event.preventDefault()' tells the browser not to execute its native behavior for an action. For instance, it can keep a submit button from causing a page refresh, giving JavaScript code total control over processing form data via AJAX/Fetch."
+    },
+    {
+        "question": "What is the structural meaning and timing behavior of a JavaScript Promise that enters a 'Rejected' state status?",
+        "options": [
+            "The asynchronous operation completed successfully and yielded a final data payload.",
+            "The asynchronous operation failed completely due to an internal error or exception condition, triggering attached failure handlers.",
+            "The asynchronous process is still actively executing and waiting for server responses.",
+            "The system memory ran out of space and automatically canceled the script profile."
+        ],
+        "correctAnswer": "The asynchronous operation failed completely due to an internal error or exception condition, triggering attached failure handlers.",
+        "explanation": "A JavaScript Promise always exists in one of three pipeline states: Pending (actively working), Fulfilled (completed successfully), or Rejected (failed). A 'Rejected' status alerts the engine that an error occurred, shifting control flow straight into a '.catch()' method or a try/catch block."
+    },
+    {
+        "question": "Which HTML5 attribute can be applied to an <input> element to display a faint, temporary hint text inside the field before the user enters a value?",
+        "options": [
+            "value",
+            "hint",
+            "placeholder",
+            "tooltip"
+        ],
+        "correctAnswer": "placeholder",
+        "explanation": "The 'placeholder' attribute specifies a short hint that describes the expected value of an input field (e.g., a sample email or format description). The text is displayed in a light gray color and vanishes automatically the moment the user starts typing inside the field."
+    },
+    {
+        "question": "What is the purpose of the HTML5 <mark> tag?",
+        "options": [
+            "To draw a solid horizontal line across the layout page to separate sections.",
+            "To define a crucial search engine optimization keyword tracker.",
+            "To highlight a portion of text within a document for reference purposes, typically rendering with a yellow background color by default.",
+            "To inject an interactive checkbox component into a form wizard."
+        ],
+        "correctAnswer": "To highlight a portion of text within a document for reference purposes, typically rendering with a yellow background color by default.",
+        "explanation": "The <mark> element is an HTML5 semantic tag used to indicate text that has been highlighted or marked for special relevance or notation, mimicking the real-world action of using a highlighter marker pen."
+    },
+    {
+        "question": "Which of the following tag configurations represents the correct semantic layout for adding a visible caption title directly to an HTML <table> element?",
+        "options": [
+            "<caption>...</caption> placed immediately after the opening <table> tag.",
+            "<title>...</title> nested inside the first table row block.",
+            "<summary>...</summary> placed below the closing </table> tag.",
+            "<label>...</label> wrapped around the table header rows."
+        ],
+        "correctAnswer": "<caption>...</caption> placed immediately after the opening <table> tag.",
+        "explanation": "To assign a compliant title or description to a data table, the HTML standard requires using the <caption> tag. For maximum accessibility compliance and correct layout rendering, it must be inserted as the very first child node inside the opening <table> element."
+    },
+    {
+        "question": "What does the 'download' attribute do when applied to an HTML anchor (<a>) hyperlinking tag?",
+        "options": [
+            "It establishes a secure background network stream protocol to track download metrics.",
+            "It instructs the browser to download the linked resource as a local file instead of navigating to or opening it within the active browser tab.",
+            "It automatically compresses zip archives before they leave the hosting server infrastructure.",
+            "It runs a background security scan on the destination file transfer route."
+        ],
+        "correctAnswer": "It instructs the browser to download the linked resource as a local file instead of navigating to or opening it within the active browser tab.",
+        "explanation": "When an anchor tag has a 'download' attribute, clicking the link prompts the browser to save the targeted file directly to the user's hard drive. You can also pass a string value to the attribute (e.g., download=\"invoice.pdf\") to pre-set the downloaded file's name."
+    },
+    {
+        "question": "Which HTML tag is used to display mathematical or technical computer programming variables inside a paragraph block with specialized formatting?",
+        "options": [
+            "<var>",
+            "<math>",
+            "<calc>",
+            "<code>"
+        ],
+        "correctAnswer": "<var>",
+        "explanation": "The <var> tag is an HTML semantic element used to define a variable in mathematical expressions or programming contexts. Browsers typically display its contents in an italicized serif font to distinguish it from the surrounding text flow."
+    },
+    {
+        "question": "In CSS selectors, what does a space character between two element names signify (e.g., 'div p')?",
+        "options": [
+            "It selects only the <p> elements that are direct, immediate children of a <div> element.",
+            "It selects all <p> elements that are nested anywhere inside a <div> element, regardless of how deep the nesting goes.",
+            "It targets both <div> and <p> elements simultaneously across the entire layout.",
+            "It selects a <p> element only if it is positioned immediately next to a <div> element on the same level."
+        ],
+        "correctAnswer": "It selects all <p> elements that are nested anywhere inside a <div> element, regardless of how deep the nesting goes.",
+        "explanation": "A space character represents the Descendant Selector in CSS. It targets the second element if it is located anywhere within the hierarchy of the first element. To restrict selection to immediate children only, you must use the child combinator operator ('>') instead."
+    },
+    {
+        "question": "Which CSS property is used to create smooth, timed transition effect animations when an element shifts between different structural style states (e.g., changing color on hover)?",
+        "options": [
+            "animation-keyframes",
+            "transition",
+            "transform-speed",
+            "display-flex"
+        ],
+        "correctAnswer": "transition",
+        "explanation": "The 'transition' property allows you to change property values smoothly and gradually over a specified duration (e.g., transition: background-color 0.3s ease;), rather than having the style change instantly when an event like a mouse hover triggers."
+    },
+    {
+        "question": "What is the primary visual function of the CSS property 'text-transform'?",
+        "options": [
+            "It converts simple text characters into decorative vector icon symbols.",
+            "It controls the capitalization formatting of text, allowing you to force uppercase, lowercase, or capitalized layouts dynamically.",
+            "It alters the font weight layout distribution for screen readers.",
+            "It moves text positions horizontally across a canvas path using fluid movements."
+        ],
+        "correctAnswer": "It controls the capitalization formatting of text, allowing you to force uppercase, lowercase, or capitalized layouts dynamically.",
+        "explanation": "The 'text-transform' property handles text capitalization without altering the actual source text strings in the HTML. It accepts values like 'uppercase' (all caps), 'lowercase' (all small letters), or 'capitalize' (makes the first letter of each word uppercase)."
+    },
+    {
+        "question": "Which CSS position value keeps an element behaving like a standard static element until it reaches a specified scroll threshold, at which point it locks into a fixed position on the screen?",
+        "options": [
+            "position: absolute;",
+            "position: relative;",
+            "position: sticky;",
+            "position: fixed;"
+        ],
+        "correctAnswer": "position: sticky;",
+        "explanation": "The 'position: sticky;' property is a hybrid mechanism. The element follows the normal layout flow until its offset threshold (e.g., top: 0;) is met during scrolling. At that exact point, it behaves like a fixed element, sticking to the edge of its parent container until the parent moves out of view."
+    },
+    {
+        "question": "What does a CSS declaration of 'opacity: 0.5;' do to an element node?",
+        "options": [
+            "It shrinks the scale dimensions of the element box by exactly half.",
+            "It sets the element layout transparency level to 50%, making it partially see-through.",
+            "It moves the element 50 pixels down from its natural relative top baseline location.",
+            "It masks the background grid borders from appearing in high contrast modes."
+        ],
+        "correctAnswer": "It sets the element layout transparency level to 50%, making it partially see-through.",
+        "explanation": "The 'opacity' property controls the transparency level of an element and all its children. It accepts values ranging from 0.0 (completely transparent and invisible) to 1.0 (fully opaque and solid). A value of 0.5 cuts visual opacity directly in half."
+    },
+    {
+        "question": "Which of the following built-in JavaScript functions is used to parse a string argument and return a floating-point decimal number?",
+        "options": [
+            "parseInt()",
+            "parseFloat()",
+            "Math.round()",
+            "Number.toDecimal()"
+        ],
+        "correctAnswer": "parseFloat()",
+        "explanation": "The 'parseFloat(string)' function examines a text string from left to right, extracts the numeric characters it encounters, and converts them into an actual decimal number data type. If it hits a non-numeric character (other than a period/decimal point), it stops parsing and returns the number accumulated up to that point."
+    },
+    {
+        "question": "What will be the console log output of the following JavaScript code execution: let x = 10; x += 5; console.log(x);",
+        "options": [
+            "10",
+            "5",
+            "15",
+            "\"105\""
+        ],
+        "correctAnswer": "15",
+        "explanation": "The '+=' operator is an Addition Assignment operator. It is shorthand for writing 'x = x + 5'. Since the initial value of 'x' was 10, the engine computes 10 + 5, resulting in 15, and saves that new value back into the variable 'x'."
+    },
+    {
+        "question": "Which built-in JavaScript string method searches a string for a specified value and returns a new string with the very first occurrence of that value replaced?",
+        "options": [
+            "string.replace()",
+            "string.search()",
+            "string.concat()",
+            "string.slice()"
+        ],
+        "correctAnswer": "string.replace()",
+        "explanation": "The 'string.replace(searchValue, newValue)' method targets the initial instance of the search term matching your query and swaps it out for the replacement value, leaving the original string unchanged. To swap out *all* matching occurrences simultaneously, you would use 'replaceAll()' or a global Regular Expression."
+    },
+    {
+        "question": "What is the primary role of the JavaScript 'setInterval()' method?",
+        "options": [
+            "It delays the initial execution of a single callback function by a set number of milliseconds.",
+            "It repeatedly invokes a specified function or executes a code snippet at fixed, recurring time intervals measured in milliseconds.",
+            "It calculates the exact processing time required to complete a complex mathematical calculation loop.",
+            "It locks a variable's value against accidental mutations during async data fetching cycles."
+        ],
+        "correctAnswer": "It repeatedly invokes a specified function or executes a code snippet at fixed, recurring time intervals measured in milliseconds.",
+        "explanation": "The 'setInterval(function, delay)' method schedules a recurring task. It will continuously fire the target callback function every time the 'delay' threshold passes, until it is explicitly stopped using the 'clearInterval()' function."
+    },
+    {
+        "question": "In modern JavaScript object structures, what is the 'spread operator' syntax configuration?",
+        "options": [
+            "...",
+            "&&",
+            "||",
+            "==="
+        ],
+        "correctAnswer": "...",
+        "explanation": "The spread operator consists of three consecutive periods (...). Introduced in ES6, it unpacks or expands elements of an iterable collection (like arrays or objects) directly into a new context, making it simple to duplicate or merge separate data collections."
+    },
+    {
+        "question": "Which structural HTML attribute is used to group multiple related form radio buttons together so that selecting one option automatically deselects the others?",
+        "options": [
+            "id",
+            "class",
+            "name",
+            "group"
+        ],
+        "correctAnswer": "name",
+        "explanation": "Radio buttons are designed for mutually exclusive single choices. To tell the browser that a set of radio inputs belong to the same group, you must give them all an identical 'name' attribute value. The browser will then ensure only one option can be selected at a time within that group."
+    },
+    {
+        "question": "What does the HTML5 <time> element provide to web applications?",
+        "options": [
+            "An interactive digital countdown timer widget for form submissions.",
+            "A machine-readable representation of dates, times, or durations that search engines and assistive tools can interpret efficiently.",
+            "A specialized script tracking tool that measures page load performance metrics.",
+            "An automated system clock synchronization script."
+        ],
+        "correctAnswer": "A machine-readable representation of dates, times, or durations that search engines and assistive tools can interpret efficiently.",
+        "explanation": "The <time> element is a semantic tag. While it displays standard text on screen for human readers, it can include a 'datetime' attribute (e.g., <time datetime=\"2026-06-14\">) to pass perfectly formatted, unambiguous data to calendars, search engine scrapers, and screen readers."
+    },
+    {
+        "question": "Which CSS pseudo-class selector matches and applies styles to an element only when a user activates it, such as pressing down on a mouse button over a button element?",
+        "options": [
+            ":hover",
+            ":focus",
+            ":active",
+            ":visited"
+        ],
+        "correctAnswer": ":active",
+        "explanation": "The ':active' pseudo-class targets an element during the exact physical duration it is being activated or clicked by the user. For a button or hyperlink, this state begins the moment the mouse button is pressed down and ends when the button is released."
+    },
+    {
+        "question": "What does a CSS rule declaration of 'float: left;' do to a block-level element box?",
+        "options": [
+            "It shifts the element slightly to the left side of its current location using 2D transformation matrices.",
+            "It shifts the element to the far-left edge of its parent container, pulling it out of the normal layout flow and allowing inline text and elements to wrap around it dynamically.",
+            "It hides the right-side border lines of the element box structure.",
+            "It forces the element box width to shrink down to zero pixels automatically."
+        ],
+        "correctAnswer": "It shifts the element to the far-left edge of its parent container, pulling it out of the normal layout flow and allowing inline text and elements to wrap around it dynamically.",
+        "explanation": "The 'float' property shifts an element to the left or right of its enclosure. Neighboring content (like paragraphs and text blocks) will detect its outer edge and reflow itself around the floated item, a layout method traditionally used for wrapping body text around article images."
+    },
+    {
+        "question": "Which CSS property establishes a 3D layering stack priority order for positioned elements, determining which element sits on top if they overlap?",
+        "options": [
+            "display-layer",
+            "z-index",
+            "position-order",
+            "float-priority"
+        ],
+        "correctAnswer": "z-index",
+        "explanation": "The 'z-index' property sets the stack order of an element along the Z-axis (depth). Elements with a higher z-index value will render in front of or on top of overlapping elements with lower values. Note that z-index only takes effect on elements that have an explicit 'position' property value other than 'static'."
+    },
+    {
+        "question": "What will be the resulting value of the JavaScript logical expression evaluating: true && false;",
+        "options": [
+            "true",
+            "false",
+            "undefined",
+            "NaN"
+        ],
+        "correctAnswer": "false",
+        "explanation": "The double ampersand (&&) represents the Logical AND operator. It checks both sides of an expression and evaluates to 'true' if and only if *both* operands are completely truthy. If even one side evaluates to 'false', the entire operation immediately resolves to 'false'."
+    },
+    {
+        "question": "Which DOM manipulation method is used in JavaScript to attach a dynamic listener function to handle user interactions like 'click' or 'submit' on a specific element node?",
+        "options": [
+            "element.addEventListener()",
+            "element.attachEvent()",
+            "element.listenTo()",
+            "element.triggerOn()"
+        ],
+        "correctAnswer": "element.addEventListener()",
+        "explanation": "The 'addEventListener(eventType, callbackFunction)' method registers a targeted event handler on a DOM element node. It allows JavaScript to listen for specified interactions (like 'click', 'keydown', or 'scroll') and run a clean, separate function whenever that action occurs."
+    },
+    {
+        "question": "What is the primary function of the JavaScript 'Window.localStorage' object API?",
+        "options": [
+            "To save sensitive passwords into encrypted browser security keychains.",
+            "To store key-value data directly inside the user's web browser with no expiration date, keeping the data persistent even after tabs are closed and reopened.",
+            "To host structural database tables securely on a remote cloud server structure.",
+            "To manage real-time user session authentication handshakes dynamically."
+        ],
+        "correctAnswer": "To store key-value data directly inside the user's web browser with no expiration date, keeping the data persistent even after tabs are closed and reopened.",
+        "explanation": "Web Storage API's 'localStorage' allows applications to save up to roughly 5MB of string data locally inside the user's browser client. Unlike 'sessionStorage' which gets wiped clean when a tab is closed, data saved in 'localStorage' persists indefinitely until cleared via JavaScript code or manually wiping browser data caches."
+    },
+    {
+        "question": "Which keyword is used inside a JavaScript 'switch' code block to immediately halt structural evaluation paths once a matching case condition is found and executed?",
+        "options": [
+            "stop",
+            "exit",
+            "break",
+            "return"
+        ],
+        "correctAnswer": "break",
+        "explanation": "The 'break' statement terminates the execution of a switch block or loop. Without a 'break' line at the end of a matching case, the program will experience 'fall-through' behavior, meaning it will continue executing the code blocks of subsequent cases below it blindly, regardless of whether they match the evaluation criteria or not."
+    },
+    {
+        "question": "What does the JavaScript array method '.join()' do when executed on an array of elements?",
+        "options": [
+            "It merges two completely separate arrays into a single combined array structure.",
+            "It concatenates all elements of an array into a single string, separated by a specified separator string, and returns that string.",
+            "It sorts the internal elements of an array into alphabetical order sequences.",
+            "It filters out duplicate entries located inside an array collection automatically."
+        ],
+        "correctAnswer": "It concatenates all elements of an array into a single string, separated by a specified separator string, and returns that string.",
+        "explanation": "The '.join(separator)' method flattens an array into a single unified text string. You pass a custom string parameter to define what character separates the array elements (e.g., [\"A\", \"B\"].join(\"-\") results in the string \"A-B\"). If no separator string is passed, it defaults to using a comma character."
+    },
+    {
+        "question": "Which HTML5 tag is used to wrap an independent piece of illustrative content, such as an image, diagram, or code snippet, along with an optional caption element?",
+        "options": [
+            "<picture>",
+            "<figure>",
+            "<aside>",
+            "<canvas>"
+        ],
+        "correctAnswer": "<figure>",
+        "explanation": "The <figure> element is an HTML5 semantic container designed to isolate self-contained flow content, often containing images, diagrams, or code logs. It is frequently paired with <figcaption> to provide a clear, integrated description of the nested media."
+    },
+    {
+        "question": "What is the primary technical function of the HTML5 <main> element within a web page layout?",
+        "options": [
+            "To act as a central global wrapper for running the primary JavaScript application loop.",
+            "To encapsulate the dominant, unique content of the document that is not repeated across sibling pages.",
+            "To force search engine indexers to prioritize everything inside it over the meta header details.",
+            "To automatically apply modern CSS Grid center alignment properties to all its children."
+        ],
+        "correctAnswer": "<encapsulate the dominant, unique content of the document that is not repeated across sibling pages.>",
+        "explanation": "The <main> element structurally designates the primary content area of an HTML document. The content inside must be completely unique to that document and must exclude items repeated across global site structures like nav bars, sidebars, and footer copyrights."
+    },
+    {
+        "question": "Which global HTML attribute allows developers to make any standard text element or block container directly editable by the user right inside the browser window?",
+        "options": [
+            "editable=\"true\"",
+            "contenteditable",
+            "user-modify",
+            "input-mode"
+        ],
+        "correctAnswer": "contenteditable",
+        "explanation": "The 'contenteditable' attribute is a powerful global property. When applied to an element (e.g., <p contenteditable=\"true\">), it transforms that element into a rich text input zone, allowing users to select, modify, or delete the text directly inside the rendered layout view."
+    },
+    {
+        "question": "What is the structural purpose of the HTML5 <dialog> element?",
+        "options": [
+            "To embed an interactive instant messaging or live chat module widget onto the screen.",
+            "To represent a native popup modal or non-modal dialog box component, complete with built-in methods like .showModal().",
+            "To track audio conversation streams for text-to-speech assistive devices.",
+            "To safely log developer error conversations directly to the browser console tab."
+        ],
+        "correctAnswer": "To represent a native popup modal or non-modal dialog box component, complete with built-in methods like .showModal().",
+        "explanation": "The <dialog> element provides a native semantic method for creating popups and lightboxes. When managed via JavaScript using methods like 'showModal()', the browser automatically handles focus trapping and places a default dark backdrop layer beneath the modal box."
+    },
+    {
+        "question": "Which of the following configurations represents a properly structured HTML self-closing tag according to modern HTML5 standards specifications?",
+        "options": [
+            "<br></br>",
+            "<img>",
+            "<input text=\"true\"></input>",
+            "<meta type=\"charset\">"
+        ],
+        "correctAnswer": "<img>",
+        "explanation": "HTML5 explicitly lists void elements (like <img>, <br>, <input>, and <hr>) as tags that do not have any nested text content and therefore do not require a closing tag. While trailing slashes (<img />) are valid for XHTML compatibility, they are completely optional in HTML5."
+    },
+    {
+        "question": "In the CSS Box Model layout mechanics, what is the default behavior of the 'outline' property compared to the 'border' property?",
+        "options": [
+            "An outline takes up physical layout space and pushes neighboring boxes away.",
+            "An outline is drawn completely outside the element's border box line without occupying any physical layout space or affecting the element's width/height dimensions.",
+            "An outline can only ever display a solid black line color layout scheme.",
+            "An outline completely replaces the padding space layer calculations inside the box framework."
+        ],
+        "correctAnswer": "An outline is drawn completely outside the element's border box line without occupying any physical layout space or affecting the element's width/height dimensions.",
+        "explanation": "Outlines are drawn directly on top of elements, outside the border perimeter. Because they do not claim physical pixels in the layout flow calculation, adding or removing an outline will never trigger a layout shift or cause neighboring elements to pop out of place."
+    },
+    {
+        "question": "Which CSS property controls how the background image asset behaves when a user scrolls down the page, allowing it to stay fixed or scroll with the layout content?",
+        "options": [
+            "background-behavior",
+            "background-attachment",
+            "background-scroll-mode",
+            "background-positioning"
+        ],
+        "correctAnswer": "background-attachment",
+        "explanation": "The 'background-attachment' property manages scroll interaction for background graphics. Setting it to 'fixed' locks the background image structurally against the viewport, creating a compelling parallax scrolling effect as the upper content flows past it."
+    },
+    {
+        "question": "If you apply the CSS declaration 'visibility: hidden;' to a structural page element, how does the browser engine handle it?",
+        "options": [
+            "The element is completely deleted from the document, allowing adjacent items to close up the visual gap.",
+            "The element becomes invisible on screen, but it still occupies its exact physical layout space and retains its dimensions within the document flow.",
+            "The element remains fully visible but disables all interactive click listeners completely.",
+            "The element turns entirely black and shifts positions to the bottom of its parent wrapper container."
+        ],
+        "correctAnswer": "The element becomes invisible on screen, but it still occupies its exact physical layout space and retains its dimensions within the document flow.",
+        "explanation": "'visibility: hidden;' hides an item from sight while preserving its structural geometry. The element still acts as an invisible block in the layout flow, unlike 'display: none;', which collapses the element entirely and pulls it out of the layout tree."
+    },
+    {
+        "question": "Which CSS selector combinator is used to target a sibling element that is positioned *immediately* after another element on the exact same hierarchical level (e.g., 'h1 + p')?",
+        "options": [
+            "The general sibling combinator (~)",
+            "The adjacent sibling combinator (+)",
+            "The child combinator (>)",
+            "The descendant combinator (space)"
+        ],
+        "correctAnswer": "The adjacent sibling combinator (+)",
+        "explanation": "The plus sign (+) represents the Adjacent Sibling Combinator. It targets an element if and only if it directly follows a specific preceding element on the same level of the DOM tree. For example, 'h1 + p' styles only the very first paragraph that instantly follows a header."
+    },
+    {
+        "question": "What is the structural capability of using the CSS flex property shorthand value 'flex: 1;' applied directly onto a child flex item?",
+        "options": [
+            "It forces the flex item to take up exactly one pixel of width layout space.",
+            "It instructs the flex item to grow dynamically to occupy all remaining unallocated space inside the flex container, scaling evenly alongside any competing sibling components configured with the same property value.",
+            "It changes the flex structural alignment model to a rigid grid grid matrix.",
+            "It locks the child item's sizing parameters completely against browser responsive viewport shifts."
+        ],
+        "correctAnswer": "It instructs the flex item to grow dynamically to occupy all remaining unallocated space inside the flex container, scaling evenly alongside any competing sibling components configured with the same property value.",
+        "explanation": "The declaration 'flex: 1;' expands to its full shorthand components: 'flex-grow: 1;', 'flex-shrink: 1;', and 'flex-basis: 0%'. This makes the targeted item flexible, allowing it to stretch and evenly claim any leftover empty horizontal or vertical space inside its parent container layout."
+    },
+    {
+        "question": "Which of the following values represents an absolute, non-relative unit of measurement within modern cascading style sheet configurations?",
+        "options": [
+            "vh",
+            "ch",
+            "px",
+            "rem"
+        ],
+        "correctAnswer": "px",
+        "explanation": "The pixel ('px') unit is classified as an absolute unit of measurement because it maps directly to a fixed scale that does not dynamically change based on font sizes or viewport dimensions. Units like 'vh' (viewport height) and 'rem' (root font size) are highly relative layout units."
+    },
+    {
+        "question": "What will be the exact array output of the following JavaScript code logic: let fruits = [\"Apple\", \"Banana\"]; fruits.push(\"Cherry\"); console.log(fruits);",
+        "options": [
+            "[\"Cherry\", \"Apple\", \"Banana\"]",
+            "[\"Apple\", \"Banana\"]",
+            "[\"Apple\", \"Banana\", \"Cherry\"]",
+            "[\"Cherry\"]"
+        ],
+        "correctAnswer": "[\"Apple\", \"Banana\", \"Cherry\"]",
+        "explanation": "The native array '.push()' method appends one or more items directly onto the tail end of the calling array. It mutates the existing array in place and returns the new total length integer value of the updated array structure."
+    },
+    {
+        "question": "Which JavaScript keyword is explicitly used to initiate an emergency exit execution path out of a standard looping block (like a 'for' or 'while' loop) before the loop completes all its natural conditional cycles?",
+        "options": [
+            "continue",
+            "break",
+            "halt",
+            "return"
+        ],
+        "correctAnswer": "break",
+        "explanation": "The 'break' keyword instantly short-circuits the execution loop. It forces the control flow thread to break out of the nearest enclosing loop block immediately, skipping any remaining iterations and resuming with the lines of code located directly below the loop."
+    },
+    {
+        "question": "What occurs behind the scenes in JavaScript when you try to declare a variable using the 'const' keyword without providing an immediate initial value assignment?",
+        "options": [
+            "The variable is successfully created and defaults to an initial value state of 'undefined'.",
+            "The execution environment throws a fatal SyntaxError: Missing initializer in const declaration.",
+            "The JavaScript engine automatically converts the variable declaration into a 'let' statement format.",
+            "The script engine delays execution until an assignment line surfaces lower down in the file."
+        ],
+        "correctAnswer": "The execution environment throws a fatal SyntaxError: Missing initializer in const declaration.",
+        "explanation": "Variables declared with 'const' represent read-only constant bindings. Because their values can never be reassigned once defined, the JavaScript parser strictly requires an initial value at the exact line of declaration; omitting it throws an unrecoverable syntax crash."
+    },
+    {
+        "question": "Which native JavaScript mechanism can be used to convert an integer number data type into a clean, well-formatted text string representation?",
+        "options": [
+            "number.toString()",
+            "number.convertToString()",
+            "String.parse(number)",
+            "JSON.toText(number)"
+        ],
+        "correctAnswer": "number.toString()",
+        "explanation": "The prototype method '.toString()' converts primitive numerical values into their exact literal string text equivalent. For instance, '(15).toString()' yields the text string sequence \"15\"."
+    },
+    {
+        "question": "What will be the outcome of evaluating the strict inequality expression in JavaScript: 10 !== \"10\"?",
+        "options": [
+            "false",
+            "true",
+            "TypeError",
+            "null"
+        ],
+        "correctAnswer": "true",
+        "explanation": "The strict inequality operator ('!==') checks for differences in value or data type without applying coercion rules. Because the number 10 and the string \"10\" are fundamentally different data types, they are not strictly equal, causing the inequality test to resolve to 'true'."
+    },
+    {
+        "question": "Which HTML tag is used to wrap an individual caption text element inside an independent semantic <figure> media asset container block?",
+        "options": [
+            "<caption-text>",
+            "<figcaption>",
+            "<summary>",
+            "<label>"
+        ],
+        "correctAnswer": "<figcaption>",
+        "explanation": "The <figcaption> element provides a compliant text label or caption for a <figure> container block. It must be nested as either the very first or very last child node inside the parent <figure> framework."
+    },
+    {
+        "question": "What structural role does the HTML5 <nav> element fulfill in modern front-end layouts?",
+        "options": [
+            "It configures a background satellite route tracking link to log user coordinates.",
+            "It wraps a section of a webpage that contains primary navigational links, helping screen readers and search engines find structural steering points quickly.",
+            "It forces links to open inside a detached floating iframe map window.",
+            "It manages standard drop-down dropdown selector menu transitions automatically."
+        ],
+        "correctAnswer": "It wraps a section of a webpage that contains primary navigational links, helping screen readers and search engines find structural steering points quickly.",
+        "explanation": "The <nav> tag is a crucial semantic landmark. It communicates to user-assistive tech tools that its nested child content contains major menu hubs or navigational systems designed to map out the application's layout paths."
+    },
+    {
+        "question": "Which CSS property is used to specify how a flex container should distribute empty space between and around its child items along the *main axis* horizontal flow layout?",
+        "options": [
+            "align-items",
+            "justify-content",
+            "flex-wrap",
+            "align-content"
+        ],
+        "correctAnswer": "justify-content",
+        "explanation": "The 'justify-content' property aligns flex items along the main layout axis. It accepts spacing distribution commands like 'flex-start', 'flex-end', 'center', 'space-between', and 'space-around'."
+    },
+    {
+        "question": "What does a layout property declaration of 'position: relative;' do to an element node if no top/bottom/left/right coordinates are specified?",
+        "options": [
+            "It detaches the element from the normal layout flow and shifts it to the top left screen corner.",
+            "The element remains at its exact natural location in the normal document flow, but it now establishes a positioning reference context for any of its absolute-positioned descendant elements.",
+            "It forces the element box layout layer to shrink down to a hidden point coordinate state.",
+            "It automatically centers the element box vertically and horizontally within its current container layout block."
+        ],
+        "correctAnswer": "The element remains at its exact natural location in the normal document flow, but it now establishes a positioning reference context for any of its absolute-positioned descendant elements.",
+        "explanation": "An element with 'position: relative;' without directional offsets retains its natural position. However, it serves as a critical positioning anchor block for any nested child elements configured with 'position: absolute;'."
+    },
+    {
+        "question": "Which of the following choices represents the correct CSS syntax configuration to change the text character colors of all paragraph elements to red?",
+        "options": [
+            "p { text-color: red; }",
+            "p { color: red; }",
+            "paragraph { color: red; }",
+            "p { font-color: red; }"
+        ],
+        "correctAnswer": "p { color: red; }",
+        "explanation": "In CSS, there are no properties named 'text-color' or 'font-color'. To modify the typographic color of text characters inside any structural element block, you use the 'color' property."
+    },
+    {
+        "question": "What is the expected value of the JavaScript calculation: console.log(Math.floor(4.9));",
+        "options": [
+            "5",
+            "4",
+            "4.9",
+            "NaN"
+        ],
+        "correctAnswer": "4",
+        "explanation": "The 'Math.floor(x)' function takes a numeric value and rounds it downward to the nearest lower integer. Therefore, even though 4.9 is closer to 5, Math.floor strips the decimal and returns exactly 4."
+    },
+    {
+        "question": "Which built-in JavaScript method acts as an event handler to execute a single callback function *exactly once* after a specified delay time in milliseconds has lapsed?",
+        "options": [
+            "window.setInterval()",
+            "window.setTimeout()",
+            "window.delay()",
+            "window.wait()"
+        ],
+        "correctAnswer": "window.setTimeout()",
+        "explanation": "The 'setTimeout(callback, delay)' method schedules a one-time execution trigger. Once the specified countdown delay passes, the engine runs the callback code block and destroys the timer instance."
+    },
+    {
+        "question": "What will be the evaluation result of the JavaScript comparative statement: console.log(\"5\" == 5);",
+        "options": [
+            "false",
+            "true",
+            "TypeError",
+            "undefined"
+        ],
+        "correctAnswer": "true",
+        "explanation": "The loose equality operator ('==') triggers implicit type coercion when it encounters mismatched data types. In this scenario, it converts the string character \"5\" into its numeric equivalent 5 before performing the value check, causing the expression to return 'true'."
+    },
+    {
+        "question": "Which DOM node property allows JavaScript code to read or alter the raw structural HTML markup tags nested inside an element block container?",
+        "options": [
+            "element.textContent",
+            "element.innerHTML",
+            "element.innerText",
+            "element.nodeValue"
+        ],
+        "correctAnswer": "element.innerHTML",
+        "explanation": "The '.innerHTML' property exposes the internal raw markup string of a DOM element node. Modifying it causes the browser's HTML parser to tear down the existing child nodes and rebuild a brand-new tree layout based on the injected HTML tags."
+    },
+    {
+        "question": "Which HTML5 attribute is used to group multiple form field elements together under a common header text to create an organized form layout?",
+        "options": [
+            "<groupbox>",
+            "<fieldset>",
+            "<optgroup>",
+            "<section>"
+        ],
+        "correctAnswer": "<fieldset>",
+        "explanation": "The <fieldset> tag is used to group several related controls and labels within a web form. It works hand-in-hand with the <legend> element, which defines a caption/title for the fieldset group, creating a semantic border container around the fields for better accessibility."
+    },
+    {
+        "question": "What is the primary architectural purpose of the HTML5 <footer> element?",
+        "options": [
+            "To contain technical metadata tags and external stylesheet links that belong at the bottom of the code.",
+            "To house trailing information about its nearest sectioning or root document ancestor, such as copyright data, terms of service links, or contact details.",
+            "To force a layout block to float and stay permanently pinned to the bottom of the device screen viewport.",
+            "To execute clean-up scripts right before the browser cache clears."
+        ],
+        "correctAnswer": "To house trailing information about its nearest sectioning or root document ancestor, such as copyright data, terms of service links, or contact details.",
+        "explanation": "The <footer> tag is a structural semantic layout element. It indicates that its children contain end-of-page or end-of-section boilerplate info (like legal policies or authors), but it does not inherently apply CSS layouts like a sticky or fixed placement."
+    },
+    {
+        "question": "Which HTML input attribute can be used to limit a number input (type=\"number\") or range input so the user can only adjust values by specific increments (e.g., ticking up by 5s)?",
+        "options": [
+            "increment",
+            "step",
+            "gap",
+            "range-interval"
+        ],
+        "correctAnswer": "step",
+        "explanation": "The 'step' attribute specifies the legal number intervals for an <input> element. For example, setting step=\"5\" on a number input means the browser will restrict valid entries to increments of 5 (0, 5, 10...) and flag any intermediate numbers as invalid during form validation."
+    },
+    {
+        "question": "What happens if you use an HTML anchor (<a>) tag with an href attribute containing nothing but a hash symbol (href=\"#\")?",
+        "options": [
+            "The browser crashes instantly and outputs a fatal routing execution error.",
+            "Clicking the link will jump the user directly back up to the very top of the current web page layout.",
+            "The browser opens a completely blank browser tab in the background.",
+            "The browser attempts to refresh the page layout while clearing local cache blocks."
+        ],
+        "correctAnswer": "Clicking the link will jump the user directly back up to the very top of the current web page layout.",
+        "explanation": "An href value of '#' targets the top of the current document page. When clicked, the browser appends '#' to the active URL and instantly scrolls the page view back up to coordinate (0,0), unless JavaScript intercepts the event with 'preventDefault()'."
+    },
+    {
+        "question": "Which HTML5 inline semantic element is used to highlight text to indicate an active computer code block, variable name, or terminal command?",
+        "options": [
+            "<pre>",
+            "<samp>",
+            "<code>",
+            "<kbd>"
+        ],
+        "correctAnswer": "<code>",
+        "explanation": "The <code> tag is an inline element used to mark text as computer programming content. Browsers render the text inside using a fixed-width monospace font by default. To output multi-line code blocks, it is typically wrapped inside a block-level <pre> element."
+    },
+    {
+        "question": "In the CSS Grid layout model, which property is used to control the physical gap distances explicitly between layout *rows*?",
+        "options": [
+            "column-gap",
+            "row-gap",
+            "grid-margin",
+            "row-padding"
+        ],
+        "correctAnswer": "row-gap",
+        "explanation": "The 'row-gap' property (previously 'grid-row-gap' in earlier specs) defines the gutter space between adjacent rows inside a grid or flex container, enabling cleanly separated content blocks without modifying individual margin styles."
+    },
+    {
+        "question": "What is the primary structural function of the CSS property 'box-shadow'?",
+        "options": [
+            "It masks the background image asset inside a 2D clipping matrix path.",
+            "It applies a drop-shadow effect layout directly onto the border frame outline of an element box.",
+            "It creates an inner border effect layer that displaces the padding calculation model.",
+            "It adjusts the visual contrast level of text rendering on high-density displays."
+        ],
+        "correctAnswer": "It applies a drop-shadow effect layout directly onto the border frame outline of an element box.",
+        "explanation": "The 'box-shadow' property attaches aesthetic shadow effects to an element's framing outline. It accepts parameters specifying the horizontal offset, vertical offset, blur radius, spread radius, and shadow color (e.g., box-shadow: 5px 5px 10px rgba(0,0,0,0.5);)."
+    },
+    {
+        "question": "Which of the following CSS pseudo-classes matches an element only if it currently has no child nodes or text nodes inside its opening and closing tags?",
+        "options": [
+            ":blank",
+            ":void",
+            ":empty",
+            ":clear"
+        ],
+        "correctAnswer": ":empty",
+        "explanation": "The ':empty' structural pseudo-class targets elements that are completely vacant. If an element contains any child elements, text characters, or even a single blank space character, it will fail to match the ':empty' selector rules."
+    },
+    {
+        "question": "In CSS, what is the core structural difference between an element selector (e.g., 'div') and a class selector (e.g., '.div')?",
+        "options": [
+            "An element selector can only style single instances, whereas class selectors style multiple instances.",
+            "An element selector targets all occurrences of that explicit HTML tag, while a class selector targets elements assigned a matching class attribute, regardless of their tag type.",
+            "Class selectors are completely ignored by older web browser parsing systems.",
+            "Element selectors always possess a higher cascade specificity weight than class selectors."
+        ],
+        "correctAnswer": "An element selector targets all occurrences of that explicit HTML tag, while a class selector targets elements assigned a matching class attribute, regardless of their tag type.",
+        "explanation": "Tag/element selectors target basic HTML nodes (like all <div> or <p> tags). Class selectors look for class attribute markers (preceded by a dot in CSS, like '.card') and can be used flexibly across completely different types of tags to share uniform style rules."
+    },
+    {
+        "question": "Which CSS declaration can be used to force a text element to break words mid-syllable and wrap to a new line if it hits the boundary width of its container, preventing layout overflow?",
+        "options": [
+            "text-align: wrap;",
+            "overflow-wrap: break-word;",
+            "white-space: nowrap;",
+            "word-spacing: dense;"
+        ],
+        "correctAnswer": "overflow-wrap: break-word;",
+        "explanation": "The 'overflow-wrap: break-word;' property (historically known as 'word-wrap') tells the browser to break an otherwise unbreakable long string of characters (like a long URL) into a new line layout block if it threatens to overflow its structural container boundaries."
+    },
+    {
+        "question": "What is the value of the JavaScript expression: console.log(typeof []);?",
+        "options": [
+            "\"array\"",
+            "\"object\"",
+            "\"list\"",
+            "\"undefined\""
+        ],
+        "correctAnswer": "\"object\"",
+        "explanation": "In JavaScript, arrays are not categorized as a unique primitive data type. Under the hood, arrays are specialized instances of the standard 'Object' framework with built-in numerical indexing keys and an automated '.length' tracker property."
+    },
+    {
+        "question": "Which JavaScript array method acts destructively to remove the very *first* element from the beginning of an array and shifts all remaining items down to a lower index?",
+        "options": [
+            "array.pop()",
+            "array.shift()",
+            "array.unshift()",
+            "array.splice()"
+        ],
+        "correctAnswer": "array.shift()",
+        "explanation": "The '.shift()' method alters the array in place by slicing away the first item (index 0) and returning it to the running code scope. To inject a brand-new element directly to the front of an array instead, you would call '.unshift()'."
+    },
+    {
+        "question": "What is the expected behavior of a JavaScript function that finishes execution without running across an explicit 'return' statement block?",
+        "options": [
+            "The function throws an unrecoverable compilation crash error loop.",
+            "The function implicitly returns a value state of 'undefined' to the calling execution scope.",
+            "The function loops endlessly until system resources are exhausted.",
+            "The function returns a boolean value state of 'false'."
+        ],
+        "correctAnswer": "The function implicitly returns a value state of 'undefined' to the calling execution scope.",
+        "explanation": "In JavaScript, if a function reaches its closing curly brace without an explicit 'return' instruction specifying an output payload, the execution engine automatically supplies an implicit return value of 'undefined'."
+    },
+    {
+        "question": "Which comparison operator in JavaScript checks whether a value is loosely equal to another while intentionally ignoring data type differences?",
+        "options": [
+            "===",
+            "==",
+            "!=",
+            "!=="
+        ],
+        "correctAnswer": "==",
+        "explanation": "The double equals operator ('==') is the loose equality comparison operator. It performs type coercion behind the scenes to try and convert mismatched data arguments into comparable formats before testing their actual values."
+    },
+    {
+        "question": "What will be the console string output after executing this JavaScript template literal code block: let name = \"Alex\"; console.log(`Hello, ${name}`);",
+        "options": [
+            "\"Hello, ${name}\"",
+            "\"Hello, Alex\"",
+            "\"Hello, name\"",
+            "TypeError"
+        ],
+        "correctAnswer": "\"Hello, Alex\"",
+        "explanation": "Template literals are strings wrapped in backtick characters (``) rather than standard quotation marks. They allow string interpolation, where expressions inside the '${}' placeholder syntax are dynamically evaluated and cast directly into the string output."
+    },
+    {
+        "question": "Which HTML tag pair is explicitly used to define a selectable choice item nested directly inside a drop-down <select> selection component?",
+        "options": [
+            "<item>...</item>",
+            "<option>...</option>",
+            "<choice>...</choice>",
+            "<list-item>...</list-item>"
+        ],
+        "correctAnswer": "<option>...</option>",
+        "explanation": "The <option> tag specifies individual choices within an HTML form selector menu. The value attribute inside each option configuration handles what exact string payload is shipped to server systems when forms are submitted."
+    },
+    {
+        "question": "What structural role does the HTML5 <article> tag serve in modern layout architectures?",
+        "options": [
+            "It configures a mandatory grid section for tracking news site styling constraints.",
+            "It represents a self-contained, independent composition block that is intended to be completely reusable and distributable across other page feeds.",
+            "It wraps introductory title headings exclusively to push accessibility data paths forward.",
+            "It connects external blog databases directly into the visual page DOM."
+        ],
+        "correctAnswer": "It represents a self-contained, independent composition block that is intended to be completely reusable and distributable across other page feeds.",
+        "explanation": "The <article> tag is an HTML5 semantic element. It flags a content layout block (like a single blog post, a forum item, or a product card) as independent and standalone, meaning it would still make total logical sense if extracted and embedded into another website page."
+    },
+    {
+        "question": "Which CSS property manages what type of mouse cursor icon is displayed to the user when they hover their pointer device over an element?",
+        "options": [
+            "pointer-events",
+            "cursor",
+            "mouse-style",
+            "hover-icon"
+        ],
+        "correctAnswer": "cursor",
+        "explanation": "The 'cursor' property alters the pointer icon layout. It accepts keyword values like 'pointer' (displays a hand icon for clickable items), 'wait' (hourglass spinner), 'not-allowed' (circle with a line), or 'text' (I-beam cursor)."
+    },
+    {
+        "question": "What is the primary visual function of the CSS layout declaration 'text-align: justify;'?",
+        "options": [
+            "It centers all lines of text horizontally within their bounding container blocks.",
+            "It stretches text blocks so that every single line has equal horizontal width, aligning tightly with both the left and right margins of the container element.",
+            "It shifts text blocks entirely to the far right edge of the page canvas.",
+            "It adds decorative underline rules under all paragraph element phrases."
+        ],
+        "correctAnswer": "It stretches text blocks so that every single line has equal horizontal width, aligning tightly with both the left and right margins of the container element.",
+        "explanation": "Setting 'text-align: justify;' instructs the browser layout engine to adjust the variable spacing gaps between words dynamically on each line. This ensures every line forms a clean vertical margin wall on both the left and right sides of the block."
+    },
+    {
+        "question": "Which CSS property is used to explicitly prevent a floated element from sitting next to another floated element, forcing it down below them on the left, right, or both sides?",
+        "options": [
+            "clear",
+            "float-reset",
+            "overflow-clean",
+            "display: block;"
+        ],
+        "correctAnswer": "clear",
+        "explanation": "The 'clear' property controls layout wrapping relative to floated components. Declaring 'clear: both;' forces an element layout block to shift downward vertically, positioning itself entirely beneath any active left- or right-floated elements."
+    },
+    {
+        "question": "Which JavaScript array function iterates through an array and evaluates a condition against every element, returning a brand-new array containing *only* the items that pass the truth test?",
+        "options": [
+            "array.map()",
+            "array.filter()",
+            "array.forEach()",
+            "array.reduce()"
+        ],
+        "correctAnswer": "array.filter()",
+        "explanation": "The '.filter()' array utility runs a conditional callback on every item in the array. It populates and returns a new array holding only the elements for which the callback returns a truthy value, without altering the source array."
+    },
+    {
+        "question": "What will be the console output of the following JavaScript mathematical computation: let result = 15 / \"3\"; console.log(result);",
+        "options": [
+            "\"153\"",
+            "5",
+            "NaN",
+            "TypeError"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The division operator ('/') forces numeric mathematical processing. JavaScript coercively converts the text string \"3\" into its primitive numerical equivalent 3 and divides 15 by 3, yielding a numeric output value of 5."
+    },
+    {
+        "question": "Which DOM selection method allows JavaScript developers to target and fetch an element node by passing any valid, complex CSS selector string (e.g., '.box > p:first-child')?",
+        "options": [
+            "document.getElementById()",
+            "document.querySelector()",
+            "document.getElementsByClassName()",
+            "document.fetchElement()"
+        ],
+        "correctAnswer": "document.querySelector()",
+        "explanation": "The 'document.querySelector()' method is highly flexible. It accepts any standard CSS selector string and searches the DOM tree from the top down, returning the very first element node matching the query criteria."
+    },
+    {
+        "question": "What is the primary function of the JavaScript 'Window.sessionStorage' object API?",
+        "options": [
+            "To cache secure server data files persistently for several calendar years.",
+            "To store key-value data in the user's browser client that persists only for the duration of the active browser tab session, wiping completely clean when the tab or window is closed.",
+            "To securely lock user banking records from being accessed by client scripts.",
+            "To speed up asynchronous network requests by pre-fetching API routes."
+        ],
+        "correctAnswer": "To store key-value data in the user's browser client that persists only for the duration of the active browser tab session, wiping completely clean when the tab or window is closed.",
+        "explanation": "The 'sessionStorage' API mirrors 'localStorage' syntax perfectly. However, its lifetime bound is restricted strictly to the lifecycle of the specific tab instance. Closing out the tab kills the session instance and auto-deletes the cached data rows instantly."
+    },
+    {
+        "question": "Which structural JavaScript conditional statement evaluates an expression once, matches the expression's value to a series of defined case labels, and executes the associated code block?",
+        "options": [
+            "if...else statement",
+            "for...in loop",
+            "switch statement",
+            "while block"
+        ],
+        "correctAnswer": "switch statement",
+        "explanation": "The 'switch' statement is a control flow mechanism ideal for clean multi-way branching. It matches an expression target value against structural 'case' targets sequentially, execution shifting directly to the first exact match block."
+    },
+    {
+        "question": "Which HTML5 element is specifically designed to embed a responsive scalar vector graphics map directly into a page layout without referencing external file assets?",
+        "options": [
+            "<canvas>",
+            "<svg>",
+            "<img>",
+            "<picture>"
+        ],
+        "correctAnswer": "<svg>",
+        "explanation": "The <svg> tag hosts Scalable Vector Graphics directly inside the HTML markup. Because it uses XML-based descriptions to draw shapes, lines, and curves, the graphics scale infinitely to any screen resolution without experiencing pixelation or blurriness."
+    },
+    {
+        "question": "What is the primary visual behavior of the HTML blockquote (<blockquote>) element when rendered by default in most browsers?",
+        "options": [
+            "It converts all text characters inside it into an italicized serif font profile.",
+            "It indents the entire content block by adding structural left and right margin spaces.",
+            "It adds decorative quotation marks before and after the text string automatically.",
+            "It forces the text to align to the far right margin wall of the parent element."
+        ],
+        "correctAnswer": "It indents the entire content block by adding structural left and right margin spaces.",
+        "explanation": "The <blockquote> tag indicates that the enclosed text is an extended quotation from another source. Browsers typically apply a default horizontal indent (usually around 40px of margin-left and margin-right) to visually separate the quote from the surrounding text flow."
+    },
+    {
+        "question": "Which attribute can be added to an HTML <form> element to specify how form data should be encoded before it is dispatched to a server backend system?",
+        "options": [
+            "method",
+            "enctype",
+            "action",
+            "target"
+        ],
+        "correctAnswer": "enctype",
+        "explanation": "The 'enctype' (encoding type) attribute defines how browser engines format form data before submission. For example, if your form contains file upload components (<input type=\"file\">), you must configure the enctype attribute to 'multipart/form-data'."
+    },
+    {
+        "question": "What structural role does the HTML5 <details> element perform when paired alongside a nested <summary> tag?",
+        "options": [
+            "It establishes an interactive disclosure widget that users can toggle open or closed to reveal or hide an extra block of information.",
+            "It creates a protected layout container that encrypts sensitive form data.",
+            "It acts as a metadata tracker that passes page metrics straight to analytics scrapers.",
+            "It renders an automated numbering grid index for documentation manuals."
+        ],
+        "correctAnswer": "It establishes an interactive disclosure widget that users can toggle open or closed to reveal or hide an extra block of information.",
+        "explanation": "The <details> and <summary> tags work together natively to create an accordion toggle. The user clicks on the text inside the <summary> element to reveal or collapse the rest of the content hidden inside the parent <details> wrapper, completely without JavaScript."
+    },
+    {
+        "question": "Which HTML input attribute locks a text field so that users can read and select its value but are completely barred from typing or changing its contents?",
+        "options": [
+            "disabled",
+            "readonly",
+            "locked",
+            "secure"
+        ],
+        "correctAnswer": "readonly",
+        "explanation": "The 'readonly' boolean attribute prevents users from altering a field's value, while still allowing them to focus on it, highlight the text, and submit the value with the form. The 'disabled' attribute, by contrast, locks the field, prevents selection, and entirely excludes its data from form submissions."
+    },
+    {
+        "question": "In the CSS flex layout architecture, what occurs when you configure a container element with 'flex-wrap: nowrap;'?",
+        "options": [
+            "Flex items are forced to wrap onto multiple rows if they run out of horizontal viewport space.",
+            "Flex items are forced to stay on a single line, even if it causes them to shrink below their natural sizes or overflow the boundaries of the container block.",
+            "Flex items automatically stretch vertically to fill the full layout height of the screen grid.",
+            "Flex items switch their main-axis alignment direction from horizontal to vertical paths."
+        ],
+        "correctAnswer": "Flex items are forced to stay on a single line, even if it causes them to shrink below their natural sizes or overflow the boundaries of the container block.",
+        "explanation": "'flex-wrap: nowrap;' is the initial factory default setting for Flexbox. It aggressively constrains all children to a single horizontal row. If items cannot shrink any further to fit, they will break out and visually overflow the container boundaries instead of wrapping down."
+    },
+    {
+        "question": "Which CSS property is used to explicitly clear the default stylistic markers, bullets, or numbering sequences from appearing next to list items inside a <ul> or <ol> block?",
+        "options": [
+            "text-decoration: none;",
+            "list-style-type: none;",
+            "marker-style: clear;",
+            "display: inline-block;"
+        ],
+        "correctAnswer": "list-style-type: none;",
+        "explanation": "To strip bullet points from unordered lists or sequential numbers from ordered lists, you configure 'list-style-type: none;'. This is a highly common step when resetting default styles to build clean navigation menus using list items."
+    },
+    {
+        "question": "What is the functional purpose of the CSS property 'vertical-align' when applied to standard layout elements?",
+        "options": [
+            "It positions block-level elements vertically within an explicit parent flex layout structure.",
+            "It sets the vertical alignment of an inline, inline-block, or table-cell element relative to its baseline or surrounding line box content.",
+            "It rotates an element 90 degrees around its structural axis point.",
+            "It forces text characters to stack vertically on top of each other."
+        ],
+        "correctAnswer": "It sets the vertical alignment of an inline, inline-block, or table-cell element relative to its baseline or surrounding line box content.",
+        "explanation": "The 'vertical-align' property does not work on block-level containers. It aligns inline-level content (like text images or spans) and table cells relative to their immediate line context, accepting values like 'top', 'middle', 'bottom', or 'baseline'."
+    },
+    {
+        "question": "Which CSS property defines the layout stacking behavior of background images when a container is larger than the original asset dimensions, controlling whether the image tiles or stretches?",
+        "options": [
+            "background-size",
+            "background-repeat",
+            "background-position",
+            "background-clip"
+        ],
+        "correctAnswer": "background-repeat",
+        "explanation": "By default, browsers repeat a background image infinitely both horizontally and vertically to fill a container box. Setting 'background-repeat: no-repeat;' ensures the asset renders only once, which is often paired with 'background-size: cover;' for responsive layouts."
+    },
+    {
+        "question": "What does a CSS specificity calculation look like for a single ID selector combined alongside a single class selector (e.g., '#header .nav-item')?",
+        "options": [
+            "0, 0, 1, 1",
+            "0, 1, 1, 0",
+            "0, 1, 0, 1",
+            "1, 1, 0, 0"
+        ],
+        "correctAnswer": "0, 1, 1, 0",
+        "explanation": "CSS specificity vectors follow a structured hierarchy format: (Inline, ID, Class/Attribute, Tag). A rule matching '#header .nav-item' contains exactly 0 inline styles, 1 ID selector, 1 class selector, and 0 element tag names, translating to a specificity score profile of 0, 1, 1, 0."
+    },
+    {
+        "question": "Which native JavaScript logical operator returns the right-hand operand value if the left-hand operand is completely null or undefined, but returns the left side if it is any other falsy value (like 0 or an empty string)?",
+        "options": [
+            "The Logical OR operator (||)",
+            "The Nullish Coalescing operator (??)",
+            "The Logical AND operator (&&)",
+            "The Ternary operator (? :)"
+        ],
+        "correctAnswer": "The Nullish Coalescing operator (??)",
+        "explanation": "The nullish coalescing operator (??) specifically tests for 'nullish' values (null or undefined). This provides a safer fallback mechanism than the logical OR operator (||), which erroneously skips valid falsy defaults like the number 0 or empty text fields \"\"."
+    },
+    {
+        "question": "What is the expected array output when running the following JavaScript array transformation: let nums = [1, 2, 3]; let doubled = nums.map(x => x * 2); console.log(doubled);",
+        "options": [
+            "[1, 2, 3]",
+            "[2, 4, 6]",
+            "[6]",
+            "TypeError"
+        ],
+        "correctAnswer": "[2, 4, 6]",
+        "explanation": "The '.map()' method loops through an array, runs an operation on each element via a callback function, and pipes the outcomes into a brand-new array. Multiplying each entry by 2 maps the input array [1, 2, 3] directly onto a new [2, 4, 6] collection structure."
+    },
+    {
+        "question": "Which built-in JavaScript method is used to remove whitespace characters from both the beginning and the end of a text string variable?",
+        "options": [
+            "string.strip()",
+            "string.trim()",
+            "string.clean()",
+            "string.slice()"
+        ],
+        "correctAnswer": "string.trim()",
+        "explanation": "The '.trim()' method strips leading and trailing spaces, tabs, and newline characters from a string. It returns a clean copy of the text without modifying the internal text spaces or mutating the original variable."
+    },
+    {
+        "question": "What will be the exact console log output of the following JavaScript mathematical evaluation block: console.log(typeof (5 + \"5\"));",
+        "options": [
+            "\"number\"",
+            "\"string\"",
+            "\"NaN\"",
+            "\"object\""
+        ],
+        "correctAnswer": "\"string\"",
+        "explanation": "When evaluating '5 + \"5\"', the presence of a string operand forces the addition (+) operator to act as a concatenation tool instead of a mathematical summer. The number 5 is coerced into a string, producing the string text \"55\", making its final 'typeof' check resolve to \"string\"."
+    },
+    {
+        "question": "Which modern JavaScript keyword allows developers to declare block-scoped variables that can be freely reassigned or updated later within the running script execution?",
+        "options": [
+            "const",
+            "var",
+            "let",
+            "def"
+        ],
+        "correctAnswer": "let",
+        "explanation": "The 'let' statement declares block-scoped variables. Unlike variables declared with 'const', they can be successfully updated or reassigned later. Unlike old 'var' properties, they are securely contained within their closest block context braces {}."
+    },
+    {
+        "question": "Which HTML tag is used to embed an independent, secondary web page layout document directly inside the frame structure of your current HTML document page?",
+        "options": [
+            "<embed>",
+            "<iframe>",
+            "<object>",
+            "<frame>"
+        ],
+        "correctAnswer": "<iframe>",
+        "explanation": "An <iframe> (Inline Frame) acts as a visual window that embeds another complete HTML document directly within the parent webpage view. It handles its own independent browsing context history, DOM tree, and styling sheets."
+    },
+    {
+        "question": "What does the 'action' attribute specify when declared inside an opening HTML <form> tag container?",
+        "options": [
+            "The specific JavaScript handler function that intercepts click triggers.",
+            "The destination URL path where the gathered form data should be transmitted for server processing upon submission.",
+            "The security protocol used to validate individual input fields.",
+            "The layout animation sequence applied when submission errors surface."
+        ],
+        "correctAnswer": "The destination URL path where the gathered form data should be transmitted for server processing upon submission.",
+        "explanation": "The 'action' attribute explicitly sets the routing endpoint for form data. When a user hits submit, the browser packages the input values and transfers them to the specified file path or API handler endpoint listed in the action parameter."
+    },
+    {
+        "question": "Which CSS typography property controls the specific line height distance between text lines, allowing developers to widen or narrow paragraph text spacing?",
+        "options": [
+            "font-size",
+            "line-height",
+            "letter-spacing",
+            "text-indent"
+        ],
+        "correctAnswer": "line-height",
+        "explanation": "The 'line-height' property manages the vertical spacing boundaries of inline text rows. It can accept keyword states, fixed pixel dimensions, or absolute multiplier numbers (e.g., line-height: 1.5;), which scales spacing proportionally to the active font size."
+    },
+    {
+        "question": "What occurs when you apply a style declaration rule of 'text-transform: capitalize;' onto a block of text via CSS?",
+        "options": [
+            "Every single character in the targeted text block turns into an uppercase capital letter.",
+            "The very first letter of every individual word inside the text block is automatically transformed into an uppercase capital letter.",
+            "The first letter of only the very first word in the block transitions into an uppercase letter.",
+            "The spacing distance between word items increases by a factor of two."
+        ],
+        "correctAnswer": "The very first letter of every individual word inside the text block is automatically transformed into an uppercase capital letter.",
+        "explanation": "The 'capitalize' value for 'text-transform' alters typography rendering by capitalizing the first character of each discrete word node. To force the entire text sequence into pure capital text rendering, you use 'text-transform: uppercase;'."
+    },
+    {
+        "question": "Which CSS layout property handles the positioning priority order of elements on a grid row if multiple items attempt to occupy overlapping columns?",
+        "options": [
+            "grid-auto-flow",
+            "order",
+            "grid-row-start",
+            "z-index"
+        ],
+        "correctAnswer": "order",
+        "explanation": "The 'order' property belongs to Grid and Flexbox layout systems. It overrides the default source code reading sequence of items inside a container, allowing developers to reorder item layout hierarchies visually using integers."
+    },
+    {
+        "question": "Which native JavaScript array method combines all elements of an array into a single value (such as a running total mathematical sum) by executing a reducer callback function sequentially?",
+        "options": [
+            "array.reduce()",
+            "array.map()",
+            "array.forEach()",
+            "array.filter()"
+        ],
+        "correctAnswer": "array.reduce()",
+        "explanation": "The '.reduce()' method cycles through an array while keeping an 'accumulator' track value. It applies a callback function to each array item to condense the entire array down to a single final value payload (e.g., summing up shopping cart item totals)."
+    },
+    {
+        "question": "What will be the console output of the following JavaScript conditional verification statement: console.log(true || false);",
+        "options": [
+            "true",
+            "false",
+            "undefined",
+            "NaN"
+        ],
+        "correctAnswer": "true",
+        "explanation": "The logical OR operator (||) is a short-circuiting operator that evaluates true if at least one side of the expression passes a truthy validation check. Because the left side is 'true', it short-circuits and evaluates to 'true' instantly."
+    },
+    {
+        "question": "Which method is used inside a JavaScript event handler function block to explicitly stop an event from further bubbling upwards through its parent container nodes in the DOM tree?",
+        "options": [
+            "event.preventDefault()",
+            "event.stopPropagation()",
+            "event.cancelBubble()",
+            "event.halt()"
+        ],
+        "correctAnswer": "event.stopPropagation()",
+        "explanation": "Calling 'event.stopPropagation()' halts the bubbling phase of an event. It prevents the event from traveling up the DOM tree, ensuring parent elements with their own event listeners do not accidentally intercept or trigger responses to the action."
+    },
+    {
+        "question": "What is the expected final outcome of running a JavaScript script block that attempts to manipulate an element property that resolves to a 'null' value state?",
+        "options": [
+            "The browser ignores the line completely and proceeds to execute the rest of the script.",
+            "The engine freezes execution and throws a fatal TypeError: Cannot set properties of null.",
+            "The script engine automatically instantiates a new element tag to balance the DOM structure.",
+            "The variable scales its data type up to an empty string field value."
+        ],
+        "correctAnswer": "The engine freezes execution and throws a fatal TypeError: Cannot set properties of null.",
+        "explanation": "Attempting to access or alter properties on a variable that resolves to a primitive 'null' or 'undefined' structural state causes a fatal TypeError crash, which halts execution of the remaining script thread instantly."
+    },
+    {
+        "question": "Which built-in JavaScript object method is used to transform a valid client-side object or array structure directly into a clean, well-formatted JSON text string string payload?",
+        "options": [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "JSON.toText()",
+            "JSON.serialize()"
+        ],
+        "correctAnswer": "JSON.stringify()",
+        "explanation": "The 'JSON.stringify()' method converts live JavaScript data structures into formatted JSON strings. This is a crucial step when prepping complex application data payloads to be transmitted across web networks via HTTP requests."
+    },
+    {
+        "question": "Which HTML5 element is used to provide a container for plug-ins or external interactive applications, such as a third-party game or media player player, that lack native browser tag alternatives?",
+        "options": [
+            "<iframe>",
+            "<embed>",
+            "<canvas>",
+            "<video>"
+        ],
+        "correctAnswer": "<embed>",
+        "explanation": "The <embed> tag provides an integration point for external non-HTML applications or interactive content. It sets up an integration container that passes processing tasks straight to specialized browser plugin engines or external application runtime components."
+    },
+    {
+        "question": "What is the primary visual capability of the HTML5 <canvas> element without adding JavaScript code?",
+        "options": [
+            "It automatically renders interactive 3D charts based on embedded data tables.",
+            "It displays a completely blank, empty rectangular region on the screen that acts as a pixel drawing canvas.",
+            "It links a rotating gallery of compressed graphics files automatically.",
+            "It draws a checkerboard background matrix across the entire browser viewport."
+        ],
+        "correctAnswer": "It displays a completely blank, empty rectangular region on the screen that acts as a pixel drawing canvas.",
+        "explanation": "The <canvas> element is merely a graphic container shell. On its own, it has no drawing capabilities. It requires client-side JavaScript code to access its 2D or 3D rendering context APIs to draw shapes, scale paths, or render animation loops manually."
+    },
+    {
+        "question": "Which HTML attribute specifies that an input field must be completely filled out before a user can successfully submit the enclosing form wizard?",
+        "options": [
+            "validate",
+            "required",
+            "mandatory",
+            "important"
+        ],
+        "correctAnswer": "required",
+        "explanation": "The 'required' attribute is a native HTML5 validation boolean indicator. When appended to interactive elements like text fields, checkboxes, or radio selectors, the browser intercepts form submissions and displays a validation alert if the fields are empty."
+    },
+    {
+        "question": "What does the HTML anchor attribute target=\"_blank\" command the web browser engine to do?",
+        "options": [
+            "It opens the destination link inside a completely blank hidden popup window to run background safety checks.",
+            "It opens the hyperlinked web document inside a brand-new, independent browser tab or window window layer.",
+            "It clears the current active page content completely before rendering the new URL destination.",
+            "It forces the browser to load the link destination inside an isolated, parent-less iframe element box."
+        ],
+        "correctAnswer": "It opens the hyperlinked web document inside a brand-new, independent browser tab or window window layer.",
+        "explanation": "Using target=\"_blank\" changes the link routing behavior. Instead of tearing down the active page to load the destination URL within the same browsing context, the browser leaves the current page completely intact and spawns a fresh tab to render the resource."
+    },
+    {
+        "question": "Which HTML tag is used to wrap an individual row of column title headings nested inside the structural header portion of a data table?",
+        "options": [
+            "<th>...</th>",
+            "<tr>...</tr>",
+            "<thead>...</thead>",
+            "<tb>...</tb>"
+        ],
+        "correctAnswer": "<tr>...</tr>",
+        "explanation": "Even inside the header section (<thead>) of a data table, individual horizontal lines must be initialized using a structural table row (<tr>) container block. Inside that specific row, individual column title cells are then defined using <th> elements."
+    },
+    {
+        "question": "In the CSS box model calculation ecosystem, what structural change occurs when you configure an element box with 'box-sizing: border-box;'?",
+        "options": [
+            "The padding and border pixel thicknesses are added on top of the width and height specifications, causing the element box to physically grow wider.",
+            "The declared width and height properties calculate the total visual size of the box, meaning any added padding or borders are drawn inside the specified width/height boundaries rather than expanding them.",
+            "The element ignores all margin properties and strips out external layout spatial offsets.",
+            "The border layout line is forced to follow a soft, rounded layout curve path."
+        ],
+        "correctAnswer": "The declared width and height properties calculate the total visual size of the box, meaning any added padding or borders are drawn inside the specified width/height boundaries rather than expanding them.",
+        "explanation": "By default ('content-box'), adding padding and borders stretches an element's physical size beyond its set width/height. Switching to 'border-box' tells the browser to swallow padding and borders inside the specified width/height values, making responsive grid planning far easier."
+    },
+    {
+        "question": "Which CSS filter function value turns a colorful image completely grayscale, shifting all color values into tones of black and white?",
+        "options": [
+            "filter: contrast(0%);",
+            "filter: grayscale(100%);",
+            "filter: invert(100%);",
+            "filter: saturate(0%);"
+        ],
+        "correctAnswer": "filter: grayscale(100%);",
+        "explanation": "The 'grayscale()' CSS filter converts input graphics to a monochrome output scheme. Passing a parameter value of 100% strips away all color hue tracks completely, while lower percentages leave subtle color saturation traces behind."
+    },
+    {
+        "question": "What is the functional layout role of the CSS Flexbox property 'flex-direction'?",
+        "options": [
+            "It changes the 3D rotation angle of flex items across the page space axis.",
+            "It establishes the primary main axis flow direction of a flex container, setting whether its child items line up horizontally or vertically.",
+            "It defines whether flex items should float to the left or right of text walls.",
+            "It forces the flex layout framework to switch over to rigid grid matrix constraints."
+        ],
+        "correctAnswer": "It establishes the primary main axis flow direction of a flex container, setting whether its child items line up horizontally or vertically.",
+        "explanation": "The 'flex-direction' property sets the main axis layout orientation. It accepts values like 'row' (aligning items horizontally) or 'column' (stacking items vertically), along with 'row-reverse' and 'column-reverse' to swap layout sequences."
+    },
+    {
+        "question": "Which CSS property is used to explicitly clip or manage content that overflows the explicit width or height boundaries of its parent container box?",
+        "options": [
+            "display-clip",
+            "overflow",
+            "boundary-limit",
+            "box-sizing"
+        ],
+        "correctAnswer": "overflow",
+        "explanation": "The 'overflow' property tells the browser how to handle content that outgrows its container's dimensions. It accepts values like 'visible' (renders outside boundaries), 'hidden' (chops off the excess), 'scroll' (adds persistent scrollbars), or 'auto' (adds scrollbars only if needed)."
+    },
+    {
+        "question": "What does a CSS declaration of 'transform: scale(2);' do to a rendered web element?",
+        "options": [
+            "It multiplies the physical margin spacing values around the element box by two.",
+            "It doubles the visual size dimensions of the element, enlarging it to twice its original scale without affecting the layout position of neighboring elements.",
+            "It duplicates the entire element block inside the DOM tree, creating two distinct copies.",
+            "It increases the typographic weight of all nested text characters up to bold formatting targets."
+        ],
+        "correctAnswer": "It doubles the visual size dimensions of the element, enlarging it to twice its original scale without affecting the layout position of neighboring elements.",
+        "explanation": "The 'scale()' 2D transform function resizes an item dynamically. Because transforms are executed visually during the browser rendering pass, scaling an element up or down never disrupts the static layout position of adjacent content boxes."
+    },
+    {
+        "question": "Which built-in JavaScript mathematical method is used to return the absolute positive value of a number, turning negative numbers into positive numbers?",
+        "options": [
+            "Math.positive()",
+            "Math.abs()",
+            "Math.ceil()",
+            "Math.sqrt()"
+        ],
+        "correctAnswer": "Math.abs()",
+        "explanation": "The 'Math.abs(x)' method computes the absolute numeric magnitude of an expression. It strips away negative signs, so passing -10 or positive 10 returns exactly the same absolute result: 10."
+    },
+    {
+        "question": "What is the expected console outcome of executing the following JavaScript logic: let str = \"123\"; console.log(typeof Number(str));",
+        "options": [
+            "\"string\"",
+            "\"number\"",
+            "\"NaN\"",
+            "\"object\""
+        ],
+        "correctAnswer": "\"number\"",
+        "explanation": "Wrapping a variable inside the global 'Number()' constructor explicitly typecasts its argument into a numeric format. Because \"123\" transforms successfully into the integer 100 + 20 + 3, its final 'typeof' string outputs \"number\"."
+    },
+    {
+        "question": "Which JavaScript array method checks whether *at least one* element inside an array matches a specific conditional validation test, returning a pure boolean true or false value?",
+        "options": [
+            "array.every()",
+            "array.some()",
+            "array.find()",
+            "array.includes()"
+        ],
+        "correctAnswer": "array.some()",
+        "explanation": "The '.some()' array utility executes a callback function across array entries. It returns a boolean 'true' the moment it finds a single item that passes the conditional test. If no items match, it returns 'false'. The '.every()' method, by contrast, requires all items to pass."
+    },
+    {
+        "question": "What will be the final value stored inside the variable 'z' after evaluating this JavaScript block: let x = 20; let y = 30; let z = (x > y) ? \"Alpha\" : \"Beta\";",
+        "options": [
+            "\"Alpha\"",
+            "\"Beta\"",
+            "true",
+            "false"
+        ],
+        "correctAnswer": "\"Beta\"",
+        "explanation": "This line features the conditional (ternary) operator, a compact shorthand for if/else blocks. It evaluates the expression 'x > y' (20 > 30), which is false. Because it resolves to false, the operator skips the first choice (\"Alpha\") and returns the second option (\"Beta\")."
+    },
+    {
+        "question": "Which modern JavaScript string method searches for a substring argument and returns a pure boolean true or false depending on whether that substring exists inside the target text variable?",
+        "options": [
+            "string.indexOf()",
+            "string.includes()",
+            "string.search()",
+            "string.match()"
+        ],
+        "correctAnswer": "string.includes()",
+        "explanation": "The '.includes(substring)' method provides a modern, clean way to look for text fragments, returning a simple true/false boolean. Older specs relied on '.indexOf()', which returns the numeric index position of the match or -1 if the search term is missing."
+    },
+    {
+        "question": "Which structural HTML attribute can be applied to text field elements to restrict the maximum number of characters a user is allowed to type into that specific input area?",
+        "options": [
+            "size",
+            "maxlength",
+            "limit",
+            "char-cap"
+        ],
+        "correctAnswer": "maxlength",
+        "explanation": "The 'maxlength' attribute hard-caps text input entries. When set (e.g., maxlength=\"10\"), the web browser will physically prevent the user from typing any additional characters into that box once the length reaches the specified limit."
+    },
+    {
+        "question": "What is the primary visual behavior of the HTML <hr> element when rendered natively by a browser engine?",
+        "options": [
+            "It sets up a vertical bounding alignment line to split sidebars away from main columns.",
+            "It draws a horizontal line across the layout page, traditionally used to indicate a thematic break or structural transition between content sections.",
+            "It changes all subsequent text layout formatting blocks into high contrast uppercase logs.",
+            "It hides all wrapping paragraph element frames positioned directly below it."
+        ],
+        "correctAnswer": "It draws a horizontal line across the layout page, traditionally used to indicate a thematic break or structural transition between content sections.",
+        "explanation": "The <hr> tag historically stands for 'Horizontal Rule'. In modern HTML5 semantics, it represents a thematic break between paragraph-level blocks, automatically rendering as a thin gray horizontal separator rule line across its parent container."
+    },
+    {
+        "question": "Which CSS pseudo-class selector applies special styling rules to a text field element only while the user has actively clicked or focused inside it, such as showing a blinking text insertion cursor?",
+        "options": [
+            ":hover",
+            ":active",
+            ":focus",
+            ":visited"
+        ],
+        "correctAnswer": ":focus",
+        "explanation": "The ':focus' pseudo-class triggers the moment an element becomes the active target for user input—either by clicking it with a mouse pointer, tapping it on a touchscreen, or navigating onto it using keyboard Tab commands."
+    },
+    {
+        "question": "What does a CSS declaration of 'text-shadow: 2px 2px 4px #000000;' apply to text nodes?",
+        "options": [
+            "It draws a solid 2px outline frame completely surrounding each text block container line.",
+            "It adds a decorative drop-shadow effect directly behind the individual text characters, configuring horizontal offset, vertical offset, blur radius, and shadow color respectively.",
+            "It offsets the typography alignment coordinates 2 pixels to the right side of the screen viewport.",
+            "It blurs the outer font glyphs to simulate anti-aliasing processes."
+        ],
+        "correctAnswer": "It adds a decorative drop-shadow effect directly behind the individual text characters, configuring horizontal offset, vertical offset, blur radius, and shadow color respectively.",
+        "explanation": "The 'text-shadow' property applies shadows to text glyphs. The parameters map out as follows: horizontal shadow displacement (2px), vertical shadow displacement (2px), fuzziness blur radius (4px), and the hex color value for the shadow canvas (#000000)."
+    },
+    {
+        "question": "Which CSS display value transforms an element into a block container that generates a localized block box format for its children while behaving like an inline text element relative to surrounding content?",
+        "options": [
+            "display: block;",
+            "display: inline-block;",
+            "display: flex;",
+            "display: inline-flex;"
+        ],
+        "correctAnswer": "display: inline-block;",
+        "explanation": "An element set to 'display: inline-block;' flows horizontally alongside other text strings and inline tags without starting on a fresh line. Crucially, unlike regular inline tags, it retains full support for explicit width, height, padding, and margin properties."
+    },
+    {
+        "question": "What is the expected output string value when calling the JavaScript conversion function: String(null);?",
+        "options": [
+            "\"\"",
+            "\"null\"",
+            "\"undefined\"",
+            "TypeError"
+        ],
+        "correctAnswer": "\"null\"",
+        "explanation": "The global 'String()' function transforms inputs into their exact string equivalents. When passed the primitive value 'null', it converts the literal keyword characters directly into the standard 4-character text string value \"null\"."
+    },
+    {
+        "question": "Which native JavaScript mechanism can be called to parse an input string and verify whether it evaluates to an invalid, uncomputable number math state?",
+        "options": [
+            "Number.isInteger()",
+            "Number.isNaN()",
+            "Math.checkValid()",
+            "isInfinity()"
+        ],
+        "correctAnswer": "Number.isNaN()",
+        "explanation": "The 'Number.isNaN(value)' method checks if the passed argument is a value that matches the special type 'NaN' (Not-a-Number). It provides a highly accurate, robust safety check compared to the older global 'isNaN()' function, which suffers from loose type coercion bugs."
+    },
+    {
+        "question": "What will be the console logging result after executing the following JavaScript array block: let stack = [10, 20]; stack.pop(); stack.pop(); console.log(stack.length);",
+        "options": [
+            "2",
+            "1",
+            "0",
+            "undefined"
+        ],
+        "correctAnswer": "0",
+        "explanation": "The '.pop()' array method removes the last element from an array. Because the initial array held exactly two entries, invoking '.pop()' twice back-to-back strips away both items sequentially, leaving the array completely empty with a length tracking score of 0."
+    },
+    {
+        "question": "Which JavaScript keyword is used inside a loop block to immediately skip the rest of the current iteration loop cycle and jump straight to evaluating the loop's conditional test for the next iteration step?",
+        "options": [
+            "break",
+            "continue",
+            "skip",
+            "pass"
+        ],
+        "correctAnswer": "continue",
+        "explanation": "The 'continue' statement stops executing the code lines inside the current loop loop iteration pass. Instead of breaking out of the loop completely like 'break', it returns control flow to the loop initialization condition to kick off the next iteration step."
+    },
+    {
+        "question": "What does a JavaScript runtime error message of 'ReferenceError: x is not defined' mean?",
+        "options": [
+            "The data type assigned to variable 'x' is completely mismatched with its arithmetic operator functions.",
+            "The script engine is attempting to look up or execute actions on a variable named 'x' that hasn't been declared or initialized anywhere within an accessible scope range.",
+            "The memory bounds assigned to variable 'x' have experienced an unrecoverable buffer leak layout crash.",
+            "The variable 'x' has been configured with an illegal duplicate constant binding pattern."
+        ],
+        "correctAnswer": "The script engine is attempting to look up or execute actions on a variable named 'x' that hasn't been declared or initialized anywhere within an accessible scope range.",
+        "explanation": "A 'ReferenceError' occurs when the JavaScript interpreter searches through its current local, lexical, and global scope chains and fails to locate any record of a variable matching the identifier name requested by the script execution line."
+    },
 
-
+];
 
 // ======================================
 // QUESTION BANK REGISTRY
@@ -23285,5 +25491,6 @@ const QuestionBanks = {
     PHY102: PHY102_Questions,
     GST112: GST112_Questions,
     BUT_CSC104: BUT_CSC104_Questions,
-    BUT_BIO102: BUT_BIO102_Questions
+    BUT_BIO102: BUT_BIO102_Questions,
+    BUT_ICT118: BUT_ICT118_Questions
 };

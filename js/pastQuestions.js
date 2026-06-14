@@ -57,5 +57,21 @@ const PastQuestionsDatabase = {
         2022: "assets/past-questions/COS102_2022.pdf",
         2023: "assets/past-questions/COS102_2023.pdf",
         2024: "assets/past-questions/COS102_2024.pdf"
-    }
+    },
+    BUT_CSC104: {
+        2022: "assets/past-questions/BUT_CSC104_2022.pdf",
+        2023: "assets/past-questions/BUT_CSC104_2023.pdf",
+        2024: "assets/past-questions/BUT_CSC104_2024.pdf"
+    },
+    BUT_BIO102: {
+        2022: "assets/past-questions/BUT_BIO102_2022.pdf",
+        2023: "assets/past-questions/BUT_BIO102_2023.pdf",
+        2024: "assets/past-questions/BUT_BIO102_2024.pdf"
+    },
+    BUT_ICT118: {
+        2022: "assets/past-questions/BUT_ICT118_2022.pdf",
+        2023: "assets/past-questions/BUT_ICT118_2023.pdf",
+        2024: "assets/past-questions/BUT_ICT118_2024.pdf"
+    },
+
 };
