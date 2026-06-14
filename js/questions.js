@@ -30,226 +30,3725 @@
 // ======================================
 
 const COS102_Questions = [
-    {
-        question: "What does CPU stand for?",
-        options: [
-            "Central Processing Unit",
-            "Computer Personal Unit",
-            "Central Program Unit",
-            "Computer Processing Unit"
-        ],
-        correctAnswer: "Central Processing Unit",
-        explanation: "CPU stands for Central Processing Unit. It is the primary component of a computer that performs most of the processing inside a computer."
-    },
-    {
-        question: "Which of the following is an input device?",
-        options: [
-            "Monitor",
-            "Keyboard",
-            "Printer",
-            "Speaker"
-        ],
-        correctAnswer: "Keyboard",
-        explanation: "A keyboard is an input device used to enter characters and functions into the computer system. Monitors, printers, and speakers are output devices."
-    },
-    {
-        question: "What does RAM stand for?",
-        options: [
-            "Random Access Memory",
-            "Read Access Memory",
-            "Random Allocation Memory",
-            "Readily Available Memory"
-        ],
-        correctAnswer: "Random Access Memory",
-        explanation: "RAM stands for Random Access Memory. It is a volatile memory used to store data that the computer is currently using."
-    },
-    {
-        question: "Which number system uses only 0 and 1?",
-        options: [
-            "Decimal",
-            "Binary",
-            "Octal",
-            "Hexadecimal"
-        ],
-        correctAnswer: "Binary",
-        explanation: "The binary number system uses only two digits: 0 and 1. It is the fundamental language of computers."
-    },
-    {
-        question: "What is the decimal equivalent of binary 1010?",
-        options: [
-            "8",
-            "10",
-            "12",
-            "14"
-        ],
-        correctAnswer: "10",
-        explanation: "Binary 1010 equals decimal 10. (1×8 + 0×4 + 1×2 + 0×1 = 10)"
-    },
-    {
-        question: "Which of the following is NOT an operating system?",
-        options: [
-            "Windows",
-            "Linux",
-            "Microsoft Word",
-            "macOS"
-        ],
-        correctAnswer: "Microsoft Word",
-        explanation: "Microsoft Word is a word processing application, not an operating system. Windows, Linux, and macOS are operating systems."
-    },
-    {
-        question: "What does ROM stand for?",
-        options: [
-            "Read-Only Memory",
-            "Random-Only Memory",
-            "Read-Open Memory",
-            "Run-Only Memory"
-        ],
-        correctAnswer: "Read-Only Memory",
-        explanation: "ROM stands for Read-Only Memory. It stores permanent data that cannot be easily modified or removed."
-    },
-    {
-        question: "Which device is used to connect computers in a local network?",
-        options: [
-            "Router",
-            "Switch",
-            "Modem",
-            "All of the above"
-        ],
-        correctAnswer: "All of the above",
-        explanation: "Routers, switches, and modems can all be used to connect computers in networks, depending on the network configuration."
-    },
-    {
-        question: "What is an algorithm?",
-        options: [
-            "A programming language",
-            "A step-by-step procedure to solve a problem",
-            "A computer virus",
-            "A type of hardware"
-        ],
-        correctAnswer: "A step-by-step procedure to solve a problem",
-        explanation: "An algorithm is a finite sequence of well-defined instructions used to solve a problem or perform a computation."
-    },
-    {
-        question: "Which language is considered a low-level language?",
-        options: [
-            "Python",
-            "Java",
-            "Assembly",
-            "C++"
-        ],
-        correctAnswer: "Assembly",
-        explanation: "Assembly language is a low-level programming language that has a strong correspondence to the computer's machine code instructions."
-    },
-    {
-        question: "What does HTML stand for?",
-        options: [
-            "HyperText Markup Language",
-            "HighTech Modern Language",
-            "HyperTransfer Markup Language",
-            "Home Tool Markup Language"
-        ],
-        correctAnswer: "HyperText Markup Language",
-        explanation: "HTML stands for HyperText Markup Language. It is the standard markup language for documents designed to be displayed in a web browser."
-    },
-    {
-        question: "What does HTTP stand for?",
-        options: [
-            "HyperText Transfer Protocol",
-            "HighText Transfer Protocol",
-            "HyperText Transmission Process",
-            "Home Transfer Text Protocol"
-        ],
-        correctAnswer: "HyperText Transfer Protocol",
-        explanation: "HTTP stands for HyperText Transfer Protocol. It is the foundation of data communication for the World Wide Web."
-    },
-    {
-        question: "Which of the following is a secondary storage device?",
-        options: [
-            "RAM",
-            "Cache",
-            "Hard Disk Drive",
-            "Register"
-        ],
-        correctAnswer: "Hard Disk Drive",
-        explanation: "A Hard Disk Drive (HDD) is a secondary storage device used to permanently store and retrieve digital data. RAM and cache are primary/volatile memory."
-    },
-    {
-        question: "What is the main function of the control unit in a CPU?",
-        options: [
-            "Perform arithmetic calculations",
-            "Store data permanently",
-            "Direct the operation of the processor",
-            "Display output to the user"
-        ],
-        correctAnswer: "Direct the operation of the processor",
-        explanation: "The Control Unit (CU) directs the operation of the processor by telling the computer's memory, arithmetic/logic unit and I/O devices how to respond to instructions."
-    },
-    {
-        question: "Which of the following is a valid IPv4 address?",
-        options: [
-            "192.168.1.1",
-            "256.100.1.1",
-            "192.168.1",
-            "abc.def.ghi.jkl"
-        ],
-        correctAnswer: "192.168.1.1",
-        explanation: "192.168.1.1 is a valid IPv4 address. IP addresses range from 0.0.0.0 to 255.255.255.255, so 256 is invalid."
-    },
-    {
-        question: "What is debugging?",
-        options: [
-            "Writing new code",
-            "Removing errors from code",
-            "Designing user interfaces",
-            "Compiling source code"
-        ],
-        correctAnswer: "Removing errors from code",
-        explanation: "Debugging is the process of finding and resolving bugs (errors) within computer programs, software, or systems."
-    },
-    {
-        question: "Which key combination is commonly used to copy selected text?",
-        options: [
-            "Ctrl + X",
-            "Ctrl + C",
-            "Ctrl + V",
-            "Ctrl + Z"
-        ],
-        correctAnswer: "Ctrl + C",
-        explanation: "Ctrl + C is the standard keyboard shortcut to copy selected text or items to the clipboard."
-    },
-    {
-        question: "What does GUI stand for?",
-        options: [
-            "General User Interface",
-            "Graphical User Interface",
-            "Global User Interaction",
-            "Guided User Interface"
-        ],
-        correctAnswer: "Graphical User Interface",
-        explanation: "GUI stands for Graphical User Interface. It allows users to interact with electronic devices through graphical icons and visual indicators."
-    },
-    {
-        question: "Which of these is an example of application software?",
-        options: [
-            "Windows 11",
-            "Linux Kernel",
-            "Microsoft Excel",
-            "BIOS"
-        ],
-        correctAnswer: "Microsoft Excel",
-        explanation: "Microsoft Excel is application software designed to perform specific tasks for users. Windows and Linux are operating systems; BIOS is firmware."
-    },
-    {
-        question: "What is the smallest unit of data in a computer?",
-        options: [
-            "Byte",
-            "Bit",
-            "Nibble",
-            "Word"
-        ],
-        correctAnswer: "Bit",
-        explanation: "A bit (binary digit) is the smallest unit of data in a computer. It can have a value of either 0 or 1."
-    }
+    
+        {
+            "question": "Which of the following is not a principle of structured programming?",
+            "options": [
+                "Design the program in top-down manner",
+                "Write each program module as a series of control structure",
+                "Code the program so that it runs correctly without testing",
+                "Use good programming style"
+            ],
+            "correctAnswer": "Code the program so that it runs correctly without testing",
+            "explanation": "Testing and debugging are required components of the structured programming lifecycle; no program is assumed to run perfectly without undergoing verification."
+        },
+        {
+            "question": "Which of the following is not a basic control structure?",
+            "options": [
+                "The process",
+                "The decision",
+                "The loop",
+                "The sequential"
+            ],
+            "correctAnswer": "The process",
+            "explanation": "The fundamental control structures in programming logic are Sequence, Selection (Decision), and Iteration (Loop)."
+        },
+        {
+            "question": "Which of the following is not a principle of good programming style?",
+            "options": [
+                "Use descriptive variable names",
+                "Provide a welcome message",
+                "Identify using text the number that output",
+                "Test the program"
+            ],
+            "correctAnswer": "Identify using text the number that output",
+            "explanation": "Numbering outputs arbitrarily is not recognized as a baseline principle of clean, readable, and structured programming style."
+        },
+        {
+            "question": "Which of the following is a pictorial representation of an algorithm?",
+            "options": [
+                "Pseudocode",
+                "Program",
+                "Flowchart",
+                "Algorithm"
+            ],
+            "correctAnswer": "Flowchart",
+            "explanation": "A flowchart uses geometric symbols to visually and diagrammatically depict the sequential steps of an algorithm, whereas pseudocode is entirely text-based."
+        },
+        {
+            "question": "Which of the following symbols in a flowchart is used to indicate all arithmetic processes of adding, subtracting, multiplying, and dividing?",
+            "options": [
+                "Input/output",
+                "Terminal",
+                "Processing",
+                "Decision"
+            ],
+            "correctAnswer": "Processing",
+            "explanation": "The processing symbol (represented as a rectangle) is designated for mathematical calculations, data manipulations, and value assignments."
+        },
+        {
+            "question": "Pseudocode is also known as:",
+            "options": [
+                "Program design language",
+                "Hardware Language",
+                "Software Language",
+                "Algorithm"
+            ],
+            "correctAnswer": "Program design language",
+            "explanation": "Pseudocode is often referred to as a Program Design Language (PDL) because it bridges human language and structural code for architecture planning."
+        },
+        {
+            "question": "Pseudocode emphasizes which stage of software development?",
+            "options": [
+                "Development",
+                "Coding",
+                "Design",
+                "Debugging"
+            ],
+            "correctAnswer": "Design",
+            "explanation": "Pseudocode is primarily utilized during the logic design and planning phases before formal coding begins."
+        },
+        {
+            "question": "In which logic structure are pseudocode instructions written and executed strictly in the order they appear?",
+            "options": [
+                "Selection Logic",
+                "Sequence Logic",
+                "Iteration Logic",
+                "Looping Logic"
+            ],
+            "correctAnswer": "Sequence Logic",
+            "explanation": "Sequence logic executes statements top-to-bottom in a linear, unbranched, and non-repeating chronological order."
+        },
+        {
+            "question": "Which logic structure is used to produce loops when statements must be executed repeatedly based on a condition?",
+            "options": [
+                "Iteration Logic",
+                "Selection Logic",
+                "Sequence Logic",
+                "Decision Logic"
+            ],
+            "correctAnswer": "Iteration Logic",
+            "explanation": "Iteration logic, also termed looping logic, handles cyclic instruction execution until a specified termination condition is met."
+        },
+        {
+            "question": "Selection Logic is alternative terms with which of the following?",
+            "options": [
+                "Decision Logic",
+                "Iteration Logic",
+                "Sequence Logic",
+                "Looping Logic"
+            ],
+            "correctAnswer": "Decision Logic",
+            "explanation": "Selection logic evaluates structural expressions to branch down different execution paths, making it synonymous with decision logic."
+        },
+        {
+            "question": "The component of the computer ecosystem that initially designs the conceptual solution to a problem is:",
+            "options": [
+                "The CPU",
+                "ALU",
+                "Peripherals",
+                "Human being"
+            ],
+            "correctAnswer": "Human being",
+            "explanation": "The human programmer holds the analytical role of understanding a problem and designing the foundational algorithm; computers only execute it."
+        },
+        {
+            "question": "The essential role of the computer in problem solving is to:",
+            "options": [
+                "Design solution",
+                "Implement solution",
+                "Generate result",
+                "Compute"
+            ],
+            "correctAnswer": "Compute",
+            "explanation": "The core function of a computer is computation—processing data swiftly by executing programmatic math and logic steps."
+        },
+        {
+            "question": "Review this snippet: 'Get number, Get another number, multiply numbers, print result'. This represents which primary structure?",
+            "options": [
+                "Sequence",
+                "Decision",
+                "Loop",
+                "Nested"
+            ],
+            "correctAnswer": "Sequence",
+            "explanation": "Because these steps run strictly line-by-line without branching or repeating loops, they form a pure sequential structure."
+        },
+        {
+            "question": "The actual set of concrete instructions written in a programming language to carry out a specific task is called:",
+            "options": [
+                "Algorithm",
+                "Code",
+                "Program",
+                "Flowchart"
+            ],
+            "correctAnswer": "Code",
+            "explanation": "Code (or source code) comprises the exact syntax instructions built within a programmatic language to build functional software."
+        },
+        {
+            "question": "The logical, structured, and finite list of instructions required to solve a problem is described as an:",
+            "options": [
+                "Flowchart",
+                "Coding",
+                "Programming",
+                "Algorithm"
+            ],
+            "correctAnswer": "Algorithm",
+            "explanation": "An algorithm is a conceptual, platform-independent, step-by-step recipe used to resolve any predefined computation problem."
+        },
+        {
+            "question": "The process symbol in standard software flowcharting is represented by which geometric shape?",
+            "options": [
+                "Parallelogram",
+                "Kite",
+                "Rhombus",
+                "Rectangle"
+            ],
+            "correctAnswer": "Rectangle",
+            "explanation": "Standard flowcharts use rectangles exclusively for processing activities, assignments, and calculations."
+        },
+        {
+            "question": "The input/output symbol in standardized system flowcharting is represented with a:",
+            "options": [
+                "Circle",
+                "Rhombus",
+                "Parallelogram",
+                "Arrow"
+            ],
+            "correctAnswer": "Parallelogram",
+            "explanation": "Parallelograms designate variables being input from an external source or data outputs printed to user displays."
+        },
+        {
+            "question": "Which shape is utilized to denote alternative branching paths or conditional forks in flowcharting?",
+            "options": [
+                "Rhombus",
+                "Kite",
+                "Rectangle",
+                "Oval"
+            ],
+            "correctAnswer": "Rhombus",
+            "explanation": "A rhombus (or diamond) is the standard decision symbol containing a condition that branches into true/false paths."
+        },
+        {
+            "question": "Computational problems involving basic mathematical equations applied over vast data volumes are categorized as:",
+            "options": [
+                "Scientific problems",
+                "Engineering problems",
+                "Business problems",
+                "All of the above"
+            ],
+            "correctAnswer": "Business problems",
+            "explanation": "Business data processing (like payroll systems or customer invoicing) typically relies on simple math run across massive record datasets."
+        },
+        {
+            "question": "Problems that contain complex math matrices but process a small volume of input data are categorized as:",
+            "options": [
+                "Scientific problems",
+                "Engineering problems",
+                "Business problems",
+                "All of the above"
+            ],
+            "correctAnswer": "Scientific problems",
+            "explanation": "Scientific programming fields (like meteorology modeling or physics simulators) process heavy math calculations on concise sample packets."
+        },
+        {
+            "question": "The internal capacity of a programmatic control system to rerun specified lines of code multiple times is known as:",
+            "options": [
+                "Repeating",
+                "Iteration",
+                "Looping",
+                "Branching"
+            ],
+            "correctAnswer": "Iteration",
+            "explanation": "Iteration is the explicit structured mechanism of looping through targeted code blocks using conditional thresholds."
+        },
+        {
+            "question": "A typical, traditional low-level machine instruction contains how many primary semantic parts?",
+            "options": [
+                "Two parts",
+                "Three parts",
+                "Four parts",
+                "Five parts"
+            ],
+            "correctAnswer": "Three parts",
+            "explanation": "Classic instruction formats partition into three baseline components: a label, an operation code (opcode), and an operand address."
+        },
+        {
+            "question": "Which instruction type allows programs to skip steps or branch to alternative execution tracks based on data conditions?",
+            "options": [
+                "Branching instruction",
+                "Logical instruction",
+                "Arithmetic instruction",
+                "Input-Output instruction"
+            ],
+            "correctAnswer": "Branching instruction",
+            "explanation": "Branching instructions alter standard linear execution by shifting the program pointer to a separate target index when triggers hit."
+        },
+        {
+            "question": "The specific segment of an assembly or machine instruction that highlights the target data value or memory address to be operated on is the:",
+            "options": [
+                "Operation code",
+                "Address code",
+                "Operands",
+                "Indexing code"
+            ],
+            "correctAnswer": "Operands",
+            "explanation": "The opcode specifies the action to perform, while the operands specify the exact data inputs or registers to manipulate."
+        },
+        {
+            "question": "Intermediate, abstract syntactic frameworks designed to let humans communicate explicit processes to machine architectures are called:",
+            "options": [
+                "Compilers",
+                "Programming languages",
+                "Assemblers",
+                "Interpreters"
+            ],
+            "correctAnswer": "Programming languages",
+            "explanation": "Programming languages act as formalized communication pipelines converting human logic into machine-readable processes."
+        },
+        {
+            "question": "The foundational abstract list of basic logical processes built to resolve a target problem is called the:",
+            "options": [
+                "Executable code",
+                "A package",
+                "Algorithm",
+                "Logical code"
+            ],
+            "correctAnswer": "Algorithm",
+            "explanation": "An algorithm establishes the base solution logic independent of any compiled target files or runtime software environments."
+        },
+        {
+            "question": "The text written inside an integrated development environment following standard syntax language rules prior to compilation is:",
+            "options": [
+                "An executable file",
+                "Object",
+                "Byte-Code file",
+                "Source code"
+            ],
+            "correctAnswer": "Source code",
+            "explanation": "Source code represents the human-readable text files containing program definitions before the compiler parses them."
+        },
+        {
+            "question": "An error occurring due to structural code breaks, misspelled keywords, or missing punctuation marks is a:",
+            "options": [
+                "Syntax error",
+                "Run-time error",
+                "Logical error",
+                "Semantic error"
+            ],
+            "correctAnswer": "Syntax error",
+            "explanation": "Syntax errors represent violations of the structural and grammatical grammar rules specified by a programming language."
+        },
+        {
+            "question": "A fundamental unit of computer memory storage comprising exactly eight binary digits (bits) is a:",
+            "options": [
+                "Bit",
+                "Byte",
+                "Object",
+                "Class"
+            ],
+            "correctAnswer": "Byte",
+            "explanation": "A individual byte is universally standardized as a cluster of 8 sequential binary bits."
+        },
+        {
+            "question": "What does the microelectronics acronym IC stand for?",
+            "options": [
+                "Internet Circuit",
+                "Internal Computer",
+                "Integrated Circuit",
+                "Integrated Computer"
+            ],
+            "correctAnswer": "Integrated Circuit",
+            "explanation": "IC stands for Integrated Circuit, which houses thousands of tiny semiconductor transistors on a small silicon wafer chip."
+        },
+        {
+            "question": "Which of the following describes a collection of executable files, configurations, and assets used on a computer to complete objective tasks?",
+            "options": [
+                "A processor",
+                "Software",
+                "An instruction",
+                "All of the above"
+            ],
+            "correctAnswer": "Software",
+            "explanation": "Software functions as an overarching collection of programmatic scripts, libraries, and binaries executing on mechanical hardware."
+        },
+        {
+            "question": "Programs designed explicitly to serve specific user end-tasks (such as calculating worksheets or word processing) are called:",
+            "options": [
+                "Application software",
+                "System software",
+                "Operating system",
+                "Management information software"
+            ],
+            "correctAnswer": "Application software",
+            "explanation": "Application software addresses end-user business or creative functions directly, separating it from low-level infrastructure software."
+        },
+        {
+            "question": "In structural layout design, standard system flowcharts visually trace and document what?",
+            "options": [
+                "Tasks",
+                "Relationships",
+                "Workflow",
+                "Power"
+            ],
+            "correctAnswer": "Workflow",
+            "explanation": "Flowcharts chart operational workflows and structural instruction patterns cleanly through multi-directional connecting lines."
+        },
+        {
+            "question": "Which symbol explicitly establishes the absolute starting perimeter or exit points of an algorithm loop diagram?",
+            "options": [
+                "Flowline",
+                "Terminal",
+                "Process",
+                "Decision"
+            ],
+            "correctAnswer": "Terminal",
+            "explanation": "Terminal nodes (shaped like rounded rectangles or ovals) define where an engine execution lifecycle launches and halts."
+        },
+        {
+            "question": "Modular code assets designed to integrate directly into an parent host application to expand its features are:",
+            "options": [
+                "Plugins",
+                "Extensions",
+                "Both a and b",
+                "Servers"
+            ],
+            "correctAnswer": "Both a and b",
+            "explanation": "Plugins and extensions both serve as auxiliary modules that interface into host systems to modify or enhance default behaviors."
+        },
+        {
+            "question": "Which of the following traits is fundamentally excluded from a reliable, properly designed computing algorithm?",
+            "options": [
+                "Definiteness",
+                "Ambiguity",
+                "Finite number of steps",
+                "Logical flow of control"
+            ],
+            "correctAnswer": "Ambiguity",
+            "explanation": "Algorithms must be entirely clear and unambiguous. Ambiguous instructions prevent programmatic compilation or yield unreliable behaviors."
+        },
+        {
+            "question": "The explicit graphic and diagrammatic mapping of an operational procedure is known as a:",
+            "options": [
+                "Flowchart",
+                "Data flow diagram",
+                "Algorithm design",
+                "Pseudocode"
+            ],
+            "correctAnswer": "Flowchart",
+            "explanation": "A flowchart represents an algorithm through structured visual geometric icons and directional lines."
+        },
+        {
+            "question": "What is the primary function of a traditional unconditional GOTO statement inside low-level programmatic scripts?",
+            "options": [
+                "Used to jump the control of program",
+                "Used for user defined iteration",
+                "Same as switch case statement",
+                "None of the above"
+            ],
+            "correctAnswer": "Used to jump the control of program",
+            "explanation": "A GOTO command triggers an immediate execution jump, redirecting control directly to a labeled line break elsewhere in the code."
+        },
+        {
+            "question": "What primary purpose does clear source code structural indentation serve for a developer?",
+            "options": [
+                "Improves its readability and understandability",
+                "Is compulsory",
+                "Both a and b",
+                "None of the above"
+            ],
+            "correctAnswer": "Improves its readability and understandability",
+            "explanation": "Excepting strict indentation languages like Python, spacing serves primarily to make complex nested control code readable for human maintainers."
+        },
+        {
+            "question": "Which control iteration loop checks conditions post-execution, guaranteeing its logic executes at least once to prevent early infinite block locks?",
+            "options": [
+                "Sequential",
+                "For",
+                "While",
+                "Do while"
+            ],
+            "correctAnswer": "Do while",
+            "explanation": "The do-while structure evaluates its state check at the end of the loop body, guaranteeing at least one execution pass before exiting."
+        },
+        {
+            "question": "Which of the following elements functions as an active structural controller rather than a passive data state calculation step?",
+            "options": [
+                "The process",
+                "The decision",
+                "The loop",
+                "The sequential"
+            ],
+            "correctAnswer": "The process",
+            "explanation": "The process block marks flat computation tasks, while sequential, decision, and loop form the structural backbone of control logic."
+        },
+        {
+            "question": "The interleaved management and scheduling of two or more program tasks by a single central processing unit core is called:",
+            "options": [
+                "Multitasking",
+                "Multiprogramming",
+                "Multiprocessing",
+                "Time Sharing"
+            ],
+            "correctAnswer": "Time Sharing",
+            "explanation": "Time sharing utilizes swift hardware switching slots across a single CPU to make distinct tasks appear to run concurrently."
+        },
+        {
+            "question": "In a flowchart layout, addition, subtraction, multiplication, and division operations are enclosed within which component?",
+            "options": [
+                "Input/Output",
+                "Terminal",
+                "Processing",
+                "Decision"
+            ],
+            "correctAnswer": "Processing",
+            "explanation": "Mathematical, variable assignment, and arithmetic procedures belong exclusively inside processing containers."
+        },
+        {
+            "question": "An alternative professional descriptor for pseudocode structural development text is:",
+            "options": [
+                "Pseudocode",
+                "Hardware language",
+                "Software language",
+                "Algorithm"
+            ],
+            "correctAnswer": "Pseudocode",
+            "explanation": "Pseudocode is an abstraction used interchangeably with Program Design Language (PDL) to lay out program architectures."
+        },
+        {
+            "question": "Which design construct manages loops where code segments execute repeatedly depending on conditional updates?",
+            "options": [
+                "Iteration logic",
+                "Selection logic",
+                "Sequential Logic",
+                "Decision logic"
+            ],
+            "correctAnswer": "Iteration logic",
+            "explanation": "Iteration structures govern cyclic routines, executing code blocks repeatedly based on matching criteria updates."
+        },
+        {
+            "question": "In languages like C, which selection block structure is incompatible with a standard loop 'continue' keyword modifier?",
+            "options": [
+                "For",
+                "Switch",
+                "Do",
+                "While"
+            ],
+            "correctAnswer": "Switch",
+            "explanation": "The continue statement applies exclusively to iterative loops (for, while, do-while) and cannot target conditional switch structures."
+        },
+        {
+            "question": "A code label statement layout typically features a valid programming identifier immediately followed by which character?",
+            "options": [
+                "Semicolon",
+                "Comma",
+                "Colon",
+                "None of the above"
+            ],
+            "correctAnswer": "Colon",
+            "explanation": "Code execution reference labels require a trailing colon character (e.g., error_handler:)."
+        },
+        {
+            "question": "A programmer-defined word string composed of alphanumerics and underscores used to identify objects, functions, or variables is an:",
+            "options": [
+                "Keywords",
+                "Reserved keywords",
+                "Tokens",
+                "Identifiers"
+            ],
+            "correctAnswer": "Identifiers",
+            "explanation": "Identifiers act as custom named handles created by developers to point to unique variables, functions, and memory locations."
+        },
+        {
+            "question": "In digital computer architecture metrics, a individual memory 'Nibble' equals exactly how many bits?",
+            "options": [
+                "4 Bits",
+                "8 Bits",
+                "12 Bits",
+                "16 Bits"
+            ],
+            "correctAnswer": "4 Bits",
+            "explanation": "A nibble is explicitly defined as a 4-bit data unit, corresponding exactly to one half of a standard 8-bit byte."
+        },
+        {
+            "question": "Which structural collections are fully recognized as built-in data grouping mechanisms in structural languages like C?",
+            "options": [
+                "Arrays",
+                "Structures",
+                "Files",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above",
+            "explanation": "Arrays, structs, and files represent built-in native data structures used to store information in C."
+        },
+        {
+            "question": "Which program planning tool allows programmers to design application logic using structured, plain human language phrasing?",
+            "options": [
+                "Flowchart",
+                "Pseudocode",
+                "Program Looping",
+                "Looping"
+            ],
+            "correctAnswer": "Pseudocode",
+            "explanation": "Pseudocode allows engineers to document operational code flows using stylized, structured plain-English phrases."
+        },
+        {
+            "question": "An algorithm can be most accurately summarized as a:",
+            "options": [
+                "Step by step execution of program",
+                "Object File",
+                "Executable File",
+                "Source File"
+            ],
+            "correctAnswer": "Step by step execution of program",
+            "explanation": "An algorithm outlines a sequential step-by-step logic path required to solve a problem from start to finish."
+        },
+        {
+            "question": "The visual 'kite' or diamond symbol inside logical process flowcharts handles which operations?",
+            "options": [
+                "Connector",
+                "Decision",
+                "Statement",
+                "All of the above"
+            ],
+            "correctAnswer": "Decision",
+            "explanation": "The kite/diamond shape holds conditional logic expressions that branch the execution flow down true or false vectors."
+        },
+        {
+            "question": "Which trait is universally excluded from the baseline specifications of a well-formed, efficient algorithm?",
+            "options": [
+                "Precise",
+                "Ambiguity",
+                "Finite number of steps",
+                "Logical flow of control"
+            ],
+            "correctAnswer": "Ambiguity",
+            "explanation": "Ambiguity introduces undefined behaviors; algorithms must have precise, clearly defined operations."
+        },
+        {
+            "question": "The diagrammatic, visual mapping representation of structural program logic is called a:",
+            "options": [
+                "Flowchart",
+                "Data flow diagram",
+                "Algorithm design",
+                "Pseudocode"
+            ],
+            "correctAnswer": "Flowchart",
+            "explanation": "A flowchart provides an explicit, standardized visual map tracking program paths via structural geometric shapes."
+        },
+        {
+            "question": "A plain 'goto' syntax invocation is applied within programming code contexts to achieve which behavior?",
+            "options": [
+                "Used to jump the control of program",
+                "Used for user defined iteration",
+                "Same as switch case statement",
+                "None of the above"
+            ],
+            "correctAnswer": "Used to jump the control of program",
+            "explanation": "A goto instruction alters default sequential workflows by jumping execution directly to a targeted code label."
+        },
+        {
+            "question": "Immediately after a computer programmer maps out the foundational logical plan for a system, what is the next step in the development lifecycle?",
+            "options": [
+                "Understand the problem",
+                "Translate the program",
+                "Test the program",
+                "Code the program"
+            ],
+            "correctAnswer": "Code the program",
+            "explanation": "The development sequence follows a logical pattern: analyze and understand, plan and design, code the program, and finally test."
+        },
+        {
+            "question": "Which geometric shape represents programmatic data output delivery within standardized logical flow diagrams?",
+            "options": [
+                "Square",
+                "Circle",
+                "Parallelogram",
+                "Triangle"
+            ],
+            "correctAnswer": "Parallelogram",
+            "explanation": "Parallelograms are the globally accepted flowchart convention for highlighting both input capture and output display steps."
+        },
+        {
+            "question": "What is the traditional geometric shape utilized for terminal start and stop indicators in classic flowcharts?",
+            "options": [
+                "Circle",
+                "Parallelogram",
+                "Diamond",
+                "Square"
+            ],
+            "correctAnswer": "Circle",
+            "explanation": "Circles and ovals are designated as terminal icons to pinpoint the boundaries where a diagrammed logic flow launches and terminates."
+        },
+        {
+            "question": "Examine this pattern: 'Get number, while number is positive, Add to Sum'. This is a representation of which structure?",
+            "options": [
+                "Sequence",
+                "Decision",
+                "Loop",
+                "Nested"
+            ],
+            "correctAnswer": "Loop",
+            "explanation": "The 'while' constraint specifies that the program will repeatedly execute the nested block as long as the condition remains true, forming a loop."
+        },
+        {
+            "question": "The logical operators && (AND) and || (OR) are primarily designed to evaluate and combine what?",
+            "options": [
+                "Compare two numerical values",
+                "Combine two numerical values and two string values",
+                "Compare two Boolean values",
+                "None of the above"
+            ],
+            "correctAnswer": "Compare two Boolean values",
+            "explanation": "Logical operators ingest multiple true/false inputs to return a unified relational Boolean conclusion."
+        },
+        {
+            "question": "Which of the following options represents an invalid relational comparison token operator?",
+            "options": [
+                "",
+                ">=",
+                "<=",
+                "=="
+            ],
+            "correctAnswer": "",
+            "explanation": "Tokens like >=, <=, and == evaluate relationships between data points, whereas an underscore symbol is an identifier or wild character."
+        },
+        {
+            "question": "Which system development tool is responsible for translating human-written high-level C language source text into low-level machine code?",
+            "options": [
+                "Operating system",
+                "An editor",
+                "A compiler",
+                "An interpreter"
+            ],
+            "correctAnswer": "A compiler",
+            "explanation": "A compiler scans an entire codebase file to transform high-level language source instructions directly into functional machine binaries."
+        },
+        {
+            "question": "Which option represents a complex derived data structure rather than an elementary basic primitive data type in the C language?",
+            "options": [
+                "Double",
+                "Float",
+                "Char",
+                "Array"
+            ],
+            "correctAnswer": "Array",
+            "explanation": "Int, float, double, and char are atomic primitive data types, while an array is a derived structure grouping elements in memory."
+        },
+        {
+            "question": "The evaluation output generated by a relational comparison operator will always yield what data form?",
+            "options": [
+                "Either true or false",
+                "Is less than or more than",
+                "Is equal or less or more",
+                "All of these"
+            ],
+            "correctAnswer": "Either true or false",
+            "explanation": "Relational operations evaluate conditional statements and always resolve to a strict binary true or false state."
+        },
+        {
+            "question": "Preliminary systemic investigation and requirement analysis represent the initial phase of which methodology?",
+            "options": [
+                "Modelling and Simulation",
+                "Software development lifecycle",
+                "Software documentation",
+                "Debugging and Testing"
+            ],
+            "correctAnswer": "Software development lifecycle",
+            "explanation": "The Software Development Lifecycle (SDLC) begins with an initial investigation, system analysis, and requirement definition phase."
+        },
+        {
+            "question": "The process of writing computer programs in a specific syntax language to process data is called:",
+            "options": [
+                "Communicating",
+                "Compiling",
+                "Translating",
+                "Programming"
+            ],
+            "correctAnswer": "Programming",
+            "explanation": "Programming is the end-to-end process of designing, structural mapping, and writing clear instructions using specialized software languages."
+        },
+        {
+            "question": "When instructing a computer how to manipulate data, which component focuses on hardware storage implementation rather than the logical functional loop?",
+            "options": [
+                "Input",
+                "Storage",
+                "Output",
+                "Process"
+            ],
+            "correctAnswer": "Storage",
+            "explanation": "The core functional pipeline consists of Input, Processing, and Output (IPO), whereas storage describes hardware persistence media."
+        },
+        {
+            "question": "The definitive set of structural grammatical rules governing how statements must be formatted within a programming language is called:",
+            "options": [
+                "Semantics",
+                "Syntax",
+                "Grammar",
+                "Constraints"
+            ],
+            "correctAnswer": "Syntax",
+            "explanation": "Syntax defines the rigid grammatical requirements that code layouts must follow to pass parsing checks without error."
+        },
+        {
+            "question": "Errors produced when structural code patterns violate the explicit grammatical formatting constraints of a language are classified as:",
+            "options": [
+                "Syntactic",
+                "Semantic",
+                "Run time or Execution Errors",
+                "Compile-Time or Compilation Errors"
+            ],
+            "correctAnswer": "Syntactic",
+            "explanation": "Syntactic errors indicate broken language rules, which are caught during compile time when the parser fails to understand the layout."
+        },
+        {
+            "question": "In software engineering, what is the core risk of failing to conduct an adequate preliminary analysis phase within the SDLC?",
+            "options": [
+                "The program will automatically generate syntax errors.",
+                "The final application may fail to solve the actual business problem.",
+                "Compilers will refuse to process valid source code definitions.",
+                "The execution speed of the hardware will decrease."
+            ],
+            "correctAnswer": "The final application may fail to solve the actual business problem.",
+            "explanation": "Skipping analysis leads to misaligned requirements, meaning that even if the code runs perfectly, it does not solve the user's business needs."
+        },
+        {
+            "question": "Which of the following correctly pairs a flowchart symbol with its standardized system operational role?",
+            "options": [
+                "Rectangle -> System Storage Point",
+                "Parallelogram -> Mathematical Computations",
+                "Diamond -> Conditional Logic Forking",
+                "Oval -> Array Index Definition"
+            ],
+            "correctAnswer": "Diamond -> Conditional Logic Forking",
+            "explanation": "The diamond symbol contains a logical condition that directs program flow along true or false evaluation vectors."
+        },
+        {
+            "question": "What primary differentiator separates high-level programming languages from low-level assembly languages?",
+            "options": [
+                "High-level languages require no translation to execute on hardware.",
+                "High-level languages offer machine independence and abstract human-readable syntax.",
+                "Assembly languages can only process simple integer addition math operations.",
+                "Assembly languages do not utilize memory addresses or registers."
+            ],
+            "correctAnswer": "High-level languages offer machine independence and abstract human-readable syntax.",
+            "explanation": "High-level languages abstract away processor specific registers and memory architectures, allowing code portability across different hardware."
+        },
+        {
+            "question": "Why is the use of unstructured 'goto' statements generally discouraged in modern modular program design?",
+            "options": [
+                "They consume significant physical disk storage inside source code files.",
+                "They bypass proper compilation and cause computer hardware crashes.",
+                "They create untraceable logic pathways often referred to as spaghetti code.",
+                "They prevent the definition of integer data type variables."
+            ],
+            "correctAnswer": "They create untraceable logic pathways often referred to as spaghetti code.",
+            "explanation": "Unconditional jumps scramble sequential flows, making large scale applications complex to debug, analyze, and maintain."
+        },
+        {
+            "question": "Which of the following conditions will cause a standard 'while' loop structure to bypass its entire inner processing block completely?",
+            "options": [
+                "The monitoring expression evaluates to false on its initial assessment check.",
+                "The block body contains a nested internal variable declaration.",
+                "The program is compiled using an optimizing machine language compiler.",
+                "The counter index variable is initialized to a zero integer state."
+            ],
+            "correctAnswer": "The monitoring expression evaluates to false on its initial assessment check.",
+            "explanation": "A while loop evaluates its entry condition before running. If that condition is false from the start, the loop body is skipped entirely."
+        },
+        {
+            "question": "What basic operational benefit does an interpreted language provide during the program testing and debugging phase?",
+            "options": [
+                "It delivers faster raw execution speed compared to natively compiled code.",
+                "It catches all logical errors before code line tracking begins.",
+                "It executes source modifications immediately without requiring a full re-compilation step.",
+                "It eliminates the need to declare explicit primitive data types."
+            ],
+            "correctAnswer": "It executes source modifications immediately without requiring a full re-compilation step.",
+            "explanation": "Interpreters parse and run code line by line, allowing developers to quickly test adjustments without waiting for an intermediate compile phase."
+        },
+        {
+            "question": "An operational error that slips past compiler grammar checks but causes an application to crash mid-operation is a:",
+            "options": [
+                "Syntax error",
+                "Run-time error",
+                "Linker compilation error",
+                "Structural layout fault"
+            ],
+            "correctAnswer": "Run-time error",
+            "explanation": "Run-time errors occur during active execution, typically caused by illegal operations like dividing an integer by zero."
+        },
+        {
+            "question": "In structural algorithmic design, the concept of 'Definiteness' mandates that every operational step must be:",
+            "options": [
+                "Designed using mathematical algebraic notation symbols.",
+                "Completely clear, precise, and unambiguous in its intent.",
+                "Configured to run in less than one clock cycle execution unit.",
+                "Capable of storing records directly inside an external file database."
+            ],
+            "correctAnswer": "Completely clear, precise, and unambiguous in its intent.",
+            "explanation": "Definiteness requires that each step of an algorithm be precisely defined, leaving no room for varied interpretation by the compiler or engine."
+        },
+        {
+            "question": "Which tool provides a visual representation of the algorithmic flow of logic through specialized geometric shapes?",
+            "options": [
+                "Source Code Text Document",
+                "Integrated Pseudocode Registry",
+                "System Flowchart Diagram",
+                "Data Type Mapping Sheet"
+            ],
+            "correctAnswer": "System Flowchart Diagram",
+            "explanation": "Flowcharts translate step by step algorithms into accessible visual layouts using distinct standardized geometric shapes."
+        },
+        {
+            "question": "What is the primary operational trait that characterizes a standard 'sequential' control flow structure?",
+            "options": [
+                "Instructions are repeated continuously until an exit flag variable triggers.",
+                "Execution splits along multiple pathways based on conditional expression checks.",
+                "Statements are executed one after another in a linear, unbranched order.",
+                "The program logic shifts into a background low power execution state."
+            ],
+            "correctAnswer": "Statements are executed one after another in a linear, unbranched order.",
+            "explanation": "Sequential logic processes actions one line at a time from top to bottom, without skipping lines or looping back."
+        },
+        {
+            "question": "In the software lifecycle, what key attribute distinguishes a logical program error from a structural syntax error?",
+            "options": [
+                "Logical errors prevent the compiler from generating an executable file.",
+                "Logical errors cause the application to generate incorrect outputs without crashing.",
+                "Syntax errors can only be discovered by end users running the deployed package.",
+                "Syntax errors alter the mechanical clock speed of the hosting computer system."
+            ],
+            "correctAnswer": "Logical errors cause the application to generate incorrect outputs without crashing.",
+            "explanation": "A logical error means the code is syntactically valid but flawed in its reasoning, causing it to run successfully but produce the wrong results."
+        },
+        {
+            "question": "Which data type specification is classified as a derived or structured data organization asset rather than a basic primitive type in structural C design?",
+            "options": [
+                "Signed Short Integer",
+                "Single Precision Float",
+                "Multi-dimensional Array",
+                "Unsigned Character Byte"
+            ],
+            "correctAnswer": "Multi-dimensional Array",
+            "explanation": "Arrays group primitive variables into sequential blocks, making them derived structures rather than standalone primitive types."
+        },
+        {
+            "question": "The fundamental mechanical computing unit comprising exactly half of a standard 8-bit byte container is recognized as a:",
+            "options": [
+                "Binary Bit Cluster",
+                "Data Nibble Segment",
+                "Octal Word Fraction",
+                "Primitive Variable Point"
+            ],
+            "correctAnswer": "Data Nibble Segment",
+            "explanation": "A nibble represents a 4-bit block of information, which is exactly half of a standard 8-bit byte."
+        },
+        {
+            "question": "What critical structural design constraint distinguishes a 'do-while' loop from a standard 'while' loop?",
+            "options": [
+                "A do-while loop evaluates its control expression before entering the loop block.",
+                "A do-while loop guarantees its internal code block will execute at least once.",
+                "A do-while loop cannot utilize internal counter variables.",
+                "A do-while loop automatically terminates after exactly ten iteration cycles."
+            ],
+            "correctAnswer": "A do-while loop guarantees its internal code block will execute at least once.",
+            "explanation": "Because do-while loops evaluate their condition at the end of the block, the internal code always runs at least once before testing for a loop exit."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on fixing bugs discovered by end users after the application has launched?",
+            "options": [
+                "Feasibility Analysis Phase",
+                "Architectural Design Optimization",
+                "System Maintenance Phase",
+                "Source Code Generation Phase"
+            ],
+            "correctAnswer": "System Maintenance Phase",
+            "explanation": "The maintenance phase handles post-release updates, bug fixes, performance tuning, and adaptions to new user environments."
+        },
+        {
+            "question": "In modular programming, dividing a complex problem into smaller, isolated functional modules is called:",
+            "options": [
+                "Data Type Casting",
+                "Top-Down Functional Decomposition",
+                "Unconditional Logic Branching",
+                "Syntax Code Compilation"
+            ],
+            "correctAnswer": "Top-Down Functional Decomposition",
+            "explanation": "Decomposition breaks a complex application down into smaller, self-contained sub-modules that are easier to develop and test."
+        },
+        {
+            "question": "What is the primary function of an application compiler's lexical analysis parsing stage?",
+            "options": [
+                "To execute the source file logic and output results.",
+                "To group characters from the source text into valid grammatical tokens.",
+                "To allocate hardware memory addresses for declared variables.",
+                "To display user prompt interface windows on the monitor screen."
+            ],
+            "correctAnswer": "To group characters from the source text into valid grammatical tokens.",
+            "explanation": "Lexical analysis reads raw source characters to identify and generate valid language tokens, such as keywords and identifiers."
+        },
+        {
+            "question": "Which symbol represents a standard internal connectivity reference link across distinct pages of a large flowchart?",
+            "options": [
+                "An off-page connector symbol",
+                "A rectangular process box",
+                "A diamond conditional node",
+                "An elongated oval terminal indicator"
+            ],
+            "correctAnswer": "An off-page connector symbol",
+            "explanation": "Off-page connectors (often shaped like a home plate pentagon) link distinct process flows across different pages of a diagram."
+        },
+        {
+            "question": "What value will a standard relational inequality expression like (x != y) return if x and y contain identical integer values?",
+            "options": [
+                "A positive integer value of 1.",
+                "The Boolean answer of False.",
+                "An undefined runtime exception status error.",
+                "The numerical value of the x variable."
+            ],
+            "correctAnswer": "The Boolean answer of False.",
+            "explanation": "The operator != checks for inequality. If both sides are equal, the statement is false, returning a Boolean False."
+        },
+        {
+            "question": "Which of the following descriptions accurately defines the purpose and utility of clear program documentation?",
+            "options": [
+                "It increases the runtime operational execution speed of the compiled file.",
+                "It explains the system architecture and logic to developers for future maintenance.",
+                "It converts algorithmic logic directly into machine language instructions.",
+                "It prevents syntax errors caused by missing source code punctuation marks."
+            ],
+            "correctAnswer": "It explains the system architecture and logic to developers for future maintenance.",
+            "explanation": "Documentation provides clean reference materials, guiding future maintainers through the logic, variables, and intent of an application."
+        },
+        {
+            "question": "In programming languages like C, what is the role of an explicit type-casting operation?",
+            "options": [
+                "To create a new array structure in memory.",
+                "To manually convert a variable from one data type to another.",
+                "To terminate an active looping block early.",
+                "To link external file libraries to the main program file."
+            ],
+            "correctAnswer": "To manually convert a variable from one data type to another.",
+            "explanation": "Type casting tells the compiler to convert a variable from its original data type to a different target type for a specific operation."
+        },
+        {
+            "question": "Which problem category is best defined by a reliance on complex mathematical functions run against compact input data batches?",
+            "options": [
+                "Scientific calculation problems",
+                "Commercial enterprise payroll operations",
+                "Relational database record extraction tasks",
+                "Web page layout graphic rendering systems"
+            ],
+            "correctAnswer": "Scientific calculation problems",
+            "explanation": "Scientific applications process heavy mathematical computations (like matrix tracking) on small, specialized data samples."
+        },
+        {
+            "question": "What is the primary purpose of structural code optimization steps during the compilation lifecycle?",
+            "options": [
+                "To rewrite cryptic human variable names into clear vocabulary forms.",
+                "To make the generated machine code run faster and use less memory.",
+                "To ensure that an algorithm runs indefinitely without hitting loop flags.",
+                "To modify the physical hardware configuration of the host computer system."
+            ],
+            "correctAnswer": "To make the generated machine code run faster and use less memory.",
+            "explanation": "Optimization steps streamline compiled machine code instructions to maximize execution speed and reduce system resource usage."
+        },
+        {
+            "question": "Which keyword is utilized within a structured switch-case control block to prevent execution from falling through into subsequent case logic layers?",
+            "options": [
+                "continue",
+                "default",
+                "break",
+                "return"
+            ],
+            "correctAnswer": "break",
+            "explanation": "The break statement terminates execution within a switch case block, preventing flow from falling through into the next case."
+        },
+        {
+            "question": "What structural role does the 'default' label provide inside a standard conditional switch selection matrix block?",
+            "options": [
+                "It forces the immediate re-execution of the loop construct framework.",
+                "It executes alternative fallback actions if no explicit case constants match the criteria.",
+                "It declares global tracking pointer variables for external library use.",
+                "It overrides syntax compilation errors generated by the runtime kernel."
+            ],
+            "correctAnswer": "It executes alternative fallback actions if no explicit case constants match the criteria.",
+            "explanation": "The default block acts as a fallback case, executing its logic if none of the explicit case values match the target expression."
+        },
+        {
+            "question": "The software component that bundles distinct compiled object modules into a single executable binary application file is the:",
+            "options": [
+                "Source Code Text Editor",
+                "Lexical Script Analyzer",
+                "Object File Linker",
+                "Runtime Logic Interpreter"
+            ],
+            "correctAnswer": "Object File Linker",
+            "explanation": "The linker combines compiled object files and external dependencies into a unified, runnable executable application file."
+        },
+        {
+            "question": "Which of the following variable identifier naming practices complies with the standard syntax formatting constraints of structured languages like C?",
+            "options": [
+                "2nd_calculated_total_value",
+                "total$summation_value",
+                "final_calculated_total_score",
+                "switch"
+            ],
+            "correctAnswer": "final_calculated_total_score",
+            "explanation": "Identifiers cannot start with numbers, cannot contain special symbols like $, and cannot use reserved language keywords like switch."
+        },
+        {
+            "question": "What primary operational characteristic defines an algorithm's 'Finiteness' property?",
+            "options": [
+                "It must be capable of processing infinite data streams without crashing.",
+                "It must terminate and complete its execution sequence after a limited number of steps.",
+                "It must contain fewer than one hundred total lines of source text code.",
+                "It must be compiled into native machine code rather than interpreted."
+            ],
+            "correctAnswer": "It must terminate and complete its execution sequence after a limited number of steps.",
+            "explanation": "Finiteness dictates that an algorithm must reach a clear conclusion and stop after a defined, countable number of operational steps."
+        },
+        {
+            "question": "In a system flowchart, what role do directional flowlines with arrowheads play?",
+            "options": [
+                "They calculate intermediate values for internal variables.",
+                "They define the storage limits of computer hardware arrays.",
+                "They indicate the exact sequence and direction of operational execution.",
+                "They highlight lines of source code that contain syntax errors."
+            ],
+            "correctAnswer": "They indicate the exact sequence and direction of operational execution.",
+            "explanation": "Flowlines connect geometric symbols to trace the precise directional path and execution order of a program."
+        },
+        {
+            "question": "Which of the following scenarios describes the generation of a semantic program error?",
+            "options": [
+                "Omitting a mandatory closing semicolon character at the end of an expression line.",
+                "Misspelling a fundamental keyword like 'while' inside an iteration loop declaration.",
+                "Writing a formula that accidentally multiplies values instead of adding them, yielding unwanted results.",
+                "Attempting to declare an integer variable name that starts with a number."
+            ],
+            "correctAnswer": "Writing a formula that accidentally multiplies values instead of adding them, yielding unwanted results.",
+            "explanation": "Semantic errors occur when code is grammatically correct but logically flawed, leading to unintended behavior or incorrect outputs."
+        },
+        {
+            "question": "What is the computational purpose of using a modular 'counter' variable inside a standard iterative loop construct?",
+            "options": [
+                "To temporarily store external file inputs.",
+                "To track, increment, or decrement the number of loop execution passes.",
+                "To override syntax errors caught by the compiler.",
+                "To convert floating point variables into characters."
+            ],
+            "correctAnswer": "To track, increment, or decrement the number of loop execution passes.",
+            "explanation": "Counter variables increment or decrement with each pass, tracking loop iterations to safely trip exit conditions."
+        },
+        {
+            "question": "Which of the following errors is caught at compile time by the programming language's internal parser engine?",
+            "options": [
+                "An invalid array index access request.",
+                "A structural syntax error like a missing closing parenthesis.",
+                "An unintended infinite loop caused by an un-incremented counter.",
+                "A logical calculation mistake that outputs incorrect metrics."
+            ],
+            "correctAnswer": "A structural syntax error like a missing closing parenthesis.",
+            "explanation": "The compiler catches syntax errors—such as mismatched parentheses or missing punctuation—during the initial parsing phase."
+        },
+        {
+            "question": "In a flowchart tracking warehouse inventory distributions, which symbol would contain an inspection checking if data matches reorder thresholds?",
+            "options": [
+                "A rectangular process structure block",
+                "An oval terminal execution marker",
+                "A diamond conditional decision block",
+                "A directional horizontal flowline link"
+            ],
+            "correctAnswer": "A diamond conditional decision block",
+            "explanation": "A diamond block handles conditional checks and branches the program flow based on whether thresholds are met."
+        },
+        {
+            "question": "What functional liability arises if an iterative loop control block lacks an accessible, valid termination state condition?",
+            "options": [
+                "The compiler will refuse to generate an object executable file.",
+                "The program will enter an infinite loop loop lock during active runtime operation.",
+                "The application will automatically drop all declared local variables.",
+                "The system processor will switch into an alternate parallel execution mode."
+            ],
+            "correctAnswer": "The program will enter an infinite loop loop lock during active runtime operation.",
+            "explanation": "Without a valid exit trigger, a loop runs indefinitely, creating an infinite loop that locks app execution and wastes CPU cycles."
+        },
+        {
+            "question": "The structural design practice of nesting conditional expressions involves which implementation choice?",
+            "options": [
+                "Placing an if-else decision control block directly inside another if-else decision block body.",
+                "Compiling separate source code documents using distinct computer system applications.",
+                "Converting character byte variables into floating point arithmetic data objects.",
+                "Eliminating the use of geometric symbol definitions inside flowcharts."
+            ],
+            "correctAnswer": "Placing an if-else decision control block directly inside another if-else decision block body.",
+            "explanation": "Nesting embeds control structures within other control structures to evaluate multi layered, hierarchical conditions."
+        },
+        {
+            "question": "Which of the following options provides the most accurate definition of 'pseudocode'?",
+            "options": [
+                "A binary file generated after passing source scripts through an optimizing compiler.",
+                "An informal text-based layout used to plan program logic using plain, structured language.",
+                "A graphic user interface configuration module built for operating system kernels.",
+                "An ancient hardware instruction set utilized by first-generation computer platforms."
+            ],
+            "correctAnswer": "An informal text-based layout used to plan program logic using plain, structured language.",
+            "explanation": "Pseudocode is a tool that allows developers to model and map program logic using plain language before writing formal code."
+        },
+        {
+            "question": "What specific operational impact does an optimization phase have on application software source files?",
+            "options": [
+                "It injects detailed narrative comments to assist future software engineering maintainers.",
+                "It streamlines compiled instructions to improve execution speed and reduce memory consumption.",
+                "It automatically fixes structural syntax grammar mistakes inside source documents.",
+                "It forces the system kernel to bypass all security validation validation sweeps."
+            ],
+            "correctAnswer": "It streamlines compiled instructions to improve execution speed and reduce memory consumption.",
+            "explanation": "Optimization refactors intermediate code to make final executables run faster and use hardware resources more efficiently."
+        },
+        {
+            "question": "In a structural language environment, what is the role of an explicit relational equality operator (==)?",
+            "options": [
+                "To assign the data value of a right-side variable directly to a left-side variable.",
+                "To compare two distinct expressions and return True if their contents match identically.",
+                "To divide a targeted numerical value by an allocated memory address point.",
+                "To terminate an active structural processing pipeline or iteration thread."
+            ],
+            "correctAnswer": "To compare two distinct expressions and return True if their contents match identically.",
+            "explanation": "The == operator compares two expressions and returns a true/false Boolean based on whether their values match."
+        },
+        {
+            "question": "Which of the following components represents a hardware component that executes binary streams, rather than an abstract algorithmic concept?",
+            "options": [
+                "A top-down structured pseudo-code map",
+                "A structural decision branching diamond block",
+                "The physical Central Processing Unit instruction decoder",
+                "An abstract primitive character variable array"
+            ],
+            "correctAnswer": "The physical Central Processing Unit instruction decoder",
+            "explanation": "The CPU instruction decoder is a physical microelectronic circuit that reads and executes machine code binaries."
+        },
+        {
+            "question": "What structural benefit does a programmer gain by using named constants instead of raw hard-coded literal numbers throughout an application?",
+            "options": [
+                "It prevents runtime execution software exceptions from crashing the system.",
+                "It improves readability and allows updates across the app by changing a single definition.",
+                "It completely eliminates the need to compile source text files before execution.",
+                "It automatically expands the physical memory storage configuration of the processor chip."
+            ],
+            "correctAnswer": "It improves readability and allows updates across the app by changing a single definition.",
+            "explanation": "Named constants give clear context to magic numbers and let you update that value globally by modifying it in one place."
+        },
+        {
+            "question": "Which of the following conditions marks a fundamental requirement for building a valid, functional recursive software function?",
+            "options": [
+                "The function must be declared without any internal argument parameter fields.",
+                "The logic must contain an explicit base case condition that stops the recursive loop.",
+                "The routine must be written entirely inside an external library text document.",
+                "The structure must utilize a switch case matrix instead of an if-else block."
+            ],
+            "correctAnswer": "The logic must contain an explicit base case condition that stops the recursive loop.",
+            "explanation": "Recursive functions must include a base case to halt repetitive self-calls and prevent stack overflow crashes."
+        },
+        {
+            "question": "The specific process of tracking execution path trends manually using pen and paper to verify algorithm reliability is called:",
+            "options": [
+                "Native Code Linking",
+                "Dry Running or Desk Checking",
+                "Dynamic Runtime Profiling",
+                "Lexical Code Verification"
+            ],
+            "correctAnswer": "Dry Running or Desk Checking",
+            "explanation": "Dry running (or desk checking) is a manual inspection technique where a developer steps through logic on paper to verify correctness."
+        },
+        {
+            "question": "Which software construct allows multiple descriptive variables of differing primitive data types to be grouped together under a single user defined label?",
+            "options": [
+                "A homogeneous multi-dimensional index array",
+                "A heterogenous structure data grouping",
+                "A sequential processing execution pipeline",
+                "A singular floating point precision block"
+            ],
+            "correctAnswer": "A heterogenous structure data grouping",
+            "explanation": "Structures (structs) allow developers to encapsulate variables of different data types into a single custom data entity."
+        },
+        {
+            "question": "What primary operational liability accompanies the use of deep structural nesting across complex application architectures?",
+            "options": [
+                "It triggers immediate syntax errors during baseline file parsing actions.",
+                "It significantly degrades code readability and complicates long-term system maintenance.",
+                "It prevents local variables from accessing hardware memory locations.",
+                "It forces the application compiler to produce un-optimized object files."
+            ],
+            "correctAnswer": "It significantly degrades code readability and complicates long-term system maintenance.",
+            "explanation": "Deeply nested code paths make programs difficult for human developers to read, trace, debug, and maintain over time."
+        },
+        {
+            "question": "In structural layout design, what critical operational process does an oval or capsule symbol signify inside a standard flowchart?",
+            "options": [
+                "An intermediate arithmetic data optimization calculation step.",
+                "The entry inception point or termination boundary of an application sequence.",
+                "A logical multi path selection fork tracking variable comparisons.",
+                "An off-page structural reference marker linking diverse data sheets."
+            ],
+            "correctAnswer": "The entry inception point or termination boundary of an application sequence.",
+            "explanation": "Ovals act as terminal symbols that clearly mark the start and stop boundaries of a program or flowchart process."
+        },
+        {
+            "question": "Which of the following computational objectives is best handled through an iterative control loop structure?",
+            "options": [
+                "Declaring a single static global tracking variable.",
+                "Evaluating whether an isolated number value is positive or negative.",
+                "Printing an explicit line of informational user text exactly one thousand times.",
+                "Terminating the active operating system kernel execution state."
+            ],
+            "correctAnswer": "Printing an explicit line of informational user text exactly one thousand times.",
+            "explanation": "Repetitive tasks—such as printing text a specific number of times—are best managed using an iterative loop structure."
+        },
+        {
+            "question": "What is the primary operational distinction between a system compiler and a runtime interpreter script engine?",
+            "options": [
+                "Compilers convert an entire file before execution, while interpreters translate and execute line by line.",
+                "Interpreters generate permanent object binary files on the computer hardware storage.",
+                "Compilers bypass syntax validation sweeps completely during code analysis cycles.",
+                "Interpreters can only run software programs that lack primitive variable allocations."
+            ],
+            "correctAnswer": "Compilers convert an entire file before execution, while interpreters translate and execute line by line.",
+            "explanation": "Compilers convert whole source files into standalone machine code binaries ahead of time, whereas interpreters parse and run code on the fly."
+        },
+        {
+            "question": "Which of the following errors escapes compilation checks but outputs bad values because of an accidental division by zero during live processing?",
+            "options": [
+                "A structural syntax error condition",
+                "A live execution runtime error exception",
+                "A preliminary system specification fault",
+                "An un-linked file repository tracking break"
+            ],
+            "correctAnswer": "A live execution runtime error exception",
+            "explanation": "Division by zero is an invalid mathematical operation that triggers a runtime exception crash during live application execution."
+        },
+        {
+            "question": "In modular software engineering, what primary goal drives the adoption of strong code reusable components?",
+            "options": [
+                "To increase the total volume of raw source text required to build an application.",
+                "To minimize code duplication and reduce development time for complex software systems.",
+                "To force compilers to run lexical analysis steps multiple times.",
+                "To prevent the use of multi-dimensional structure arrays inside functions."
+            ],
+            "correctAnswer": "To minimize code duplication and reduce development time for complex software systems.",
+            "explanation": "Reusable functions let developers write, test, and verify logic once, reducing duplicate work and streamlining development cycles."
+        },
+        {
+            "question": "Which component functions as an integrated development tool designed to catch and trace operational bugs inside source files during active testing runs?",
+            "options": [
+                "An object binary linker assembly",
+                "An interactive code debugging utility",
+                "A lexical token layout document",
+                "A text structure documentation reader"
+            ],
+            "correctAnswer": "An interactive code debugging utility",
+            "explanation": "A debugger lets programmers step through code execution line by line, inspect variables, and isolate runtime logic errors."
+        },
+        {
+            "question": "What happens to data values stored inside standard local variables when their parent functional block completes execution and exits?",
+            "options": [
+                "They are saved to permanent system storage files.",
+                "They remain fully accessible across all other application modules indefinitely.",
+                "They are popped off the execution stack and wiped from active memory.",
+                "They are automatically cast into complex multi dimensional arrays."
+            ],
+            "correctAnswer": "They are popped off the execution stack and wiped from active memory.",
+            "explanation": "Local variables exist within the scope of their function; when that function ends, its stack frame is cleared, freeing up the memory."
+        },
+        {
+            "question": "Which design mechanism defines an explicit software layout template containing structural attributes and functions within object-oriented frameworks?",
+            "options": [
+                "An abstract algorithmic variable point",
+                "A structural object class definition blueprint",
+                "A sequential flowchart connector link",
+                "An isolated low level memory nibble slice"
+            ],
+            "correctAnswer": "A structural object class definition blueprint",
+            "explanation": "A class acts as an object-oriented blueprint that defines the properties, structures, and methods common to all instantiated objects."
+        },
+        {
+            "question": "What primary purpose does a system flowchart connector symbol (represented as a small circle) serve in long diagrams?",
+            "options": [
+                "It executes calculations for mathematical tracking equations.",
+                "It connects fragmented sections of a flowchart without drawing tangled lines.",
+                "It prompts end users to input parameter data strings into the program.",
+                "It alerts developers to structural syntax formatting errors inside source code."
+            ],
+            "correctAnswer": "It connects fragmented sections of a flowchart without drawing tangled lines.",
+            "explanation": "Connector circles join split points within a flowchart diagram, keeping the layout clean and readable."
+        },
+        {
+            "question": "Which of the following logical operator evaluation rules is unique to a short-circuiting logical AND (&&) expression?",
+            "options": [
+                "It evaluates both terms regardless of the value found in the initial expression.",
+                "It immediately skips evaluating the second expression if the first one resolves to false.",
+                "It raises a critical runtime error if integer data formats are detected.",
+                "It forces the application compiler to rerun structural lexical scans."
+            ],
+            "correctAnswer": "It immediately skips evaluating the second expression if the first one resolves to false.",
+            "explanation": "A logical AND requires both conditions to be true. If the first term is false, short-circuit evaluation skips the second check entirely."
+        },
+        {
+            "question": "In structured software engineering, what is the core benefit of designing applications using independent, decoupled software modules?",
+            "options": [
+                "It ensures that a system will bypass all compilation error checks.",
+                "It allows individual modules to be built, tested, and updated without breaking the system.",
+                "It locks the total application run execution path into a singular sequential line.",
+                "It eliminates the need to allocate memory for primitive character variables."
+            ],
+            "correctAnswer": "It allows individual modules to be built, tested, and updated without breaking the system.",
+            "explanation": "Decoupled modules isolate code logic, allowing developers to update individual components without introducing unintended bugs elsewhere."
+        },
+        {
+            "question": "What structural role does an explicit initialization step play in setting up a standard 'for' loop statement block?",
+            "options": [
+                "It defines the termination check condition evaluated at the end of each pass.",
+                "It sets the initial starting state for the loop's control or counter variable.",
+                "It modifies the optimization settings used by the program compiler.",
+                "It links external data file libraries directly to the processing loop."
+            ],
+            "correctAnswer": "It sets the initial starting state for the loop's control or counter variable.",
+            "explanation": "The initialization step sets up the loop's loop-control counter variable before iteration passes begin."
+        },
+        {
+            "question": "Which tracking metric identifies the level of internal semantic link strength and inter-dependence between two distinct software functional modules?",
+            "options": [
+                "Structural Code Indentation Index",
+                "Module Coupling Metrics",
+                "Algorithmic Finiteness Threshold",
+                "Syntax Parameter Density"
+            ],
+            "correctAnswer": "Module Coupling Metrics",
+            "explanation": "Coupling measures the degree of interdependence between software modules; low coupling is a hallmark of good system architecture."
+        },
+        {
+            "question": "What is the primary drawback of using an interpreted execution engine instead of an ahead of time optimizing hardware compiler?",
+            "options": [
+                "Interpreters cannot detect basic syntax grammar errors inside files.",
+                "Interpreted code generally runs slower because it must be translated line-by-line at runtime.",
+                "Interpreters prevent the creation of conditional decision logic branches.",
+                "Interpreted software requires specialized microelectronic CPU hardware chips."
+            ],
+            "correctAnswer": "Interpreted code generally runs slower because it must be translated line-by-line at runtime.",
+            "explanation": "Because interpreters translate and execute code line by line during live runtime, they carry more execution overhead than compiled code."
+        },
+        {
+            "question": "Which of the following choices represents a valid assignment statement layout format in structured algorithmic pseudocode?",
+            "options": [
+                "Set calculated_total_value EQUALS TO 400",
+                "calculated_total_value = 400",
+                "400 -> assign to variable -> calculated_total_value",
+                "Declare static integer constant containing value 400"
+            ],
+            "correctAnswer": "calculated_total_value = 400",
+            "explanation": "The standard assignment format uses an identifier on the left, an assignment operator, and an explicit evaluation value on the right."
+        },
+        {
+            "question": "In professional software development, structural 'Code Refactoring' activities focus on which objective?",
+            "options": [
+                "Adding features requested by end-user management teams.",
+                "Improving internal code structure and readability without altering external behaviors.",
+                "Translating machine code binaries back into human readable C text source documents.",
+                "Manually forcing applications to bypass security confirmation checking loops."
+            ],
+            "correctAnswer": "Improving internal code structure and readability without altering external behaviors.",
+            "explanation": "Refactoring cleans up internal code design to improve readability and maintainability without shifting how the features behave from the outside."
+        },
+        {
+            "question": "What operational failure occurs when an ongoing calculation yields a numeric value that exceeds the maximum storage capacity of its assigned data type variable?",
+            "options": [
+                "An internal memory address alignment fault",
+                "A structural numeric variable overflow condition",
+                "A syntax compilation parameter error",
+                "An off-page connector logic link break"
+            ],
+            "correctAnswer": "A structural numeric variable overflow condition",
+            "explanation": "Arithmetic overflow occurs when a computed number is too large to fit within the bit range allocated to its data type."
+        },
+        {
+            "question": "Which of the following choices describes the operational architecture of a standard 'top-down' system development planning methodology?",
+            "options": [
+                "Building low level utility modules before outlining the main program framework.",
+                "Starting with a high level overview of the application and breaking it down into increasingly detailed sub-modules.",
+                "Writing the machine language binary files before creating structured pseudocode.",
+                "Combining distinct computer hardware processors into an integrated network loop."
+            ],
+            "correctAnswer": "Starting with a high level overview of the application and breaking it down into increasingly detailed sub-modules.",
+            "explanation": "Top-down design maps out the primary system requirements first, then decomposes those layers into specific, low-level modules."
+        },
+        {
+            "question": "In a flowchart mapping system, what explicit execution context differentiates a standard 'Process' rectangle from a 'Predefined Process' double-bordered rectangle?",
+            "options": [
+                "The double bordered rectangle handles primitive integer initialization math actions.",
+                "The double-bordered rectangle indicates a call to a separate, defined sub-routine or function.",
+                "The double bordered rectangle contains terminal program start and stop indicators.",
+                "The double-bordered rectangle captures human keyboard input string values."
+            ],
+            "correctAnswer": "The double-bordered rectangle indicates a call to a separate, defined sub-routine or function.",
+            "explanation": "A double bordered rectangle marks a predefined process, meaning control jumps to an independent, pre-written sub routine or function."
+        },
+        {
+            "question": "What behavior defines an interactive user terminal 'Prompt' operation within an algorithmic system flow?",
+            "options": [
+                "An internal math task that clears out corrupted memory stack indexes.",
+                "A message displayed on screen guiding the user to input required information.",
+                "A compilation subroutine that strips blank space tabs from source text files.",
+                "A structural hardware condition that speeds up CPU pipeline processes."
+            ],
+            "correctAnswer": "A message displayed on screen guiding the user to input required information.",
+            "explanation": "Prompts are UI print instructions that tell users exactly what kind of input data the application is waiting to receive."
+        },
+        {
+            "question": "Which of the following programmatic attributes tracks whether an algorithmic approach accurately solves its targeted design challenge?",
+            "options": [
+                "Algorithmic Logic Correctness",
+                "Syntactic Code Density Index",
+                "Hardware Execution Speed Tier",
+                "Data Type Allocation Footprint"
+            ],
+            "correctAnswer": "Algorithmic Logic Correctness",
+            "explanation": "Correctness verifies that an algorithm operates without logical design flaws and consistently outputs expected, accurate results."
+        },
+        {
+            "question": "What primary operational benefit is achieved by incorporating clear structural indentation inside complex multi tier if-else structures?",
+            "options": [
+                "It instructs the program compiler to skip redundant code evaluation tasks.",
+                "It visually clarifies the hierarchical relationship and scope of nested conditional branches.",
+                "It resolves syntax errors resulting from mismatched expression brackets.",
+                "It decreases the physical file storage footprint of compilation binaries."
+            ],
+            "correctAnswer": "It visually clarifies the hierarchical relationship and scope of nested conditional branches.",
+            "explanation": "Proper indentation maps the nesting levels of complex logical blocks, helping developers follow the flow of control at a glance."
+        },
+        {
+            "question": "Which of the following items represents an essential component of a standard loop control mechanism?",
+            "options": [
+                "An off-page connection pentagon coordinate marker",
+                "A loop counter variable initialization, condition check, and update step",
+                "An external database schema file connectivity array link",
+                "A global compilation optimization flag directive"
+            ],
+            "correctAnswer": "A loop counter variable initialization, condition check, and update step",
+            "explanation": "Every clean iterative loop relies on three steps: initializing a state, checking a condition, and updating that state tracking variable."
+        },
+        {
+            "question": "In computer data processing, what primary trait distinguishes a 'string' literal from a standard primitive 'character' data type?",
+            "options": [
+                "Strings can only contain numeric digits, while characters hold alphabetic terms.",
+                "Strings are contiguous arrays of multiple characters terminated by a null indicator, whereas a character is a single byte.",
+                "Characters require complex runtime compilation engines to allocate hardware memory points.",
+                "Strings are processed using geometric diamond decision boxes inside flowcharts."
+            ],
+            "correctAnswer": "Strings are contiguous arrays of multiple characters terminated by a null indicator, whereas a character is a single byte.",
+            "explanation": "A primitive char holds a single byte character, while a string represents a sequential array of characters terminated by a null character (\\0)."
+        },
+        {
+            "question": "What is the computational benefit of using 'short-circuit evaluation' behaviors during complex logical operator reviews?",
+            "options": [
+                "It resolves syntax grammar mistakes automatically without crashing applications.",
+                "It saves execution time by skipping unnecessary sub expression evaluations once the final outcome is certain.",
+                "It allows applications to run without configuring primitive data type classes.",
+                "It increases the physical clock frequency rate of the hardware processor core."
+            ],
+            "correctAnswer": "It saves execution time by skipping unnecessary sub expression evaluations once the final outcome is certain.",
+            "explanation": "Short circuiting stops evaluating an expression as soon as the definitive Boolean outcome is locked in, saving processing time."
+        },
+        {
+            "question": "Which of the following metrics determines the internal logical 'cohesion' score of an isolated software functional module?",
+            "options": [
+                "The number of variable names that start with underscore characters.",
+                "The degree to which all internal tasks inside a module focus on a single, unified purpose.",
+                "The physical file byte size of the source document text registry.",
+                "The quantity of alternative branching paths embedded inside loop systems."
+            ],
+            "correctAnswer": "The degree to which all internal tasks inside a module focus on a single, unified purpose.",
+            "explanation": "Cohesion measures how tightly focused the tasks within a single module are; high cohesion indicates clean, single purpose design."
+        },
+        {
+            "question": "What critical liability occurs if an execution engine encounters an uninitialized variable inside an active mathematical tracking equation?",
+            "options": [
+                "The program compiler will crash and corrupt the hardware memory stack allocation.",
+                "The calculation will process unpredictable garbage values, yielding unreliable results.",
+                "The system will automatically convert the equation into an array index template.",
+                "The flowchart layout will lose its directional connectivity flowline pointers."
+            ],
+            "correctAnswer": "The calculation will process unpredictable garbage values, yielding unreliable results.",
+            "explanation": "Uninitialized variables point to whatever residual data remains in that memory slot, introducing random 'garbage' data into calculations."
+        },
+        {
+            "question": "Which tool provides a standardized textual platform independent bridge between abstract algorithmic reasoning and strict programmatic syntax execution?",
+            "options": [
+                "A compiled object file repository",
+                "A structured pseudocode framework",
+                "A geometric hardware schematic sheet",
+                "A binary runtime execution matrix"
+            ],
+            "correctAnswer": "A structured pseudocode framework",
+            "explanation": "Pseudocode acts as a human-readable bridge, organizing algorithmic logic into a structured layout before conversion into formal code."
+        },
+        {
+            "question": "In structural application planning, what primary goal drives software engineering teams to employ standard 'desk checking' techniques?",
+            "options": [
+                "To clean out residual dust particles from physical computer system keyboard arrays.",
+                "To trace logic flows and catch programmatic design bugs before writing actual source code.",
+                "To calculate the total retail market financial value of completed system packages.",
+                "To modify compiler optimization profiles across external platform servers."
+            ],
+            "correctAnswer": "To trace logic flows and catch programmatic design bugs before writing actual source code.",
+            "explanation": "Desk checking is an early design technique where developers trace logic path sequences to find design bugs before writing code."
+        },
+        {
+            "question": "Which of the following programmatic actions is performed during an application compiler's syntax analysis phase?",
+            "options": [
+                "Allocating structural stack memory blocks for long-term database storage.",
+                "Checking token arrangements against language grammar rules to build a syntax tree.",
+                "Displaying multi window user input interfaces on physical display screens.",
+                "Translating functional object binary files across internet system networks."
+            ],
+            "correctAnswer": "Checking token arrangements against language grammar rules to build a syntax tree.",
+            "explanation": "Syntax analysis parses token streams against language grammar rules, building an abstract syntax tree to verify structural validity."
+        },
+        {
+            "question": "What type of programmatic error is generated if an expression accidentally attempts to divide an integer value by a literal zero variable?",
+            "options": [
+                "A structural syntax compilation break error",
+                "A critical execution runtime exception error",
+                "An abstract preliminary analysis requirement fault",
+                "An off page connector logic flow layout misalignment"
+            ],
+            "correctAnswer": "A critical execution runtime exception error",
+            "explanation": "Division by zero is an invalid operation that slips past syntax checks but causes a critical exception crash at runtime."
+        },
+        {
+            "question": "Which of the following architectural models emphasizes the constant step by step refinement of software modules through iterative feedback cycles?",
+            "options": [
+                "The Rigid Linear Waterfall Development Model",
+                "The Evolutionary Prototyping Development Model",
+                "The Single-Pass Compile Execution Strategy",
+                "The Static Unstructured Algorithmic Methodology"
+            ],
+            "correctAnswer": "The Evolutionary Prototyping Development Model",
+            "explanation": "Evolutionary prototyping relies on building, testing, and refining incremental mock-ups based on ongoing user and system feedback."
+        },
+        {
+            "question": "In standard flowcharting logic, what specific processing role is assigned to a slanted parallelogram geometric shape container?",
+            "options": [
+                "Evaluating conditional matrix choices to branch execution flows.",
+                "Handling input data entry capture or output value notification tasks.",
+                "Running high speed arithmetic equation modifications on variables.",
+                "Marking absolute terminal start boundaries or exit termination parameters."
+            ],
+            "correctAnswer": "Handling input data entry capture or output value notification tasks.",
+            "explanation": "Parallelograms are the flowchart convention for input and output operations, such as reading data inputs or displaying results."
+        },
+        {
+            "question": "What primary differentiator separates a standard multi pass compiler from a basic line-by-line runtime interpreter?",
+            "options": [
+                "Compilers convert whole source files into standalone machine code before execution, while interpreters translate on the fly.",
+                "Interpreters automatically fix grammatical formatting breaks inside source text.",
+                "Compilers ignore variable declaration guidelines and primitive data type systems.",
+                "Interpreters rely entirely on physical hardware integrated circuit modification pins."
+            ],
+            "correctAnswer": "Compilers convert whole source files into standalone machine code before execution, while interpreters translate on the fly.",
+            "explanation": "Compilers parse an entire source file to generate standalone machine code binaries, whereas interpreters translate and run code line by line."
+        },
+        {
+            "question": "Which of the following conditions represents a structural 'logic error' inside a completed calculation function?",
+            "options": [
+                "Using an un-declared identifier string that triggers compiler parsing errors.",
+                "Accidentally subtracting a discount value instead of adding it, producing incorrect totals.",
+                "Forgetting to insert a mandatory terminal character token at an expression break.",
+                "Omitting the closing quote mark from an informational string literal value definition."
+            ],
+            "correctAnswer": "Accidentally subtracting a discount value instead of adding it, producing incorrect totals.",
+            "explanation": "Logic errors occur when code runs successfully without crashing but produces incorrect results due to flawed calculation reasoning."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive one-dimensional array data structure?",
+            "options": [
+                "It can store values of multiple different data types simultaneously.",
+                "It contains a fixed number of elements of the same data type stored in contiguous memory.",
+                "It cannot be indexed using integer tracking counter variables.",
+                "It automatically writes its contents to an external database file on exit."
+            ],
+            "correctAnswer": "It contains a fixed number of elements of the same data type stored in contiguous memory.",
+            "explanation": "A standard primitive array is homogeneous and fixed-size, storing a set number of identical data types in sequential memory slots."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle involves defining performance thresholds, hardware interfaces, and processing limitations?",
+            "options": [
+                "The Code Generation and Text Editing Phase",
+                "The System Requirements Specification Analysis Phase",
+                "The Final Post-Release Application Maintenance Window",
+                "The Unstructured Diagram Generation Review Step"
+            ],
+            "correctAnswer": "The System Requirements Specification Analysis Phase",
+            "explanation": "The analysis phase focuses on documenting system requirements, specifying performance constraints, and setting hardware scope."
+        },
+        {
+            "question": "In structural code development, why is clear descriptive naming for variables and identifiers highly valued?",
+            "options": [
+                "It reduces the physical memory footprint of the compiled application binary file.",
+                "It makes the source code self-documenting and easier for human maintainers to understand.",
+                "It allows programs to bypass syntax verification loops during compilation.",
+                "It speeds up execution times by optimizing hardware chip instruction pipelines."
+            ],
+            "correctAnswer": "It makes the source code self-documenting and easier for human maintainers to understand.",
+            "explanation": "Descriptive variable names make the codebase clear and readable, reducing the need for extensive comment documentation."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by a standard, nested switch-case configuration matrix?",
+            "options": [
+                "A multi-path conditional selection branching logic architecture.",
+                "A linear unbranched non repeating sequential pipeline flow.",
+                "A cyclic execution iteration framework lacking exit conditions.",
+                "An abstract low level hardware resource register allocation process."
+            ],
+            "correctAnswer": "A multi-path conditional selection branching logic architecture.",
+            "explanation": "Switch-case blocks provide multi-path selection logic, routing program execution down specific branches based on matching values."
+        },
+        {
+            "question": "Which of the following software design components acts as an abstract text blueprint, rather than an active compiled executable target?",
+            "options": [
+                "An optimized operating system kernel process module.",
+                "A structured pseudocode system logic layout document.",
+                "A functional machine language binary file saved on disk.",
+                "An active hardware memory address register data block."
+            ],
+            "correctAnswer": "A structured pseudocode system logic layout document.",
+            "explanation": "Pseudocode is a high level planning tool used to organize logic, not a functional binary file that can be executed by a machine."
+        },
+        {
+            "question": "What is the primary function of an application linker within the software compilation workflow?",
+            "options": [
+                "To trace logical calculation mistakes inside complex algorithm matrices.",
+                "To combine object files and libraries into a single executable application binary.",
+                "To display user prompt messaging text patterns on monitoring equipment.",
+                "To strip out structural indentation spaces from source text files."
+            ],
+            "correctAnswer": "To combine object files and libraries into a single executable application binary.",
+            "explanation": "The linker resolves external references by combining compiled object modules and library code into a final executable file."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier name under strict programming syntax constraints?",
+            "options": [
+                "3_axis_coordinate_value",
+                "calculated_average_score",
+                "total-payment-amount",
+                "while"
+            ],
+            "correctAnswer": "calculated_average_score",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like while. Underscores are valid."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Output'?",
+            "options": [
+                "It must store thousands of data records inside an external database file.",
+                "It must produce at least one defined result or quantity to resolve the targeted problem.",
+                "It must display interactive graphical user interfaces on the screen.",
+                "It must transmit data packets across external network systems."
+            ],
+            "correctAnswer": "It must produce at least one defined result or quantity to resolve the targeted problem.",
+            "explanation": "The output property requires that every valid algorithm produce at least one clear result, outcome, or computed value."
+        },
+        {
+            "question": "In system flowchart layout mapping, what explicit operational function does a standard rectangle shape perform?",
+            "options": [
+                "Tracing alternative conditional branches based on variable parameters.",
+                "Enclosing arithmetic calculations, data processing steps, or variable assignments.",
+                "Marking the initial execution entry points or exit termination slots.",
+                "Capturing user keyboard responses from monitoring hardware devices."
+            ],
+            "correctAnswer": "Enclosing arithmetic calculations, data processing steps, or variable assignments.",
+            "explanation": "Rectangles are the standard flowchart convention for processing steps, assignments, and calculations."
+        },
+        {
+            "question": "Which of the following scenarios describes the introduction of a syntax compilation error into an application source file?",
+            "options": [
+                "Accidentally adding a premium value instead of applying a deduction discount tool.",
+                "Forgetting a required closing bracket at the end of a conditional function block.",
+                "Creating an un-incremented counter tracking index that loop-locks the software.",
+                "Initializing an integer variable to a zero value before using it in a calculation."
+            ],
+            "correctAnswer": "Forgetting a required closing bracket at the end of a conditional function block.",
+            "explanation": "Mismatched brackets break the grammatical rules of the language, triggering a syntax error that halts the compilation process."
+        },
+        {
+            "question": "What computational benefit does an application derive from incorporating modular 'reusable functions' into its code architecture?",
+            "options": [
+                "It forces the compiler to expand individual primitive memory allocations.",
+                "It minimizes code redundancy and makes debugging and long term maintenance easier.",
+                "It ensures that execution flows will bypass all conditional decision checkpoints.",
+                "It eliminates the requirement to trace logical bugs using debugger utilities."
+            ],
+            "correctAnswer": "It minimizes code redundancy and makes debugging and long term maintenance easier.",
+            "explanation": "Reusable functions isolate specific tasks, eliminating duplicate code and making applications much easier to maintain, test, and debug."
+        },
+        {
+            "question": "Which structural loop construct evaluates its exit condition at the end of the block, guaranteeing the body runs at least once?",
+            "options": [
+                "The entry-controlled while iteration block model.",
+                "The post-controlled do-while iteration block model.",
+                "The linear non-repeating sequential execution track.",
+                "The nested multi-path switch selection matrix layout."
+            ],
+            "correctAnswer": "The post-controlled do-while iteration block model.",
+            "explanation": "The do-while loop is a post-controlled structure that checks its condition after the loop body runs, ensuring at least one execution pass."
+        },
+        {
+            "question": "What happens to the logical scope and accessibility of a variable if it is explicitly declared 'global' in a program?",
+            "options": [
+                "It can only be accessed within the first functional block defined in the file.",
+                "It remains accessible across all modules and functions throughout the program's lifecycle.",
+                "It is wiped from active memory storage as soon as the main function block exits.",
+                "It is restricted to geometric diamond decision shapes inside flowcharts."
+            ],
+            "correctAnswer": "It remains accessible across all modules and functions throughout the program's lifecycle.",
+            "explanation": "Global variables are defined outside individual functions, making them accessible to any module or routine within the application."
+        },
+        {
+            "question": "In modular software engineering, the architectural term 'High Cohesion' describes which ideal system state?",
+            "options": [
+                "Modules are tightly dependent on each other's internal variables.",
+                "The components inside a single module are focused on executing one clear, well-defined task.",
+                "An application relies entirely on unstructured goto jumps to navigate workflows.",
+                "The program compiler bypasses syntax verification sweeps during builds."
+            ],
+            "correctAnswer": "The components inside a single module are focused on executing one clear, well-defined task.",
+            "explanation": "High cohesion means a module focuses on a single task, which makes the codebase cleaner, more reliable, and easier to maintain."
+        },
+        {
+            "question": "Which of the following tools allows a software developer to manually trace execution paths and verify logic values step-by-step on paper?",
+            "options": [
+                "An optimizing ahead of time software compiler unit",
+                "A dry run desk checking matrix",
+                "An interactive binary compiler linker assembly",
+                "A lexical token arrangement document sheet"
+            ],
+            "correctAnswer": "A dry run desk checking matrix",
+            "explanation": "Desk checking (or dry running) is a manual process where developers trace logic states on paper to verify an algorithm's correctness."
+        },
+        {
+            "question": "What primary risk is introduced when an application development lifecycle omits a thorough System Testing and Validation phase?",
+            "options": [
+                "The text editor will refuse to save raw source files to physical disk storage.",
+                "Critical logical errors and edge-case bugs will go undetected until deployment.",
+                "Declared primitive character variables will automatically convert to float formats.",
+                "The system compiler will generate off-page connector flowchart links."
+            ],
+            "correctAnswer": "Critical logical errors and edge-case bugs will go undetected until deployment.",
+            "explanation": "Without comprehensive testing, hidden logic flaws and edge-case bugs will make it into production and affect end users."
+        },
+        {
+            "question": "Which of the following operations describes an implicit data type promotion or coercion behavior inside a calculation expression?",
+            "options": [
+                "An engine automatically converting an integer to a float when adding it to a floating-point value.",
+                "A programmer writing a cast operator to force a double value into an integer slot.",
+                "The compiler raising syntax errors because a closing semicolon token is missing.",
+                "A linker bundling distinct compiled object modules into an executable target file."
+            ],
+            "correctAnswer": "An engine automatically converting an integer to a float when adding it to a floating-point value.",
+            "explanation": "Implicit promotion (or coercion) occurs when the compiler automatically upgrades a narrower data type to match a wider one during evaluation."
+        },
+        {
+            "question": "In structural layout design, what specific operational step is mapped using a diamond or rhombus shape inside a flowchart?",
+            "options": [
+                "A simple variable arithmetic modification task step.",
+                "A conditional evaluation fork that determines the next path of program flow.",
+                "The boundary edge marking where execution terminates.",
+                "An off-page connection link leading to separate layout sheets."
+            ],
+            "correctAnswer": "A conditional evaluation fork that determines the next path of program flow.",
+            "explanation": "The diamond shape represents a decision point, testing a condition to route execution down alternative paths."
+        },
+        {
+            "question": "What computational error occurs if a recursive function lacks an accessible base case scenario?",
+            "options": [
+                "The compiler will fail to generate an executable binary file.",
+                "The program will crash with a critical stack overflow runtime error.",
+                "The system will automatically convert local variables into global variables.",
+                "The flowchart layout will automatically remove its terminal ovals."
+            ],
+            "correctAnswer": "The program will crash with a critical stack overflow runtime error.",
+            "explanation": "Infinite recursion consumes the execution stack frame by frame, eventually triggering a critical stack overflow crash."
+        },
+        {
+            "question": "Which of the following components represents a valid high-level programming language construct, rather than a low level hardware processor architecture component?",
+            "options": [
+                "An internal arithmetic logic unit hardware accumulator register.",
+                "An abstract multi dimensional nested if else conditional framework.",
+                "A physical CPU instruction fetching decoder circuit module.",
+                "A hardware semiconductor transistor array silicon wafer microchip."
+            ],
+            "correctAnswer": "An abstract multi dimensional nested if else conditional framework.",
+            "explanation": "Control structures like nested if-else statements are high level language abstractions that organize program logic, distinct from physical CPU hardware."
+        },
+        {
+            "question": "What primary benefit do developers gain by using clean structural indentation throughout deeply nested block files?",
+            "options": [
+                "It instructs compilers to compress final binary executable sizes.",
+                "It visibly clarifies code hierarchy, making it easier for human developers to trace logic.",
+                "It automatically fixes syntax formatting errors like missing semicolons.",
+                "It increases execution speed across hardware processor cores."
+            ],
+            "correctAnswer": "It visibly clarifies code hierarchy, making it easier for human developers to trace logic.",
+            "explanation": "Indentation provides a clear visual map of nesting levels, helping developers quickly read, trace, and maintain complex logic."
+        },
+        {
+            "question": "Which phase of the standard Software Development Lifecycle centers on translating finalized algorithmic maps into actual source code?",
+            "options": [
+                "The Preliminary Feasibility Analysis Phase",
+                "The Implementation and Code Generation Phase",
+                "The Post Release Maintenance Optimization Window",
+                "The Initial System Architecture Documentation Step"
+            ],
+            "correctAnswer": "The Implementation and Code Generation Phase",
+            "explanation": "The implementation phase turns finalized pseudocode and flowchart logic into functional source code within a programming language."
+        },
+        {
+            "question": "What value will a logical OR short-circuiting operator (||) return if its very first evaluation term resolves to a Boolean True status?",
+            "options": [
+                "It will immediately return True and skip evaluating the second expression completely.",
+                "It will raise an immediate runtime calculation exception error.",
+                "It will return a zero integer value and force an exit from the program.",
+                "It will wait for the secondary term to evaluate before choosing a path."
+            ],
+            "correctAnswer": "It will immediately return True and skip evaluating the second expression completely.",
+            "explanation": "A logical OR only needs one condition to be true. If the first term is true, short-circuit logic returns true immediately, saving processing time."
+        },
+        {
+            "question": "In algorithmic software metrics, what key attribute defines the overall 'efficiency' profile of a completed solution?",
+            "options": [
+                "The amount of text formatting comments written into the source file.",
+                "The optimal use of computing resources like execution time and memory space.",
+                "The quantity of alternative variable identifiers declared inside loops.",
+                "The presence of multi-page connector links within flowchart designs."
+            ],
+            "correctAnswer": "The optimal use of computing resources like execution time and memory space.",
+            "explanation": "Efficiency measures how well an algorithm manages computing resources, focusing on minimizing runtime execution cycles and memory footprint."
+        },
+        {
+            "question": "Which of the following choices describes the operational liability of having 'High Coupling' between distinct application system software modules?",
+            "options": [
+                "It causes the compiler to generate syntax errors during file parsing steps.",
+                "It means changes in one module are likely to break functionality in another, complicating maintenance.",
+                "It prevents applications from utilizing multi dimensional array matrices.",
+                "It automatically wipes global variables when functions exit."
+            ],
+            "correctAnswer": "It means changes in one module are likely to break functionality in another, complicating maintenance.",
+            "explanation": "High coupling means modules are deeply interdependent, creating brittle systems where code updates easily cause unintended side effects."
+        },
+        {
+            "question": "What structural role does an explicit 'increment or update' step perform inside a standard loop iteration control block?",
+            "options": [
+                "It sets the initial starting value for the loop tracking counter variable.",
+                "It modifies the loop control variable each pass, moving it closer to the exit condition.",
+                "It forces the compiler to run optimization tasks across external code documents.",
+                "It links external file system storage modules directly to processing structures."
+            ],
+            "correctAnswer": "It modifies the loop control variable each pass, moving it closer to the exit condition.",
+            "explanation": "The update step changes the loop-control variable with each pass, preventing infinite loops by moving the state toward the exit condition."
+        },
+        {
+            "question": "Which tool provides a text-based, structured format for mapping out program logic using plain language instead of strict programming language syntax?",
+            "options": [
+                "A system flowchart configuration layout diagram",
+                "A program design language framework or pseudocode",
+                "A compiled object file code registry resource",
+                "A binary runtime execution vector mapping file"
+            ],
+            "correctAnswer": "A program design language framework or pseudocode",
+            "explanation": "Pseudocode (or Program Design Language) uses human-readable language structured into code forms to map logic before formal development."
+        },
+        {
+            "question": "What operational failure occurs when an application attempts to extract a value from an index position that lies outside the boundary of an array?",
+            "options": [
+                "A structural variable numeric overflow condition",
+                "A critical out-of-bounds array index runtime error exception",
+                "A syntax compilation parameter break fault",
+                "An off page connector flow chart layout alignment loop"
+            ],
+            "correctAnswer": "A critical out-of-bounds array index runtime error exception",
+            "explanation": "Accessing an invalid array index bypasses allocated memory limits, triggering an out-of-bounds runtime error or exception crash."
+        },
+        {
+            "question": "In modern software development methodologies, what is the primary purpose of writing interactive 'Unit Tests'?",
+            "options": [
+                "To measure the retail financial value of individual software packages.",
+                "To isolate and verify that small, individual code modules work correctly.",
+                "To automatically generate structured pseudocode from machine binaries.",
+                "To override syntax parsing checks inside the compiler engine."
+            ],
+            "correctAnswer": "To isolate and verify that small, individual code modules work correctly.",
+            "explanation": "Unit tests validate individual functions or modules in isolation, helping developers catch and fix bugs early in development."
+        },
+        {
+            "question": "Which flowchart symbol is used to link a terminal workflow boundary into a separate structural tracking diagram page?",
+            "options": [
+                "A basic rectangular action process block",
+                "A pentagonal off-page connector symbol node",
+                "A diamond multi path conditional branch layout",
+                "A slanted input data capture parallelogram"
+            ],
+            "correctAnswer": "A pentagonal off-page connector symbol node",
+            "explanation": "An off page connector symbol (often shaped like a pentagon) cleanly links process flows across different pages of a diagram."
+        },
+        {
+            "question": "What results from passing source text through an application compiler's 'code generation' terminal stage?",
+            "options": [
+                "The creation of plain unstructured text documentation sheets.",
+                "The production of target machine language binaries or intermediate object files.",
+                "The immediate execution of application windows on visual displays.",
+                "The automated fixing of structural syntax errors inside scripts."
+            ],
+            "correctAnswer": "The production of target machine language binaries or intermediate object files.",
+            "explanation": "The code generation stage converts verified logic trees into machine executable binaries or platform specific object code."
+        },
+        {
+            "question": "Which of the following options represents a valid conditional expression format for testing multiple distinct parameters simultaneously?",
+            "options": [
+                "if (current_score >= 50 AND <= 100)",
+                "if (current_score >= 50 && current_score <= 100)",
+                "if (50 <= current_score <= 100)",
+                "if (current_score >= 50 & score check & <= 100)"
+            ],
+            "correctAnswer": "if (current_score >= 50 && current_score <= 100)",
+            "explanation": "Testing multiple parameters requires explicit, complete relational operations joined by logical operators like &&."
+        },
+        {
+            "question": "In structural programming logic, what primary benefit is achieved by employing top-down step-by-step functional refinement routines?",
+            "options": [
+                "It allows complex problems to be decomposed into manageable, testable sub-units.",
+                "It ensures that final software files bypass compiler syntax parsing loops.",
+                "It forces applications to run without configuring primitive data formats.",
+                "It increases physical storage capacity metrics across processor chips."
+            ],
+            "correctAnswer": "It allows complex problems to be decomposed into manageable, testable sub-units.",
+            "explanation": "Top-down refinement breaks an overarching problem down into minor, self-contained functions that are far easier to code, test, and debug."
+        },
+        {
+            "question": "What key operational differentiator separates a standard primitive integer variable from a floating-point variable specification?",
+            "options": [
+                "Integers hold text strings, while floats store numeric arrays.",
+                "Integers store whole numbers without fractional elements, while floats support decimal fractions.",
+                "Floats require specialized offline compilers to define hardware locations.",
+                "Integers are processed using geometric diamond decision boxes inside flowcharts."
+            ],
+            "correctAnswer": "Integers store whole numbers without fractional elements, while floats support decimal fractions.",
+            "explanation": "Integers store positive and negative whole numbers, while floating-point types use specialized bit layouts to handle fractional decimals."
+        },
+        {
+            "question": "Which of the following items represents an internal hardware processor component that actively processes data, rather than an abstract programming structure?",
+            "options": [
+                "A structured pseudocode application planning map",
+                "An integrated circuit Arithmetic Logic Unit (ALU)",
+                "A nested multi tier switch case conditional framework",
+                "An abstract one-dimensional structural array handle"
+            ],
+            "correctAnswer": "An integrated circuit Arithmetic Logic Unit (ALU)",
+            "explanation": "The ALU is a core physical hardware component inside the CPU that executes arithmetic calculations and logical operations."
+        },
+        {
+            "question": "What is the primary function of a standard loop's 'break' statement modifier inside an iterative execution block?",
+            "options": [
+                "To skip the current loop pass and immediately force evaluation of the next iteration cycle.",
+                "To immediately terminate the entire loop and pass control to the statement following the loop block.",
+                "To reset all internal tracking counter variables back to a zero state value.",
+                "To signal the compiler to ignore structural syntax error formatting breaks."
+            ],
+            "correctAnswer": "To immediately terminate the entire loop and pass control to the statement following the loop block.",
+            "explanation": "A break statement jumps execution completely out of the active loop, passing control directly to the next line of code outside that block."
+        },
+        {
+            "question": "Which phase of the standard Software Development Lifecycle centers on mapping user requirements into explicit wireframe architectures and component layouts?",
+            "options": [
+                "The System Design and Architectural Planning Phase",
+                "The Source Code Generation and Text Editing Window",
+                "The Final Post Deployment Software Maintenance Cycle",
+                "The Unstructured Diagram Parsing Compilation Phase"
+            ],
+            "correctAnswer": "The System Design and Architectural Planning Phase",
+            "explanation": "The system design phase translates project requirements into functional technical blueprints, architecture specs, and component layouts."
+        },
+        {
+            "question": "What value will a logical AND short-circuiting operator (&&) return if its very first evaluation term resolves to a Boolean False status?",
+            "options": [
+                "It will wait for subsequent terms to evaluate before outputting results.",
+                "It will immediately return False and skip evaluating any remaining sub-expressions.",
+                "It will trigger an immediate runtime application execution crash error.",
+                "It will convert the monitoring expression into an integer variable data format."
+            ],
+            "correctAnswer": "It will immediately return False and skip evaluating any remaining sub-expressions.",
+            "explanation": "Since a logical AND requires all conditions to be true, finding a false first term means the statement is false, and remaining checks are skipped."
+        },
+        {
+            "question": "In algorithmic engineering, the concept of 'Input' dictates that every valid algorithmic workflow must fulfill which criteria?",
+            "options": [
+                "It must accept zero or more explicitly defined external quantities before execution begins.",
+                "It must store thousands of data elements inside an online database engine.",
+                "It must generate text communication documents automatically across internet hubs.",
+                "It must use custom variable identifiers that feature leading number marks."
+            ],
+            "correctAnswer": "It must accept zero or more explicitly defined external quantities before execution begins.",
+            "explanation": "The input property allows an algorithm to receive zero or more well-defined inputs to seed its processing workflow."
+        },
+        {
+            "question": "Which of the following choices describes the operational asset provided by 'Low Module Coupling' across large systems?",
+            "options": [
+                "It guarantees that applications will bypass structural compilation checking sweeps.",
+                "It makes modules independent, meaning changes to one component won't unexpectedly break others.",
+                "It forces execution paths down a single, linear, non-branching track.",
+                "It completely eliminates the requirement to assign memory for primitive variables."
+            ],
+            "correctAnswer": "It makes modules independent, meaning changes to one component won't unexpectedly break others.",
+            "explanation": "Low coupling keeps modules isolated and independent, ensuring changes to one component don't trigger ripple effects across the application."
+        },
+        {
+            "question": "What structural role does an explicit loop 'continue' statement perform within an active iterative execution block?",
+            "options": [
+                "It immediately terminates the loop and passes control to the line following the block.",
+                "It skips the rest of the current loop body and jumps directly to the next iteration's condition check.",
+                "To alter compiler optimization parameters across external cloud server networks.",
+                "To link multi-dimensional array structures directly to database pipelines."
+            ],
+            "correctAnswer": "It skips the rest of the current loop body and jumps directly to the next iteration's condition check.",
+            "explanation": "A continue statement skips the remaining code in the current iteration loop pass and advances control to the next loop update or condition check."
+        },
+        {
+            "question": "Which tool provides a standardized visual layout for mapping out program logic using interconnected geometric shapes?",
+            "options": [
+                "A structured pseudocode narrative layout document",
+                "A system flowchart diagram configuration",
+                "A compiled object file code registry resource repository",
+                "A binary runtime execution vector mapping data sheet"
+            ],
+            "correctAnswer": "A system flowchart diagram configuration",
+            "explanation": "Flowcharts provide a standardized visual map, tracing an algorithm's execution logic using geometric shapes and directional flowlines."
+        },
+        {
+            "question": "What type of programmatic error is generated if an application tries to access an unallocated object reference pointer?",
+            "options": [
+                "A structural syntax compilation grammar error condition",
+                "A critical null pointer reference runtime error exception",
+                "An abstract preliminary analysis specification defect fault",
+                "An off page connector logic layout trace alignment loop"
+            ],
+            "correctAnswer": "A critical null pointer reference runtime error exception",
+            "exception": "Accessing an unallocated or null pointer references non existent memory, triggering a critical runtime exception crash."
+        },
+        {
+            "question": "In modern software configuration ecosystems, what is the primary role of an Integrated Development Environment (IDE)?",
+            "options": [
+                "To track and measure the retail financial costs of shipping software hardware.",
+                "To bundle code editing, compilation, debugging, and testing tools into a single application.",
+                "To automatically generate structured pseudocode narratives from assembly binary files.",
+                "To override syntax rules enforced by system compilation parsing utilities."
+            ],
+            "correctAnswer": "To bundle code editing, compilation, debugging, and testing tools into a single application.",
+            "explanation": "An IDE bundles code editors, compilers, debuggers, and testing tools into a unified interface to streamline development workflows."
+        },
+        {
+            "question": "Which flowchart symbol is used to encapsulate an explicit data capture statement from a user keyboard terminal?",
+            "options": [
+                "A standard rectangular calculations process block",
+                "A slanted input/output parallelogram shape container",
+                "A diamond multi path conditional decision layout node",
+                "An elongated terminal oval start boundary indicator"
+            ],
+            "correctAnswer": "A slanted input/output parallelogram shape container",
+            "explanation": "Parallelograms are the globally accepted flowchart standard for grouping input data capture or output notification actions."
+        },
+        {
+            "question": "What results from running compiled application object modules through a system software 'Linker' unit?",
+            "options": [
+                "The production of plain unstructured design documentation files.",
+                "The generation of a single unified standalone functional binary executable file.",
+                "The immediate deployment of user graphic interfaces on visual screens.",
+                "The automated parsing of syntax rules inside source scripts."
+            ],
+            "correctAnswer": "The generation of a single unified standalone functional binary executable file.",
+            "explanation": "The linker combines object modules and compiled libraries into a single, functional executable binary file ready for deployment."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under standard syntax constraints?",
+            "options": [
+                "monthly_net_revenue_total",
+                "4_quarter_revenue_metric",
+                "gross-revenue-summation",
+                "for"
+            ],
+            "correctAnswer": "monthly_net_revenue_total",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like for. Underscores are valid."
+        },
+        {
+            "question": "In structural software architecture, what primary advantage does 'High Module Cohesion' deliver to engineering teams?",
+            "options": [
+                "It makes individual modules easier to understand, test, maintain, and reuse.",
+                "It forces applications to skip compilation parsing sweeps during system builds.",
+                "It locks execution flows down a single linear non repeating line trajectory.",
+                "It eliminates the requirement to allocate memory tracking for basic primitive formats."
+            ],
+            "correctAnswer": "It makes individual modules easier to understand, test, maintain, and reuse.",
+            "explanation": "High cohesion keeps modules focused on a single task, making the code clean, manageable, testable, and highly reusable."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive two-dimensional matrix array structure?",
+            "options": [
+                "It can store elements of completely diverse data types simultaneously within memory rows.",
+                "It features a fixed grid size of homogeneous elements of the same data type.",
+                "It cannot be mapped using standard nested iterative loop control systems.",
+                "It automatically uploads its contents to external web server platforms on completion."
+            ],
+            "correctAnswer": "It features a fixed grid size of homogeneous elements of the same data type.",
+            "explanation": "A two dimensional array is a grid of a fixed size, containing elements of the same data type structured across rows and columns."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on evaluating user workflows to define project features and functional constraints?",
+            "options": [
+                "The Code Generation and Source Text Editing Window",
+                "The Preliminary Feasibility Study and Requirements Analysis Phase",
+                "The Final Post Deployment Software Application Maintenance Cycle",
+                "The Unstructured Layout Diagram Translation and Assembly Step"
+            ],
+            "correctAnswer": "The Preliminary Feasibility Study and Requirements Analysis Phase",
+            "explanation": "The analysis phase focuses on exploring user requirements, mapping operational workflows, and gathering functional specifications."
+        },
+        {
+            "question": "In structured software engineering, what primary benefit does 'Top-Down Functional Decomposition' provide to system architects?",
+            "options": [
+                "It compresses final compiled execution code sizes across cloud network nodes.",
+                "It simplifies development by breaking a complex system down into manageable sub-modules.",
+                "It fixes syntax errors caused by missing source code punctuation components.",
+                "It increases execution clock speeds across physical hardware processor platforms."
+            ],
+            "correctAnswer": "It simplifies development by breaking a complex system down into manageable sub-modules.",
+            "explanation": "Decomposition breaks a large, complex application down into a modular hierarchy of simpler, standalone functions that are easier to develop and test."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by an explicit 'do-while' iteration loop framework?",
+            "options": [
+                "A post-test iterative loop control framework structure.",
+                "A linear unbranched non repeating sequential pathway flow.",
+                "A multi path conditional selection branching logic architecture array.",
+                "An abstract low level hardware register data resource manipulation step."
+            ],
+            "correctAnswer": "A post-test iterative loop control framework structure.",
+            "explanation": "A do-while loop is a post-test loop structure, checking its termination condition after executing the block body."
+        },
+        {
+            "question": "Which of the following software design components acts as an active compiled artifact, rather than an abstract planning framework?",
+            "options": [
+                "An uncompiled structured pseudocode narrative layout text document.",
+                "A system flowchart logic mapping blueprint diagram configuration sheet.",
+                "A functional standalone machine language binary executable file saved on disk.",
+                "An abstract data type mapping matrix schema layout chart."
+            ],
+            "correctAnswer": "A functional standalone machine language binary executable file saved on disk.",
+            "explanation": "Machine code binaries are active executable files that can run natively on computer hardware, whereas pseudocode and flowcharts are conceptual planning tools."
+        },
+        {
+            "question": "What is the primary function of a software compiler's 'semantic analysis' parsing stage?",
+            "options": [
+                "To trace whether code blocks conform to clear type rules and contextual meanings.",
+                "To combine external code libraries into a unified standalone functional binary executable.",
+                "To output informative screen messages that prompt users for parameter inputs.",
+                "To strip out blank indent spaces from source text documents."
+            ],
+            "correctAnswer": "To trace whether code blocks conform to clear type rules and contextual meanings.",
+            "explanation": "Semantic analysis checks code meaning and type compatibility, ensuring variables and operations are used legally within their context."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "9_month_sales_total",
+                "calculated_profit_margin",
+                "net-profit-summation",
+                "switch"
+            ],
+            "correctAnswer": "calculated_profit_margin",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like switch. Underscores are valid."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Feasibility'?",
+            "options": [
+                "It must store data records inside external cloud database servers.",
+                "Its steps must be basic enough to be executed using available hardware resources.",
+                "It must feature graphical interfaces with user-prompt options.",
+                "It must use variable names featuring leading number marks."
+            ],
+            "correctAnswer": "Its steps must be basic enough to be executed using available hardware resources.",
+            "explanation": "Feasibility ensures that an algorithm's steps are practical, realistic, and executable within the limits of available hardware and time constraints."
+        },
+        {
+            "question": "In system flowchart layout mapping, what explicit operational function does a standard oval or pill shape perform?",
+            "options": [
+                "Tracing multi-path selection forks based on calculation tracking variables.",
+                "Marking the absolute initial execution entry boundaries or termination halt slots.",
+                "Enclosing active arithmetic mathematical processes or variable modifications.",
+                "Capturing text string parameters from user terminal hardware keyboards."
+            ],
+            "correctAnswer": "Marking the absolute initial execution entry boundaries or termination halt slots.",
+            "explanation": "Ovals act as terminal symbols that clearly define where a flowchart process or program loop begins and ends."
+        },
+        {
+            "question": "Which of the following scenarios describes the introduction of a logical program error into an application functional block?",
+            "options": [
+                "Accidentally calculating an average by dividing by total count plus one, yielding bad metrics.",
+                "Forgetting to append a mandatory structural closing semicolon token at an expression break.",
+                "Using an un-declared identifier string that triggers immediate parser validation errors.",
+                "Omitting opening block quotation marks from an informative text string literal definition."
+            ],
+            "correctAnswer": "Accidentally calculating an average by dividing by total count plus one, yielding bad metrics.",
+            "explanation": "Logic errors occur when code is syntactically correct but contains flawed reasoning, producing bad results without crashing the application."
+        },
+        {
+            "question": "What computational benefit does an application codebase derive from incorporating clear, descriptive naming constraints across identifiers?",
+            "options": [
+                "It forces compilers to compress target file memory usage structures.",
+                "It makes logic self-documenting and significantly easier for human developers to maintain.",
+                "It ensures that execution flows can bypass all selection check boundaries.",
+                "It completely removes the requirement to trace bugs using interactive debuggers."
+            ],
+            "correctAnswer": "It makes logic self-documenting and significantly easier for human developers to maintain.",
+            "explanation": "Descriptive identifiers make intent clear, creating self-documenting code that is easy for development teams to read and maintain."
+        },
+        {
+            "question": "Which structural loop construct evaluates its entry condition at the top of the block, potentially bypassing execution entirely?",
+            "options": [
+                "The entry-controlled while iteration block model.",
+                "The post-controlled do-while iteration block model.",
+                "The linear non-repeating sequential calculation track.",
+                "The nested multi-path switch case choice configuration."
+            ],
+            "correctAnswer": "The entry-controlled while iteration block model.",
+            "explanation": "The while loop evaluates its entry condition at the top, skipping the loop body entirely if that condition checks out as false from the start."
+        },
+        {
+            "question": "What happens to the logical accessibility and scope of an explicit 'local' variable declared inside a specific software function module?",
+            "options": [
+                "It remains accessible across all modules and functions throughout the program's lifecycle.",
+                "It is restricted entirely to that function and is cleared from active memory on exit.",
+                "It is automatically saved to external database file storage networks on exit.",
+                "It can only be modified inside geometric diamond decision containers."
+            ],
+            "correctAnswer": "It is restricted entirely to that function and is cleared from active memory on exit.",
+            "explanation": "Local variables exist only within the scope of their declaring function, and their memory space is freed up as soon as that function completes."
+        },
+        {
+            "question": "In structured system planning, what primary goal drives software engineering teams to conduct thorough 'desk checking' loops?",
+            "options": [
+                "To clean out surface dust particles from physical computer system monitor accessories.",
+                "To manually trace program logic and isolate design bugs before writing source code.",
+                "To evaluate the retail financial commercial market price of completed applications.",
+                "To alter optimization settings across compiler execution servers."
+            ],
+            "correctAnswer": "To manually trace program logic and isolate design bugs before writing source code.",
+            "explanation": "Desk checking is a manual logic inspection where programmers trace data values on paper to find and fix errors before writing code."
+        },
+        {
+            "question": "Which of the following choices defines the primary risk of omitting a clear 'preliminary requirement analysis' phase within the SDLC?",
+            "options": [
+                "The code editor text tool will refuse to save files to system memory allocations.",
+                "The finalized system may run correctly but fail to address the actual business needs of users.",
+                "Declared primitive float numbers will automatically transform into integer string data.",
+                "The compiler engine will refuse to process valid structural sequence instructions."
+            ],
+            "correctAnswer": "The finalized system may run correctly but fail to address the actual business needs of users.",
+            "explanation": "Skipping requirement analysis leads to design drift, creating software that runs smoothly but does not solve the user's core business problems."
+        },
+        {
+            "question": "Which of the following operations describes an explicit type-casting behavior inside a calculation function?",
+            "options": [
+                "An engine automatically converting narrow integer data to broad float storage spaces.",
+                "A programmer writing a formal keyword operator to manually convert a float to an integer.",
+                "The compiler raising structural syntax errors because a terminal bracket is missing.",
+                "A linker bundle assembly joining object files into standalone execution targets."
+            ],
+            "correctAnswer": "A programmer writing a formal keyword operator to manually convert a float to an integer.",
+            "explanation": "Explicit type casting uses cast operators to force the compiler to convert a value from one data type to another."
+        },
+        {
+            "question": "In structural layout design, what specific processing task is assigned to a double-bordered rectangle shape container inside a flowchart?",
+            "options": [
+                "A basic math assignment action step modifying tracking integers.",
+                "A call to a predefined sub-routine, external method, or complex modular function.",
+                "The initial execution entry path parameter or termination boundary edge.",
+                "A conditional selection checkpoint branching system workflows."
+            ],
+            "correctAnswer": "A call to a predefined sub-routine, external method, or complex modular function.",
+            "explanation": "Double bordered rectangles represent predefined processes, showing that control jumps to a separate, pre-written sub routine or function."
+        },
+        {
+            "question": "What computational error occurs if an execution loop completely lacks an update step targeting its entry control condition variable?",
+            "options": [
+                "The system compiler will fail to process the source document text registry.",
+                "The program will enter an infinite loop loop lock state during live runtime operation.",
+                "The application will automatically duplicate all declared global variables.",
+                "The flowchart layout will lose its off-page pentagonal connector coordinates."
+            ],
+            "correctAnswer": "The program will enter an infinite loop loop lock state during live runtime operation.",
+            "explanation": "Without an update step, the loop control variable never changes, causing the condition to stay true and locking the app into an infinite loop."
+        },
+        {
+            "question": "Which of the following choices represents a valid assignment instruction statement format inside structured algorithmic pseudocode?",
+            "options": [
+                "Set system_status_flag EQUALS TO 1",
+                "system_status_flag = 1",
+                "1 -> assign directly to identifier -> system_status_flag",
+                "Declare static global tracking variable containing value 1"
+            ],
+            "correctAnswer": "system_status_flag = 1",
+            "explanation": "The standard assignment format features the variable identifier on the left, an assignment operator, and the value to store on the right."
+        },
+        {
+            "question": "In structured software engineering, what primary goal drives developers to prioritize 'Low Module Coupling' scores?",
+            "options": [
+                "To increase the total volume of text code lines required to assemble an application.",
+                "To create independent modules that can be updated without causing unintended bugs elsewhere.",
+                "To force compilers to run lexical parsing loops multiple times.",
+                "To prevent the configuration of multi dimensional array grids inside functions."
+            ],
+            "correctAnswer": "To create independent modules that can be updated without causing unintended bugs elsewhere.",
+            "explanation": "Low coupling keeps modules independent, isolated, and decoupled, ensuring updates to one component don't break functionality elsewhere."
+        },
+        {
+            "question": "Which tool provides a standardized textual bridge for organizing program logic using human readable text formatted into structural blocks?",
+            "options": [
+                "A system flowchart layout map setup",
+                "Structured pseudocode or Program Design Language (PDL)",
+                "A compiled object file code registry module",
+                "A binary runtime execution matrix vector data sheet"
+            ],
+            "correctAnswer": "Structured pseudocode or Program Design Language (PDL)",
+            "explanation": "Pseudocode (or PDL) acts as a structural textual bridge, letting developers map out programmatic reasoning in structured plain language before coding."
+        },
+        {
+            "question": "What type of programmatic error is generated if an application attempts to divide an integer tracking variable by a variable holding a zero value?",
+            "options": [
+                "A structural syntax compilation break error status",
+                "A critical division-by-zero runtime error exception",
+                "An abstract preliminary analysis specification defect fault",
+                "An off-page connector logic flow tracking alignment loop"
+            ],
+            "correctAnswer": "A critical division-by-zero runtime error exception",
+            "explanation": "Division by zero is an illegal mathematical operation that passes syntax checks but triggers a critical runtime exception crash."
+        },
+        {
+            "question": "In modern software development frameworks, what is the primary role of an interactive Source Code Editor?",
+            "options": [
+                "To analyze and monitor retail financial shipping costs for software hardware.",
+                "To provide features like syntax highlighting and autocompletion for writing source files.",
+                "To automatically generate structured pseudocode descriptions from assembly binary tracks.",
+                "To override syntax compilation guidelines enforced by parsing utilities."
+            ],
+            "correctAnswer": "To provide features like syntax highlighting and autocompletion for writing source files.",
+            "explanation": "Code editors offer helper features like syntax highlighting, formatting, and autocompletion to help developers write clean code efficiently."
+        },
+        {
+            "question": "Which flowchart symbol is used to capture data output deliveries being sent directly to a physical terminal monitor display?",
+            "options": [
+                "A standard rectangular computations process block",
+                "A slanted input/output parallelogram container shape",
+                "A diamond multi path conditional decision layout node",
+                "An elongated terminal oval start boundary indicator"
+            ],
+            "correctAnswer": "A slanted input/output parallelogram container shape",
+            "explanation": "Parallelograms are the flowchart convention for input and output steps, including displaying computational results on a monitor."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Definiteness'?",
+            "options": [
+                "It must save thousands of calculation records inside external database systems.",
+                "Every processing step must be completely clear, explicit, and unambiguous.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "Every processing step must be completely clear, explicit, and unambiguous.",
+            "explanation": "Definiteness requires that every operational step in an algorithm be clear and unambiguous, leaving no room for varied interpretation."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "quarterly_tax_assessment",
+                "8_count_tax_assessment",
+                "net-tax-assessment-value",
+                "if"
+            ],
+            "correctAnswer": "quarterly_tax_assessment",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like if. Underscores are valid."
+        },
+        {
+            "question": "In structural software design, what primary advantage does 'High Module Cohesion' deliver to programming teams?",
+            "options": [
+                "It ensures that a system's modules focus on single clear tasks, making them easier to manage.",
+                "It forces applications to bypass compilation parsing sweeps during system builds.",
+                "It locks execution flows down a single linear non repeating line trajectory.",
+                "It eliminates the requirement to allocate memory tracking for basic primitive formats."
+            ],
+            "correctAnswer": "It ensures that a system's modules focus on single clear tasks, making them easier to manage.",
+            "explanation": "High cohesion keeps modules focused on a single responsibility, which makes the entire application easier to understand, trace, and debug."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive one-dimensional array structure?",
+            "options": [
+                "It can store elements of completely diverse data types simultaneously within memory rows.",
+                "It holds a fixed number of homogeneous elements of the same data type.",
+                "It cannot be mapped using standard nested iterative loop control systems.",
+                "It automatically uploads its contents to external web server platforms on completion."
+            ],
+            "correctAnswer": "It holds a fixed number of homogeneous elements of the same data type.",
+            "explanation": "A one dimensional array stores a fixed size sequence of homogeneous data elements in a contiguous block of memory."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on updating code to keep applications running smoothly in new hardware or software environments?",
+            "options": [
+                "The Code Generation and Source Text Editing Window",
+                "The Preliminary Feasibility Study and Requirements Analysis Phase",
+                "The System Maintenance and Evolution Phase",
+                "The Unstructured Layout Diagram Translation and Assembly Step"
+            ],
+            "correctAnswer": "The System Maintenance and Evolution Phase",
+            "explanation": "The maintenance phase deals with post-launch updates, performance tuning, and adaptions to ensure the application continues running smoothly."
+        },
+        {
+            "question": "In structured software engineering, what primary benefit does 'Top-Down Functional Design' provide to system architects?",
+            "options": [
+                "It compresses final compiled execution code sizes across cloud network nodes.",
+                "It structures development by breaking complex logic down into an organized hierarchy of simpler sub-modules.",
+                "It fixes syntax errors caused by missing source code punctuation components.",
+                "It increases execution clock speeds across physical hardware processor platforms."
+            ],
+            "correctAnswer": "It structures development by breaking complex logic down into an organized hierarchy of simpler sub-modules.",
+            "explanation": "Top-down design simplifies planning by decomposing a complex system overview into specialized, easily testable sub modules."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by an explicit 'while' iteration loop framework?",
+            "options": [
+                "An entry-controlled iterative loop framework structure.",
+                "A linear unbranched non repeating sequential pathway flow.",
+                "A multi path conditional selection branching logic architecture array.",
+                "An abstract low level hardware register data resource manipulation step."
+            ],
+            "correctAnswer": "An entry-controlled iterative loop framework structure.",
+            "explanation": "A while loop is an entry-controlled loop structure, checking its termination condition before running the internal code block."
+        },
+        {
+            "question": "Which of the following software design components acts as an active compiled binary, rather than an abstract planning framework?",
+            "options": [
+                "An uncompiled structured pseudocode narrative layout text document.",
+                "A system flowchart logic mapping blueprint diagram configuration sheet.",
+                "A compiled object file or native executable application file saved on disk.",
+                "An abstract data type mapping matrix schema layout chart."
+            ],
+            "correctAnswer": "A compiled object file or native executable application file saved on disk.",
+            "explanation": "Compiled object or executable binary files contain native instructions a machine can run, separating them from high-level planning frameworks."
+        },
+        {
+            "question": "What is the primary function of a software compiler's 'lexical analysis' parsing stage?",
+            "options": [
+                "To scan raw source text characters and group them into valid structural language tokens.",
+                "To combine external code libraries into a unified standalone functional binary executable.",
+                "To output informative screen messages that prompt users for parameter inputs.",
+                "To strip out blank indent spaces from source text documents."
+            ],
+            "correctAnswer": "To scan raw source text characters and group them into valid structural language tokens.",
+            "explanation": "Lexical analysis reads raw source code characters to identify and generate valid language tokens, such as keywords and identifiers."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "year_end_sales_total",
+                "7_year_sales_total",
+                "net-sales-summation-value",
+                "default"
+            ],
+            "correctAnswer": "year_end_sales_total",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like default. Underscores are valid."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Finiteness'?",
+            "options": [
+                "It must store data records inside external cloud database servers.",
+                "It must terminate its calculation flow after a defined, finite number of operational steps.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "It must terminate its calculation flow after a defined, finite number of operational steps.",
+            "explanation": "Finiteness prevents infinite processing locks by dictating that every algorithm must reach an end after a limited number of steps."
+        },
+        {
+            "question": "In system flowchart layout mapping, what explicit operational function does a standard diamond or rhombus shape perform?",
+            "options": [
+                "Tracing multi-path selection forks based on conditional expression checks.",
+                "Marking the absolute initial execution entry boundaries or termination halt slots.",
+                "Enclosing active arithmetic mathematical processes or variable modifications.",
+                "Capturing text string parameters from user terminal hardware keyboards."
+            ],
+            "correctAnswer": "Tracing multi-path selection forks based on conditional expression checks.",
+            "explanation": "The diamond shape represents a decision point, testing a condition to route execution down alternative true/false paths."
+        },
+        {
+            "question": "Which of the following scenarios describes the introduction of a structural syntax compilation error into an application source file?",
+            "options": [
+                "Accidentally calculating an average by dividing by total count plus one, yielding bad metrics.",
+                "Omitting a mandatory closing semicolon character or parenthesis token at an expression break.",
+                "Creating an un-incremented counter tracking index that loop-locks the software.",
+                "Initializing an integer variable to a zero value before using it in a calculation."
+            ],
+            "correctAnswer": "Omitting a mandatory closing semicolon character or parenthesis token at an expression break.",
+            "explanation": "Syntax errors represent direct violations of the language's grammatical rules, which are caught and flagged during compilation."
+        },
+        {
+            "question": "What computational benefit does an application codebase derive from incorporating clear, structured indentation constraints?",
+            "options": [
+                "It forces compilers to compress target file memory usage structures.",
+                "It visually maps hierarchical nesting levels, making code much easier for humans to read and trace.",
+                "It ensures that execution flows can bypass all selection check boundaries.",
+                "It completely removes the requirement to trace bugs using interactive debuggers."
+            ],
+            "correctAnswer": "It visually maps hierarchical nesting levels, making code much easier for humans to read and trace.",
+            "explanation": "Proper indentation layout models the scope of nested logical blocks, making code clear and maintainable for engineering teams."
+        },
+        {
+            "question": "Which structural control flow pattern is characterized by statements running line by line in a straight sequence without jumps or loops?",
+            "options": [
+                "The entry-controlled while iteration block model.",
+                "The post-controlled do-while iteration block model.",
+                "The linear non-repeating sequential calculation track.",
+                "The nested multi-path switch case choice configuration."
+            ],
+            "correctAnswer": "The linear non-repeating sequential calculation track.",
+            "explanation": "Sequential flow processes logic one line at a time from top to bottom, without branching paths or iterative loops."
+        },
+        {
+            "question": "What happens to the logical accessibility and scope of an explicit 'global' variable declared at the top of a program source file?",
+            "options": [
+                "It remains accessible to all functions and modules across the entire application workspace.",
+                "It is restricted entirely to that function and is cleared from active memory on exit.",
+                "It is automatically saved to external database file storage networks on exit.",
+                "It can only be modified inside geometric diamond decision containers."
+            ],
+            "correctAnswer": "It remains accessible to all functions and modules across the entire application workspace.",
+            "explanation": "Global variables exist outside individual functional scopes, making them accessible to any module throughout the runtime lifecycle."
+        },
+        {
+            "question": "In structured system planning, what primary goal drives software engineering teams to employ standard 'structured walkthroughs'?",
+            "options": [
+                "To clean out surface dust particles from physical computer system monitor accessories.",
+                "To review code design as a team to trace logic and catch bugs early in development.",
+                "To evaluate the retail financial commercial market price of completed applications.",
+                "To alter optimization settings across compiler execution servers."
+            ],
+            "correctAnswer": "To review code design as a team to trace logic and catch bugs early in development.",
+            "explanation": "A structured walkthrough is a collaborative design review where a team walks through logic to find design flaws and bugs early."
+        },
+        {
+            "question": "Which of the following choices defines the primary risk of skipping a formal 'system testing phase' before deploying software?",
+            "options": [
+                "The code editor text tool will refuse to save files to system memory allocations.",
+                "Hidden logical errors, memory leaks, and runtime edge-case bugs will make it into production.",
+                "Declared primitive float numbers will automatically transform into integer string data.",
+                "The compiler engine will refuse to process valid structural sequence instructions."
+            ],
+            "correctAnswer": "Hidden logical errors, memory leaks, and runtime edge-case bugs will make it into production.",
+            "explanation": "Skipping system testing means bugs and logic flaws go unnoticed, leading to software instability and application crashes for end users."
+        },
+        {
+            "question": "Which of the following operations describes an implicit data coercion or automated casting behavior inside an expression?",
+            "options": [
+                "The compiler automatically promoting an integer data value to a float to calculate a mixed expression.",
+                "A programmer writing a formal keyword operator to manually convert a float to an integer.",
+                "The compiler raising structural syntax errors because a terminal bracket is missing.",
+                "A linker bundle assembly joining object files into standalone execution targets."
+            ],
+            "correctAnswer": "The compiler automatically promoting an integer data value to a float to calculate a mixed expression.",
+            "explanation": "Implicit coercion occurs when the compiler automatically upgrades a narrow type (like an int) to a wider type (like a float) to safely calculate data."
+        },
+        {
+            "question": "In structural layout design, what specific processing task is assigned to a standard rectangle shape container inside a flowchart?",
+            "options": [
+                "A basic math calculation, data operation, or variable assignment step.",
+                "A call to a predefined sub-routine, external method, or complex modular function.",
+                "The initial execution entry path parameter or termination boundary edge.",
+                "A conditional selection checkpoint branching system workflows."
+            ],
+            "correctAnswer": "A basic math calculation, data operation, or variable assignment step.",
+            "explanation": "Rectangles are the universal flowchart convention for processing activities, assignments, and math equations."
+        },
+        {
+            "question": "What computational error occurs if a recursive algorithm is missing a functional terminal base case condition?",
+            "options": [
+                "The system compiler will fail to process the source document text registry.",
+                "The program will consume stack frames indefinitely and crash with a stack overflow error.",
+                "The application will automatically duplicate all declared global variables.",
+                "The flowchart layout will lose its off-page pentagonal connector coordinates."
+            ],
+            "correctAnswer": "The program will consume stack frames indefinitely and crash with a stack overflow error.",
+            "explanation": "Without a base case, recursive functions self call endlessly, filling up the memory stack frame until a stack overflow crash occurs."
+        },
+        {
+            "question": "Which of the following choices represents a valid initialization statement format inside structured algorithmic pseudocode?",
+            "options": [
+                "Set index_counter EQUALS TO 0",
+                "index_counter = 0",
+                "0 -> assign directly to identifier -> index_counter",
+                "Declare static global tracking variable containing value 0"
+            ],
+            "correctAnswer": "index_counter = 0",
+            "explanation": "The standard initialization format sets an initial state using a variable handle on the left, an assignment operator, and a starting value on the right."
+        },
+        {
+            "question": "In structured software engineering, what primary goal drives developers to target 'High Module Cohesion' scores?",
+            "options": [
+                "To increase the total volume of text code lines required to assemble an application.",
+                "To ensure that all internal elements within a module are focused on a single, clear functional task.",
+                "To force compilers to run lexical parsing loops multiple times.",
+                "To prevent the configuration of multi dimensional array grids inside functions."
+            ],
+            "correctAnswer": "To ensure that all internal elements within a module are focused on a single, clear functional task.",
+            "explanation": "High cohesion means a module focuses entirely on one responsibility, making it easier to read, debug, and reuse."
+        },
+        {
+            "question": "Which tool provides a standardized visual canvas for tracing algorithmic workflows via interconnected geometric shapes and arrows?",
+            "options": [
+                "A structured pseudocode narrative layout document",
+                "A system flowchart configuration layout diagram",
+                "A compiled object file code registry module",
+                "A binary runtime execution matrix vector data sheet"
+            ],
+            "correctAnswer": "A system flowchart configuration layout diagram",
+            "explanation": "Flowcharts map out algorithms visually using standardized geometric shapes connected by directional arrows."
+        },
+        {
+            "question": "What type of programmatic error is generated if an application tries to access an index location that lies outside the allocated bounds of an array?",
+            "options": [
+                "A structural syntax compilation break error status",
+                "A critical out-of-bounds array index runtime error exception",
+                "An abstract preliminary analysis specification defect fault",
+                "An off-page connector logic flow tracking alignment loop"
+            ],
+            "correctAnswer": "A critical out-of-bounds array index runtime error exception",
+            "explanation": "Accessing an out of bounds array index triggers an exception crash because the operation attempts to read or write unallocated memory slots."
+        },
+        {
+            "question": "In modern software development frameworks, what is the primary role of a Debugger utility tool?",
+            "options": [
+                "To analyze and monitor retail financial shipping costs for software hardware.",
+                "To allow developers to step through code line by line and inspect variable states to find logic bugs.",
+                "To automatically generate structured pseudocode descriptions from assembly binary tracks.",
+                "To override syntax compilation guidelines enforced by parsing utilities."
+            ],
+            "correctAnswer": "To allow developers to step through code line by line and inspect variable states to find logic bugs.",
+            "explanation": "Debuggers let programmers inspect active memory states, pause execution, and step through code line-by-line to find logic bugs."
+        },
+        {
+            "question": "Which flowchart symbol is used to encapsulate an explicit file or data storage connection write action?",
+            "options": [
+                "A standard rectangular calculations process block",
+                "A specialized storage or document symbol container shape",
+                "A diamond multi path conditional decision layout node",
+                "An elongated terminal oval start boundary indicator"
+            ],
+            "correctAnswer": "A specialized storage or document symbol container shape",
+            "explanation": "Specialized shapes—like the cylinder for databases or the dog eared document symbol—are used to designate disk file operations."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Output'?",
+            "options": [
+                "It must save thousands of calculation records inside external database systems.",
+                "It must return at least one clear, accurate result or output quantity to resolve its problem.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "It must return at least one clear, accurate result or output quantity to resolve its problem.",
+            "explanation": "The output property states that every valid algorithm must yield at least one clear computed value, result, or response."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "calculated_total_cost",
+                "5_count_total_cost",
+                "net-total-cost-value",
+                "return"
+            ],
+            "correctAnswer": "calculated_total_cost",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like return. Underscores are valid."
+        },
+        {
+            "question": "In structural software design, what primary advantage does 'Low Module Coupling' deliver to programming teams?",
+            "options": [
+                "It keeps modules isolated and independent, ensuring modifications in one won't unexpectedly break others.",
+                "It forces applications to bypass compilation parsing sweeps during system builds.",
+                "It locks execution flows down a single linear non repeating line trajectory.",
+                "It eliminates the requirement to allocate memory tracking for basic primitive formats."
+            ],
+            "correctAnswer": "It keeps modules isolated and independent, ensuring modifications in one won't unexpectedly break others.",
+            "explanation": "Low coupling keeps system modules separate and decoupled, making applications easier to expand, update, and maintain without ripple effects."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive fixed size array structure?",
+            "options": [
+                "It can store elements of completely diverse data types simultaneously within memory rows.",
+                "Its total data storage capacity is determined at creation and cannot change dynamically at runtime.",
+                "It cannot be mapped using standard nested iterative loop control systems.",
+                "It automatically uploads its contents to external web server platforms on completion."
+            ],
+            "correctAnswer": "Its total data storage capacity is determined at creation and cannot change dynamically at runtime.",
+            "explanation": "Standard primitive arrays have a fixed capacity set at initialization, meaning they cannot dynamically grow or shrink to fit changing datasets."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on initial client tracking meetings, financial review analysis, and feasibility reporting?",
+            "options": [
+                "The Code Generation and Source Text Editing Window",
+                "The Preliminary Investigation and Feasibility Analysis Phase",
+                "The Final Post Deployment Software Application Maintenance Cycle",
+                "The Unstructured Layout Diagram Translation and Assembly Step"
+            ],
+            "correctAnswer": "The Preliminary Investigation and Feasibility Analysis Phase",
+            "explanation": "The feasibility phase analyzes project constraints, budgets, and hardware resources early to verify if a project is worth pursuing."
+        },
+        {
+            "question": "In structured software engineering, what primary benefit does 'Modularity' provide to system architects?",
+            "options": [
+                "It compresses final compiled execution code sizes across cloud network nodes.",
+                "It divides an application into isolated modules that can be built, tested, and updated independently.",
+                "It fixes syntax errors caused by missing source code punctuation components.",
+                "It increases execution clock speeds across physical hardware processor platforms."
+            ],
+            "correctAnswer": "It divides an application into isolated modules that can be built, tested, and updated independently.",
+            "explanation": "Modularity breaks complex programs down into isolated, manageable components, helping development teams scale software safely."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by an explicit 'for' iteration loop framework?",
+            "options": [
+                "An entry-controlled iterative loop framework structure featuring built-in counter tracking.",
+                "A linear unbranched non repeating sequential pathway flow.",
+                "A multi path conditional selection branching logic architecture array.",
+                "An abstract low level hardware register data resource manipulation step."
+            ],
+            "correctAnswer": "An entry-controlled iterative loop framework structure featuring built-in counter tracking.",
+            "explanation": "The for loop is an entry-controlled iterative structure that combines initialization, condition checking, and counter updates into its layout header."
+        },
+        {
+            "question": "Which of the following software design components acts as an abstract visual schematic map, rather than an active compiled binary target?",
+            "options": [
+                "An uncompiled structured pseudocode narrative layout text document.",
+                "A system flowchart diagram layout configuration sheet.",
+                "A functional standalone machine language binary executable file saved on disk.",
+                "An active hardware memory address register data block."
+            ],
+            "correctAnswer": "A system flowchart diagram layout configuration sheet.",
+            "explanation": "Flowcharts are conceptual visual maps used to model algorithms, separating them from active compiled binary targets."
+        },
+        {
+            "question": "What is the primary function of a software linker within the program build workflow?",
+            "options": [
+                "To analyze text characters and group them into valid structural language tokens.",
+                "To combine compiled object modules and reference libraries into a single executable binary.",
+                "To output informative screen messages that prompt users for parameter inputs.",
+                "To strip out blank indent spaces from source text documents."
+            ],
+            "correctAnswer": "To combine compiled object modules and reference libraries into a single executable binary.",
+            "explanation": "The linker resolves external code dependencies, combining isolated object files into a single, executable machine binary."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "quarterly_dividend_value",
+                "2_dividend_value_metric",
+                "net-dividend-summation",
+                "case"
+            ],
+            "correctAnswer": "quarterly_dividend_value",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like case. Underscores are valid."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Unambiguity'?",
+            "options": [
+                "It must store data records inside external cloud database servers.",
+                "Every statement must be entirely clear, direct, and have only one clear interpretation.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "Every statement must be entirely clear, direct, and have only one clear interpretation.",
+            "explanation": "Unambiguity ensures that every step in an algorithm defines exactly one clear action, preventing compiler confusion or erratic run behaviors."
+        },
+        {
+            "question": "In system flowchart layout mapping, what explicit operational function does a standard slanted parallelogram shape perform?",
+            "options": [
+                "Tracing multi-path selection forks based on calculation tracking variables.",
+                "Handling input data entry capture or output value delivery steps.",
+                "Enclosing active arithmetic mathematical processes or variable modifications.",
+                "Marking the absolute initial execution entry boundaries or termination halt slots."
+            ],
+            "correctAnswer": "Handling input data entry capture or output value delivery steps.",
+            "explanation": "Parallelograms are the flowchart convention for input and output steps, such as fetching data from a keyboard or displaying results."
+        },
+        {
+            "question": "Which of the following scenarios describes the introduction of an execution runtime error into an application functional block?",
+            "options": [
+                "An expression attempting to access an out-of-bounds array index slot during active processing.",
+                "Forgetting to append a mandatory structural closing semicolon token at an expression break.",
+                "Using an un-declared identifier string that triggers immediate parser validation errors.",
+                "Omitting opening block quotation marks from an informative text string literal definition."
+            ],
+            "correctAnswer": "An expression attempting to access an out-of-bounds array index slot during active processing.",
+            "explanation": "Out of bounds array access passes syntax checks but triggers a critical runtime exception crash when execution hits that line."
+        },
+        {
+            "question": "What computational benefit does an application codebase derive from using clear, modular functions?",
+            "options": [
+                "It forces compilers to compress target file memory usage structures.",
+                "It encourages code reuse and breaks complex logic down into easily testable sub units.",
+                "It ensures that execution flows can bypass all selection check boundaries.",
+                "It completely removes the requirement to trace bugs using interactive debuggers."
+            ],
+            "correctAnswer": "It encourages code reuse and breaks complex logic down into easily testable sub units.",
+            "explanation": "Functions organize code into isolated blocks, allowing development teams to write logic once and reuse it across an application."
+        },
+        {
+            "question": "Which structural control pattern uses multi-path selection logic to direct execution down specific branches based on matching values?",
+            "options": [
+                "The entry-controlled while iteration block model.",
+                "The post-controlled do-while iteration block model.",
+                "The linear non-repeating sequential calculation track.",
+                "The multi-path switch-case selection matrix layout."
+            ],
+            "correctAnswer": "The multi-path switch-case selection matrix layout.",
+            "explanation": "The switch-case statement evaluates an expression and handles complex decision logic by routing execution to matching case branches."
+        },
+        {
+            "question": "What happens to the logical accessibility and scope of an explicit variable declared at the top level of a module, outside any individual functions?",
+            "options": [
+                "It remains accessible as a global variable across all functions within that module.",
+                "It is restricted entirely to that function and is cleared from active memory on exit.",
+                "It is automatically saved to external database file storage networks on exit.",
+                "It can only be modified inside geometric diamond decision containers."
+            ],
+            "correctAnswer": "It remains accessible as a global variable across all functions within that module.",
+            "explanation": "Variables declared outside functional boundaries have global scope, making them accessible to any function block within that module."
+        },
+        {
+            "question": "In structured system planning, what primary goal drives software engineering teams to practice continuous 'Code Reviews'?",
+            "options": [
+                "To clean out surface dust particles from physical computer system monitor accessories.",
+                "To peer-review code files collectively to verify logic correctness and maintain styling standards.",
+                "To evaluate the retail financial commercial market price of completed applications.",
+                "To alter optimization settings across compiler execution servers."
+            ],
+            "correctAnswer": "To peer-review code files collectively to verify logic correctness and maintain styling standards.",
+            "explanation": "Code reviews allow peer developers to inspect source code together, identifying hidden bugs, edge-case flaws, and style standard deviations."
+        },
+        {
+            "question": "Which of the following choices defines the primary risk of skipping an explicit 'system architectural design phase' within the SDLC?",
+            "options": [
+                "The code editor text tool will refuse to save files to system memory allocations.",
+                "The application will end up built with a brittle, disorganized internal structure that is difficult to update or maintain.",
+                "Declared primitive float numbers will automatically transform into integer string data.",
+                "The compiler engine will refuse to process valid structural sequence instructions."
+            ],
+            "correctAnswer": "The application will end up built with a brittle, disorganized internal structure that is difficult to update or maintain.",
+            "explanation": "Skipping architectural design leads to messy, tightly-coupled code, creating an unmaintainable application that easily breaks during updates."
+        },
+        {
+            "question": "Which of the following operations describes an explicit type-casting choice within an arithmetic equation?",
+            "options": [
+                "An engine automatically converting integer values to wider floating point sizes.",
+                "A programmer writing an explicit (int) operator to truncate a decimal float into a whole integer.",
+                "The compiler raising structural syntax errors because a terminal bracket is missing.",
+                "A linker bundle assembly joining object files into standalone execution targets."
+            ],
+            "correctAnswer": "A programmer writing an explicit (int) operator to truncate a decimal float into a whole integer.",
+            "explanation": "Explicit type-casting uses specific type operators to force the compiler to convert a data value from its original type to a target format."
+        },
+        {
+            "question": "In structural layout design, what specific processing task is assigned to an off-page pentagonal connector symbol container inside a flowchart?",
+            "options": [
+                "A basic math calculation, data operation, or variable assignment step.",
+                "Linking disconnected process paths across completely different physical layout sheets or pages.",
+                "The initial execution entry path parameter or termination boundary edge.",
+                "A conditional selection checkpoint branching system workflows."
+            ],
+            "correctAnswer": "Linking disconnected process paths across completely different physical layout sheets or pages.",
+            "explanation": "Pentagonal off-page connectors tie isolated steps together across different physical pages of a complex flowchart layout."
+        },
+        {
+            "question": "What computational error occurs if an application function creates an absolute infinite loop lock condition?",
+            "options": [
+                "The system compiler will fail to process the source document text registry.",
+                "The program will run indefinitely, locking up execution threads and wasting processor cycles.",
+                "The application will automatically duplicate all declared global variables.",
+                "The flowchart layout will lose its off-page pentagonal connector coordinates."
+            ],
+            "correctAnswer": "The program will run indefinitely, locking up execution threads and wasting processor cycles.",
+            "explanation": "Infinite loops occur when loop conditions never evaluate to false, locking the thread and stalling the application in an endless cycle."
+        },
+        {
+            "question": "Which of the following choices represents a valid counter variable update instruction format inside structured algorithmic pseudocode?",
+            "options": [
+                "Set index_counter EQUALS TO counter plus step one",
+                "index_counter = index_counter + 1",
+                "1 -> add directly to identifier -> index_counter",
+                "Declare static global tracking variable incrementing value 1"
+            ],
+            "correctAnswer": "index_counter = index_counter + 1",
+            "explanation": "The standard loop increment format assigns a new value to an identifier by adding a step value to its current state."
+        },
+        {
+            "question": "In structured software engineering, what primary goal drives developers to target high internal 'Module Independence' scores?",
+            "options": [
+                "To increase the total volume of text code lines required to assemble an application.",
+                "To create isolated modules that can be developed and verified without introducing breaking changes elsewhere.",
+                "To force compilers to run lexical parsing loops multiple times.",
+                "To prevent the configuration of multi dimensional array grids inside functions."
+            ],
+            "correctAnswer": "To create isolated modules that can be developed and verified without introducing breaking changes elsewhere.",
+            "explanation": "Module independence minimizes inter-dependencies across a codebase, ensuring developers can update isolated components safely."
+        },
+        {
+            "question": "Which tool provides a standardized visual platform for tracing program logic using distinct geometric shapes connected by flow lines?",
+            "options": [
+                "A structured pseudocode narrative layout document",
+                "A system flowchart diagram configuration sheet layout",
+                "A compiled object file code registry module",
+                "A binary runtime execution matrix vector data sheet"
+            ],
+            "correctAnswer": "A system flowchart diagram configuration sheet layout",
+            "explanation": "Flowcharts provide a visual map of algorithmic logic, tracking processing pathways via distinct geometric shapes and flowlines."
+        },
+        {
+            "question": "What type of programmatic error is generated if an application attempts to perform arithmetic calculations using an uninitialized variable handle?",
+            "options": [
+                "A structural syntax compilation break error status",
+                "A runtime logic error or unpredictable execution state due to garbage data values.",
+                "An abstract preliminary analysis specification defect fault",
+                "An off-page connector logic flow tracking alignment loop"
+            ],
+            "correctAnswer": "A runtime logic error or unpredictable execution state due to garbage data values.",
+            "explanation": "Using uninitialized variables injects random garbage data into calculations, producing unpredictable runtime outputs without crashing the compiler."
+        },
+        {
+            "question": "In modern software development frameworks, what is the primary role of a Compiler tool within code workflows?",
+            "options": [
+                "To analyze and monitor retail financial shipping costs for software hardware.",
+                "To translate high-level source text code files into standalone machine language binaries ahead of time.",
+                "To automatically generate structured pseudocode descriptions from assembly binary tracks.",
+                "To override syntax compilation guidelines enforced by parsing utilities."
+            ],
+            "correctAnswer": "To translate high-level source text code files into standalone machine language binaries ahead of time.",
+            "explanation": "Compilers read entire high level source files and translate them into functional machine binaries that can run natively on host hardware."
+        },
+        {
+            "question": "Which flowchart symbol is used to enclose terminal boundary points marking where execution begins and terminates?",
+            "options": [
+                "A standard rectangular calculations process block",
+                "An elongated oval or rounded rectangle terminal symbol shape container",
+                "A diamond multi path conditional decision layout node",
+                "A slanted input/output parallelogram container shape"
+            ],
+            "correctAnswer": "An elongated oval or rounded rectangle terminal symbol shape container",
+            "explanation": "Ovals and rounded rectangles are the standardized terminal indicators used to pinpoint the exact boundaries where a flowchart begins and ends."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Generality'?",
+            "options": [
+                "It must save thousands of calculation records inside external database systems.",
+                "It must be generic enough to solve any instance of a problem across a range of valid inputs.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "It must be generic enough to solve any instance of a problem across a range of valid inputs.",
+            "explanation": "Generality dictates that a well formed algorithm should handle all valid input instances of its target problem domain rather than just one specific case."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "calculated_net_weight",
+                "4_count_net_weight",
+                "net-weight-summation-value",
+                "break"
+            ],
+            "correctAnswer": "calculated_net_weight",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like break. Underscores are valid."
+        },
+        {
+            "question": "In structural software design, what primary advantage does 'Module Cohesion' deliver to programming teams?",
+            "options": [
+                "It ensures that a module's internal components focus on a single task, making code easier to test and maintain.",
+                "It forces applications to bypass compilation parsing sweeps during system builds.",
+                "It locks execution flows down a single linear non repeating line trajectory.",
+                "It eliminates the requirement to allocate memory tracking for basic primitive formats."
+            ],
+            "correctAnswer": "It ensures that a module's internal components focus on a single task, making code easier to test and maintain.",
+            "explanation": "High module cohesion limits a module's scope to one task, producing clean, isolated code blocks that are easy to test, trace, and maintain."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive homogeneous data structure?",
+            "options": [
+                "It can store elements of completely diverse data types simultaneously within memory rows.",
+                "It requires every element inside its collection block to be of the exact same data type.",
+                "It cannot be mapped using standard nested iterative loop control systems.",
+                "It automatically uploads its contents to external web server platforms on completion."
+            ],
+            "correctAnswer": "It requires every element inside its collection block to be of the exact same data type.",
+            "explanation": "Homogeneous collections (like arrays) force all embedded elements to share the same data type, ensuring clean memory alignment."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on writing user manuals, assembly installation blueprints, and code documentation sheets?",
+            "options": [
+                "The Code Generation and Source Text Editing Window",
+                "The Preliminary Feasibility Study and Requirements Analysis Phase",
+                "The Comprehensive Software Documentation Phase",
+                "The Unstructured Layout Diagram Translation and Assembly Step"
+            ],
+            "correctAnswer": "The Comprehensive Software Documentation Phase",
+            "explanation": "The documentation phase details code logic, user manuals, and technical specifications, providing essential guides for future system maintenance."
+        },
+        {
+            "question": "In structured software engineering, what primary benefit does 'Modularity' provide to engineering teams working on large codebases?",
+            "options": [
+                "It compresses final compiled execution code sizes across cloud network nodes.",
+                "It allows teams to split up tasks and build independent modules without bottlenecking development.",
+                "It fixes syntax errors caused by missing source code punctuation components.",
+                "It increases execution clock speeds across physical hardware processor platforms."
+            ],
+            "correctAnswer": "It allows teams to split up tasks and build independent modules without bottlenecking development.",
+            "explanation": "Modularity divides large projects into clear, self-contained components, allowing teams to build, test, and manage code in parallel safely."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by an explicit 'nested loop' tracking configuration framework?",
+            "options": [
+                "An iterative loop system that contains another internal looping structure inside its body.",
+                "A linear unbranched non repeating sequential pathway flow.",
+                "A multi path conditional selection branching logic architecture array.",
+                "An abstract low level hardware register data resource manipulation step."
+            ],
+            "correctAnswer": "An iterative loop system that contains another internal looping structure inside its body.",
+            "explanation": "Nested loops place an inner loop completely within the body of an outer loop, which is useful for processing multi-dimensional grids."
+        },
+        {
+            "question": "Which of the following software design components acts as an active textual blueprint containing structured algorithmic logic statements?",
+            "options": [
+                "An uncompiled structured pseudocode narrative layout text document.",
+                "A system flowchart logic mapping blueprint diagram configuration sheet.",
+                "A functional standalone machine language binary executable file saved on disk.",
+                "An active hardware memory address register data block."
+            ],
+            "correctAnswer": "An uncompiled structured pseudocode narrative layout text document.",
+            "explanation": "Pseudocode is an uncompiled text based blueprint that uses structured phrasing to plan an algorithm's logic before development."
+        },
+        {
+            "question": "What is the primary function of a software compiler's 'optimization' phase during system builds?",
+            "options": [
+                "To analyze text characters and group them into valid structural language tokens.",
+                "To refactor machine instructions so the executable runs faster and uses less memory.",
+                "To output informative screen messages that prompt users for parameter inputs.",
+                "To strip out blank indent spaces from source text documents."
+            ],
+            "correctAnswer": "To refactor machine instructions so the executable runs faster and uses less memory.",
+            "explanation": "The optimization phase refactors and tightens compiled assembly structures to maximize execution speed and reduce hardware footprint."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "accumulated_interest_sum",
+                "3_year_interest_sum",
+                "net-interest-summation-value",
+                "struct"
+            ],
+            "correctAnswer": "accumulated_interest_sum",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like struct. Underscores are valid."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Effectiveness'?",
+            "options": [
+                "It must store data records inside external cloud database servers.",
+                "Its instructions must be basic enough to be executed using simple pen-and-paper steps.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "Its instructions must be basic enough to be executed using simple pen-and-paper steps.",
+            "explanation": "Effectiveness means algorithmic steps must be basic and practical enough that they could conceptually be verified using simple manual tracking tools."
+        },
+        {
+            "question": "In system flowchart layout mapping, what explicit operational function does a standard circle shape connector perform?",
+            "options": [
+                "Tracing multi-path selection forks based on conditional expression checks.",
+                "Linking disconnected points within a flowchart layout cleanly without drawing long crossing lines.",
+                "Enclosing active arithmetic mathematical processes or variable modifications.",
+                "Marking the absolute initial execution entry boundaries or termination halt slots."
+            ],
+            "correctAnswer": "Linking disconnected points within a flowchart layout cleanly without drawing long crossing lines.",
+            "explanation": "Circular connector nodes link broken process paths within a diagram page, keeping the flowchart layout organized and legible."
+        },
+        {
+            "question": "Which of the following scenarios describes the introduction of a syntax compilation grammar error into an application source file?",
+            "options": [
+                "Accidentally calculating an average by dividing by total count plus one, yielding bad metrics.",
+                "Leaving out a mandatory matching closing parenthesis or semicolon mark at the end of an expression line.",
+                "Creating an un-incremented counter tracking index that loop-locks the software.",
+                "Initializing an integer variable to a zero value before using it in a calculation."
+            ],
+            "correctAnswer": "Leaving out a mandatory matching closing parenthesis or semicolon mark at the end of an expression line.",
+            "explanation": "Missing terminal punctuation violates the language's grammatical constraints, triggering a syntax error that flags the build."
+        },
+        {
+            "question": "What computational benefit does an application codebase derive from enforcing clear 'Top-Down program layout design constraints'?",
+            "options": [
+                "It forces compilers to compress target file memory usage structures.",
+                "It breaks complex system requirements down into organized, easily traceable sub modules.",
+                "It ensures that execution flows can bypass all selection check boundaries.",
+                "It completely removes the requirement to trace bugs using interactive debuggers."
+            ],
+            "correctAnswer": "It breaks complex system requirements down into organized, easily traceable sub modules.",
+            "explanation": "Top-down layout design tracks system flow from a high level concept down to specific sub modules, helping development teams manage complexity."
+        },
+        {
+            "question": "Which structural control pattern uses sequential steps running line by line in a straight chronology without branching loops?",
+            "options": [
+                "The entry-controlled while iteration block model.",
+                "The post-controlled do-while iteration block model.",
+                "The simple linear sequence control framework structure.",
+                "The nested multi-path switch case choice configuration."
+            ],
+            "correctAnswer": "The simple linear sequence control framework structure.",
+            "explanation": "Sequence logic processes execution instructions linearly one after another, running step-by-step without forks or loops."
+        },
+        {
+            "question": "What happens to the logical accessibility and scope of an explicit global variable shared across distinct code document units?",
+            "options": [
+                "It remains accessible across all linked code modules throughout the application workspace.",
+                "It is restricted entirely to that function and is cleared from active memory on exit.",
+                "It is automatically saved to external database file storage networks on exit.",
+                "It can only be modified inside geometric diamond decision containers."
+            ],
+            "correctAnswer": "It remains accessible across all linked code modules throughout the application workspace.",
+            "explanation": "Global variables declared across shared scopes remain fully readable and modifiable by any linked module within the system framework."
+        },
+        {
+            "question": "In structured system planning, what primary goal drives software engineering teams to employ standard 'desk checking manual traces'?",
+            "options": [
+                "To clean out surface dust particles from physical computer system monitor accessories.",
+                "To trace variable states manually using paper and pencil to catch logic bugs before coding.",
+                "To evaluate the retail financial commercial market price of completed applications.",
+                "To alter optimization settings across compiler execution servers."
+            ],
+            "correctAnswer": "To trace variable states manually using paper and pencil to catch logic bugs before coding.",
+            "explanation": "Desk checking is an early manual validation technique where developers track data values on paper to find and resolve bugs before writing code."
+        },
+        {
+            "question": "Which of the following choices defines the primary risk of omitting a clear 'feasibility analysis study phase' within the software lifecycle?",
+            "options": [
+                "The code editor text tool will refuse to save files to system memory allocations.",
+                "Teams risk wasting significant capital and time building projects that are impractical or unsustainable.",
+                "Declared primitive float numbers will automatically transform into integer string data.",
+                "The compiler engine will refuse to process valid structural sequence instructions."
+            ],
+            "correctAnswer": "Teams risk wasting significant capital and time building projects that are impractical or unsustainable.",
+            "explanation": "Skipping feasibility studies risks wasting engineering hours and project budgets on applications that face hardware or financial constraints."
+        },
+        {
+            "question": "Which of the following operations describes an explicit numeric data casting adjustment within an expression block?",
+            "options": [
+                "An engine automatically promoting narrow integer data to broad float storage spaces.",
+                "A developer explicitly typing (float) to manually convert an integer into a floating point decimal format.",
+                "The compiler raising structural syntax errors because a terminal bracket is missing.",
+                "A linker bundle assembly joining object files into standalone execution targets."
+            ],
+            "correctAnswer": "A developer explicitly typing (float) to manually convert an integer into a floating point decimal format.",
+            "explanation": "Explicit casting uses formal conversion operators to force the compiler to translate a data value into a different target data type."
+        },
+        {
+            "question": "In structural layout design, what specific processing task is assigned to a slanted parallelogram container shape inside a flowchart?",
+            "options": [
+                "A basic math calculation, data operation, or variable assignment step.",
+                "Handling user input capture statements or displaying computed system outputs.",
+                "The initial execution entry path parameter or termination boundary edge.",
+                "A conditional selection checkpoint branching system workflows."
+            ],
+            "correctAnswer": "Handling user input capture statements or displaying computed system outputs.",
+            "explanation": "Parallelograms are the flowchart convention for input and output operations, such as capturing user input or printing output strings."
+        },
+        {
+            "question": "What computational error occurs if a program creates an unintentional infinite loop due to an un-incremented counter variable?",
+            "options": [
+                "The system compiler will fail to process the source document text registry.",
+                "The loop body runs endlessly, locking execution threads and wasting processor resources.",
+                "The application will automatically duplicate all declared global variables.",
+                "The flowchart layout will lose its off-page pentagonal connector coordinates."
+            ],
+            "correctAnswer": "The loop body runs endlessly, locking execution threads and wasting processor resources.",
+            "explanation": "Without counter updates, loop conditions remain true indefinitely, locking the application into an endless cycle that wastes processor time."
+        },
+        {
+            "question": "Which of the following choices represents a valid variable declaration statement format inside structured algorithmic pseudocode?",
+            "options": [
+                "Set system_counter EQUALS TO tracking value zero",
+                "integer system_counter = 0",
+                "0 -> declare type integer -> system_counter",
+                "Declare static global tracking variable containing value 0"
+            ],
+            "correctAnswer": "integer system_counter = 0",
+            "explanation": "The standard declaration layout names the target data type on the left, followed by the variable identifier and an optional starting value."
+        },
+        {
+            "question": "In structured software engineering, what primary goal drives developers to prioritize 'Low Component Interdependence' scores?",
+            "options": [
+                "To increase the total volume of text code lines required to assemble an application.",
+                "To isolate components so changes in one module don't introduce unintended bugs in others.",
+                "To force compilers to run lexical parsing loops multiple times.",
+                "To prevent the configuration of multi dimensional array grids inside functions."
+            ],
+            "correctAnswer": "To isolate components so changes in one module don't introduce unintended bugs in others.",
+            "explanation": "Low interdependence (low coupling) keeps modules isolated, ensuring developers can expand and update components safely without ripple bugs."
+        },
+        {
+            "question": "Which tool provides a standardized visual canvas for organizing program logic using geometric shape symbols and directional flow links?",
+            "options": [
+                "A structured pseudocode narrative layout document",
+                "A system flowchart configuration layout diagram",
+                "A compiled object file code registry module",
+                "A binary runtime execution matrix vector data sheet"
+            ],
+            "correctAnswer": "A system flowchart configuration layout diagram",
+            "explanation": "Flowcharts provide a visual map of programmatic workflows, connecting standardized geometric symbols with directional flow lines."
+        },
+        {
+            "question": "What type of programmatic error is generated if an expression attempts to divide an integer by a variable whose value has dropped to zero?",
+            "options": [
+                "A structural syntax compilation break error status",
+                "A critical division-by-zero runtime error exception crash status.",
+                "An abstract preliminary analysis specification defect fault",
+                "An off-page connector logic flow tracking alignment loop"
+            ],
+            "correctAnswer": "A critical division-by-zero runtime error exception crash status.",
+            "explanation": "Division by zero passes syntax checks but triggers a critical runtime exception crash because the operation is mathematically invalid."
+        },
+        {
+            "question": "In modern software development frameworks, what is the primary role of an interactive Code Debugger application?",
+            "options": [
+                "To analyze and monitor retail financial shipping costs for software hardware.",
+                "To step through code logic line by line and inspect live variable values to locate bugs.",
+                "To automatically generate structured pseudocode descriptions from assembly binary tracks.",
+                "To override syntax compilation guidelines enforced by parsing utilities."
+            ],
+            "correctAnswer": "To step through code logic line by line and inspect live variable values to locate bugs.",
+            "explanation": "Debuggers let programmers pause execution, trace code line by line, and inspect active variables to isolate logic errors."
+        },
+        {
+            "question": "Which flowchart symbol is used to encapsulate an explicit conditional operation checkpoint that branches the workflow?",
+            "options": [
+                "A standard rectangular calculations process block",
+                "A diamond or rhombus shape decision symbol container",
+                "A specialized off page connection layout node",
+                "An elongated terminal oval start boundary indicator"
+            ],
+            "correctAnswer": "A diamond or rhombus shape decision symbol container",
+            "explanation": "Diamonds serve as decision symbols, checking a condition to route the flowchart flow along alternative true/false vectors."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Finiteness'?",
+            "options": [
+                "It must save thousands of calculation records inside external database systems.",
+                "It must reach a clear conclusion and stop after a countable, limited number of steps.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "It must reach a clear conclusion and stop after a countable, limited number of steps.",
+            "explanation": "Finiteness requires that every valid algorithm have a clear path to an end, completing its execution after a limited number of steps."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "calculated_net_revenue",
+                "9_count_net_revenue",
+                "net-revenue-summation-value",
+                "while"
+            ],
+            "correctAnswer": "calculated_net_revenue",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like while. Underscores are valid."
+        },
+        {
+            "question": "In structural software design, what primary advantage does 'High Module Independence' deliver to programming teams?",
+            "options": [
+                "It minimizes cross dependencies, allowing developers to update isolated components safely.",
+                "It forces applications to bypass compilation parsing sweeps during system builds.",
+                "It locks execution flows down a single linear non repeating line trajectory.",
+                "It eliminates the requirement to allocate memory tracking for basic primitive formats."
+            ],
+            "correctAnswer": "It minimizes cross dependencies, allowing developers to update isolated components safely.",
+            "explanation": "High module independence isolates functionality, ensuring changes or updates to one component don't break logic elsewhere in the system."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive fixed grid data structure?",
+            "options": [
+                "It can store elements of completely diverse data types simultaneously within memory rows.",
+                "It features a predefined homogeneous element footprint that cannot expand dynamically.",
+                "It cannot be mapped using standard nested iterative loop control systems.",
+                "It automatically uploads its contents to external web server platforms on completion."
+            ],
+            "correctAnswer": "It features a predefined homogeneous element footprint that cannot expand dynamically.",
+            "explanation": "Primitive grid collections (like fixed arrays) require homogeneous data types and cannot dynamically change size at runtime."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on client feedback loops, performance profiling, and early beta wireframe evaluations?",
+            "options": [
+                "The Code Generation and Source Text Editing Window",
+                "The Requirements Analysis and Prototyping Review Phase",
+                "The Final Post Deployment Software Application Maintenance Cycle",
+                "The Unstructured Layout Diagram Translation and Assembly Step"
+            ],
+            "correctAnswer": "The Requirements Analysis and Prototyping Review Phase",
+            "explanation": "The analysis and prototyping phase uses user feedback and mock ups to refine system requirements before coding begins."
+        },
+        {
+            "question": "In structured software engineering, what primary benefit does 'Hierarchical Functional Decomposition' provide to system architects?",
+            "options": [
+                "It compresses final compiled execution code sizes across cloud network nodes.",
+                "It simplifies development by breaking complex logic down into an organized tree of smaller sub-tasks.",
+                "It fixes syntax errors caused by missing source code punctuation components.",
+                "It increases execution clock speeds across physical hardware processor platforms."
+            ],
+            "correctAnswer": "It simplifies development by breaking complex logic down into an organized tree of smaller sub-tasks.",
+            "explanation": "Decomposition maps complex procedures into a clear hierarchy of minor tasks, helping development teams write clean, testable code."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by a standard 'do-while loop' iteration framework?",
+            "options": [
+                "A post-test condition iteration loop structure.",
+                "A linear unbranched non repeating sequential pathway flow.",
+                "A multi path conditional selection branching logic architecture array.",
+                "An abstract low level hardware register data resource manipulation step."
+            ],
+            "correctAnswer": "A post-test condition iteration loop structure.",
+            "explanation": "The do-while structure checks its termination condition at the end of the block, making it a post-test loop that always runs at least once."
+        },
+        {
+            "question": "Which of the following software design components acts as an active runnable machine code file, rather than an abstract planning outline?",
+            "options": [
+                "An uncompiled structured pseudocode narrative layout text document.",
+                "A system flowchart logic mapping blueprint diagram configuration sheet.",
+                "A standalone binary executable application file saved on disk.",
+                "An abstract data type mapping matrix schema layout chart."
+            ],
+            "correctAnswer": "A standalone binary executable application file saved on disk.",
+            "explanation": "Standalone binary files contain native machine instructions ready to run on physical hardware, distinct from planning outlines like pseudocode."
+        },
+        {
+            "question": "What is the primary function of a software compiler's 'syntax analyzer' parsing stage?",
+            "options": [
+                "To evaluate token streams against language grammar rules to build a valid structural syntax tree.",
+                "To combine external code libraries into a unified standalone functional binary executable.",
+                "To output informative screen messages that prompt users for parameter inputs.",
+                "To strip out blank indent spaces from source text documents."
+            ],
+            "correctAnswer": "To evaluate token streams against language grammar rules to build a valid structural syntax tree.",
+            "explanation": "Syntax analysis validates token streams against language grammar constraints, building a structured syntax tree for the compiler."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "calculated_efficiency_rating",
+                "3_step_efficiency_rating",
+                "net-efficiency-summation-value",
+                "switch"
+            ],
+            "correctAnswer": "calculated_efficiency_rating",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like switch. Underscores are valid."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Definiteness'?",
+            "options": [
+                "It must store data records inside external cloud database servers.",
+                "Every statement must be clearly defined, precise, and completely unambiguous.",
+                "It must render complex interactive graphic interfaces on user monitors.",
+                "It must implement identifier variable names featuring leading number marks."
+            ],
+            "correctAnswer": "Every statement must be clearly defined, precise, and completely unambiguous.",
+            "explanation": "Definiteness requires that each step in an algorithm be clearly defined and explicit, preventing compiler confusion or runtime drift."
+        },
+        {
+            "question": "In system flowchart layout mapping, what explicit operational function does an elongated oval shape perform?",
+            "options": [
+                "Tracing multi-path selection forks based on conditional expression checks.",
+                "Marking absolute terminal start boundaries or exit termination parameters.",
+                "Enclosing active arithmetic mathematical processes or variable modifications.",
+                "Capturing text string parameters from user terminal hardware keyboards."
+            ],
+            "correctAnswer": "Marking absolute terminal start boundaries or exit termination parameters.",
+            "explanation": "Ovals act as terminal symbols that clearly mark the boundaries where a flowchart process or program loop begins and ends."
+        },
+        {
+            "question": "Which of the following scenarios describes the introduction of a logical logic error into an application mathematical expression?",
+            "options": [
+                "Accidentally calculating net revenue by adding tax instead of subtracting it, yielding bad data.",
+                "Leaving out a mandatory structural closing semicolon token or brace at an expression break.",
+                "Using an un-declared identifier string that triggers immediate parser validation errors.",
+                "Omitting opening block quotation marks from an informative text string literal definition."
+            ],
+            "correctAnswer": "Accidentally calculating net revenue by adding tax instead of subtracting it, yielding bad data.",
+            "explanation": "Logic errors occur when code runs successfully without crashing but produces bad outputs because of flawed calculation reasoning."
+        },
+        {
+            "question": "What computational benefit does an application codebase derive from enforcing clear structural indentation formatting rules?",
+            "options": [
+                "It forces compilers to compress target file memory usage structures.",
+                "It visibly outlines nesting levels, making code significantly easier for developers to read and trace.",
+                "It ensures that execution flows can bypass all selection check boundaries.",
+                "It completely removes the requirement to trace bugs using interactive debuggers."
+            ],
+            "correctAnswer": "It visibly outlines nesting levels, making code significantly easier for developers to read and trace.",
+            "explanation": "Clean indentation maps out structural scope levels visually, helping development teams trace, read, and maintain complex code logic."
+        },
+        {
+            "question": "Which structural control flow pattern runs statements line by line in a straight chronology without branching jumps?",
+            "options": [
+                "The entry-controlled while iteration block model.",
+                "The post-controlled do-while iteration block model.",
+                "The linear non-repeating sequence control track.",
+                "The nested multi-path switch case choice configuration."
+            ],
+            "correctAnswer": "The linear non-repeating sequence control track.",
+            "explanation": "Sequence logic processes code instructions linearly one after another from top to bottom, without skipping lines or looping."
+        },
+        {
+            "question": "What happens to the logical accessibility and scope of an explicit global variable shared across multiple code document units?",
+            "options": [
+                "It remains accessible to all functions and modules across the entire application workspace.",
+                "It is restricted entirely to that function and is cleared from active memory on exit.",
+                "It is automatically saved to external database file storage networks on exit.",
+                "It can only be modified inside geometric diamond decision containers."
+            ],
+            "correctAnswer": "It remains accessible to all functions and modules across the entire application workspace.",
+            "explanation": "Global variables are defined outside individual functional boundaries, making them accessible to any routine across the application runtime."
+        },
+        {
+            "question": "In structured system planning, what primary goal drives software engineering teams to conduct thorough 'desk checking reviews'?",
+            "options": [
+                "To clean out surface dust particles from physical computer system monitor accessories.",
+                "To trace logic steps manually on paper to catch design bugs early before coding begins.",
+                "To evaluate the retail financial commercial market price of completed applications.",
+                "To alter optimization settings across compiler execution servers."
+            ],
+            "correctAnswer": "To trace logic steps manually on paper to catch design bugs early before coding begins.",
+            "explanation": "Desk checking is an early design technique where developers manually trace data flows on paper to find and fix logic errors before coding."
+        },
+        {
+            "question": "Which of the following choices defines the primary risk of skipping a formal requirement validation phase within the software lifecycle?",
+            "options": [
+                "The code editor text tool will refuse to save files to system memory allocations.",
+                "The application may run correctly but fail to solve the actual operational problems of the client.",
+                "Declared primitive float numbers will automatically transform into integer string data.",
+                "The compiler engine will refuse to process valid structural sequence instructions."
+            ],
+            "correctAnswer": "The application may run correctly but fail to solve the actual operational problems of the client.",
+            "explanation": "Skipping requirement validation leads to product drift, creating an application that compiles perfectly but fails to solve the client's needs."
+        },
+        {
+            "question": "Which of the following operations describes an explicit type-casting modification within an expression block?",
+            "options": [
+                "An engine automatically promoting narrow integer data to broad float storage spaces.",
+                "A developer writing an explicit conversion operator to force a float value into an integer tracking format.",
+                "The compiler raising structural syntax errors because a terminal bracket is missing.",
+                "A linker bundle assembly joining object files into standalone execution targets."
+            ],
+            "correctAnswer": "A developer writing an explicit conversion operator to force a float value into an integer tracking format.",
+            "explanation": "Explicit type casting uses cast operators to force the compiler to convert a value from its original data type into a target format."
+        },
+        {
+            "question": "In structural layout design, what specific processing task is assigned to a standard rectangle container shape inside a flowchart?",
+            "options": [
+                "A basic math calculation, data calculation process, or variable assignment step.",
+                "A call to a predefined sub-routine, external method, or complex modular function.",
+                "The initial execution entry path parameter or termination boundary edge.",
+                "A conditional selection checkpoint branching system workflows."
+            ],
+            "correctAnswer": "A basic math calculation, data calculation process, or variable assignment step.",
+            "explanation": "Rectangles are the universal flowchart convention for processing activities, mathematical calculations, and value assignments."
+        },
+        {
+            "question": "What computational error occurs if a recursive function is missing an accessible terminal base case scenario?",
+            "options": [
+                "The system compiler will fail to process the source document text registry.",
+                "The routine runs indefinitely, filling memory stack frames until a stack overflow crash occurs.",
+                "The application will automatically duplicate all declared global variables.",
+                "The flowchart layout will lose its off-page pentagonal connector coordinates."
+            ],
+            "correctAnswer": "The routine runs indefinitely, filling memory stack frames until a stack overflow crash occurs.",
+            "explanation": "Without a base case, recursive functions self-call endlessly, filling up the memory stack frame until a stack overflow crash occurs."
+        },
+        {
+            "question": "Which of the following choices represents a valid assignment statement format inside structured algorithmic pseudocode?",
+            "options": [
+                "Set index_pointer EQUALS TO tracking value zero",
+                "index_pointer = 0",
+                "0 -> assign directly to identifier -> index_pointer",
+                "Declare static global tracking variable containing value 0"
+            ],
+            "correctAnswer": "index_pointer = 0",
+            "explanation": "The standard assignment format features the target identifier on the left, an assignment operator, and the value to store on the right."
+        },
+        {
+            "question": "In structured software engineering, what primary goal drives developers to target 'Low Module Coupling' profiles?",
+            "options": [
+                "To increase the total volume of text code lines required to assemble an application.",
+                "To ensure that system modules are independent, so updates in one won't introduce bugs elsewhere.",
+                "To force compilers to run lexical parsing loops multiple times.",
+                "To prevent the configuration of multi dimensional array grids inside functions."
+            ],
+            "correctAnswer": "To ensure that system modules are independent, so updates in one won't introduce bugs elsewhere.",
+            "explanation": "Low coupling keeps system modules separate and independent, ensuring changes or updates to one component don't break logic elsewhere."
+        },
+        {
+            "question": "Which tool provides a text-based, structured format for organizing program logic using plain language formatted into code blocks?",
+            "options": [
+                "A system flowchart layout map setup",
+                "Structured pseudocode or Program Design Language (PDL)",
+                "A compiled object file code registry module",
+                "A binary runtime execution matrix vector data sheet"
+            ],
+            "correctAnswer": "Structured pseudocode or Program Design Language (PDL)",
+            "explanation": "Pseudocode (or PDL) uses human-readable language structured into code forms to map logic before formal development."
+        },
+        {
+            "question": "What type of programmatic error is generated if an expression attempts to divide an integer tracking variable by a literal zero parameter?",
+            "options": [
+                "A structural syntax compilation break error status",
+                "A critical division-by-zero runtime error exception crash status.",
+                "An abstract preliminary analysis specification defect fault",
+                "An off-page connector logic flow tracking alignment loop"
+            ],
+            "correctAnswer": "A critical division-by-zero runtime error exception crash status.",
+            "explanation": "Division by zero is an illegal mathematical operation that passes syntax checks but triggers a critical runtime exception crash."
+        },
+        {
+            "question": "In modern software development frameworks, what is the primary role of an interactive Code Text Editor?",
+            "options": [
+                "To analyze and monitor retail financial shipping costs for software hardware.",
+                "To provide features like syntax highlighting and clean formatting for writing source files.",
+                "To automatically generate structured pseudocode descriptions from assembly binary tracks.",
+                "To override syntax compilation guidelines enforced by parsing utilities."
+            ],
+            "correctAnswer": "To provide features like syntax highlighting and clean formatting for writing source files.",
+            "explanation": "Code editors offer helper features like syntax highlighting, formatting, and autocompletion to help developers write clean code efficiently."
+        },
+        {
+            "question": "Which flowchart symbol is used to capture data input statements from a user keyboard terminal?",
+            "options": [
+                "A standard rectangular calculations process block",
+                "A slanted input/output parallelogram shape container",
+                "A diamond multi path conditional decision layout node",
+                "An elongated terminal oval start boundary indicator"
+            ],
+            "correctAnswer": "A slanted input/output parallelogram shape container",
+            "explanation": "Parallelograms are the flowchart convention for input and output steps, including capturing user input from a terminal."
+        },
+        {
+            "question": "What primary requirement must an algorithm fulfill to demonstrate compliance with the baseline property of 'Output'?",
+            "options": [
+                "It must save thousands of calculation records inside external database systems.",
+                "It must produce at least one defined result or quantity to resolve the targeted problem.",
+                "It must display interactive graphical user interfaces on the screen.",
+                "It must use variable names featuring leading number marks."
+            ],
+            "correctAnswer": "It must produce at least one defined result or quantity to resolve the targeted problem.",
+            "explanation": "The output property states that every valid algorithm must yield at least one clear computed value, result, or response."
+        },
+        {
+            "question": "Which of the following options represents a valid variable identifier definition under strict language syntax rules?",
+            "options": [
+                "calculated_total_sum",
+                "3_count_total_sum",
+                "net-total-sum-value",
+                "while"
+            ],
+            "correctAnswer": "calculated_total_sum",
+            "explanation": "Identifiers cannot start with digits, contain hyphens, or use reserved language keywords like while. Underscores are valid."
+        },
+        {
+            "question": "In structural software design, what primary advantage does 'Low Coupling' deliver to programming teams?",
+            "options": [
+                "It keeps modules isolated and independent, ensuring modifications in one won't unexpectedly break others.",
+                "It forces applications to bypass compilation parsing sweeps during system builds.",
+                "It locks execution flows down a single linear non repeating line trajectory.",
+                "It eliminates the requirement to allocate memory tracking for basic primitive formats."
+            ],
+            "correctAnswer": "It keeps modules isolated and independent, ensuring modifications in one won't unexpectedly break others.",
+            "explanation": "Low coupling keeps modules separate and decoupled, making applications easier to expand, update, and maintain without ripple bugs."
+        },
+        {
+            "question": "What key structural limitation characterizes a standard, primitive fixed size array structure?",
+            "options": [
+                "It can store elements of completely diverse data types simultaneously within memory rows.",
+                "Its total data storage capacity is determined at creation and cannot change dynamically at runtime.",
+                "It cannot be mapped using standard nested iterative loop control systems.",
+                "It automatically uploads its contents to external web server platforms on completion."
+            ],
+            "correctAnswer": "Its total data storage capacity is determined at creation and cannot change dynamically at runtime.",
+            "explanation": "Standard primitive arrays have a fixed capacity set at initialization, meaning they cannot dynamically grow or shrink to fit changing datasets."
+        },
+        {
+            "question": "Which phase of the Software Development Lifecycle focuses on client tracking meetings, financial review analysis, and feasibility reporting?",
+            "options": [
+                "The Code Generation and Source Text Editing Window",
+                "The Preliminary Investigation and Feasibility Analysis Phase",
+                "The Final Post Deployment Software Application Maintenance Cycle",
+                "The Unstructured Layout Diagram Translation and Assembly Step"
+            ],
+            "correctAnswer": "The Preliminary Investigation and Feasibility Analysis Phase",
+            "explanation": "The feasibility phase analyzes project constraints, budgets, and hardware resources early to verify if a project is worth pursuing."
+        },
+        {
+            "question": "In structured software engineering, what primary benefit does 'Modularity' provide to system architects?",
+            "options": [
+                "It compresses final compiled execution code sizes across cloud network nodes.",
+                "It divides an application into isolated modules that can be built, tested, and updated independently.",
+                "It fixes syntax errors caused by missing source code punctuation components.",
+                "It increases execution clock speeds across physical hardware processor platforms."
+            ],
+            "correctAnswer": "It divides an application into isolated modules that can be built, tested, and updated independently.",
+            "explanation": "Modularity breaks complex programs down into isolated, manageable components, helping development teams scale software safely."
+        },
+        {
+            "question": "What type of programmatic control system structure is demonstrated by an explicit 'for' iteration loop framework?",
+            "options": [
+                "An entry-controlled iterative loop framework structure featuring built-in counter tracking.",
+                "A linear unbranched non repeating sequential pathway flow.",
+                "A multi path conditional selection branching logic architecture array.",
+                "An abstract low level hardware register data resource manipulation step."
+            ],
+            "correctAnswer": "An entry-controlled iterative loop framework structure featuring built-in counter tracking.",
+            "explanation": "The for loop is an entry-controlled iterative structure that combines initialization, condition checking, and counter updates into its layout header."
+        },
+        {
+            "question": "Which of the following software design components acts as an abstract visual schematic map, rather than an active compiled binary target?",
+            "options": [
+                "An uncompiled structured pseudocode narrative layout text document.",
+                "A system flowchart diagram layout configuration sheet.",
+                "A functional standalone machine language binary executable file saved on disk.",
+                "An active hardware memory address register data block."
+            ],
+            "correctAnswer": "A system flowchart diagram layout configuration sheet.",
+            "explanation": "Flowcharts are conceptual visual maps used to model algorithms, separating them from active compiled binary targets."
+        },
+        {
+            "question": "What is the primary function of a software linker within the program build workflow?",
+            "options": [
+                "To analyze text characters and group them into valid structural language tokens.",
+                "To combine compiled object modules and reference libraries into a single executable binary.",
+                "To output informative screen messages that prompt users for parameter inputs.",
+                "To strip out blank indent spaces from source text documents."
+            ],
+            "correctAnswer": "To combine compiled object modules and reference libraries into a single executable binary.",
+            "explanation": "The linker resolves external references by combining compiled object modules and library code into."
+        }
 ];
 
 
@@ -9559,1121 +13058,1121 @@ const PHY102_Questions = [
 
 const GST112_Questions = [
     {
-    question: "What is culture?",
-    options: [
-        "The total way of life of a people",
-        "Only their language system",
-        "Religious beliefs only",
-        "Political structure only"
-    ],
-    correctAnswer: "The total way of life of a people",
-    explanation: "Culture refers to everything that makes up how a group of people live. This includes their beliefs, customs, values, traditions, language, dress, food, and social habits. It is not limited to one aspect of life but represents the full identity and lifestyle of a society."
-},
-{
-    question: "Which of the following is NOT a component of culture?",
-    options: [
-        "Technology",
-        "Tradition",
-        "Biology",
-        "Language"
-    ],
-    correctAnswer: "Biology",
-    explanation: "Culture consists of learned and shared human behaviors such as traditions, language, beliefs, and technology. Biology, however, is natural and genetic, dealing with physical body processes rather than learned social behavior."
-},
-{
-    question: "Culture is primarily?",
-    options: [
-        "Inborn",
-        "Learned",
-        "Genetic",
-        "Random"
-    ],
-    correctAnswer: "Learned",
-    explanation: "Culture is not inherited biologically but is learned through interaction with family, society, and institutions. From childhood, individuals acquire cultural values, norms, and practices from their environment."
-},
-{
-    question: "Which best describes material culture?",
-    options: [
-        "Beliefs and values",
-        "Physical objects and tools",
-        "Superstitions",
-        "Languages only"
-    ],
-    correctAnswer: "Physical objects and tools",
-    explanation: "Material culture includes all physical and tangible objects created or used by humans such as houses, tools, clothing, vehicles, and technology. These items reflect how people live and interact with their environment."
-},
-{
-    question: "Non-material culture includes?",
-    options: [
-        "Cars and houses",
-        "Ideas and beliefs",
-        "Money and tools",
-        "Buildings and roads"
-    ],
-    correctAnswer: "Ideas and beliefs",
-    explanation: "Non-material culture refers to intangible aspects of culture such as beliefs, values, norms, morals, customs, and laws. These shape behavior and guide how members of society interact."
+        question: "What is culture?",
+        options: [
+            "The total way of life of a people",
+            "Only their language system",
+            "Religious beliefs only",
+            "Political structure only"
+        ],
+        correctAnswer: "The total way of life of a people",
+        explanation: "Culture refers to everything that makes up how a group of people live. This includes their beliefs, customs, values, traditions, language, dress, food, and social habits. It is not limited to one aspect of life but represents the full identity and lifestyle of a society."
+    },
+    {
+        question: "Which of the following is NOT a component of culture?",
+        options: [
+            "Technology",
+            "Tradition",
+            "Biology",
+            "Language"
+        ],
+        correctAnswer: "Biology",
+        explanation: "Culture consists of learned and shared human behaviors such as traditions, language, beliefs, and technology. Biology, however, is natural and genetic, dealing with physical body processes rather than learned social behavior."
+    },
+    {
+        question: "Culture is primarily?",
+        options: [
+            "Inborn",
+            "Learned",
+            "Genetic",
+            "Random"
+        ],
+        correctAnswer: "Learned",
+        explanation: "Culture is not inherited biologically but is learned through interaction with family, society, and institutions. From childhood, individuals acquire cultural values, norms, and practices from their environment."
+    },
+    {
+        question: "Which best describes material culture?",
+        options: [
+            "Beliefs and values",
+            "Physical objects and tools",
+            "Superstitions",
+            "Languages only"
+        ],
+        correctAnswer: "Physical objects and tools",
+        explanation: "Material culture includes all physical and tangible objects created or used by humans such as houses, tools, clothing, vehicles, and technology. These items reflect how people live and interact with their environment."
+    },
+    {
+        question: "Non-material culture includes?",
+        options: [
+            "Cars and houses",
+            "Ideas and beliefs",
+            "Money and tools",
+            "Buildings and roads"
+        ],
+        correctAnswer: "Ideas and beliefs",
+        explanation: "Non-material culture refers to intangible aspects of culture such as beliefs, values, norms, morals, customs, and laws. These shape behavior and guide how members of society interact."
 
 
-/* CHAPTER 2: NIGERIA ORIGIN (5) */
-},
-{
-    question: "Nigeria as a country was amalgamated in?",
-    options: [
-        "1901",
-        "1914",
-        "1920",
-        "1960"
-    ],
-    correctAnswer: "1914",
-    explanation: "Nigeria was officially formed in 1914 when the British colonial administration merged the Northern and Southern protectorates under one government, creating the entity known as Nigeria."
-},
-{
-    question: "Who amalgamated Nigeria?",
-    options: [
-        "Nnamdi Azikiwe",
-        "Obafemi Awolowo",
-        "Lord Lugard",
-        "Ahmadu Bello"
-    ],
-    correctAnswer: "Lord Lugard",
-    explanation: "Frederick Lugard, a British colonial administrator, was responsible for merging Northern and Southern Nigeria in 1914 under British colonial rule."
-},
-{
-    question: "Nigeria gained independence in?",
-    options: [
-        "1957",
-        "1960",
-        "1963",
-        "1970"
-    ],
-    correctAnswer: "1960",
-    explanation: "Nigeria gained independence from British colonial rule on October 1st, 1960, marking the beginning of self-governance."
-},
-{
-    question: "The first capital of Nigeria was?",
-    options: [
-        "Abuja",
-        "Lagos",
-        "Ibadan",
-        "Enugu"
-    ],
-    correctAnswer: "Lagos",
-    explanation: "Lagos served as the colonial capital and remained the capital of Nigeria after independence until it was moved to Abuja in 1991."
-},
-{
-    question: "Nigeria became a republic in?",
-    options: [
-        "1960",
-        "1963",
-        "1979",
-        "1999"
-    ],
-    correctAnswer: "1963",
-    explanation: "Nigeria became a republic in 1963 when it removed the British monarch as head of state and replaced it with a Nigerian president."
+        /* CHAPTER 2: NIGERIA ORIGIN (5) */
+    },
+    {
+        question: "Nigeria as a country was amalgamated in?",
+        options: [
+            "1901",
+            "1914",
+            "1920",
+            "1960"
+        ],
+        correctAnswer: "1914",
+        explanation: "Nigeria was officially formed in 1914 when the British colonial administration merged the Northern and Southern protectorates under one government, creating the entity known as Nigeria."
+    },
+    {
+        question: "Who amalgamated Nigeria?",
+        options: [
+            "Nnamdi Azikiwe",
+            "Obafemi Awolowo",
+            "Lord Lugard",
+            "Ahmadu Bello"
+        ],
+        correctAnswer: "Lord Lugard",
+        explanation: "Frederick Lugard, a British colonial administrator, was responsible for merging Northern and Southern Nigeria in 1914 under British colonial rule."
+    },
+    {
+        question: "Nigeria gained independence in?",
+        options: [
+            "1957",
+            "1960",
+            "1963",
+            "1970"
+        ],
+        correctAnswer: "1960",
+        explanation: "Nigeria gained independence from British colonial rule on October 1st, 1960, marking the beginning of self-governance."
+    },
+    {
+        question: "The first capital of Nigeria was?",
+        options: [
+            "Abuja",
+            "Lagos",
+            "Ibadan",
+            "Enugu"
+        ],
+        correctAnswer: "Lagos",
+        explanation: "Lagos served as the colonial capital and remained the capital of Nigeria after independence until it was moved to Abuja in 1991."
+    },
+    {
+        question: "Nigeria became a republic in?",
+        options: [
+            "1960",
+            "1963",
+            "1979",
+            "1999"
+        ],
+        correctAnswer: "1963",
+        explanation: "Nigeria became a republic in 1963 when it removed the British monarch as head of state and replaced it with a Nigerian president."
 
 
-/* CHAPTER 3: PROBLEMS OF NIGERIAN STATES (5) */
-},
-{
-    question: "One major problem of Nigerian states is?",
-    options: [
-        "Overpopulation",
-        "Good governance",
-        "Political stability",
-        "Technological advancement"
-    ],
-    correctAnswer: "Overpopulation",
-    explanation: "Overpopulation puts pressure on resources such as housing, healthcare, education, and employment, making development difficult for the government to manage effectively."
-},
-{
-    question: "Corruption in Nigeria leads to?",
-    options: [
-        "Development",
-        "Mismanagement of resources",
-        "Peace",
-        "Unity"
-    ],
-    correctAnswer: "Mismanagement of resources",
-    explanation: "Corruption involves misuse of public funds and power, which leads to wastage of resources and slows down national development."
-},
-{
-    question: "Ethnic conflict often results in?",
-    options: [
-        "National unity",
-        "Social instability",
-        "Economic growth",
-        "Peaceful coexistence"
-    ],
-    correctAnswer: "Social instability",
-    explanation: "Ethnic conflict creates tension, violence, and mistrust among groups, which destabilizes society."
-},
-{
-    question: "Poor infrastructure affects?",
-    options: [
-        "Development",
-        "Education only",
-        "Language",
-        "Religion"
-    ],
-    correctAnswer: "Development",
-    explanation: "Poor infrastructure such as bad roads, lack of electricity, and weak healthcare systems slows down economic and social development."
-},
-{
-    question: "Unemployment leads to?",
-    options: [
-        "Economic growth",
-        "Social vices",
-        "Peace",
-        "Industrialization"
-    ],
-    correctAnswer: "Social vices",
-    explanation: "When people are unemployed, especially youths, they may engage in crimes such as theft, fraud, and violence due to lack of income."
+        /* CHAPTER 3: PROBLEMS OF NIGERIAN STATES (5) */
+    },
+    {
+        question: "One major problem of Nigerian states is?",
+        options: [
+            "Overpopulation",
+            "Good governance",
+            "Political stability",
+            "Technological advancement"
+        ],
+        correctAnswer: "Overpopulation",
+        explanation: "Overpopulation puts pressure on resources such as housing, healthcare, education, and employment, making development difficult for the government to manage effectively."
+    },
+    {
+        question: "Corruption in Nigeria leads to?",
+        options: [
+            "Development",
+            "Mismanagement of resources",
+            "Peace",
+            "Unity"
+        ],
+        correctAnswer: "Mismanagement of resources",
+        explanation: "Corruption involves misuse of public funds and power, which leads to wastage of resources and slows down national development."
+    },
+    {
+        question: "Ethnic conflict often results in?",
+        options: [
+            "National unity",
+            "Social instability",
+            "Economic growth",
+            "Peaceful coexistence"
+        ],
+        correctAnswer: "Social instability",
+        explanation: "Ethnic conflict creates tension, violence, and mistrust among groups, which destabilizes society."
+    },
+    {
+        question: "Poor infrastructure affects?",
+        options: [
+            "Development",
+            "Education only",
+            "Language",
+            "Religion"
+        ],
+        correctAnswer: "Development",
+        explanation: "Poor infrastructure such as bad roads, lack of electricity, and weak healthcare systems slows down economic and social development."
+    },
+    {
+        question: "Unemployment leads to?",
+        options: [
+            "Economic growth",
+            "Social vices",
+            "Peace",
+            "Industrialization"
+        ],
+        correctAnswer: "Social vices",
+        explanation: "When people are unemployed, especially youths, they may engage in crimes such as theft, fraud, and violence due to lack of income."
 
 
-/* CHAPTERS 4–11 */
-},
-{
-    question: "The three major ethnic groups in Nigeria are?",
-    options: [
-        "Hausa, Yoruba, Igbo",
-        "Ibibio, Tiv, Nupe",
-        "Edo, Kanuri, Idoma",
-        "Ijaw, Fulani, Efik"
-    ],
-    correctAnswer: "Hausa, Yoruba, Igbo",
-    explanation: "These three ethnic groups are the largest in Nigeria and have significant cultural, political, and economic influence across the country."
-},
-{
-    question: "Nigeria has approximately how many languages?",
-    options: [
-        "50",
-        "100",
-        "Over 500",
-        "10"
-    ],
-    correctAnswer: "Over 500",
-    explanation: "Nigeria is one of the most linguistically diverse countries in the world, with over 500 different languages spoken across various ethnic groups."
-},
-{
-    question: "Development refers to?",
-    options: [
-        "Backward movement",
-        "Improvement in living standards",
-        "No change",
-        "Decline in economy"
-    ],
-    correctAnswer: "Improvement in living standards",
-    explanation: "Development involves improvements in economic conditions, education, healthcare, infrastructure, and general quality of life."
-},
-{
-    question: "Education is important because it?",
-    options: [
-        "Creates ignorance",
-        "Develops human capacity",
-        "Stops development",
-        "Reduces knowledge"
-    ],
-    correctAnswer: "Develops human capacity",
-    explanation: "Education equips individuals with knowledge, skills, and values needed to contribute positively to society and national development."
-},
-{
-    question: "Nigeria is a member of?",
-    options: [
-        "EU",
-        "AU",
-        "NATO",
-        "ASEAN"
-    ],
-    correctAnswer: "AU",
-    explanation: "Nigeria is a member of the African Union (AU), an organization that promotes unity and cooperation among African countries."
-},
-{
-    question: "Democracy means?",
-    options: [
-        "Rule by one person",
-        "Rule by the people",
-        "Military rule",
-        "No government"
-    ],
-    correctAnswer: "Rule by the people",
-    explanation: "Democracy is a system of government where power belongs to the people, who exercise it directly or through elected representatives."
-},
-{
-    question: "The future of Nigeria depends on?",
-    options: [
-        "Only foreign countries",
-        "Good leadership",
-        "No education",
-        "Corruption"
-    ],
-    correctAnswer: "Good leadership",
-    explanation: "A nation's future depends heavily on effective leadership, which ensures proper management of resources and development policies."
-},
-{
-    question: "Which of the following is a feature of ethnic groups?",
-    options: [
-        "Same currency",
-        "Shared culture and identity",
-        "Same political party",
-        "Same profession"
-    ],
-    correctAnswer: "Shared culture and identity",
-    explanation: "Ethnic groups are defined by shared culture, language, ancestry, and identity, not by political or economic systems."
-},
-{
-    question: "A major benefit of ethnic diversity is?",
-    options: [
-        "Conflict",
-        "Cultural exchange",
-        "Division",
-        "Isolation"
-    ],
-    correctAnswer: "Cultural exchange",
-    explanation: "Ethnic diversity allows different groups to share traditions, values, and ideas, enriching national culture."
-},
-{
-    question: "Ethnicity is mainly based on?",
-    options: [
-        "Technology",
-        "Ancestry and culture",
-        "Wealth",
-        "Education level"
-    ],
-    correctAnswer: "Ancestry and culture",
-    explanation: "Ethnicity is determined by shared ancestry, language, and cultural heritage."
-},
-{
-    question: "Which factor can worsen ethnic tensions?",
-    options: [
-        "Fair resource distribution",
-        "Discrimination",
-        "Unity",
-        "Education"
-    ],
-    correctAnswer: "Discrimination",
-    explanation: "When groups are treated unfairly, it increases resentment and ethnic conflict."
-},
-{
-    question: "Ethnic groups in Nigeria are best described as?",
-    options: [
-        "Foreign communities",
-        "Cultural subdivisions of the population",
-        "Political parties",
-        "Economic groups"
-    ],
-    correctAnswer: "Cultural subdivisions of the population",
-    explanation: "Ethnic groups represent culturally distinct communities within Nigeria's population."
+        /* CHAPTERS 4–11 */
+    },
+    {
+        question: "The three major ethnic groups in Nigeria are?",
+        options: [
+            "Hausa, Yoruba, Igbo",
+            "Ibibio, Tiv, Nupe",
+            "Edo, Kanuri, Idoma",
+            "Ijaw, Fulani, Efik"
+        ],
+        correctAnswer: "Hausa, Yoruba, Igbo",
+        explanation: "These three ethnic groups are the largest in Nigeria and have significant cultural, political, and economic influence across the country."
+    },
+    {
+        question: "Nigeria has approximately how many languages?",
+        options: [
+            "50",
+            "100",
+            "Over 500",
+            "10"
+        ],
+        correctAnswer: "Over 500",
+        explanation: "Nigeria is one of the most linguistically diverse countries in the world, with over 500 different languages spoken across various ethnic groups."
+    },
+    {
+        question: "Development refers to?",
+        options: [
+            "Backward movement",
+            "Improvement in living standards",
+            "No change",
+            "Decline in economy"
+        ],
+        correctAnswer: "Improvement in living standards",
+        explanation: "Development involves improvements in economic conditions, education, healthcare, infrastructure, and general quality of life."
+    },
+    {
+        question: "Education is important because it?",
+        options: [
+            "Creates ignorance",
+            "Develops human capacity",
+            "Stops development",
+            "Reduces knowledge"
+        ],
+        correctAnswer: "Develops human capacity",
+        explanation: "Education equips individuals with knowledge, skills, and values needed to contribute positively to society and national development."
+    },
+    {
+        question: "Nigeria is a member of?",
+        options: [
+            "EU",
+            "AU",
+            "NATO",
+            "ASEAN"
+        ],
+        correctAnswer: "AU",
+        explanation: "Nigeria is a member of the African Union (AU), an organization that promotes unity and cooperation among African countries."
+    },
+    {
+        question: "Democracy means?",
+        options: [
+            "Rule by one person",
+            "Rule by the people",
+            "Military rule",
+            "No government"
+        ],
+        correctAnswer: "Rule by the people",
+        explanation: "Democracy is a system of government where power belongs to the people, who exercise it directly or through elected representatives."
+    },
+    {
+        question: "The future of Nigeria depends on?",
+        options: [
+            "Only foreign countries",
+            "Good leadership",
+            "No education",
+            "Corruption"
+        ],
+        correctAnswer: "Good leadership",
+        explanation: "A nation's future depends heavily on effective leadership, which ensures proper management of resources and development policies."
+    },
+    {
+        question: "Which of the following is a feature of ethnic groups?",
+        options: [
+            "Same currency",
+            "Shared culture and identity",
+            "Same political party",
+            "Same profession"
+        ],
+        correctAnswer: "Shared culture and identity",
+        explanation: "Ethnic groups are defined by shared culture, language, ancestry, and identity, not by political or economic systems."
+    },
+    {
+        question: "A major benefit of ethnic diversity is?",
+        options: [
+            "Conflict",
+            "Cultural exchange",
+            "Division",
+            "Isolation"
+        ],
+        correctAnswer: "Cultural exchange",
+        explanation: "Ethnic diversity allows different groups to share traditions, values, and ideas, enriching national culture."
+    },
+    {
+        question: "Ethnicity is mainly based on?",
+        options: [
+            "Technology",
+            "Ancestry and culture",
+            "Wealth",
+            "Education level"
+        ],
+        correctAnswer: "Ancestry and culture",
+        explanation: "Ethnicity is determined by shared ancestry, language, and cultural heritage."
+    },
+    {
+        question: "Which factor can worsen ethnic tensions?",
+        options: [
+            "Fair resource distribution",
+            "Discrimination",
+            "Unity",
+            "Education"
+        ],
+        correctAnswer: "Discrimination",
+        explanation: "When groups are treated unfairly, it increases resentment and ethnic conflict."
+    },
+    {
+        question: "Ethnic groups in Nigeria are best described as?",
+        options: [
+            "Foreign communities",
+            "Cultural subdivisions of the population",
+            "Political parties",
+            "Economic groups"
+        ],
+        correctAnswer: "Cultural subdivisions of the population",
+        explanation: "Ethnic groups represent culturally distinct communities within Nigeria's population."
 
 
-/* CHAPTER 5: LANGUAGE (EXPANDED) */
-},
-{
-    question: "Language is primarily used for?",
-    options: [
-        "Decoration",
-        "Communication",
-        "Competition",
-        "Isolation"
-    ],
-    correctAnswer: "Communication",
-    explanation: "Language is a system of communication used to express thoughts, ideas, and emotions."
-},
-{
-    question: "A dialect refers to?",
-    options: [
-        "A type of government",
-        "A variation of a language",
-        "A religion",
-        "A law system"
-    ],
-    correctAnswer: "A variation of a language",
-    explanation: "Dialects are regional or social variations of a language with differences in pronunciation and vocabulary."
-},
-{
-    question: "Pidgin English developed mainly due to?",
-    options: [
-        "Religious preaching",
-        "Trade and interaction",
-        "Military rule",
-        "Education system"
-    ],
-    correctAnswer: "Trade and interaction",
-    explanation: "Pidgin English emerged as a simplified language for communication among people of different languages."
-},
-{
-    question: "Which is NOT a function of language?",
-    options: [
-        "Communication",
-        "Expression of culture",
-        "Isolation of people",
-        "Identity formation"
-    ],
-    correctAnswer: "Isolation of people",
-    explanation: "Language connects people rather than isolating them."
-},
-{
-    question: "Language diversity in Nigeria is caused by?",
-    options: [
-        "Single ethnic group",
-        "Many ethnic groups",
-        "One religion",
-        "One government system"
-    ],
-    correctAnswer: "Many ethnic groups",
-    explanation: "Nigeria has over 500 ethnic groups, leading to high language diversity."
+        /* CHAPTER 5: LANGUAGE (EXPANDED) */
+    },
+    {
+        question: "Language is primarily used for?",
+        options: [
+            "Decoration",
+            "Communication",
+            "Competition",
+            "Isolation"
+        ],
+        correctAnswer: "Communication",
+        explanation: "Language is a system of communication used to express thoughts, ideas, and emotions."
+    },
+    {
+        question: "A dialect refers to?",
+        options: [
+            "A type of government",
+            "A variation of a language",
+            "A religion",
+            "A law system"
+        ],
+        correctAnswer: "A variation of a language",
+        explanation: "Dialects are regional or social variations of a language with differences in pronunciation and vocabulary."
+    },
+    {
+        question: "Pidgin English developed mainly due to?",
+        options: [
+            "Religious preaching",
+            "Trade and interaction",
+            "Military rule",
+            "Education system"
+        ],
+        correctAnswer: "Trade and interaction",
+        explanation: "Pidgin English emerged as a simplified language for communication among people of different languages."
+    },
+    {
+        question: "Which is NOT a function of language?",
+        options: [
+            "Communication",
+            "Expression of culture",
+            "Isolation of people",
+            "Identity formation"
+        ],
+        correctAnswer: "Isolation of people",
+        explanation: "Language connects people rather than isolating them."
+    },
+    {
+        question: "Language diversity in Nigeria is caused by?",
+        options: [
+            "Single ethnic group",
+            "Many ethnic groups",
+            "One religion",
+            "One government system"
+        ],
+        correctAnswer: "Many ethnic groups",
+        explanation: "Nigeria has over 500 ethnic groups, leading to high language diversity."
 
 
-/* CHAPTER 6: DEVELOPMENT */
-},
-{
-    question: "Sustainable development focuses on?",
-    options: [
-        "Short-term gain",
-        "Long-term progress without harming future needs",
-        "Only economic growth",
-        "Only politics"
-    ],
-    correctAnswer: "Long-term progress without harming future needs",
-    explanation: "Sustainable development ensures present needs are met without compromising future generations."
-},
-{
-    question: "One indicator of development is?",
-    options: [
-        "High poverty rate",
-        "Improved healthcare",
-        "Low education",
-        "Unemployment"
-    ],
-    correctAnswer: "Improved healthcare",
-    explanation: "Better healthcare systems show progress in national development."
-},
-{
-    question: "Industrialization contributes to?",
-    options: [
-        "Economic decline",
-        "Job creation",
-        "Illiteracy",
-        "Conflict"
-    ],
-    correctAnswer: "Job creation",
-    explanation: "Industries create employment and boost economic growth."
-},
-{
-    question: "A developing country is one that?",
-    options: [
-        "Has no economy",
-        "Is improving economically and socially",
-        "Is fully developed",
-        "Has no population"
-    ],
-    correctAnswer: "Is improving economically and socially",
-    explanation: "Developing countries are still working toward higher living standards."
-},
-{
-    question: "Human development index (HDI) measures?",
-    options: [
-        "Military strength",
-        "Income, education, and health",
-        "Religion",
-        "Weather"
-    ],
-    correctAnswer: "Income, education, and health",
-    explanation: "HDI evaluates development based on life expectancy, education, and income."
+        /* CHAPTER 6: DEVELOPMENT */
+    },
+    {
+        question: "Sustainable development focuses on?",
+        options: [
+            "Short-term gain",
+            "Long-term progress without harming future needs",
+            "Only economic growth",
+            "Only politics"
+        ],
+        correctAnswer: "Long-term progress without harming future needs",
+        explanation: "Sustainable development ensures present needs are met without compromising future generations."
+    },
+    {
+        question: "One indicator of development is?",
+        options: [
+            "High poverty rate",
+            "Improved healthcare",
+            "Low education",
+            "Unemployment"
+        ],
+        correctAnswer: "Improved healthcare",
+        explanation: "Better healthcare systems show progress in national development."
+    },
+    {
+        question: "Industrialization contributes to?",
+        options: [
+            "Economic decline",
+            "Job creation",
+            "Illiteracy",
+            "Conflict"
+        ],
+        correctAnswer: "Job creation",
+        explanation: "Industries create employment and boost economic growth."
+    },
+    {
+        question: "A developing country is one that?",
+        options: [
+            "Has no economy",
+            "Is improving economically and socially",
+            "Is fully developed",
+            "Has no population"
+        ],
+        correctAnswer: "Is improving economically and socially",
+        explanation: "Developing countries are still working toward higher living standards."
+    },
+    {
+        question: "Human development index (HDI) measures?",
+        options: [
+            "Military strength",
+            "Income, education, and health",
+            "Religion",
+            "Weather"
+        ],
+        correctAnswer: "Income, education, and health",
+        explanation: "HDI evaluates development based on life expectancy, education, and income."
 
 
-/* CHAPTER 7: EDUCATION */
-},
-{
-    question: "Education helps in shaping?",
-    options: [
-        "Animals",
-        "Human behavior",
-        "Weather",
-        "Politics only"
-    ],
-    correctAnswer: "Human behavior",
-    explanation: "Education develops knowledge, skills, values, and behavior in individuals."
-},
-{
-    question: "Formal education takes place in?",
-    options: [
-        "Market",
-        "School",
-        "Home only",
-        "Street"
-    ],
-    correctAnswer: "School",
-    explanation: "Formal education occurs in structured institutions like schools and universities."
-},
-{
-    question: "One role of teachers is?",
-    options: [
-        "Entertainment",
-        "Imparting knowledge",
-        "Trading",
-        "Politics"
-    ],
-    correctAnswer: "Imparting knowledge",
-    explanation: "Teachers educate and guide learners in academic and moral development."
-},
-{
-    question: "Education contributes to?",
-    options: [
-        "National backwardness",
-        "National development",
-        "Conflict",
-        "Illiteracy"
-    ],
-    correctAnswer: "National development",
-    explanation: "Education builds skilled citizens who contribute to national growth."
-},
-{
-    question: "Informal education is learned through?",
-    options: [
-        "Classrooms only",
-        "Daily experiences",
-        "Exams",
-        "Books only"
-    ],
-    correctAnswer: "Daily experiences",
-    explanation: "Informal education comes from family, society, and life experiences."
+        /* CHAPTER 7: EDUCATION */
+    },
+    {
+        question: "Education helps in shaping?",
+        options: [
+            "Animals",
+            "Human behavior",
+            "Weather",
+            "Politics only"
+        ],
+        correctAnswer: "Human behavior",
+        explanation: "Education develops knowledge, skills, values, and behavior in individuals."
+    },
+    {
+        question: "Formal education takes place in?",
+        options: [
+            "Market",
+            "School",
+            "Home only",
+            "Street"
+        ],
+        correctAnswer: "School",
+        explanation: "Formal education occurs in structured institutions like schools and universities."
+    },
+    {
+        question: "One role of teachers is?",
+        options: [
+            "Entertainment",
+            "Imparting knowledge",
+            "Trading",
+            "Politics"
+        ],
+        correctAnswer: "Imparting knowledge",
+        explanation: "Teachers educate and guide learners in academic and moral development."
+    },
+    {
+        question: "Education contributes to?",
+        options: [
+            "National backwardness",
+            "National development",
+            "Conflict",
+            "Illiteracy"
+        ],
+        correctAnswer: "National development",
+        explanation: "Education builds skilled citizens who contribute to national growth."
+    },
+    {
+        question: "Informal education is learned through?",
+        options: [
+            "Classrooms only",
+            "Daily experiences",
+            "Exams",
+            "Books only"
+        ],
+        correctAnswer: "Daily experiences",
+        explanation: "Informal education comes from family, society, and life experiences."
 
 
-/* CHAPTER 8: NIGERIA AND THE WORLD */
-},
-{
-    question: "Globalization has led to?",
-    options: [
-        "Isolation of countries",
-        "Increased global interaction",
-        "No communication",
-        "No trade"
-    ],
-    correctAnswer: "Increased global interaction",
-    explanation: "Globalization connects countries economically, socially, and culturally."
-},
-{
-    question: "Nigeria exports mainly?",
-    options: [
-        "Oil and agricultural products",
-        "Cars",
-        "Snow",
-        "Diamonds only"
-    ],
-    correctAnswer: "Oil and agricultural products",
-    explanation: "Nigeria’s economy relies heavily on crude oil and agriculture exports."
-},
-{
-    question: "International organizations help Nigeria by?",
-    options: [
-        "Causing wars",
-        "Providing aid and cooperation",
-        "Stopping trade",
-        "Blocking development"
-    ],
-    correctAnswer: "Providing aid and cooperation",
-    explanation: "Organizations like the UN support development and peace initiatives."
-},
-{
-    question: "Diplomacy refers to?",
-    options: [
-        "War strategy",
-        "Managing relations between countries",
-        "Isolation",
-        "Trade only"
-    ],
-    correctAnswer: "Managing relations between countries",
-    explanation: "Diplomacy is the peaceful management of international relations."
-},
-{
-    question: "Nigeria’s global role includes?",
-    options: [
-        "No participation",
-        "Peacekeeping missions",
-        "Isolation",
-        "Only local trade"
-    ],
-    correctAnswer: "Peacekeeping missions",
-    explanation: "Nigeria actively participates in UN peacekeeping operations."
+        /* CHAPTER 8: NIGERIA AND THE WORLD */
+    },
+    {
+        question: "Globalization has led to?",
+        options: [
+            "Isolation of countries",
+            "Increased global interaction",
+            "No communication",
+            "No trade"
+        ],
+        correctAnswer: "Increased global interaction",
+        explanation: "Globalization connects countries economically, socially, and culturally."
+    },
+    {
+        question: "Nigeria exports mainly?",
+        options: [
+            "Oil and agricultural products",
+            "Cars",
+            "Snow",
+            "Diamonds only"
+        ],
+        correctAnswer: "Oil and agricultural products",
+        explanation: "Nigeria’s economy relies heavily on crude oil and agriculture exports."
+    },
+    {
+        question: "International organizations help Nigeria by?",
+        options: [
+            "Causing wars",
+            "Providing aid and cooperation",
+            "Stopping trade",
+            "Blocking development"
+        ],
+        correctAnswer: "Providing aid and cooperation",
+        explanation: "Organizations like the UN support development and peace initiatives."
+    },
+    {
+        question: "Diplomacy refers to?",
+        options: [
+            "War strategy",
+            "Managing relations between countries",
+            "Isolation",
+            "Trade only"
+        ],
+        correctAnswer: "Managing relations between countries",
+        explanation: "Diplomacy is the peaceful management of international relations."
+    },
+    {
+        question: "Nigeria’s global role includes?",
+        options: [
+            "No participation",
+            "Peacekeeping missions",
+            "Isolation",
+            "Only local trade"
+        ],
+        correctAnswer: "Peacekeeping missions",
+        explanation: "Nigeria actively participates in UN peacekeeping operations."
 
 
-/* CHAPTER 9: EMERGING CULTURES */
-},
-{
-    question: "Modern culture is influenced by?",
-    options: [
-        "Technology and media",
-        "Only traditions",
-        "No communication",
-        "Isolation"
-    ],
-    correctAnswer: "Technology and media",
-    explanation: "Modern culture is shaped by digital technology, internet, and media platforms."
-},
-{
-    question: "Cultural globalization means?",
-    options: [
-        "Cultural isolation",
-        "Spread of cultures worldwide",
-        "Loss of language",
-        "No interaction"
-    ],
-    correctAnswer: "Spread of cultures worldwide",
-    explanation: "Globalization spreads cultural ideas across different countries."
-},
-{
-    question: "One impact of social media is?",
-    options: [
-        "Slower communication",
-        "Fast information sharing",
-        "No communication",
-        "Isolation"
-    ],
-    correctAnswer: "Fast information sharing",
-    explanation: "Social media allows rapid exchange of information globally."
-},
-{
-    question: "Youth culture is mostly shaped by?",
-    options: [
-        "Ancient books only",
-        "Trends and technology",
-        "No influence",
-        "Government only"
-    ],
-    correctAnswer: "Trends and technology",
-    explanation: "Youth culture evolves through trends, fashion, and digital platforms."
-},
-{
-    question: "Cultural change refers to?",
-    options: [
-        "No change in society",
-        "Transformation of cultural practices",
-        "End of culture",
-        "Isolation"
-    ],
-    correctAnswer: "Transformation of cultural practices",
-    explanation: "Culture changes over time due to internal and external influences."
+        /* CHAPTER 9: EMERGING CULTURES */
+    },
+    {
+        question: "Modern culture is influenced by?",
+        options: [
+            "Technology and media",
+            "Only traditions",
+            "No communication",
+            "Isolation"
+        ],
+        correctAnswer: "Technology and media",
+        explanation: "Modern culture is shaped by digital technology, internet, and media platforms."
+    },
+    {
+        question: "Cultural globalization means?",
+        options: [
+            "Cultural isolation",
+            "Spread of cultures worldwide",
+            "Loss of language",
+            "No interaction"
+        ],
+        correctAnswer: "Spread of cultures worldwide",
+        explanation: "Globalization spreads cultural ideas across different countries."
+    },
+    {
+        question: "One impact of social media is?",
+        options: [
+            "Slower communication",
+            "Fast information sharing",
+            "No communication",
+            "Isolation"
+        ],
+        correctAnswer: "Fast information sharing",
+        explanation: "Social media allows rapid exchange of information globally."
+    },
+    {
+        question: "Youth culture is mostly shaped by?",
+        options: [
+            "Ancient books only",
+            "Trends and technology",
+            "No influence",
+            "Government only"
+        ],
+        correctAnswer: "Trends and technology",
+        explanation: "Youth culture evolves through trends, fashion, and digital platforms."
+    },
+    {
+        question: "Cultural change refers to?",
+        options: [
+            "No change in society",
+            "Transformation of cultural practices",
+            "End of culture",
+            "Isolation"
+        ],
+        correctAnswer: "Transformation of cultural practices",
+        explanation: "Culture changes over time due to internal and external influences."
 
 
-/* CHAPTER 10: DEMOCRACY */
-},
-{
-    question: "In democracy, sovereignty belongs to?",
-    options: [
-        "Military",
-        "People",
-        "President only",
-        "Judiciary"
-    ],
-    correctAnswer: "People",
-    explanation: "In a democracy, the people hold ultimate power through voting and representation."
-},
-{
-    question: "One key feature of democracy is?",
-    options: [
-        "Dictatorship",
-        "Free elections",
-        "No law",
-        "Military control"
-    ],
-    correctAnswer: "Free elections",
-    explanation: "Democracy allows citizens to choose leaders through elections."
-},
-{
-    question: "Rule of law means?",
-    options: [
-        "Leaders are above law",
-        "Everyone obeys the law",
-        "No laws exist",
-        "Only citizens obey laws"
-    ],
-    correctAnswer: "Everyone obeys the law",
-    explanation: "Rule of law ensures equality before the law."
-},
-{
-    question: "Democratic government ensures?",
-    options: [
-        "Oppression",
-        "Citizens’ participation",
-        "No voting",
-        "Military rule"
-    ],
-    correctAnswer: "Citizens’ participation",
-    explanation: "Citizens take part in governance through voting and civic engagement."
-},
-{
-    question: "Elections are important because they?",
-    options: [
-        "Create conflict",
-        "Allow leadership choice",
-        "Stop democracy",
-        "Remove rights"
-    ],
-    correctAnswer: "Allow leadership choice",
-    explanation: "Elections give citizens the power to choose their leaders."
+        /* CHAPTER 10: DEMOCRACY */
+    },
+    {
+        question: "In democracy, sovereignty belongs to?",
+        options: [
+            "Military",
+            "People",
+            "President only",
+            "Judiciary"
+        ],
+        correctAnswer: "People",
+        explanation: "In a democracy, the people hold ultimate power through voting and representation."
+    },
+    {
+        question: "One key feature of democracy is?",
+        options: [
+            "Dictatorship",
+            "Free elections",
+            "No law",
+            "Military control"
+        ],
+        correctAnswer: "Free elections",
+        explanation: "Democracy allows citizens to choose leaders through elections."
+    },
+    {
+        question: "Rule of law means?",
+        options: [
+            "Leaders are above law",
+            "Everyone obeys the law",
+            "No laws exist",
+            "Only citizens obey laws"
+        ],
+        correctAnswer: "Everyone obeys the law",
+        explanation: "Rule of law ensures equality before the law."
+    },
+    {
+        question: "Democratic government ensures?",
+        options: [
+            "Oppression",
+            "Citizens’ participation",
+            "No voting",
+            "Military rule"
+        ],
+        correctAnswer: "Citizens’ participation",
+        explanation: "Citizens take part in governance through voting and civic engagement."
+    },
+    {
+        question: "Elections are important because they?",
+        options: [
+            "Create conflict",
+            "Allow leadership choice",
+            "Stop democracy",
+            "Remove rights"
+        ],
+        correctAnswer: "Allow leadership choice",
+        explanation: "Elections give citizens the power to choose their leaders."
 
 
-/* CHAPTER 11: FUTURE OF NIGERIA */
-},
-{
-    question: "A major factor affecting Nigeria’s future is?",
-    options: [
-        "Climate only",
-        "Leadership quality",
-        "Foreign weather",
-        "Sports"
-    ],
-    correctAnswer: "Leadership quality",
-    explanation: "Effective leadership determines the direction of national development."
-},
-{
-    question: "Youth empowerment leads to?",
-    options: [
-        "Crime increase",
-        "National development",
-        "Unemployment",
-        "Poverty"
-    ],
-    correctAnswer: "National development",
-    explanation: "Empowered youth contribute positively to economic and social growth."
-},
-{
-    question: "Innovation is important for Nigeria because it?",
-    options: [
-        "Slows development",
-        "Drives progress",
-        "Creates problems",
-        "Stops education"
-    ],
-    correctAnswer: "Drives progress",
-    explanation: "Innovation improves technology, economy, and living standards."
-},
-{
-    question: "One major challenge facing Nigeria’s future is?",
-    options: [
-        "Abundance of resources",
-        "Corruption",
-        "Peace",
-        "Education"
-    ],
-    correctAnswer: "Corruption",
-    explanation: "Corruption reduces efficiency and slows national progress."
-},
-{
-    question: "Sustainable future means?",
-    options: [
-        "Temporary success",
-        "Long-term stability and growth",
-        "No development",
-        "Random growth"
-    ],
-    correctAnswer: "Long-term stability and growth",
-    explanation: "A sustainable future ensures balance between current needs and future generations."
-},
-{
-    question: "Culture is transmitted from one generation to another through?",
-    options: [
-        "Inheritance",
-        "Learning and socialization",
-        "Genetics",
-        "Random selection"
-    ],
-    correctAnswer: "Learning and socialization",
-    explanation: "Culture is passed down through teaching, imitation, and interaction within society, not through biological inheritance."
-},
-{
-    question: "A society without culture would be?",
-    options: [
-        "Highly organized",
-        "Without identity and structure",
-        "More advanced",
-        "Technologically stable"
-    ],
-    correctAnswer: "Without identity and structure",
-    explanation: "Culture gives society identity, rules, and structure; without it, social order would not exist."
-},
-{
-    question: "Which institution is most responsible for cultural transmission?",
-    options: [
-        "Hospital",
-        "Family",
-        "Bank",
-        "Factory"
-    ],
-    correctAnswer: "Family",
-    explanation: "The family is the first agent of socialization where children learn cultural values and norms."
-},
-{
-    question: "Colonialism in Nigeria mainly introduced?",
-    options: [
-        "African traditional religion",
-        "Western political and educational systems",
-        "Local governance only",
-        "No change"
-    ],
-    correctAnswer: "Western political and educational systems",
-    explanation: "Colonial rule introduced English language, formal education, and new governance structures."
-},
-{
-    question: "One major effect of the 1914 amalgamation was?",
-    options: [
-        "Separation of Nigeria",
-        "Unification of diverse regions",
-        "End of culture",
-        "Removal of languages"
-    ],
-    correctAnswer: "Unification of diverse regions",
-    explanation: "The amalgamation brought Northern and Southern protectorates together under one administration."
+        /* CHAPTER 11: FUTURE OF NIGERIA */
+    },
+    {
+        question: "A major factor affecting Nigeria’s future is?",
+        options: [
+            "Climate only",
+            "Leadership quality",
+            "Foreign weather",
+            "Sports"
+        ],
+        correctAnswer: "Leadership quality",
+        explanation: "Effective leadership determines the direction of national development."
+    },
+    {
+        question: "Youth empowerment leads to?",
+        options: [
+            "Crime increase",
+            "National development",
+            "Unemployment",
+            "Poverty"
+        ],
+        correctAnswer: "National development",
+        explanation: "Empowered youth contribute positively to economic and social growth."
+    },
+    {
+        question: "Innovation is important for Nigeria because it?",
+        options: [
+            "Slows development",
+            "Drives progress",
+            "Creates problems",
+            "Stops education"
+        ],
+        correctAnswer: "Drives progress",
+        explanation: "Innovation improves technology, economy, and living standards."
+    },
+    {
+        question: "One major challenge facing Nigeria’s future is?",
+        options: [
+            "Abundance of resources",
+            "Corruption",
+            "Peace",
+            "Education"
+        ],
+        correctAnswer: "Corruption",
+        explanation: "Corruption reduces efficiency and slows national progress."
+    },
+    {
+        question: "Sustainable future means?",
+        options: [
+            "Temporary success",
+            "Long-term stability and growth",
+            "No development",
+            "Random growth"
+        ],
+        correctAnswer: "Long-term stability and growth",
+        explanation: "A sustainable future ensures balance between current needs and future generations."
+    },
+    {
+        question: "Culture is transmitted from one generation to another through?",
+        options: [
+            "Inheritance",
+            "Learning and socialization",
+            "Genetics",
+            "Random selection"
+        ],
+        correctAnswer: "Learning and socialization",
+        explanation: "Culture is passed down through teaching, imitation, and interaction within society, not through biological inheritance."
+    },
+    {
+        question: "A society without culture would be?",
+        options: [
+            "Highly organized",
+            "Without identity and structure",
+            "More advanced",
+            "Technologically stable"
+        ],
+        correctAnswer: "Without identity and structure",
+        explanation: "Culture gives society identity, rules, and structure; without it, social order would not exist."
+    },
+    {
+        question: "Which institution is most responsible for cultural transmission?",
+        options: [
+            "Hospital",
+            "Family",
+            "Bank",
+            "Factory"
+        ],
+        correctAnswer: "Family",
+        explanation: "The family is the first agent of socialization where children learn cultural values and norms."
+    },
+    {
+        question: "Colonialism in Nigeria mainly introduced?",
+        options: [
+            "African traditional religion",
+            "Western political and educational systems",
+            "Local governance only",
+            "No change"
+        ],
+        correctAnswer: "Western political and educational systems",
+        explanation: "Colonial rule introduced English language, formal education, and new governance structures."
+    },
+    {
+        question: "One major effect of the 1914 amalgamation was?",
+        options: [
+            "Separation of Nigeria",
+            "Unification of diverse regions",
+            "End of culture",
+            "Removal of languages"
+        ],
+        correctAnswer: "Unification of diverse regions",
+        explanation: "The amalgamation brought Northern and Southern protectorates together under one administration."
 
 
-/* CHAPTER 3: NATIONAL PROBLEMS (ADVANCED) */
-},
-{
-    question: "Weak political institutions lead to?",
-    options: [
-        "Strong governance",
-        "Instability and poor leadership",
-        "Economic boom",
-        "Peaceful society"
-    ],
-    correctAnswer: "Instability and poor leadership",
-    explanation: "Weak institutions cannot enforce laws effectively, leading to corruption and instability."
-},
-{
-    question: "One effect of insecurity in Nigeria is?",
-    options: [
-        "Foreign investment increase",
-        "Economic decline",
-        "Population growth",
-        "Better education"
-    ],
-    correctAnswer: "Economic decline",
-    explanation: "Insecurity discourages investors and disrupts economic activities."
-},
-{
-    question: "Brain drain refers to?",
-    options: [
-        "Loss of money",
-        "Migration of skilled workers abroad",
-        "Increase in population",
-        "Education reform"
-    ],
-    correctAnswer: "Migration of skilled workers abroad",
-    explanation: "Brain drain is when educated professionals leave a country for better opportunities."
-},
-{
-    question: "One major cause of corruption is?",
-    options: [
-        "Transparency",
-        "Greed",
-        "Education",
-        "Development"
-    ],
-    correctAnswer: "Greed",
-    explanation: "Personal greed leads individuals to misuse public resources."
-},
-{
-    question: "Political instability often results in?",
-    options: [
-        "Consistent policies",
-        "Frequent government changes",
-        "Economic growth",
-        "Peaceful elections"
-    ],
-    correctAnswer: "Frequent government changes",
-    explanation: "Instability leads to coups, policy changes, and disruption of governance."
+        /* CHAPTER 3: NATIONAL PROBLEMS (ADVANCED) */
+    },
+    {
+        question: "Weak political institutions lead to?",
+        options: [
+            "Strong governance",
+            "Instability and poor leadership",
+            "Economic boom",
+            "Peaceful society"
+        ],
+        correctAnswer: "Instability and poor leadership",
+        explanation: "Weak institutions cannot enforce laws effectively, leading to corruption and instability."
+    },
+    {
+        question: "One effect of insecurity in Nigeria is?",
+        options: [
+            "Foreign investment increase",
+            "Economic decline",
+            "Population growth",
+            "Better education"
+        ],
+        correctAnswer: "Economic decline",
+        explanation: "Insecurity discourages investors and disrupts economic activities."
+    },
+    {
+        question: "Brain drain refers to?",
+        options: [
+            "Loss of money",
+            "Migration of skilled workers abroad",
+            "Increase in population",
+            "Education reform"
+        ],
+        correctAnswer: "Migration of skilled workers abroad",
+        explanation: "Brain drain is when educated professionals leave a country for better opportunities."
+    },
+    {
+        question: "One major cause of corruption is?",
+        options: [
+            "Transparency",
+            "Greed",
+            "Education",
+            "Development"
+        ],
+        correctAnswer: "Greed",
+        explanation: "Personal greed leads individuals to misuse public resources."
+    },
+    {
+        question: "Political instability often results in?",
+        options: [
+            "Consistent policies",
+            "Frequent government changes",
+            "Economic growth",
+            "Peaceful elections"
+        ],
+        correctAnswer: "Frequent government changes",
+        explanation: "Instability leads to coups, policy changes, and disruption of governance."
 
 
-/* CHAPTER 4: ETHNIC GROUPS (DEEPER UNDERSTANDING) */
-},
-{
-    question: "Ethnic pluralism means?",
-    options: [
-        "One ethnic group",
-        "Coexistence of multiple ethnic groups",
-        "No culture",
-        "No language"
-    ],
-    correctAnswer: "Coexistence of multiple ethnic groups",
-    explanation: "Ethnic pluralism refers to societies with diverse ethnic groups living together."
-},
-{
-    question: "A positive effect of ethnic diversity is?",
-    options: [
-        "Cultural enrichment",
-        "Conflict only",
-        "Isolation",
-        "Division"
-    ],
-    correctAnswer: "Cultural enrichment",
-    explanation: "Diversity brings new ideas, traditions, and perspectives."
-},
-{
-    question: "Ethnocentrism refers to?",
-    options: [
-        "Respect for all cultures",
-        "Belief that one's culture is superior",
-        "Cultural exchange",
-        "Language learning"
-    ],
-    correctAnswer: "Belief that one's culture is superior",
-    explanation: "Ethnocentrism causes bias and discrimination against other cultures."
-},
-{
-    question: "National unity can be promoted through?",
-    options: [
-        "Ethnic division",
-        "Cultural tolerance",
-        "Discrimination",
-        "Isolation"
-    ],
-    correctAnswer: "Cultural tolerance",
-    explanation: "Respecting cultural differences helps strengthen unity."
-},
-{
-    question: "Ethnic identity is based on?",
-    options: [
-        "Foreign influence",
-        "Shared heritage and culture",
-        "Money",
-        "Technology"
-    ],
-    correctAnswer: "Shared heritage and culture",
-    explanation: "Ethnic identity comes from common ancestry, language, and traditions."
+        /* CHAPTER 4: ETHNIC GROUPS (DEEPER UNDERSTANDING) */
+    },
+    {
+        question: "Ethnic pluralism means?",
+        options: [
+            "One ethnic group",
+            "Coexistence of multiple ethnic groups",
+            "No culture",
+            "No language"
+        ],
+        correctAnswer: "Coexistence of multiple ethnic groups",
+        explanation: "Ethnic pluralism refers to societies with diverse ethnic groups living together."
+    },
+    {
+        question: "A positive effect of ethnic diversity is?",
+        options: [
+            "Cultural enrichment",
+            "Conflict only",
+            "Isolation",
+            "Division"
+        ],
+        correctAnswer: "Cultural enrichment",
+        explanation: "Diversity brings new ideas, traditions, and perspectives."
+    },
+    {
+        question: "Ethnocentrism refers to?",
+        options: [
+            "Respect for all cultures",
+            "Belief that one's culture is superior",
+            "Cultural exchange",
+            "Language learning"
+        ],
+        correctAnswer: "Belief that one's culture is superior",
+        explanation: "Ethnocentrism causes bias and discrimination against other cultures."
+    },
+    {
+        question: "National unity can be promoted through?",
+        options: [
+            "Ethnic division",
+            "Cultural tolerance",
+            "Discrimination",
+            "Isolation"
+        ],
+        correctAnswer: "Cultural tolerance",
+        explanation: "Respecting cultural differences helps strengthen unity."
+    },
+    {
+        question: "Ethnic identity is based on?",
+        options: [
+            "Foreign influence",
+            "Shared heritage and culture",
+            "Money",
+            "Technology"
+        ],
+        correctAnswer: "Shared heritage and culture",
+        explanation: "Ethnic identity comes from common ancestry, language, and traditions."
 
 
-/* CHAPTER 5: LANGUAGE (ADVANCED) */
-},
-{
-    question: "One function of language is to?",
-    options: [
-        "Confuse people",
-        "Transmit culture",
-        "Stop communication",
-        "Create isolation"
-    ],
-    correctAnswer: "Transmit culture",
-    explanation: "Language carries cultural values, beliefs, and traditions across generations."
-},
-{
-    question: "Official language in Nigeria is used for?",
-    options: [
-        "Traditional ceremonies only",
-        "Government and education",
-        "Market only",
-        "Family use only"
-    ],
-    correctAnswer: "Government and education",
-    explanation: "English is used in official communication, schools, and government activities."
-},
-{
-    question: "Code-switching refers to?",
-    options: [
-        "Changing countries",
-        "Switching between languages in conversation",
-        "Learning grammar",
-        "Writing books"
-    ],
-    correctAnswer: "Switching between languages in conversation",
-    explanation: "Code-switching occurs when speakers alternate between languages or dialects."
-},
-{
-    question: "A multilingual society is one that?",
-    options: [
-        "Has one language",
-        "Uses multiple languages",
-        "Has no communication",
-        "Has no culture"
-    ],
-    correctAnswer: "Uses multiple languages",
-    explanation: "Multilingual societies have people who speak several different languages."
-},
-{
-    question: "Language loss occurs when?",
-    options: [
-        "Languages increase",
-        "A language stops being spoken",
-        "Education improves",
-        "Culture grows"
-    ],
-    correctAnswer: "A language stops being spoken",
-    explanation: "Language loss happens when speakers stop using a language over time."
+        /* CHAPTER 5: LANGUAGE (ADVANCED) */
+    },
+    {
+        question: "One function of language is to?",
+        options: [
+            "Confuse people",
+            "Transmit culture",
+            "Stop communication",
+            "Create isolation"
+        ],
+        correctAnswer: "Transmit culture",
+        explanation: "Language carries cultural values, beliefs, and traditions across generations."
+    },
+    {
+        question: "Official language in Nigeria is used for?",
+        options: [
+            "Traditional ceremonies only",
+            "Government and education",
+            "Market only",
+            "Family use only"
+        ],
+        correctAnswer: "Government and education",
+        explanation: "English is used in official communication, schools, and government activities."
+    },
+    {
+        question: "Code-switching refers to?",
+        options: [
+            "Changing countries",
+            "Switching between languages in conversation",
+            "Learning grammar",
+            "Writing books"
+        ],
+        correctAnswer: "Switching between languages in conversation",
+        explanation: "Code-switching occurs when speakers alternate between languages or dialects."
+    },
+    {
+        question: "A multilingual society is one that?",
+        options: [
+            "Has one language",
+            "Uses multiple languages",
+            "Has no communication",
+            "Has no culture"
+        ],
+        correctAnswer: "Uses multiple languages",
+        explanation: "Multilingual societies have people who speak several different languages."
+    },
+    {
+        question: "Language loss occurs when?",
+        options: [
+            "Languages increase",
+            "A language stops being spoken",
+            "Education improves",
+            "Culture grows"
+        ],
+        correctAnswer: "A language stops being spoken",
+        explanation: "Language loss happens when speakers stop using a language over time."
 
 
-/* CHAPTER 6: DEVELOPMENT (ADVANCED) */
-},
-{
-    question: "Economic growth refers to?",
-    options: [
-        "Decrease in production",
-        "Increase in goods and services",
-        "Population decline",
-        "War"
-    ],
-    correctAnswer: "Increase in goods and services",
-    explanation: "Economic growth measures the rise in production and economic output."
-},
-{
-    question: "A developed economy is characterized by?",
-    options: [
-        "High poverty",
-        "High industrialization",
-        "No technology",
-        "Low education"
-    ],
-    correctAnswer: "High industrialization",
-    explanation: "Developed economies have advanced industries and infrastructure."
-},
-{
-    question: "Infrastructure includes?",
-    options: [
-        "Only people",
-        "Roads, electricity, and transport systems",
-        "Culture",
-        "Religion"
-    ],
-    correctAnswer: "Roads, electricity, and transport systems",
-    explanation: "Infrastructure refers to basic physical systems needed for development."
-},
-{
-    question: "Corruption reduces development by?",
-    options: [
-        "Improving governance",
-        "Diverting public funds",
-        "Increasing education",
-        "Creating jobs"
-    ],
-    correctAnswer: "Diverting public funds",
-    explanation: "Corruption misuses money meant for public development projects."
-},
-{
-    question: "Foreign investment helps development by?",
-    options: [
-        "Reducing jobs",
-        "Providing capital and employment",
-        "Stopping growth",
-        "Increasing poverty"
-    ],
-    correctAnswer: "Providing capital and employment",
-    explanation: "Foreign investment brings money, technology, and job opportunities."
+        /* CHAPTER 6: DEVELOPMENT (ADVANCED) */
+    },
+    {
+        question: "Economic growth refers to?",
+        options: [
+            "Decrease in production",
+            "Increase in goods and services",
+            "Population decline",
+            "War"
+        ],
+        correctAnswer: "Increase in goods and services",
+        explanation: "Economic growth measures the rise in production and economic output."
+    },
+    {
+        question: "A developed economy is characterized by?",
+        options: [
+            "High poverty",
+            "High industrialization",
+            "No technology",
+            "Low education"
+        ],
+        correctAnswer: "High industrialization",
+        explanation: "Developed economies have advanced industries and infrastructure."
+    },
+    {
+        question: "Infrastructure includes?",
+        options: [
+            "Only people",
+            "Roads, electricity, and transport systems",
+            "Culture",
+            "Religion"
+        ],
+        correctAnswer: "Roads, electricity, and transport systems",
+        explanation: "Infrastructure refers to basic physical systems needed for development."
+    },
+    {
+        question: "Corruption reduces development by?",
+        options: [
+            "Improving governance",
+            "Diverting public funds",
+            "Increasing education",
+            "Creating jobs"
+        ],
+        correctAnswer: "Diverting public funds",
+        explanation: "Corruption misuses money meant for public development projects."
+    },
+    {
+        question: "Foreign investment helps development by?",
+        options: [
+            "Reducing jobs",
+            "Providing capital and employment",
+            "Stopping growth",
+            "Increasing poverty"
+        ],
+        correctAnswer: "Providing capital and employment",
+        explanation: "Foreign investment brings money, technology, and job opportunities."
 
 
-/* CHAPTER 7: EDUCATION (ADVANCED) */
-},
-{
-    question: "Literacy means?",
-    options: [
-        "Ability to fight",
-        "Ability to read and write",
-        "Ability to trade",
-        "Ability to cook"
-    ],
-    correctAnswer: "Ability to read and write",
-    explanation: "Literacy is the ability to read, write, and understand information."
-},
-{
-    question: "Education policy is made by?",
-    options: [
-        "Students",
-        "Government",
-        "Parents only",
-        "Religious leaders only"
-    ],
-    correctAnswer: "Government",
-    explanation: "Governments design policies that guide the education system."
-},
-{
-    question: "Dropout rate refers to?",
-    options: [
-        "Number of graduates",
-        "Students leaving school before completion",
-        "Number of teachers",
-        "School funding"
-    ],
-    correctAnswer: "Students leaving school before completion",
-    explanation: "Dropout rate measures students who abandon education prematurely."
-},
-{
-    question: "One benefit of education is?",
-    options: [
-        "Illiteracy",
-        "Employment opportunities",
-        "Poverty increase",
-        "Ignorance"
-    ],
-    correctAnswer: "Employment opportunities",
-    explanation: "Education increases chances of getting better jobs."
-},
-{
-    question: "Technical education focuses on?",
-    options: [
-        "Only theory",
-        "Practical skills and technology",
-        "Religion",
-        "Politics"
-    ],
-    correctAnswer: "Practical skills and technology",
-    explanation: "Technical education trains students in practical and vocational skills."
+        /* CHAPTER 7: EDUCATION (ADVANCED) */
+    },
+    {
+        question: "Literacy means?",
+        options: [
+            "Ability to fight",
+            "Ability to read and write",
+            "Ability to trade",
+            "Ability to cook"
+        ],
+        correctAnswer: "Ability to read and write",
+        explanation: "Literacy is the ability to read, write, and understand information."
+    },
+    {
+        question: "Education policy is made by?",
+        options: [
+            "Students",
+            "Government",
+            "Parents only",
+            "Religious leaders only"
+        ],
+        correctAnswer: "Government",
+        explanation: "Governments design policies that guide the education system."
+    },
+    {
+        question: "Dropout rate refers to?",
+        options: [
+            "Number of graduates",
+            "Students leaving school before completion",
+            "Number of teachers",
+            "School funding"
+        ],
+        correctAnswer: "Students leaving school before completion",
+        explanation: "Dropout rate measures students who abandon education prematurely."
+    },
+    {
+        question: "One benefit of education is?",
+        options: [
+            "Illiteracy",
+            "Employment opportunities",
+            "Poverty increase",
+            "Ignorance"
+        ],
+        correctAnswer: "Employment opportunities",
+        explanation: "Education increases chances of getting better jobs."
+    },
+    {
+        question: "Technical education focuses on?",
+        options: [
+            "Only theory",
+            "Practical skills and technology",
+            "Religion",
+            "Politics"
+        ],
+        correctAnswer: "Practical skills and technology",
+        explanation: "Technical education trains students in practical and vocational skills."
 
 
-/* CHAPTER 8–11 REVISION */
-},
-{
-    question: "Nigeria's foreign policy is based on?",
-    options: [
-        "Isolation",
-        "Non-alignment and African unity",
-        "War",
-        "Colonial rule"
-    ],
-    correctAnswer: "Non-alignment and African unity",
-    explanation: "Nigeria promotes peace, cooperation, and African solidarity in foreign relations."
-},
-{
-    question: "Cultural diffusion means?",
-    options: [
-        "Cultural isolation",
-        "Spread of cultural traits between societies",
-        "Loss of identity",
-        "No interaction"
-    ],
-    correctAnswer: "Spread of cultural traits between societies",
-    explanation: "Cultural diffusion occurs when cultures interact and exchange ideas."
-},
-{
-    question: "Democratic participation includes?",
-    options: [
-        "Voting and civic engagement",
-        "Military rule",
-        "Isolation",
-        "Ignoring politics"
-    ],
-    correctAnswer: "Voting and civic engagement",
-    explanation: "Citizens participate in democracy through elections and public involvement."
-},
-{
-    question: "Good governance involves?",
-    options: [
-        "Corruption",
-        "Transparency and accountability",
-        "Oppression",
-        "Chaos"
-    ],
-    correctAnswer: "Transparency and accountability",
-    explanation: "Good governance ensures responsible leadership and fairness."
-},
-{
-    question: "Nigeria’s future depends heavily on?",
-    options: [
-        "Foreign countries only",
-        "Human capital development",
-        "Weather",
-        "Sports"
-    ],
-    correctAnswer: "Human capital development",
-    explanation: "Skilled and educated citizens drive national progress."
-},
-{
+        /* CHAPTER 8–11 REVISION */
+    },
+    {
+        question: "Nigeria's foreign policy is based on?",
+        options: [
+            "Isolation",
+            "Non-alignment and African unity",
+            "War",
+            "Colonial rule"
+        ],
+        correctAnswer: "Non-alignment and African unity",
+        explanation: "Nigeria promotes peace, cooperation, and African solidarity in foreign relations."
+    },
+    {
+        question: "Cultural diffusion means?",
+        options: [
+            "Cultural isolation",
+            "Spread of cultural traits between societies",
+            "Loss of identity",
+            "No interaction"
+        ],
+        correctAnswer: "Spread of cultural traits between societies",
+        explanation: "Cultural diffusion occurs when cultures interact and exchange ideas."
+    },
+    {
+        question: "Democratic participation includes?",
+        options: [
+            "Voting and civic engagement",
+            "Military rule",
+            "Isolation",
+            "Ignoring politics"
+        ],
+        correctAnswer: "Voting and civic engagement",
+        explanation: "Citizens participate in democracy through elections and public involvement."
+    },
+    {
+        question: "Good governance involves?",
+        options: [
+            "Corruption",
+            "Transparency and accountability",
+            "Oppression",
+            "Chaos"
+        ],
+        correctAnswer: "Transparency and accountability",
+        explanation: "Good governance ensures responsible leadership and fairness."
+    },
+    {
+        question: "Nigeria’s future depends heavily on?",
+        options: [
+            "Foreign countries only",
+            "Human capital development",
+            "Weather",
+            "Sports"
+        ],
+        correctAnswer: "Human capital development",
+        explanation: "Skilled and educated citizens drive national progress."
+    },
+    {
         "question": "Which of the following best defines cultural heritage?",
         "options": [
             "Cultural practices of the past",
@@ -14278,6 +17777,5503 @@ const GST112_Questions = [
 ];
 
 
+// =======================================
+// BUT_CSC104 QUESTION
+// PASTE NEW BUT_CSC104 QUESTIONS BELOW
+// ======================================= 
+
+const BUT_CSC104_Questions = [
+    {
+        "question": "Which component is considered the 'brain' of the computer?",
+        "options": [
+            "Hard Disk Drive (HDD)",
+            "Central Processing Unit (CPU)",
+            "Random Access Memory (RAM)",
+            "Graphics Processing Unit (GPU)"
+        ],
+        "correctAnswer": "Central Processing Unit (CPU)",
+        "explanation": "The Central Processing Unit (CPU) executes instructions and manages the data flow of the computer system, earning it the designation of the system's brain."
+    },
+    {
+        "question": "What does the CPU's Control Unit (CU) do?",
+        "options": [
+            "Performs arithmetic operations",
+            "Stores data temporarily",
+            "Directs the operation of the processor",
+            "Manages input and output devices"
+        ],
+        "correctAnswer": "Directs the operation of the processor",
+        "explanation": "The Control Unit (CU) fetches, decodes, and manages the execution of instructions, directing the traffic of data within the CPU and other components."
+    },
+    {
+        "question": "What is the primary function of cache memory?",
+        "options": [
+            "Permanent data storage",
+            "High-speed data access for the CPU",
+            "Managing system boot processes",
+            "Interfacing with peripheral devices"
+        ],
+        "correctAnswer": "High-speed data access for the CPU",
+        "explanation": "Cache memory sits between the CPU and primary RAM, storing frequently accessed data to minimize access latency and accelerate execution."
+    },
+    {
+        "question": "Which type of memory is volatile and used for temporary data storage while a computer is running?",
+        "options": [
+            "ROM",
+            "RAM",
+            "SSD",
+            "HDD"
+        ],
+        "correctAnswer": "RAM",
+        "explanation": "Random Access Memory (RAM) requires constant electrical power to maintain its state, making it volatile memory that is cleared when the computer shuts down."
+    },
+    {
+        "question": "Assembly language is considered what type of language?",
+        "options": [
+            "High-level",
+            "Mid-level",
+            "Low-level",
+            "Script language"
+        ],
+        "correctAnswer": "Low-level",
+        "explanation": "Assembly language is a low-level language because it provides a direct, close-to-hardware mapping between mnemonic statements and binary machine instructions."
+    },
+    {
+        "question": "Which of the following is an example of an immediate addressing mode?",
+        "options": [
+            "MOV AX, 5",
+            "MOV AX, [1234h]",
+            "MOV AX, BX",
+            "MOV AX, [BX + SI]"
+        ],
+        "correctAnswer": "MOV AX, 5",
+        "explanation": "In immediate addressing, the target operand data is explicitly provided as a constant value directly within the instruction itself."
+    },
+    {
+        "question": "What does ISA stand for in computer architecture?",
+        "options": [
+            "Internal System Architecture",
+            "Integrated Software Application",
+            "Instruction Set Architecture",
+            "Input System Address"
+        ],
+        "correctAnswer": "Instruction Set Architecture",
+        "explanation": "Instruction Set Architecture (ISA) defines the abstract interface between the hardware components and the software programs running on the processor."
+    },
+    {
+        "question": "In assembly language, which register is commonly used as a counter for loop operations?",
+        "options": [
+            "AX",
+            "BX",
+            "CX",
+            "DX"
+        ],
+        "correctAnswer": "CX",
+        "explanation": "The CX register is designated as the Count Register and is implicitly decremented and evaluated by iteration instructions such as LOOP."
+    },
+    {
+        "question": "What is the role of the assembler in assembly language programming?",
+        "options": [
+            "Converts high-level code to machine code",
+            "Converts machine code to high-level code",
+            "Converts assembly language to machine code",
+            "Manages memory allocation"
+        ],
+        "correctAnswer": "Converts assembly language to machine code",
+        "explanation": "The assembler translates text-based symbolic mnemonics into their corresponding numeric binary machine code instructions for execution."
+    },
+    {
+        "question": "Which segment of an assembly language program contains the executable instructions?",
+        "options": [
+            "Data Segment",
+            "Stack Segment",
+            "Code Segment",
+            "Extra Segment"
+        ],
+        "correctAnswer": "Code Segment",
+        "explanation": "The Code Segment holds the actual binary machine instructions fetched by the processor's Instruction Pointer during runtime execution."
+    },
+    {
+        "question": "What does the MOV instruction do in assembly language?",
+        "options": [
+            "Performs arithmetic operations",
+            "Moves data from one location to another",
+            "Compares two values",
+            "Changes the control flow"
+        ],
+        "correctAnswer": "Moves data from one location to another",
+        "explanation": "The MOV instruction copies data from a source location (register, memory, or immediate value) to a specified destination operand location."
+    },
+    {
+        "question": "How does the LOOP instruction function in assembly language?",
+        "options": [
+            "It unconditionally jumps to a specified label",
+            "It decrements the CX register and jumps if CX is not zero",
+            "It increments the CX register and jumps if CX is zero",
+            "It terminates the program"
+        ],
+        "correctAnswer": "It decrements the CX register and jumps if CX is not zero",
+        "explanation": "The LOOP instruction automates loop counters by subtracting one from CX, then branching to the target label if CX has not reached a value of zero."
+    },
+    {
+        "question": "Which of the following is a logical operation in assembly language?",
+        "options": [
+            "ADD",
+            "SUB",
+            "OR",
+            "MOV"
+        ],
+        "correctAnswer": "OR",
+        "explanation": "The OR instruction evaluates the logical bitwise inclusive OR between two operands, altering bit states rather than performing arithmetic computation."
+    },
+    {
+        "question": "What is the purpose of the CMP instruction?",
+        "options": [
+            "To perform addition",
+            "To compare two values",
+            "To transfer data",
+            "To call a subroutine"
+        ],
+        "correctAnswer": "To compare two values",
+        "explanation": "The CMP instruction subtracts the source operand from the destination operand without saving the result, updating the status flags to indicate relationship values."
+    },
+    {
+        "question": "What is the purpose of I/O instructions in assembly language?",
+        "options": [
+            "To perform arithmetic operations",
+            "To control the flow of a program",
+            "To manage data transfer between the CPU and peripheral devices",
+            "To allocate memory"
+        ],
+        "correctAnswer": "To manage data transfer between the CPU and peripheral devices",
+        "explanation": "I/O instructions like IN and OUT pass data over the system bus between CPU registers and external hardware interfaces or device controllers."
+    },
+    {
+        "question": "Which I/O method consumes CPU time by continuously checking the status of an I/O device?",
+        "options": [
+            "Interrupt-driven I/O",
+            "Direct Memory Access (DMA)",
+            "Polling",
+            "Memory-mapped I/O"
+        ],
+        "correctAnswer": "Polling",
+        "explanation": "Polling places the microprocessor into a tight loop where it continually queries a hardware status register until the device indicates it is ready for transmission."
+    },
+    {
+        "question": "What is the role of the IN instruction in assembly language?",
+        "options": [
+            "To perform arithmetic operations",
+            "To read data from an I/O port",
+            "To write data to an I/O port",
+            "To control program flow"
+        ],
+        "correctAnswer": "To read data from an I/O port",
+        "explanation": "The IN instruction transfers a data byte or word from an external peripheral hardware port address into the CPU accumulator register (AL or AX)."
+    },
+    {
+        "question": "Which register is used to access the code segment in assembly language?",
+        "options": [
+            "DS",
+            "SS",
+            "CS",
+            "ES"
+        ],
+        "correctAnswer": "CS",
+        "explanation": "The Code Segment (CS) register stores the base address of the 64KB memory segment that holds the program code instructions being executed."
+    },
+    {
+        "question": "What is virtual memory?",
+        "options": [
+            "Memory that exists only in the CPU",
+            "A technique that uses disk storage to extend the apparent size of RAM",
+            "Memory that can only be read, not written to",
+            "Memory that is faster than cache memory"
+        ],
+        "correctAnswer": "A technique that uses disk storage to extend the apparent size of RAM",
+        "explanation": "Virtual memory maps logical program addresses to non-contiguous sectors of secondary disk storage, simulating extra physical system memory."
+    },
+    {
+        "question": "What is the purpose of memory protection?",
+        "options": [
+            "To improve memory access speed",
+            "To prevent unauthorized access and modification of data",
+            "To increase storage capacity",
+            "To reduce power consumption"
+        ],
+        "correctAnswer": "To prevent unauthorized access and modification of data",
+        "explanation": "Memory protection isolates the address spaces of distinct system tasks, stopping user programs from writing into critical kernel or operating system spaces."
+    },
+    {
+        "question": "What is bit manipulation?",
+        "options": [
+            "Managing large blocks of data",
+            "Directly controlling individual bits within a data word",
+            "Arithmetic operations on floating-point numbers",
+            "Organizing program structure"
+        ],
+        "correctAnswer": "Directly controlling individual bits within a data word",
+        "explanation": "Bit manipulation uses logical masks and bit shifts to access, change, toggle, or verify individual binary digit states within a register or variable."
+    },
+    {
+        "question": "Which instruction performs a bitwise AND operation in assembly language?",
+        "options": [
+            "OR",
+            "XOR",
+            "AND",
+            "NOT"
+        ],
+        "correctAnswer": "AND",
+        "explanation": "The AND instruction applies a logical bitwise evaluation, setting a target bit to 1 only if the matching bits of both input operands are equal to 1."
+    },
+    {
+        "question": "What is the purpose of the SHL instruction?",
+        "options": [
+            "Shift bits to the left",
+            "Shift bits to the right",
+            "Rotate bits to the left",
+            "Rotate bits to the right"
+        ],
+        "correctAnswer": "Shift bits to the left",
+        "explanation": "The Shift Left (SHL) instruction moves all data bits to the left by a specified count, filling vacated right positions with zero bits."
+    },
+    {
+        "question": "How can string operations be performed efficiently in assembly language?",
+        "options": [
+            "Using high-level language libraries",
+            "Using specialized string instructions like MOVSB, MOVSW, and MOVSD",
+            "Using simple arithmetic instructions",
+            "By directly manipulating memory"
+        ],
+        "correctAnswer": "Using specialized string instructions like MOVSB, MOVSW, and MOVSD",
+        "explanation": "Specialized block string instructions automatically process sequence items while auto-incrementing or auto-decrementing index registers."
+    },
+    {
+        "question": "What is an effective technique for optimizing assembly language programs?",
+        "options": [
+            "Increasing the number of instructions",
+            "Using high-level abstractions",
+            "Reducing the number of instructions and efficient use of registers",
+            "Avoiding the use of loops"
+        ],
+        "correctAnswer": "Reducing the number of instructions and efficient use of registers",
+        "explanation": "Optimizing assembly involves minimizing slow memory lookups by holding transient values within internal hardware registers and using compact instructions."
+    },
+    {
+        "question": "Which debugging technique is often used for troubleshooting assembly programs?",
+        "options": [
+            "High-level language debuggers",
+            "Print statements",
+            "Step-by-step execution and examining register contents",
+            "Automated testing frameworks"
+        ],
+        "correctAnswer": "Step-by-step execution and examining register contents",
+        "explanation": "Assembly developers track low-level behaviors by executing code instruction-by-instruction while watching register values and status flag modifications."
+    },
+    {
+        "question": "What does the XOR instruction do in assembly language?",
+        "options": [
+            "Adds two operands",
+            "Subtracts two operands",
+            "Performs a bitwise exclusive OR operation",
+            "Compares two operands"
+        ],
+        "correctAnswer": "Performs a bitwise exclusive OR operation",
+        "explanation": "The XOR instruction checks corresponding bits and sets the output bit to 1 if the input values differ, making it useful for clearing registers."
+    },
+    {
+        "question": "Which segment register is used for extra data storage in assembly language?",
+        "options": [
+            "DS",
+            "CS",
+            "SS",
+            "ES"
+        ],
+        "correctAnswer": "ES",
+        "explanation": "The Extra Segment (ES) register provides an alternative memory segment base address, frequently serving as the destination zone for complex string operations."
+    },
+    {
+        "question": "What is the main advantage of using procedures in assembly language?",
+        "options": [
+            "Reduced execution time",
+            "Increased code readability and reusability",
+            "Direct hardware control",
+            "Simplified memory management"
+        ],
+        "correctAnswer": "Increased code readability and reusability",
+        "explanation": "Procedures allow developers to isolate reusable functional segments, simplifying source code layout and reducing code duplication."
+    },
+    {
+        "question": "How does exception handling improve program robustness?",
+        "options": [
+            "By preventing all errors",
+            "By providing mechanisms to handle unexpected conditions gracefully",
+            "By reducing program size",
+            "By increasing execution speed"
+        ],
+        "correctAnswer": "By providing mechanisms to handle unexpected conditions gracefully",
+        "explanation": "Exception routines redirect CPU control when division-by-zero, page faults, or illegal opcodes hit, stopping sudden hardware and system crashes."
+    },
+    {
+        "question": "Which instruction is used to return from a procedure?",
+        "options": [
+            "CALL",
+            "JMP",
+            "RET",
+            "INT"
+        ],
+        "correctAnswer": "RET",
+        "explanation": "The RET instruction pops the saved instruction address off the stack back into the instruction pointer register, returning execution to after the CALL."
+    },
+    {
+        "question": "In assembly language, what does the ADD instruction do?",
+        "options": [
+            "Adds two operands",
+            "Subtracts one operand from another",
+            "Multiplies two operands",
+            "Divides one operand by another"
+        ],
+        "correctAnswer": "Adds two operands",
+        "explanation": "The ADD instruction computes the binary arithmetic sum of two values and updates the destination operand along with relevant processor flags."
+    },
+    {
+        "question": "What is the role of the stack in assembly language programming?",
+        "options": [
+            "To store static data",
+            "To manage dynamic data and function calls",
+            "To store executable instructions",
+            "To interface with peripheral devices"
+        ],
+        "correctAnswer": "To manage dynamic data and function calls",
+        "explanation": "The memory stack acts as a Last-In, First-Out (LIFO) framework that records return paths, sub-routine arguments, and local scope variables during runtime."
+    },
+    {
+        "question": "What does the PUSH instruction do?",
+        "options": [
+            "Adds two values",
+            "Transfers data from memory to register",
+            "Places data onto the stack",
+            "Removes data from the stack"
+        ],
+        "correctAnswer": "Places data onto the stack",
+        "explanation": "The PUSH instruction decrements the Stack Pointer register (SP) and writes the source value to the top of the stack memory location."
+    },
+    {
+        "question": "What is an example of a control flow instruction?",
+        "options": [
+            "MOV",
+            "ADD",
+            "JMP",
+            "SUB"
+        ],
+        "correctAnswer": "JMP",
+        "explanation": "The JMP instruction breaks sequential flow by directly changing the contents of the Instruction Pointer register to a target label address."
+    },
+    {
+        "question": "How is the content of the CX register commonly used in loop instructions?",
+        "options": [
+            "As a destination operand",
+            "As a counter for the number of iterations",
+            "As a source operand",
+            "As a flag register"
+        ],
+        "correctAnswer": "As a counter for the number of iterations",
+        "explanation": "Loop control instructions automatically track remaining loops by testing the decrementing values of the CX counter register."
+    },
+    {
+        "question": "Which instruction is used to exchange the contents of two registers?",
+        "options": [
+            "MOV",
+            "XCHG",
+            "SWAP",
+            "EXCH"
+        ],
+        "correctAnswer": "XCHG",
+        "explanation": "The XCHG instruction swaps data values between two registers, or a register and memory, without needing an intermediate staging location."
+    },
+    {
+        "question": "What does the OR instruction do in assembly language?",
+        "options": [
+            "Compares two values",
+            "Performs a bitwise OR operation",
+            "Performs a bitwise AND operation",
+            "Multiplies two values"
+        ],
+        "correctAnswer": "Performs a bitwise OR operation",
+        "explanation": "The OR instruction evaluates the logical bitwise inclusive OR of two operands, outputting a 1 bit if either or both source bits are 1."
+    },
+    {
+        "question": "What is the main purpose of the RET instruction in assembly language?",
+        "options": [
+            "To call a subroutine",
+            "To return control to the calling procedure",
+            "To jump to a different part of the program",
+            "To terminate the program"
+        ],
+        "correctAnswer": "To return control to the calling procedure",
+        "explanation": "The RET instruction transfers program execution back to the caller by popping the original instruction location back out of the stack."
+    },
+    {
+        "question": "In assembly language, what is the purpose of the INC instruction?",
+        "options": [
+            "Decrease a value by 1",
+            "Add two values",
+            "Increase a value by 1",
+            "Subtract two values"
+        ],
+        "correctAnswer": "Increase a value by 1",
+        "explanation": "The INC instruction performs an in-place increment, adding exactly 1 to the contents of a specified register or memory address."
+    },
+    {
+        "question": "Which hardware bus is unidirectional and used by the CPU to select specific memory or I/O locations?",
+        "options": [
+            "Data Bus",
+            "Control Bus",
+            "Address Bus",
+            "System Bus"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The address bus is a unidirectional path over which the CPU transmits binary address configurations to pick particular memory cells or I/O ports."
+    },
+    {
+        "question": "What determines the maximum addressable physical memory capacity of a CPU?",
+        "options": [
+            "The width of the data bus",
+            "The clock speed of the processor",
+            "The width of the address bus",
+            "The size of the cache memory"
+        ],
+        "correctAnswer": "The width of the address bus",
+        "explanation": "The number of lines on the address bus fixes the limit of unique locations the processor can reference, calculated as $2^n$ where $n$ is the bus width."
+    },
+    {
+        "question": "In an 8-bit data bus architecture, how many bus cycles are required to fetch a 16-bit word from memory?",
+        "options": [
+            "1 cycle",
+            "2 cycles",
+            "4 cycles",
+            "8 cycles"
+        ],
+        "correctAnswer": "2 cycles",
+        "explanation": "An 8-bit data bus can only carry one byte per cycle, so a 16-bit word must be split across two separate memory read cycles."
+    },
+    {
+        "question": "What type of signal does the CPU use via the Control Bus to coordinate timing with slower peripheral devices?",
+        "options": [
+            "Address validation signal",
+            "Wait states or Ready signal",
+            "Data strobe signal",
+            "Interrupt acknowledge vector"
+        ],
+        "correctAnswer": "Wait states or Ready signal",
+        "explanation": "The READY input signal allows external devices or slow memory units to inject wait states into the CPU's bus cycle until data operations finish safely."
+    },
+    {
+        "question": "Which register acts as the dedicated accumulator in x86-based microprocessors?",
+        "options": [
+            "BX",
+            "CX",
+            "DX",
+            "AX"
+        ],
+        "correctAnswer": "AX",
+        "explanation": "The AX (Accumulator) register is optimized for math, logical checks, and data movement operations, producing more compact machine code than other general registers."
+    },
+    {
+        "question": "What is the specific 8-bit upper half of the 16-bit BX register called?",
+        "options": [
+            "BL",
+            "BH",
+            "BUX",
+            "BS"
+        ],
+        "correctAnswer": "BH",
+        "explanation": "The x86 general-purpose 16-bit registers (AX, BX, CX, DX) can be divided into two independent 8-bit registers: a lower byte (L) and an upper byte (H)."
+    },
+    {
+        "question": "Which register is specifically paired with the Code Segment (CS) register to track the next instruction to fetch?",
+        "options": [
+            "SP (Stack Pointer)",
+            "BP (Base Pointer)",
+            "IP (Instruction Pointer)",
+            "SI (Source Index)"
+        ],
+        "correctAnswer": "IP (Instruction Pointer)",
+        "explanation": "The Instruction Pointer (IP) register holds the offset distance from the CS base address, pointing directly to the next executable machine code instruction."
+    },
+    {
+        "question": "In the 8086 microprocessor, how is the 20-bit physical address computed from segment and offset values?",
+        "options": [
+            "Physical Address = Segment + Offset",
+            "Physical Address = (Segment * 10h) + Offset",
+            "Physical Address = (Segment * 100h) + Offset",
+            "Physical Address = Segment * Offset"
+        ],
+        "correctAnswer": "Physical Address = (Segment * 10h) + Offset",
+        "explanation": "The 8086 shifts the 16-bit segment value left by 4 bits (multiplying by 10h) before adding the 16-bit offset to build a 20-bit physical address."
+    },
+    {
+        "question": "What is the physical memory address if CS = 2000h and IP = 1500h?",
+        "options": [
+            "21500h",
+            "03500h",
+            "20150h",
+            "35000h"
+        ],
+        "correctAnswer": "21500h",
+        "explanation": "Shifting CS (2000h) left by 4 bits yields 20000h. Adding the IP offset value (1500h) results in the physical target address: 21500h."
+    },
+    {
+        "question": "Which flag is set to 1 if an arithmetic operation generates a result that is too large for the destination register?",
+        "options": [
+            "Zero Flag (ZF)",
+            "Sign Flag (SF)",
+            "Overflow Flag (OF)",
+            "Parity Flag (PF)"
+        ],
+        "correctAnswer": "Overflow Flag (OF)",
+        "explanation": "The Overflow Flag (OF) goes high when signed arithmetic yields an invalid value because the result exceeds the capacity of the target sign-bit convention."
+    },
+    {
+        "question": "What does a Parity Flag (PF) value of 1 indicate after an data operation?",
+        "options": [
+            "The result is a negative value",
+            "The low-order 8 bits of the result contain an even number of 1 bits",
+            "The operation resulted in a value of zero",
+            "A carry out occurred from the most significant bit"
+        ],
+        "correctAnswer": "The low-order 8 bits of the result contain an even number of 1 bits",
+        "explanation": "The Parity Flag tracks bit balance; it sets to 1 if the lowest 8 bits of an output contain an even total of high bits (even parity)."
+    },
+    {
+        "question": "Which flag register bit controls the directional processing behavior of string instructions like MOVSB?",
+        "options": [
+            "Interrupt Flag (IF)",
+            "Direction Flag (DF)",
+            "Trap Flag (TF)",
+            "Carry Flag (CF)"
+        ],
+        "correctAnswer": "Direction Flag (DF)",
+        "explanation": "If DF is 0, string tasks increment index registers (SI, DI). If DF is set to 1 via STD, index addresses auto-decrement backward."
+    },
+    {
+        "question": "What happens to the stack pointer register (SP) when a 16-bit word is pushed onto the stack in x86 architecture?",
+        "options": [
+            "SP is incremented by 1",
+            "SP is incremented by 2",
+            "SP is decremented by 1",
+            "SP is decremented by 2"
+        ],
+        "correctAnswer": "SP is decremented by 2",
+        "explanation": "The x86 stack grows downward toward lower memory addresses, meaning a PUSH drops the current SP pointer value by 2 bytes."
+    },
+    {
+        "question": "Which register is specifically intended to act as the destination index pointer for string manipulation instructions?",
+        "options": [
+            "SI",
+            "DI",
+            "BP",
+            "BX"
+        ],
+        "correctAnswer": "DI",
+        "explanation": "The Destination Index (DI) register tracks target addresses for string actions, mapping offsets directly within the Extra Segment (ES) context."
+    },
+    {
+        "question": "What addressing mode is demonstrated by the instruction: MOV DX, [BX]?",
+        "options": [
+            "Register Direct Addressing",
+            "Register Indirect Addressing",
+            "Based Addressing",
+            "Indexed Addressing"
+        ],
+        "correctAnswer": "Register Indirect Addressing",
+        "explanation": "Brackets around the base register indicate register indirect addressing, meaning the CPU finds the data location using the pointer address stored in BX."
+    },
+    {
+        "question": "Identify the addressing mode used in the instruction: MOV AX, [BX + DI + 04h].",
+        "options": [
+            "Direct Addressing",
+            "Based Indexed Addressing with Displacement",
+            "Immediate Addressing",
+            "Register Offset Addressing"
+        ],
+        "correctAnswer": "Based Indexed Addressing with Displacement",
+        "explanation": "This instruction combines a base register (BX), an index register (DI), and an explicit numeric constant (04h) to determine the memory address."
+    },
+    {
+        "question": "Why is the instruction 'MOV DS, 1000h' illegal in 8086 assembly language?",
+        "options": [
+            "Immediate values cannot be loaded directly into segment registers",
+            "The data segment register cannot hold values that large",
+            "Immediate values can only be loaded into the AX accumulator register",
+            "Segment addresses must always be specified using hex notation characters"
+        ],
+        "correctAnswer": "Immediate values cannot be loaded directly into segment registers",
+        "explanation": "The 8086 architecture lacks the internal data pathways to move constants directly to segment registers; you must load a general-purpose register first."
+    },
+    {
+        "question": "Which architectural component within the CPU handles tasks like decoding instructions and generating control signals?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Execution Unit (EU)",
+            "Bus Interface Unit (BIU)",
+            "Memory Management Unit (MMU)"
+        ],
+        "correctAnswer": "Execution Unit (EU)",
+        "explanation": "The Execution Unit (EU) decodes instructions fetched by the BIU and contains the ALU, which runs the math operations and updates status flags."
+    },
+    {
+        "question": "What is the primary role of the Bus Interface Unit (BIU) in the 8086 microprocessor?",
+        "options": [
+            "To execute math and logic operations",
+            "To fetch instructions from memory and manage system buses",
+            "To decode complex binary opcodes",
+            "To handle internal interrupt hardware vector tables"
+        ],
+        "correctAnswer": "To fetch instructions from memory and manage system buses",
+        "explanation": "The BIU manages data transfer by handling physical addresses, fetching raw opcodes, and feeding them into an internal instruction queue."
+    },
+    {
+        "question": "How does the instruction prefetch queue in the 8086 BIU improve overall processing speeds?",
+        "options": [
+            "By clearing out bad registers automatically",
+            "By fetching instructions ahead of time while the EU is busy executing code",
+            "By multiplying data lines on the fly",
+            "By turning low-level assembly into clean high-level structures"
+        ],
+        "correctAnswer": "By fetching instructions ahead of time while the EU is busy executing code",
+        "explanation": "The 6-byte prefetch queue lets the BIU fetch next-in-line instructions while the ALU is working, overlapping step phases to save cycle time."
+    },
+    {
+        "question": "What is a major difference between the architectural layouts of the Intel 8086 and Intel 8088 microprocessors?",
+        "options": [
+            "The 8086 has a 16-bit external data bus, while the 8088 has an 8-bit external data bus",
+            "The 8086 lacks an internal instruction queue",
+            "The 8088 uses entirely different assembly language instructions",
+            "The 8088 cannot access a full megabyte of physical memory space"
+        ],
+        "correctAnswer": "The 8086 has a 16-bit external data bus, while the 8088 has an 8-bit external data bus",
+        "explanation": "Internally, both chips feature a 16-bit architecture, but the 8088 uses an 8-bit external data bus, making it cheaper and more compatible with older hardware components."
+    },
+    {
+        "question": "Which line control pin configuration sets an 8086 processor to work alongside co-processors like the 8087 math unit?",
+        "options": [
+            "Minimum Mode",
+            "Maximum Mode",
+            "Direct Memory Access Mode",
+            "Interrupt Handshake Mode"
+        ],
+        "correctAnswer": "Maximum Mode",
+        "explanation": "Grounding the MN/MX pin puts the chip into Maximum Mode, which changes its control signals so external bus controllers can manage multi-processor setups."
+    },
+    {
+        "question": "What type of machine code cycle is triggered when the CPU reads variable data from an operational memory location?",
+        "options": [
+            "Instruction Fetch Cycle",
+            "Memory Read Cycle",
+            "I/O Write Cycle",
+            "Interrupt Acknowledge Cycle"
+        ],
+        "correctAnswer": "Memory Read Cycle",
+        "explanation": "During a Memory Read Cycle, the CPU puts a physical address onto the bus lines, triggers the memory read line, and pulls data into its internal registers."
+    },
+    {
+        "question": "How many clock periods (T-states) make up a standard, unextended 8086 bus cycle?",
+        "options": [
+            "2 T-states",
+            "3 T-states",
+            "4 T-states",
+            "5 T-states"
+        ],
+        "correctAnswer": "4 T-states",
+        "explanation": "A basic x86 bus cycle spans four clock beats: T1 (addressing), T2 (switching paths), T3 (waiting/sampling data), and T4 (completing the transfer)."
+    },
+    {
+        "question": "What function do multiplexed pins like AD0-AD15 perform on an 8086 integrated circuit package?",
+        "options": [
+            "They separate data signals into high and low power channels",
+            "They share pins to carry addresses during early cycle stages and data during later stages",
+            "They prevent voltage spikes from damaging the internal clock generator",
+            "They force the processor to run in 8-bit compatibility mode"
+        ],
+        "correctAnswer": "They share pins to carry addresses during early cycle stages and data during later stages",
+        "explanation": "Multiplexing lets the CPU share physical pins: they carry address layouts during state T1, then switch to carry data inputs during states T2 through T4."
+    },
+    {
+        "question": "Which external signal latches and saves address layouts from multiplexed pins during the T1 clock state?",
+        "options": [
+            "DEN (Data Enable)",
+            "DT/R (Data Transmit/Receive)",
+            "ALE (Address Latch Enable)",
+            "READY"
+        ],
+        "correctAnswer": "ALE (Address Latch Enable)",
+        "explanation": "The ALE pulse goes high during T1 to tell external latch chips to save the address bits before the pins switch over to carry data."
+    },
+    {
+        "question": "What happens if the processor encounters an undefined instruction opcode during execution?",
+        "options": [
+            "The CPU skips the instruction and continues with the next byte",
+            "The CPU triggers a Type 06h Internal Interrupt (Invalid Opcode Exception)",
+            "The system enters a permanent wait state until it is manually reset",
+            "The CPU clears the carry flag and retries the fetch operation"
+        ],
+        "correctAnswer": "The CPU triggers a Type 06h Internal Interrupt (Invalid Opcode Exception)",
+        "explanation": "Encountering an invalid opcode triggers an internal exception interrupt, redirecting the system to an error handler to prevent unpredictable behavior."
+    },
+    {
+        "question": "What is the primary architectural purpose of the x86 stack segment (SS) register?",
+        "options": [
+            "It holds the start address for static global variables",
+            "It points to the base of the current stack frame area in memory",
+            "It stores the address of the interrupt vector lookup table",
+            "It defines the memory zone used for hardware device streaming"
+        ],
+        "correctAnswer": "It points to the base of the current stack frame area in memory",
+        "explanation": "The SS register sets the base address for the active stack segment, working with SP and BP to manage local function scopes and returns safely."
+    },
+    {
+        "question": "Which instruction can clear the Carry Flag (CF) bit back to zero?",
+        "options": [
+            "STC",
+            "CLC",
+            "CMC",
+            "CLI"
+        ],
+        "correctAnswer": "CLC",
+        "explanation": "The CLC (Clear Carry) instruction clears the Carry Flag bit to zero, which is often used to reset flag states before running arithmetic operations."
+    },
+    {
+        "question": "Which x86 instruction increments the accumulator register while including the previous Carry Flag value?",
+        "options": [
+            "ADD",
+            "ADC",
+            "INC",
+            "XADD"
+        ],
+        "correctAnswer": "ADC",
+        "explanation": "The ADC (Add with Carry) instruction adds the source and destination operands along with the current value of the Carry Flag bit."
+    },
+    {
+        "question": "What is the outcome of running the sequence: 'MOV AL, 0FFh' followed by 'INC AL'?",
+        "options": [
+            "AL = 100h and the Carry Flag is set to 1",
+            "AL = 00h, the Zero Flag is set to 1, and the Carry Flag is unaffected",
+            "AL = 00h and the Overflow Flag is set to 1",
+            "AL = 0FEh and the Sign Flag is set to 1"
+        ],
+        "correctAnswer": "AL = 00h, the Zero Flag is set to 1, and the Carry Flag is unaffected",
+        "explanation": "Adding 1 to 0FFh in an 8-bit register causes it to wrap around to 00h, setting the Zero Flag. Crucially, the INC instruction does not modify the Carry Flag."
+    },
+    {
+        "question": "What is the difference between the SUB and CMP instructions?",
+        "options": [
+            "SUB works only on registers, whereas CMP works on both registers and memory addresses",
+            "SUB saves the arithmetic result to the destination, while CMP only updates the status flags",
+            "CMP modifies the instruction pointer directly to jump, whereas SUB cannot change control flow",
+            "SUB modifies flag states, whereas CMP leaves all status flags completely unchanged"
+        ],
+        "correctAnswer": "SUB saves the arithmetic result to the destination, while CMP only updates the status flags",
+        "explanation": "Both instructions perform subtraction to update flags, but CMP discards the mathematical result to preserve the original destination value."
+    },
+    {
+        "question": "Which conditional jump instruction branches if the Zero Flag (ZF) is set to 1?",
+        "options": [
+            "JNZ",
+            "JZ",
+            "JC",
+            "JS"
+        ],
+        "correctAnswer": "JZ",
+        "explanation": "The JZ (Jump if Zero) instruction branches to the target label if the Zero Flag (ZF) is 1, which indicates an operation resulted in zero or a match."
+    },
+    {
+        "question": "What criteria does the JG (Jump if Greater) instruction use to determine if a branch should be taken?",
+        "options": [
+            "It branches if the Carry Flag is 0 and the Zero Flag is 0",
+            "It branches if the Sign Flag matches the Overflow Flag and the Zero Flag is 0",
+            "It branches if the Sign Flag is 1 and the Zero Flag is 1",
+            "It branches if the Parity Flag is 1"
+        ],
+        "correctAnswer": "It branches if the Sign Flag matches the Overflow Flag and the Zero Flag is 0",
+        "explanation": "The JG instruction handles signed comparisons, checking that the Sign Flag equals the Overflow Flag and the Zero Flag is clear ($ZF=0$)."
+    },
+    {
+        "question": "Which instruction performs unsigned multiplication in x86 assembly language?",
+        "options": [
+            "MUL",
+            "IMUL",
+            "XMUL",
+            "DIV"
+        ],
+        "correctAnswer": "MUL",
+        "explanation": "The MUL instruction handles unsigned multiplication, whereas IMUL is used for signed math operations."
+    },
+    {
+        "question": "Where does the 8086 store the 32-bit result of multiplying an 16-bit operand via the 'MUL' instruction?",
+        "options": [
+            "Across the combined DX:AX register pair",
+            "Directly inside the 32-bit EAX extended register",
+            "Within the internal BIU prefetch buffer",
+            "Onto the top of the system memory stack"
+        ],
+        "correctAnswer": "Across the combined DX:AX register pair",
+        "explanation": "For a 16-bit multiplication, the 32-bit result is split across two registers: the upper 16 bits go into DX, and the lower 16 bits go into AX."
+    },
+    {
+        "question": "What is the purpose of the CBW instruction?",
+        "options": [
+            "Clear Both Words in a register",
+            "Convert Signed Byte to Signed Word inside the AX register",
+            "Compare Byte Variables across segments",
+            "Copy Binary Word to the stack pointer"
+        ],
+        "correctAnswer": "Convert Signed Byte to Signed Word inside the AX register",
+        "explanation": "The CBW (Convert Byte to Word) instruction extends the sign bit of the AL register through all bits of AH, converting a signed byte into a signed word."
+    },
+    {
+        "question": "What happens during an x86 division operation if the divisor value is zero?",
+        "options": [
+            "The destination register is set to 0FFFFh",
+            "The CPU halts completely and turns off the system clock",
+            "The processor triggers a Type 0 Interrupt (Divide-by-Zero Exception)",
+            "The Carry Flag is set while execution continues normally"
+        ],
+        "correctAnswer": "The processor triggers a Type 0 Interrupt (Divide-by-Zero Exception)",
+        "explanation": "Dividing by zero is mathematically undefined and triggers a Type 0 hardware exception interrupt to gracefully handle the error."
+    },
+    {
+        "question": "Which bitwise instruction can invert every individual bit of an operand?",
+        "options": [
+            "AND",
+            "XOR",
+            "NOT",
+            "NEG"
+        ],
+        "correctAnswer": "NOT",
+        "explanation": "The NOT instruction performs a one's complement, inverting every bit of the target operand ($0 \rightarrow 1$ and $1 \rightarrow 0$)."
+    },
+    {
+        "question": "How does the NEG instruction transform its target operand?",
+        "options": [
+            "It performs a logical bitwise inversion",
+            "It converts the value into its two's complement form",
+            "It forces the highest bit to zero",
+            "It shifts all bits right by one position"
+        ],
+        "correctAnswer": "It converts the value into its two's complement form",
+        "explanation": "The NEG instruction calculates the two's complement of a value by inverting the bits and adding 1, effectively changing its arithmetic sign."
+    },
+    {
+        "question": "Which instruction shifts every bit to the right while preserving the original sign bit?",
+        "options": [
+            "SHR",
+            "SAR",
+            "ROR",
+            "RCR"
+        ],
+        "correctAnswer": "SAR",
+        "explanation": "The SAR (Shift Arithmetic Right) instruction shifts bits to the right but duplicates the original sign bit into the vacated left positions to maintain signed values."
+    },
+    {
+        "question": "What value will be in the AL register after executing 'MOV AL, 05h' followed by 'SHL AL, 1'?",
+        "options": [
+            "02h",
+            "0Ah",
+            "50h",
+            "0Bh"
+        ],
+        "correctAnswer": "0Ah",
+        "explanation": "Shifting a binary value left by 1 bit multiplies it by 2. Thus, shifting 05h ($00000101_2$) left yields 0Ah ($00001010_2$), which is 10 in decimal."
+    },
+    {
+        "question": "What is a key difference between shift instructions (like SHL) and rotate instructions (like ROL)?",
+        "options": [
+            "Shift instructions discard bits, whereas rotate instructions feed falling bits back into the opposite end",
+            "Rotate instructions can only operate on the AX register",
+            "Shift instructions don't modify any processor status flags",
+            "Rotate instructions instantly convert binary data into ASCII characters"
+        ],
+        "correctAnswer": "Shift instructions discard bits, whereas rotate instructions feed falling bits back into the opposite end",
+        "explanation": "Shifts push bits out of the operand and fill the empty spaces with zeros, while rotates cycle bits out one end and wrap them back into the other."
+    },
+    {
+        "question": "Which instruction string prefix causes an operation to repeat as long as the Zero Flag (ZF) is equal to 1?",
+        "options": [
+            "REP",
+            "REPE / REPZ",
+            "REPNE / REPNZ",
+            "LOOPNE"
+        ],
+        "correctAnswer": "REPE / REPZ",
+        "explanation": "The REPE/REPZ prefix repeats a string operation until the CX counter hits zero or the Zero Flag drops to 0, making it useful for string comparisons."
+    },
+    {
+        "question": "Which instruction copies a byte from the memory address pointed to by DS:SI into the AL register?",
+        "options": [
+            "LODSB",
+            "STOSB",
+            "MOVSB",
+            "CMPSB"
+        ],
+        "correctAnswer": "LODSB",
+        "explanation": "The LODSB instruction copies a byte from the memory location at DS:SI into AL, and then automatically updates the SI register."
+    },
+    {
+        "question": "What is the purpose of the STOSW instruction?",
+        "options": [
+            "It copies a data word from the stack pointer to an index register",
+            "It writes the data word stored in the AX register out to the memory location at ES:DI",
+            "It reads an external data port word and places it into memory storage",
+            "It swaps data word positions between the DI and SI registers"
+        ],
+        "correctAnswer": "It writes the data word stored in the AX register out to the memory location at ES:DI",
+        "explanation": "The STOSW instruction writes the 16-bit word from AX into the memory location at ES:DI, then increments or decrements DI based on the Direction Flag."
+    },
+    {
+        "question": "How does the CALL instruction differ from the unconditional JMP instruction?",
+        "options": [
+            "CALL only works within the same code segment",
+            "CALL saves the current return address onto the stack before branching",
+            "JMP requires the use of a register pointer",
+            "JMP automatically updates the Stack Pointer register"
+        ],
+        "correctAnswer": "CALL saves the current return address onto the stack before branching",
+        "explanation": "The CALL instruction saves the next instruction's address onto the stack so a subsequent RET instruction can find its way back to the calling code."
+    },
+    {
+        "question": "What is a Near CALL in x86 assembly language?",
+        "options": [
+            "A call to an address within the exact same code segment",
+            "A call that only modifies the value of the Accumulator register",
+            "A routine call that bypasses the system stack entirely",
+            "A call to an address located within the primary 1KB vector table area"
+        ],
+        "correctAnswer": "A call to an address within the exact same code segment",
+        "explanation": "A Near CALL targets an address inside the same code segment, meaning it only needs to push the 16-bit IP offset onto the stack."
+    },
+    {
+        "question": "What extra step occurs during a Far CALL compared to a Near CALL?",
+        "options": [
+            "It updates all four general purpose data registers",
+            "It saves both the CS segment register and the IP offset register onto the stack",
+            "It temporarily disables external hardware interrupts",
+            "It clears out the entire instruction prefetch pipeline"
+        ],
+        "correctAnswer": "It saves both the CS segment register and the IP offset register onto the stack",
+        "explanation": "A Far CALL targets a different code segment, requiring the CPU to save both the current CS segment register and the IP offset onto the stack."
+    },
+    {
+        "question": "What are local variables within a sub-procedure typically stored and managed on?",
+        "options": [
+            "Inside the Extra Segment (ES) boundary tracking points",
+            "On the active system stack frame using the Base Pointer (BP) register",
+            "Within the instruction prefetch queue area",
+            "Inside global code definition macros"
+        ],
+        "correctAnswer": "On the active system stack frame using the Base Pointer (BP) register",
+        "explanation": "Procedures set up a stack frame using the BP register, creating isolated local workspace on the stack that clean up automatically upon return."
+    },
+    {
+        "question": "What assembler directive is used to mark the boundary limit of a procedure block?",
+        "options": [
+            "END",
+            "ENDP",
+            "ENDS",
+            "MACRO"
+        ],
+        "correctAnswer": "ENDP",
+        "explanation": "The ENDP (End Procedure) directive tells the assembler it has reached the end of a procedure block defined by a matching PROC directive."
+    },
+    {
+        "question": "How does an assembly macro differ from a standard procedure?",
+        "options": [
+            "Macros run slower because they require multiple stack operations",
+            "The assembler replaces a macro call by expanding its source code inline at build time",
+            "Macros cannot accept inputs or arguments",
+            "Procedures can only be executed once per program run"
+        ],
+        "correctAnswer": "The assembler replaces a macro call by expanding its source code inline at build time",
+        "explanation": "Macros are expanded inline by the assembler, substituting the macro text directly into the code without runtime stack overhead, though it increases binary size."
+    },
+    {
+        "question": "What is the primary function of the Interrupt Vector Table (IVT) in real mode architecture?",
+        "options": [
+            "It caches math operations to speed up processing",
+            "It stores the 32-bit CS:IP entry addresses for individual interrupt handler routines",
+            "It manages the priorities of external hardware devices",
+            "It tracks virtual memory pages mapped to physical storage slots"
+        ],
+        "correctAnswer": "It stores the 32-bit CS:IP entry addresses for individual interrupt handler routines",
+        "explanation": "The IVT acts as a lookup table of 32-bit addresses (segment and offset) that direct the CPU to the correct service routine for a given interrupt number."
+    },
+    {
+        "question": "Where is the Interrupt Vector Table (IVT) located in an 8086 processor's physical memory map?",
+        "options": [
+            "At the very top of physical memory (0FFFFFh)",
+            "Directly inside the cache area of the Execution Unit",
+            "At the very base of physical memory from address 00000h to 003FFh",
+            "Within the active Code Segment boundary area"
+        ],
+        "correctAnswer": "At the very base of physical memory from address 00000h to 003FFh",
+        "explanation": "The IVT occupies the lowest 1KB of memory (00000h to 003FFh), accommodating 256 distinct interrupt vectors that are 4 bytes each."
+    },
+    {
+        "question": "How many total bytes of memory space does each individual interrupt vector entry take up in the IVT?",
+        "options": [
+            "2 bytes",
+            "4 bytes",
+            "8 bytes",
+            "16 bytes"
+        ],
+        "correctAnswer": "4 bytes",
+        "explanation": "Each interrupt vector requires 4 bytes: 2 bytes for the target segment address (CS) and 2 bytes for the target offset address (IP)."
+    },
+    {
+        "question": "What is the memory address for the Type 4 interrupt vector entry in the IVT?",
+        "options": [
+            "0000:0004h",
+            "0000:0010h",
+            "0000:0040h",
+            "0004:0000h"
+        ],
+        "correctAnswer": "0000:0010h",
+        "explanation": "To find an interrupt's vector address, multiply its type number by 4. For Type 4, $4 \times 4 = 16$, which equals 0010h in hexadecimal."
+    },
+    {
+        "question": "Which of the following is a non-maskable hardware interrupt pin on x86 processors?",
+        "options": [
+            "INTR",
+            "NMI",
+            "RESET",
+            "INT 21h"
+        ],
+        "correctAnswer": "NMI",
+        "explanation": "The NMI (Non-Maskable Interrupt) pin cannot be ignored by changing the Interrupt Flag (IF), allowing the CPU to instantly handle critical errors like power failure."
+    },
+    {
+        "question": "Which instruction can clear the Interrupt Flag (IF) to ignore incoming maskable hardware interrupts?",
+        "options": [
+            "STI",
+            "CLI",
+            "IRET",
+            "INT"
+        ],
+        "correctAnswer": "CLI",
+        "explanation": "The CLI (Clear Interrupt) instruction clears the Interrupt Flag to 0, which blocks the CPU from responding to maskable interrupts arriving on the INTR pin."
+    },
+    {
+        "question": "What steps does the CPU take when saving its state during an interrupt call?",
+        "options": [
+            "It pushes the Flags register, the CS register, and the IP register onto the stack",
+            "It flushes the instruction queue and resets the general registers",
+            "It saves its current state to the base data segment space",
+            "It copies all register values directly into the IVT lookup area"
+        ],
+        "correctAnswer": "It pushes the Flags register, the CS register, and the IP register onto the stack",
+        "explanation": "When an interrupt fires, the CPU saves its state by pushing the Flags register, the current CS value, and the IP offset onto the stack before jumping to the handler."
+    },
+    {
+        "question": "Which instruction must be used to terminate an Interrupt Service Routine (ISR)?",
+        "options": [
+            "RET",
+            "RETF",
+            "IRET",
+            "ENDP"
+        ],
+        "correctAnswer": "IRET",
+        "explanation": "The IRET (Interrupt Return) instruction restores the saved IP, CS, and Flags registers from the stack, returning the CPU to its pre-interrupt state."
+    },
+    {
+        "question": "What type of interrupt is triggered by an internal CPU event, such as a divide-by-zero error?",
+        "options": [
+            "Hardware Interrupt",
+            "Software Interrupt",
+            "Processor Exception",
+            "Asynchronous Peripheral Interrupt"
+        ],
+        "correctAnswer": "Processor Exception",
+        "explanation": "Exceptions are synchronous internal interrupts triggered when the CPU encounters an unexecutable condition, like an invalid operation or a math error."
+    },
+    {
+        "question": "Which interrupt vector handles the step-by-step trace mode triggered by setting the Trap Flag?",
+        "options": [
+            "Type 0",
+            "Type 1",
+            "Type 2",
+            "Type 3"
+        ],
+        "correctAnswer": "Type 1",
+        "explanation": "The Type 1 interrupt vector handles single-step exceptions, running after every instruction when the Trap Flag (TF) is active to assist with debugging."
+    },
+    {
+        "question": "What is the purpose of the software instruction 'INT 3'?",
+        "options": [
+            "It reboots the system",
+            "It triggers a breakpoint exception used by debuggers",
+            "It clears out the stack segment space",
+            "It prints a string to the default system console"
+        ],
+        "correctAnswer": "It triggers a breakpoint exception used by debuggers",
+        "explanation": "The INT 3 instruction generates a breakpoint exception (Type 3), allowing developers to pause code execution and inspect system state within a debugger."
+    },
+    {
+        "question": "Which software interrupt is commonly used under MS-DOS to access operating system services like file I/O and console printing?",
+        "options": [
+            "INT 10h",
+            "INT 13h",
+            "INT 21h",
+            "INT 09h"
+        ],
+        "correctAnswer": "INT 21h",
+        "explanation": "INT 21h is the primary MS-DOS API entry point, providing access to system functions based on the command value loaded into the AH register."
+    },
+    {
+        "question": "Which service function value must be loaded into the AH register to print a string via 'INT 21h'?",
+        "options": [
+            "01h",
+            "02h",
+            "09h",
+            "4Ch"
+        ],
+        "correctAnswer": "09h",
+        "explanation": "Loading 09h into AH and calling INT 21h prints a '$'-terminated string from the memory location pointed to by the DS:DX registers."
+    },
+    {
+        "question": "What does loading 4Ch into the AH register before calling 'INT 21h' do?",
+        "options": [
+            "It reads a single character from the keyboard",
+            "It terminates the program and returns control to the operating system",
+            "It creates a new file allocation table entry",
+            "It resets the display mode to text"
+        ],
+        "correctAnswer": "It terminates the program and returns control to the operating system",
+        "explanation": "Function 4Ch under INT 21h terminates the active process and passes an optional exit status code back to the command shell environment."
+    },
+    {
+        "question": "Which software interrupt provides access to video and display services in an IBM PC compatible BIOS system?",
+        "options": [
+            "INT 10h",
+            "INT 11h",
+            "INT 12h",
+            "INT 15h"
+        ],
+        "correctAnswer": "INT 10h",
+        "explanation": "INT 10h targets the system BIOS video services, allowing programs to switch display modes, move the cursor, or write characters to the screen."
+    },
+    {
+        "question": "What chip manages priority assignments for multiple external hardware interrupts before passing them to the CPU?",
+        "options": [
+            "8255 Programmable Peripheral Interface",
+            "8259 Programmable Interrupt Controller",
+            "8253 Programmable Interval Timer",
+            "8237 DMA Controller"
+        ],
+        "correctAnswer": "8259 Programmable Interrupt Controller",
+        "explanation": "The 8259 Programmable Interrupt Controller (PIC) handles multiple hardware interrupt lines, prioritizing them before alerting the CPU via its single INTR pin."
+    },
+    {
+        "question": "In Isolated I/O, how does the CPU differentiate between memory addresses and peripheral device addresses?",
+        "options": [
+            "By looking at the size of the address value",
+            "By using distinct control signals like M/IO# to select either the memory or I/O space",
+            "By using an entirely separate set of data bus lines",
+            "By enforcing specific read-only rules on I/O spaces"
+        ],
+        "correctAnswer": "By using distinct control signals like M/IO# to select either the memory or I/O space",
+        "explanation": "Isolated I/O uses control lines like M/IO# to tell the system whether the address on the bus targets physical memory or an I/O port."
+    },
+    {
+        "question": "What characterizes Memory-Mapped I/O configurations?",
+        "options": [
+            "Peripheral device registers are mapped directly into the standard memory address space",
+            "The CPU must use specialized instructions like IN and OUT to access devices",
+            "I/O devices are restricted to sharing cache lines inside the CPU",
+            "Data transfers can only occur during specialized system interrupt cycles"
+        ],
+        "correctAnswer": "Peripheral device registers are mapped directly into the standard memory address space",
+        "explanation": "Memory-Mapped I/O assigns memory addresses to peripheral devices, allowing standard memory instructions like MOV to interact with hardware."
+    },
+    {
+        "question": "Which instruction writes a data byte from the AL register out to a specified hardware peripheral port address?",
+        "options": [
+            "IN",
+            "OUT",
+            "LOAD",
+            "STORE"
+        ],
+        "correctAnswer": "OUT",
+        "explanation": "The OUT instruction sends data from the accumulator (AL or AX) to a specified hardware port address."
+    },
+    {
+        "question": "Which register must be used to store a 16-bit hardware port address if it exceeds 0FFh?",
+        "options": [
+            "AX",
+            "BX",
+            "CX",
+            "DX"
+        ],
+        "correctAnswer": "DX",
+        "explanation": "For I/O port addresses larger than 8 bits (0FFh), the address must be loaded into the DX register before calling the IN or OUT instructions."
+    },
+    {
+        "question": "What is a major disadvantage of using Polling for I/O operations?",
+        "options": [
+            "It requires specialized co-processors to function properly",
+            "It wastes CPU cycles by keeping the processor in a tight loop checking a device's readiness",
+            "It can only transmit data one bit at a time",
+            "It overrides memory protection rules, risking stability crashes"
+        ],
+        "correctAnswer": "It wastes CPU cycles by keeping the processor in a tight loop checking a device's readiness",
+        "explanation": "Polling ties up the CPU while it waits for a device to become ready, reducing overall performance compared to interrupt-driven options."
+    },
+    {
+        "question": "How does Interrupt-Driven I/O save CPU processing time compared to Polling?",
+        "options": [
+            "By running tasks directly inside the system cache",
+            "The CPU can execute other tasks until the device triggers an interrupt when it is ready",
+            "By using faster data lines than polling can access",
+            "By replacing complex software code blocks with simple macros"
+        ],
+        "correctAnswer": "The CPU can execute other tasks until the device triggers an interrupt when it is ready",
+        "explanation": "Interrupt-driven I/O lets the CPU run other programs while waiting; the hardware device alerts the CPU with an interrupt signal only when it needs attention."
+    },
+    {
+        "question": "Which system component allows high-speed hardware devices to transfer data directly to or from RAM without involving the CPU?",
+        "options": [
+            "Programmable Peripheral Interface (PPI)",
+            "Direct Memory Access (DMA) Controller",
+            "Advanced Programmable Interrupt Controller (APIC)",
+            "Bus Interface Unit (BIU)"
+        ],
+        "correctAnswer": "Direct Memory Access (DMA) Controller",
+        "explanation": "A DMA controller takes over the system buses to move data directly between peripherals and memory, bypassing the CPU to speed up bulk transfers."
+    },
+    {
+        "question": "What bus control signal does a DMA controller use to request temporary ownership of the system buses from the CPU?",
+        "options": [
+            "INTR",
+            "HOLD",
+            "HLDA",
+            "ALE"
+        ],
+        "correctAnswer": "HOLD",
+        "explanation": "The DMA controller pulls the CPU's HOLD pin high to request control of the system address, data, and control buses."
+    },
+    {
+        "question": "How does the CPU confirm it has released control of the system buses to a DMA controller?",
+        "options": [
+            "By pulling the HLDA (Hold Acknowledge) pin high",
+            "By triggering a Type 2 interrupt vector handler",
+            "By clearing the Interrupt Flag bit back to zero",
+            "By switching the data segment base to an alternative zone"
+        ],
+        "correctAnswer": "By pulling the HLDA (Hold Acknowledge) pin high",
+        "explanation": "The CPU raises the HLDA (Hold Acknowledge) signal to let the DMA controller know it has tri-stated its bus pins and surrendered control."
+    },
+    {
+        "question": "What is 'Cycle Stealing' in the context of Direct Memory Access (DMA)?",
+        "options": [
+            "The DMA controller intercepts instructions from the CPU prefetch queue",
+            "The DMA controller pauses the CPU for a single clock cycle to transfer a byte of data",
+            "The operating system reallocates unused video memory to standard tasks",
+            "A hardware device bypasses the interrupt vector table entirely"
+        ],
+        "correctAnswer": "The DMA controller pauses the CPU for a single clock cycle to transfer a byte of data",
+        "explanation": "In cycle stealing mode, the DMA controller temporarily takes over the system bus for a single clock cycle at a time, allowing the CPU to continue running code in brief intervals."
+    },
+    {
+        "question": "Which chip is a widely used Programmable Peripheral Interface (PPI) that provides parallel I/O ports for microprocessors?",
+        "options": [
+            "8251 USART",
+            "8253 Timer",
+            "8255 PPI",
+            "8237 DMAC"
+        ],
+        "correctAnswer": "8255 PPI",
+        "explanation": "The 8255 chip is a Programmable Peripheral Interface (PPI) that provides three distinct 8-bit parallel I/O ports (A, B, and C) to connect microprocessors with external devices."
+    },
+    {
+        "question": "What type of memory layout stores the least significant byte of a word at the lowest memory address?",
+        "options": [
+            "Big-Endian",
+            "Little-Endian",
+            "Bi-Endian",
+            "Segmented-Endian"
+        ],
+        "correctAnswer": "Little-Endian",
+        "explanation": "Little-Endian formatting stores the least significant byte (LSB) at the lowest numerical address, a design choice shared by x86 processors."
+    },
+    {
+        "question": "If the 16-bit word 1234h is saved to a Little-Endian memory location starting at address 0200h, what is stored at address 0200h?",
+        "options": [
+            "12h",
+            "34h",
+            "1234h",
+            "02h"
+        ],
+        "correctAnswer": "34h",
+        "explanation": "Little-Endian stores the lower byte (34h) at the base address (0200h) and the upper byte (12h) at the next address (0201h)."
+    },
+    {
+        "question": "What is the purpose of the Assembler Directive 'DB'?",
+        "options": [
+            "Define Boundary",
+            "Define Byte",
+            "Define Binary",
+            "Double Byte"
+        ],
+        "correctAnswer": "Define Byte",
+        "explanation": "The DB (Define Byte) directive allocates 1 byte of memory storage for a variable or constant definition."
+    },
+    {
+        "question": "Which assembler directive allocates a 16-bit word of memory storage?",
+        "options": [
+            "DB",
+            "DW",
+            "DD",
+            "DQ"
+        ],
+        "correctAnswer": "DW",
+        "explanation": "The DW (Define Word) directive allocates a 16-bit word (2 bytes) of memory storage in the data segment."
+    },
+    {
+        "question": "What is the function of the DUP operator in assembly language variable definitions?",
+        "options": [
+            "Duplicates an instruction to optimize execution loops",
+            "Repeats a data allocation a specified number of times to initialize arrays",
+            "Creates a backup copy of a segment register",
+            "Forces data alignment to an even address boundary"
+        ],
+        "correctAnswer": "Repeats a data allocation a specified number of times to initialize arrays",
+        "explanation": "The DUP (Duplicate) operator tells the assembler to repeat a memory allocation, making it easy to create and initialize arrays or buffers."
+    },
+    {
+        "question": "Which directive tells the assembler to align the next variable or instruction on an even memory address boundary?",
+        "options": [
+            "EVEN",
+            "ALIGN 2",
+            "Both EVEN and ALIGN 2 are correct",
+            "ORG"
+        ],
+        "correctAnswer": "Both EVEN and ALIGN 2 are correct",
+        "explanation": "Both EVEN and ALIGN 2 tell the assembler to place the subsequent data or code on an even address boundary, helping speed up data fetches on 16-bit or wider buses."
+    },
+    {
+        "question": "What is the purpose of the ORG assembler directive?",
+        "options": [
+            "Organize Register Groups",
+            "Set the starting location counter address for subsequent code or data",
+            "Origin Register Gate",
+            "Optimize Runtime Graphs"
+        ],
+        "correctAnswer": "Set the starting location counter address for subsequent code or data",
+        "explanation": "The ORG (Origin) directive sets the assembler's location counter, defining the specific starting offset for subsequent code or data."
+    },
+    {
+        "question": "Which operator returns the segment-relative offset address of a variable?",
+        "options": [
+            "SEG",
+            "OFFSET",
+            "PTR",
+            "TYPE"
+        ],
+        "correctAnswer": "OFFSET",
+        "explanation": "The OFFSET operator extracts the offset address of a variable relative to its segment base, which can then be loaded into pointer registers."
+    },
+    {
+        "question": "What does the PTR operator do in an instruction like 'MOV BYTE PTR [BX], 5'?",
+        "options": [
+            "It turns a register value into an active pointer address",
+            "It explicitly defines the size of the target memory operand",
+            "It copies data from a pointer directly to the stack",
+            "It verifies that a pointer address points to a valid location"
+        ],
+        "correctAnswer": "It explicitly defines the size of the target memory operand",
+        "explanation": "The PTR operator resolves size ambiguity by telling the assembler exactly how many bytes of memory to modify (e.g., BYTE PTR vs. WORD PTR)."
+    },
+    {
+        "question": "Which structural architecture stores both program instructions and data within the exact same physical memory space?",
+        "options": [
+            "Harvard Architecture",
+            "Von Neumann Architecture",
+            "Modified Harvard Architecture",
+            "Reduced Instruction Set Architecture"
+        ],
+        "correctAnswer": "Von Neumann Architecture",
+        "explanation": "Von Neumann architecture features a shared memory space for both data and instructions, accessing them over a single system bus."
+    },
+    {
+        "question": "How does Harvard Architecture differ from Von Neumann Architecture?",
+        "options": [
+            "Harvard architecture uses separate physical memories and buses for data and instructions",
+            "Harvard architecture relies entirely on software-managed execution",
+            "Harvard architecture does not include an internal ALU component",
+            "Harvard architecture only supports immediate addressing modes"
+        ],
+        "correctAnswer": "Harvard architecture uses separate physical memories and buses for data and instructions",
+        "explanation": "Harvard architecture uses separate physical memories and bus pathways for instructions and data, allowing the CPU to fetch both at the same time."
+    },
+    {
+        "question": "What defines a CISC (Complex Instruction Set Computer) processor architecture?",
+        "options": [
+            "A small set of simple, single-cycle instructions",
+            "A large instruction set with variable lengths and complex addressing modes",
+            "An architecture that relies entirely on software-managed pipelines",
+            "An architecture restricted to a single general-purpose register"
+        ],
+        "correctAnswer": "A large instruction set with variable lengths and complex addressing modes",
+        "explanation": "CISC architectures feature large instruction sets with complex, variable-length commands designed to perform tasks directly in fewer lines of code."
+    },
+    {
+        "question": "What is a key characteristic of RISC (Reduced Instruction Set Computer) architectures?",
+        "options": [
+            "Instructions are variable length and take multiple cycles",
+            "A small set of uniform, fixed-length instructions that execute in a single cycle",
+            "Microprogrammed control units that handle complex addressing modes",
+            "An absence of internal pipeline stages"
+        ],
+        "correctAnswer": "A small set of uniform, fixed-length instructions that execute in a single cycle",
+        "explanation": "RISC architectures focus on small, simple, fixed-length instructions that compile efficiently and typically execute in a single clock cycle."
+    },
+    {
+        "question": "What type of internal memory storage is the fastest for a CPU to access?",
+        "options": [
+            "L1 Cache",
+            "Internal CPU Registers",
+            "System RAM",
+            "Solid State Drive"
+        ],
+        "correctAnswer": "Internal CPU Registers",
+        "explanation": "Internal CPU registers sit directly inside the processor core, making them faster to access than any level of external cache or system memory."
+    },
+    {
+        "question": "What is a 'cache hit'?",
+        "options": [
+            "The CPU updates data across all levels of cache simultaneously",
+            "The CPU successfully finds the requested data in cache memory",
+            "The cache controller invalidates an outdated block of data",
+            "An error occurs due to corrupted cache lines"
+        ],
+        "correctAnswer": "The CPU successfully finds the requested data in cache memory",
+        "explanation": "A cache hit occurs when the CPU looks for data and finds it in the cache, avoiding a slower trip to main system memory."
+    },
+    {
+        "question": "What is the purpose of the 'Write-Through' policy in cache memory systems?",
+        "options": [
+            "Data is written only to the cache and copied to main memory later",
+            "Data is written to both the cache and main system memory at the same time",
+            "Data updates bypass the cache entirely to write directly to disk",
+            "The cache is cleared after every instruction execution"
+        ],
+        "correctAnswer": "Data is written to both the cache and main system memory at the same time",
+        "explanation": "The write-through policy keeps data consistent by writing updates to both the cache and main system memory simultaneously."
+    },
+    {
+        "question": "What happens in a 'Write-Back' cache configuration when data is modified?",
+        "options": [
+            "Main memory is updated immediately, skipping the cache entirely",
+            "Data is updated in the cache first; main memory is only updated when that cache block is replaced",
+            "The modified cache line is deleted to protect system stability",
+            "The CPU pauses until all memory levels are fully synchronized"
+        ],
+        "correctAnswer": "Data is updated in the cache first; main memory is only updated when that cache block is replaced",
+        "explanation": "Write-back caches update the cache line immediately but delay updating main memory until that cache block is evicted, saving valuable bus bandwidth."
+    },
+    {
+        "question": "What is the function of an EPROM chip?",
+        "options": [
+            "It provides volatile storage for high-speed calculation loops",
+            "It provides non-volatile storage that can be erased using ultraviolet light",
+            "It acts as a temporary buffer for direct memory access transfers",
+            "It expands the available physical address space"
+        ],
+        "correctAnswer": "It provides non-volatile storage that can be erased using ultraviolet light",
+        "explanation": "EPROM (Erasable Programmable Read-Only Memory) chips provide non-volatile storage that can be cleared with ultraviolet light and then reprogrammed."
+    },
+    {
+        "question": "How does EEPROM differ from standard EPROM?",
+        "options": [
+            "EEPROM requires a constant power supply to maintain data consistency",
+            "EEPROM can be erased and rewritten electrically without using ultraviolet light",
+            "EEPROM is a volatile memory option used for cache storage",
+            "EEPROM cannot be rewritten once it has been initialized"
+        ],
+        "correctAnswer": "EEPROM can be erased and rewritten electrically without using ultraviolet light",
+        "explanation": "EEPROM (Electrically Erasable Programmable Read-Only Memory) can be erased and rewritten electrically in place, making ultraviolet light exposure unnecessary."
+    },
+    {
+        "question": "What type of memory chip is typically used for main system RAM due to its high density and low cost?",
+        "options": [
+            "SRAM (Static RAM)",
+            "DRAM (Dynamic RAM)",
+            "ROM",
+            "EEPROM"
+        ],
+        "correctAnswer": "DRAM (Dynamic RAM)",
+        "explanation": "DRAM uses a simple layout of one transistor and one capacitor per bit, making it dense and inexpensive enough for main system memory."
+    },
+    {
+        "question": "Why does Dynamic RAM (DRAM) require constant, periodic refresh cycles?",
+        "options": [
+            "To prevent the data pins from overheating",
+            "Because its storage capacitors lose charge over time, causing data to fade",
+            "To keep its internal timing synchronized with the CPU clock",
+            "To clear out old variables and free up space"
+        ],
+        "correctAnswer": "Because its storage capacitors lose charge over time, causing data to fade",
+        "explanation": "DRAM stores data bits in capacitors that naturally leak charge, requiring regular refresh cycles to keep data from fading."
+    },
+    {
+        "question": "Why is Static RAM (SRAM) faster than Dynamic RAM (DRAM)?",
+        "options": [
+            "SRAM uses a direct serial connection path to the CPU",
+            "SRAM uses flip-flops that hold their state without needing refresh cycles",
+            "SRAM is automatically cooled by the system bus clock",
+            "SRAM stores data using magnetic fields rather than electrical charges"
+        ],
+        "correctAnswer": "SRAM uses flip-flops that hold their state without needing refresh cycles",
+        "explanation": "SRAM uses multi-transistor flip-flops to store bits. Because they do not rely on leaking capacitors, they don't need refresh cycles and run much faster."
+    },
+    {
+        "question": "What is 'Paging' in a virtual memory system?",
+        "options": [
+            "Dividing memory into fixed-size blocks called pages to move data between RAM and disk storage",
+            "Clearing out unused registers when switching between programs",
+            "Organizing code into segments based on function size",
+            "A hardware method used to step through code line-by-line during debugging"
+        ],
+        "correctAnswer": "Dividing memory into fixed-size blocks called pages to move data between RAM and disk storage",
+        "explanation": "Paging splits virtual and physical memory into fixed-size blocks (pages), helping the operating system swap data smoothly between RAM and disk storage."
+    },
+    {
+        "question": "What causes a 'page fault' in a virtual memory system?",
+        "options": [
+            "The CPU attempts to write to a read-only memory page",
+            "The requested page is not currently loaded into physical RAM",
+            "The memory page contains corrupted or unreadable data",
+            "An array index exceeds the bounds of its allocated page block"
+        ],
+        "correctAnswer": "The requested page is not currently loaded into physical RAM",
+        "explanation": "A page fault happens when the CPU tries to access a virtual address whose page is not currently loaded into physical RAM, requiring the OS to fetch it from disk."
+    },
+    {
+        "question": "What is the purpose of the Translation Lookaside Buffer (TLB) in modern memory management?",
+        "options": [
+            "It accelerates data movement during direct memory access transfers",
+            "It functions as a high-speed cache for recent virtual-to-physical address translations",
+            "It isolates external device registers from main system memory",
+            "It buffers data returning from high-latency disk storage"
+        ],
+        "correctAnswer": "It functions as a high-speed cache for recent virtual-to-physical address translations",
+        "explanation": "The TLB is a dedicated hardware cache that stores recent virtual-to-physical address translations, skipping slow page-table lookups."
+    },
+    {
+        "question": "What does 'Thrashing' mean in virtual memory management?",
+        "options": [
+            "The CPU clears the entire cache to resolve a data conflict",
+            "The system spends more time swapping pages between RAM and disk than executing code",
+            "A program writes data into unauthorized memory zones",
+            "An instruction queue stalls due to an unresolvable code branch"
+        ],
+        "correctAnswer": "The system spends more time swapping pages between RAM and disk than executing code",
+        "explanation": "Thrashing occurs when available RAM is too low, forcing the system to spend more time swapping pages in and out of disk storage than running actual code."
+    },
+    {
+        "question": "What is the role of the stack frame pointer (BP) register when a procedure executes?",
+        "options": [
+            "It points to the base of the current procedure's local variables and arguments on the stack",
+            "It tracks the physical segment address of the executable instructions",
+            "It automatically decrements during every arithmetic operation",
+            "It stores the interrupt return vector address"
+        ],
+        "correctAnswer": "It points to the base of the current procedure's local variables and arguments on the stack",
+        "explanation": "The Base Pointer (BP) establishes a fixed reference point within the stack frame, allowing easy access to arguments and local variables even as the Stack Pointer (SP) moves."
+    },
+    {
+        "question": "Which instruction can clear the contents of the AX register to zero in a single clock cycle?",
+        "options": [
+            "MOV AX, 0",
+            "SUB AX, AX",
+            "XOR AX, AX",
+            "Both SUB AX, AX and XOR AX, AX are correct"
+        ],
+        "correctAnswer": "Both SUB AX, AX and XOR AX, AX are correct",
+        "explanation": "While 'MOV AX, 0' works, subtracting a register from itself (SUB) or exclusive-ORing it with itself (XOR) clears it to zero in a single cycle and results in a smaller instruction size."
+    },
+    {
+        "question": "Which x86 register is specifically used to implement index tracking for the source operand in string operations?",
+        "options": [
+            "DI",
+            "SI",
+            "BX",
+            "BP"
+        ],
+        "correctAnswer": "SI",
+        "explanation": "The Source Index (SI) register tracks the offset address of source strings, working with the Data Segment (DS) register by default."
+    },
+    {
+        "question": "What is the binary representation of the hexadecimal value 0A3h?",
+        "options": [
+            "10100011",
+            "10110011",
+            "01010011",
+            "11001010"
+        ],
+        "correctAnswer": "10100011",
+        "explanation": "Hexadecimal 'A' translates to binary $1010$, and '3' translates to $0011$, combining to form $10100011_2$."
+    },
+    {
+        "question": "What decimal value matches the signed two's complement binary byte 11111100b?",
+        "options": [
+            "-2",
+            "-4",
+            "252",
+            "-3"
+        ],
+        "correctAnswer": "-4",
+        "explanation": "In 8-bit two's complement, $11111100_2$ has a sign bit of 1 (negative). Inverting the bits yields $00000011$ and adding 1 gives $00000100$ (4), confirming the value is -4."
+    },
+    {
+        "question": "Which flag is modified by the CMP instruction to indicate that an unsigned destination operand was smaller than the source operand?",
+        "options": [
+            "Zero Flag (ZF)",
+            "Carry Flag (CF)",
+            "Overflow Flag (OF)",
+            "Sign Flag (SF)"
+        ],
+        "correctAnswer": "Carry Flag (CF)",
+        "explanation": "For unsigned comparisons, if the destination is smaller than the source, the subtraction triggers a borrow, which sets the Carry Flag ($CF=1$)."
+    },
+    {
+        "question": "What does the JCXZ instruction do?",
+        "options": [
+            "Jumps to a target label if the Carry Flag is zero",
+            "Jumps to a target label if the CX register is zero",
+            "Jumps to a target label if the Sign Flag matches the Overflow Flag",
+            "Clears the CX register if the Zero Flag is active"
+        ],
+        "correctAnswer": "Jumps to a target label if the CX register is zero",
+        "explanation": "The JCXZ instruction branches to a target label if the CX register is exactly zero, helping prevent loops from running when their counter starts at zero."
+    },
+    {
+        "question": "Which instruction can read a data byte from a hardware port address specified in DX and save it to physical memory at ES:DI?",
+        "options": [
+            "INSB",
+            "OUTSB",
+            "LODSB",
+            "STOSB"
+        ],
+        "correctAnswer": "INSB",
+        "explanation": "The INSB (Input String Byte) instruction reads a byte from the I/O port address in DX and writes it to the memory location at ES:DI."
+    },
+    {
+        "question": "What is the purpose of the 'TEST' instruction?",
+        "options": [
+            "It subtracts operands to update flags but does not save the result",
+            "It performs a bitwise AND to update flags without modifying the destination operand",
+            "It checks whether a register contains a valid pointer address",
+            "It forces the instruction pointer to jump to a diagnostics routine"
+        ],
+        "correctAnswer": "It performs a bitwise AND to update flags without modifying the destination operand",
+        "explanation": "The TEST instruction performs a logical bitwise AND between two operands, updating status flags (like ZF) without changing the destination value."
+    },
+    {
+        "question": "Which architecture feature uses multiple internal functional stages to process multiple instructions simultaneously at different points of completion?",
+        "options": [
+            "Pipelining",
+            "Direct Memory Access",
+            "Vector Interleaving",
+            "Multiplexing"
+        ],
+        "correctAnswer": "Pipelining",
+        "explanation": "Pipelining breaks instruction execution down into sequential stages, allowing the processor to work on different steps of multiple instructions at the same time."
+    },
+    {
+        "question": "What is a 'Data Hazard' in a pipelined processor architecture?",
+        "options": [
+            "A memory error caused by electrical noise on the data bus",
+            "An instruction depends on the result of a previous instruction that has not yet completed its pipeline journey",
+            "A conflict where two devices try to use the same I/O port simultaneously",
+            "An invalid opcode causes the instruction prefetch queue to freeze"
+        ],
+        "correctAnswer": "An instruction depends on the result of a previous instruction that has not yet completed its pipeline journey",
+        "explanation": "A data hazard happens when an instruction needs data from a prior instruction that is still moving through the pipeline, risking an outdated read if not managed."
+    },
+    {
+        "question": "What occurs during a 'Structural Hazard' inside a pipelined CPU?",
+        "options": [
+            "Two or more instructions in the pipeline need to use the same physical hardware resource at the same time",
+            "A conditional branch instruction changes the target execution path",
+            "A register value wraps around and corrupts adjacent data",
+            "The instruction queue runs out of valid instructions to process"
+        ],
+        "correctAnswer": "Two or more instructions in the pipeline need to use the same physical hardware resource at the same time",
+        "explanation": "A structural hazard occurs when the hardware cannot support all pipeline instructions simultaneously because multiple steps need the same physical resource (like a single memory bus)."
+    },
+    {
+        "question": "How do control hazards affect a processor pipeline?",
+        "options": [
+            "They alter register sizes on the fly",
+            "They occur when a conditional branch choice is made, requiring the pipeline to be flushed if the prediction was wrong",
+            "They block external hardware interrupt signals from reaching the CPU",
+            "They cause direct conflicts on parallel I/O port paths"
+        ],
+        "correctAnswer": "They occur when a conditional branch choice is made, requiring the pipeline to be flushed if the prediction was wrong",
+        "explanation": "Control hazards happen when a branch instruction changes the program flow, forcing the CPU to discard prefetched instructions if it guessed the wrong path."
+    },
+    {
+        "question": "What does a 'Pipeline Flush' mean?",
+        "options": [
+            "The CPU clears out all data registers to prepare for a system reboot",
+            "The processor discards all instructions currently in the pipeline because of a wrong branch prediction or an interrupt",
+            "The system writes all cached data out to physical RAM modules",
+            "The assembler removes unused macros from the binary file"
+        ],
+        "correctAnswer": "The processor discards all instructions currently in the pipeline because of a wrong branch prediction or an interrupt",
+        "explanation": "A pipeline flush occurs when the CPU discards all instructions currently moving through the pipeline stages, typically due to an unexpected branch or interrupt."
+    },
+    {
+        "question": "What technique helps minimize branch delays in high-speed pipelined microprocessors?",
+        "options": [
+            "Branch Prediction",
+            "Direct Memory Interfacing",
+            "Cycle Stealing",
+            "Isolated Interruption"
+        ],
+        "correctAnswer": "Branch Prediction",
+        "explanation": "Branch prediction guesses the outcome of conditional branches ahead of time, keeping the pipeline full and reducing delays."
+    },
+    {
+        "question": "What is the primary function of the x86 processor's Stack Segment (SS) register?",
+        "options": [
+            "It holds the start address for static global variables",
+            "It defines the base address of the 64KB memory segment reserved for the system stack",
+            "It stores the address of the interrupt vector lookup table",
+            "It defines the memory zone used for hardware device streaming"
+        ],
+        "correctAnswer": "It defines the base address of the 64KB memory segment reserved for the system stack",
+        "explanation": "The SS register sets the base address for the 64KB stack segment, working with SP and BP to manage the active stack space safely."
+    },
+    {
+        "question": "What is the purpose of the 'LOOPNZ' instruction?",
+        "options": [
+            "It increments CX and branches if the Zero Flag is active",
+            "It decrements CX and branches to a target label only if CX is not zero and the Zero Flag is 0",
+            "It loops indefinitely without evaluating flag modifications",
+            "It terminates a loop early if an overflow condition occurs"
+        ],
+        "correctAnswer": "It decrements CX and branches to a target label only if CX is not zero and the Zero Flag is 0",
+        "explanation": "The LOOPNZ (Loop if Not Zero) instruction decrements CX and branches if CX is not zero and the Zero Flag is 0 ($ZF=0$)."
+    },
+    {
+        "question": "Which instruction can safely pull a 16-bit word value off the top of the stack and save it into the BX register?",
+        "options": [
+            "PUSH BX",
+            "POP BX",
+            "MOV BX, [SP]",
+            "RET"
+        ],
+        "correctAnswer": "POP BX",
+        "explanation": "The POP BX instruction copies the word from the top of the stack into BX, then increments the Stack Pointer (SP) by 2 bytes."
+    },
+    {
+        "question": "What addressing mode is active in the instruction: 'MOV AL, [SI]'?",
+        "options": [
+            "Register Direct Addressing",
+            "Register Indirect Addressing",
+            "Direct Memory Addressing",
+            "Immediate Index Addressing"
+        ],
+        "correctAnswer": "Register Indirect Addressing",
+        "explanation": "Brackets around the index register ([SI]) indicate register indirect addressing, meaning the memory address is read directly from the value stored in SI."
+    },
+    {
+        "question": "What is the purpose of the 'PUSHF' instruction?",
+        "options": [
+            "It clears all status flags in the processor flags register",
+            "It pushes a copy of the processor flags register onto the stack",
+            "It loads new values into the flags register from a memory location",
+            "It branches to an alternate code block if flags match an error state"
+        ],
+        "correctAnswer": "It pushes a copy of the processor flags register onto the stack",
+        "explanation": "The PUSHF instruction copies the current state of the processor's flags register onto the stack, preserving it across operations."
+    },
+    {
+        "question": "Which instruction restores the processor flags register from values stored on top of the stack?",
+        "options": [
+            "POPF",
+            "PUSHF",
+            "IRET",
+            "SAHF"
+        ],
+        "correctAnswer": "POPF",
+        "explanation": "The POPF instruction pops the word from the top of the stack back into the processor flags register, restoring previous flag states."
+    },
+    {
+        "question": "What is the purpose of the 'LAHF' instruction?",
+        "options": [
+            "It loads the lower 8 bits of the flags register into the AH register",
+            "It clears the interrupt and trap flags automatically",
+            "It copies the AH register value directly into the status flags",
+            "It checks whether the accumulator register contains a valid address"
+        ],
+        "correctAnswer": "It loads the lower 8 bits of the flags register into the AH register",
+        "explanation": "The LAHF instruction copies the lower 8 bits of the flags register (including SF, ZF, AF, PF, and CF) directly into the AH register."
+    },
+    {
+        "question": "What does the 'SAHF' instruction do?",
+        "options": [
+            "It saves the AH register contents into the lower 8 bits of the flags register",
+            "It stores all flags to a permanent memory backup variable",
+            "It shifts the accumulator bits left by one position",
+            "It sets the active hardware interrupt mask values"
+        ],
+        "correctAnswer": "It saves the AH register contents into the lower 8 bits of the flags register",
+        "explanation": "The SAHF instruction copies values from the AH register into the lower 8 bits of the flags register, updating those specific status flags."
+    },
+    {
+        "question": "What is the function of the 'XLAT' instruction?",
+        "options": [
+            "It translates high-level loop commands into low-level instructions",
+            "It performs a table lookup translation using a byte index from AL relative to the base address in BX",
+            "It swaps data segment values between the DS and ES registers",
+            "It converts decimal characters into their matching binary values"
+        ],
+        "correctAnswer": "It performs a table lookup translation using a byte index from AL relative to the base address in BX",
+        "explanation": "The XLAT instruction uses the value in AL as an index into a lookup table starting at BX, loading the matching byte from the table back into AL."
+    },
+    {
+        "question": "Which x86 instruction can calculate the effective address of a memory operand and load it into a register?",
+        "options": [
+            "MOV",
+            "LEA",
+            "LDS",
+            "LES"
+        ],
+        "correctAnswer": "LEA",
+        "explanation": "The LEA (Load Effective Address) instruction calculates the offset address of a memory operand and loads that address directly into a target register."
+    },
+    {
+        "question": "What does the 'LDS' instruction do?",
+        "options": [
+            "It loads a 32-bit far pointer from memory into a destination register and the DS segment register",
+            "It clears the data segment space back to zero",
+            "It shifts data bits left using a signed index value",
+            "It reads a string from a hardware port directly into the data segment"
+        ],
+        "correctAnswer": "It loads a 32-bit far pointer from memory into a destination register and the DS segment register",
+        "explanation": "The LDS instruction reads a 32-bit pointer from memory, loading the offset into the destination register and the segment address into DS."
+    },
+    {
+        "question": "Which instruction can load a 32-bit far pointer from memory into a target register and the ES segment register?",
+        "options": [
+            "LDS",
+            "LES",
+            "LEA",
+            "MOV"
+        ],
+        "correctAnswer": "LES",
+        "explanation": "The LES instruction reads a 32-bit pointer from memory, loading its offset into the target register and its segment address into the ES register."
+    },
+    {
+        "question": "What is the purpose of the 'DAA' instruction?",
+        "options": [
+            "Decimal Adjust AL after Addition",
+            "Divide Accumulator by Alternate register",
+            "Direct Access Alignment directive",
+            "Data Archive Application helper"
+        ],
+        "correctAnswer": "Decimal Adjust AL after Addition",
+        "explanation": "The DAA instruction adjusts the binary sum in the AL register after adding packed BCD values, correcting the result back into valid BCD format."
+    },
+    {
+        "question": "What does the 'DAS' instruction do?",
+        "options": [
+            "Decimal Adjust AL after Subtraction",
+            "Data Access Segment initialization",
+            "Divide Accumulator Signed value",
+            "Delete All Stack data frames"
+        ],
+        "correctAnswer": "Decimal Adjust AL after Subtraction",
+        "explanation": "The DAS instruction adjusts the value in the AL register after a subtraction operation on packed BCD values, correcting it to a valid BCD format."
+    },
+    {
+        "question": "What is the function of the 'AAA' instruction?",
+        "options": [
+            "ASCII Adjust AL after Addition",
+            "Arithmetic Alignment Accumulator",
+            "Address Alternate Alignment",
+            "Asynchronous Array Allocation"
+        ],
+        "correctAnswer": "ASCII Adjust AL after Addition",
+        "explanation": "The AAA instruction adjusts the value in the AL register after an addition operation on unpacked BCD values, correcting the result."
+    },
+    {
+        "question": "What does the 'AAS' instruction do?",
+        "options": [
+            "ASCII Adjust AL after Subtraction",
+            "Address Access Segment modifier",
+            "Arithmetic Array Shift instruction",
+            "Accumulator Allocation Scope directive"
+        ],
+        "correctAnswer": "ASCII Adjust AL after Subtraction",
+        "explanation": "The AAS instruction adjusts the value in the AL register after a subtraction operation on unpacked BCD values, correcting it."
+    },
+    {
+        "question": "What is the purpose of the 'AAM' instruction?",
+        "options": [
+            "ASCII Adjust after Multiplication",
+            "Arithmetic Array Multiplexing",
+            "Address Allocation Mode setup",
+            "Accumulator Archive Manager"
+        ],
+        "correctAnswer": "ASCII Adjust after Multiplication",
+        "explanation": "The AAM instruction corrects the binary product in the AX register after multiplying two unpacked BCD values, splitting the result into valid BCD digits across AH and AL."
+    },
+    {
+        "question": "What does the 'AAD' instruction do?",
+        "options": [
+            "ASCII Adjust before Division",
+            "Address Access Definition guide",
+            "Arithmetic Array Decrementer",
+            "Accumulator Alignment Driver"
+        ],
+        "correctAnswer": "ASCII Adjust before Division",
+        "explanation": "The AAD instruction converts two unpacked BCD digits in AH and AL into a single binary value in AL before a division operation runs."
+    },
+    {
+        "question": "Which instruction forces the processor to stop executing instructions and enter a halt state until an external interrupt occurs?",
+        "options": [
+            "WAIT",
+            "HLT",
+            "NOP",
+            "LOCK"
+        ],
+        "correctAnswer": "HLT",
+        "explanation": "The HLT (Halt) instruction stops the CPU instruction fetch cycle, putting the processor into a low-power state until an external hardware interrupt fires."
+    },
+    {
+        "question": "What is the purpose of the 'NOP' instruction?",
+        "options": [
+            "It performs no operation, taking up 1 byte of space and 3 clock cycles to create a brief delay",
+            "It clears the contents of the nearest data register",
+            "It forces the instruction pointer to skip code blocks",
+            "It resets the system bus clock configuration"
+        ],
+        "correctAnswer": "It performs no operation, taking up 1 byte of space and 3 clock cycles to create a brief delay",
+        "explanation": "The NOP (No Operation) instruction takes up 1 byte of space and runs without changing any registers or flags, making it useful for padding code or creating delays."
+    },
+    {
+        "question": "What does the 'LOCK' instruction prefix do?",
+        "options": [
+            "It locks the system keyboard interface during execution",
+            "It asserts the CPU's bus lock signal to prevent other processors from using the bus during the next instruction",
+            "It marks a memory segment as read-only",
+            "It locks the current stack frame pointer value"
+        ],
+        "correctAnswer": "It asserts the CPU's bus lock signal to prevent other processors from using the bus during the next instruction",
+        "explanation": "The LOCK prefix activates a hardware signal that locks the shared system bus, preventing other processors in multi-processor setups from accessing memory simultaneously."
+    },
+    {
+        "question": "Which instruction forces the CPU to check its TEST pin and pause execution if the pin is high?",
+        "options": [
+            "HLT",
+            "WAIT",
+            "NOP",
+            "LOCK"
+        ],
+        "correctAnswer": "WAIT",
+        "explanation": "The WAIT instruction checks the CPU's TEST pin; if the pin is high, the processor idles until the pin drops low, which is often used to sync with co-processors."
+    },
+    {
+        "question": "What is the function of the 'CWD' instruction?",
+        "options": [
+            "Clear Word Data variable",
+            "Convert Word to Doubleword by extending the sign bit of AX into the DX register",
+            "Compare Word Data across segments",
+            "Copy Word Data to the stack segment"
+        ],
+        "correctAnswer": "Convert Word to Doubleword by extending the sign bit of AX into the DX register",
+        "explanation": "The CWD instruction copies the sign bit of the AX register across all bits of the DX register, converting a signed word into a signed doubleword before division."
+    },
+    {
+        "question": "Which instruction compares two strings byte-by-byte using the memory locations in DS:SI and ES:DI?",
+        "options": [
+            "MOVSB",
+            "CMPSB",
+            "SCASB",
+            "LODSB"
+        ],
+        "correctAnswer": "CMPSB",
+        "explanation": "The CMPSB instruction subtracts the byte at ES:DI from the byte at DS:SI, updating status flags to highlight differences without changing the string values."
+    },
+    {
+        "question": "What does the 'SCASB' instruction do?",
+        "options": [
+            "It scans a string in memory at ES:DI to find a value that matches the one in the AL register",
+            "It copies the AL register value out to an external data port address",
+            "It swaps string byte allocations between index registers",
+            "It converts a sequence of ASCII characters into uppercase"
+        ],
+        "correctAnswer": "It scans a string in memory at ES:DI to find a value that matches the one in the AL register",
+        "explanation": "The SCASB instruction compares the byte in AL with the byte at memory location ES:DI, updating flags to indicate a match or difference."
+    },
+    {
+        "question": "Which instruction copies a 16-bit word from the memory address at DS:SI to the location at ES:DI?",
+        "options": [
+            "MOVSB",
+            "MOVSW",
+            "LODSW",
+            "STOSW"
+        ],
+        "correctAnswer": "MOVSW",
+        "explanation": "The MOVSW (Move String Word) instruction copies a 16-bit word from the memory location at DS:SI to ES:DI, then updates both index pointers."
+    },
+    {
+        "question": "What occurs when the 'REPNE CMPSB' instruction runs?",
+        "options": [
+            "The string comparison repeats as long as CX is not zero and the strings match",
+            "The comparison repeats as long as CX is not zero and the strings do not match",
+            "The operation runs exactly once and ignores the CX register value",
+            "The processor loops indefinitely without updating status flags"
+        ],
+        "correctAnswer": "The comparison repeats as long as CX is not zero and the strings do not match",
+        "explanation": "The REPNE (Repeat while Not Equal) prefix keeps a string comparison running as long as CX is greater than zero and the checked items do not match ($ZF=0$)."
+    },
+    {
+        "question": "Which conditional jump instruction branches if the Carry Flag (CF) or the Zero Flag (ZF) is equal to 1?",
+        "options": [
+            "JA",
+            "JBE",
+            "JB",
+            "JG"
+        ],
+        "correctAnswer": "JBE",
+        "explanation": "The JBE (Jump if Below or Equal) instruction is used for unsigned comparisons, branching if either the Carry Flag or the Zero Flag is active."
+    },
+    {
+        "question": "Which conditional jump instruction handles unsigned comparisons and branches if both the Carry Flag and Zero Flag are 0?",
+        "options": [
+            "JA",
+            "JAE",
+            "JB",
+            "JBE"
+        ],
+        "correctAnswer": "JA",
+        "explanation": "The JA (Jump if Above) instruction handles unsigned values, branching to a target label only when both the Carry Flag and the Zero Flag are zero."
+    },
+    {
+        "question": "Which conditional jump instruction branches if the Sign Flag does not equal the Overflow Flag ($SF \neq OF$)?",
+        "options": [
+            "JL",
+            "JLE",
+            "JG",
+            "JGE"
+        ],
+        "correctAnswer": "JL",
+        "explanation": "The JL (Jump if Less) instruction handles signed values, branching to a target label if the Sign Flag does not match the Overflow Flag."
+    },
+    {
+        "question": "Which conditional jump instruction branches if the Sign Flag matches the Overflow Flag ($SF = OF$)?",
+        "options": [
+            "JL",
+            "JLE",
+            "JG",
+            "JGE"
+        ],
+        "correctAnswer": "JGE",
+        "explanation": "The JGE (Jump if Greater or Equal) instruction handles signed values, branching if the Sign Flag matches the Overflow Flag."
+    },
+    {
+        "question": "What condition triggers a branch when the 'JO' instruction runs?",
+        "options": [
+            "The Overflow Flag is set to 1",
+            "The Zero Flag is set to 1",
+            "The Carry Flag is set to 1",
+            "The Sign Flag is set to 1"
+        ],
+        "correctAnswer": "The Overflow Flag is set to 1",
+        "explanation": "The JO (Jump if Overflow) instruction branches to a target label if the Overflow Flag (OF) is 1, indicating a signed arithmetic error."
+    },
+    {
+        "question": "What condition does the 'JS' instruction check to decide whether to branch?",
+        "options": [
+            "The Sign Flag is set to 1, indicating a negative result",
+            "The Sign Flag is set to 0, indicating a positive result",
+            "The Parity Flag is even",
+            "The Carry Flag is clear"
+        ],
+        "correctAnswer": "The Sign Flag is set to 1, indicating a negative result",
+        "explanation": "The JS (Jump if Sign) instruction branches to a target label if the Sign Flag (SF) is 1, which indicates a negative arithmetic result."
+    },
+    {
+        "question": "Which instruction jumps to a target label if the Parity Flag is 1, indicating an even number of set bits?",
+        "options": [
+            "JP",
+            "JNP",
+            "JO",
+            "JNO"
+        ],
+        "correctAnswer": "JP",
+        "explanation": "The JP (Jump if Parity) instruction branches to a target label if the Parity Flag (PF) is 1, indicating an even number of set bits in the lowest byte of a result."
+    },
+    {
+        "question": "What does the 'JNO' instruction do?",
+        "options": [
+            "Jumps to a target label if the Overflow Flag is clear",
+            "Jumps to a target label if the Zero Flag is clear",
+            "Jumps to a target label if the Carry Flag is set",
+            "Jumps to a target label if the sign bit is active"
+        ],
+        "correctAnswer": "Jumps to a target label if the Overflow Flag is clear",
+        "explanation": "The JNO (Jump if Not Overflow) instruction branches to a target label if the Overflow Flag (OF) is 0, indicating signed arithmetic completed without an error."
+    },
+    {
+        "question": "What condition does the 'JNS' instruction evaluate?",
+        "options": [
+            "Branches if the Sign Flag is 0, indicating a non-negative result",
+            "Branches if the Sign Flag is 1, indicating a negative result",
+            "Branches if the system stack pointer is balanced",
+            "Branches if the carry bit is clear"
+        ],
+        "correctAnswer": "Branches if the Sign Flag is 0, indicating a non-negative result",
+        "explanation": "The JNS (Jump if Not Sign) instruction branches to a target label if the Sign Flag (SF) is 0, meaning the checked result was positive or zero."
+    },
+    {
+        "question": "Which instruction shifts every bit to the right, filling the empty left positions with zeros and moving the last dropped bit into the Carry Flag?",
+        "options": [
+            "SHR",
+            "SAR",
+            "ROR",
+            "RCR"
+        ],
+        "correctAnswer": "SHR",
+        "explanation": "The SHR (Shift Right) instruction shifts bits right, filling the empty left spaces with zeros and saving the last bit shifted out into the Carry Flag."
+    },
+    {
+        "question": "What is the behavior of the 'ROL' instruction?",
+        "options": [
+            "It shifts bits left, filling empty spaces with zeros",
+            "It rotates bits left, moving the highest bit out into the Carry Flag and wrapping it back around into the lowest bit position",
+            "It shifts bits right while preserving the sign bit value",
+            "It clears out a register through continuous circular shifting"
+        ],
+        "correctAnswer": "It rotates bits left, moving the highest bit out into the Carry Flag and wrapping it back around into the lowest bit position",
+        "explanation": "The ROL (Rotate Left) instruction rotates bits left, saving the highest bit into the Carry Flag and wrapping it back around into the lowest bit position."
+    },
+    {
+        "question": "How does the 'RCR' instruction shift its data bits?",
+        "options": [
+            "It rotates all bits right through the Carry Flag, treating it as an extra bit position in the loop",
+            "It shifts bits right and inserts zeros at the left boundary",
+            "It duplicates the sign bit across all vacant positions",
+            "It rotates bits left using the AX accumulator as a helper path"
+        ],
+        "correctAnswer": "It rotates all bits right through the Carry Flag, treating it as an extra bit position in the loop",
+        "explanation": "The RCR (Rotate right through Carry) instruction rotates bits right, treating the Carry Flag as an extra bit position in the circular loop."
+    },
+    {
+        "question": "What value will be in the AL register after executing 'MOV AL, 80h' followed by 'SAR AL, 1'?",
+        "options": [
+            "40h",
+            "0C0h",
+            "00h",
+            "0FFh"
+        ],
+        "correctAnswer": "0C0h",
+        "explanation": "Starting with 80h ($10000000_2$), a SAR shift right preserves the sign bit (1), filling the left position with a 1 to produce 0C0h ($11000000_2$)."
+    },
+    {
+        "question": "Which instruction can rotate all bits of an operand left through the Carry Flag bit?",
+        "options": [
+            "ROL",
+            "RCL",
+            "ROR",
+            "RCR"
+        ],
+        "correctAnswer": "RCL",
+        "explanation": "The RCL (Rotate Left through Carry) instruction rotates bits left, treating the Carry Flag as an extra bit position in the circular loop."
+    },
+    {
+        "question": "What occurs when the instruction 'DIV BL' runs?",
+        "options": [
+            "The 16-bit value in AX is divided by the 8-bit value in BL; the quotient goes to AL and the remainder goes to AH",
+            "The 8-bit value in AL is divided by BL; the quotient goes to AH",
+            "The 32-bit value in DX:AX is divided by BL",
+            "The value in BL is split into high and low nibbles"
+        ],
+        "correctAnswer": "The 16-bit value in AX is divided by the 8-bit value in BL; the quotient goes to AL and the remainder goes to AH",
+        "explanation": "An 8-bit DIV instruction divides the 16-bit value in AX by the target operand; the quotient is saved in AL and the remainder is saved in AH."
+    },
+    {
+        "question": "Where does the 8086 expect to find the dividend when a 16-bit divisor is used in a 'DIV' instruction?",
+        "options": [
+            "Inside the AX register",
+            "Across the combined DX:AX register pair",
+            "On top of the system memory stack",
+            "Inside the data segment base area"
+        ],
+        "correctAnswer": "Across the combined DX:AX register pair",
+        "explanation": "For a 16-bit division, the CPU expects a 32-bit dividend split across the DX:AX register pair (upper 16 bits in DX, lower 16 bits in AX)."
+    },
+    {
+        "question": "Where are the quotient and remainder saved after running a 16-bit 'DIV' instruction?",
+        "options": [
+            "The quotient goes into AX, and the remainder goes into DX",
+            "The quotient goes into DX, and the remainder goes into AX",
+            "The quotient goes into AL, and the remainder goes into AH",
+            "Both values are pushed directly onto the system stack"
+        ],
+        "correctAnswer": "The quotient goes into AX, and the remainder goes into DX",
+        "explanation": "After a 16-bit division, the 16-bit quotient is saved in the AX register and the 16-bit remainder is saved in the DX register."
+    },
+    {
+        "question": "What is the primary function of the 'IMUL' instruction?",
+        "options": [
+            "It performs signed multiplication on operand values",
+            "It multiplies immediate values exclusively",
+            "It increments a register before performing a multiplication step",
+            "It runs multiplication inside the index registers"
+        ],
+        "correctAnswer": "It performs signed multiplication on operand values",
+        "explanation": "The IMUL instruction handles signed multiplication, taking the sign bits into account to produce mathematically correct signed results."
+    },
+    {
+        "question": "What is the purpose of the 'IDIV' instruction?",
+        "options": [
+            "It performs signed division on operand values",
+            "It divides immediate data constants exclusively",
+            "It clears the index registers before running a division step",
+            "It handles division operations across different memory segments"
+        ],
+        "correctAnswer": "It performs signed division on operand values",
+        "explanation": "The IDIV instruction handles signed division, taking the sign bits of the dividend and divisor into account to produce mathematically correct signed results."
+    },
+    {
+        "question": "What addressing mode is used in the instruction: 'MOV AX, [1234h]'?",
+        "options": [
+            "Direct Memory Addressing",
+            "Immediate Addressing",
+            "Register Direct Addressing",
+            "Register Indirect Addressing"
+        ],
+        "correctAnswer": "Direct Memory Addressing",
+        "explanation": "This instruction uses direct memory addressing; the explicit numeric address inside the brackets tells the CPU exactly where to read the data."
+    },
+    {
+        "question": "What addressing mode is active in the instruction: 'MOV [BX + 5], CX'?",
+        "options": [
+            "Based Addressing with Displacement",
+            "Indexed Memory Addressing",
+            "Direct Addressing",
+            "Register Indirect Addressing"
+        ],
+        "correctAnswer": "Based Addressing with Displacement",
+        "explanation": "This instruction uses based addressing with displacement, combining the address pointer in base register BX with a constant offset value of 5."
+    },
+    {
+        "question": "Identify the addressing mode used in the instruction: 'MOV DX, [SI + 8]'.",
+        "options": [
+            "Indexed Addressing with Displacement",
+            "Based Memory Addressing",
+            "Register Indirect Addressing",
+            "Immediate Displacement Addressing"
+        ],
+        "correctAnswer": "Indexed Addressing with Displacement",
+        "explanation": "This instruction uses indexed addressing with displacement, combining the pointer in index register SI with an explicit numeric constant offset of 8."
+    },
+    {
+        "question": "What addressing mode is demonstrated by the instruction: 'MOV AX, [BX + SI]'?",
+        "options": [
+            "Based Indexed Addressing",
+            "Register Indirect Addressing",
+            "Direct Memory Addressing",
+            "Based Indexed Addressing with Displacement"
+        ],
+        "correctAnswer": "Based Indexed Addressing",
+        "explanation": "This instruction uses based indexed addressing, combining a base register (BX) and an index register (SI) to calculate the target memory address."
+    },
+    {
+        "question": "Which of the following describes an instruction using Register Direct addressing?",
+        "options": [
+            "MOV AX, BX",
+            "MOV AX, [BX]",
+            "MOV AX, 5",
+            "MOV AX, [1234h]"
+        ],
+        "correctAnswer": "MOV AX, BX",
+        "explanation": "In register direct addressing, data moves directly between internal CPU registers without accessing system memory."
+    },
+    {
+        "question": "What does a 'Segment Override Prefix' do in an assembly instruction?",
+        "options": [
+            "It changes the default segment register choice to a specified segment register for that instruction",
+            "It permanently alters memory protection boundaries",
+            "It forces an instruction to use immediate addressing modes",
+            "It increases the available offset size from 16 bits to 32 bits"
+        ],
+        "correctAnswer": "It changes the default segment register choice to a specified segment register for that instruction",
+        "explanation": "A segment override prefix (e.g., 'MOV AX, ES:[BX]') forces the CPU to use a specified segment register instead of its default choice for that instruction."
+    },
+    {
+        "question": "Which segment register is used by default when calculating memory addresses with the BP register?",
+        "options": [
+            "DS",
+            "CS",
+            "SS",
+            "ES"
+        ],
+        "correctAnswer": "SS",
+        "explanation": "Memory operations using the Base Pointer (BP) register reference the Stack Segment (SS) by default, as BP is designed to manage stack frames."
+    },
+    {
+        "question": "Which segment register is used by default when calculating memory addresses with the BX register?",
+        "options": [
+            "DS",
+            "CS",
+            "SS",
+            "ES"
+        ],
+        "correctAnswer": "DS",
+        "explanation": "Memory references using the general base register BX look inside the Data Segment (DS) by default."
+    },
+    {
+        "question": "Which 8086 register can act as a base address pointer but *cannot* be split into independent 8-bit high and low registers?",
+        "options": [
+            "AX",
+            "BX",
+            "CX",
+            "BP"
+        ],
+        "correctAnswer": "BP",
+        "explanation": "The Base Pointer (BP) is a dedicated 16-bit pointer register. Unlike general registers like BX, it cannot be split into separate 8-bit registers."
+    },
+    {
+        "question": "What is the purpose of the 'EQU' assembler directive?",
+        "options": [
+            "It evaluates math expressions during code execution",
+            "It defines a constant name and assigns it a fixed value for use during assembly",
+            "It forces two separate registers to maintain equal values",
+            "It marks a code segment as equal in priority to another"
+        ],
+        "correctAnswer": "It defines a constant name and assigns it a fixed value for use during assembly",
+        "explanation": "The EQU (Equate) directive defines a constant name and assigns it a text or numeric value that the assembler substitutes throughout the code during build time."
+    },
+    {
+        "question": "Which assembler directive defines the boundary limit of a named segment block?",
+        "options": [
+            "SEGMENT",
+            "ENDS",
+            "ENDP",
+            "END"
+        ],
+        "correctAnswer": "ENDS",
+        "explanation": "The ENDS (End Segment) directive marks the closing boundary of a named segment block that began with a matching SEGMENT directive."
+    },
+    {
+        "question": "What does the 'ASSUME' directive do in an assembly program?",
+        "options": [
+            "It tells the assembler which segment registers are mapped to specific named code or data segments",
+            "It forces the CPU to assume all flag states are zero at startup",
+            "It reserves a dynamic block of uninitialized system memory",
+            "It handles error trapping when a memory page fault occurs"
+        ],
+        "correctAnswer": "It tells the assembler which segment registers are mapped to specific named code or data segments",
+        "explanation": "The ASSUME directive tells the assembler which segment registers correspond to specific segments in the code, ensuring it generates the correct segment override prefixes."
+    },
+    {
+        "question": "Which directive marks the absolute end of the entire assembly source code file?",
+        "options": [
+            "ENDS",
+            "ENDP",
+            "END",
+            "HALT"
+        ],
+        "correctAnswer": "END",
+        "explanation": "The END directive marks the absolute end of the assembly source file, telling the assembler to stop processing text."
+    },
+    {
+        "question": "What is the purpose of the 'PROC' directive?",
+        "options": [
+            "It starts a named procedure block within the code segment",
+            "It allocates an array of bytes in the data segment",
+            "It triggers a hardware interrupt service routine",
+            "It configures processor optimization settings"
+        ],
+        "correctAnswer": "It starts a named procedure block within the code segment",
+        "explanation": "The PROC directive marks the start of a named procedure block within the code segment, which can then be called using the CALL instruction."
+    },
+    {
+        "question": "What does specifying the 'FAR' attribute on a PROC directive indicate?",
+        "options": [
+            "The procedure is located in a different code segment and must be accessed via a Far CALL",
+            "The procedure requires a large amount of stack space",
+            "The procedure uses 32-bit registers exclusively",
+            "The procedure cannot return control back to the caller"
+        ],
+        "correctAnswer": "The procedure is located in a different code segment and must be accessed via a Far CALL",
+        "explanation": "The FAR attribute on a PROC directive tells the assembler this procedure is in a different segment, meaning it must be accessed and exited using Far CALL and Far RET instructions."
+    },
+    {
+        "question": "What does specifying the 'NEAR' attribute on a PROC directive indicate?",
+        "options": [
+            "The procedure is in the same code segment and can be accessed via a Near CALL",
+            "The procedure is physically small and takes up little memory",
+            "The procedure can only use immediate addressing modes",
+            "The procedure executes in fewer clock cycles than a far procedure"
+        ],
+        "correctAnswer": "The procedure is in the same code segment and can be accessed via a Near CALL",
+        "explanation": "The NEAR attribute on a PROC directive indicates the procedure is inside the same code segment, allowing the assembler to optimize it with Near CALL and Near RET instructions."
+    },
+    {
+        "question": "Which directive allocates a 32-bit doubleword of memory storage?",
+        "options": [
+            "DB",
+            "DW",
+            "DD",
+            "DQ"
+        ],
+        "correctAnswer": "DD",
+        "explanation": "The DD (Define Doubleword) directive allocates 4 bytes (32 bits) of memory space, which is often used for long integers or far addresses."
+    },
+    {
+        "question": "Which directive allocates a 64-bit quadword of memory storage?",
+        "options": [
+            "DW",
+            "DD",
+            "DQ",
+            "DT"
+        ],
+        "correctAnswer": "DQ",
+        "explanation": "The DQ (Define Quadword) directive allocates 8 bytes (64 bits) of contiguous memory storage."
+    },
+    {
+        "question": "Which directive allocates a 10-byte (80-bit) extended real data block in memory?",
+        "options": [
+            "DD",
+            "DQ",
+            "DT",
+            "DB"
+        ],
+        "correctAnswer": "DT",
+        "explanation": "The DT (Define Ten Bytes) directive allocates 10 bytes (80 bits) of contiguous memory storage, which is useful for extended floating-point values."
+    },
+    {
+        "question": "What is the purpose of the 'HIGH' and 'LOW' operators in assembly language?",
+        "options": [
+            "They extract the high-order or low-order byte from a 16-bit constant expression",
+            "They alter the speed of the processor clock during runtime loops",
+            "They set priority levels for hardware interrupt pins",
+            "They change memory management permissions for a segment"
+        ],
+        "correctAnswer": "They extract the high-order or low-order byte from a 16-bit constant expression",
+        "explanation": "The HIGH and LOW operators allow code to extract the upper or lower 8-bit byte from a 16-bit constant value during assembly."
+    },
+    {
+        "question": "What does the 'SEG' operator return when applied to a variable name?",
+        "options": [
+            "The size of the variable in bytes",
+            "The segment base address of the segment where the variable is defined",
+            "The relative offset address of that variable",
+            "The total number of items in an array definition"
+        ],
+        "correctAnswer": "The segment base address of the segment where the variable is defined",
+        "explanation": "The SEG operator extracts the segment base address of the segment containing the specified variable."
+    },
+    {
+        "question": "What does the 'TYPE' operator return when applied to a variable?",
+        "options": [
+            "The structural data type category as a text string",
+            "The size of the variable in bytes (e.g., 1 for byte, 2 for word)",
+            "The physical memory offset location",
+            "The number of elements initialized within an array"
+        ],
+        "correctAnswer": "The size of the variable in bytes (e.g., 1 for byte, 2 for word)",
+        "explanation": "The TYPE operator returns the number of bytes allocated to a single instance of that variable (e.g., 1 for a byte, 2 for a word, 4 for a doubleword)."
+    },
+    {
+        "question": "What does the 'LENGTH' operator calculate for a variable defined with the DUP operator?",
+        "options": [
+            "The total number of elements allocated by the DUP operator",
+            "The total size of the variable in bytes",
+            "The length of a text string variable in characters",
+            "The number of instruction lines within a procedure"
+        ],
+        "correctAnswer": "The total number of elements allocated by the DUP operator",
+        "explanation": "The LENGTH operator returns the total number of elements defined for an array variable using the DUP operator."
+    },
+    {
+        "question": "What value does the 'SIZE' operator return for a variable in assembly language?",
+        "options": [
+            "The total memory size in bytes, calculated as LENGTH multiplied by TYPE",
+            "The width of the data bus in bits",
+            "The offset address of the final item in an array",
+            "The number of segments occupied by the program data"
+        ],
+        "correctAnswer": "The total memory size in bytes, calculated as LENGTH multiplied by TYPE",
+        "explanation": "The SIZE operator calculates the total memory footprint of an array in bytes by multiplying its LENGTH (number of elements) by its TYPE (bytes per element)."
+    },
+    {
+        "question": "What is the primary role of the System Clock in a microprocessor layout?",
+        "options": [
+            "It tracks the current date and time for the operating system",
+            "It generates regular timing pulses that synchronize all internal CPU actions",
+            "It keeps the hard drive spin rate aligned with the data bus speed",
+            "It alternates data lines between high and low voltage states"
+        ],
+        "correctAnswer": "It generates regular timing pulses that synchronize all internal CPU actions",
+        "explanation": "The system clock emits a steady stream of electrical pulses to time and synchronize all operations within the microprocessor."
+    },
+    {
+        "question": "What does 'Clock Speed' measure?",
+        "options": [
+            "The speed at which data travels over the address bus lines",
+            "The number of clock cycles a CPU can perform per second, measured in Hertz",
+            "The time it takes to fetch a page from disk storage into RAM",
+            "The rate at which the instruction prefetch queue clears out"
+        ],
+        "correctAnswer": "The number of clock cycles a CPU can perform per second, measured in Hertz",
+        "explanation": "Clock speed measures how many cycles a CPU can complete per second, indicating its raw processing pace in Megahertz (MHz) or Gigahertz (GHz)."
+    },
+    {
+        "question": "What is a 'Machine Cycle'?",
+        "options": [
+            "The time required for the CPU to execute a single, complete low-level assembly instruction",
+            "The time required to fetch, decode, and execute an instruction, or access memory/IO",
+            "The time required to compile an assembly file into machine code",
+            "The time a DMA controller needs to take over the system bus"
+        ],
+        "correctAnswer": "The time required to fetch, decode, and execute an instruction, or access memory/IO",
+        "explanation": "A machine cycle covers the basic operations a CPU performs to fetch an instruction, decode it, and execute it, or read/write data from memory or I/O."
+    },
+    {
+        "question": "What is an 'Instruction Cycle'?",
+        "options": [
+            "The total time and clock cycles required to completely fetch, decode, and execute an instruction",
+            "The brief interval during which the ALE signal remains active",
+            "The time it takes to write an intermediate result back to a register",
+            "The total time needed to execute an entire procedure block"
+        ],
+        "correctAnswer": "The total time and clock cycles required to completely fetch, decode, and execute an instruction",
+        "explanation": "An instruction cycle is the complete process of fetching, decoding, and executing a single machine instruction, which may span one or more machine cycles."
+    },
+    {
+        "question": "What are 'Wait States' in computer architecture?",
+        "options": [
+            "Periods where the CPU idles to allow slower memory or I/O devices to complete a data transfer",
+            "Delays caused when a branch prediction guess is incorrect",
+            "Intervals where the processor pauses to handle an incoming hardware interrupt",
+            "Idle times when a program is waiting for keyboard input from the user"
+        ],
+        "correctAnswer": "Periods where the CPU idles to allow slower memory or I/O devices to complete a data transfer",
+        "explanation": "Wait states are extra clock cycles added to a machine cycle when a slow memory module or I/O device drops the READY line, preventing the CPU from outrunning the hardware."
+    },
+    {
+        "question": "How does adding wait states affect processor performance?",
+        "options": [
+            "It slows execution speed because the CPU spends clock cycles idling",
+            "It speeds up execution by optimizing bus transfers",
+            "It reduces power use without affecting execution speed",
+            "It prevents data hazards in pipelined architectures"
+        ],
+        "correctAnswer": "It slows execution speed because the CPU spends clock cycles idling",
+        "explanation": "Wait states lower performance by forcing the CPU to sit idle during those clock cycles, slowing down overall code execution."
+    },
+    {
+        "question": "Which structural architecture uses a single unified memory bus for both instructions and data, creating a bottleneck?",
+        "options": [
+            "Von Neumann Architecture",
+            "Harvard Architecture",
+            "Super-pipelined Architecture",
+            "Dual-bus Core Architecture"
+        ],
+        "correctAnswer": "Von Neumann Architecture",
+        "explanation": "Von Neumann architectures share a single bus for both instructions and data, creating a 'Von Neumann bottleneck' because the CPU cannot read both at the same time."
+    },
+    {
+        "question": "What is the primary advantage of Harvard Architecture over Von Neumann Architecture?",
+        "options": [
+            "It requires fewer transistors to build",
+            "Separate memory buses allow instructions and data to be fetched simultaneously, avoiding bus conflicts",
+            "It supports a larger physical address space",
+            "It eliminates the need for internal cache memory levels"
+        ],
+        "correctAnswer": "Separate memory buses allow instructions and data to be fetched simultaneously, avoiding bus conflicts",
+        "explanation": "Harvard architecture uses separate buses for data and instructions, allowing the CPU to fetch an instruction and read memory data at the same time."
+    },
+    {
+        "question": "Which design philosophy uses a large, variable-length instruction set to minimize the number of instructions per program?",
+        "options": [
+            "CISC (Complex Instruction Set Computer)",
+            "RISC (Reduced Instruction Set Computer)",
+            "VLIW (Very Long Instruction Word)",
+            "EPIC (Explicitly Parallel Instruction Computing)"
+        ],
+        "correctAnswer": "CISC (Complex Instruction Set Computer)",
+        "explanation": "CISC designs focus on rich, complex instructions that do more work per line, which reduces the total number of instructions needed in a program."
+    },
+    {
+        "question": "What is a main benefit of RISC architectures over CISC designs?",
+        "options": [
+            "Simple, fixed-length instructions execute faster and make pipelining easier to implement",
+            "Programs require fewer total lines of code to perform complex tasks",
+            "RISC processors do away with internal general-purpose registers",
+            "RISC architectures natively support complex, multi-cycle addressing modes"
+        ],
+        "correctAnswer": "Simple, fixed-length instructions execute faster and make pipelining easier to implement",
+        "explanation": "RISC architectures use simple, uniform instructions that typically run in a single cycle, making high-speed execution pipelines much easier to build."
+    },
+    {
+        "question": "What is the function of the execution pipeline's 'Fetch' stage?",
+        "options": [
+            "It loads the next instruction opcode from memory into the CPU instruction register",
+            "It decodes binary instruction patterns into control signals",
+            "It calculates the effective addresses of operands in memory",
+            "It saves completed results back into a target register"
+        ],
+        "correctAnswer": "It loads the next instruction opcode from memory into the CPU instruction register",
+        "explanation": "The fetch stage loads the next instruction's binary opcode from memory into the CPU, using the address in the program counter."
+    },
+    {
+        "question": "What happens during the 'Decode' stage of a standard processor pipeline?",
+        "options": [
+            "The Control Unit interprets the instruction opcode to determine the required operation and control signals",
+            "The ALU performs math operations on the operands",
+            "Data is read from a specified physical memory location",
+            "The instruction pointer register is updated to point to the next instruction"
+        ],
+        "correctAnswer": "The Control Unit interprets the instruction opcode to determine the required operation and control signals",
+        "explanation": "During the decode stage, the Control Unit reviews the fetched opcode to identify the operation and activate the correct internal pathways."
+    },
+    {
+        "question": "What does the 'Execute' stage do in a CPU instruction pipeline?",
+        "options": [
+            "The ALU performs the requested arithmetic or logical operation",
+            "The binary opcode is loaded from memory",
+            "The instruction text is printed to a debugger window",
+            "The CPU enters a low-power wait state"
+        ],
+        "correctAnswer": "The ALU performs the requested arithmetic or logical operation",
+        "explanation": "During the execute stage, the CPU's internal hardware components (like the ALU) perform the actual mathematical or logical operation."
+    },
+];
+
+// ======================================
+// BUT_BIO102 QUESTION
+// PASTE NEW BUT_BIO102 QUESTIONS BELOW
+// =======================================
+
+const BUT_BIO102_Questions = [
+    {
+    "question": "Which of the following plant divisions is characterized by a dominant gametophyte generation and a lack of true vascular tissues?",
+    "options": [
+      "Bryophyta",
+      "Pteridophyta",
+      "Gymnospermae",
+      "Angiospermae"
+    ],
+    "correctAnswer": "Bryophyta",
+    "explanation": "Bryophytes (such as mosses, liverworts, and hornworts) are non-vascular plants. Unlike vascular plants, their life cycle is dominated by the haploid gametophyte stage, while the sporophyte is physically dependent on the gametophyte for nutrition."
+  },
+  {
+    "question": "In the plant kingdom, which evolutionary adaptation allowed Pteridophytes (ferns) to grow significantly taller than Bryophytes?",
+    "options": [
+      "The evolution of seeds",
+      "The development of true vascular tissue (xylem and phloem)",
+      "The dependence on water for fertilization",
+      "The presence of a dominant gametophyte phase"
+    ],
+    "correctAnswer": "The development of true vascular tissue (xylem and phloem)",
+    "explanation": "Pteridophytes are the earliest vascular plants. The evolution of xylem (for water transport and structural support via lignin) and phloem (for nutrient transport) allowed them to overcome the height limitations faced by non-vascular bryophytes."
+  },
+  {
+    "question": "Which economic and ecological benefit is uniquely attributed to the high diversity of Angiosperms (flowering plants) in agriculture?",
+    "options": [
+      "They are the primary source of commercial softwood lumber.",
+      "They provide the vast majority of human food crops, including grains, fruits, and vegetables.",
+      "They prevent soil erosion exclusively through rhizoids.",
+      "They are the sole producers of atmospheric oxygen."
+    ],
+    "correctAnswer": "They provide the vast majority of human food crops, including grains, fruits, and vegetables.",
+    "explanation": "Angiosperms are of paramount importance to human survival. Nearly all major agricultural food supplies—such as rice, wheat, corn, beans, fruits, and nuts—come from flowering plants."
+  },
+  {
+    "question": "During the light-dependent reactions of plant nutrition (photosynthesis), what is the primary role of water molecules?",
+    "options": [
+      "To act as the final electron acceptor in Photosystem I",
+      "To split via photolysis to provide electrons, protons, and oxygen",
+      "To absorb carbon dioxide from the atmosphere",
+      "To directly synthesize glucose molecules in the stroma"
+    ],
+    "correctAnswer": "To split via photolysis to provide electrons, protons, and oxygen",
+    "explanation": "During the light reactions in the thylakoid membrane, water is split (photolysis) to replace the electrons lost by the reaction center of Photosystem II. This process releases hydrogen ions ($H^+$) used to build a proton gradient and generates oxygen gas ($O_2$) as a byproduct."
+  },
+  {
+    "question": "Which statement accurately describes the difference between aerobic respiration and photosynthesis in plants?",
+    "options": [
+      "Photosynthesis occurs only during the day, while respiration occurs only at night.",
+      "Photosynthesis stores energy in complex organic molecules, while respiration releases energy from them.",
+      "Photosynthesis consumes oxygen, while respiration consumes carbon dioxide.",
+      "Photosynthesis takes place in the mitochondria, while respiration takes place in the chloroplasts."
+    ],
+    "correctAnswer": "Photosynthesis stores energy in complex organic molecules, while respiration releases energy from them.",
+    "explanation": "Photosynthesis is an anabolic process that builds carbohydrates using solar energy, whereas respiration is a catabolic process that breaks down those carbohydrates to produce ATP, running continuously day and night in living plant cells."
+  },
+  {
+    "question": "According to the cohesion-tension theory, what is the primary driving force behind the upward movement of water through a plant's xylem?",
+    "options": [
+      "Active transport by root pressure pushing water upward",
+      "The evaporation of water from stomata causing a negative pressure gradient",
+      "The high hydrostatic pressure built up in the phloem sieve tubes",
+      "The pulling force generated by the rapid expansion of cell walls"
+    ],
+    "correctAnswer": "The evaporation of water from stomata causing a negative pressure gradient",
+    "explanation": "Transpiration creates a negative pressure (tension) at the leaf surface. Due to the cohesive properties of water molecules (binding to each other) and adhesive properties (binding to xylem walls), a continuous water column is pulled upward from the roots to the leaves."
+  },
+  {
+    "question": "Which of the following families is a common flowering plant group easily recognized by its regular, 4-petaled flowers arranged in a cross and the production of silique fruits?",
+    "options": [
+      "Fabaceae (Legume family)",
+      "Brassicaceae (Mustard family)",
+      "Poaceae (Grass family)",
+      "Asteraceae (Sunflower family)"
+    ],
+    "correctAnswer": "Brassicaceae (Mustard family)",
+    "explanation": "Brassicaceae (formerly Cruciferae) is a widely distributed flowering plant family characterized by flowers with four cruciform (cross-shaped) petals, six stamens (four long, two short), and dry fruits called siliques or silicles."
+  },
+  {
+    "question": "What is the biological outcome of the double fertilization process unique to Angiosperms?",
+    "options": [
+      "Two identical embryos are formed within a single seed.",
+      "One sperm fertilizes the egg to form a zygote, and another fertilizes the central cell to form endosperm.",
+      "Two pollen tubes fertilize two separate ovules at the same time.",
+      "The diploid megaspore divides twice to create a tetraploid seed coat."
+    ],
+    "correctAnswer": "One sperm fertilizes the egg to form a zygote, and another fertilizes the central cell to form endosperm.",
+    "explanation": "Double fertilization involves two sperm cells: one fertilizes the haploid egg to form the diploid ($2n$) zygote, while the other fuses with the two polar nuclei of the central cell to form the triploid ($3n$) endosperm, which serves as a nutrient reserve for the developing embryo."
+  },
+  {
+    "question": "Which plant hormone is primarily responsible for phototropism and apical dominance in growing shoots?",
+    "options": [
+      "Abscisic acid (ABA)",
+      "Ethylene",
+      "Auxin (Indole-3-acetic acid)",
+      "Gibberellin"
+    ],
+    "correctAnswer": "Auxin (Indole-3-acetic acid)",
+    "explanation": "Auxin promotes cell elongation. In phototropism, auxin migrates to the shaded side of a stem, causing those cells to elongate faster and bend the plant toward light. It also suppresses lateral buds, maintaining apical dominance."
+  },
+  {
+    "question": "Which functional unit of the human kidney is responsible for the initial, non-selective ultrafiltration of blood plasma?",
+    "options": [
+      "The Loop of Henle",
+      "The Distal Convoluted Tubule",
+      "The Bowman's Capsule and Glomerulus",
+      "The Collecting Duct"
+    ],
+    "correctAnswer": "The Bowman's Capsule and Glomerulus",
+    "explanation": "High hydrostatic pressure in the glomerulus forces water, ions, glucose, and urea out of the capillaries and into the Bowman's capsule. Large proteins and blood cells are retained, making this an initial ultrafiltration step."
+  },
+  {
+    "question": "Where does the chemical digestion of proteins initiate within the human gastrointestinal tract?",
+    "options": [
+      "In the mouth via salivary amylase",
+      "In the stomach via pepsin in an acidic environment",
+      "In the duodenum via pancreatic lipase",
+      "In the large intestine via bacterial fermentation"
+    ],
+    "correctAnswer": "In the stomach via pepsin in an acidic environment",
+    "explanation": "Protein digestion begins in the stomach, where parietal cells secrete hydrochloric acid ($HCl$). The acid activates pepsinogen into pepsin, an enzyme that breaks down complex proteins into smaller polypeptides."
+  },
+  {
+    "question": "During human respiration, what is the primary physiological mechanism driving the exhalation of air during quiet, resting breathing?",
+    "options": [
+      "Active contraction of the internal intercostal muscles",
+      "The passive elastic recoil of the lungs and relaxation of the diaphragm",
+      "An increase in the volume of the thoracic cavity",
+      "A drop in intrapulmonary pressure relative to atmospheric pressure"
+    ],
+    "correctAnswer": "The passive elastic recoil of the lungs and relaxation of the diaphragm",
+    "explanation": "Quiet exhalation is largely passive. When the diaphragm and external intercostal muscles relax, the thoracic volume decreases, increasing air pressure inside the lungs and forcing air out."
+  },
+  {
+    "question": "Which valve prevents the backflow of deoxygenated blood from the right ventricle into the right atrium during ventricular systole?",
+    "options": [
+      "The Bicuspid (Mitral) valve",
+      "The Aortic semilunar valve",
+      "The Tricuspid valve",
+      "The Pulmonary semilunar valve"
+    ],
+    "correctAnswer": "The Tricuspid valve",
+    "explanation": "The tricuspid valve separates the right atrium from the right ventricle. During ventricular contraction (systole), this valve snaps shut to prevent blood from flowing backward into the right atrium."
+  },
+  {
+    "question": "During human embryonic development, which embryonic germ layer gives rise to the nervous system and the epidermis of the skin?",
+    "options": [
+      "Endoderm",
+      "Mesoderm",
+      "Ectoderm",
+      "Blastoderm"
+    ],
+    "correctAnswer": "Ectoderm",
+    "explanation": "The ectoderm is the outermost germ layer formed during gastrulation. It is evolutionary and developmentally programmed to differentiate into the central and peripheral nervous systems, as well as outer epithelial structures like hair, nails, and skin epidermis."
+  },
+  {
+    "question": "Which of the following represents a key morphological advancement of Gymnosperms over Pteridophytes?",
+    "options": [
+      "The transition from using seeds to using spores",
+      "The evolution of ovules and seeds that protect the embryo without requiring external water for fertilization",
+      "The complete absence of a sporophyte generation",
+      "The development of true fruits to enclose seeds"
+    ],
+    "correctAnswer": "The evolution of ovules and seeds that protect the embryo without requiring external water for fertilization",
+    "explanation": "Gymnosperms evolved seeds ('naked seeds') and pollen grains. Pollen eliminates the need for a film of water to achieve fertilization, allowing these plants to colonize dry land environments more successfully than ferns."
+  },
+  {
+    "question": "In the plant kingdom, the alternation of generations refers to a life cycle shifting between which two distinct multicellular forms?",
+    "options": [
+      "A haploid sporophyte and a diploid gametophyte",
+      "A diploid sporophyte and a haploid gametophyte",
+      "An autotrophic adult and a heterotrophic juvenile",
+      "A motile zoospore and a stationary zygote"
+    ],
+    "correctAnswer": "A diploid sporophyte and a haploid gametophyte",
+    "explanation": "Plants cycle between a multicellular diploid ($2n$) stage called the sporophyte (which produces haploid spores via meiosis) and a multicellular haploid ($n$) stage called the gametophyte (which produces gametes via mitosis)."
+  },
+  {
+    "question": "Why are petals typically the most highly valued and prominent feature of many ornamental common flowering plants in natural ecosystems?",
+    "options": [
+      "They are the primary sites for carbohydrate storage.",
+      "They absorb the majority of carbon dioxide needed for photosynthesis.",
+      "They are specialized to attract specific animal pollinators via bright pigments and scents.",
+      "They protect the plant against intense wind damage by shedding quickly."
+    ],
+    "correctAnswer": "They are specialized to attract specific animal pollinators via bright pigments and scents.",
+    "explanation": "Petals collectively form the corolla. Their evolutionary role is to attract pollinators like insects, birds, and bats, which ensures high genetic diversity through cross-pollination."
+  },
+  {
+    "question": "Which element is a central component of the chlorophyll molecule, making it absolutely vital for inorganic plant nutrition?",
+    "options": [
+      "Iron",
+      "Magnesium",
+      "Calcium",
+      "Phosphorus"
+    ],
+    "correctAnswer": "Magnesium",
+    "explanation": "Magnesium ($Mg^{2+}$) is the central atom in the porphyrin ring of the chlorophyll molecule. Without adequate magnesium, plants suffer from chlorosis (yellowing of leaves) because they cannot synthesize chlorophyll."
+  },
+  {
+    "question": "What is the primary site of the Krebs (Citric Acid) Cycle during aerobic cellular respiration in plant cells?",
+    "options": [
+      "The cytosol",
+      "The thylakoid lumen",
+      "The mitochondrial matrix",
+      "The inner mitochondrial membrane"
+    ],
+    "correctAnswer": "The mitochondrial matrix",
+    "explanation": "While glycolysis happens in the cytosol and the electron transport chain occurs across the inner mitochondrial membrane, the enzymes responsible for the Krebs Cycle are housed within the fluid-filled mitochondrial matrix."
+  },
+  {
+    "question": "How do stomata adjust to prevent excessive water loss in plants experiencing severe drought conditions?",
+    "options": [
+      "Guard cells actively pump potassium ions ($K^+$) inside to become turgid.",
+      "Guard cells lose potassium ions ($K^+$) and water, causing them to flaccidly close the pore.",
+      "The inner walls of the guard cells dissolve to flatten out.",
+      "Abscisic acid causes guard cells to swell uncontrollably."
+    ],
+    "correctAnswer": "Guard cells lose potassium ions ($K^+$) and water, causing them to flaccidly close the pore.",
+    "explanation": "Under water stress, abscisic acid (ABA) triggers the efflux of potassium ions ($K^+$) from guard cells. Water follows the ions out by osmosis, decreasing turgor pressure and causing the guard cells to sag together, closing the stomatal pore."
+  },
+  {
+    "question": "Which feature distinguishes a monocotyledonous flowering plant from a dicotyledonous flowering plant?",
+    "options": [
+      "Monocots have taproot systems; dicots have fibrous root systems.",
+      "Monocots show floral parts in multiples of three; dicots show parts in multiples of four or five.",
+      "Monocots have net-like venation in leaves; dicots have parallel venation.",
+      "Monocots possess vascular bundles arranged in a distinct ring within the stem."
+    ],
+    "correctAnswer": "Monocots show floral parts in multiples of three; dicots show parts in multiples of four or five.",
+    "explanation": "Monocots typically display trimerous symmetry (multiples of 3 petals/stamens), parallel leaf venation, and scattered vascular bundles. Dicots generally show 4- or 5-merous symmetry, reticulate (net-like) venation, and ringed vascular bundles."
+  },
+  {
+    "question": "What structure is formed immediately after a pollen grain successfully germinates on the compatible stigma of a flower?",
+    "options": [
+      "The archegonium",
+      "The pollen tube",
+      "The seed coat",
+      "The cotyledon"
+    ],
+    "correctAnswer": "The pollen tube",
+    "explanation": "Upon landing on a receptive stigma, the tube cell of the pollen grain elongates to form a pollen tube. This tube grows down through the style toward the ovary to deliver sperm cells to the embryo sac."
+  },
+  {
+    "question": "What type of plant growth is responsible for increasing the girth/diameter of woody stems and roots over time?",
+    "options": [
+      "Primary growth driven by apical meristems",
+      "Secondary growth driven by lateral meristems (vascular cambium)",
+      "Intercalary growth driven by node elongation",
+      "Endogenous growth driven by storage parenchyma"
+    ],
+    "correctAnswer": "Secondary growth driven by lateral meristems (vascular cambium)",
+    "explanation": "Secondary growth results from the activity of lateral meristems: the vascular cambium (producing secondary xylem and phloem) and the cork cambium. This causes the thickening seen in woody dicots and gymnosperms."
+  },
+  {
+    "question": "In the human nephron, how does the hormone Aldosterone affect the composition of urine?",
+    "options": [
+      "It decreases water reabsorption by suppressing aquaporins.",
+      "It promotes sodium ($Na^+$) reabsorption and potassium ($K^+$) secretion in the distal tubule.",
+      "It blocks the filtration of urea at the glomerulus.",
+      "It alkaline-neutralizes the pH of the urine within the loop of Henle."
+    ],
+    "correctAnswer": "It promotes sodium ($Na^+$) reabsorption and potassium ($K^+$) secretion in the distal tubule.",
+    "explanation": "Aldosterone, secreted by the adrenal cortex, acts on the distal convoluted tubules and collecting ducts to increase the active transport of sodium back into the blood while excreting potassium into the filtrate. Water follows sodium, increasing blood volume."
+  },
+  {
+    "question": "What is the primary function of bile salts secreted into the duodenum during human digestion?",
+    "options": [
+      "To chemically break peptide bonds in large proteins",
+      "To emulsify large fat globules into smaller droplets, increasing surface area for lipase",
+      "To lower the pH of the chyme arriving from the stomach",
+      "To convert glucose into glycogen for short term storage"
+    ],
+    "correctAnswer": "To emulsify large fat globules into smaller droplets, increasing surface area for lipase",
+    "explanation": "Bile contains no digestive enzymes. Instead, bile salts act as detergents that mechanically emulsify large lipid droplets into a fine suspension of micelles, maximizing the efficiency of water-soluble pancreatic lipase."
+  },
+  {
+    "question": "How is the majority of carbon dioxide ($CO_2$) transported from respiring human tissues back to the lungs?",
+    "options": [
+      "Dissolved directly as a gas in the blood plasma",
+      "Bound permanently to the iron group of hemoglobin molecules",
+      "As bicarbonate ions ($HCO_3^-$) within the plasma",
+      "As solid calcium carbonate micro-crystals"
+    ],
+    "correctAnswer": "As bicarbonate ions ($HCO_3^-$) within the plasma",
+    "explanation": "Roughly 70% of carbon dioxide is converted inside red blood cells into carbonic acid by carbonic anhydrase, which then dissociates into bicarbonate ions ($HCO_3^-$) and moves into the plasma. About 23% binds to hemoglobin (carbaminohemoglobin) and 7% dissolves in plasma."
+  },
+  {
+    "question": "Which component of the human cardiac conduction system serves as the primary pacemaker of the heart?",
+    "options": [
+      "The Atrioventricular (AV) Node",
+      "The Purkinje Fibers",
+      "The Bundle of His",
+      "The Sinoatrial (SA) Node"
+    ],
+    "correctAnswer": "The Sinoatrial (SA) Node",
+    "explanation": "The Sinoatrial (SA) node, located in the upper wall of the right atrium, possesses the fastest intrinsic rate of depolarization. It generates action potentials rhythmically, setting the baseline heart rate for the entire cardiac muscle."
+  },
+  {
+    "question": "What is the primary physiological role of Human Chorionic Gonadotropin (hCG) during early human pregnancy?",
+    "options": [
+      "To initiate forceful uterine contractions during labor",
+      "To maintain the corpus luteum so it continues secreting progesterone",
+      "To stimulate the immediate production of breast milk in mammary glands",
+      "To trigger the degeneration of the endometrial lining"
+    ],
+    "correctAnswer": "To maintain the corpus luteum so it continues secreting progesterone",
+    "explanation": "hCG is produced by the blastocyst/developing placenta shortly after implantation. It signals the corpus luteum in the ovary to survive and continue producing progesterone, maintaining the thick endometrial lining and preventing menstruation."
+  },
+  {
+    "question": "Which of the following describes an essential feature of a common wind-pollinated flowering plant?",
+    "options": [
+      "Large, brightly colored petals with intense fragrance",
+      "Heavy, sticky pollen grains rich in fats",
+      "Feathery stigmas and exposed anthers hanging outside the petals",
+      "Deep nectar guides designed for long-tongued insects"
+    ],
+    "correctAnswer": "Feathery stigmas and exposed anthers hanging outside the petals",
+    "explanation": "Wind-pollinated (anemophilous) plants do not invest energy in attracting animals. Instead, they produce light, buoyant pollen and have large, feathery stigmas exposed to open air currents to catch drifting pollen grains easily."
+  },
+  {
+    "question": "What process occurs when a seed absorbs water rapidly, causing its coat to rupture and triggering metabolic changes to begin growth?",
+    "options": [
+      "Vernalization",
+      "Imbibition",
+      "Stratification",
+      "Senescence"
+    ],
+    "correctAnswer": "Imbibition",
+    "explanation": "Imbibition is the physical uptake of water by the dry seed. This hydration activates metabolic enzymes, rehydrates tissues, expands cells, and generates the internal physical pressure required to split open the seed coat (testa)."
+  },
+  {
+    "question": "Which of the following characteristics is common to both Bryophytes and Pteridophytes?",
+    "options": [
+      "The presence of true roots, stems, and leaves",
+      "A life cycle that relies on water for the transport of motile sperm",
+      "The production of seeds within protective cones",
+      "A dominant diploid sporophyte stage"
+    ],
+    "correctAnswer": "A life cycle that relies on water for the transport of motile sperm",
+    "explanation": "Both Bryophytes (mosses) and Pteridophytes (ferns) are lower plants that produce flagellated sperm cells. These sperm must swim through a film of external water to reach and fertilize the egg in the archegonium."
+  },
+  {
+    "question": "What structural layer protects the dynamic growing tip of a plant root as it pushes through abrasive soil particles?",
+    "options": [
+      "The root cap (calyptra)",
+      "The zone of elongation",
+      "The endodermis",
+      "The pericycle"
+    ],
+    "correctAnswer": "The root cap (calyptra)",
+    "explanation": "The root cap is a protective layer of parenchymatous cells covering the apical meristem of the root. It shields the delicate dividing cells from mechanical damage and secretes a mucilaginous lubricant to ease passage through the soil."
+  },
+  {
+    "question": "Which specific component of blood plasma is responsible for initiating the transformation of soluble fibrinogen into an insoluble fibrin mesh during blood clotting?",
+    "options": [
+      "Albumin",
+      "Thrombin",
+      "Hemoglobin",
+      "Globulin"
+    ],
+    "correctAnswer": "Thrombin",
+    "explanation": "During the coagulation cascade, the enzyme thrombin is activated from its inactive precursor, prothrombin. Thrombin then proteolytically cleaves the soluble plasma protein fibrinogen into insoluble strands of fibrin, which trap blood cells to form a stable clot."
+  },
+  {
+    "question": "In the human nephron, what serves as the primary driving force for the reabsorption of water within the descending limb of the Loop of Henle?",
+    "options": [
+      "Active transport of water molecules via ATP-driven pumps",
+      "The high osmolarity of the surrounding renal medullary interstitium",
+      "Hydrostatic blood pressure pushing water back into the vasa recta",
+      "The high concentration of sodium ions inside the tubule lumen"
+    ],
+    "correctAnswer": "The high osmolarity of the surrounding renal medullary interstitium",
+    "explanation": "The descending limb of the Loop of Henle is highly permeable to water but impermeable to solutes. As the filtrate moves down into the renal medulla, water is drawn out passively by osmosis because the surrounding interstitial fluid is highly concentrated with sodium and urea."
+  },
+  {
+    "question": "What is the specific physiological function of the Casparian strip located within the endodermis of plant roots?",
+    "options": [
+      "To accelerate the apoplastic movement of minerals into the vascular cylinder",
+      "To force water and solutes to cross a selective plasma membrane via the symplastic pathway",
+      "To store starch grains for use during rapid stem elongation",
+      "To maximize the rate of transpiration during hot midday hours"
+    ],
+    "correctAnswer": "To force water and solutes to cross a selective plasma membrane via the symplastic pathway",
+    "explanation": "The Casparian strip is a band of suberin (a waterproof, waxy substance) in the walls of endodermal cells. It blocks the passive apoplastic pathway (through cell walls), forcing water and dissolved ions to pass through the selectively permeable plasma membranes of endodermal cells, filtering out harmful toxins."
+  },
+  {
+    "question": "Which enzyme is responsible for the preliminary digestion of cooked starches into maltose within the human mouth?",
+    "options": [
+      "Pancreatic amylase",
+      "Salivary amylase (ptyalin)",
+      "Pepsin",
+      "Lingual lipase"
+    ],
+    "correctAnswer": "Salivary amylase (ptyalin)",
+    "explanation": "Salivary amylase is secreted by the salivary glands into the oral cavity. It initiates the chemical breakdown of complex polysaccharides (starches) by cleaving alpha-1,4-glycosidic bonds, converting them into simpler disaccharides like maltose."
+  },
+  {
+    "question": "During the gaseous exchange process in human lungs, what physical law explains why oxygen diffuses from the alveoli into the pulmonary capillaries?",
+    "options": [
+      "Oxygen moves down its partial pressure gradient from a region of higher partial pressure to lower partial pressure.",
+      "Oxygen is actively pumped across the alveolar membrane using metabolic energy from ATP.",
+      "The total pressure in the capillaries is significantly higher than in the air sacs.",
+      "Hemoglobin molecules physically reach out of red blood cells to pull oxygen gas out of the air."
+    ],
+    "correctAnswer": "Oxygen moves down its partial pressure gradient from a region of higher partial pressure to lower partial pressure.",
+    "explanation": "Gas exchange occurs via passive diffusion. Deoxygenated blood arriving at the pulmonary capillaries has a lower partial pressure of oxygen ($PO_2 \\approx 40\\text{ mmHg}$) than the air inside the alveoli ($PO_2 \\approx 104\\text{ mmHg}$). Oxygen moves down this gradient naturally."
+  },
+  {
+    "question": "Which of the following structural modifications is a characteristic feature of wind-pollinated flowers?",
+    "options": [
+      "Deep corolla tubes containing rich nectar reservoirs",
+      "Brightly colored petals with ultraviolet patterns",
+      "Lightweight, smooth, and aerodynamic pollen produced in immense quantities",
+      "Sticky, heavy pollen designed to adhere to animal fur"
+    ],
+    "correctAnswer": "Lightweight, smooth, and aerodynamic pollen produced in immense quantities",
+    "explanation": "Wind-pollinated (anemophilous) flowers produce light, dry, non-sticky pollen grains that can easily float on air currents. Because wind dispersal is random, they produce massive amounts of pollen to increase the statistical probability of reaching a receptive stigma."
+  },
+  {
+    "question": "What type of cellular division produces the microspores within the anther of a flowering plant?",
+    "options": [
+      "Mitosis",
+      "Meiosis",
+      "Binary fission",
+      "Amitosis"
+    ],
+    "correctAnswer": "Meiosis",
+    "explanation": "The microspore mother cells (microsporocytes) within the pollen sacs of the anther are diploid ($2n$). They undergo meiosis to produce four haploid ($n$) microspores, which subsequently develop into pollen grains via mitosis."
+  },
+  {
+    "question": "Which human blood vessels possess the thinnest walls, consisting only of a single layer of endothelial cells, to maximize metabolic exchange?",
+    "options": [
+      "Arterioles",
+      "Venules",
+      "Capillaries",
+      "Muscular arteries"
+    ],
+    "correctAnswer": "Capillaries",
+    "explanation": "Capillaries are structural networks optimized for material exchange. Their walls consist entirely of a single layer of squamous epithelial cells (endothelium) resting on a basement membrane, minimizing diffusion distance for gases, nutrients, and wastes."
+  },
+  {
+    "question": "What metabolic byproduct accumulates in human muscle tissues during intense anaerobic exercise when oxygen supply cannot meet metabolic demands?",
+    "options": [
+      "Ethanol",
+      "Lactic acid (lactate)",
+      "Pyruvic acid",
+      "Citric acid"
+    ],
+    "correctAnswer": "Lactic acid (lactate)",
+    "explanation": "When oxygen levels are low, the electron transport chain slows down, and glycolysis becomes the primary source of ATP. To regenerate $NAD^+$ required to sustain glycolysis, pyruvate is reduced to lactic acid by the enzyme lactate dehydrogenase."
+  },
+  {
+    "question": "Which hormone, secreted by the duodenal mucosa, triggers the gallbladder to contract and release bile into the small intestine?",
+    "options": [
+      "Gastrin",
+      "Secretin",
+      "Cholecystokinin (CCK)",
+      "Insulin"
+    ],
+    "correctAnswer": "Cholecystokinin (CCK)",
+    "explanation": "When chyme rich in lipids and proteins enters the duodenum, endocrine cells in the duodenal wall secrete cholecystokinin (CCK). CCK travels through the blood to stimulate gallbladder contraction and the relaxation of the Sphincter of Oddi."
+  },
+  {
+    "question": "In flowering plants, the mature embryo sac (female gametophyte) typically consists of which structural cell arrangement?",
+    "options": [
+      "4 cells and 4 nuclei",
+      "8 cells and 8 nuclei",
+      "7 cells and 8 nuclei",
+      "3 cells and 6 nuclei"
+    ],
+    "correctAnswer": "7 cells and 8 nuclei",
+    "explanation": "The standard Polygonum-type embryo sac contains seven cells: three antipodal cells at the chalazal end, two synergids and one egg cell at the micropylar end, and one large central cell containing two polar nuclei."
+  },
+  {
+    "question": "Which of the following components of the human respiratory tract is lined with pseudostratified ciliated columnar epithelium and C-shaped hyaline cartilage rings?",
+    "options": [
+      "The esophagus",
+      "The trachea",
+      "The alveoli",
+      "The oropharynx"
+    ],
+    "correctAnswer": "The trachea",
+    "explanation": "The trachea (windpipe) requires structural support to remain patent under negative pressures during inhalation, which is provided by C-shaped cartilage rings. Its ciliated epithelium acts as a mucociliary escalator to sweep trapped dust and foreign debris out of the respiratory tract."
+  },
+  {
+    "question": "What is the primary role of the loop of Henle in the mammalian kidney?",
+    "options": [
+      "To filter large plasma proteins out of the urine",
+      "To establish a hypertonic medullary osmotic gradient that allows urine concentration",
+      "To actively secrete excess hydrogen ions into the collecting duct",
+      "To reabsorb 100% of the filtered glucose and amino acids"
+    ],
+    "correctAnswer": "To establish a hypertonic medullary osmotic gradient that allows urine concentration",
+    "explanation": "Through a countercurrent multiplier mechanism involving the differential permeabilities of its ascending and descending limbs, the Loop of Henle builds a steep concentration gradient from the cortex down into the medulla, which is vital for reabsorbing water later in the collecting duct."
+  },
+  {
+    "question": "Which plant tissue system is responsible for transport of photosyrthate (sugars) from source leaves to sink tissues like roots and fruits?",
+    "options": [
+      "Xylem",
+      "Phloem",
+      "Sclerenchyma",
+      "Epidermis"
+    ],
+    "correctAnswer": "Phloem",
+    "explanation": "Phloem is the specialized vascular tissue responsible for translocation, the bidirectional movement of organic solutes (primarily sucrose) through living sieve-tube elements."
+  },
+  {
+    "question": "What unique feature distinguishes Gymnosperms from Angiosperms?",
+    "options": [
+      "Gymnosperms produce seeds, while Angiosperms reproduce via spores.",
+      "Gymnosperms bear seeds naked on the surfaces of cones, whereas Angiosperms produce seeds enclosed within fruits.",
+      "Gymnosperms lack vascular tissues entirely.",
+      "Gymnosperms undergo double fertilization."
+    ],
+    "correctAnswer": "Gymnosperms bear seeds naked on the surfaces of cones, whereas Angiosperms produce seeds enclosed within fruits.",
+    "explanation": "The term 'Gymnosperm' means 'naked seed.' Their ovules are exposed directly on megasporophylls (scales of cones). Angiosperms have ovules enclosed within an ovary, which matures into a fruit after fertilization."
+  },
+  {
+    "question": "Which of the following is an example of a common monocotyledonous flowering plant?",
+    "options": [
+      "Hibiscus (Rosa-sinensis)",
+      "Zea mays (Maize/Corn)",
+      "Helianthus annuus (Sunflower)",
+      "Pisum sativum (Pea)"
+    ],
+    "correctAnswer": "Zea mays (Maize/Corn)",
+    "explanation": "Maize ($Zea\\ mays$) belongs to the family Poaceae (grasses). It exhibits all characteristic monocot features: a single cotyledon in the seed, parallel leaf venation, scattered vascular bundles, and a fibrous root system."
+  },
+  {
+    "question": "During the process of light absorption in plants, which pigment serves as the primary reaction center molecule for both Photosystem I and II?",
+    "options": [
+      "Chlorophyll b",
+      "Carotene",
+      "Chlorophyll a",
+      "Xanthophyll"
+    ],
+    "correctAnswer": "Chlorophyll a",
+    "explanation": "While accessory pigments like chlorophyll b and carotenoids absorb light and pass the energy inward (acting as an antenna complex), only specialized molecules of chlorophyll a (P680 and P700) can actually initiate the photochemical reactions by ejecting high-energy electrons."
+  },
+  {
+    "question": "Where does the chemical breakdown of fats primarily take place in the human digestive system?",
+    "options": [
+      "Stomach",
+      "Duodenum and small intestine",
+      "Esophagus",
+      "Large intestine"
+    ],
+    "correctAnswer": "Duodenum and small intestine",
+    "explanation": "Lipids are highly hydrophobic. Their efficient digestion requires emulsification by liver bile salts and chemical hydrolysis by pancreatic lipases, both of which are introduced and function within the lumen of the small intestine (specifically the duodenum)."
+  },
+  {
+    "question": "Which of the following processes describes the loss of water vapor from the aerial parts of a plant, primarily through the stomata?",
+    "options": [
+      "Guttation",
+      "Transpiration",
+      "Imbibition",
+      "Respiration"
+    ],
+    "correctAnswer": "Transpiration",
+    "explanation": "Transpiration is the evaporation of water from plant surfaces. Over 90% of this water loss occurs through the stomatal pores of leaves, acting as an inevitable consequence of opening stomata to take in carbon dioxide for photosynthesis."
+  },
+  {
+    "question": "What physical structural property of water allows plant stems to maintain a continuous, unbroken column of water within xylem vessels during high-tension transport?",
+    "options": [
+      "High specific heat capacity",
+      "Strong cohesive forces due to hydrogen bonding",
+      "Low viscosity",
+      "Density anomalies at low temperatures"
+    ],
+    "correctAnswer": "Strong cohesive forces due to hydrogen bonding",
+    "explanation": "Cohesion refers to the mutual attraction between water molecules, caused by hydrogen bonds. This high cohesive strength allows water columns to withstand extreme pulling forces (negative pressure) without snapping or breaking (cavitation)."
+  },
+  {
+    "question": "Which part of the human brain contains the primary cardiovascular and respiratory centers that unconsciously regulate heart rate and ventilation depth?",
+    "options": [
+      "Cerebrum",
+      "Cerebellum",
+      "Medulla oblongata",
+      "Thalamus"
+    ],
+    "correctAnswer": "Medulla oblongata",
+    "explanation": "The medulla oblongata, part of the brainstem, controls autonomic, life-sustaining functions. It monitors blood $pH$ and partial pressures of carbon dioxide via central chemoreceptors, automatically adjusting breathing rates and heart rhythms."
+  },
+  {
+    "question": "What is the function of the accessory structures known as root hairs?",
+    "options": [
+      "To protect the root meristem from toxic underground chemical elements",
+      "To dramatically increase the root surface area available for water and mineral absorption",
+      "To synthesize photosynthetic pigments for storage underground",
+      "To anchor the plant by forming woody lateral extensions"
+    ],
+    "correctAnswer": "To dramatically increase the root surface area available for water and mineral absorption",
+    "explanation": "Root hairs are delicate, microscopic extensions of single root epidermal cells (trichoblasts). By extending into the microscopic spaces between soil particles, they massively expand the surface area available for absorbing water and dissolved ions via osmosis and active transport."
+  },
+  {
+    "question": "In the human circulatory system, which specific vessel transports freshly oxygenated blood directly from the lungs into the left atrium?",
+    "options": [
+      "Pulmonary artery",
+      "Superior vena cava",
+      "Pulmonary vein",
+      "Aorta"
+    ],
+    "correctAnswer": "Pulmonary vein",
+    "explanation": "Unlike most veins that carry deoxygenated blood, the pulmonary veins carry highly oxygenated blood away from the alveolar capillary beds of the lungs and return it directly to the left atrium of the heart to enter systemic circulation."
+  },
+  {
+    "question": "What stage of human development begins immediately after fertilization and ends when the blastocyst implants into the uterine endometrium?",
+    "options": [
+      "Fetal stage",
+      "Embryonic stage (pre-implantation period)",
+      "Neonatal stage",
+      "Larval stage"
+    ],
+    "correctAnswer": "Embryonic stage (pre-implantation period)",
+    "explanation": "Following fertilization in the fallopian tube, the single-celled zygote undergoes rapid mitotic cleavages as it moves toward the uterus. It forms a solid morula and then a hollow blastocyst, marking the earliest phase of embryonic development prior to uterine attachment."
+  },
+  {
+    "question": "Which tissue layer in dicotyledonous plant stems forms a continuous ring of actively dividing cells that produces secondary xylem internally and secondary phloem externally?",
+    "options": [
+      "Cork cambium",
+      "Vascular cambium",
+      "Endodermis",
+      "Pith"
+    ],
+    "correctAnswer": "Vascular cambium",
+    "explanation": "The vascular cambium is a lateral meristem tissue. Its main function is secondary growth—increasing the width of the stem by producing new layers of wood (secondary xylem) to the inside and inner bark (secondary phloem) to the outside."
+  },
+  {
+    "question": "Which hormone is primarily responsible for triggering ovulation—the release of a mature secondary oocyte from the Graafian follicle in human females?",
+    "options": [
+      "Progesterone",
+      "Follicle-Stimulating Hormone (FSH)",
+      "Luteinizing Hormone (LH)",
+      "Prolactin"
+    ],
+    "correctAnswer": "Luteinizing Hormone (LH)",
+    "explanation": "Around day 14 of a typical menstrual cycle, high levels of estrogen exert positive feedback on the pituitary gland, causing a massive surge in Luteinizing Hormone (LH). This LH surge weakens the follicular wall, inducing ovulation."
+  },
+  {
+    "question": "What structural component of human erythrocytes (red blood cells) allows them to efficiently bind and transport up to four molecules of oxygen simultaneously?",
+    "options": [
+      "Myoglobin",
+      "Hemoglobin, which contains four iron-bearing heme groups",
+      "Cytochrome c oxidase complexes",
+      "Fibrin networks"
+    ],
+    "correctAnswer": "Hemoglobin, which contains four iron-bearing heme groups",
+    "explanation": "Hemoglobin is a quaternary protein composed of four polypeptide subunits. Each subunit features a prosthetic heme group containing a central iron atom ($Fe^{2+}$) capable of binding one molecule of $O_2$ reversibly."
+  },
+  {
+    "question": "What is the primary role of the large intestine (colon) during human digestion?",
+    "options": [
+      "The complete enzymatic hydrolysis of complex dietary proteins",
+      "The absorption of remaining water and mineral salts, and the consolidation of indigestible waste",
+      "The synthesis and secretion of digestive enzymes like trypsin",
+      "The mechanical emulsification of lipids using hydrochloric acid"
+    ],
+    "correctAnswer": "The absorption of remaining water and mineral salts, and the consolidation of indigestible waste",
+    "explanation": "By the time chyme reaches the large intestine, nutrient absorption is mostly complete. The colon primarily extracts water, sodium, and specific vitamins (produced by symbiotic gut bacteria) out of the liquid waste before it is eliminated as feces."
+  },
+  {
+    "question": "Which term describes the loss of liquid water droplets from the margins or tips of leaves through specialized structures called hydathodes, typically occurring on humid nights?",
+    "options": [
+      "Transpiration",
+      "Guttation",
+      "Sublimation",
+      "Condensation"
+    ],
+    "correctAnswer": "Guttation",
+    "explanation": "When soil moisture is high and transpiration is low (such as on damp nights), root pressure continues to push water up the plant. This positive hydrostatic pressure forces liquid water out through specialized leaf openings called hydathodes."
+  },
+  {
+    "question": "Which of the following mineral nutrients is classified as a macronutrient in plants, required in large quantities for cell wall stability and signaling?",
+    "options": [
+      "Boron",
+      "Zinc",
+      "Calcium",
+      "Manganese"
+    ],
+    "correctAnswer": "Calcium",
+    "explanation": "Calcium is a plant macronutrient ($Ca^{2+}$). It is a key structural component of the middle lamella (as calcium pectate), cementing adjacent cell walls together, and acts as a vital intracellular secondary messenger."
+  },
+  {
+    "question": "What carbon-fixing pathway do desert plants like cacti utilize to open their stomata exclusively at night to minimize water loss?",
+    "options": [
+      "C3 pathway",
+      "C4 pathway",
+      "Crassulacean Acid Metabolism (CAM)",
+      "Glycolate pathway"
+    ],
+    "correctAnswer": "Crassulacean Acid Metabolism (CAM)",
+    "explanation": "CAM plants adapt to extreme aridity by fixing $CO_2$ at night into organic acids (malate) stored in vacuoles. During the hot daytime, stomata remain tightly closed to preserve water, and the stored $CO_2$ is released internally to drive the Calvin cycle."
+  },
+  {
+    "question": "In the human heart, why is the muscular wall of the left ventricle significantly thicker than that of the right ventricle?",
+    "options": [
+      "The left ventricle must generate enough high pressure to pump blood throughout the entire systemic body circulation.",
+      "The left ventricle holds twice the volume of blood compared to the right ventricle.",
+      "Deoxygenated blood is heavier and requires less muscular effort to move.",
+      "The left ventricle is directly stimulated by the brain via skeletal nerve endings."
+    ],
+    "correctAnswer": "The left ventricle must generate enough high pressure to pump blood throughout the entire systemic body circulation.",
+    "explanation": "The right ventricle only pumps blood a short distance into the low-resistance pulmonary circuit of the lungs. In contrast, the left ventricle must overcome the massive systemic resistance of the entire body, requiring a much thicker myocardium to generate higher contractile force."
+  },
+  {
+    "question": "Which component of the human gastric juice provides the highly acidic environment ($pH\\ 1.5-2.0$) necessary to denature dietary proteins?",
+    "options": [
+      "Sulfuric acid",
+      "Hydrochloric acid ($HCl$)",
+      "Acetic acid",
+      "Carbonic acid"
+    ],
+    "correctAnswer": "Hydrochloric acid ($HCl$)",
+    "explanation": "Parietal cells in the gastric glands actively pump hydrogen and chloride ions into the stomach lumen, forming hydrochloric acid. This low $pH$ denatures folded protein structures, kills swallowed pathogens, and activates pepsinogen."
+  },
+  {
+    "question": "What structural feature of the small intestine's inner lining serves to massively expand its total surface area for nutrient absorption?",
+    "options": [
+      "Rugae",
+      "Villi and microvilli",
+      "Sphincters",
+      "Haustra"
+    ],
+    "correctAnswer": "Villi and microvilli",
+    "explanation": "The inner wall of the small intestine is folded into finger-like projections called villi. Furthermore, the plasma membranes of the epithelial cells lining these villi feature microscopic projections called microvilli (the brush border), expanding the absorptive area by roughly 600-fold."
+  },
+  {
+    "question": "Which of the following cells are responsible for producing testosterone within the human testes under the influence of Luteinizing Hormone?",
+    "options": [
+      "Sertoli cells",
+      "Spermatogonia",
+      "Leydig (interstitial) cells",
+      "Primary spermatocytes"
+    ],
+    "correctAnswer": "Leydig (interstitial) cells",
+    "explanation": "Leydig cells reside in the connective tissue spaces between the seminiferous tubules. When stimulated by LH from the anterior pituitary gland, they synthesize and secrete testosterone, the primary male sex hormone."
+  },
+  {
+    "question": "What is the primary product of the first step of glycolysis, where a glucose molecule is phosphorylated by hexokinase?",
+    "options": [
+      "Fructose-1,6-bisphosphate",
+      "Glucose-6-phosphate",
+      "Pyruvate",
+      "Phosphoenolpyruvate"
+    ],
+    "correctAnswer": "Glucose-6-phosphate",
+    "explanation": "The first reaction of glycolysis involves trapping glucose inside the cell cytoplasm by adding a phosphate group from ATP, forming glucose-6-phosphate ($G6P$). This keeps the internal concentration of free unphosphorylated glucose low, encouraging inward diffusion."
+  },
+  {
+    "question": "Which of the following represents a structural plant adaptation typical of hydrophytes (plants living completely in or on water)?",
+    "options": [
+      "Thick waxy cuticles and sunken stomata",
+      "Extensive, deep-reaching taproot systems",
+      "Highly developed aerenchyma tissue with large internal air spaces",
+      "Conversion of leaves into sharp defensive spines"
+    ],
+    "correctAnswer": "Highly developed aerenchyma tissue with large internal air spaces",
+    "explanation": "Hydrophytes face challenges with buoyancy and oxygen availability in waterlogged conditions. Aerenchyma tissue provides internal air channels that store and conduct oxygen down to submerged parts while helping the plant float on the water surface."
+  },
+  {
+    "question": "Which of the following choices lists the layers of the human kidney from the outermost boundary to the innermost structural space?",
+    "options": [
+      "Renal Medulla $\\rightarrow$ Renal Cortex $\\rightarrow$ Renal Pelvis",
+      "Renal Cortex $\\rightarrow$ Renal Medulla $\\rightarrow$ Renal Pelvis",
+      "Renal Pelvis $\\rightarrow$ Renal Medulla $\\rightarrow$ Renal Cortex",
+      "Renal Cortex $\\rightarrow$ Renal Pelvis $\\rightarrow$ Renal Medulla"
+    ],
+    "correctAnswer": "Renal Cortex $\\rightarrow$ Renal Medulla $\\rightarrow$ Renal Pelvis",
+    "explanation": "Anatomically, the kidney is organized into three main concentric regions: the outer layer is the granular renal cortex, the middle layer consists of the striated renal pyramids of the renal medulla, and the central collecting basin is the renal pelvis."
+  },
+  {
+    "question": "Which plant hormone is synthesized in response to stress conditions and acts as a powerful inhibitor of growth, forcing seed and bud dormancy?",
+    "options": [
+      "Gibberellic acid",
+      "Cytokinin",
+      "Abscisic acid (ABA)",
+      "Auxin"
+    ],
+    "correctAnswer": "Abscisic acid (ABA)",
+    "explanation": "Abscisic acid acts as a growth inhibitor. It prevents seeds from germinating prematurely under unfavorable environmental conditions and coordinates plant survival strategies during drought, freezing, and heat stresses."
+  },
+  {
+    "question": "What is the primary function of the prostate gland secretions within the human male reproductive system?",
+    "options": [
+      "To produce millions of motile sperm cells daily",
+      "To secrete an alkaline fluid that neutralizes the acidic environment of the female vagina",
+      "To store mature sperm cells for up to several months",
+      "To secrete pure water to dilute the blood supply to the penis"
+    ],
+    "correctAnswer": "To secrete an alkaline fluid that neutralizes the acidic environment of the female vagina",
+    "explanation": "The prostate gland secretes a milky, slightly alkaline fluid that forms a significant portion of semen. This alkalinity neutralizes the acidic vaginal secretions, protecting the sperm and optimizing their motility."
+  },
+  {
+    "question": "In a common flowering plant, which portion of the pistil/carpel serves as the sticky receptive surface for landing pollen grains?",
+    "options": [
+      "The style",
+      "The filament",
+      "The stigma",
+      "The ovary"
+    ],
+    "correctAnswer": "The stigma",
+    "explanation": "The carpel consists of three parts: the ovary at the base, a slender column called the style, and the stigma at the top. The stigma is structurally adapted with sticky secretions, hairs, or ridges to trap pollen grains successfully."
+  },
+  {
+    "question": "Which statement accurately describes the function of the human systemic capillary beds?",
+    "options": [
+      "They act as high-pressure storage zones for oxygenated blood.",
+      "They allow nutrients and oxygen to diffuse out of the blood into tissues while carbon dioxide and metabolic wastes diffuse into the blood.",
+      "They filter whole proteins out of the body through sweat glands.",
+      "They pulse rhythmically to drive blood back up to the heart without using veins."
+    ],
+    "correctAnswer": "They allow nutrients and oxygen to diffuse out of the blood into tissues while carbon dioxide and metabolic wastes diffuse into the blood.",
+    "explanation": "Systemic capillaries bridge the arterial and venous networks. Their thin walls and slow blood velocity provide the ideal conditions for the exchange of gases, metabolic substrates, and chemical signaling molecules between blood plasma and interstitial fluid."
+  },
+  {
+    "question": "Which evolutionary advancement distinguishes Angiosperms from Gymnosperms regarding their reproductive mechanisms?",
+    "options": [
+      "The complete abandonment of sexual reproduction",
+      "The production of flowers to facilitate targeted animal pollination and fruits for seed dispersal",
+      "The reliance on wind to carry flagellated swimming zoospore structures",
+      "The development of a life cycle lacking any gametophyte phase"
+    ],
+    "correctAnswer": "The production of flowers to facilitate targeted animal pollination and fruits for seed dispersal",
+    "explanation": "While both groups are seed plants, Angiosperms evolved flowers to recruit animal vectors for highly efficient pollination, and ovaries that develop into fruits, which protect seeds and assist in their widespread dispersal by animals, wind, or water."
+  },
+  {
+    "question": "What specialized cells line the inner layer of the Bowman's capsule and possess foot-like extensions (pedicels) that form filtration slits?",
+    "options": [
+      "Endothelial cells",
+      "Podocytes",
+      "Macula densa cells",
+      "Mesangial cells"
+    ],
+    "correctAnswer": "Podocytes",
+    "explanation": "Podocytes are highly specialized epithelial cells forming the visceral layer of Bowman's capsule. Their interdigitating pedicels wrap around glomerular capillaries, leaving narrow gaps called filtration slits that allow water and small solutes to enter the nephron while blocking large macromolecules."
+  },
+  {
+    "question": "What gaseous plant hormone regulates the ripening of fruits and stimulates the abscission of leaves and aging flowers?",
+    "options": [
+      "Auxin",
+      "Ethylene",
+      "Cytokinin",
+      "Gibberellin"
+    ],
+    "correctAnswer": "Ethylene",
+    "explanation": "Ethylene ($C_2H_4$) is a unique, gaseous hydrocarbon plant hormone. It triggers autocatalytic fruit ripening by breaking down complex cell walls into simple sugars and coordinates leaf drop (abscission) in autumn."
+  },
+  {
+    "question": "Which part of the human tooth contains blood vessels, lymphatic channels, and nerve fibers, making it the living core of the structure?",
+    "options": [
+      "Enamel",
+      "Dentin",
+      "Pulp cavity",
+      "Cementum"
+    ],
+    "correctAnswer": "Pulp cavity",
+    "explanation": "The outermost layer of a tooth is non-living enamel, followed by dense dentin. The very center of the tooth houses the pulp cavity, a soft connective tissue matrix packed with blood capillaries and sensory nerve endings."
+  },
+  {
+    "question": "What physiological condition causes the condition known as 'Rickets' in developing children?",
+    "options": [
+      "A severe lack of dietary iodine leading to thyroid malfunction",
+      "Deficiency in Vitamin D or Calcium, preventing proper bone mineralization",
+      "Excessive absorption of iron within the large intestine",
+      "Inability to metabolize complex carbohydrates due to low insulin"
+    ],
+    "correctAnswer": "Deficiency in Vitamin D or Calcium, preventing proper bone mineralization",
+    "explanation": "Vitamin D is essential for the intestinal absorption of calcium. A deficiency in either Vitamin D or calcium means growing bones cannot absorb enough minerals, resulting in soft, weak, and characteristically bowed skeletal structures in children."
+  },
+  {
+    "question": "What is the primary role of the epiglottis during the human swallowing mechanism?",
+    "options": [
+      "To chemically break down food particles passing into the stomach",
+      "To seal off the glottis (laryngeal opening) to prevent food from entering the trachea",
+      "To produce mucus to lubricate the pharyngeal passage",
+      "To expand the nasal cavity to facilitate continuous breathing while eating"
+    ],
+    "correctAnswer": "To seal off the glottis (laryngeal opening) to prevent food from entering the trachea",
+    "explanation": "The epiglottis is a flexible flap of elastic cartilage at the root of the tongue. When swallowing, it folds down over the entrance of the larynx, directing food down the esophagus and preventing aspiration into the respiratory tract."
+  },
+  {
+    "question": "In the human female reproductive system, where does fertilization normally occur under optimal physiological conditions?",
+    "options": [
+      "Inside the uterine cavity",
+      "Within the cervix",
+      "Inside the Fallopian tube (oviduct)",
+      "Directly on the surface of the ovary"
+    ],
+    "correctAnswer": "Inside the Fallopian tube (oviduct)",
+    "explanation": "After ovulation, the secondary oocyte is swept into the fallopian tube. Sperm cells swim through the uterus into the tube, where fertilization typically occurs (specifically within the ampulla region) before the zygote travels down to the uterus."
+  },
+  {
+    "question": "Which of the following describes the function of the human lymphatic system in relation to the circulatory system?",
+    "options": [
+      "It pumps high-pressure arterial blood to the upper extremities.",
+      "It collects excess fluid filtered out of blood capillaries and returns it to the venous system.",
+      "It synthesizes red blood cells to replace damaged erythrocytes.",
+      "It absorbs carbon dioxide gas directly from the atmosphere."
+    ],
+    "correctAnswer": "It collects excess fluid filtered out of blood capillaries and returns it to the venous system.",
+    "explanation": "At capillary beds, more fluid is filtered out into the tissues by hydrostatic pressure than is reabsorbed by osmotic pressure. The lymphatic system gathers this excess interstitial fluid (now called lymph), filters it through lymph nodes, and returns it to the blood via the subclavian veins."
+  },
+  {
+    "question": "Which group of plants represents the most primitive members of the Plant Kingdom, lacking true roots, stems, leaves, and vascular networks?",
+    "options": [
+      "Pteridophytes",
+      "Bryophytes",
+      "Gymnosperms",
+      "Angiosperms"
+    ],
+    "correctAnswer": "Bryophytes",
+    "explanation": "Bryophytes are evolutionary links between aquatic algae and terrestrial vascular plants. Because they lack specialized vascular tissues (xylem/phloem), they must remain small and absorb water directly across their surfaces, using simple rhizoids for anchoring rather than true roots."
+  },
+  {
+    "question": "What molecule acts as the final electron acceptor at the very end of the mitochondrial Electron Transport Chain during aerobic respiration?",
+    "options": [
+      "Carbon dioxide",
+      "Water",
+      "Oxygen ($O_2$)",
+      "Glucose"
+    ],
+    "correctAnswer": "Oxygen ($O_2$)",
+    "explanation": "Oxygen has a high electronegativity, making it the ideal final electron acceptor. It pulls spent, low-energy electrons from cytochrome c oxidase and combines with free protons ($H^+$) to form water ($H_2O$)."
+  },
+  {
+    "question": "What structural feature of leaves maximizes the capture of carbon dioxide gas while balancing the danger of excessive desiccation?",
+    "options": [
+      "Microscopic pores called stomata regulated by pairs of osmotic guard cells",
+      "Thick layers of impermeable sclerenchyma covering the entire blade",
+      "Complete elimination of intercellular air spaces within the mesophyll",
+      "A permanent layer of liquid water covering the upper epidermis"
+    ],
+    "correctAnswer": "Microscopic pores called stomata regulated by pairs of osmotic guard cells",
+    "explanation": "Stomata allow the diffusion of $CO_2$ into the leaf for photosynthesis. Since water vapor escapes through these same openings, guard cells dynamically regulate the size of the stomatal pore, closing it when water is scarce."
+  },
+  {
+    "question": "Which component of the human heart contains the Bundle of His and distributes electrical impulses down toward the apex of the ventricles?",
+    "options": [
+      "The interatrial septum",
+      "The interventricular septum",
+      "The left outer myocardial wall",
+      "The coronary sinus"
+    ],
+    "correctAnswer": "The interventricular septum",
+    "explanation": "The Bundle of His runs down the interventricular septum, the muscular wall separating the left and right ventricles. It splits into the left and right bundle branches, conducting electrical signals down to the Purkinje fibers at the apex."
+  },
+  {
+    "question": "Which of the following is a classic macronutrient in human nutrition that serves as the primary structural building block for enzymes, muscle tissues, and plasma antibodies?",
+    "options": [
+      "Carbohydrates",
+      "Lipids",
+      "Proteins",
+      "Vitamins"
+    ],
+    "correctAnswer": "Proteins",
+    "explanation": "Proteins are broken down into amino acids, which the body uses to synthesize structural components (actin, myosin, collagen), functional catalysts (enzymes), and immune defense molecules (immunoglobulins/antibodies)."
+  },
+  {
+    "question": "What term describes the rapid mitotic divisions of a zygote that increase cell number without increasing the overall size of the early embryo?",
+    "options": [
+      "Gastrulation",
+      "Cleavage",
+      "Neurulation",
+      "Organogenesis"
+    ],
+    "correctAnswer": "Cleavage",
+    "explanation": "Cleavage refers to the series of rapid cell divisions immediately following fertilization. Because the cells divide without an intermediate growth phase, the massive cytoplasm of the zygote is partitioned into increasingly smaller cells called blastomeres."
+  },
+  {
+    "question": "Which plant hormone promotes cell division (cytokinesis) and delays leaf aging (senescence)?",
+    "options": [
+      "Auxin",
+      "Gibberellin",
+      "Cytokinin",
+      "Ethylene"
+    ],
+    "correctAnswer": "Cytokinin",
+    "explanation": "Cytokinins are produced in actively growing tissues, particularly roots, embryos, and fruits. They work in tandem with auxin to stimulate cytokinesis (cell division) and promote nutrient mobilization, which delays the aging process in leaves."
+  },
+  {
+    "question": "In the human digestive tract, what is the role of the enzyme Trypsin?",
+    "options": [
+      "To digest complex emulsified lipid droplets into fatty acids",
+      "To cleave polypeptides into smaller peptides within the alkaline small intestine",
+      "To break down simple starches into free monosaccharides",
+      "To activate hydrochloric acid production within parietal cells"
+    ],
+    "correctAnswer": "To cleave polypeptides into smaller peptides within the alkaline small intestine",
+    "explanation": "Trypsin is a pancreatic serine protease secreted into the duodenum as the inactive zymogen trypsinogen. Once activated by enterokinase, it breaks down proteins by cleaving peptide bonds, and also activates other pancreatic enzymes."
+  },
+  {
+    "question": "Which component of the plant vascular tissue consists of dead, hollow, elongated cells with tapered ends and heavily lignified pitted walls?",
+    "options": [
+      "Sieve-tube elements",
+      "Tracheids",
+      "Companion cells",
+      "Phloem parenchyma"
+    ],
+    "correctAnswer": "Tracheids",
+    "explanation": "Tracheids are primitive water-conducting elements found in all vascular plants (Pteridophytes, Gymnosperms, and Angiosperms). At functional maturity, they die and lose their cytoplasm, leaving behind a rigid, lignified cell wall that transports water and provides structural support."
+  },
+  {
+    "question": "What is the physiological function of the hormone Erythropoietin (EPO) secreted by specialized cells in the human kidney?",
+    "options": [
+      "To increase the rate of sodium excretion in the urine",
+      "To stimulate the bone marrow to produce more red blood cells",
+      "To elevate the secretion of gastric acid in the stomach",
+      "To control the expansion of the thoracic cavity during breathing"
+    ],
+    "correctAnswer": "To stimulate the bone marrow to produce more red blood cells",
+    "explanation": "When renal cells detect hypoxia (low blood oxygen levels), the kidneys increase the secretion of erythropoietin. EPO travels to the red bone marrow, where it drives the proliferation and maturation of erythrocyte precursors."
+  },
+  {
+    "question": "Which layer of the typical dicotyledonous leaf contains loosely packed, irregularly shaped cells with extensive air spaces to maximize gas exchange?",
+    "options": [
+      "Palisade mesophyll",
+      "Spongy mesophyll",
+      "Upper epidermis",
+      "Bundle sheath"
+    ],
+    "correctAnswer": "Spongy mesophyll",
+    "explanation": "The leaf mesophyll is divided into two regions: the upper palisade mesophyll (tightly packed, column-like cells optimized for light capture) and the lower spongy mesophyll, whose loose structure creates large internal surface areas for $CO_2$ and $O_2$ diffusion."
+  },
+  {
+    "question": "Which human white blood cell type is responsible for producing highly specific antibodies during an adaptive immune response?",
+    "options": [
+      "Neutrophils",
+      "B-lymphocytes (B cells)",
+      "Monocytes",
+      "Eosinophils"
+    ],
+    "correctAnswer": "B-lymphocytes (B cells)",
+    "explanation": "B-lymphocytes are key components of humoral immunity. Upon encountering a matching foreign antigen and receiving appropriate signals, they differentiate into clonal plasma cells that secrete massive quantities of antigen-specific antibodies."
+  },
+  {
+    "question": "What type of fruit develops from a single flower containing multiple, separate carpels/pistils (such as a raspberry or strawberry)?",
+    "options": [
+      "Simple fruit",
+      "Aggregate fruit",
+      "Multiple (composite) fruit",
+      "Accessory fruit"
+    ],
+    "correctAnswer": "Aggregate fruit",
+    "explanation": "An aggregate fruit forms when a single flower possesses several independent ovaries. Each ovary matures into a tiny fruitlet, and they merge together on a single receptacle (e.g., raspberries and blackberries)."
+  },
+  {
+    "question": "In human respiration, what serves as the primary chemical stimulus regulating the respiratory rate under normal homeostatic conditions?",
+    "options": [
+      "The concentration of dissolved nitrogen gas in arterial blood",
+      "The level of carbon dioxide and the resulting hydrogen ion concentration ($pH$) in blood and cerebrospinal fluid",
+      "The absolute volume of oxygen stored within the skeletal muscles",
+      "The total blood pressure measured within the systemic capillaries"
+    ],
+    "correctAnswer": "The level of carbon dioxide and the resulting hydrogen ion concentration ($pH$) in blood and cerebrospinal fluid",
+    "explanation": "The body monitors breathing primarily through $CO_2$ levels rather than oxygen. As $CO_2$ builds up, it reacts with water to form carbonic acid, lowering $pH$. Central and peripheral chemoreceptors detect this drop in $pH$ and signal the medulla to increase ventilation."
+  },
+  {
+    "question": "Which of the following describes the function of the human placenta?",
+    "options": [
+      "It allows the direct mixing of maternal and fetal whole blood cells to prevent anemia.",
+      "It facilitates the exchange of nutrients, gases, and wastes between maternal and fetal circulations without direct blood mixing.",
+      "It serves as a temporary storage sac for solid fetal digestive wastes.",
+      "It secretes high levels of testosterone to maintain male maternal traits."
+    ],
+    "correctAnswer": "It facilitates the exchange of nutrients, gases, and wastes between maternal and fetal circulations without direct blood mixing.",
+    "explanation": "The placenta brings maternal and fetal capillary networks into close proximity. Nutrients, oxygen, and antibodies diffuse from mother to fetus, while urea and carbon dioxide diffuse in reverse across the placental membrane, preventing immune rejection by keeping their blood separate."
+  },
+  {
+    "question": "What is the primary site of water absorption and final concentration of urine within the human kidney, acting under the influence of Antidiuretic Hormone (ADH)?",
+    "options": [
+      "Proximal Convoluted Tubule",
+      "Glomerulus",
+      "Collecting Duct",
+      "Ascending Loop of Henle"
+    ],
+    "correctAnswer": "Collecting Duct",
+    "explanation": "The collecting duct carries urine down through the hypertonic medullary gradient. When ADH is present, it triggers the insertion of aquaporin water channels into the duct membranes, allowing water to leave the urine and return to the bloodstream, producing concentrated urine."
+  },
+  {
+    "question": "Which family of common flowering plants is characterized by composite flower heads containing many tiny disk and ray florets arranged together (e.g., sunflowers and daisies)?",
+    "options": [
+      "Fabaceae",
+      "Solanaceae",
+      "Asteraceae",
+      "Liliaceae"
+    ],
+    "correctAnswer": "Asteraceae",
+    "explanation": "Asteraceae (the sunflower family) is one of the largest angiosperm families. Their defining feature is the inflorescence: a capitulum or head that mimics a single large flower but is actually a cluster of many individual florets."
+  },
+  {
+    "question": "What metabolic pathway breaks down a 6-carbon glucose molecule into two 3-carbon pyruvate molecules within the cellular cytosol?",
+    "options": [
+      "The Krebs Cycle",
+      "Glycolysis",
+      "The Electron Transport Chain",
+      "The Calvin-Benson Cycle"
+    ],
+    "correctAnswer": "Glycolysis",
+    "explanation": "Glycolysis is a universal, oxygen-independent pathway occurring in the cytosol. Through a series of 10 enzymatic steps, one glucose molecule is cleaved into two pyruvates, yielding a net profit of 2 ATP and 2 NADH."
+  },
+  {
+    "question": "Which structure connects human bone to bone, providing mechanical stability across synovial joints?",
+    "options": [
+      "Tendons",
+      "Ligaments",
+      "Cartilage plates",
+      "Myofibrils"
+    ],
+    "correctAnswer": "Ligaments",
+    "explanation": "Ligaments are tough bands of dense, fibrous regular connective tissue composed primarily of collagen. Their function is to bind bone to bone across joints, limiting excessive or abnormal movements, whereas tendons connect muscle to bone."
+  },
+  {
+    "question": "In plant biology, what is the primary structural difference between a seed and a spore?",
+    "options": [
+      "A spore is a multicellular embryo with nutrient reserves, while a seed is a single haploid cell.",
+      "A seed contains a multicellular embryo and a food supply protected by a coat, whereas a spore is a single unicellular reproductive structure.",
+      "Seeds are produced only by non-vascular bryophytes.",
+      "Spores are formed exclusively via double fertilization."
+    ],
+    "correctAnswer": "A seed contains a multicellular embryo and a food supply protected by a coat, whereas a spore is a single unicellular reproductive structure.",
+    "explanation": "Seeds represent a higher evolutionary advancement. A seed contains a pre-developed, diploid embryonic sporophyte and protective endosperm or cotyledon tissue, while a spore is a single haploid cell that must build an entire gametophyte from scratch."
+  },
+  {
+    "question": "Which part of the human autonomic nervous system is responsible for activating the 'fight-or-flight' response, increasing heart rate and dilating airways?",
+    "options": [
+      "Parasympathetic nervous system",
+      "Sympathetic nervous system",
+      "Somatic nervous system",
+      "Central nervous system"
+    ],
+    "correctAnswer": "Sympathetic nervous system",
+    "explanation": "The sympathetic nervous system prepares the body for physical emergency. It increases cardiac output, dilates bronchioles to maximize ventilation, routes blood to skeletal muscles, and inhibits non-essential functions like digestion."
+  },
+  {
+    "question": "What structural feature prevents the backflow of blood within human veins as it moves under low pressure back toward the heart?",
+    "options": [
+      "Thick, elastic muscular layers",
+      "One-way endothelial valves",
+      "Continuous electrical contractions of the venous walls",
+      "The suction force generated by the kidneys"
+    ],
+    "correctAnswer": "One-way endothelial valves",
+    "explanation": "Because venous blood pressure is low and must often combat gravity, veins contain internal pockets of endothelium acting as one-way valves. These valves allow blood to flow toward the heart but close if blood attempts to pool backward."
+  },
+  {
+    "question": "Which plant macronutrient is a vital structural component of nucleic acids (DNA/RNA), ATP, and phospholipids?",
+    "options": [
+      "Potassium",
+      "Iron",
+      "Phosphorus",
+      "Copper"
+    ],
+    "correctAnswer": "Phosphorus",
+    "explanation": "Phosphorus is absorbed by plants as phosphate ions ($PO_4^{3-}$). It is a key element in the sugar-phosphate backbone of nucleic acids, the energy transfer molecules (ATP), and the phospholipids that form cellular membranes."
+  },
+  {
+    "question": "During the human cardiac cycle, what mechanical event produces the first heart sound, described phonetically as 'lub'?",
+    "options": [
+      "The snapping shut of the aortic and pulmonary semilunar valves",
+      "The closure of the atrioventricular (tricuspid and bicuspid) valves",
+      "The rapid rushing of blood into the superior vena cava",
+      "The sudden contraction of the smooth muscle within the pulmonary trunk"
+    ],
+    "correctAnswer": "The closure of the atrioventricular (tricuspid and bicuspid) valves",
+    "explanation": "The first heart sound (S1, 'lub') occurs at the onset of ventricular systole. As the ventricles contract, internal pressure rises rapidly, forcing the atrioventricular (AV) valves shut to prevent backflow into the atria."
+  },
+  {
+    "question": "What is the function of the human gall bladder?",
+    "options": [
+      "To synthesize bile acids from red blood cell waste products",
+      "To store and concentrate bile produced by the liver until it is needed for lipid digestion",
+      "To neutralize stomach acid by secreting sodium bicarbonate",
+      "To break down complex starches using specialized proteolytic enzymes"
+    ],
+    "correctAnswer": "To store and concentrate bile produced by the liver until it is needed for lipid digestion",
+    "explanation": "Bile is continuously manufactured by hepatocytes in the liver. When digestion is not actively occurring, bile is diverted into the gallbladder, which stores it and absorbs excess water, concentrating it up to ten-fold."
+  },
+  {
+    "question": "Which embryonic membrane forms a fluid-filled sac that cushions and protects the developing human embryo from mechanical shocks?",
+    "options": [
+      "The chorion",
+      "The allantois",
+      "The amnion",
+      "The yolk sac"
+    ],
+    "correctAnswer": "The amnion",
+    "explanation": "The amnion is an extraembryonic membrane that encloses the amniotic cavity. This cavity is filled with amniotic fluid, providing a weightless, shock-absorbing environment that protects the fetus from physical impact and keeps it hydrated."
+  },
+  {
+    "question": "What chemical process is catalyzed by the enzyme Carbonic Anhydrase within human red blood cells?",
+    "options": [
+      "The splitting of glucose into pyruvate molecules",
+      "The reversible conversion of carbon dioxide and water into carbonic acid ($H_2CO_3$)",
+      "The direct binding of carbon monoxide to the heme group",
+      "The breakdown of urea into gaseous ammonia and water"
+    ],
+    "correctAnswer": "The reversible conversion of carbon dioxide and water into carbonic acid ($H_2CO_3$)",
+    "explanation": "Carbonic anhydrase is an extremely fast enzyme. It accelerates the reaction $CO_2 + H_2O \\rightleftharpoons H_2CO_3$, allowing carbon dioxide produced by tissues to be quickly converted into soluble bicarbonate ions for safe transport through the bloodstream."
+  },
+  {
+    "question": "Which of the following describes the condition of 'turgor pressure' within a plant cell?",
+    "options": [
+      "The cell shrivels completely due to an efflux of water into a hypertonic solution.",
+      "The protoplast swells with water and pushes outward against the rigid cell wall, providing structural stiffness to non-woody tissues.",
+      "The cell wall collapses inward because of extreme atmospheric pressure.",
+      "The nucleus dissolves due to high accumulation of toxic mineral ions."
+    ],
+    "correctAnswer": "The protoplast swells with water and pushes outward against the rigid cell wall, providing structural stiffness to non-woody tissues.",
+    "explanation": "When a plant cell is placed in a hypotonic environment, water enters via osmosis. The central vacuole expands, forcing the plasma membrane against the rigid cellulose cell wall. This turgor pressure keeps herbaceous plants upright."
+  },
+  {
+    "question": "Which of the following parts of the human digestive tract exhibits a highly alkaline environment ($pH\\ 8.0$) to optimize the activity of pancreatic enzymes?",
+    "options": [
+      "The stomach lumen",
+      "The duodenum",
+      "The esophagus",
+      "The oral cavity"
+    ],
+    "correctAnswer": "The duodenum",
+    "explanation": "Chyme leaving the stomach is highly acidic. When it enters the duodenum, the pancreas secretes large amounts of sodium bicarbonate ($NaHCO_3$), neutralizing the acid and creating an alkaline environment required for pancreatic proteases, amylases, and lipases to function."
+  },
+  {
+    "question": "What functional layer of the leaf contains a transparent cell structure completely devoid of chloroplasts, coated by a waxy lipid cuticle layer?",
+    "options": [
+      "Palisade mesophyll",
+      "Epidermis",
+      "Spongy layer",
+      "Vascular bundle sheath"
+    ],
+    "correctAnswer": "Epidermis",
+    "explanation": "The upper and lower epidermis consist of tightly packed, flattened cells that lack chloroplasts (except for guard cells), allowing light to pass through to the photosynthetic mesophyll layers below. They secrete a waxy cuticle to prevent water loss."
+  },
+  {
+    "question": "Which component of the human blood system lacks a nucleus and is formed by the fragmentation of large bone marrow cells called megakaryocytes?",
+    "options": [
+      "Erythrocytes",
+      "Monocytes",
+      "Platelets (thrombocytes)",
+      "T-lymphocytes"
+    ],
+    "correctAnswer": "Platelets (thrombocytes)",
+    "explanation": "Platelets are not whole cells but small, disc-shaped cytoplasmic fragments shed from megakaryocytes in the red bone marrow. They are filled with granules containing chemical clotting factors essential for blood coagulation."
+  },
+  {
+    "question": "What form of cell transport is utilized by plant roots to accumulate mineral ions against their concentration gradient from sparse soil solution?",
+    "options": [
+      "Simple passive diffusion",
+      "Facilitated osmosis",
+      "Active transport using ATP-driven carrier proteins",
+      "Bulk flow through open cell walls"
+    ],
+    "correctAnswer": "Active transport using ATP-driven carrier proteins",
+    "explanation": "Mineral concentrations are often much higher inside root cells than in the surrounding soil water. To pull ions inside against this gradient, the plant must expend metabolic energy (ATP) to pump nutrients through specific membrane transport proteins."
+  },
+  {
+    "question": "Which part of the human male reproductive tract serves as the main site for sperm maturation and long-term storage where they gain structural motility?",
+    "options": [
+      "The seminiferous tubules",
+      "The prostate gland",
+      "The epididymis",
+      "The seminal vesicles"
+    ],
+    "correctAnswer": "The epididymis",
+    "explanation": "Sperm cells are produced in an immature, non-motile state within the seminiferous tubules. They travel to the coiled tube of the epididymis, where they mature over several weeks, acquiring motility and the capacity to fertilize an egg."
+  },
+  {
+    "question": "What major anatomical adaptation allows the human heart to pump blood continuously without entering a state of tetanic, sustained muscle contraction?",
+    "options": [
+      "An exceptionally long absolute refractory period in cardiac muscle cells",
+      "The total absence of calcium ions in the myocardium",
+      "Direct control by voluntary somatic motor neurons",
+      "The rapid physical replacement of individual muscle fiber units every few beats"
+    ],
+    "correctAnswer": "An exceptionally long absolute refractory period in cardiac muscle cells",
+    "explanation": "Cardiac muscle action potentials feature a prolonged plateau phase caused by the slow influx of calcium ions. This extends the absolute refractory period, ensuring the heart muscle fully relaxes and refills with blood before it can contract again, preventing tetany."
+  },
+  {
+    "question": "Which region of the human kidney contains the loop of Henle and the collecting ducts arranged in distinct, structured triangular units called renal pyramids?",
+    "options": [
+      "Renal Cortex",
+      "Renal Medulla",
+      "Renal Capsule",
+      "Renal Hilum"
+    ],
+    "correctAnswer": "Renal Medulla",
+    "explanation": "The renal medulla is divided into 8 to 18 conical regions called renal pyramids. The striped appearance of these pyramids is created by the parallel alignment of the loops of Henle and the collecting ducts as they carry urine down toward the minor calyces."
+  },
+  {
+    "question": "What morphological term describes the union of a pollen grain's male gamete with the polar nuclei of the central cell to produce nutritive endosperm tissue?",
+    "options": [
+      "Syngamy",
+      "Triple fusion",
+      "Parthenogenesis",
+      "Apomixis"
+    ],
+    "correctAnswer": "Triple fusion",
+    "explanation": "In angiosperm double fertilization, one haploid ($n$) sperm fuses with the diploid ($2n$) central cell containing two polar nuclei. This fusion of three haploid nuclei is termed triple fusion, resulting in a triploid ($3n$) endosperm cell."
+  },
+  {
+    "question": "Which vitamin, abundant in citrus fruits, is necessary for proper collagen synthesis and prevents the bleeding gums associated with scurvy?",
+    "options": [
+      "Vitamin A",
+      "Vitamin B12",
+      "Vitamin C (ascorbic acid)",
+      "Vitamin K"
+    ],
+    "correctAnswer": "Vitamin C (ascorbic acid)",
+    "explanation": "Vitamin C is an essential cofactor for the enzymes prolyl hydroxylase and lysyl hydroxylase, which stabilize the triple helix structure of collagen. Without it, defective connective tissue synthesis leads to scurvy, marked by fragile blood vessels and poor wound healing."
+  },
+  {
+    "question": "What is the primary photosynthetic efficiency advantage of C4 plants over C3 plants under conditions of high temperature and drought?",
+    "options": [
+      "C4 plants do not require any water to split during light reactions.",
+      "C4 plants eliminate the wasteful process of photorespiration by physically separating carbon fixation from the Calvin cycle using bundle-sheath cells.",
+      "C4 plants absorb carbon dioxide directly through their root systems.",
+      "C4 plants lack mitochondria, allowing all energy to remain inside chloroplasts."
+    ],
+    "correctAnswer": "C4 plants eliminate the wasteful process of photorespiration by physically separating carbon fixation from the Calvin cycle using bundle-sheath cells.",
+    "explanation": "In hot, dry conditions, C3 plants close stomata, causing oxygen levels to rise inside the leaf. RuBisCO then binds oxygen instead of $CO_2$ (photorespiration), wasting energy. C4 plants use PEP carboxylase to fix carbon in mesophyll cells and pump it into bundle-sheath cells, keeping $CO_2$ high around RuBisCO and preventing photorespiration."
+  },
+  {
+    "question": "Which of the following enzymes is found in human pancreatic juices and specifically breaks down nucleic acids like DNA and RNA into individual nucleotides?",
+    "options": [
+      "Nucleases",
+      "Amylases",
+      "Peptidases",
+      "Maltases"
+    ],
+    "correctAnswer": "Nucleases",
+    "explanation": "The pancreas secretes ribonuclease and deoxyribonuclease (collectively called nucleases) into the duodenum. These enzymes hydrolyze dietary DNA and RNA into smaller oligonucleotides and individual nucleotides."
+  },
+  {
+    "question": "What event triggers the completion of the second meiotic division (Meiosis II) in a human secondary oocyte?",
+    "options": [
+      "The surge of Luteinizing Hormone during ovulation",
+      "The structural penetration of the oocyte membrane by a sperm cell during fertilization",
+      "The physical implantation of the blastocyst into the uterus",
+      "The sudden drop in progesterone at the end of the luteal phase"
+    ],
+    "correctAnswer": "The structural penetration of the oocyte membrane by a sperm cell during fertilization",
+    "explanation": "At ovulation, the egg is arrested in metaphase of Meiosis II. It remains locked in this stage until a sperm cell penetrates its protective outer layers. Fertilization triggers a surge in intracellular calcium, inducing the completion of Meiosis II and releasing the second polar body."
+  },
+  {
+    "question": "Which region of the human gastrointestinal tract is primarily responsible for the absorption of vitamin B12 via intrinsic factor complexes?",
+    "options": [
+      "The stomach",
+      "The duodenum",
+      "The terminal ileum",
+      "The ascending colon"
+    ],
+    "correctAnswer": "The terminal ileum",
+    "explanation": "Intrinsic factor is secreted by the parietal cells of the stomach and binds to dietary Vitamin B12. This complex travels intact through the small intestine until it reaches the terminal ileum, where specialized receptors absorb it via endocytosis."
+  },
+  {
+    "question": "What is the primary role of the framework known as the corpus luteum within the human ovarian cycle?",
+    "options": [
+      "To produce millions of primary oocytes before puberty",
+      "To secrete high levels of progesterone and estrogen to maintain the endometrial lining for potential implantation",
+      "To dissolve the blastocyst if genetic mutations are detected",
+      "To trigger the onset of the menstrual bleed via massive hormone release"
+    ],
+    "correctAnswer": "To secrete high levels of progesterone and estrogen to maintain the endometrial lining for potential implantation",
+    "explanation": "Following ovulation, the remnants of the ruptured Graafian follicle transform into the corpus luteum under the influence of LH. It secretes progesterone, which thickens the endometrium, preparing it to host an embryo."
+  },
+  {
+    "question": "Which component of the plant cell wall gives woody plants their rigid, structural compression strength, allowing trees to reach massive heights?",
+    "options": [
+      "Pectin",
+      "Lignin",
+      "Hemicellulose",
+      "Suberin"
+    ],
+    "correctAnswer": "Lignin",
+    "explanation": "Lignin is a complex polymer deposited in the secondary cell walls of plants, especially in xylem vessels and sclerenchyma fibers. It displaces water and cements cellulose fibers together, providing exceptional rigidity and rot resistance."
+  },
+  {
+    "question": "During human respiration, what is the anatomical destination of air immediately after passing through the pharynx?",
+    "options": [
+      "The trachea",
+      "The larynx",
+      "The bronchioles",
+      "The esophagus"
+    ],
+    "correctAnswer": "The larynx",
+    "explanation": "Air travels through the nasal/oral cavities into the pharynx (throat). From the pharynx, it moves through the larynx (voice box) via the glottis before descending into the trachea and branching bronchi."
+  },
+  {
+    "question": "What structural feature of the human proximal convoluted tubule (PCT) cells maximizes their ability to reabsorb 100% of filtered glucose and amino acids?",
+    "options": [
+      "A prominent brush border of microvilli and dense populations of mitochondria",
+      "A thick layer of waterproof suberin in the cell junctions",
+      "The complete absence of transport proteins to prevent backflow",
+      "Anucleated cell structures to allow more internal volume for storing salts"
+    ],
+    "correctAnswer": "A prominent brush border of microvilli and dense populations of mitochondria",
+    "explanation": "The PCT performs the bulk of reabsorption. Its microvilli dramatically increase surface area for transport proteins, while its abundant mitochondria generate the large amounts of ATP required to power the $Na^+/K^+$ pumps that drive secondary active transport of nutrients."
+  },
+  {
+    "question": "Which of the following common flowering plants belongs to the family Fabaceae and is ecologically famous for hosting nitrogen-fixing Rhizobium bacteria in its root nodules?",
+    "options": [
+      "Potato ($Solanum\\ tuberosum$)",
+      "Garden Pea ($Pisum\\ sativum$)",
+      "Maize ($Zea\\ mays$)",
+      "Tomato ($Solanum\\ lycopersicum$)"
+    ],
+    "correctAnswer": "Garden Pea ($Pisum\\ sativum$)",
+    "explanation": "The family Fabaceae (legumes) includes peas, beans, and alfalfa. They form symbiotic relationships with nitrogen-fixing bacteria, allowing them to thrive in nitrogen-poor soils and enrich the ecosystem."
+  },
+  {
+    "question": "What specialized heart tissue delay occurs at the Atrioventricular (AV) Node during electrical conduction, and what is its physiological significance?",
+    "options": [
+      "It delays the electrical impulse by roughly 0.1 seconds to allow the atria to fully contract and finish filling the ventricles with blood.",
+      "It speeds up the impulse to ensure both atria and ventricles contract at the exact same millisecond.",
+      "It blocks the impulse completely to allow the heart to rest for several seconds between beats.",
+      "It routes the electrical signal exclusively out to the lungs before stimulating the left ventricle."
+    ],
+    "correctAnswer": "It delays the electrical impulse by roughly 0.1 seconds to allow the atria to fully contract and finish filling the ventricles with blood.",
+    "explanation": "The AV node electrical delay is essential for efficient pumping. If the atria and ventricles contracted simultaneously, the ventricles would close before receiving all the blood from the atria. The delay ensures proper sequential filling."
+  },
+  {
+    "question": "In the plant kingdom, what generation is dominant, independent, and photosynthetic in all vascular plants (ferns, gymnosperms, and angiosperms)?",
+    "options": [
+      "Gametophyte",
+      "Sporophyte",
+      "Antheridium",
+      "Archegonium"
+    ],
+    "correctAnswer": "Sporophyte",
+    "explanation": "In vascular plants, evolutionary progression led to a dominant diploid sporophyte phase. While bryophytes have a dominant gametophyte, ferns have a small but independent gametophyte, and seed plants have reduced their gametophyte to a microscopic structure hidden inside flowers or cones."
+  },
+  {
+    "question": "Which hormone is secreted by the human stomach wall to stimulate gastric motility and the secretion of hydrochloric acid from parietal cells?",
+    "options": [
+      "Secretin",
+      "Gastrin",
+      "Insulin",
+      "Somatostatin"
+    ],
+    "correctAnswer": "Gastrin",
+    "explanation": "When food stretches the stomach or when partially digested proteins are sensed, G-cells in the gastric mucosa secrete the hormone gastrin. Gastrin travels via the blood to stimulate parietal cells to produce $HCl$ and increases gastric churning."
+  },
+  {
+    "question": "What structural portion of a seed develops directly into the primary root system of the germinating plant seedling?",
+    "options": [
+      "The plumule",
+      "The radicle",
+      "The epicotyl",
+      "The endosperm"
+    ],
+    "correctAnswer": "The radicle",
+    "explanation": "The plant embryo inside a seed has distinct regions: the plumule develops into the shoot system, while the radicle is the embryonic root that emerges first during germination to secure water and anchor the seedling."
+  },
+  {
+    "question": "Which form of nitrogen is most readily absorbed and assimilated by the majority of terrestrial plants from the soil structure?",
+    "options": [
+      "Gaseous diatomic nitrogen ($N_2$)",
+      "Nitrate ions ($NO_3^-$)",
+      "Organic amino acid complexes",
+      "Insoluble nitrogen oxides"
+    ],
+    "correctAnswer": "Nitrate ions ($NO_3^-$)",
+    "explanation": "Although plants can absorb ammonium ($NH_4^+$), nitrate ($NO_3^-$) is the most abundant and easily absorbed form of nitrogen in well-aerated agricultural soils. It is taken up via active co-transport systems with protons."
+  },
+  {
+    "question": "What is the primary function of the surfactant substance secreted by specialized Type II alveolar cells within human lungs?",
+    "options": [
+      "To chemically digest airborne fungal spores entering the air sacs",
+      "To reduce the surface tension of the alveolar fluid lining, preventing alveolar collapse during exhalation",
+      "To accelerate the diffusion velocity of nitrogen gas into capillaries",
+      "To bind permanently to carbon monoxide molecules to neutralize them"
+    ],
+    "correctAnswer": "To reduce the surface tension of the alveolar fluid lining, preventing alveolar collapse during exhalation",
+    "explanation": "Alveoli are lined with a thin film of water. The cohesive forces of water create high surface tension that would cause the microscopic air sacs to collapse during deflation. Pulmonary surfactant (a lipid-protein complex) disrupts these forces, reducing the effort needed to reinflate the lungs."
+  },
+  {
+    "question": "Which of the following represents a dynamic modification found in the small intestine called Peyer's patches and what is its role?",
+    "options": [
+      "Clusters of endocrine cells that secrete insulin",
+      "Aggregated lymphoid nodules that monitor intestinal bacteria and prevent pathogenic growth",
+      "Muscular bands that slow down the movement of chyme",
+      "Enzyme-secreting pits that break down complex dietary lipids"
+    ],
+    "correctAnswer": "Aggregated lymphoid nodules that monitor intestinal bacteria and prevent pathogenic growth",
+    "explanation": "Peyer's patches are components of gut-associated lymphoid tissue (GALT) located in the lamina propria and submucosa of the ileum. They sample antigens from the gut lumen to initiate targeted immune responses against potential pathogens."
+  },
+  {
+    "question": "In flowering plants, what does the mature fertilized ovary wall become?",
+    "options": [
+      "The seed coat (testa)",
+      "The fruit wall (pericarp)",
+      "The endosperm core",
+      "The cotyledon leaflet"
+    ],
+    "correctAnswer": "The fruit wall (pericarp)",
+    "explanation": "Following successful fertilization, hormonal changes signal the ovary to mature. The ovules develop into seeds, while the surrounding ovary wall thickens and transforms into the pericarp, which can be fleshy (like a tomato) or dry (like a nut)."
+  },
+  {
+    "question": "Which component of human blood lacks hemoglobin, contains a nucleus, and acts as a central player in cellular defense mechanisms against infections?",
+    "options": [
+      "Erythrocytes",
+      "Leukocytes (white blood cells)",
+      "Thrombocytes",
+      "Plasma micelles"
+    ],
+    "correctAnswer": "Leukocytes (white blood cells)",
+    "explanation": "Leukocytes are the true cells of the immune system. Unlike red blood cells, they retain their nuclei and organelles, do not contain oxygen-carrying hemoglobin, and can migrate out of blood vessels into infected tissues."
+  },
+  {
+    "question": "What type of plant growth response describes a root bending downward away from light and toward the pull of gravity?",
+    "options": [
+      "Positive phototropism and negative gravitropism",
+      "Negative phototropism and positive gravitropism",
+      "Thigmotropism",
+      "Hydrotropism"
+    ],
+    "correctAnswer": "Negative phototropism and positive gravitropism",
+    "explanation": "Roots exhibit positive gravitropism (growing downward toward gravity to locate water and anchors) and negative phototropism (growing away from light sources to remain securely underground)."
+  },
+  {
+    "question": "What structural mechanism prevents the entry of large proteins, like albumin, into the nephron filtrate during normal glomerular ultrafiltration?",
+    "options": [
+      "The positive electrical charge of the basement membrane repelling molecules",
+      "The narrow dimensions of the filtration slits and the negative electrical charge of the endothelial basement membrane",
+      "Active transport destruction of proteins within the afferent arteriole",
+      "The high density of microvilli lining the interior of the glomerulus"
+    ],
+    "correctAnswer": "The narrow dimensions of the filtration slits and the negative electrical charge of the endothelial basement membrane",
+    "explanation": "The glomerular filtration membrane features three layers: fenestrated endothelial cells, a basement membrane, and podocyte filtration slits. The basement membrane is rich in negatively charged glycoproteins that electrostatically repel plasma proteins, which are also negatively charged."
+  },
+  {
+    "question": "Which human digestive enzyme specifically targets the internal bonds of native proteins within the highly acidic environment of the stomach?",
+    "options": [
+      "Amylase",
+      "Pepsin",
+      "Lipase",
+      "Carboxypeptidase"
+    ],
+    "correctAnswer": "Pepsin",
+    "explanation": "Pepsin is an endopeptidase secreted by stomach chief cells as inactive pepsinogen. Activated by the low $pH$ of hydrochloric acid, it cleaves internal peptide bonds in proteins, breaking them down into shorter peptide chains."
+  },
+  {
+    "question": "What primary advantage is gained by flowering plants that perform cross-pollination rather than self-pollination?",
+    "options": [
+      "It requires significantly less metabolic energy and fewer pollen grains.",
+      "It increases genetic variation among offspring, enhancing evolutionary adaptability to shifting environments.",
+      "It guarantees that 100% of the pollen will land on a compatible stigma.",
+      "It allows reproduction to occur without using any sperm cells."
+    ],
+    "correctAnswer": "It increases genetic variation among offspring, enhancing evolutionary adaptability to shifting environments.",
+    "explanation": "Cross-pollination combines alleles from two different parent plants. This genetic shuffling produces diverse offspring, making the population more resilient to diseases, pests, and climate fluctuations compared to the inbred offspring of self-pollination."
+  },
+  {
+    "question": "Which major blood vessel carries oxygen-poor, carbon dioxide-rich blood from the lower half of the human body back to the right atrium of the heart?",
+    "options": [
+      "Superior vena cava",
+      "Inferior vena cava",
+      "Pulmonary trunk",
+      "Coronary sinus"
+    ],
+    "correctAnswer": "Inferior vena cava",
+    "explanation": "The inferior vena cava is a massive vein that returns deoxygenated blood from all organs and tissues located below the level of the diaphragm (abdomen, pelvis, and lower limbs) to the right atrium."
+  },
+  {
+    "question": "What specialized region within a plant chloroplast serves as the location for the light-independent reactions (Calvin Cycle) of photosynthesis?",
+    "options": [
+      "Thylakoid lumen",
+      "Thylakoid membrane",
+      "Stroma",
+      "Outer membrane surface"
+    ],
+    "correctAnswer": "Stroma",
+    "explanation": "The stroma is the fluid-filled space surrounding the thylakoid grana. It contains the soluble enzymes (such as RuBisCO), substrates, and cofactors required to fix carbon dioxide into carbohydrates using the ATP and NADPH generated by the light reactions."
+  },
+  {
+    "question": "Which human pancreatic enzyme is responsible for converting complex dietary starches into disaccharides within the lumen of the small intestine?",
+    "options": [
+      "Pancreatic amylase",
+      "Chymotrypsin",
+      "Pancreatic lipase",
+      "Sucrase"
+    ],
+    "correctAnswer": "Pancreatic amylase",
+    "explanation": "Pancreatic amylase is secreted into the duodenum via the pancreatic duct. It continues the starch digestion process initiated by salivary amylase, breaking down remaining starches into maltose, maltotriose, and alpha-dextrins."
+  },
+  {
+    "question": "What structural layer in a mature woody dicot stem comprises the functional bark tissue?",
+    "options": [
+      "All tissues located external to the vascular cambium, including phloem, cork cambium, and cork layers",
+      "Only the dead secondary xylem rings",
+      "The internal pith core exclusively",
+      "The single outer row of epidermal cells"
+    ],
+    "correctAnswer": "All tissues located external to the vascular cambium, including phloem, cork cambium, and cork layers",
+    "explanation": "Bark is a non-technical term for all tissues outside the vascular cambium. It includes the living inner bark (secondary phloem) and the protective outer bark (periderm, which contains the cork cambium and cork layers)."
+  },
+  {
+    "question": "Which statement describes the mechanical process of inspiration (inhalation) in human lungs?",
+    "options": [
+      "The diaphragm relaxes and moves upward, compressing the lungs.",
+      "The diaphragm contracts and moves downward while the external intercostal muscles contract, expanding the thoracic cavity and lowering pressure inside the lungs.",
+      "Air is actively forced into the lungs by contractions of the esophageal wall.",
+      "The lungs expand independently, pulling the ribs inward."
+    ],
+    "correctAnswer": "The diaphragm contracts and moves downward while the external intercostal muscles contract, expanding the thoracic cavity and lowering pressure inside the lungs.",
+    "explanation": "Inspiration is an active process. Contraction of the diaphragm and external intercostals expands the thoracic cavity volume, which drops the intrapulmonary pressure below atmospheric pressure (creating a partial vacuum), causing air to rush in."
+  },
+  {
+    "question": "What developmental structure forms the primitive axial skeletal support system in all early chordate embryos, which is later replaced by the vertebral column in humans?",
+    "options": [
+      "The neural tube",
+      "The noto-chord",
+      "The somite tier",
+      "The blastopore rim"
+    ],
+    "correctAnswer": "The noto-chord",
+    "explanation": "The notochord is a flexible, rod-like structure running along the dorsal side of chordate embryos. It provides structural support and secretes signaling proteins that guide the development of the overlying nervous system before breaking down as the bony spine forms."
+  },
+  {
+    "question": "What is the primary function of the root endodermis layer in vascular plants?",
+    "options": [
+      "To produce root hairs for mechanical nutrient capture",
+      "To act as a selective checkpoint regulating the passage of minerals from the soil cortex into the vascular cylinder",
+      "To perform high rates of underwater photosynthesis",
+      "To shed continuously to lubricate the pathway through the soil"
+    ],
+    "correctAnswer": "To act as a selective checkpoint regulating the passage of minerals from the soil cortex into the vascular cylinder",
+    "explanation": "The endodermis forms a tightly packed ring of cells separating the outer cortex from the vascular cylinder (stele). Its Casparian strip blocks passive fluid movement through cell walls, forcing all water and ions to clear a living cell membrane filter before entry."
+  },
+  {
+    "question": "Which structural type of tissue is responsible for lengthening plant stems and roots from their tips?",
+    "options": [
+      "Lateral meristems",
+      "Apical meristems",
+      "Sclerenchyma ground sheets",
+      "Secondary xylem rings"
+    ],
+    "correctAnswer": "Apical meristems",
+    "explanation": "Apical meristems are clusters of self-renewing, undifferentiated cells located at the tips of roots and shoots. Their continuous mitotic activity drives primary growth, lengthening the plant body to explore air and soil."
+  },
+  {
+    "question": "Which of the following blood components is a primary plasma protein responsible for maintaining the colloid osmotic (oncotic) pressure necessary to retain fluid inside human blood vessels?",
+    "options": [
+      "Hemoglobin",
+      "Albumin",
+      "Glycogen",
+      "Fibrin"
+    ],
+    "correctAnswer": "Albumin",
+    "explanation": "Albumin is the most abundant plasma protein synthesized by the liver. Because it cannot easily pass through capillary walls, it remains in the blood, creating an osmotic pull (oncotic pressure) that draws fluid back into capillaries, preventing tissue swelling (edema)."
+  },
+  {
+    "question": "What hormone is secreted by the human kidneys to directly increase systemic blood pressure by activating the renin-angiotensin-aldosterone system (RAAS)?",
+    "options": [
+      "Erythropoietin",
+      "Renin",
+      "Calcitriol",
+      "Cortisol"
+    ],
+    "correctAnswer": "Renin",
+    "explanation": "When specialized juxtaglomerular cells in the kidney detect a drop in blood pressure or fluid volume, they secrete the enzyme renin into the bloodstream. Renin cleaves angiotensinogen into angiotensin I, initiating a cascade that constricts blood vessels and retains salt."
+  },
+  {
+    "question": "What structural transition occurs within the human respiratory tree as airways branch from bronchi down to bronchioles?",
+    "options": [
+      "The walls lose their supporting cartilage rings and gain a higher proportion of smooth muscle tissue.",
+      "The lining epithelium changes into thick stratified squamous tissue.",
+      "The total surface area decreases drastically.",
+      "The airways gain rigid bone supports to withstand high air pressure."
+    ],
+    "correctAnswer": "The walls lose their supporting cartilage rings and gain a higher proportion of smooth muscle tissue.",
+    "explanation": "As the respiratory passages divide into smaller tubes, the cartilage rings disappear entirely, and the amount of smooth muscle in the walls increases. This allows bronchioles to change their diameter in response to nervous and chemical signals, regulating airflow resistance."
+  },
+  {
+    "question": "Which of the following common flowering plants is classified as a dicotyledonous plant featuring net-like (reticulate) leaf venation and a central taproot system?",
+    "options": [
+      "Wheat ($Triticum\\ aestivum$)",
+      "Hibiscus ($Hibiscus\\ rosa-sinensis$)",
+      "Onion ($Allium\\ cepa$)",
+      "Rice ($Oryza\\ sativa$)"
+    ],
+    "correctAnswer": "Hibiscus ($Hibiscus\\ rosa-sinensis$)",
+    "explanation": "Hibiscus is a true eudicot. It produces seeds with two cotyledons, possesses broad leaves with branching net-like veins, and develops a strong, deep-anchoring central taproot system."
+  },
+  {
+    "question": "In human digestive physiology, where are the brush border enzymes maltase, sucrase, and lactase located?",
+    "options": [
+      "Suspended within the acidic liquid of the stomach",
+      "Bound to the microvilli plasma membranes of the small intestinal epithelial cells",
+      "Secreted directly into the oral cavity by parotid glands",
+      "Inside the lumen of the large intestine"
+    ],
+    "correctAnswer": "Bound to the microvilli plasma membranes of the small intestinal epithelial cells",
+    "explanation": "Brush border enzymes are not secreted freely into the digestive fluid. Instead, they are structural membrane proteins on the microvilli of enterocytes. They complete carbohydrate digestion by breaking down disaccharides into absorbable monosaccharides as the nutrients pass across the cell surface."
+  },
+  {
+    "question": "What is the function of the human hormone Oxytocin during the processes of birth and lactation?",
+    "options": [
+      "It suppresses uterine activity to delay delivery.",
+      "It stimulates powerful smooth muscle contractions in the uterus during labor and drives milk ejection from mammary tissues during nursing.",
+      "It triggers the maturation of new primary follicles in the ovaries.",
+      "It increases the reabsorption of water in the kidney tubules."
+    ],
+    "correctAnswer": "It stimulates powerful smooth muscle contractions in the uterus during labor and drives milk ejection from mammary tissues during nursing.",
+    "explanation": "Oxytocin, produced in the hypothalamus and released by the posterior pituitary, works via positive feedback. During childbirth, it induces uterine contractions, and during nursing, it stimulates the contraction of myoepithelial cells in the breasts to eject milk ('let-down' reflex)."
+  },
+  {
+    "question": "Which phase of cellular respiration yields the largest quantity of ATP molecules per single molecule of glucose oxidized?",
+    "options": [
+      "Glycolysis",
+      "The Krebs Cycle",
+      "Oxidative Phosphorylation (Electron Transport Chain and Chemiosmosis)",
+      "The Transition Step"
+    ],
+    "correctAnswer": "Oxidative Phosphorylation (Electron Transport Chain and Chemiosmosis)",
+    "explanation": "While glycolysis and the Krebs cycle each generate only a net of 2 ATP directly per glucose molecule, oxidative phosphorylation utilizes the electron carriers NADH and $FADH_2$ to generate roughly 28 to 32 ATP molecules via the enzyme ATP synthase."
+  },
+  {
+    "question": "What physical structural pattern characterizes the arrangement of vascular bundles in a typical monocotyledon stem?",
+    "options": [
+      "Arranged in a neat, single ring near the periphery of the stem",
+      "Scattered randomly throughout the ground tissue system",
+      "Convoluted into a dense star-shaped cylinder in the very center",
+      "Completely absent from the stem structure"
+    ],
+    "correctAnswer": "Scattered randomly throughout the ground tissue system",
+    "explanation": "In cross-sections of monocot stems, the vascular bundles (containing xylem and phloem) do not form a structured ring. Instead, they are scattered throughout the ground parenchyma, with higher densities near the stem edge."
+  },
+  {
+    "question": "Which of the following choices best defines the biological meaning of 'double fertilization' in angiosperms?",
+    "options": [
+      "Two different pollen tubes fertilize the same egg cell to create twins.",
+      "One sperm cell fuses with the egg to form a zygote, while a second sperm cell fuses with the two polar nuclei to form triploid endosperm.",
+      "The egg cell divides twice without sperm interaction.",
+      "A single sperm fertilizes both the ovary and the surrounding sepals."
+    ],
+    "correctAnswer": "One sperm cell fuses with the egg to form a zygote, while a second sperm cell fuses with the two polar nuclei to form triploid endosperm.",
+    "explanation": "Double fertilization is a hallmark of angiosperms. It ensures that energy-rich nutritive tissue (endosperm) develops only when an egg has been successfully fertilized, preventing resource waste on unfertilized ovules."
+  },
+  {
+    "question": "Which valve separates the human left ventricle from the systemic aorta, preventing blood from flowing back into the heart during ventricular diastole?",
+    "options": [
+      "Bicuspid (Mitral) valve",
+      "Aortic semilunar valve",
+      "Tricuspid valve",
+      "Pulmonary semilunar valve"
+    ],
+    "correctAnswer": "Aortic semilunar valve",
+    "explanation": "The aortic valve is a three-cusped semilunar valve located at the base of the ascending aorta. When the left ventricle relaxes (diastole), the drop in pressure causes blood to fill the valve cusps, snapping them shut to maintain forward systemic flow."
+  },
+  {
+    "question": "What is the primary role of the macronutrient Potassium ($K^+$) within living plant tissues?",
+    "options": [
+      "It serves as a core atom in structural protein strands.",
+      "It acts as a key osmotic agent regulating stomatal opening and closing and activates multiple metabolic enzymes.",
+      "It undergoes photolysis to generate oxygen gas.",
+      "It is stored as dense starch crystals inside wood tissues."
+    ],
+    "correctAnswer": "It acts as a key osmotic agent regulating stomatal opening and closing and activates multiple metabolic enzymes.",
+    "explanation": "Potassium does not build structural cell walls or proteins. Instead, it remains a free ion ($K^+$) that acts as the primary solute driving osmotic water movements, especially within guard cells to manage stomatal mechanics."
+  },
+  {
+    "question": "Which component of the human gastric juice cleaves milk proteins into smaller fragments, primarily active in infants?",
+    "options": [
+      "Amylase",
+      "Rennin (Chymosin)",
+      "Bile",
+      "Sucrase"
+    ],
+    "correctAnswer": "Rennin (Chymosin)",
+    "explanation": "Rennin is a proteolytic enzyme secreted by gastric chief cells in newborn mammals. It curdles milk by transforming soluble casein into insoluble paracasein, delaying its passage through the gut to ensure optimal digestion of milk nutrients."
+  },
+  {
+    "question": "What developmental milestone occurs during human embryogenesis during the process called Gastrulation?",
+    "options": [
+      "The closing of the neural tube to form the brain tissue",
+      "The rearrangement of the single-layered blastula into a three-layered embryo containing ectoderm, mesoderm, and endoderm",
+      "The primary heartbeat initiation",
+      "The structural hardening of the long bones"
+    ],
+    "correctAnswer": "The rearrangement of the single-layered blastula into a three-layered embryo containing ectoderm, mesoderm, and endoderm",
+    "explanation": "Gastrulation is a fundamental morphogenetic process. It transforms the simple blastocyst into a complex, triple-layered structural map (gastrula), establishing the primary germ layers that give rise to all adult organ systems."
+  },
+  {
+    "question": "Which specialized region of the human nephron is heavily involved in the variable, hormone-controlled reabsorption of sodium and secretion of potassium under the direct command of Aldosterone?",
+    "options": [
+      "The Glomerulus",
+      "The Descending Loop of Henle",
+      "The Distal Convoluted Tubule (DCT) and Collecting Duct",
+      "The Bowman's Capsule wall"
+    ],
+    "correctAnswer": "The Distal Convoluted Tubule (DCT) and Collecting Duct",
+    "explanation": "While the proximal tubule reabsorbs solutes automatically, fine-tuning occurs in the DCT and collecting ducts. Here, aldosterone stimulates the production of sodium channels and sodium-potassium pumps to regulate blood volume and electrolyte balance."
+  },
+  {
+    "question": "What process describes the movement of organic sugar molecules through the phloem from an area of production to an area of utilization or storage?",
+    "options": [
+      "Transpiration",
+      "Translocation",
+      "Imbibition",
+      "Guttation"
+    ],
+    "correctAnswer": "Translocation",
+    "explanation": "Translocation is the technical term for the transport of soluble organic products of photosynthesis (sucrose) through the phloem sieve-tube network, moving from carbohydrate sources (e.g., mature leaves) to sinks (e.g., roots, shoots, flowers, and storage organs)."
+  },
+  {
+    "question": "Which component of the human heart's electrical conduction network is responsible for spreading the contraction impulse directly through the ventricular myocardial muscle cells?",
+    "options": [
+      "The Sinoatrial Node",
+      "The Purkinje Fibers",
+      "The Atrioventricular Node",
+      "The Tendinous Chords"
+    ],
+    "correctAnswer": "The Purkinje Fibers",
+    "explanation": "Purkinje fibers are specialized, large-diameter cardiac muscle cells adapted for rapid electrical conduction. They branch out from the bundle branches and spread the action potential directly to the contractile cells of the ventricles, causing coordinated contraction from the apex upward."
+  },
+  {
+    "question": "What structural role is played by the hormone Progesterone within the human menstrual cycle?",
+    "options": [
+      "It stimulates the maturation of new primordial ovarian follicles.",
+      "It triggers the shedding of the endometrial tissue during the first week.",
+      "It thickens, vascularizes, and maintains the endometrial lining of the uterus, preparing it to sustain an implanted embryo.",
+      "It acts on the thyroid to accelerate overall metabolic output."
+    ],
+    "correctAnswer": "It thickens, vascularizes, and maintains the endometrial lining of the uterus, preparing it to sustain an implanted embryo.",
+    "explanation": "Progesterone is the primary hormone of the secretory phase, produced by the corpus luteum. It converts the estrogen-primed endometrium into a nutrient-rich, receptive tissue suitable for embryo implantation and suppresses uterine contractions."
+  },
+  {
+    "question": "Which group of structural features is unique to Bryophytes compared to Gymnosperms?",
+    "options": [
+      "They produce structural wood stems and naked seeds.",
+      "They lack specialized vascular tissues, stems, and roots, using multicellular rhizoids instead.",
+      "They use specialized flowers to recruit animal pollinators.",
+      "They maintain a dominant diploid sporophyte phase throughout their life cycle."
+    ],
+    "correctAnswer": "They lack specialized vascular tissues, stems, and roots, using multicellular rhizoids instead.",
+    "explanation": "Bryophytes are non-vascular land plants. Lacking xylem and phloem, they cannot develop true structural organs like roots or stems, instead relying on simple cellular sheets and anchoring filaments called rhizoids."
+  },
+  {
+    "question": "During the process of respiration in plant cells, where are the carbon dioxide molecules released?",
+    "options": [
+      "During the light reactions inside the thylakoid lumen",
+      "During Glycolysis in the cytoplasmic matrix",
+      "During the Transition Step and the Krebs Cycle inside the mitochondrial matrix",
+      "Across the outer plasma membrane via active transport pumps"
+    ],
+    "correctAnswer": "During the Transition Step and the Krebs Cycle inside the mitochondrial matrix",
+    "explanation": "Carbon dioxide is a waste product of carbohydrate oxidation. It is stripped from pyruvate during its conversion to acetyl-CoA (transition step) and during the subsequent enzymatic steps of the Krebs cycle within the mitochondrial matrix."
+  },
+  {
+    "question": "What specialized layer of cells lines the inner surface of all human blood vessels, providing a smooth, frictionless barrier for blood flow?",
+    "options": [
+      "Mesothelium",
+      "Endothelium",
+      "Stratified columnar epithelium",
+      "Keratinized epidermis"
+    ],
+    "correctAnswer": "Endothelium",
+    "explanation": "The endothelium is a simple squamous epithelial layer lining the entire cardiovascular system, including arteries, capillaries, veins, and the heart chambers. It prevents abnormal clotting and regulates vascular permeability."
+  },
+  {
+    "question": "What nutritional deficiency disorder results from a severe lack of protein in the diet despite an adequate intake of total calories, typically causing abdominal edema in children?",
+    "options": [
+      "Marasmus",
+      "Kwashiorkor",
+      "Anemia",
+      "Pellagra"
+    ],
+    "correctAnswer": "Kwashiorkor",
+    "explanation": "Kwashiorkor is caused by severe protein deficiency alongside sufficient carbohydrate intake. The lack of protein drops plasma albumin levels, reducing blood oncotic pressure. Fluid leaves the capillaries and pools in interstitial spaces, causing a swollen abdomen (edema)."
+  },
+  {
+    "question": "Which of the following physical variables directly increases the rate of transpiration from a plant leaf?",
+    "options": [
+      "An increase in ambient atmospheric humidity",
+      "A decrease in wind speed across the leaf surface",
+      "An increase in ambient temperature accompanied by low humidity and steady air movement",
+      "Complete closure of the stomatal pores"
+    ],
+    "correctAnswer": "An increase in ambient temperature accompanied by low humidity and steady air movement",
+    "explanation": "Higher temperatures increase water evaporation rates, while low humidity steepens the water vapor concentration gradient between the leaf interior and the air. Air movement sweeps away boundary layers of moisture, further accelerating transpiration."
+  },
+  {
+    "question": "In the human kidney, where does the process of tubular secretion primarily take place to eliminate excess drugs, toxins, and hydrogen ions?",
+    "options": [
+      "The Glomerular capillary network",
+      "The Proximal and Distal Convoluted Tubules",
+      "The Descending Loop of Henle thin segment",
+      "The structural space of the renal pelvis"
+    ],
+    "correctAnswer": "The Proximal and Distal Convoluted Tubules",
+    "explanation": "Tubular secretion moves substances from the peritubular capillaries into the nephron lumen. It occurs mainly in the PCT and DCT, serving as a secondary mechanism to clear metabolic wastes, drugs, and excess protons ($H^+$) to regulate blood $pH$."
+  },
+  {
+    "question": "Which morphological type of cell within a flowering plant provides flexible mechanical support to young, growing stems and leaf petioles, characterized by unevenly thickened primary cell walls?",
+    "options": [
+      "Parenchyma",
+      "Sclerenchyma",
+      "Collenchyma",
+      "Sieve elements"
+    ],
+    "correctAnswer": "Collenchyma",
+    "explanation": "Collenchyma cells are living at maturity and have primary cell walls thickened unevenly with cellulose and pectin, often at the corners. They provide flexible support to growing plant organs without restricting elongation."
+  },
+  {
+    "question": "What prevents human self-digestion by the highly potent proteolytic enzyme pepsin within the stomach lining?",
+    "options": [
+      "The constant secretion of a thick, alkaline mucus barrier and the production of pepsin in an inactive zymogen form",
+      "The rapid destruction of pepsin by the liver",
+      "The stomach wall being composed entirely of non-living keratin",
+      "The absence of water within the gastric pits"
+    ],
+    "correctAnswer": "The constant secretion of a thick, alkaline mucus barrier and the production of pepsin in an inactive zymogen form",
+    "explanation": "The stomach protects itself by producing pepsin as inactive pepsinogen, which is only activated in the acidic stomach lumen. Additionally, goblet cells secrete a thick mucus layer rich in bicarbonate ($HCO_3^-$) to neutralize acid near the epithelial surface."
+  },
+  {
+    "question": "Which part of the human heart receives highly oxygenated blood returning directly from the lungs via the pulmonary veins?",
+    "options": [
+      "Right Atrium",
+      "Right Ventricle",
+      "Left Atrium",
+      "Left Ventricle"
+    ],
+    "correctAnswer": "Left Atrium",
+    "explanation": "Oxygenated blood exits the alveolar capillaries of the lungs and travels through the four pulmonary veins into the left atrium. From there, it passes through the bicuspid valve into the left ventricle for systemic distribution."
+  },
+  {
+    "question": "What microspore structural layer forms the tough, chemically resistant outer wall of a pollen grain, composed of the resilient polymer sporopollenin?",
+    "options": [
+      "Intine",
+      "Exine",
+      "Tapetum layer",
+      "Endothecium"
+    ],
+    "correctAnswer": "Exine",
+    "explanation": "The pollen wall has two main layers: the inner cellulosic intine and the outer exine. The exine is made of sporopollenin, one of the most chemically inert organic polymers known, protecting the male gametophyte from desiccation and physical damage."
+  },
+  {
+    "question": "Which human hormone is produced by the anterior pituitary gland and directly coordinates the growth of long bones and skeletal muscle tissues?",
+    "options": [
+      "Thyroxine",
+      "Growth Hormone (GH)",
+      "Adrenocorticotropic Hormone (ACTH)",
+      "Calcitonin"
+    ],
+    "correctAnswer": "Growth Hormone (GH)",
+    "explanation": "Growth Hormone (somatotropin) stimulates cellular mitosis, amino acid uptake, and protein synthesis. It signals the liver to release insulin-like growth factors (IGFs), which drive cartilage proliferation and bone elongation at the epiphyseal plates."
+  },
+  {
+    "question": "In the plant kingdom, which division is structurally characterized by the production of seeds that are enclosed within specialized protective structures called carpels?",
+    "options": [
+      "Bryophyta",
+      "Pteridophyta",
+      "Gymnospermae",
+      "Angiospermae"
+    ],
+    "correctAnswer": "Angiospermae",
+    "explanation": "Angiosperms are the flowering plants. Unlike gymnosperms whose ovules are exposed to the environment, angiosperm ovules are enclosed within a modified leaf capsule called a carpel (the ovary), which develops into a protective fruit."
+  },
+  {
+    "question": "What chemical component of human pancreatic juice neutralizes the highly acidic chyme arriving in the duodenum from the stomach?",
+    "options": [
+      "Bile pigments",
+      "Sodium bicarbonate ($NaHCO_3$)",
+      "Hydrochloric acid",
+      "Lactic acid"
+    ],
+    "correctAnswer": "Sodium bicarbonate ($NaHCO_3$)",
+    "explanation": "Duct cells in the pancreas actively secrete a fluid rich in sodium bicarbonate into the duodenum. This alkaline compound acts as a chemical buffer, neutralizing gastric acid to protect the intestinal mucosa and optimize enzyme function."
+  },
+  {
+    "question": "Which plant cells are responsible for structural sugar transport and lack a nucleus, ribosomes, and a distinct vacuole at maturity, requiring a companion cell for metabolic maintenance?",
+    "options": [
+      "Vessel elements",
+      "Sieve-tube elements",
+      "Tracheids",
+      "Sclereids"
+    ],
+    "correctAnswer": "Sieve-tube elements",
+    "explanation": "Sieve-tube elements are highly specialized cells within phloem tissue. To minimize resistance to bulk fluid flow, they dismantle their nuclei and major organelles at maturity, remaining dependent on adjacent companion cells for proteins and ATP."
+  },
+  {
+    "question": "What is the function of the human hormone Vasopressin (Antidiuretic Hormone / ADH)?",
+    "options": [
+      "To increase the excretion of water in the urine, lowering blood volume",
+      "To insert aquaporin channels into the collecting ducts of the kidney, maximizing water reabsorption into the blood",
+      "To digest complex proteins within the distal tubule",
+      "To trigger the physical contraction of the urinary bladder during urination"
+    ],
+    "correctAnswer": "To insert aquaporin channels into the collecting ducts of the kidney, maximizing water reabsorption into the blood",
+    "explanation": "ADH is synthesized in the hypothalamus and released by the posterior pituitary when blood osmolarity increases. It binds to collecting duct cells, triggering the insertion of aquaporin-2 water channels to reclaim water from urine and concentrate it."
+  },
+  {
+    "question": "Which layer of the human heart wall is composed of contractile cardiac muscle cells and forms the bulk of the heart structure?",
+    "options": [
+      "Endocardium",
+      "Myocardium",
+      "Epicardium",
+      "Pericardium"
+    ],
+    "correctAnswer": "Myocardium",
+    "explanation": "The heart wall has three layers: the inner endothelial endocardium, the middle muscular myocardium, and the outer visceral epicardium. The myocardium consists of branching, striated cardiac muscle fibers that generate the pumping force."
+  },
+  {
+    "question": "What structural component of the flower lifts the pollen-producing anther high into the air to optimize pollen capture or dispersal?",
+    "options": [
+      "The stigma",
+      "The filament",
+      "The petal",
+      "The sepal"
+    ],
+    "correctAnswer": "The filament",
+    "explanation": "The male reproductive organ of a flower is the stamen, which consists of a pollen-producing anther and a slender stalk called the filament. The filament extends the anther outward, making it accessible to wind currents or visiting pollinators."
+  },
+  {
+    "question": "In human digestive anatomy, what are the waves of coordinated smooth muscle contractions that move food progressively down the esophagus and intestinal tracts?",
+    "options": [
+      "Segmentation",
+      "Peristalsis",
+      "Mastication",
+      "Emulsification"
+    ],
+    "correctAnswer": "Peristalsis",
+    "explanation": "Peristalsis is an involuntary reflex involving the coordinated contraction of circular smooth muscles behind a bolus of food and the relaxation of longitudinal muscles ahead of it, pushing the contents forward through the digestive tract."
+  },
+  {
+    "question": "Which of the following plant pigments absorbs blue and red wavelengths of light while reflecting green wavelengths, giving leaves their characteristic color?",
+    "options": [
+      "Carotene",
+      "Chlorophyll",
+      "Xanthophyll",
+      "Anthocyanin"
+    ],
+    "correctAnswer": "Chlorophyll",
+    "explanation": "Chlorophylls a and b have absorption spectra that peak in the blue-violet and red regions of visible light. They absorb very little green light, which is instead reflected or transmitted through the leaf, making it appear green to our eyes."
+  },
+  {
+    "question": "What is the structural function of the vocal cords located within the human larynx?",
+    "options": [
+      "To filter microscopic dust particles out of the air using cilia strands",
+      "To vibrate as air is forced past them, producing sound waves for speech",
+      "To secrete surfactant fluid to lubricate the pharynx cavity",
+      "To pump oxygen gas into the esophagus during swallowing"
+    ],
+    "correctAnswer": "To vibrate as air is forced past them, producing sound waves for speech",
+    "explanation": "The vocal cords are two bands of elastic connective tissue stretched across the larynx. Skeletal muscles adjust their tension and alignment; as exhaled air forces its way through the glottis, the cords vibrate to generate sound."
+  },
+  {
+    "question": "Which human embryonic stage consists of a solid sphere of 16 or more blastomere cells resembling a mulberry, prior to hollow cavity formation?",
+    "options": [
+      "Blastocyst",
+      "Morula",
+      "Gastrula",
+      "Neurula"
+    ],
+    "correctAnswer": "Morula",
+    "explanation": "About 3 to 4 days after fertilization, cleavage divisions produce a solid ball of cells called a morula. This structure enters the uterine cavity, where it absorbs fluid to form an internal cavity, transforming into a blastocyst."
+  },
+  {
+    "question": "What term describes the transport mechanism that uses the high pressure generated inside phloem sieve elements at sources to push dissolved sugars toward low-pressure sink tissues?",
+    "options": [
+      "The cohesion-tension model",
+      "The pressure-flow (bulk flow) hypothesis",
+      "Active proton anti-port diffusion",
+      "Root pressure pumping"
+    ],
+    "correctAnswer": "The pressure-flow (bulk flow) hypothesis",
+    "explanation": "The pressure-flow hypothesis, proposed by Ernst Münch, states that high sucrose concentrations at the source draw water into the phloem via osmosis, generating high hydrostatic pressure. At the sink, sucrose is removed, water exits, and the resulting pressure gradient drives the bulk flow of sap."
+  },
+  {
+    "question": "Which of the following mineral elements is a micronutrient in plants, required only in trace amounts as an essential enzyme cofactor?",
+    "options": [
+      "Nitrogen",
+      "Magnesium",
+      "Zinc",
+      "Sulfur"
+    ],
+    "correctAnswer": "Zinc",
+    "explanation": "Nitrogen, magnesium, and sulfur are macronutrients required in large quantities. Zinc ($Zn^{2+}$) is a micronutrient required in tiny amounts, acting as a crucial catalytic component in enzymes like carbonic anhydrase and alcohol dehydrogenase."
+  },
+  {
+    "question": "Which structure prevents the backflow of blood from the aorta into the left ventricle during ventricular diastole?",
+    "options": [
+      "Mitral valve",
+      "Aortic semilunar valve",
+      "Tricuspid valve",
+      "Pulmonary valve"
+    ],
+    "correctAnswer": "Aortic semilunar valve",
+    "explanation": "The aortic semilunar valve closes during ventricular diastole when pressure in the aorta exceeds pressure in the relaxing left ventricle, preventing blood from flowing back into the heart."
+  },
+  {
+    "question": "Which of the following describes the function of the human hormone Insulin?",
+    "options": [
+      "To stimulate the breakdown of glycogen into glucose in the liver",
+      "To facilitate the uptake of glucose into body cells, lowering blood glucose levels",
+      "To increase the heart rate during exercise",
+      "To promote the secretion of digestive enzymes in the small intestine"
+    ],
+    "correctAnswer": "To facilitate the uptake of glucose into body cells, lowering blood glucose levels",
+    "explanation": "Insulin is secreted by pancreatic beta cells in response to high blood sugar. It binds to cell surface receptors, triggering the translocation of GLUT4 glucose transporters into the plasma membrane to lower blood glucose levels."
+  },
+  {
+    "question": "What type of venation pattern is characteristic of most monocotyledonous leaves?",
+    "options": [
+      "Reticulate venation",
+      "Parallel venation",
+      "Palmate venation",
+      "Dichotomous venation"
+    ],
+    "correctAnswer": "Parallel venation",
+    "explanation": "Monocot leaves typically have parallel venation, where the major veins run parallel to each other along the length of the leaf blade, a feature distinct from the net-like networks seen in dicots."
+  },
+  {
+    "question": "What is the primary site of filtration in the human kidney?",
+    "options": [
+      "Loop of Henle",
+      "Renal corpuscle",
+      "Distal convoluted tubule",
+      "Collecting duct"
+    ],
+    "correctAnswer": "Renal corpuscle",
+    "explanation": "The renal corpuscle, which consists of the glomerulus and Bowman's capsule, is the site where fluid is filtered from the blood into the nephron to begin urine formation."
+  },
+  {
+    "question": "Which of the following is a common flowering plant belonging to the family Solanaceae?",
+    "options": [
+      "Maize ($Zea\\ mays$)",
+      "Tomato ($Solanum\\ lycopersicum$)",
+      "Hibiscus ($Hibiscus\\ rosa-sinensis$)",
+      "Beans ($Phaseolus\\ vulgaris$)"
+    ],
+    "correctAnswer": "Tomato ($Solanum\\ lycopersicum$)",
+    "explanation": "Tomatoes belong to the family Solanaceae (the nightshade family), which also includes potatoes, peppers, and eggplants, characterized by flowers with five fused petals and a superior ovary."
+  },
+  {
+    "question": "What is the main source of oxygen gas released during plant photosynthesis?",
+    "options": [
+      "Carbon dioxide ($CO_2$)",
+      "Water ($H_2O$)",
+      "Glucose ($C_6H_{12}O_6$)",
+      "Atmospheric nitrogen"
+    ],
+    "correctAnswer": "Water ($H_2O$)",
+    "explanation": "Isotopic labeling experiments have demonstrated that the oxygen gas released during photosynthesis originates exclusively from the photolysis (splitting) of water molecules during the light reactions."
+  },
+  {
+    "question": "Which human blood vessel type carries blood under the highest pressure?",
+    "options": [
+      "Capillaries",
+      "Veins",
+      "Arteries",
+      "Venules"
+    ],
+    "correctAnswer": "Arteries",
+    "explanation": "Arteries receive blood directly from the contracting ventricles of the heart, meaning they must withstand and propagate the highest hydrostatic pressures within the circulatory system."
+  },
+  {
+    "question": "What structural component of human hemoglobin contains the iron atom that directly binds to an oxygen molecule?",
+    "options": [
+      "Globin polypeptide chain",
+      "Heme group",
+      "Carbonic anhydrase",
+      "Fibrinogen strand"
+    ],
+    "correctAnswer": "Heme group",
+    "explanation": "Each of the four subunits of a hemoglobin molecule contains a non-protein prosthetic group called a heme group. At the center of each heme group is an iron ion ($Fe^{2+}$) that binds reversibly to one molecule of oxygen."
+  },
+  {
+    "question": "Which plant tissue layer is located immediately inside the endodermis and gives rise to lateral roots?",
+    "options": [
+      "Pith",
+      "Cortex",
+      "Pericycle",
+      "Epidermis"
+    ],
+    "correctAnswer": "Pericycle",
+    "explanation": "The pericycle is a layer of meristematic cells located just inside the endodermis of roots. Its cells retain the capacity to divide, initiating the formation of lateral roots that push outward through the cortex."
+  },
+  {
+    "question": "What is the primary function of the structural folds called rugae in the human stomach?",
+    "options": [
+      "To increase the surface area for nutrient absorption",
+      "To allow the stomach to expand significantly when food enters",
+      "To secret hydrochloric acid directly into the lumen",
+      "To prevent food from moving backward into the esophagus"
+    ],
+    "correctAnswer": "To allow the stomach to expand significantly when food enters",
+    "explanation": "Rugae are large folds in the gastric mucosa that flatten out as the stomach fills with food, allowing it to expand its volume without a significant increase in internal pressure."
+  },
+  {
+    "question": "Which plant hormone promotes the elongation of cells in stems and is involved in bolting (rapid elongation of flowering stems)?",
+    "options": [
+      "Abscisic acid",
+      "Ethylene",
+      "Gibberellin",
+      "Cytokinin"
+    ],
+    "correctAnswer": "Gibberellin",
+    "explanation": "Gibberellins are plant hormones that promote stem elongation, leaf growth, and seed germination. They are particularly known for inducing 'bolting' in rosette plants in response to environmental cues."
+  },
+  {
+    "question": "Which part of the human respiratory system contains the alveolar sacs where gas exchange occurs?",
+    "options": [
+      "Trachea",
+      "Larynx",
+      "Bronchioles",
+      "Alveoli"
+    ],
+    "correctAnswer": "Alveoli",
+    "explanation": "The alveoli are microscopic, thin-walled air sacs located at the termini of the bronchial tree, providing the massive surface area required for oxygen and carbon dioxide diffusion."
+  },
+  {
+    "question": "What is the function of the human hormone Glucagon?",
+    "options": [
+      "To promote the storage of glucose as glycogen",
+      "To elevate blood glucose levels by stimulating glycogenolysis and gluconeogenesis in the liver",
+      "To accelerate the breakdown of proteins in skeletal muscle",
+      "To lower the heart rate during resting states"
+    ],
+    "correctAnswer": "To elevate blood glucose levels by stimulating glycogenolysis and gluconeogenesis in the liver",
+    "explanation": "Glucagon is secreted by the alpha cells of the pancreatic islets when blood glucose levels drop, signaling the liver to release stored glucose into the blood."
+  },
+  {
+    "question": "What form of lipid is absorbed into the lacteals of the lymphatic system within human intestinal villi?",
+    "options": [
+      "Free amino acids",
+      "Chylomicrons",
+      "Glucose-6-phosphate",
+      "Glycogen spheres"
+    ],
+    "correctAnswer": "Chylomicrons",
+    "explanation": "Monoglycerides and fatty acids absorbed by enterocytes are re-esterified into triglycerides and packaged with cholesterol and proteins into water-soluble particles called chylomicrons, which enter the lymphatic lacteals."
+  },
+  {
+    "question": "Which evolutionary group of plants features vascular tissues but lacks the ability to produce seeds, reproducing instead via spores?",
+    "options": [
+      "Bryophytes",
+      "Pteridophytes",
+      "Gymnosperms",
+      "Angiosperms"
+    ],
+    "correctAnswer": "Pteridophytes",
+    "explanation": "Pteridophytes, such as ferns and horsetails, are seedless vascular plants. They possess xylem and phloem, which allows them to grow large, but they still rely on spores for reproduction and dispersal."
+  },
+  {
+    "question": "What is the role of the template cell known as the generative cell inside a mature angiosperm pollen grain?",
+    "options": [
+      "To produce the protective pollen tube structure",
+      "To divide mitotically to produce two haploid sperm cells",
+      "To dissolve the waxy cuticle of the stigma",
+      "To store starch reserves for the embryo"
+    ],
+    "correctAnswer": "To divide mitotically to produce two haploid sperm cells",
+    "explanation": "A mature pollen grain contains a tube cell and a generative cell. The generative cell divides either before or during pollen tube growth to produce the two male gametes (sperm cells) required for double fertilization."
+  },
+  {
+    "question": "Which chamber of the human heart pumps oxygenated blood into the systemic aorta to supply the entire body?",
+    "options": [
+      "Right Atrium",
+      "Right Ventricle",
+      "Left Atrium",
+      "Left Ventricle"
+    ],
+    "correctAnswer": "Left Ventricle",
+    "explanation": "The left ventricle contracts with high pressure to force oxygenated blood through the aortic semilunar valve into the aorta, driving systemic circulation."
+  },
+  {
+    "question": "What biochemical process occurs during the light reactions of photosynthesis when a proton gradient drives the synthesis of ATP across the thylakoid membrane?",
+    "options": [
+      "Substrate-level phosphorylation",
+      "Photophosphorylation",
+      "Oxidative phosphorylation",
+      "Fermentation"
+    ],
+    "correctAnswer": "Photophosphorylation",
+    "explanation": "Photophosphorylation is the synthesis of ATP using light energy. The movement of electrons down an electron transport chain drives protons into the thylakoid lumen, and their return to the stroma through ATP synthase powers ATP production."
+  },
+  {
+    "question": "Which part of the human kidney gathers urine directly from the collecting ducts and funnels it into the ureter?",
+    "options": [
+      "Renal cortex",
+      "Renal pelvis",
+      "Bowman's capsule",
+      "Glomerulus"
+    ],
+    "correctAnswer": "Renal pelvis",
+    "explanation": "The renal pelvis is a central, funnel-shaped cavity in the kidney that collects urine from the major and minor calyces and channels it into the ureter for transport to the bladder."
+  },
+  {
+    "question": "Which plant hormone is primarily responsible for fruit ripening and is structurally a simple gas?",
+    "options": [
+      "Auxin",
+      "Gibberellin",
+      "Ethylene",
+      "Cytokinin"
+    ],
+    "correctAnswer": "Ethylene",
+    "explanation": "Ethylene is a gaseous plant hormone that coordinates fruit ripening, leaf abscission, and triple responses in seedlings."
+  },
+  {
+    "question": "What structural adaptation protects the human stomach wall from being damaged by its own highly acidic environment?",
+    "options": [
+      "A thick lining of keratinized stratified squamous cells",
+      "A layer of alkaline mucus secreted by surface mucous cells",
+      "Continuous neutralization of acid by bile salts in the stomach fundus",
+      "The absence of blood vessels in the gastric mucosa"
+    ],
+    "correctAnswer": "A layer of alkaline mucus secreted by surface mucous cells",
+    "explanation": "The stomach is protected by a mucosal barrier, which includes a thick layer of alkaline mucus containing bicarbonate ions that neutralizes acid near the stomach wall."
+  },
+  {
+    "question": "Which blood cell type is the most numerous leukocyte in human blood and acts as the primary first responder to bacterial infections?",
+    "options": [
+      "Lymphocytes",
+      "Monocytes",
+      "Neutrophils",
+      "Basophils"
+    ],
+    "correctAnswer": "Neutrophils",
+    "explanation": "Neutrophils make up 50-70% of circulating white blood cells. They migrate rapidly to sites of infection to engulf and destroy invading bacteria via phagocytosis and respiratory bursts."
+  },
+  {
+    "question": "What is the name of the process by which liquid water is taken up by a dry seed, triggering the swelling and rupture of the seed coat?",
+    "options": [
+      "Osmosis",
+      "Imbibition",
+      "Transpiration",
+      "Guttation"
+    ],
+    "correctAnswer": "Imbibition",
+    "explanation": "Imbibition is the physical absorption of water by hydrophilic substances, such as the proteins and cellulose inside a dry seed, providing the hydration needed to activate enzymes and break the seed coat."
+  },
+  {
+    "question": "Which component of the human respiratory tract contains the vocal cords and is commonly called the voice box?",
+    "options": [
+      "Pharynx",
+      "Larynx",
+      "Trachea",
+      "Bronchus"
+    ],
+    "correctAnswer": "Larynx",
+    "explanation": "The larynx is a cartilaginous structure that connects the pharynx to the trachea. It houses the vocal cords, which vibrate to produce sounds for speech."
+  },
+  {
+    "question": "What are the three main germ layers formed during the process of gastrulation in human development?",
+    "options": [
+      "Blastoderm, Trophoblast, Inner cell mass",
+      "Ectoderm, Mesoderm, Endoderm",
+      "Amnion, Chorion, Allantois",
+      "Epiblast, Hypoblast, Cytotrophoblast"
+    ],
+    "correctAnswer": "Ectoderm, Mesoderm, Endoderm",
+    "explanation": "Gastrulation reorganizes the early blastula embryonic layers into three definitive primary germ layers: the ectoderm, mesoderm, and endoderm."
+  },
+  {
+    "question": "Which of the following describes the mechanism of the cohesion-tension theory in plants?",
+    "options": [
+      "Sugars are pushed through the phloem by hydrostatic pressure differences.",
+      "Water is pulled up the xylem because evaporation from leaves pulls a continuous chain of water molecules held together by hydrogen bonds.",
+      "Roots pump mineral ions actively, forcing water upward through root pressure.",
+      "Gravity pulls down metabolic wastes into the root system for storage."
+    ],
+    "correctAnswer": "Water is pulled up the xylem because evaporation from leaves pulls a continuous chain of water molecules held together by hydrogen bonds.",
+    "explanation": "The cohesion-tension theory states that transpiration removes water from leaves, creating negative pressure (tension) that pulls a continuous, cohesive column of water upward through the xylem from the roots."
+  },
+  {
+    "question": "Which section of the human small intestine is the primary site for the absorption of iron?",
+    "options": [
+      "Duodenum",
+      "Jejunum",
+      "Ileum",
+      "Cecum"
+    ],
+    "correctAnswer": "Duodenum",
+    "explanation": "Iron absorption occurs primarily in the duodenum and upper jejunum, where specialized enterocyte transporters take up dietary iron ions."
+  },
+  {
+    "question": "What is the primary function of the root cap in plants?",
+    "options": [
+      "To maximize the absorption of mineral salts",
+      "To protect the delicate root apical meristem as it grows through the soil",
+      "To store starch reserves for winter use",
+      "To house symbiotic nitrogen-fixing bacteria"
+    ],
+    "correctAnswer": "To protect the delicate root apical meristem as it grows through the soil",
+    "explanation": "The root cap covers the root tip, protecting the dividing cells of the apical meristem from mechanical abrasion and damage as the root forces its way through soil particles."
+  },
+  {
+    "question": "Which hormone, secreted by the human placenta, is detected by standard home pregnancy tests?",
+    "options": [
+      "Progesterone",
+      "Human Chorionic Gonadotropin (hCG)",
+      "Estrogen",
+      "Prolactin"
+    ],
+    "correctAnswer": "Human Chorionic Gonadotropin (hCG)",
+    "explanation": "hCG is produced by the developing syncytiotrophoblast of the placenta shortly after implantation, and its presence in urine serves as the primary chemical indicator in home pregnancy tests."
+  },
+  {
+    "question": "What type of blood vessel contains internal valves to prevent the backflow of blood?",
+    "options": [
+      "Arteries",
+      "Arterioles",
+      "Veins",
+      "Capillaries"
+    ],
+    "correctAnswer": "Veins",
+    "explanation": "Because veins carry blood back to the heart under low pressure, they feature one-way endothelial valves to prevent gravity from causing blood to pool in the lower extremities."
+  },
+  {
+    "question": "Which of the following is an essential micronutrient for plants that plays a critical role in the photolysis of water during the light reactions?",
+    "options": [
+      "Nitrogen",
+      "Manganese",
+      "Phosphorus",
+      "Potassium"
+    ],
+    "correctAnswer": "Manganese",
+    "explanation": "Manganese ($Mn^{2+}$) is a critical component of the oxygen-evolving complex in Photosystem II, making it an essential cofactor for splitting water molecules to release electrons and oxygen gas."
+  },
+  {
+    "question": "Where does the chemical digestion of carbohydrates begin in the human body?",
+    "options": [
+      "Mouth",
+      "Stomach",
+      "Duodenum",
+      "Ileum"
+    ],
+    "correctAnswer": "Mouth",
+    "explanation": "Carbohydrate digestion begins in the mouth, where salivary glands secrete salivary amylase to start breaking down starch into simpler sugars."
+  },
+  {
+    "question": "What is the anatomical name for the functional tissue unit of the human kidney that filters blood and forms urine?",
+    "options": [
+      "Neuron",
+      "Nephron",
+      "Alveolus",
+      "Lobule"
+    ],
+    "correctAnswer": "Nephron",
+    "explanation": "The nephron is the microscopic, functional unit of the kidney. Each kidney contains over one million nephrons, which process blood to filter out wastes and reabsorb essential solutes."
+  },
+  {
+    "question": "Which of the following is a characteristic of cross-pollinated plants?",
+    "options": [
+      "They always have closed flowers (cleistogamy).",
+      "They produce offspring with increased genetic variation compared to self-pollinated plants.",
+      "They do not require pollinators such as wind or insects.",
+      "They exhibit 100% homozygosity in their seeds."
+    ],
+    "correctAnswer": "They produce offspring with increased genetic variation compared to self-pollinated plants.",
+    "explanation": "Cross-pollination mixes genetic material from separate individuals, increasing the genetic heterozygosity and diversity of the resulting seed pool."
+  },
+  {
+    "question": "Which of the following structures in human males carries both urine and semen out of the body at different times?",
+    "options": [
+      "Ureter",
+      "Vas deferens",
+      "Urethra",
+      "Epididymis"
+    ],
+    "correctAnswer": "Urethra",
+    "explanation": "The male urethra serves as a shared conduit for both the urinary system (expelling urine from the bladder) and the reproductive system (ejaculating semen from the reproductive ducts)."
+  },
+  {
+    "question": "What type of plant growth increases the girth of stems and roots in woody species?",
+    "options": [
+      "Primary growth",
+      "Secondary growth",
+      "Apical growth",
+      "Intercalary growth"
+    ],
+    "correctAnswer": "Secondary growth",
+    "explanation": "Secondary growth is driven by lateral meristems (the vascular cambium and cork cambium) and results in an increase in the thickness or girth of a plant's stems and roots."
+  },
+  {
+    "question": "Which layer of the human digestive tract wall contains the smooth muscle layers responsible for peristalsis and segmentation?",
+    "options": [
+      "Mucosa",
+      "Submucosa",
+      "Muscularis externa",
+      "Serosa"
+    ],
+    "correctAnswer": "Muscularis externa",
+    "explanation": "The muscularis externa typically consists of an inner circular and outer longitudinal layer of smooth muscle. Coordinated contractions of these layers generate peristaltic movements."
+  },
+  {
+    "question": "What is the function of the accessory photosynthetic pigments like carotenoids in plant leaves?",
+    "options": [
+      "To fix carbon dioxide directly into organic acids",
+      "To absorb light wavelengths that chlorophyll cannot and protect leaves from photo-oxidative damage",
+      "To store water inside the chloroplast matrix",
+      "To actively pump hydrogen ions out of the stroma"
+    ],
+    "correctAnswer": "To absorb light wavelengths that chlorophyll cannot and protect leaves from photo-oxidative damage",
+    "explanation": "Carotenoids expand the absorption spectrum of photosynthesis by gathering additional light energy and passing it to chlorophyll, while also dissipating excess light energy to prevent cellular damage."
+  },
+  {
+    "question": "Which component of the human heart acts as the electrical bridge between the atria and the ventricles, delaying the signal slightly?",
+    "options": [
+      "Sinoatrial node",
+      "Atrioventricular node",
+      "Purkinje fibers",
+      "Bundle branches"
+    ],
+    "correctAnswer": "Atrioventricular node",
+    "explanation": "The atrioventricular (AV) node receives electrical signals from the atria and introduces a short delay before passing the impulse to the ventricles, ensuring the atria can finish emptying blood into the ventricles."
+  },
+  {
+    "question": "What is the biological significance of triple fusion in angiosperm reproduction?",
+    "options": [
+      "It creates identical triplet embryos.",
+      "It forms the triploid endosperm that provides nutrition to the developing embryo.",
+      "It results in a fruit containing three distinct seed types.",
+      "It allows fertilization to take place without a pollen tube."
+    ],
+    "correctAnswer": "It forms the triploid endosperm that provides nutrition to the developing embryo.",
+    "explanation": "Triple fusion involves the combination of a sperm cell with two polar nuclei, creating a triploid ($3n$) cell that divides to form the endosperm, the dedicated nutrient storage tissue of the seed."
+  },
+  {
+    "question": "Which hormone is primarily responsible for maintaining the human uterine lining during pregnancy?",
+    "options": [
+      "Luteinizing Hormone",
+      "Follicle-Stimulating Hormone",
+      "Progesterone",
+      "Oxytocin"
+    ],
+    "correctAnswer": "Progesterone",
+    "explanation": "Progesterone stabilizes and maintains the vascularized uterine endometrium. A drop in progesterone would induce uterine contractions and shedding of the lining, terminating a pregnancy."
+  },
+  {
+    "question": "What is the function of the human hormone Secretin during digestion?",
+    "options": [
+      "To stimulate the secretion of bicarbonate from the pancreas to neutralize stomach acid in the duodenum",
+      "To trigger the stomach to produce more pepsinogen",
+      "To induce the breakdown of storage glycogen in the liver",
+      "To slow down the heart rate during the absorption of lipids"
+    ],
+    "correctAnswer": "To stimulate the secretion of bicarbonate from the pancreas to neutralize stomach acid in the duodenum",
+    "explanation": "Secretin is released by duodenal S-cells when acidic chyme enters from the stomach. It stimulates the pancreatic ducts to secrete water and bicarbonate ions to raise the $pH$ of the chyme."
+  },
+  {
+    "question": "Which of the following plants is an example of a common dicotyledon with an inflorescence called a capitulum?",
+    "options": [
+      "Maize",
+      "Sunflower ($Helianthus\\ annuus$)",
+      "Rice",
+      "Onion"
+    ],
+    "correctAnswer": "Sunflower ($Helianthus\\ annuus$)",
+    "explanation": "Sunflowers are dicots that belong to the family Asteraceae. Their flowers are arranged in a specialized composite head or capitulum, which consists of many separate disk and ray flowers."
+  },
+  {
+    "question": "What happens to a plant cell if it is placed in a highly hypertonic solution?",
+    "options": [
+      "It swells and undergoes lysis.",
+      "It remains completely unchanged due to the cell wall.",
+      "It loses water from its vacuole and cytoplasm, causing the plasma membrane to pull away from the cell wall (plasmolysis).",
+      "It actively pumps solutes out to draw more water in."
+    ],
+    "correctAnswer": "It loses water from its vacuole and cytoplasm, causing the plasma membrane to pull away from the cell wall (plasmolysis).",
+    "explanation": "In a hypertonic solution, water leaves the cell by osmosis. The loss of volume causes the protoplast to shrink, pulling the plasma membrane away from the rigid cell wall in a process known as plasmolysis."
+  },
+  {
+    "question": "Which of the following gases is a waste product of human aerobic respiration that must be eliminated by the respiratory system?",
+    "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Carbon monoxide"
+    ],
+    "correctAnswer": "Carbon dioxide",
+    "explanation": "Aerobic respiration breaks down glucose in the presence of oxygen, generating carbon dioxide ($CO_2$) as a metabolic byproduct that must be exhaled from the lungs."
+  },
+  {
+    "question": "What specialized cellular structures line the nasal cavity and trachea to sweep away trapped mucus and dust particles?",
+    "options": [
+      "Flagella",
+      "Microvilli",
+      "Cilia",
+      "Villi"
+    ],
+    "correctAnswer": "Cilia",
+    "explanation": "The respiratory epithelium is lined with motile cilia that beat in a coordinated manner, moving mucus and captured particles up toward the pharynx to be swallowed or expelled."
+  },
+  {
+    "question": "In the human circulatory system, what type of blood is carried by the pulmonary arteries?",
+    "options": [
+      "Highly oxygenated blood from the lungs to the left atrium",
+      "Deoxygenated blood from the right ventricle to the lungs",
+      "Oxygenated blood from the aorta to the liver tissues",
+      "Deoxygenated blood from the upper extremities to the right atrium"
+    ],
+    "correctAnswer": "Deoxygenated blood from the right ventricle to the lungs",
+    "explanation": "The pulmonary trunk and its branching pulmonary arteries carry low-oxygen blood away from the right side of the heart to the lungs for oxygenation."
+  },
+  {
+    "question": "Which plant macronutrient is a central constituent of the chlorophyll molecule?",
+    "options": [
+      "Calcium",
+      "Magnesium",
+      "Iron",
+      "Sulfur"
+    ],
+    "correctAnswer": "Magnesium",
+    "explanation": "Magnesium is the central coordinating atom in the porphyrin ring of chlorophyll, making it essential for capturing light energy during photosynthesis."
+  },
+  {
+    "question": "What structural feature of human capillaries allows for the slow and efficient exchange of materials?",
+    "options": [
+      "Thick muscular layers to control blood velocity",
+      "A wall consisting of only a single layer of endothelial cells",
+      "The presence of one-way valves along their lengths",
+      "A large diameter compared to arterioles"
+    ],
+    "correctAnswer": "A wall consisting of only a single layer of endothelial cells",
+    "explanation": "The walls of capillaries consist of a single layer of simple squamous endothelial cells, which minimizes the diffusion distance for nutrients, gases, and metabolic wastes."
+  },
+  {
+    "question": "Which structure in human females captures the secondary oocyte after it is released from the ovary during ovulation?",
+    "options": [
+      "The cervix",
+      "The fimbriae of the fallopian tube",
+      "The body of the uterus",
+      "The vagina"
+    ],
+    "correctAnswer": "The fimbriae of the fallopian tube",
+    "explanation": "The fimbriae are finger-like projections at the terminal end of the fallopian tube that drape over the ovary and wave rhythmically to sweep the ovulated egg into the oviduct."
+  },
+  {
+    "question": "What role does the enzyme pepsin play in the human stomach?",
+    "options": [
+      "It breaks down starches into maltose.",
+      "It emulsifies dietary fats.",
+      "It initiates the chemical digestion of proteins by cleaving peptide bonds.",
+      "It neutralizes excess stomach acid."
+    ],
+    "correctAnswer": "It initiates the chemical digestion of proteins by cleaving peptide bonds.",
+    "explanation": "Pepsin is an active protease that functions in the acidic environment of the stomach, cleaving large polypeptide chains into smaller peptide fragments."
+  },
+  {
+    "question": "Which plant tissue system forms the outer protective covering of the plant body?",
+    "options": [
+      "Vascular tissue system",
+      "Ground tissue system",
+      "Dermal tissue system",
+      "Meristematic tissue system"
+    ],
+    "correctAnswer": "Dermal tissue system",
+    "explanation": "The dermal tissue system (comprising the epidermis or periderm) forms the outer protective barrier of the plant, shielding it from physical damage and water loss."
+  },
+  {
+    "question": "In the human nephron, where does most of the solute and water reabsorption take place automatically?",
+    "options": [
+      "Proximal Convoluted Tubule",
+      "Distal Convoluted Tubule",
+      "Loop of Henle",
+      "Collecting Duct"
+    ],
+    "correctAnswer": "Proximal Convoluted Tubule",
+    "explanation": "The proximal convoluted tubule is responsible for reabsorbing roughly 65% of the water and sodium chloride, along with 100% of the filtered glucose and amino acids from the filtrate."
+  },
+  {
+    "question": "What event marks the transition from the embryonic stage to the fetal stage in human development?",
+    "options": [
+      "The completion of the eighth week of development, where all major organ systems have begun to form",
+      "The fertilization of the egg cell",
+      "The implantation of the blastocyst into the uterus",
+      "The formation of the single-layered blastula"
+    ],
+    "correctAnswer": "The completion of the eighth week of development, where all major organ systems have begun to form",
+    "explanation": "Human development transitions from embryonic to fetal at the end of the eighth week. After this point, the focus shifts from organogenesis (forming organs) to the growth and maturation of those structures."
+  },
+  {
+    "question": "Which family of flowering plants is economically important for producing cereal crops such as wheat, rice, and maize?",
+    "options": [
+      "Fabaceae",
+      "Poaceae",
+      "Solanaceae",
+      "Brassicaceae"
+    ],
+    "correctAnswer": "Poaceae",
+    "explanation": "Poaceae is the grass family, which includes staple cereal crops like rice, wheat, corn, barley, and oats, making it the most economically important plant family for human nutrition."
+  },
+  {
+    "question": "What is the primary function of the stomata during the daytime when a plant is actively performing photosynthesis?",
+    "options": [
+      "To release carbon dioxide gas into the atmosphere",
+      "To allow carbon dioxide gas to enter the leaf mesophyll while releasing oxygen and water vapor",
+      "To absorb liquid water from the surrounding air currents",
+      "To exclude all airborne pathogens from entering the plant body"
+    ],
+    "correctAnswer": "To allow carbon dioxide gas to enter the leaf mesophyll while releasing oxygen and water vapor",
+    "explanation": "Stomata open during the day to allow the entry of $CO_2$ needed for the Calvin cycle. Oxygen produced by light reactions escapes through the pores, along with water vapor lost via transpiration."
+  },
+  {
+    "question": "Which heart chamber has the thickest muscular wall in the human cardiovascular system?",
+    "options": [
+      "Right Atrium",
+      "Left Atrium",
+      "Right Ventricle",
+      "Left Ventricle"
+    ],
+    "correctAnswer": "Left Ventricle",
+    "explanation": "The left ventricle requires a highly developed myocardium to generate the force needed to pump blood through the high-resistance systemic circulation of the entire body."
+  },
+  {
+    "question": "What substance is produced by the human liver to emulsify fats, and where is it stored?",
+    "options": [
+      "Lipase, stored in the pancreas",
+      "Pepsin, stored in the stomach",
+      "Bile, stored in the gallbladder",
+      "Trypsin, stored in the duodenum"
+    ],
+    "correctAnswer": "Bile, stored in the gallbladder",
+    "explanation": "Bile is synthesized by liver cells and stored in a concentrated form within the gallbladder until fat-containing chyme enters the duodenum."
+  },
+  {
+    "question": "Which plant hormone acts as a powerful growth inhibitor and triggers the closing of stomata during a water deficit?",
+    "options": [
+      "Auxin",
+      "Gibberellin",
+      "Abscisic acid",
+      "Cytokinin"
+    ],
+    "correctAnswer": "Abscisic acid",
+    "explanation": "Abscisic acid (ABA) is a stress hormone. When roots experience drought, they synthesize ABA, which travels to the leaves and signals guard cells to close stomata to preserve water."
+  },
+  {
+    "question": "What type of cellular division is responsible for the growth and repair of human somatic tissues?",
+    "options": [
+      "Mitosis",
+      "Meiosis",
+      "Binary fission",
+      "Schizogony"
+    ],
+    "correctAnswer": "Mitosis",
+    "explanation": "Mitosis is the process of nuclear division that yields two genetically identical daughter cells, making it the mechanism for growth, tissue regeneration, and somatic cell repair."
+  },
+  {
+    "question": "In the plant kingdom, what term is used for the multicellular female reproductive structure that produces the egg cell in bryophytes and ferns?",
+    "options": [
+      "Antheridium",
+      "Archegonium",
+      "Pistil",
+      "Stamen"
+    ],
+    "correctAnswer": "Archegonium",
+    "explanation": "The archegonium is the flask-shaped female sex organ found in bryophytes, pteridophytes, and most gymnosperms, within which a single egg cell is produced and fertilized."
+  },
+  {
+    "question": "Which human blood plasma protein is essential for blood clotting and forms the precursor to the fibrin network?",
+    "options": [
+      "Albumin",
+      "Globulin",
+      "Fibrinogen",
+      "Prothrombin"
+    ],
+    "correctAnswer": "Fibrinogen",
+    "explanation": "Fibrinogen is a soluble plasma protein produced by the liver. During injury, clotting factors convert it into insoluble fibrin strands, which form the structural mesh of a blood clot."
+  },
+  {
+    "question": "What is the function of the human hormone Cholecystokinin (CCK) during digestion?",
+    "options": [
+      "To stimulate the gallbladder to contract and release bile while inducing the pancreas to secrete digestive enzymes",
+      "To increase the rate of gastric emptying into the duodenum",
+      "To suppress the secretion of mucus in the large intestine",
+      "To stimulate the salivary glands to produce more ptyalin"
+    ],
+    "correctAnswer": "To stimulate the gallbladder to contract and release bile while inducing the pancreas to secrete digestive enzymes",
+    "explanation": "CCK is secreted by the duodenal mucosa in response to fatty chyme, triggering pancreatic enzyme secretion and gallbladder contraction to aid in lipid and protein digestion."
+  },
+  {
+    "question": "What is the primary site of the Krebs cycle during aerobic cellular respiration in plants?",
+    "options": [
+      "Chloroplast stroma",
+      "Mitochondrial matrix",
+      "Cell cytosol",
+      "Inner mitochondrial membrane"
+    ],
+    "correctAnswer": "Mitochondrial matrix",
+    "explanation": "The Krebs (Citric Acid) Cycle takes place within the fluid-filled matrix of the mitochondria, where its soluble enzymes break down acetyl-CoA into carbon dioxide, NADH, and $FADH_2$."
+  },
+  {
+    "question": "Which part of the human autonomic nervous system dominates during resting conditions, slowing the heart rate and stimulating digestive activities?",
+    "options": [
+      "Sympathetic nervous system",
+      "Parasympathetic nervous system",
+      "Somatic nervous system",
+      "Central nervous system"
+    ],
+    "correctAnswer": "Parasympathetic nervous system",
+    "explanation": "The parasympathetic nervous system coordinates 'rest-and-digest' responses, decreasing cardiac output while stimulating gastrointestinal motility and glandular secretions."
+  },
+  {
+    "question": "What structure is formed immediately after the fusion of a haploid sperm cell and a haploid egg cell during sexual reproduction?",
+    "options": [
+      "Embryo",
+      "Blastocyst",
+      "Zygote",
+      "Morula"
+    ],
+    "correctAnswer": "Zygote",
+    "explanation": "The fusion of two haploid gametes restores the diploid chromosome number, creating a single-celled fertilized egg called a zygote."
+  },
+  
+];
+
+
+
 // ======================================
 // QUESTION BANK REGISTRY
 // DO NOT EDIT BELOW THIS LINE
@@ -14287,6 +23283,7 @@ const QuestionBanks = {
     COS102: COS102_Questions,
     MTH102: MTH102_Questions,
     PHY102: PHY102_Questions,
-    GST112: GST112_Questions
-    
+    GST112: GST112_Questions,
+    BUT_CSC104: BUT_CSC104_Questions,
+    BUT_BIO102: BUT_BIO102_Questions
 };

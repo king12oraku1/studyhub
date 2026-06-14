@@ -43,32 +43,42 @@ const NotesDatabase = {
     // },
     MTH102: {
         level: "100",
-        semester: "First",
+        semester: "Second",
         title: "Elementry Mathematics II",
         pdf: "assets/notes/MTH102.pdf"
     },
     PHY102: {
         level: "100",
-        semester: "First",
+        semester: "Second",
         title: "General Physics II: Behaviour of Matter",
         pdf: "assets/notes/PHY102.pdf"
     },
     GST112: {
         level: "100",
-        semester: "First",
+        semester: "Second",
         title: "Nigerian People and Culture",
-        pdf: "assets/notes/GST102.pdf"
+        pdf: "assets/notes/GST112.pdf"
     },
-    // COS101: {
-    //     level: "100",
-    //     semester: "Second",
-    //     title: "Programming Fundamentals",
-    //     pdf: "assets/notes/COS101.pdf"
-    // },
-    // MTH103: {
-    //     level: "100",
-    //     semester: "Second",
-    //     title: "Calculus II",
-    //     pdf: "assets/notes/MTH103.pdf"
-    // }
+    COS102: {
+        level: "100",
+        semester: "Second",
+        title: "Problem Solving",
+        pdf: "assets/notes/BUT-CSC 104 NOT.pdf"
+    },
+      BUT_CSC104: {
+        level: "100",
+        semester: "Second",
+        title: "Computer Hardware & Assembly Language Programming",
+        pdf: "assets/notes/BUT-CSC 104 NOT.pdf"
+        
+
+    },
+     BUT_BIO102: {
+        level: "100",
+        semester: "Second",
+        title: "General Biology II",
+        pdf: "assets/notes/BUT_BIO102.pdf"
+    },
+    
 };
+

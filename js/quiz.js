@@ -355,4 +355,6 @@ jumpToQuestion(index) {
     }
 }
 
-const quizEngine = new QuizEngine();
+if (document.getElementById('quizCourse')) {
+    const engine = new QuizEngine();
+}

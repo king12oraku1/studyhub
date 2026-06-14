@@ -1,3 +1,6 @@
+
+
+
 /* ======================================
    STUDYHUB - MAIN APPLICATION
    Handles: Theme, Navigation, Courses,
@@ -67,10 +70,142 @@ function navigateTo(page, code) {
     window.location.href = `${page}?course=${encodeURIComponent(code)}`;
 }
 
-function getPdfEmbedUrl(url) {
-    if (!url) return url;
-    const cleanUrl = url.split('#')[0];
-    return `${cleanUrl}#toolbar=0&navpanes=0&scrollbar=0`;
+function initializePdfJs() {
+    if (window.pdfjsLib && window.pdfjsLib.GlobalWorkerOptions) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.122/build/pdf.worker.min.js';
+    }
+}
+
+async function loadPdfViewer(container, url, title) {
+    
+    initializePdfJs();
+    const viewerHtml = `
+        <div class="pdf-viewer-shell">
+            <div class="pdf-toolbar">
+                <div class="pdf-info">
+                    <strong>${title}</strong>
+                    <span class="pdf-page-count" id="pdfPageCountLabel"></span>
+                </div>
+                <div class="pdf-control-group">
+                    <button type="button" class="btn btn-icon" id="pdfPrevPage" aria-label="Previous page">◀</button>
+                    <div class="pdf-page-input-wrapper">
+                        <label class="visually-hidden" for="pdfPageNumber">Page</label>
+                        <input id="pdfPageNumber" class="pdf-page-number" type="number" min="1" value="1">
+                        <span>/ <span id="pdfPageCount">0</span></span>
+                    </div>
+                    <button type="button" class="btn btn-icon" id="pdfNextPage" aria-label="Next page">▶</button>
+                    <button type="button" class="btn btn-icon" id="pdfZoomOut" aria-label="Zoom out">−</button>
+                    <button type="button" class="btn btn-icon" id="pdfZoomIn" aria-label="Zoom in">+</button>
+                    <span class="pdf-scale-label" id="pdfScaleLabel">100%</span>
+                </div>
+            </div>
+            <div class="pdf-canvas-wrapper">
+                <canvas id="pdfCanvas"></canvas>
+            </div>
+            <div class="pdf-status" id="pdfStatus">Loading PDF…</div>
+        </div>
+    `;
+
+    container.innerHTML = viewerHtml;
+
+    const pdfStatus = container.querySelector('#pdfStatus');
+    const pdfPageNumber = container.querySelector('#pdfPageNumber');
+    const pdfPageCount = container.querySelector('#pdfPageCount');
+    const pdfPageCountLabel = container.querySelector('#pdfPageCountLabel');
+    const pdfScaleLabel = container.querySelector('#pdfScaleLabel');
+    const pdfCanvas = container.querySelector('#pdfCanvas');
+    const ctx = pdfCanvas.getContext('2d');
+
+    let pdfDoc = null;
+    let currentPage = 1;
+    let scale = 1.0;
+
+    const clampScale = (value) => Math.min(2.5, Math.max(0.6, value));
+
+    function updateToolbar() {
+        pdfPageNumber.value = currentPage;
+        pdfPageCount.textContent = pdfDoc ? pdfDoc.numPages : '0';
+        pdfPageCountLabel.textContent = pdfDoc ? `Page ${currentPage} of ${pdfDoc.numPages}` : '';
+        pdfScaleLabel.textContent = `${Math.round(scale * 100)}%`;
+        document.getElementById('pdfPrevPage').disabled = currentPage <= 1;
+        document.getElementById('pdfNextPage').disabled = pdfDoc ? currentPage >= pdfDoc.numPages : true;
+    }
+
+    async function renderPage(pageNumber) {
+        if (!pdfDoc) return;
+        const page = await pdfDoc.getPage(pageNumber);
+        const viewport = page.getViewport({ scale });
+        const outputScale = window.devicePixelRatio || 1;
+        const outputViewport = page.getViewport({ scale: scale * outputScale });
+
+        pdfCanvas.width = Math.floor(outputViewport.width);
+        pdfCanvas.height = Math.floor(outputViewport.height);
+        pdfCanvas.style.width = `${Math.floor(viewport.width)}px`;
+        pdfCanvas.style.height = `${Math.floor(viewport.height)}px`;
+
+        await page.render({ canvasContext: ctx, viewport: outputViewport }).promise;
+        pdfStatus.textContent = '';
+        updateToolbar();
+    }
+
+    function queueRender(pageNum) {
+        currentPage = Math.min(Math.max(pageNum, 1), pdfDoc.numPages);
+        renderPage(currentPage).catch(err => {
+            pdfStatus.textContent = 'Unable to render PDF. Please refresh or try another file.';
+            console.error(err);
+        });
+    }
+
+    document.getElementById('pdfPrevPage').addEventListener('click', () => {
+        if (currentPage <= 1) return;
+        queueRender(currentPage - 1);
+    });
+
+    document.getElementById('pdfNextPage').addEventListener('click', () => {
+        if (!pdfDoc || currentPage >= pdfDoc.numPages) return;
+        queueRender(currentPage + 1);
+    });
+
+    document.getElementById('pdfZoomOut').addEventListener('click', () => {
+        scale = clampScale(scale - 0.1);
+        queueRender(currentPage);
+    });
+
+    document.getElementById('pdfZoomIn').addEventListener('click', () => {
+        scale = clampScale(scale + 0.1);
+        queueRender(currentPage);
+    });
+    
+
+    pdfPageNumber.addEventListener('change', () => {
+        const requestedPage = parseInt(pdfPageNumber.value, 10);
+        if (!isNaN(requestedPage)) {
+            queueRender(requestedPage);
+        }
+    });
+// Automatically load the library dynamically if it isn't ready
+    if (!window.pdfjsLib) {
+        await new Promise((resolve) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.min.js';
+            script.onload = resolve;
+            document.head.appendChild(script);
+        });
+    }
+
+    // Set the complete worker URL path
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.worker.min.js';
+    try {
+        pdfStatus.textContent = 'Loading PDF…';
+        const pdfUrl = encodeURI(url);
+        pdfDoc = await window.pdfjsLib.getDocument({ url: pdfUrl }).promise;
+        updateToolbar();
+        await renderPage(currentPage);
+    } catch (error) {
+        pdfStatus.textContent = `Failed to load PDF. Please check the file path: ${url}`;
+        console.error('PDF load error:', error);
+    }
+    
 }
 
 window.openNotes = (code) => navigateTo('notes.html', code);
@@ -175,7 +310,7 @@ function setupCarousel() {
     });
 }
 
-function renderNotesViewer(code) {
+async function renderNotesViewer(code) {
     const course = NotesDatabase[code];
     if (!course || !document.getElementById('notesViewer')) return;
     const viewer = document.getElementById('notesViewer');
@@ -185,7 +320,7 @@ function renderNotesViewer(code) {
     } else if (course.markdown) {
         viewer.innerHTML = `<div class="notes-content">${markdownToHtml(course.markdown)}</div>`;
     } else if (course.pdf) {
-        viewer.innerHTML = `<iframe src="${getPdfEmbedUrl(course.pdf)}" class="pdf-frame" title="${code} Notes" sandbox="allow-scripts" oncontextmenu="return false"></iframe>`;
+        await loadPdfViewer(viewer, course.pdf, `${code} Notes`);
     }
 
     if (typeof renderMathInElement === 'function') {
@@ -220,7 +355,7 @@ function renderPastQuestionViewer(code) {
     });
 
     const yearButtons = years.map(y => `
-        <button type="button" class="pq-year-item" data-year="${y}" onclick="openPastQuestionYear('${code}', '${y}')">
+        <button type="button" class="pq-year-item" data-year="${y}">
             ${y} PDF
         </button>
     `).join('');
@@ -231,9 +366,15 @@ function renderPastQuestionViewer(code) {
             <p class="placeholder-text">Select a year to view past questions</p>
         </div>
     `;
+
+    pqViewer.querySelectorAll('.pq-year-item').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            await openPastQuestionYear(code, btn.dataset.year);
+        });
+    });
 }
 
-function openPastQuestionYear(code, year) {
+async function openPastQuestionYear(code, year) {
     const pqViewer = document.getElementById('pqViewer');
     if (!pqViewer) return;
     const url = PastQuestionsDatabase[code] && PastQuestionsDatabase[code][year];
@@ -245,12 +386,7 @@ function openPastQuestionYear(code, year) {
 
     const frameContainer = pqViewer.querySelector('.pq-frame-container');
     if (!frameContainer) return;
-    frameContainer.innerHTML = `
-        <div class="pq-frame-toolbar">
-            <p>${code} ${year}</p>
-        </div>
-        <iframe src="${getPdfEmbedUrl(url)}" class="pdf-frame" title="${code} Past Questions ${year}" sandbox="allow-scripts" oncontextmenu="return false"></iframe>
-    `;
+    await loadPdfViewer(frameContainer, url, `${code} Past Questions ${year}`);
 }
 
 function markdownToHtml(markdown) {
@@ -320,10 +456,10 @@ function setupNotesPage() {
         });
     });
 
-    notesCourse.addEventListener('change', () => {
+    notesCourse.addEventListener('change', async () => {
         const code = notesCourse.value;
         if (code) {
-            renderNotesViewer(code);
+            await renderNotesViewer(code);
         } else {
             notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
         }
@@ -362,11 +498,11 @@ function setupPastQuestionsPage() {
         renderPastQuestionViewer(code);
     });
 
-    pqYear.addEventListener('change', () => {
+    pqYear.addEventListener('change', async () => {
         const code = pqCourse.value;
         const year = pqYear.value;
         if (code && year) {
-            openPastQuestionYear(code, year);
+            await openPastQuestionYear(code, year);
         }
     });
 
@@ -439,3 +575,8 @@ if (pageType === 'past-questions') {
 if (pageType === 'quiz') {
     setupQuizPage();
 }
+
+
+
+
+

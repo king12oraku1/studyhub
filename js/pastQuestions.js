@@ -41,9 +41,9 @@ const PastQuestionsDatabase = {
     //     2024: "assets/past-questions/COS102_2024.pdf"
     // },
     MTH102: {
-        2022: "assets/past-questions/MTH102_2022.pdf",
-        2023: "assets/past-questions/MTH102_2023.pdf",
-        2024: "assets/past-questions/MTH102_2024.pdf"
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
     },
     PHY102: {
         2023: "assets/past-questions/PHY102_2023.pdf",
@@ -52,5 +52,10 @@ const PastQuestionsDatabase = {
     GST102: {
         2023: "assets/past-questions/GST102_2023.pdf",
         2024: "assets/past-questions/GST102_2024.pdf"
+    },
+    COS102: {
+        2022: "assets/past-questions/COS102_2022.pdf",
+        2023: "assets/past-questions/COS102_2023.pdf",
+        2024: "assets/past-questions/COS102_2024.pdf"
     }
 };
