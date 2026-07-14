@@ -36,6 +36,19 @@ function safeRenderMathInto(element, raw) {
     }
 }
 
+const QuizCourseMeta = {
+    MTH101: { level: '100', semester: 'First' },
+    COS101: { level: '100', semester: 'First' },
+    STA111: { level: '100', semester: 'First' },
+    COS102: { level: '100', semester: 'Second' },
+    MTH102: { level: '100', semester: 'Second' },
+    PHY102: { level: '100', semester: 'Second' },
+    GST112: { level: '100', semester: 'Second' },
+    BUT_CSC104: { level: '100', semester: 'Second' },
+    BUT_BIO102: { level: '100', semester: 'Second' },
+    BUT_ICT118: { level: '100', semester: 'Second' }
+};
+
 class QuizEngine {
     constructor() {
         this.questions = [];
@@ -48,6 +61,11 @@ class QuizEngine {
         this.setupEl = document.getElementById('quizSetup');
         this.interfaceEl = document.getElementById('quizInterface');
         this.resultsEl = document.getElementById('quizResults');
+        this.levelSelect = document.getElementById('quizLevel');
+        this.semesterSelect = document.getElementById('quizSemester');
+        this.courseSelect = document.getElementById('quizCourse');
+        this.countSelect = document.getElementById('quizCount');
+        this.durationSelect = document.getElementById('quizDuration');
 
         this.startBtn = document.getElementById('startQuizBtn');
         this.prevBtn = document.getElementById('prevBtn');
@@ -63,6 +81,7 @@ class QuizEngine {
         this.timerDisplay = document.getElementById('quizTimer');
 
         this.bindEvents();
+        this.initQuizFilters();
     }
 
     bindEvents() {
@@ -74,10 +93,68 @@ class QuizEngine {
         this.newQuizBtn.addEventListener('click', () => this.resetQuiz());
     }
 
+    initQuizFilters() {
+        if (!this.levelSelect || !this.semesterSelect || !this.courseSelect) return;
+        this.populateLevelOptions();
+        this.populateSemesterOptions();
+        this.populateCourseOptions();
+
+        this.levelSelect.addEventListener('change', () => this.handleFilterChange());
+        this.semesterSelect.addEventListener('change', () => this.handleFilterChange());
+    }
+
+    populateLevelOptions() {
+        const levels = Array.from(new Set(Object.values(QuizCourseMeta).map(m => m.level))).sort();
+        levels.forEach(level => {
+            const opt = document.createElement('option');
+            opt.value = level;
+            opt.textContent = level;
+            this.levelSelect.appendChild(opt);
+        });
+    }
+
+    populateSemesterOptions() {
+        const semesters = Array.from(new Set(Object.values(QuizCourseMeta).map(m => m.semester))).sort();
+        semesters.forEach(semester => {
+            const opt = document.createElement('option');
+            opt.value = semester;
+            opt.textContent = semester;
+            this.semesterSelect.appendChild(opt);
+        });
+    }
+
+    populateCourseOptions(filteredCourses) {
+        const prev = this.courseSelect.value || '';
+        this.courseSelect.innerHTML = '<option value="">Select Course</option>';
+        const courses = filteredCourses || Object.keys(QuestionBanks).sort();
+        courses.forEach(course => {
+            const opt = document.createElement('option');
+            opt.value = course;
+            opt.textContent = course;
+            this.courseSelect.appendChild(opt);
+        });
+        if (prev && courses.includes(prev)) {
+            this.courseSelect.value = prev;
+        }
+    }
+
+    handleFilterChange() {
+        const level = this.levelSelect.value;
+        const semester = this.semesterSelect.value;
+        let filtered = Object.keys(QuestionBanks);
+        if (level) filtered = filtered.filter(course => QuizCourseMeta[course] && QuizCourseMeta[course].level === level);
+        if (semester) filtered = filtered.filter(course => QuizCourseMeta[course] && QuizCourseMeta[course].semester === semester);
+        this.populateCourseOptions(filtered);
+
+        if (!filtered.includes(this.courseSelect.value)) {
+            this.courseSelect.value = '';
+        }
+    }
+
     startQuiz() {
-        const course = document.getElementById('quizCourse').value;
-        const count = parseInt(document.getElementById('quizCount').value);
-        const duration = parseInt(document.getElementById('quizDuration').value);
+        const course = this.courseSelect.value;
+        const count = parseInt(this.countSelect.value);
+        const duration = parseInt(this.durationSelect.value);
 
         const bank = QuestionBanks[course];
         if (!bank || bank.length === 0) {

@@ -22,7 +22,13557 @@
    - Keep the correctAnswer exactly matching one option
    - Always provide 4 options
    ====================================== */
+// ======================================
+// MTH101 QUESTIONS
+// PASTE NEW MTH101 QUESTIONS BELOW
+// ======================================
 
+const MTH101_Questions = [
+     {
+        "question": "Find the sum of the first 3 terms of a GP with first term a = 3 and common ratio r = 2.",
+        "options": [
+            "21",
+            "24",
+            "19",
+            "16"
+        ],
+        "correctAnswer": "21",
+        "explanation": "For a GP with ratio r != 1, the sum of the first n terms is Sn = a(r^n - 1)/(r - 1). Substituting a = 3, r = 2, n = 3: S3 = 3((2)^3 - 1)/(2 - 1) = 3(8 - 1)/1 = 3(7)/1 = 21.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {f, g, j}, find the complement A'.",
+        "options": [
+            "{f, g, j}",
+            "{a, b, c, d, e, h, k}",
+            "{a, b, c, d, e, h}",
+            "{a, b, c, d, e, f, g, h, j, k}"
+        ],
+        "correctAnswer": "{a, b, c, d, e, h, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {f, g, j} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, b, c, d, e, h, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "An arithmetic progression (AP) has first term a = -11 and common difference d = -7. Find the 12th term.",
+        "options": [
+            "-85",
+            "-88",
+            "-95",
+            "-81"
+        ],
+        "correctAnswer": "-88",
+        "explanation": "The nth term of an AP is given by the formula Tn = a + (n-1)d. Substituting a = -11, d = -7, and n = 12: T12 = -11 + (12-1)(-7) = -11 + 11(-7) = -11 + -77 = -88.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "According to De Morgan's Laws, (A n B)' is equal to which of the following?",
+        "options": [
+            "A U B",
+            "A n B",
+            "A' n B'",
+            "A' U B'"
+        ],
+        "correctAnswer": "A' U B'",
+        "explanation": "The second De Morgan's Law states that the complement of an intersection equals the union of the complements: (A n B)' = A' U B'. An element fails to be in both A and B whenever it is missing from A, missing from B, or missing from both — which is exactly the union of the complements.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Multiply: (-4 - 4i) x (-3 + 5i)",
+        "options": [
+            "34 - 10i",
+            "32 - 32i",
+            "-8 - 8i",
+            "32 - 8i"
+        ],
+        "correctAnswer": "32 - 8i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (-4 + -4i)(-3 + 5i) = -4x-3 + -4x5i + -4i x-3 + -4x5i^2 = 12 + -8i + -20(-1) = (12 - -20) + (-8)i = 32 - 8i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "For the equation 3x^2 + (11)x + (8) = 0, find the product of the roots.",
+        "options": [
+            "-2.667",
+            "3",
+            "2.667",
+            "3.667"
+        ],
+        "correctAnswer": "2.667",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 3, c = 8, so the product of the roots = (8)/3 = 2.667.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 7x - 8 = 0.",
+        "options": [
+            "x = -1 or x = 8",
+            "x = 1 or x = 8",
+            "x = -8 or x = 1",
+            "x = -7 or x = 2"
+        ],
+        "correctAnswer": "x = -8 or x = 1",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -8 and add to give b = 7 (the coefficient of x). Those numbers are -1 and 8, so the equation factors as (x - (1))(x - (-8)) = 0. Setting each factor to zero gives x = 1 or x = -8, i.e. x = -8 or x = 1.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 5 and common ratio r = -3. Find the 5th term.",
+        "options": [
+            "-1215",
+            "-135",
+            "405",
+            "408"
+        ],
+        "correctAnswer": "405",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 5, r = -3, n = 5: T5 = 5 * (-3)^(5-1) = 5 * (-3)^4 = 5 * 81 = 405.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the sum to infinity of a GP with first term a = 8 and common ratio r = 0.5.",
+        "options": [
+            "5.333",
+            "16",
+            "17",
+            "4"
+        ],
+        "correctAnswer": "16",
+        "explanation": "Since |r| = |0.5| < 1, the GP converges and has a finite sum to infinity given by S(infinity) = a / (1 - r). Substituting a = 8 and r = 0.5: S(infinity) = 8 / (1 - (0.5)) = 8 / 0.5 = 16. This formula only works when the common ratio's magnitude is less than 1; otherwise the series does not converge.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the complex conjugate of z = -14 + 1i.",
+        "options": [
+            "14 - 1i",
+            "-14 - 1i",
+            "14 + 1i",
+            "-14 + 1i"
+        ],
+        "correctAnswer": "-14 - 1i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = -14 and y = 1, so the conjugate of -14 + 1i is -14 - 1i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Evaluate (25) - (-10).",
+        "options": [
+            "34",
+            "-35",
+            "35",
+            "15"
+        ],
+        "correctAnswer": "35",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (25) - (-10) = (25) + (10) = 35. This is why '(25) - (-10)' does not equal '(-10) - (25)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "In the 4th quadrant, what is the sign of cosine?",
+        "options": [
+            "undefined",
+            "negative",
+            "positive",
+            "zero"
+        ],
+        "correctAnswer": "positive",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 4, cosine is positive.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = -4 and common ratio r = 2. Find the 5th term.",
+        "options": [
+            "-64",
+            "-58",
+            "-32",
+            "-128"
+        ],
+        "correctAnswer": "-64",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = -4, r = 2, n = 5: T5 = -4 * (2)^(5-1) = -4 * (2)^4 = -4 * 16 = -64.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Convert 60 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "1*pi/4",
+            "60*pi/180",
+            "3*pi/1",
+            "1*pi/3"
+        ],
+        "correctAnswer": "1*pi/3",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 60 degrees x (pi/180) = (60/180) x pi radians. Simplifying the fraction 60/180 to lowest terms gives 1/3, so 60 degrees = 1*pi/3 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "In an AP, the 1st term is -15 and the 4th term is -27. Find the common difference, d.",
+        "options": [
+            "-4",
+            "-2",
+            "-12",
+            "4"
+        ],
+        "correctAnswer": "-4",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (-27 - -15)/3 = -12/3 = -4.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between -11 and -29.",
+        "options": [
+            "-21",
+            "-40",
+            "-20",
+            "-19"
+        ],
+        "correctAnswer": "-20",
+        "explanation": "If -11, x, -29 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (-11 + -29) / 2 = -40 / 2 = -20. This works because the common difference from -11 to x must equal the common difference from x to -29.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the sum to infinity of a GP with first term a = 5 and common ratio r = 0.2.",
+        "options": [
+            "1",
+            "6.25",
+            "4.167",
+            "7.25"
+        ],
+        "correctAnswer": "6.25",
+        "explanation": "Since |r| = |0.2| < 1, the GP converges and has a finite sum to infinity given by S(infinity) = a / (1 - r). Substituting a = 5 and r = 0.2: S(infinity) = 5 / (1 - (0.2)) = 5 / 0.8 = 6.25. This formula only works when the common ratio's magnitude is less than 1; otherwise the series does not converge.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -2x^2 + (0)x + (8) = 0.",
+        "options": [
+            "x = -1 or x = 3",
+            "x = 2 or x = -2",
+            "x = 0 (repeated root)",
+            "x = -2 or x = 2"
+        ],
+        "correctAnswer": "x = -2 or x = 2",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -2, b = 0, c = 8. First find the discriminant: b^2 - 4ac = (0)^2 - 4(-2)(8) = 0 - -64 = 64. Since this is a positive perfect square, sqrt(64) = 8. Substituting: x = (-(0) +/- 8) / (2 x -2) = (0 +/- 8) / -4, giving x = -2 or x = 2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Simplify: (4 + 8i) - (-3 + 12i)",
+        "options": [
+            "7 - 4i",
+            "1 + 20i",
+            "7 - 2i",
+            "9 - 4i"
+        ],
+        "correctAnswer": "7 - 4i",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 4 - -3 = 7. Imaginary part: 8 - 12 = -4. So (4 + 8i) - (-3 + 12i) = 7 - 4i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the sum of the first 8 terms of an AP whose first term is 0 and common difference is 5.",
+        "options": [
+            "140",
+            "135",
+            "148",
+            "150"
+        ],
+        "correctAnswer": "140",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = 0, d = 5, n = 8: S8 = (8/2)[2(0) + (8-1)(5)] = (8/2)[0 + 35] = (8/2)(35) = 140.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Which expression correctly defines cosecant (csc) of angle x, in terms of the basic trig ratios?",
+        "options": [
+            "1/tan(x)",
+            "1/cos(x)",
+            "sin(x)/cos(x)",
+            "1/sin(x)"
+        ],
+        "correctAnswer": "1/sin(x)",
+        "explanation": "The reciprocal trigonometric functions are defined as the reciprocals of sine, cosine, and tangent: csc(x) = 1/sin(x), sec(x) = 1/cos(x), and cot(x) = 1/tan(x) (also equal to cos(x)/sin(x)). Therefore cosecant (csc) of x = 1/sin(x).",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 1x^2 + (-2)x + (0) = 0.",
+        "options": [
+            "x = 1 (repeated root)",
+            "x = 0 or x = -2",
+            "x = 0 or x = 2",
+            "x = 1 or x = 3"
+        ],
+        "correctAnswer": "x = 0 or x = 2",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 1, b = -2, c = 0. First find the discriminant: b^2 - 4ac = (-2)^2 - 4(1)(0) = 4 - 0 = 4. Since this is a positive perfect square, sqrt(4) = 2. Substituting: x = (-(-2) +/- 2) / (2 x 1) = (2 +/- 2) / 2, giving x = 0 or x = 2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "For the equation 1x^2 + (10)x + (8) = 0, find the sum of the roots.",
+        "options": [
+            "-10",
+            "-8",
+            "-11",
+            "10"
+        ],
+        "correctAnswer": "-10",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the sum of the roots is given by -b/a. Here a = 1, b = 10, so the sum of the roots = -(10)/1 = -10/1 = -10.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "For the quadratic equation 1x^2 + (-6)x + (7) = 0, what is the nature of its roots?",
+        "options": [
+            "No roots exist at all",
+            "Two complex (non-real) roots",
+            "Two distinct real roots",
+            "One repeated real root"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-6)^2 - 4(1)(7) = 36 - 28 = 8. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 21 and 22.",
+        "options": [
+            "1",
+            "22",
+            "5",
+            "21"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 21 and 22 into their prime factors and taking the common factors at their lowest powers gives GCD(21, 22) = 1. You can verify this since 21 / 1 = 21 and 22 / 1 = 22 are both whole numbers, and no larger number divides both 21 and 22 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Consider the sequence: 3, 2, 1, 0, ... Is this sequence an AP or a GP?",
+        "options": [
+            "AP",
+            "Neither AP nor GP",
+            "Both AP and GP",
+            "GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: 2-3 = -1, 1-2 = -1, 0-1 = -1. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Convert 3*pi/4 radians to degrees.",
+        "options": [
+            "225",
+            "135",
+            "165",
+            "105"
+        ],
+        "correctAnswer": "135",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (3*pi/4) x (180/pi) = 3x180/4 = 135 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -1x^2 + (0)x + (4) = 0.",
+        "options": [
+            "x = 0 (repeated root)",
+            "x = 2 or x = -2",
+            "x = -2 or x = 2",
+            "x = -1 or x = 3"
+        ],
+        "correctAnswer": "x = -2 or x = 2",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -1, b = 0, c = 4. First find the discriminant: b^2 - 4ac = (0)^2 - 4(-1)(4) = 0 - -16 = 16. Since this is a positive perfect square, sqrt(16) = 4. Substituting: x = (-(0) +/- 4) / (2 x -1) = (0 +/- 4) / -2, giving x = -2 or x = 2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the complex conjugate of z = 10 - 8i.",
+        "options": [
+            "10 - 8i",
+            "-10 - 8i",
+            "10 + 8i",
+            "-10 + 8i"
+        ],
+        "correctAnswer": "10 + 8i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = 10 and y = -8, so the conjugate of 10 - 8i is 10 + 8i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Simplify: (7 - 11i) - (-12 + 9i)",
+        "options": [
+            "19 - 20i",
+            "21 - 20i",
+            "-5 - 2i",
+            "19 - 18i"
+        ],
+        "correctAnswer": "19 - 20i",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 7 - -12 = 19. Imaginary part: -11 - 9 = -20. So (7 - 11i) - (-12 + 9i) = 19 - 20i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In the 1st quadrant, what is the sign of tangent?",
+        "options": [
+            "negative",
+            "zero",
+            "positive",
+            "undefined"
+        ],
+        "correctAnswer": "positive",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 1, tangent is positive.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Simplify i^34 (where i = sqrt(-1)).",
+        "options": [
+            "-i",
+            "-1",
+            "1",
+            "i"
+        ],
+        "correctAnswer": "-1",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^34, divide 34 by 4 and use the remainder: 34 = 4 x 8 + 2, so i^34 = i^2 = -1. Therefore i^34 = -1.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Is the number 16 prime or composite?",
+        "options": [
+            "Neither prime nor composite",
+            "Both prime and composite",
+            "Prime",
+            "Composite"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 16 = 2 x 8, 16 can be divided exactly by 2 (a number other than 1 and itself), so 16 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Given A = {a, d, k} and B = {c, d, h}, find A U B.",
+        "options": [
+            "{a, d, k}",
+            "{d}",
+            "{a, c, d, h, k}",
+            "{c, d, h}"
+        ],
+        "correctAnswer": "{a, c, d, h, k}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {a, d, k} and {c, d, h} and removing duplicates gives A U B = {a, c, d, h, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In a right-angled triangle, the hypotenuse is 20 cm and one of the other angles is 60 degrees. Find the length of the side opposite this angle (to 2 d.p.).",
+        "options": [
+            "10",
+            "17.32",
+            "19.92",
+            "2.68"
+        ],
+        "correctAnswer": "17.32",
+        "explanation": "For a right-angled triangle, SOH-CAH-TOA tells us sin(angle) = opposite / hypotenuse. Rearranging, opposite = hypotenuse x sin(angle) = 20 x sin(60 degrees) = 20 x 0.866 = 17.32 cm.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Simplify i^7 (where i = sqrt(-1)).",
+        "options": [
+            "i",
+            "-i",
+            "1",
+            "-1"
+        ],
+        "correctAnswer": "-i",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^7, divide 7 by 4 and use the remainder: 7 = 4 x 1 + 3, so i^7 = i^3 = -i. Therefore i^7 = -i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In the 4th quadrant, what is the sign of sine?",
+        "options": [
+            "undefined",
+            "positive",
+            "negative",
+            "zero"
+        ],
+        "correctAnswer": "negative",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 4, sine is negative.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between 3 and 9.",
+        "options": [
+            "6",
+            "12",
+            "7",
+            "5"
+        ],
+        "correctAnswer": "6",
+        "explanation": "If 3, x, 9 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (3 + 9) / 2 = 12 / 2 = 6. This works because the common difference from 3 to x must equal the common difference from x to 9.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Evaluate (-29) - (8).",
+        "options": [
+            "-37",
+            "37",
+            "-43",
+            "-21"
+        ],
+        "correctAnswer": "-37",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-29) - (8) = (-29) + (-8) = -37. This is why '(-29) - (8)' does not equal '(8) - (-29)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "For the equation 1x^2 + (-9)x + (10) = 0, find the product of the roots.",
+        "options": [
+            "11",
+            "-9",
+            "-10",
+            "10"
+        ],
+        "correctAnswer": "10",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 1, c = 10, so the product of the roots = (10)/1 = 10.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between 10 and 6.",
+        "options": [
+            "16",
+            "7",
+            "9",
+            "8"
+        ],
+        "correctAnswer": "8",
+        "explanation": "If 10, x, 6 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (10 + 6) / 2 = 16 / 2 = 8. This works because the common difference from 10 to x must equal the common difference from x to 6.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If n(A) = 3 and n(B) = 7, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "21",
+            "10",
+            "22",
+            "23"
+        ],
+        "correctAnswer": "21",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 3 elements of A can be paired with each of the 7 elements of B, giving n(A x B) = n(A) x n(B) = 3 x 7 = 21 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the sum of the first 13 terms of an AP whose first term is -7 and common difference is 2.",
+        "options": [
+            "69",
+            "63",
+            "78",
+            "65"
+        ],
+        "correctAnswer": "65",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = -7, d = 2, n = 13: S13 = (13/2)[2(-7) + (13-1)(2)] = (13/2)[-14 + 24] = (13/2)(10) = 65.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Which of the following integers is the largest: -24, -27, 11, 4?",
+        "options": [
+            "-27",
+            "11",
+            "4",
+            "-24"
+        ],
+        "correctAnswer": "11",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -24, -27, 11, 4, the number farthest to the right (largest) is 11, because 11 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Which of the following integers is the largest: -5, 13, 23, 4?",
+        "options": [
+            "13",
+            "4",
+            "-5",
+            "23"
+        ],
+        "correctAnswer": "23",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -5, 13, 23, 4, the number farthest to the right (largest) is 23, because 23 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "An arithmetic progression (AP) has first term a = 5 and common difference d = 4. Find the 16th term.",
+        "options": [
+            "69",
+            "68",
+            "61",
+            "65"
+        ],
+        "correctAnswer": "65",
+        "explanation": "The nth term of an AP is given by the formula Tn = a + (n-1)d. Substituting a = 5, d = 4, and n = 16: T16 = 5 + (16-1)(4) = 5 + 15(4) = 5 + 60 = 65.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 19 and 48.",
+        "options": [
+            "48",
+            "4",
+            "19",
+            "1"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 19 and 48 into their prime factors and taking the common factors at their lowest powers gives GCD(19, 48) = 1. You can verify this since 19 / 1 = 19 and 48 / 1 = 48 are both whole numbers, and no larger number divides both 19 and 48 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Consider the sequence: 1, 0, -1, -2, ... Is this sequence an AP or a GP?",
+        "options": [
+            "AP",
+            "Both AP and GP",
+            "GP",
+            "Neither AP nor GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: 0-1 = -1, -1-0 = -1, -2--1 = -1. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "In the 1st quadrant, what is the sign of cosine?",
+        "options": [
+            "undefined",
+            "positive",
+            "zero",
+            "negative"
+        ],
+        "correctAnswer": "positive",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 1, cosine is positive.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Solve for x, where 0 <= x <= 180 degrees, given sin(x) = 1/2.",
+        "options": [
+            "30 degrees only",
+            "150 degrees only",
+            "0 degrees and 180 degrees",
+            "30 degrees and 150 degrees"
+        ],
+        "correctAnswer": "30 degrees and 150 degrees",
+        "explanation": "Sine is positive in both the first and second quadrants (0 to 180 degrees range covers both). sin(x) = 1/2 has a reference angle of 30 degrees, so the solutions in this range are x = 30 degrees (first quadrant) and x = 180 - 30 = 150 degrees (second quadrant, since sine of an angle equals sine of its supplement).",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Form the quadratic equation whose roots are -4 and 8.",
+        "options": [
+            "x^2 - 4x + 32 = 0",
+            "x^2 + 4x + -32 = 0",
+            "x^2 - 4x - 32 = 0",
+            "x^2 + 4x - 32 = 0"
+        ],
+        "correctAnswer": "x^2 - 4x - 32 = 0",
+        "explanation": "A quadratic equation with roots r1 and r2 can be written as x^2 - (sum of roots)x + (product of roots) = 0. Sum of roots = -4 + 8 = 4. Product of roots = -4 x 8 = -32. Substituting: x^2 - (4)x + -32 = 0, which simplifies to x^2 - 4x - 32 = 0.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Consider the sequence: -2, -6, -18, -54, ... Is this sequence an AP or a GP?",
+        "options": [
+            "Both AP and GP",
+            "AP",
+            "Neither AP nor GP",
+            "GP"
+        ],
+        "correctAnswer": "GP",
+        "explanation": "Checking the ratio between consecutive terms: -6/-2 = 3.00, -18/-6 = 3.00, -54/-18 = 3.00. Since the ratio is constant, this is a Geometric Progression (GP), not an AP, because the difference between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify: (4 - 7i) + (5 - 5i)",
+        "options": [
+            "11 - 12i",
+            "9 - 10i",
+            "-1 - 2i",
+            "9 - 12i"
+        ],
+        "correctAnswer": "9 - 12i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 4 + 5 = 9. Imaginary part: -7 + -5 = -12. So (4 - 7i) + (5 - 5i) = 9 - 12i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 2x^2 + (4)x + (-6) = 0.",
+        "options": [
+            "x = -2 or x = 2",
+            "x = -3 or x = 1",
+            "x = 3 or x = -1",
+            "x = -1 (repeated root)"
+        ],
+        "correctAnswer": "x = -3 or x = 1",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 2, b = 4, c = -6. First find the discriminant: b^2 - 4ac = (4)^2 - 4(2)(-6) = 16 - -48 = 64. Since this is a positive perfect square, sqrt(64) = 8. Substituting: x = (-(4) +/- 8) / (2 x 2) = (-4 +/- 8) / 4, giving x = -3 or x = 1.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "In a right-angled triangle, the hypotenuse is 14 cm and one of the other angles is 60 degrees. Find the length of the side opposite this angle (to 2 d.p.).",
+        "options": [
+            "1.88",
+            "13.94",
+            "12.12",
+            "7"
+        ],
+        "correctAnswer": "12.12",
+        "explanation": "For a right-angled triangle, SOH-CAH-TOA tells us sin(angle) = opposite / hypotenuse. Rearranging, opposite = hypotenuse x sin(angle) = 14 x sin(60 degrees) = 14 x 0.866 = 12.12 cm.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "If n(A) = 4 and n(B) = 3, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "64",
+            "12",
+            "7",
+            "14"
+        ],
+        "correctAnswer": "12",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 4 elements of A can be paired with each of the 3 elements of B, giving n(A x B) = n(A) x n(B) = 4 x 3 = 12 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 2 and common ratio r = 2. Find the 6th term.",
+        "options": [
+            "70",
+            "64",
+            "128",
+            "32"
+        ],
+        "correctAnswer": "64",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 2, r = 2, n = 6: T6 = 2 * (2)^(6-1) = 2 * (2)^5 = 2 * 32 = 64.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Multiply: (4 - 2i) x (-1 - 6i)",
+        "options": [
+            "-16 - 22i",
+            "8 - 22i",
+            "-16 - 26i",
+            "-14 - 24i"
+        ],
+        "correctAnswer": "-16 - 22i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (4 + -2i)(-1 + -6i) = 4x-1 + 4x-6i + -2i x-1 + -2x-6i^2 = -4 + -22i + 12(-1) = (-4 - 12) + (-22)i = -16 - 22i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Evaluate |-97|, the absolute value of -97.",
+        "options": [
+            "-97",
+            "100",
+            "97",
+            "-98"
+        ],
+        "correctAnswer": "97",
+        "explanation": "The absolute value of a number is its distance from zero on the number line, and distance is always non-negative. Since -97 is 97 units to the left of zero, |-97| = 97. In general, for a negative integer n, |n| = -n.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the complex conjugate of z = 5 - 5i.",
+        "options": [
+            "5 - 5i",
+            "-5 + 5i",
+            "5 + 5i",
+            "-5 - 5i"
+        ],
+        "correctAnswer": "5 + 5i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = 5 and y = -5, so the conjugate of 5 - 5i is 5 + 5i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "If n(A) = 3 and n(B) = 5, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "8",
+            "16",
+            "15",
+            "17"
+        ],
+        "correctAnswer": "15",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 3 elements of A can be paired with each of the 5 elements of B, giving n(A x B) = n(A) x n(B) = 3 x 5 = 15 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the value of (21) + (-19)?",
+        "options": [
+            "2",
+            "11",
+            "1",
+            "3"
+        ],
+        "correctAnswer": "2",
+        "explanation": "To add integers (21) and (-19), combine them on the number line. Since the numbers have opposite signs, subtract the smaller magnitude from the larger magnitude and take the sign of the number with the larger magnitude. (21) + (-19) = 2.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {b, e, h}, find the complement A'.",
+        "options": [
+            "{a, c, d, f, g, j}",
+            "{a, c, d, f, g, j, k}",
+            "{a, b, c, d, e, f, g, h, j, k}",
+            "{b, e, h}"
+        ],
+        "correctAnswer": "{a, c, d, f, g, j, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {b, e, h} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, c, d, f, g, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the Lowest Common Multiple (LCM) of 14 and 12?",
+        "options": [
+            "98",
+            "96",
+            "84",
+            "168"
+        ],
+        "correctAnswer": "84",
+        "explanation": "The LCM is the smallest positive number that both 14 and 12 divide into exactly. Using the relationship LCM(a,b) = (a x b) / GCD(a,b), we get LCM(14,12) = (14 x 12) / 2 = 168 / 2 = 84.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "In the 3rd quadrant, what is the sign of sine?",
+        "options": [
+            "negative",
+            "positive",
+            "zero",
+            "undefined"
+        ],
+        "correctAnswer": "negative",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 3, sine is negative.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Simplify i^5 (where i = sqrt(-1)).",
+        "options": [
+            "-1",
+            "-i",
+            "1",
+            "i"
+        ],
+        "correctAnswer": "i",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^5, divide 5 by 4 and use the remainder: 5 = 4 x 1 + 1, so i^5 = i^1 = i. Therefore i^5 = i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In an AP, the 1st term is 16 and the 4th term is 37. Find the common difference, d.",
+        "options": [
+            "7",
+            "21",
+            "9",
+            "-7"
+        ],
+        "correctAnswer": "7",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (37 - 16)/3 = 21/3 = 7.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "What is the exact value of tan(0 degrees)?",
+        "options": [
+            "0",
+            "sqrt(3)",
+            "1/(sqrt(3))",
+            "undefined"
+        ],
+        "correctAnswer": "0",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of tan(0 degrees) = 0. For example, at 0 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Multiply: (3i) x (3 + 2i)",
+        "options": [
+            "-6 - 9i",
+            "-4 + 7i",
+            "6 + 9i",
+            "-6 + 9i"
+        ],
+        "correctAnswer": "-6 + 9i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (0 + 3i)(3 + 2i) = 0x3 + 0x2i + 3i x3 + 3x2i^2 = 0 + 9i + 6(-1) = (0 - 6) + (9)i = -6 + 9i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 5x - 24 = 0.",
+        "options": [
+            "x = -3 or x = 8",
+            "x = -8 or x = 3",
+            "x = -7 or x = 4",
+            "x = 3 or x = 8"
+        ],
+        "correctAnswer": "x = -8 or x = 3",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -24 and add to give b = 5 (the coefficient of x). Those numbers are -3 and 8, so the equation factors as (x - (3))(x - (-8)) = 0. Setting each factor to zero gives x = 3 or x = -8, i.e. x = -8 or x = 3.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Given A = {a, c, e, j, m} and B = {c, e, h, m, n}, find A U B.",
+        "options": [
+            "{c, e, m}",
+            "{a, c, e, h, j, m, n}",
+            "{a, c, e, j, m}",
+            "{c, e, h, m, n}"
+        ],
+        "correctAnswer": "{a, c, e, h, j, m, n}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {a, c, e, j, m} and {c, e, h, m, n} and removing duplicates gives A U B = {a, c, e, h, j, m, n}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify i^27 (where i = sqrt(-1)).",
+        "options": [
+            "-i",
+            "1",
+            "i",
+            "-1"
+        ],
+        "correctAnswer": "-i",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^27, divide 27 by 4 and use the remainder: 27 = 4 x 6 + 3, so i^27 = i^3 = -i. Therefore i^27 = -i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the complex conjugate of z = 9 + 2i.",
+        "options": [
+            "9 - 2i",
+            "-9 + 2i",
+            "9 + 2i",
+            "-9 - 2i"
+        ],
+        "correctAnswer": "9 - 2i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = 9 and y = 2, so the conjugate of 9 + 2i is 9 - 2i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "For the quadratic equation 3x^2 + (-9)x + (1) = 0, what is the nature of its roots?",
+        "options": [
+            "Two distinct real roots",
+            "Two complex (non-real) roots",
+            "One repeated real root",
+            "No roots exist at all"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-9)^2 - 4(3)(1) = 81 - 12 = 69. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Which of the following integers is the largest: -30, 12, 22, 5?",
+        "options": [
+            "12",
+            "-30",
+            "5",
+            "22"
+        ],
+        "correctAnswer": "22",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -30, 12, 22, 5, the number farthest to the right (largest) is 22, because 22 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "A set has 2 distinct elements. How many elements does its power set contain?",
+        "options": [
+            "4",
+            "2",
+            "7",
+            "8"
+        ],
+        "correctAnswer": "4",
+        "explanation": "The power set of a set is the set of ALL its possible subsets, including the empty set and the set itself. A set with n elements has 2^n subsets, since each of the n elements can either be included or excluded independently. Here n = 2, so the number of subsets is 2^2 = 4.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the value of (47) + (23)?",
+        "options": [
+            "69",
+            "70",
+            "71",
+            "60"
+        ],
+        "correctAnswer": "70",
+        "explanation": "To add integers (47) and (23), combine them on the number line. Since both numbers share the same sign, add their magnitudes and keep the common sign. (47) + (23) = 70.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify: (5 - 7i) + (9 + 1i)",
+        "options": [
+            "16 - 6i",
+            "14 - 4i",
+            "14 - 6i",
+            "-4 - 8i"
+        ],
+        "correctAnswer": "14 - 6i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 5 + 9 = 14. Imaginary part: -7 + 1 = -6. So (5 - 7i) + (9 + 1i) = 14 - 6i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "An arithmetic progression (AP) has first term a = -2 and common difference d = -8. Find the 17th term.",
+        "options": [
+            "-138",
+            "-130",
+            "-127",
+            "-122"
+        ],
+        "correctAnswer": "-130",
+        "explanation": "The nth term of an AP is given by the formula Tn = a + (n-1)d. Substituting a = -2, d = -8, and n = 17: T17 = -2 + (17-1)(-8) = -2 + 16(-8) = -2 + -128 = -130.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Convert 1*pi/6 radians to degrees.",
+        "options": [
+            "0",
+            "30",
+            "120",
+            "60"
+        ],
+        "correctAnswer": "30",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (1*pi/6) x (180/pi) = 1x180/6 = 30 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 1x^2 + (-3)x + (2) = 0.",
+        "options": [
+            "x = 2 or x = 3",
+            "x = 1 or x = 2",
+            "x = -1 or x = -2",
+            "x = 1.5 (repeated root)"
+        ],
+        "correctAnswer": "x = 1 or x = 2",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 1, b = -3, c = 2. First find the discriminant: b^2 - 4ac = (-3)^2 - 4(1)(2) = 9 - 8 = 1. Since this is a positive perfect square, sqrt(1) = 1. Substituting: x = (-(-3) +/- 1) / (2 x 1) = (3 +/- 1) / 2, giving x = 1 or x = 2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Convert 120 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "3*pi/2",
+            "2*pi/4",
+            "120*pi/180",
+            "2*pi/3"
+        ],
+        "correctAnswer": "2*pi/3",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 120 degrees x (pi/180) = (120/180) x pi radians. Simplifying the fraction 120/180 to lowest terms gives 2/3, so 120 degrees = 2*pi/3 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Evaluate |-48|, the absolute value of -48.",
+        "options": [
+            "-50",
+            "-48",
+            "50",
+            "48"
+        ],
+        "correctAnswer": "48",
+        "explanation": "The absolute value of a number is its distance from zero on the number line, and distance is always non-negative. Since -48 is 48 units to the left of zero, |-48| = 48. In general, for a negative integer n, |n| = -n.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "What is the exact value of tan(30 degrees)?",
+        "options": [
+            "undefined",
+            "sqrt(3)",
+            "1",
+            "1/(sqrt(3))"
+        ],
+        "correctAnswer": "1/(sqrt(3))",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of tan(30 degrees) = 1/(sqrt(3)). For example, at 30 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Which of the following integers is the largest: -29, 28, -5, 7?",
+        "options": [
+            "-5",
+            "28",
+            "7",
+            "-29"
+        ],
+        "correctAnswer": "28",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -29, 28, -5, 7, the number farthest to the right (largest) is 28, because 28 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Consider the sequence: 3, 9, 27, 81, ... Is this sequence an AP or a GP?",
+        "options": [
+            "AP",
+            "Both AP and GP",
+            "Neither AP nor GP",
+            "GP"
+        ],
+        "correctAnswer": "GP",
+        "explanation": "Checking the ratio between consecutive terms: 9/3 = 3.00, 27/9 = 3.00, 81/27 = 3.00. Since the ratio is constant, this is a Geometric Progression (GP), not an AP, because the difference between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "For the quadratic equation 1x^2 + (-3)x + (8) = 0, what is the nature of its roots?",
+        "options": [
+            "Two distinct real roots",
+            "No roots exist at all",
+            "One repeated real root",
+            "Two complex (non-real) roots"
+        ],
+        "correctAnswer": "Two complex (non-real) roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-3)^2 - 4(1)(8) = 9 - 32 = -23. Since D < 0, the equation has two complex (non-real) roots, because a negative discriminant requires taking the square root of a negative number, which only exists in the complex number system.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "In an AP, the 1st term is -5 and the 4th term is -20. Find the common difference, d.",
+        "options": [
+            "-15",
+            "-3",
+            "-5",
+            "5"
+        ],
+        "correctAnswer": "-5",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (-20 - -5)/3 = -15/3 = -5.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify: (-10 + 12i) - (7 + 12i)",
+        "options": [
+            "-3 + 24i",
+            "-17",
+            "-15",
+            "-17 + 2i"
+        ],
+        "correctAnswer": "-17",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -10 - 7 = -17. Imaginary part: 12 - 12 = 0. So (-10 + 12i) - (7 + 12i) = -17.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 2x - 8 = 0.",
+        "options": [
+            "x = 2 or x = 4",
+            "x = -2 or x = 4",
+            "x = -3 or x = 3",
+            "x = -4 or x = 2"
+        ],
+        "correctAnswer": "x = -4 or x = 2",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -8 and add to give b = 2 (the coefficient of x). Those numbers are -2 and 4, so the equation factors as (x - (2))(x - (-4)) = 0. Setting each factor to zero gives x = 2 or x = -4, i.e. x = -4 or x = 2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Which of the following integers is the largest: -30, -23, -26, 30?",
+        "options": [
+            "30",
+            "-30",
+            "-26",
+            "-23"
+        ],
+        "correctAnswer": "30",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -30, -23, -26, 30, the number farthest to the right (largest) is 30, because 30 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Which of the following integers is the largest: -2, 27, -20, 17?",
+        "options": [
+            "-2",
+            "-20",
+            "27",
+            "17"
+        ],
+        "correctAnswer": "27",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -2, 27, -20, 17, the number farthest to the right (largest) is 27, because 27 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 2x^2 + (5)x + (3) = 0.",
+        "options": [
+            "x = 1.5 or x = 1",
+            "x = -0.5 or x = 0",
+            "x = -1.25 (repeated root)",
+            "x = -1.5 or x = -1"
+        ],
+        "correctAnswer": "x = -1.5 or x = -1",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 2, b = 5, c = 3. First find the discriminant: b^2 - 4ac = (5)^2 - 4(2)(3) = 25 - 24 = 1. Since this is a positive perfect square, sqrt(1) = 1. Substituting: x = (-(5) +/- 1) / (2 x 2) = (-5 +/- 1) / 4, giving x = -1.5 or x = -1.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = 5 - 12i.",
+        "options": [
+            "13",
+            "14",
+            "169",
+            "17"
+        ],
+        "correctAnswer": "13",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = 5, y = -12, so |z| = sqrt((5)^2 + (-12)^2) = sqrt(25 + 144) = sqrt(169) = 13.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "What is the exact value of cos(0 degrees)?",
+        "options": [
+            "(sqrt(2))/2",
+            "1",
+            "(sqrt(3))/2",
+            "1/2"
+        ],
+        "correctAnswer": "1",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of cos(0 degrees) = 1. For example, at 0 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "In an AP, the 1st term is -6 and the 4th term is 6. Find the common difference, d.",
+        "options": [
+            "6",
+            "12",
+            "4",
+            "-4"
+        ],
+        "correctAnswer": "4",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (6 - -6)/3 = 12/3 = 4.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify i^13 (where i = sqrt(-1)).",
+        "options": [
+            "1",
+            "i",
+            "-1",
+            "-i"
+        ],
+        "correctAnswer": "i",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^13, divide 13 by 4 and use the remainder: 13 = 4 x 3 + 1, so i^13 = i^1 = i. Therefore i^13 = i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Simplify i^9 (where i = sqrt(-1)).",
+        "options": [
+            "-1",
+            "i",
+            "-i",
+            "1"
+        ],
+        "correctAnswer": "i",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^9, divide 9 by 4 and use the remainder: 9 = 4 x 2 + 1, so i^9 = i^1 = i. Therefore i^9 = i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 11x + 30 = 0.",
+        "options": [
+            "x = 6 or x = 5",
+            "x = -6 or x = 5",
+            "x = -5 or x = -4",
+            "x = -6 or x = -5"
+        ],
+        "correctAnswer": "x = -6 or x = -5",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 30 and add to give b = 11 (the coefficient of x). Those numbers are 6 and 5, so the equation factors as (x - (-6))(x - (-5)) = 0. Setting each factor to zero gives x = -6 or x = -5, i.e. x = -6 or x = -5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "What is the exact value of cos(30 degrees)?",
+        "options": [
+            "(sqrt(2))/2",
+            "1/2",
+            "1",
+            "(sqrt(3))/2"
+        ],
+        "correctAnswer": "(sqrt(3))/2",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of cos(30 degrees) = (sqrt(3))/2. For example, at 30 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "What is the product (5) x (12)?",
+        "options": [
+            "-60",
+            "65",
+            "17",
+            "60"
+        ],
+        "correctAnswer": "60",
+        "explanation": "Multiply the magnitudes: |5| x |12| = 60. The sign of the result is positive, since the product of two integers with the same sign is always positive. Therefore (5) x (12) = 60.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Which of the following integers is the largest: 16, -15, -20, -1?",
+        "options": [
+            "-20",
+            "16",
+            "-15",
+            "-1"
+        ],
+        "correctAnswer": "16",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing 16, -15, -20, -1, the number farthest to the right (largest) is 16, because 16 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 31 and 50.",
+        "options": [
+            "4",
+            "31",
+            "1",
+            "50"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 31 and 50 into their prime factors and taking the common factors at their lowest powers gives GCD(31, 50) = 1. You can verify this since 31 / 1 = 31 and 50 / 1 = 50 are both whole numbers, and no larger number divides both 31 and 50 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "For the equation 1x^2 + (-4)x + (6) = 0, find the product of the roots.",
+        "options": [
+            "-4",
+            "-6",
+            "6",
+            "7"
+        ],
+        "correctAnswer": "6",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 1, c = 6, so the product of the roots = (6)/1 = 6.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Simplify i^18 (where i = sqrt(-1)).",
+        "options": [
+            "i",
+            "1",
+            "-1",
+            "-i"
+        ],
+        "correctAnswer": "-1",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^18, divide 18 by 4 and use the remainder: 18 = 4 x 4 + 2, so i^18 = i^2 = -1. Therefore i^18 = -1.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 6 and common ratio r = -3. Find the 5th term.",
+        "options": [
+            "492",
+            "-162",
+            "-1458",
+            "486"
+        ],
+        "correctAnswer": "486",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 6, r = -3, n = 5: T5 = 6 * (-3)^(5-1) = 6 * (-3)^4 = 6 * 81 = 486.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 1x^2 + (10)x + (0) = 0.",
+        "options": [
+            "x = 10 or x = 0",
+            "x = -9 or x = 1",
+            "x = -5 (repeated root)",
+            "x = -10 or x = 0"
+        ],
+        "correctAnswer": "x = -10 or x = 0",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 1, b = 10, c = 0. First find the discriminant: b^2 - 4ac = (10)^2 - 4(1)(0) = 100 - 0 = 100. Since this is a positive perfect square, sqrt(100) = 10. Substituting: x = (-(10) +/- 10) / (2 x 1) = (-10 +/- 10) / 2, giving x = -10 or x = 0.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "What is the Lowest Common Multiple (LCM) of 10 and 12?",
+        "options": [
+            "70",
+            "120",
+            "72",
+            "60"
+        ],
+        "correctAnswer": "60",
+        "explanation": "The LCM is the smallest positive number that both 10 and 12 divide into exactly. Using the relationship LCM(a,b) = (a x b) / GCD(a,b), we get LCM(10,12) = (10 x 12) / 2 = 120 / 2 = 60.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Given A = {a, c, e, m, p, q} and B = {b, d, g, j, p}, find A n B.",
+        "options": [
+            "{ } (the empty set)",
+            "{a, c, e, m, p, q}",
+            "{p}",
+            "{a, b, c, d, e, g, j, m, p, q}"
+        ],
+        "correctAnswer": "{p}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {a, c, e, m, p, q} with {b, d, g, j, p}, the elements common to both sets are exactly {p}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the sum of the first 10 terms of an AP whose first term is 7 and common difference is 5.",
+        "options": [
+            "305",
+            "295",
+            "299",
+            "290"
+        ],
+        "correctAnswer": "295",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = 7, d = 5, n = 10: S10 = (10/2)[2(7) + (10-1)(5)] = (10/2)[14 + 45] = (10/2)(59) = 295.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Convert 2*pi radians to degrees.",
+        "options": [
+            "450",
+            "360",
+            "330",
+            "390"
+        ],
+        "correctAnswer": "360",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (2*pi) x (180/pi) = 2x180 = 360 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 4 and common ratio r = -1. Find the 3th term.",
+        "options": [
+            "-4",
+            "10",
+            "4",
+            "7"
+        ],
+        "correctAnswer": "4",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 4, r = -1, n = 3: T3 = 4 * (-1)^(3-1) = 4 * (-1)^2 = 4 * 1 = 4.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "What is the exact value of sin(30 degrees)?",
+        "options": [
+            "1/2",
+            "(sqrt(3))/2",
+            "(sqrt(2))/2",
+            "1"
+        ],
+        "correctAnswer": "1/2",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of sin(30 degrees) = 1/2. For example, at 30 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "For the equation 3x^2 + (-11)x + (9) = 0, find the sum of the roots.",
+        "options": [
+            "3.333",
+            "-3.667",
+            "-3",
+            "3.667"
+        ],
+        "correctAnswer": "3.667",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the sum of the roots is given by -b/a. Here a = 3, b = -11, so the sum of the roots = -(-11)/3 = 11/3 = 3.667.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Given A = {d, j} and B = {a, h, m}, is A a subset of B (A c B)?",
+        "options": [
+            "Only if A = B",
+            "True",
+            "Cannot be determined",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, d, j in A are not found in B = {a, h, m}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Consider the sequence: 1, 4, 7, 10, ... Is this sequence an AP or a GP?",
+        "options": [
+            "Both AP and GP",
+            "AP",
+            "GP",
+            "Neither AP nor GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: 4-1 = 3, 7-4 = 3, 10-7 = 3. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Consider the sequence: 4, 8, 12, 16, ... Is this sequence an AP or a GP?",
+        "options": [
+            "AP",
+            "Neither AP nor GP",
+            "Both AP and GP",
+            "GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: 8-4 = 4, 12-8 = 4, 16-12 = 4. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If n(A) = 4 and n(B) = 7, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "28",
+            "30",
+            "32",
+            "11"
+        ],
+        "correctAnswer": "28",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 4 elements of A can be paired with each of the 7 elements of B, giving n(A x B) = n(A) x n(B) = 4 x 7 = 28 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In a right-angled triangle, the hypotenuse is 10 cm and one of the other angles is 60 degrees. Find the length of the side opposite this angle (to 2 d.p.).",
+        "options": [
+            "9.96",
+            "5",
+            "1.34",
+            "8.66"
+        ],
+        "correctAnswer": "8.66",
+        "explanation": "For a right-angled triangle, SOH-CAH-TOA tells us sin(angle) = opposite / hypotenuse. Rearranging, opposite = hypotenuse x sin(angle) = 10 x sin(60 degrees) = 10 x 0.866 = 8.66 cm.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "According to De Morgan's Laws, (A U B)' is equal to which of the following?",
+        "options": [
+            "A U B",
+            "A' n B'",
+            "A' U B'",
+            "A n B"
+        ],
+        "correctAnswer": "A' n B'",
+        "explanation": "De Morgan's Laws relate complements of unions and intersections. The first law states that the complement of a union equals the intersection of the complements: (A U B)' = A' n B'. This makes sense because an element is outside both A and B exactly when it is outside A AND outside B at the same time.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 1x^2 + (9)x + (-10) = 0.",
+        "options": [
+            "x = 10 or x = -1",
+            "x = -4.5 (repeated root)",
+            "x = -9 or x = 2",
+            "x = -10 or x = 1"
+        ],
+        "correctAnswer": "x = -10 or x = 1",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 1, b = 9, c = -10. First find the discriminant: b^2 - 4ac = (9)^2 - 4(1)(-10) = 81 - -40 = 121. Since this is a positive perfect square, sqrt(121) = 11. Substituting: x = (-(9) +/- 11) / (2 x 1) = (-9 +/- 11) / 2, giving x = -10 or x = 1.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 59 and 55.",
+        "options": [
+            "55",
+            "59",
+            "2",
+            "1"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 59 and 55 into their prime factors and taking the common factors at their lowest powers gives GCD(59, 55) = 1. You can verify this since 59 / 1 = 59 and 55 / 1 = 55 are both whole numbers, and no larger number divides both 59 and 55 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 2x - 35 = 0.",
+        "options": [
+            "x = -6 or x = 6",
+            "x = -7 or x = 5",
+            "x = 7 or x = -5",
+            "x = -7 or x = -5"
+        ],
+        "correctAnswer": "x = -7 or x = 5",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -35 and add to give b = 2 (the coefficient of x). Those numbers are 7 and -5, so the equation factors as (x - (-7))(x - (5)) = 0. Setting each factor to zero gives x = -7 or x = 5, i.e. x = -7 or x = 5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Given that sin(60 degrees) = (sqrt(3))/2 and cos(60 degrees) = 1/2, find tan(60 degrees).",
+        "options": [
+            "sqrt(3)",
+            "1/sqrt(3)",
+            "(sqrt(3))/2",
+            "1"
+        ],
+        "correctAnswer": "sqrt(3)",
+        "explanation": "The tangent of an angle is defined as the ratio of sine to cosine: tan(x) = sin(x) / cos(x). Substituting the given values: tan(60 degrees) = ((sqrt(3))/2) / (1/2) = sqrt(3).",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Multiply: (-3 - 3i) x (-4 - 2i)",
+        "options": [
+            "6 - 6i",
+            "18 + 18i",
+            "6 + 18i",
+            "8 + 16i"
+        ],
+        "correctAnswer": "6 + 18i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (-3 + -3i)(-4 + -2i) = -3x-4 + -3x-2i + -3i x-4 + -3x-2i^2 = 12 + 18i + 6(-1) = (12 - 6) + (18)i = 6 + 18i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "An arithmetic progression (AP) has first term a = -14 and common difference d = 3. Find the 14th term.",
+        "options": [
+            "20",
+            "28",
+            "22",
+            "25"
+        ],
+        "correctAnswer": "25",
+        "explanation": "The nth term of an AP is given by the formula Tn = a + (n-1)d. Substituting a = -14, d = 3, and n = 14: T14 = -14 + (14-1)(3) = -14 + 13(3) = -14 + 39 = 25.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the complex conjugate of z = 10 + 9i.",
+        "options": [
+            "10 + 9i",
+            "-10 - 9i",
+            "-10 + 9i",
+            "10 - 9i"
+        ],
+        "correctAnswer": "10 - 9i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = 10 and y = 9, so the conjugate of 10 + 9i is 10 - 9i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 6x + 5 = 0.",
+        "options": [
+            "x = 1 or x = 5",
+            "x = -5 or x = -1",
+            "x = 2 or x = 6",
+            "x = 5 or x = -1"
+        ],
+        "correctAnswer": "x = 1 or x = 5",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 5 and add to give b = -6 (the coefficient of x). Those numbers are -5 and -1, so the equation factors as (x - (5))(x - (1)) = 0. Setting each factor to zero gives x = 5 or x = 1, i.e. x = 1 or x = 5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {d, f, k}, find the complement A'.",
+        "options": [
+            "{a, b, c, e, g, h}",
+            "{a, b, c, d, e, f, g, h, j, k}",
+            "{a, b, c, e, g, h, j}",
+            "{d, f, k}"
+        ],
+        "correctAnswer": "{a, b, c, e, g, h, j}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {d, f, k} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, b, c, e, g, h, j}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the exact value of tan(90 degrees)?",
+        "options": [
+            "undefined",
+            "1/(sqrt(3))",
+            "1",
+            "0"
+        ],
+        "correctAnswer": "undefined",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of tan(90 degrees) = undefined. For example, at 90 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 5 and common ratio r = -1. Find the 3th term.",
+        "options": [
+            "-1",
+            "8",
+            "-5",
+            "5"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 5, r = -1, n = 3: T3 = 5 * (-1)^(3-1) = 5 * (-1)^2 = 5 * 1 = 5.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Consider the sequence: -6, -11, -16, -21, ... Is this sequence an AP or a GP?",
+        "options": [
+            "Neither AP nor GP",
+            "GP",
+            "AP",
+            "Both AP and GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: -11--6 = -5, -16--11 = -5, -21--16 = -5. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Convert 30 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "1*pi/7",
+            "1*pi/6",
+            "6*pi/1",
+            "30*pi/180"
+        ],
+        "correctAnswer": "1*pi/6",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 30 degrees x (pi/180) = (30/180) x pi radians. Simplifying the fraction 30/180 to lowest terms gives 1/6, so 30 degrees = 1*pi/6 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 2x^2 + (3)x + (-9) = 0.",
+        "options": [
+            "x = -3 or x = 1.5",
+            "x = 3 or x = -1.5",
+            "x = -2 or x = 2.5",
+            "x = -0.75 (repeated root)"
+        ],
+        "correctAnswer": "x = -3 or x = 1.5",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 2, b = 3, c = -9. First find the discriminant: b^2 - 4ac = (3)^2 - 4(2)(-9) = 9 - -72 = 81. Since this is a positive perfect square, sqrt(81) = 9. Substituting: x = (-(3) +/- 9) / (2 x 2) = (-3 +/- 9) / 4, giving x = -3 or x = 1.5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Evaluate (28) - (-6).",
+        "options": [
+            "22",
+            "-34",
+            "35",
+            "34"
+        ],
+        "correctAnswer": "34",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (28) - (-6) = (28) + (6) = 34. This is why '(28) - (-6)' does not equal '(-6) - (28)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "What is the exact value of sin(0 degrees)?",
+        "options": [
+            "1/2",
+            "(sqrt(2))/2",
+            "(sqrt(3))/2",
+            "0"
+        ],
+        "correctAnswer": "0",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of sin(0 degrees) = 0. For example, at 0 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Using the double angle relationship, find sin(90 degrees) given that it equals sin(2 x 45 degrees).",
+        "options": [
+            "0",
+            "1",
+            "1/2",
+            "(sqrt(2))/2"
+        ],
+        "correctAnswer": "1",
+        "explanation": "Since 90 degrees = 2 x 45 degrees, we can use the double angle formula sin(2x) = 2 sin(x) cos(x), or simply evaluate sin(90 degrees) directly from the standard angle table. Either way, sin(90 degrees) = 1.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {a, d} and B = {c, p}, is A a subset of B (A c B)?",
+        "options": [
+            "True",
+            "Cannot be determined",
+            "False",
+            "Only if A = B"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, a, d in A are not found in B = {c, p}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify i^25 (where i = sqrt(-1)).",
+        "options": [
+            "1",
+            "-i",
+            "-1",
+            "i"
+        ],
+        "correctAnswer": "i",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^25, divide 25 by 4 and use the remainder: 25 = 4 x 6 + 1, so i^25 = i^1 = i. Therefore i^25 = i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Given A = {d, f, g} and B = {b, g, n}, is A a subset of B (A c B)?",
+        "options": [
+            "True",
+            "Cannot be determined",
+            "False",
+            "Only if A = B"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, d, f in A are not found in B = {b, g, n}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "For the equation 2x^2 + (7)x + (2) = 0, find the product of the roots.",
+        "options": [
+            "-1",
+            "3.5",
+            "1.5",
+            "1"
+        ],
+        "correctAnswer": "1",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 2, c = 2, so the product of the roots = (2)/2 = 1.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Evaluate (-9) - (-12).",
+        "options": [
+            "-21",
+            "-3",
+            "3",
+            "-4"
+        ],
+        "correctAnswer": "3",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-9) - (-12) = (-9) + (12) = 3. This is why '(-9) - (-12)' does not equal '(-12) - (-9)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -2x^2 + (9)x + (5) = 0.",
+        "options": [
+            "x = -0.5 or x = 5",
+            "x = 0.5 or x = -5",
+            "x = 0.5 or x = 6",
+            "x = 2.25 (repeated root)"
+        ],
+        "correctAnswer": "x = -0.5 or x = 5",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -2, b = 9, c = 5. First find the discriminant: b^2 - 4ac = (9)^2 - 4(-2)(5) = 81 - -40 = 121. Since this is a positive perfect square, sqrt(121) = 11. Substituting: x = (-(9) +/- 11) / (2 x -2) = (-9 +/- 11) / -4, giving x = -0.5 or x = 5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Which of the following statements about the empty set (null set) is TRUE?",
+        "options": [
+            "The empty set has exactly one element.",
+            "The empty set is equal to the set {0}.",
+            "The empty set cannot be a subset of any set.",
+            "The empty set is a subset of every set."
+        ],
+        "correctAnswer": "The empty set is a subset of every set.",
+        "explanation": "The empty set, denoted { } or (empty symbol), contains no elements at all. By definition, a set X is a subset of a set Y if every element of X is also in Y; since the empty set has no elements, this condition is vacuously (automatically) true no matter what Y is. Therefore the empty set is a subset of every set, including itself. Note also that {0} is NOT the empty set, since {0} contains one element, the number 0.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In a right-angled triangle, the hypotenuse is 12 cm and one of the other angles is 60 degrees. Find the length of the side opposite this angle (to 2 d.p.).",
+        "options": [
+            "11.95",
+            "6",
+            "10.39",
+            "1.61"
+        ],
+        "correctAnswer": "10.39",
+        "explanation": "For a right-angled triangle, SOH-CAH-TOA tells us sin(angle) = opposite / hypotenuse. Rearranging, opposite = hypotenuse x sin(angle) = 12 x sin(60 degrees) = 12 x 0.866 = 10.39 cm.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Evaluate (28) - (-24).",
+        "options": [
+            "-52",
+            "52",
+            "4",
+            "47"
+        ],
+        "correctAnswer": "52",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (28) - (-24) = (28) + (24) = 52. This is why '(28) - (-24)' does not equal '(-24) - (28)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "What is the value of (36) + (33)?",
+        "options": [
+            "69",
+            "70",
+            "102",
+            "33"
+        ],
+        "correctAnswer": "69",
+        "explanation": "To add integers (36) and (33), combine them on the number line. Since both numbers share the same sign, add their magnitudes and keep the common sign. (36) + (33) = 69.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Consider the sequence: -7, -11, -15, -19, ... Is this sequence an AP or a GP?",
+        "options": [
+            "Neither AP nor GP",
+            "Both AP and GP",
+            "GP",
+            "AP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: -11--7 = -4, -15--11 = -4, -19--15 = -4. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If n(A) = 16, n(B) = 18, and n(A n B) = 3, find n(A U B).",
+        "options": [
+            "28",
+            "34",
+            "35",
+            "31"
+        ],
+        "correctAnswer": "31",
+        "explanation": "Use the inclusion-exclusion formula: n(A U B) = n(A) + n(B) - n(A n B). This subtracts the overlap once so it is not double-counted. Substituting the given values: n(A U B) = 16 + 18 - 3 = 31.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Is the number 81 prime or composite?",
+        "options": [
+            "Neither prime nor composite",
+            "Both prime and composite",
+            "Composite",
+            "Prime"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 81 = 3 x 27, 81 can be divided exactly by 3 (a number other than 1 and itself), so 81 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = -3 + 4i.",
+        "options": [
+            "7",
+            "5",
+            "6",
+            "25"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = -3, y = 4, so |z| = sqrt((-3)^2 + (4)^2) = sqrt(9 + 16) = sqrt(25) = 5.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Multiply: (3 - 4i) x (-6 - 5i)",
+        "options": [
+            "-36 + 7i",
+            "-38 - 39i",
+            "-38 + 9i",
+            "2 + 9i"
+        ],
+        "correctAnswer": "-38 + 9i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (3 + -4i)(-6 + -5i) = 3x-6 + 3x-5i + -4i x-6 + -4x-5i^2 = -18 + 9i + 20(-1) = (-18 - 20) + (9)i = -38 + 9i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Given A = {b, h, p, q} and B = {c, e, h, j, m, q}, find A n B.",
+        "options": [
+            "{h, q}",
+            "{b, c, e, h, j, m, p, q}",
+            "{b, h, p, q}",
+            "{ } (the empty set)"
+        ],
+        "correctAnswer": "{h, q}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {b, h, p, q} with {c, e, h, j, m, q}, the elements common to both sets are exactly {h, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Convert 7*pi radians to degrees.",
+        "options": [
+            "1230",
+            "1290",
+            "1350",
+            "1260"
+        ],
+        "correctAnswer": "1260",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (7*pi) x (180/pi) = 7x180 = 1260 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {b, d, k, m, p} and B = {a, d, f, p}, find A n B.",
+        "options": [
+            "{ } (the empty set)",
+            "{d, p}",
+            "{a, b, d, f, k, m, p}",
+            "{b, d, k, m, p}"
+        ],
+        "correctAnswer": "{d, p}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {b, d, k, m, p} with {a, d, f, p}, the elements common to both sets are exactly {d, p}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Given A = {c, d, f, k, n, q} and B = {a, c, e, j, n, p}, find A n B.",
+        "options": [
+            "{c, n}",
+            "{c, d, f, k, n, q}",
+            "{ } (the empty set)",
+            "{a, c, d, e, f, j, k, n, p, q}"
+        ],
+        "correctAnswer": "{c, n}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {c, d, f, k, n, q} with {a, c, e, j, n, p}, the elements common to both sets are exactly {c, n}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Which expression correctly defines cotangent (cot) of angle x, in terms of the basic trig ratios?",
+        "options": [
+            "1/cos(x)",
+            "1/tan(x)",
+            "1/sin(x)",
+            "sin(x)/cos(x)"
+        ],
+        "correctAnswer": "1/tan(x)",
+        "explanation": "The reciprocal trigonometric functions are defined as the reciprocals of sine, cosine, and tangent: csc(x) = 1/sin(x), sec(x) = 1/cos(x), and cot(x) = 1/tan(x) (also equal to cos(x)/sin(x)). Therefore cotangent (cot) of x = 1/tan(x).",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 1 and common ratio r = 1. Find the 3th term.",
+        "options": [
+            "6",
+            "-2",
+            "1",
+            "-5"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 1, r = 1, n = 3: T3 = 1 * (1)^(3-1) = 1 * (1)^2 = 1 * 1 = 1.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "For the equation 3x^2 + (6)x + (-5) = 0, find the product of the roots.",
+        "options": [
+            "-1.333",
+            "-1.667",
+            "2",
+            "1.667"
+        ],
+        "correctAnswer": "-1.667",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 3, c = -5, so the product of the roots = (-5)/3 = -1.667.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Convert 150 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "5*pi/7",
+            "5*pi/6",
+            "150*pi/180",
+            "6*pi/5"
+        ],
+        "correctAnswer": "5*pi/6",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 150 degrees x (pi/180) = (150/180) x pi radians. Simplifying the fraction 150/180 to lowest terms gives 5/6, so 150 degrees = 5*pi/6 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Is the number 32 prime or composite?",
+        "options": [
+            "Composite",
+            "Prime",
+            "Neither prime nor composite",
+            "Both prime and composite"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 32 = 2 x 16, 32 can be divided exactly by 2 (a number other than 1 and itself), so 32 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 43 and 41.",
+        "options": [
+            "41",
+            "43",
+            "1",
+            "3"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 43 and 41 into their prime factors and taking the common factors at their lowest powers gives GCD(43, 41) = 1. You can verify this since 43 / 1 = 43 and 41 / 1 = 41 are both whole numbers, and no larger number divides both 43 and 41 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "What is the Lowest Common Multiple (LCM) of 12 and 18?",
+        "options": [
+            "36",
+            "54",
+            "216",
+            "48"
+        ],
+        "correctAnswer": "36",
+        "explanation": "The LCM is the smallest positive number that both 12 and 18 divide into exactly. Using the relationship LCM(a,b) = (a x b) / GCD(a,b), we get LCM(12,18) = (12 x 18) / 6 = 216 / 6 = 36.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the sum of the first 6 terms of an AP whose first term is 3 and common difference is 4.",
+        "options": [
+            "86",
+            "78",
+            "74",
+            "84"
+        ],
+        "correctAnswer": "78",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = 3, d = 4, n = 6: S6 = (6/2)[2(3) + (6-1)(4)] = (6/2)[6 + 20] = (6/2)(26) = 78.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify: (9 + 5i) + (2 + 10i)",
+        "options": [
+            "11 + 17i",
+            "13 + 15i",
+            "11 + 15i",
+            "7 - 5i"
+        ],
+        "correctAnswer": "11 + 15i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 9 + 2 = 11. Imaginary part: 5 + 10 = 15. So (9 + 5i) + (2 + 10i) = 11 + 15i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "For the quadratic equation 3x^2 + (-9)x + (-6) = 0, what is the nature of its roots?",
+        "options": [
+            "One repeated real root",
+            "Two complex (non-real) roots",
+            "No roots exist at all",
+            "Two distinct real roots"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-9)^2 - 4(3)(-6) = 81 - -72 = 153. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Under which of the following operations is the set of integers NOT closed?",
+        "options": [
+            "Subtraction",
+            "Division",
+            "Multiplication",
+            "Addition"
+        ],
+        "correctAnswer": "Division",
+        "explanation": "A set is 'closed' under an operation if performing that operation on any two members of the set always produces another member of the set. The integers are closed under addition, subtraction, and multiplication, because combining any two integers this way always gives another integer. However, integers are NOT closed under division, since dividing one integer by another can produce a non-integer (e.g. 7 / 2 = 3.5). Hence the correct answer is Division.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the sum of the first 3 terms of a GP with first term a = 1 and common ratio r = 2.",
+        "options": [
+            "7",
+            "8",
+            "12",
+            "5"
+        ],
+        "correctAnswer": "7",
+        "explanation": "For a GP with ratio r != 1, the sum of the first n terms is Sn = a(r^n - 1)/(r - 1). Substituting a = 1, r = 2, n = 3: S3 = 1((2)^3 - 1)/(2 - 1) = 1(8 - 1)/1 = 1(7)/1 = 7.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 16x + 63 = 0.",
+        "options": [
+            "x = -8 or x = -6",
+            "x = 7 or x = 9",
+            "x = -7 or x = 9",
+            "x = -9 or x = -7"
+        ],
+        "correctAnswer": "x = -9 or x = -7",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 63 and add to give b = 16 (the coefficient of x). Those numbers are 7 and 9, so the equation factors as (x - (-7))(x - (-9)) = 0. Setting each factor to zero gives x = -7 or x = -9, i.e. x = -9 or x = -7.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "A set has 3 distinct elements. How many elements does its power set contain?",
+        "options": [
+            "4",
+            "16",
+            "8",
+            "9"
+        ],
+        "correctAnswer": "8",
+        "explanation": "The power set of a set is the set of ALL its possible subsets, including the empty set and the set itself. A set with n elements has 2^n subsets, since each of the n elements can either be included or excluded independently. Here n = 3, so the number of subsets is 2^3 = 8.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Consider the sequence: 0, 5, 10, 15, ... Is this sequence an AP or a GP?",
+        "options": [
+            "GP",
+            "AP",
+            "Both AP and GP",
+            "Neither AP nor GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: 5-0 = 5, 10-5 = 5, 15-10 = 5. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Multiply: (2 + 2i) x (-5 - 1i)",
+        "options": [
+            "-8 + 8i",
+            "-8 - 12i",
+            "-12 - 12i",
+            "-6 - 14i"
+        ],
+        "correctAnswer": "-8 - 12i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (2 + 2i)(-5 + -1i) = 2x-5 + 2x-1i + 2i x-5 + 2x-1i^2 = -10 + -12i + -2(-1) = (-10 - -2) + (-12)i = -8 - 12i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "If n(A) = 22, n(B) = 16, and n(A n B) = 6, find n(A U B).",
+        "options": [
+            "38",
+            "35",
+            "32",
+            "26"
+        ],
+        "correctAnswer": "32",
+        "explanation": "Use the inclusion-exclusion formula: n(A U B) = n(A) + n(B) - n(A n B). This subtracts the overlap once so it is not double-counted. Substituting the given values: n(A U B) = 22 + 16 - 6 = 32.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between -13 and -15.",
+        "options": [
+            "-13",
+            "-15",
+            "-28",
+            "-14"
+        ],
+        "correctAnswer": "-14",
+        "explanation": "If -13, x, -15 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (-13 + -15) / 2 = -28 / 2 = -14. This works because the common difference from -13 to x must equal the common difference from x to -15.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "A set has 5 distinct elements. How many elements does its power set contain?",
+        "options": [
+            "16",
+            "25",
+            "32",
+            "10"
+        ],
+        "correctAnswer": "32",
+        "explanation": "The power set of a set is the set of ALL its possible subsets, including the empty set and the set itself. A set with n elements has 2^n subsets, since each of the n elements can either be included or excluded independently. Here n = 5, so the number of subsets is 2^5 = 32.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Is the number 75 prime or composite?",
+        "options": [
+            "Neither prime nor composite",
+            "Both prime and composite",
+            "Composite",
+            "Prime"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 75 = 3 x 25, 75 can be divided exactly by 3 (a number other than 1 and itself), so 75 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Evaluate (-34) - (-26).",
+        "options": [
+            "-8",
+            "-60",
+            "-13",
+            "8"
+        ],
+        "correctAnswer": "-8",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-34) - (-26) = (-34) + (26) = -8. This is why '(-34) - (-26)' does not equal '(-26) - (-34)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the complex conjugate of z = -15 + 6i.",
+        "options": [
+            "-15 - 6i",
+            "-15 + 6i",
+            "15 + 6i",
+            "15 - 6i"
+        ],
+        "correctAnswer": "-15 - 6i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = -15 and y = 6, so the conjugate of -15 + 6i is -15 - 6i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "If n(A) = 11, n(B) = 25, and n(A n B) = 4, find n(A U B).",
+        "options": [
+            "32",
+            "28",
+            "36",
+            "34"
+        ],
+        "correctAnswer": "32",
+        "explanation": "Use the inclusion-exclusion formula: n(A U B) = n(A) + n(B) - n(A n B). This subtracts the overlap once so it is not double-counted. Substituting the given values: n(A U B) = 11 + 25 - 4 = 32.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Given A = {a, b, c, h, j} and B = {b, c, h, m, q}, find A n B.",
+        "options": [
+            "{b, c, h}",
+            "{a, b, c, h, j, m, q}",
+            "{a, b, c, h, j}",
+            "{ } (the empty set)"
+        ],
+        "correctAnswer": "{b, c, h}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {a, b, c, h, j} with {b, c, h, m, q}, the elements common to both sets are exactly {b, c, h}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the product (11) x (-2)?",
+        "options": [
+            "26",
+            "-22",
+            "22",
+            "9"
+        ],
+        "correctAnswer": "-22",
+        "explanation": "Multiply the magnitudes: |11| x |-2| = 22. The sign of the result is negative, since the product of two integers with opposite signs is always negative. Therefore (11) x (-2) = -22.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify: (7 + 4i) / (1 + 2i)",
+        "options": [
+            "-3 - 2i",
+            "3 + 2i",
+            "3 - 2i",
+            "4 - 3i"
+        ],
+        "correctAnswer": "3 - 2i",
+        "explanation": "To divide complex numbers, multiply the numerator and denominator by the conjugate of the denominator, which is 1 - 2i, to make the denominator real: denominator becomes (1)^2 + (2)^2 = 5. The numerator becomes (7+4i)(1-2i) = 15 + -10i (after simplifying using i^2 = -1). Dividing both parts by 5 gives 3 + -2i, i.e. 3 - 2i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the sum of the first 4 terms of a GP with first term a = 1 and common ratio r = 2.",
+        "options": [
+            "16",
+            "15",
+            "13",
+            "25"
+        ],
+        "correctAnswer": "15",
+        "explanation": "For a GP with ratio r != 1, the sum of the first n terms is Sn = a(r^n - 1)/(r - 1). Substituting a = 1, r = 2, n = 4: S4 = 1((2)^4 - 1)/(2 - 1) = 1(16 - 1)/1 = 1(15)/1 = 15.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "For the equation 1x^2 + (-1)x + (-2) = 0, find the sum of the roots.",
+        "options": [
+            "1",
+            "-1",
+            "2",
+            "0"
+        ],
+        "correctAnswer": "1",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the sum of the roots is given by -b/a. Here a = 1, b = -1, so the sum of the roots = -(-1)/1 = 1/1 = 1.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Given A = {c, d, g, j, k} and B = {b, c, e, g, n}, find A - B (elements in A but not in B).",
+        "options": [
+            "{d, j, k}",
+            "{b, c, d, e, g, j, k, n}",
+            "{b, e, n}",
+            "{c, g}"
+        ],
+        "correctAnswer": "{d, j, k}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {c, d, g, j, k} and removing any element that also appears in B = {b, c, e, g, n} gives A - B = {d, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Is the number 71 prime or composite?",
+        "options": [
+            "Neither prime nor composite",
+            "Composite",
+            "Prime",
+            "Both prime and composite"
+        ],
+        "correctAnswer": "Prime",
+        "explanation": "A prime number has exactly two distinct positive factors: 1 and itself. Checking 71 against all integers from 2 up to its square root (about 8), none of them divide 71 exactly, so 71 has no factors other than 1 and 71. Therefore 71 is prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "For the quadratic equation 4x^2 + (-6)x + (-2) = 0, what is the nature of its roots?",
+        "options": [
+            "No roots exist at all",
+            "Two distinct real roots",
+            "One repeated real root",
+            "Two complex (non-real) roots"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-6)^2 - 4(4)(-2) = 36 - -32 = 68. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Is the number 43 prime or composite?",
+        "options": [
+            "Prime",
+            "Both prime and composite",
+            "Composite",
+            "Neither prime nor composite"
+        ],
+        "correctAnswer": "Prime",
+        "explanation": "A prime number has exactly two distinct positive factors: 1 and itself. Checking 43 against all integers from 2 up to its square root (about 6), none of them divide 43 exactly, so 43 has no factors other than 1 and 43. Therefore 43 is prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Multiply: (-4 - 5i) x (5 - 2i)",
+        "options": [
+            "-28 - 19i",
+            "-30 + 33i",
+            "-30 - 17i",
+            "-10 - 17i"
+        ],
+        "correctAnswer": "-30 - 17i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (-4 + -5i)(5 + -2i) = -4x5 + -4x-2i + -5i x5 + -5x-2i^2 = -20 + -17i + 10(-1) = (-20 - 10) + (-17)i = -30 - 17i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In an AP, the 1st term is 0 and the 4th term is 12. Find the common difference, d.",
+        "options": [
+            "-4",
+            "12",
+            "4",
+            "6"
+        ],
+        "correctAnswer": "4",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (12 - 0)/3 = 12/3 = 4.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the sum of the first 5 terms of a GP with first term a = 4 and common ratio r = -2.",
+        "options": [
+            "44",
+            "46",
+            "-132",
+            "48"
+        ],
+        "correctAnswer": "44",
+        "explanation": "For a GP with ratio r != 1, the sum of the first n terms is Sn = a(r^n - 1)/(r - 1). Substituting a = 4, r = -2, n = 5: S5 = 4((-2)^5 - 1)/(-2 - 1) = 4(-32 - 1)/-3 = 4(-33)/-3 = 44.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 4 and common ratio r = -3. Find the 4th term.",
+        "options": [
+            "-111",
+            "-108",
+            "36",
+            "324"
+        ],
+        "correctAnswer": "-108",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 4, r = -3, n = 4: T4 = 4 * (-3)^(4-1) = 4 * (-3)^3 = 4 * -27 = -108.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {b, f, g, n} and B = {a, g, j, k, q}, find A n B.",
+        "options": [
+            "{ } (the empty set)",
+            "{a, b, f, g, j, k, n, q}",
+            "{g}",
+            "{b, f, g, n}"
+        ],
+        "correctAnswer": "{g}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {b, f, g, n} with {a, g, j, k, q}, the elements common to both sets are exactly {g}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify: (-2 - 7i) + (-7 + 8i)",
+        "options": [
+            "-9 + 1i",
+            "5 - 15i",
+            "-7 + 1i",
+            "-9 + 3i"
+        ],
+        "correctAnswer": "-9 + 1i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -2 + -7 = -9. Imaginary part: -7 + 8 = 1. So (-2 - 7i) + (-7 + 8i) = -9 + 1i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the complex conjugate of z = -10 + 11i.",
+        "options": [
+            "10 - 11i",
+            "10 + 11i",
+            "-10 + 11i",
+            "-10 - 11i"
+        ],
+        "correctAnswer": "-10 - 11i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = -10 and y = 11, so the conjugate of -10 + 11i is -10 - 11i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "A set has 4 distinct elements. How many elements does its power set contain?",
+        "options": [
+            "8",
+            "16",
+            "19",
+            "32"
+        ],
+        "correctAnswer": "16",
+        "explanation": "The power set of a set is the set of ALL its possible subsets, including the empty set and the set itself. A set with n elements has 2^n subsets, since each of the n elements can either be included or excluded independently. Here n = 4, so the number of subsets is 2^4 = 16.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In a GP, the 1st term is 1 and the 2nd term is -3. Find the common ratio, r.",
+        "options": [
+            "-4",
+            "-3",
+            "-2",
+            "-0.333"
+        ],
+        "correctAnswer": "-3",
+        "explanation": "In a GP, each term is obtained by multiplying the previous term by the common ratio r, so r = T2 / T1. Here, r = -3 / 1 = -3.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If n(A) = 6 and n(B) = 5, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "30",
+            "32",
+            "34",
+            "11"
+        ],
+        "correctAnswer": "30",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 6 elements of A can be paired with each of the 5 elements of B, giving n(A x B) = n(A) x n(B) = 6 x 5 = 30 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "For the equation 1x^2 + (-12)x + (-3) = 0, find the product of the roots.",
+        "options": [
+            "-2",
+            "-12",
+            "-3",
+            "3"
+        ],
+        "correctAnswer": "-3",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 1, c = -3, so the product of the roots = (-3)/1 = -3.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Multiply: (6 - 4i) x (6 - 5i)",
+        "options": [
+            "56 - 54i",
+            "18 - 56i",
+            "16 - 54i",
+            "16 - 6i"
+        ],
+        "correctAnswer": "16 - 54i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (6 + -4i)(6 + -5i) = 6x6 + 6x-5i + -4i x6 + -4x-5i^2 = 36 + -54i + 20(-1) = (36 - 20) + (-54)i = 16 - 54i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Evaluate (8) - (-5).",
+        "options": [
+            "-13",
+            "18",
+            "13",
+            "3"
+        ],
+        "correctAnswer": "13",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (8) - (-5) = (8) + (5) = 13. This is why '(8) - (-5)' does not equal '(-5) - (8)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Given A = {c, g, h, n} and B = {d, g, j, n}, find A n B.",
+        "options": [
+            "{c, g, h, n}",
+            "{g, n}",
+            "{ } (the empty set)",
+            "{c, d, g, h, j, n}"
+        ],
+        "correctAnswer": "{g, n}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {c, g, h, n} with {d, g, j, n}, the elements common to both sets are exactly {g, n}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "A set has 7 distinct elements. How many elements does its power set contain?",
+        "options": [
+            "64",
+            "14",
+            "128",
+            "49"
+        ],
+        "correctAnswer": "128",
+        "explanation": "The power set of a set is the set of ALL its possible subsets, including the empty set and the set itself. A set with n elements has 2^n subsets, since each of the n elements can either be included or excluded independently. Here n = 7, so the number of subsets is 2^7 = 128.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 7 and n(B) = 7, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "51",
+            "49",
+            "50",
+            "14"
+        ],
+        "correctAnswer": "49",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 7 elements of A can be paired with each of the 7 elements of B, giving n(A x B) = n(A) x n(B) = 7 x 7 = 49 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In an AP, the 1st term is 12 and the 4th term is 9. Find the common difference, d.",
+        "options": [
+            "-4",
+            "-3",
+            "-1",
+            "1"
+        ],
+        "correctAnswer": "-1",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (9 - 12)/3 = -3/3 = -1.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {g, m, p, q} and B = {h, n, q}, find A U B.",
+        "options": [
+            "{h, n, q}",
+            "{q}",
+            "{g, m, p, q}",
+            "{g, h, m, n, p, q}"
+        ],
+        "correctAnswer": "{g, h, m, n, p, q}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {g, m, p, q} and {h, n, q} and removing duplicates gives A U B = {g, h, m, n, p, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Given A = {b, c, d, e, m, q} and B = {b, c, j}, find A - B (elements in A but not in B).",
+        "options": [
+            "{b, c, d, e, j, m, q}",
+            "{b, c}",
+            "{j}",
+            "{d, e, m, q}"
+        ],
+        "correctAnswer": "{d, e, m, q}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {b, c, d, e, m, q} and removing any element that also appears in B = {b, c, j} gives A - B = {d, e, m, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 23, n(B) = 25, and n(A n B) = 3, find n(A U B).",
+        "options": [
+            "45",
+            "46",
+            "42",
+            "48"
+        ],
+        "correctAnswer": "45",
+        "explanation": "Use the inclusion-exclusion formula: n(A U B) = n(A) + n(B) - n(A n B). This subtracts the overlap once so it is not double-counted. Substituting the given values: n(A U B) = 23 + 25 - 3 = 45.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 8, n(B) = 23, and n(A n B) = 4, find n(A U B).",
+        "options": [
+            "29",
+            "23",
+            "27",
+            "31"
+        ],
+        "correctAnswer": "27",
+        "explanation": "Use the inclusion-exclusion formula: n(A U B) = n(A) + n(B) - n(A n B). This subtracts the overlap once so it is not double-counted. Substituting the given values: n(A U B) = 8 + 23 - 4 = 27.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 15, n(B) = 10, and n(A n B) = 6, find n(A U B).",
+        "options": [
+            "19",
+            "13",
+            "23",
+            "25"
+        ],
+        "correctAnswer": "19",
+        "explanation": "Use the inclusion-exclusion formula: n(A U B) = n(A) + n(B) - n(A n B). This subtracts the overlap once so it is not double-counted. Substituting the given values: n(A U B) = 15 + 10 - 6 = 19.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "For the equation 3x^2 + (-2)x + (-3) = 0, find the sum of the roots.",
+        "options": [
+            "1",
+            "-0.667",
+            "0.333",
+            "0.667"
+        ],
+        "correctAnswer": "0.667",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the sum of the roots is given by -b/a. Here a = 3, b = -2, so the sum of the roots = -(-2)/3 = 2/3 = 0.667.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the sum of the first 7 terms of an AP whose first term is -2 and common difference is 2.",
+        "options": [
+            "35",
+            "26",
+            "28",
+            "32"
+        ],
+        "correctAnswer": "28",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = -2, d = 2, n = 7: S7 = (7/2)[2(-2) + (7-1)(2)] = (7/2)[-4 + 12] = (7/2)(8) = 28.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Which of the following integers is the largest: -4, -16, -2, 7?",
+        "options": [
+            "-16",
+            "7",
+            "-4",
+            "-2"
+        ],
+        "correctAnswer": "7",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -4, -16, -2, 7, the number farthest to the right (largest) is 7, because 7 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Which of the following integers is the largest: 1, -14, 27, 28?",
+        "options": [
+            "27",
+            "-14",
+            "28",
+            "1"
+        ],
+        "correctAnswer": "28",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing 1, -14, 27, 28, the number farthest to the right (largest) is 28, because 28 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 48 and 49.",
+        "options": [
+            "49",
+            "1",
+            "5",
+            "48"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 48 and 49 into their prime factors and taking the common factors at their lowest powers gives GCD(48, 49) = 1. You can verify this since 48 / 1 = 48 and 49 / 1 = 49 are both whole numbers, and no larger number divides both 48 and 49 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Given that sin(30 degrees) = 1/2 and cos(30 degrees) = (sqrt(3))/2, find tan(30 degrees).",
+        "options": [
+            "sqrt(3)",
+            "1",
+            "1/sqrt(3)",
+            "1/2"
+        ],
+        "correctAnswer": "1/sqrt(3)",
+        "explanation": "The tangent of an angle is defined as the ratio of sine to cosine: tan(x) = sin(x) / cos(x). Substituting the given values: tan(30 degrees) = (1/2) / ((sqrt(3))/2) = 1/sqrt(3).",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Convert 3*pi/2 radians to degrees.",
+        "options": [
+            "270",
+            "360",
+            "300",
+            "240"
+        ],
+        "correctAnswer": "270",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (3*pi/2) x (180/pi) = 3x180/2 = 270 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Convert 1*pi radians to degrees.",
+        "options": [
+            "150",
+            "180",
+            "270",
+            "210"
+        ],
+        "correctAnswer": "180",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (1*pi) x (180/pi) = 1x180 = 180 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Convert 180 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "1*pi/2",
+            "180*pi/180",
+            "1*pi",
+            "1*pi/1"
+        ],
+        "correctAnswer": "1*pi",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 180 degrees x (pi/180) = (180/180) x pi radians. Simplifying the fraction 180/180 to lowest terms gives 1/1, so 180 degrees = 1*pi radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "If n(A) = 5 and n(B) = 3, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "125",
+            "19",
+            "8",
+            "15"
+        ],
+        "correctAnswer": "15",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 5 elements of A can be paired with each of the 3 elements of B, giving n(A x B) = n(A) x n(B) = 5 x 3 = 15 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 12x + 32 = 0.",
+        "options": [
+            "x = 4 or x = 8",
+            "x = -8 or x = -4",
+            "x = -4 or x = 8",
+            "x = -7 or x = -3"
+        ],
+        "correctAnswer": "x = -8 or x = -4",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 32 and add to give b = 12 (the coefficient of x). Those numbers are 4 and 8, so the equation factors as (x - (-4))(x - (-8)) = 0. Setting each factor to zero gives x = -4 or x = -8, i.e. x = -8 or x = -4.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {b, d, g}, find the complement A'.",
+        "options": [
+            "{a, b, c, d, e, f, g, h, j, k}",
+            "{b, d, g}",
+            "{a, c, e, f, h, j}",
+            "{a, c, e, f, h, j, k}"
+        ],
+        "correctAnswer": "{a, c, e, f, h, j, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {b, d, g} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, c, e, f, h, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Given A = {a, e, h, m, p} and B = {c, e, j, m}, find A - B (elements in A but not in B).",
+        "options": [
+            "{e, m}",
+            "{c, j}",
+            "{a, h, p}",
+            "{a, c, e, h, j, m, p}"
+        ],
+        "correctAnswer": "{a, h, p}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {a, e, h, m, p} and removing any element that also appears in B = {c, e, j, m} gives A - B = {a, h, p}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Consider the sequence: 7, 4, 1, -2, ... Is this sequence an AP or a GP?",
+        "options": [
+            "Both AP and GP",
+            "AP",
+            "GP",
+            "Neither AP nor GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: 4-7 = -3, 1-4 = -3, -2-1 = -3. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = -6 - 8i.",
+        "options": [
+            "10",
+            "100",
+            "11",
+            "14"
+        ],
+        "correctAnswer": "10",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = -6, y = -8, so |z| = sqrt((-6)^2 + (-8)^2) = sqrt(36 + 64) = sqrt(100) = 10.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Solve for x, where 0 <= x <= 180 degrees, given sin(x) = 1.",
+        "options": [
+            "90 degrees",
+            "0 degrees",
+            "180 degrees",
+            "90 degrees and 180 degrees"
+        ],
+        "correctAnswer": "90 degrees",
+        "explanation": "sin(x) = 1 occurs at the single point in the range 0 to 180 degrees where sine reaches its maximum value of 1, which is at x = 90 degrees. There is no other solution in this range since sine only reaches exactly 1 once per full 360-degree cycle.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Find the sum to infinity of a GP with first term a = 6 and common ratio r = -0.2.",
+        "options": [
+            "6",
+            "-1.2",
+            "5",
+            "7.5"
+        ],
+        "correctAnswer": "5",
+        "explanation": "Since |r| = |-0.2| < 1, the GP converges and has a finite sum to infinity given by S(infinity) = a / (1 - r). Substituting a = 6 and r = -0.2: S(infinity) = 6 / (1 - (-0.2)) = 6 / 1.2 = 5. This formula only works when the common ratio's magnitude is less than 1; otherwise the series does not converge.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "For the quadratic equation 1x^2 + (-7)x + (-9) = 0, what is the nature of its roots?",
+        "options": [
+            "One repeated real root",
+            "Two distinct real roots",
+            "No roots exist at all",
+            "Two complex (non-real) roots"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-7)^2 - 4(1)(-9) = 49 - -36 = 85. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Given A = {e, f, g, n, q} and B = {a, b, h, q}, find A - B (elements in A but not in B).",
+        "options": [
+            "{a, b, h}",
+            "{q}",
+            "{e, f, g, n}",
+            "{a, b, e, f, g, h, n, q}"
+        ],
+        "correctAnswer": "{e, f, g, n}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {e, f, g, n, q} and removing any element that also appears in B = {a, b, h, q} gives A - B = {e, f, g, n}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Convert 360 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "2*pi/2",
+            "1*pi/2",
+            "360*pi/180",
+            "2*pi"
+        ],
+        "correctAnswer": "2*pi",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 360 degrees x (pi/180) = (360/180) x pi radians. Simplifying the fraction 360/180 to lowest terms gives 2/1, so 360 degrees = 2*pi radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "For the equation 3x^2 + (-11)x + (2) = 0, find the product of the roots.",
+        "options": [
+            "1",
+            "0.667",
+            "-3.667",
+            "-0.667"
+        ],
+        "correctAnswer": "0.667",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 3, c = 2, so the product of the roots = (2)/3 = 0.667.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "What is the exact value of cos(45 degrees)?",
+        "options": [
+            "(sqrt(2))/2",
+            "1/2",
+            "1",
+            "0"
+        ],
+        "correctAnswer": "(sqrt(2))/2",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of cos(45 degrees) = (sqrt(2))/2. For example, at 45 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {a, e, k, m, p, q} and B = {h, j, m}, find A - B (elements in A but not in B).",
+        "options": [
+            "{m}",
+            "{a, e, h, j, k, m, p, q}",
+            "{a, e, k, p, q}",
+            "{h, j}"
+        ],
+        "correctAnswer": "{a, e, k, p, q}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {a, e, k, m, p, q} and removing any element that also appears in B = {h, j, m} gives A - B = {a, e, k, p, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 2 and n(B) = 4, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "16",
+            "8",
+            "12",
+            "6"
+        ],
+        "correctAnswer": "8",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 2 elements of A can be paired with each of the 4 elements of B, giving n(A x B) = n(A) x n(B) = 2 x 4 = 8 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 3x^2 + (-10)x + (0) = 0.",
+        "options": [
+            "x = 0 or x = -3.33",
+            "x = 1 or x = 4.33",
+            "x = 0 or x = 3.33",
+            "x = 1.67 (repeated root)"
+        ],
+        "correctAnswer": "x = 0 or x = 3.33",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 3, b = -10, c = 0. First find the discriminant: b^2 - 4ac = (-10)^2 - 4(3)(0) = 100 - 0 = 100. Since this is a positive perfect square, sqrt(100) = 10. Substituting: x = (-(-10) +/- 10) / (2 x 3) = (10 +/- 10) / 6, giving x = 0 or x = 3.33.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "In the 2nd quadrant, what is the sign of cosine?",
+        "options": [
+            "positive",
+            "negative",
+            "undefined",
+            "zero"
+        ],
+        "correctAnswer": "negative",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 2, cosine is negative.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 2x - 3 = 0.",
+        "options": [
+            "x = -1 or x = 3",
+            "x = 3 or x = 1",
+            "x = -3 or x = 1",
+            "x = 0 or x = 4"
+        ],
+        "correctAnswer": "x = -1 or x = 3",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -3 and add to give b = -2 (the coefficient of x). Those numbers are -3 and 1, so the equation factors as (x - (3))(x - (-1)) = 0. Setting each factor to zero gives x = 3 or x = -1, i.e. x = -1 or x = 3.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = 8 + 6i.",
+        "options": [
+            "10",
+            "14",
+            "11",
+            "100"
+        ],
+        "correctAnswer": "10",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = 8, y = 6, so |z| = sqrt((8)^2 + (6)^2) = sqrt(64 + 36) = sqrt(100) = 10.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In the 3rd quadrant, what is the sign of cosine?",
+        "options": [
+            "positive",
+            "zero",
+            "undefined",
+            "negative"
+        ],
+        "correctAnswer": "negative",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 3, cosine is negative.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {b, d, e, m, n, p} and B = {a, f, g, j, n, p}, find A n B.",
+        "options": [
+            "{ } (the empty set)",
+            "{b, d, e, m, n, p}",
+            "{n, p}",
+            "{a, b, d, e, f, g, j, m, n, p}"
+        ],
+        "correctAnswer": "{n, p}",
+        "explanation": "The intersection A n B contains only the elements that appear in BOTH A and B. Comparing {b, d, e, m, n, p} with {a, f, g, j, n, p}, the elements common to both sets are exactly {n, p}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In the 1st quadrant, what is the sign of sine?",
+        "options": [
+            "zero",
+            "undefined",
+            "positive",
+            "negative"
+        ],
+        "correctAnswer": "positive",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 1, sine is positive.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "In a GP, the 1st term is 4 and the 2nd term is -8. Find the common ratio, r.",
+        "options": [
+            "-12",
+            "-2",
+            "-1",
+            "-0.5"
+        ],
+        "correctAnswer": "-2",
+        "explanation": "In a GP, each term is obtained by multiplying the previous term by the common ratio r, so r = T2 / T1. Here, r = -8 / 4 = -2.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {b, g, h, q} and B = {c, h, m, n}, find A U B.",
+        "options": [
+            "{h}",
+            "{c, h, m, n}",
+            "{b, g, h, q}",
+            "{b, c, g, h, m, n, q}"
+        ],
+        "correctAnswer": "{b, c, g, h, m, n, q}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {b, g, h, q} and {c, h, m, n} and removing duplicates gives A U B = {b, c, g, h, m, n, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the sum of the first 6 terms of an AP whose first term is 6 and common difference is 5.",
+        "options": [
+            "106",
+            "121",
+            "117",
+            "111"
+        ],
+        "correctAnswer": "111",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = 6, d = 5, n = 6: S6 = (6/2)[2(6) + (6-1)(5)] = (6/2)[12 + 25] = (6/2)(37) = 111.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Consider the sequence: -8, -14, -20, -26, ... Is this sequence an AP or a GP?",
+        "options": [
+            "GP",
+            "Both AP and GP",
+            "AP",
+            "Neither AP nor GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: -14--8 = -6, -20--14 = -6, -26--20 = -6. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 16x + 63 = 0.",
+        "options": [
+            "x = 7 or x = 9",
+            "x = 7 or x = -9",
+            "x = -7 or x = -9",
+            "x = 8 or x = 10"
+        ],
+        "correctAnswer": "x = 7 or x = 9",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 63 and add to give b = -16 (the coefficient of x). Those numbers are -7 and -9, so the equation factors as (x - (7))(x - (9)) = 0. Setting each factor to zero gives x = 7 or x = 9, i.e. x = 7 or x = 9.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "In a GP, the 1st term is 3 and the 2nd term is -9. Find the common ratio, r.",
+        "options": [
+            "-2",
+            "-12",
+            "-0.333",
+            "-3"
+        ],
+        "correctAnswer": "-3",
+        "explanation": "In a GP, each term is obtained by multiplying the previous term by the common ratio r, so r = T2 / T1. Here, r = -9 / 3 = -3.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "What is the value of (43) + (8)?",
+        "options": [
+            "8",
+            "51",
+            "50",
+            "58"
+        ],
+        "correctAnswer": "51",
+        "explanation": "To add integers (43) and (8), combine them on the number line. Since both numbers share the same sign, add their magnitudes and keep the common sign. (43) + (8) = 51.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "What is the product (-4) x (-8)?",
+        "options": [
+            "32",
+            "-32",
+            "-12",
+            "34"
+        ],
+        "correctAnswer": "32",
+        "explanation": "Multiply the magnitudes: |-4| x |-8| = 32. The sign of the result is positive, since the product of two integers with the same sign is always positive. Therefore (-4) x (-8) = 32.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify i^8 (where i = sqrt(-1)).",
+        "options": [
+            "1",
+            "-1",
+            "i",
+            "-i"
+        ],
+        "correctAnswer": "1",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^8, divide 8 by 4 and use the remainder: 8 = 4 x 2 + 0, so i^8 = i^0 = 1. Therefore i^8 = 1.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Given A = {g, j, n} and B = {b, h, n}, find A U B.",
+        "options": [
+            "{n}",
+            "{g, j, n}",
+            "{b, h, n}",
+            "{b, g, h, j, n}"
+        ],
+        "correctAnswer": "{b, g, h, j, n}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {g, j, n} and {b, h, n} and removing duplicates gives A U B = {b, g, h, j, n}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 5 and n(B) = 7, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "39",
+            "37",
+            "12",
+            "35"
+        ],
+        "correctAnswer": "35",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 5 elements of A can be paired with each of the 7 elements of B, giving n(A x B) = n(A) x n(B) = 5 x 7 = 35 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify: (-4 + 8i) + (6 + 2i)",
+        "options": [
+            "-10 + 6i",
+            "2 + 12i",
+            "2 + 10i",
+            "4 + 10i"
+        ],
+        "correctAnswer": "2 + 10i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -4 + 6 = 2. Imaginary part: 8 + 2 = 10. So (-4 + 8i) + (6 + 2i) = 2 + 10i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Which expression correctly defines secant (sec) of angle x, in terms of the basic trig ratios?",
+        "options": [
+            "sin(x)/cos(x)",
+            "1/sin(x)",
+            "1/tan(x)",
+            "1/cos(x)"
+        ],
+        "correctAnswer": "1/cos(x)",
+        "explanation": "The reciprocal trigonometric functions are defined as the reciprocals of sine, cosine, and tangent: csc(x) = 1/sin(x), sec(x) = 1/cos(x), and cot(x) = 1/tan(x) (also equal to cos(x)/sin(x)). Therefore secant (sec) of x = 1/cos(x).",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Simplify: (-7 - 6i) + (-12 - 12i)",
+        "options": [
+            "-19 - 16i",
+            "-17 - 18i",
+            "5 + 6i",
+            "-19 - 18i"
+        ],
+        "correctAnswer": "-19 - 18i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -7 + -12 = -19. Imaginary part: -6 + -12 = -18. So (-7 - 6i) + (-12 - 12i) = -19 - 18i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "For the quadratic equation 1x^2 + (3)x + (8) = 0, what is the nature of its roots?",
+        "options": [
+            "No roots exist at all",
+            "Two complex (non-real) roots",
+            "One repeated real root",
+            "Two distinct real roots"
+        ],
+        "correctAnswer": "Two complex (non-real) roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (3)^2 - 4(1)(8) = 9 - 32 = -23. Since D < 0, the equation has two complex (non-real) roots, because a negative discriminant requires taking the square root of a negative number, which only exists in the complex number system.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "For the quadratic equation 5x^2 + (-2)x + (6) = 0, what is the nature of its roots?",
+        "options": [
+            "One repeated real root",
+            "Two distinct real roots",
+            "Two complex (non-real) roots",
+            "No roots exist at all"
+        ],
+        "correctAnswer": "Two complex (non-real) roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-2)^2 - 4(5)(6) = 4 - 120 = -116. Since D < 0, the equation has two complex (non-real) roots, because a negative discriminant requires taking the square root of a negative number, which only exists in the complex number system.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Is the number 34 prime or composite?",
+        "options": [
+            "Prime",
+            "Both prime and composite",
+            "Composite",
+            "Neither prime nor composite"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 34 = 2 x 17, 34 can be divided exactly by 2 (a number other than 1 and itself), so 34 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify: (6 - 9i) - (-5 - 3i)",
+        "options": [
+            "11 - 4i",
+            "13 - 6i",
+            "1 - 12i",
+            "11 - 6i"
+        ],
+        "correctAnswer": "11 - 6i",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 6 - -5 = 11. Imaginary part: -9 - -3 = -6. So (6 - 9i) - (-5 - 3i) = 11 - 6i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In a right-angled triangle, the hypotenuse is 8 cm and one of the other angles is 60 degrees. Find the length of the side opposite this angle (to 2 d.p.).",
+        "options": [
+            "4",
+            "1.07",
+            "6.93",
+            "7.97"
+        ],
+        "correctAnswer": "6.93",
+        "explanation": "For a right-angled triangle, SOH-CAH-TOA tells us sin(angle) = opposite / hypotenuse. Rearranging, opposite = hypotenuse x sin(angle) = 8 x sin(60 degrees) = 8 x 0.866 = 6.93 cm.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 11x + 18 = 0.",
+        "options": [
+            "x = -8 or x = -1",
+            "x = -9 or x = -2",
+            "x = 9 or x = 2",
+            "x = -9 or x = 2"
+        ],
+        "correctAnswer": "x = -9 or x = -2",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 18 and add to give b = 11 (the coefficient of x). Those numbers are 9 and 2, so the equation factors as (x - (-9))(x - (-2)) = 0. Setting each factor to zero gives x = -9 or x = -2, i.e. x = -9 or x = -2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Simplify: (5 + 10i) - (-11 + 8i)",
+        "options": [
+            "16 + 2i",
+            "-6 + 18i",
+            "18 + 2i",
+            "16 + 4i"
+        ],
+        "correctAnswer": "16 + 2i",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 5 - -11 = 16. Imaginary part: 10 - 8 = 2. So (5 + 10i) - (-11 + 8i) = 16 + 2i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "What is the exact value of sin(60 degrees)?",
+        "options": [
+            "1/2",
+            "(sqrt(3))/2",
+            "(sqrt(2))/2",
+            "0"
+        ],
+        "correctAnswer": "(sqrt(3))/2",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of sin(60 degrees) = (sqrt(3))/2. For example, at 60 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {m, p, q} and B = {b, m, p, q, v}, is A a subset of B (A c B)?",
+        "options": [
+            "True",
+            "Cannot be determined",
+            "Only if A = B",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "explanation": "A is a subset of B if every element of A also belongs to B. Checking each element of A = {m, p, q}, all of them appear in B = {b, m, p, q, v}, so A c B is True.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "For the quadratic equation 1x^2 + (-1)x + (-1) = 0, what is the nature of its roots?",
+        "options": [
+            "One repeated real root",
+            "Two complex (non-real) roots",
+            "No roots exist at all",
+            "Two distinct real roots"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-1)^2 - 4(1)(-1) = 1 - -4 = 5. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {e, f, g, h}, find the complement A'.",
+        "options": [
+            "{a, b, c, d, j, k}",
+            "{a, b, c, d, j}",
+            "{a, b, c, d, e, f, g, h, j, k}",
+            "{e, f, g, h}"
+        ],
+        "correctAnswer": "{a, b, c, d, j, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {e, f, g, h} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, b, c, d, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the product (-6) x (-3)?",
+        "options": [
+            "20",
+            "-9",
+            "-18",
+            "18"
+        ],
+        "correctAnswer": "18",
+        "explanation": "Multiply the magnitudes: |-6| x |-3| = 18. The sign of the result is positive, since the product of two integers with the same sign is always positive. Therefore (-6) x (-3) = 18.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Form the quadratic equation whose roots are -5 and 7.",
+        "options": [
+            "x^2 - 2x + 35 = 0",
+            "x^2 + 2x - 35 = 0",
+            "x^2 - 2x - 35 = 0",
+            "x^2 + 2x + -35 = 0"
+        ],
+        "correctAnswer": "x^2 - 2x - 35 = 0",
+        "explanation": "A quadratic equation with roots r1 and r2 can be written as x^2 - (sum of roots)x + (product of roots) = 0. Sum of roots = -5 + 7 = 2. Product of roots = -5 x 7 = -35. Substituting: x^2 - (2)x + -35 = 0, which simplifies to x^2 - 2x - 35 = 0.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 2x - 48 = 0.",
+        "options": [
+            "x = -6 or x = 8",
+            "x = -7 or x = 7",
+            "x = -8 or x = 6",
+            "x = 6 or x = 8"
+        ],
+        "correctAnswer": "x = -8 or x = 6",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -48 and add to give b = 2 (the coefficient of x). Those numbers are -6 and 8, so the equation factors as (x - (6))(x - (-8)) = 0. Setting each factor to zero gives x = 6 or x = -8, i.e. x = -8 or x = 6.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Convert 45 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "1*pi/5",
+            "1*pi/4",
+            "4*pi/1",
+            "45*pi/180"
+        ],
+        "correctAnswer": "1*pi/4",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 45 degrees x (pi/180) = (45/180) x pi radians. Simplifying the fraction 45/180 to lowest terms gives 1/4, so 45 degrees = 1*pi/4 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Evaluate (-39) - (18).",
+        "options": [
+            "-48",
+            "57",
+            "-21",
+            "-57"
+        ],
+        "correctAnswer": "-57",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-39) - (18) = (-39) + (-18) = -57. This is why '(-39) - (18)' does not equal '(18) - (-39)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "What is the value of (-19) + (10)?",
+        "options": [
+            "-9",
+            "-10",
+            "-28",
+            "-8"
+        ],
+        "correctAnswer": "-9",
+        "explanation": "To add integers (-19) and (10), combine them on the number line. Since the numbers have opposite signs, subtract the smaller magnitude from the larger magnitude and take the sign of the number with the larger magnitude. (-19) + (10) = -9.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "In an AP, the 1st term is 7 and the 4th term is 22. Find the common difference, d.",
+        "options": [
+            "5",
+            "7",
+            "-5",
+            "15"
+        ],
+        "correctAnswer": "5",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (22 - 7)/3 = 15/3 = 5.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify: (-4 - 11i) - (-9)",
+        "options": [
+            "5 - 11i",
+            "-13 - 11i",
+            "7 - 11i",
+            "5 - 9i"
+        ],
+        "correctAnswer": "5 - 11i",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -4 - -9 = 5. Imaginary part: -11 - 0 = -11. So (-4 - 11i) - (-9) = 5 - 11i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Multiply: (-1 - 5i) x (-6 - 2i)",
+        "options": [
+            "16 + 32i",
+            "-4 - 28i",
+            "-2 + 30i",
+            "-4 + 32i"
+        ],
+        "correctAnswer": "-4 + 32i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (-1 + -5i)(-6 + -2i) = -1x-6 + -1x-2i + -5i x-6 + -5x-2i^2 = 6 + 32i + 10(-1) = (6 - 10) + (32)i = -4 + 32i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "If n(A) = 3 and n(B) = 2, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "6",
+            "8",
+            "5",
+            "9"
+        ],
+        "correctAnswer": "6",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 3 elements of A can be paired with each of the 2 elements of B, giving n(A x B) = n(A) x n(B) = 3 x 2 = 6 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify i^10 (where i = sqrt(-1)).",
+        "options": [
+            "-1",
+            "i",
+            "1",
+            "-i"
+        ],
+        "correctAnswer": "-1",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^10, divide 10 by 4 and use the remainder: 10 = 4 x 2 + 2, so i^10 = i^2 = -1. Therefore i^10 = -1.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "What is the exact value of sin(45 degrees)?",
+        "options": [
+            "(sqrt(2))/2",
+            "1",
+            "0",
+            "(sqrt(3))/2"
+        ],
+        "correctAnswer": "(sqrt(2))/2",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of sin(45 degrees) = (sqrt(2))/2. For example, at 45 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Evaluate |-72|, the absolute value of -72.",
+        "options": [
+            "-76",
+            "72",
+            "73",
+            "-72"
+        ],
+        "correctAnswer": "72",
+        "explanation": "The absolute value of a number is its distance from zero on the number line, and distance is always non-negative. Since -72 is 72 units to the left of zero, |-72| = 72. In general, for a negative integer n, |n| = -n.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "A set has 6 distinct elements. How many elements does its power set contain?",
+        "options": [
+            "32",
+            "128",
+            "12",
+            "64"
+        ],
+        "correctAnswer": "64",
+        "explanation": "The power set of a set is the set of ALL its possible subsets, including the empty set and the set itself. A set with n elements has 2^n subsets, since each of the n elements can either be included or excluded independently. Here n = 6, so the number of subsets is 2^6 = 64.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the product (2) x (-7)?",
+        "options": [
+            "-14",
+            "15",
+            "-5",
+            "14"
+        ],
+        "correctAnswer": "-14",
+        "explanation": "Multiply the magnitudes: |2| x |-7| = 14. The sign of the result is negative, since the product of two integers with opposite signs is always negative. Therefore (2) x (-7) = -14.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Multiply: (3 + 6i) x (1 - 2i)",
+        "options": [
+            "15",
+            "15 - 12i",
+            "17 - 2i",
+            "-9"
+        ],
+        "correctAnswer": "15",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (3 + 6i)(1 + -2i) = 3x1 + 3x-2i + 6i x1 + 6x-2i^2 = 3 + 0i + -12(-1) = (3 - -12) + (0)i = 15.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Evaluate |-43|, the absolute value of -43.",
+        "options": [
+            "-43",
+            "43",
+            "-47",
+            "45"
+        ],
+        "correctAnswer": "43",
+        "explanation": "The absolute value of a number is its distance from zero on the number line, and distance is always non-negative. Since -43 is 43 units to the left of zero, |-43| = 43. In general, for a negative integer n, |n| = -n.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Evaluate |-68|, the absolute value of -68.",
+        "options": [
+            "72",
+            "-72",
+            "68",
+            "-68"
+        ],
+        "correctAnswer": "68",
+        "explanation": "The absolute value of a number is its distance from zero on the number line, and distance is always non-negative. Since -68 is 68 units to the left of zero, |-68| = 68. In general, for a negative integer n, |n| = -n.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the sum to infinity of a GP with first term a = 2 and common ratio r = -0.2.",
+        "options": [
+            "2.5",
+            "1.667",
+            "-0.4",
+            "2.667"
+        ],
+        "correctAnswer": "1.667",
+        "explanation": "Since |r| = |-0.2| < 1, the GP converges and has a finite sum to infinity given by S(infinity) = a / (1 - r). Substituting a = 2 and r = -0.2: S(infinity) = 2 / (1 - (-0.2)) = 2 / 1.2 = 1.667. This formula only works when the common ratio's magnitude is less than 1; otherwise the series does not converge.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {c, f, h} and B = {f, k, n}, is A a subset of B (A c B)?",
+        "options": [
+            "False",
+            "Only if A = B",
+            "Cannot be determined",
+            "True"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, c, h in A are not found in B = {f, k, n}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Multiply: (-5 - 2i) x (6 - 2i)",
+        "options": [
+            "-32 - 4i",
+            "-34 - 2i",
+            "-26 - 2i",
+            "-34 + 22i"
+        ],
+        "correctAnswer": "-34 - 2i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (-5 + -2i)(6 + -2i) = -5x6 + -5x-2i + -2i x6 + -2x-2i^2 = -30 + -2i + 4(-1) = (-30 - 4) + (-2)i = -34 - 2i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the complex conjugate of z = -8 - 1i.",
+        "options": [
+            "8 + 1i",
+            "8 - 1i",
+            "-8 + 1i",
+            "-8 - 1i"
+        ],
+        "correctAnswer": "-8 + 1i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = -8 and y = -1, so the conjugate of -8 - 1i is -8 + 1i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 55 and 41.",
+        "options": [
+            "55",
+            "5",
+            "1",
+            "41"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 55 and 41 into their prime factors and taking the common factors at their lowest powers gives GCD(55, 41) = 1. You can verify this since 55 / 1 = 55 and 41 / 1 = 41 are both whole numbers, and no larger number divides both 55 and 41 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 + 3x - 28 = 0.",
+        "options": [
+            "x = -7 or x = 4",
+            "x = 4 or x = 7",
+            "x = -6 or x = 5",
+            "x = -4 or x = 7"
+        ],
+        "correctAnswer": "x = -7 or x = 4",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -28 and add to give b = 3 (the coefficient of x). Those numbers are -4 and 7, so the equation factors as (x - (4))(x - (-7)) = 0. Setting each factor to zero gives x = 4 or x = -7, i.e. x = -7 or x = 4.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the sum of the first 10 terms of an AP whose first term is -8 and common difference is -2.",
+        "options": [
+            "-170",
+            "-160",
+            "-174",
+            "-168"
+        ],
+        "correctAnswer": "-170",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = -8, d = -2, n = 10: S10 = (10/2)[2(-8) + (10-1)(-2)] = (10/2)[-16 + -18] = (10/2)(-34) = -170.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -1x^2 + (7)x + (8) = 0.",
+        "options": [
+            "x = 0 or x = 9",
+            "x = 3.5 (repeated root)",
+            "x = 1 or x = -8",
+            "x = -1 or x = 8"
+        ],
+        "correctAnswer": "x = -1 or x = 8",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -1, b = 7, c = 8. First find the discriminant: b^2 - 4ac = (7)^2 - 4(-1)(8) = 49 - -32 = 81. Since this is a positive perfect square, sqrt(81) = 9. Substituting: x = (-(7) +/- 9) / (2 x -1) = (-7 +/- 9) / -2, giving x = -1 or x = 8.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between 13 and 21.",
+        "options": [
+            "34",
+            "18",
+            "17",
+            "16"
+        ],
+        "correctAnswer": "17",
+        "explanation": "If 13, x, 21 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (13 + 21) / 2 = 34 / 2 = 17. This works because the common difference from 13 to x must equal the common difference from x to 21.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "In a right-angled triangle, the hypotenuse is 16 cm and one of the other angles is 60 degrees. Find the length of the side opposite this angle (to 2 d.p.).",
+        "options": [
+            "8",
+            "2.14",
+            "15.93",
+            "13.86"
+        ],
+        "correctAnswer": "13.86",
+        "explanation": "For a right-angled triangle, SOH-CAH-TOA tells us sin(angle) = opposite / hypotenuse. Rearranging, opposite = hypotenuse x sin(angle) = 16 x sin(60 degrees) = 16 x 0.866 = 13.86 cm.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "For the quadratic equation 5x^2 + (-5)x + (-10) = 0, what is the nature of its roots?",
+        "options": [
+            "Two distinct real roots",
+            "Two complex (non-real) roots",
+            "No roots exist at all",
+            "One repeated real root"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-5)^2 - 4(5)(-10) = 25 - -200 = 225. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = 5 and common ratio r = 1. Find the 7th term.",
+        "options": [
+            "10",
+            "8",
+            "-1",
+            "5"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = 5, r = 1, n = 7: T7 = 5 * (1)^(7-1) = 5 * (1)^6 = 5 * 1 = 5.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify: (8 + 1i) / (3 + 2i)",
+        "options": [
+            "2 - 1i",
+            "3 - 2i",
+            "-2 - 1i",
+            "2 + 1i"
+        ],
+        "correctAnswer": "2 - 1i",
+        "explanation": "To divide complex numbers, multiply the numerator and denominator by the conjugate of the denominator, which is 3 - 2i, to make the denominator real: denominator becomes (3)^2 + (2)^2 = 13. The numerator becomes (8+1i)(3-2i) = 26 + -13i (after simplifying using i^2 = -1). Dividing both parts by 13 gives 2 + -1i, i.e. 2 - 1i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = -4 + 3i.",
+        "options": [
+            "5",
+            "25",
+            "7",
+            "6"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = -4, y = 3, so |z| = sqrt((-4)^2 + (3)^2) = sqrt(16 + 9) = sqrt(25) = 5.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "What is the exact value of tan(60 degrees)?",
+        "options": [
+            "1/(sqrt(3))",
+            "undefined",
+            "1",
+            "sqrt(3)"
+        ],
+        "correctAnswer": "sqrt(3)",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of tan(60 degrees) = sqrt(3). For example, at 60 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Multiply: (5 - 6i) x (5 - 5i)",
+        "options": [
+            "-3 - 57i",
+            "55 - 55i",
+            "-5 - 55i",
+            "-5 + 5i"
+        ],
+        "correctAnswer": "-5 - 55i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (5 + -6i)(5 + -5i) = 5x5 + 5x-5i + -6i x5 + -6x-5i^2 = 25 + -55i + 30(-1) = (25 - 30) + (-55)i = -5 - 55i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Given A = {d, j, p} and B = {d, j, p, r, t}, is A a subset of B (A c B)?",
+        "options": [
+            "Cannot be determined",
+            "Only if A = B",
+            "False",
+            "True"
+        ],
+        "correctAnswer": "True",
+        "explanation": "A is a subset of B if every element of A also belongs to B. Checking each element of A = {d, j, p}, all of them appear in B = {d, j, p, r, t}, so A c B is True.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between 14 and 12.",
+        "options": [
+            "26",
+            "14",
+            "13",
+            "12"
+        ],
+        "correctAnswer": "13",
+        "explanation": "If 14, x, 12 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (14 + 12) / 2 = 26 / 2 = 13. This works because the common difference from 14 to x must equal the common difference from x to 12.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between -15 and -1.",
+        "options": [
+            "-9",
+            "-8",
+            "-7",
+            "-16"
+        ],
+        "correctAnswer": "-8",
+        "explanation": "If -15, x, -1 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (-15 + -1) / 2 = -16 / 2 = -8. This works because the common difference from -15 to x must equal the common difference from x to -1.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If n(A) = 5 and n(B) = 4, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "20",
+            "21",
+            "22",
+            "9"
+        ],
+        "correctAnswer": "20",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 5 elements of A can be paired with each of the 4 elements of B, giving n(A x B) = n(A) x n(B) = 5 x 4 = 20 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between 18 and 32.",
+        "options": [
+            "26",
+            "24",
+            "25",
+            "50"
+        ],
+        "correctAnswer": "25",
+        "explanation": "If 18, x, 32 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (18 + 32) / 2 = 50 / 2 = 25. This works because the common difference from 18 to x must equal the common difference from x to 32.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {e, f, g}, find the complement A'.",
+        "options": [
+            "{a, b, c, d, h, j}",
+            "{e, f, g}",
+            "{a, b, c, d, e, f, g, h, j, k}",
+            "{a, b, c, d, h, j, k}"
+        ],
+        "correctAnswer": "{a, b, c, d, h, j, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {e, f, g} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, b, c, d, h, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the value of (16) + (18)?",
+        "options": [
+            "33",
+            "34",
+            "30",
+            "18"
+        ],
+        "correctAnswer": "34",
+        "explanation": "To add integers (16) and (18), combine them on the number line. Since both numbers share the same sign, add their magnitudes and keep the common sign. (16) + (18) = 34.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify: (-2 + 12i) - (10 + 12i)",
+        "options": [
+            "-10",
+            "-12",
+            "-12 + 2i",
+            "8 + 24i"
+        ],
+        "correctAnswer": "-12",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -2 - 10 = -12. Imaginary part: 12 - 12 = 0. So (-2 + 12i) - (10 + 12i) = -12.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Convert 270 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "3*pi/3",
+            "2*pi/3",
+            "270*pi/180",
+            "3*pi/2"
+        ],
+        "correctAnswer": "3*pi/2",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 270 degrees x (pi/180) = (270/180) x pi radians. Simplifying the fraction 270/180 to lowest terms gives 3/2, so 270 degrees = 3*pi/2 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {b, g, j, k, p} and B = {d, f, n, p}, find A - B (elements in A but not in B).",
+        "options": [
+            "{d, f, n}",
+            "{b, g, j, k}",
+            "{p}",
+            "{b, d, f, g, j, k, n, p}"
+        ],
+        "correctAnswer": "{b, g, j, k}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {b, g, j, k, p} and removing any element that also appears in B = {d, f, n, p} gives A - B = {b, g, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the exact value of sin(90 degrees)?",
+        "options": [
+            "(sqrt(2))/2",
+            "1",
+            "1/2",
+            "(sqrt(3))/2"
+        ],
+        "correctAnswer": "1",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of sin(90 degrees) = 1. For example, at 90 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "What is the product (-4) x (-9)?",
+        "options": [
+            "36",
+            "-36",
+            "37",
+            "-13"
+        ],
+        "correctAnswer": "36",
+        "explanation": "Multiply the magnitudes: |-4| x |-9| = 36. The sign of the result is positive, since the product of two integers with the same sign is always positive. Therefore (-4) x (-9) = 36.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {c, d, g, j}, find the complement A'.",
+        "options": [
+            "{a, b, e, f, h, k}",
+            "{a, b, c, d, e, f, g, h, j, k}",
+            "{a, b, e, f, h}",
+            "{c, d, g, j}"
+        ],
+        "correctAnswer": "{a, b, e, f, h, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {c, d, g, j} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {a, b, e, f, h, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify: (-8 + 1i) + (-9 + 1i)",
+        "options": [
+            "-17 + 2i",
+            "1",
+            "-15 + 2i",
+            "-17 + 4i"
+        ],
+        "correctAnswer": "-17 + 2i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -8 + -9 = -17. Imaginary part: 1 + 1 = 2. So (-8 + 1i) + (-9 + 1i) = -17 + 2i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Simplify: (-5 + 11i) + (10 + 5i)",
+        "options": [
+            "5 + 16i",
+            "7 + 16i",
+            "5 + 18i",
+            "-15 + 6i"
+        ],
+        "correctAnswer": "5 + 16i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -5 + 10 = 5. Imaginary part: 11 + 5 = 16. So (-5 + 11i) + (10 + 5i) = 5 + 16i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 7x + 6 = 0.",
+        "options": [
+            "x = 1 or x = 6",
+            "x = 2 or x = 7",
+            "x = 6 or x = -1",
+            "x = -6 or x = -1"
+        ],
+        "correctAnswer": "x = 1 or x = 6",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = 6 and add to give b = -7 (the coefficient of x). Those numbers are -6 and -1, so the equation factors as (x - (6))(x - (1)) = 0. Setting each factor to zero gives x = 6 or x = 1, i.e. x = 1 or x = 6.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Convert 90 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "90*pi/180",
+            "1*pi/3",
+            "2*pi/1",
+            "1*pi/2"
+        ],
+        "correctAnswer": "1*pi/2",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 90 degrees x (pi/180) = (90/180) x pi radians. Simplifying the fraction 90/180 to lowest terms gives 1/2, so 90 degrees = 1*pi/2 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Multiply: (-6i) x (-3 + 1i)",
+        "options": [
+            "6 - 18i",
+            "6 + 18i",
+            "-6 + 18i",
+            "8 + 16i"
+        ],
+        "correctAnswer": "6 + 18i",
+        "explanation": "Multiply complex numbers like binomials, using i^2 = -1: (0 + -6i)(-3 + 1i) = 0x-3 + 0x1i + -6i x-3 + -6x1i^2 = 0 + 18i + -6(-1) = (0 - -6) + (18)i = 6 + 18i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Which of the following integers is the largest: -25, 7, -3, -28?",
+        "options": [
+            "7",
+            "-3",
+            "-28",
+            "-25"
+        ],
+        "correctAnswer": "7",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -25, 7, -3, -28, the number farthest to the right (largest) is 7, because 7 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 3x - 54 = 0.",
+        "options": [
+            "x = 9 or x = 6",
+            "x = -6 or x = 9",
+            "x = -5 or x = 10",
+            "x = -9 or x = 6"
+        ],
+        "correctAnswer": "x = -6 or x = 9",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -54 and add to give b = -3 (the coefficient of x). Those numbers are -9 and 6, so the equation factors as (x - (9))(x - (-6)) = 0. Setting each factor to zero gives x = 9 or x = -6, i.e. x = -6 or x = 9.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = -3 - 4i.",
+        "options": [
+            "5",
+            "25",
+            "6",
+            "7"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = -3, y = -4, so |z| = sqrt((-3)^2 + (-4)^2) = sqrt(9 + 16) = sqrt(25) = 5.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Is the number 84 prime or composite?",
+        "options": [
+            "Prime",
+            "Neither prime nor composite",
+            "Composite",
+            "Both prime and composite"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 84 = 2 x 42, 84 can be divided exactly by 2 (a number other than 1 and itself), so 84 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the complex conjugate of z = -4 - 9i.",
+        "options": [
+            "-4 - 9i",
+            "4 + 9i",
+            "4 - 9i",
+            "-4 + 9i"
+        ],
+        "correctAnswer": "-4 + 9i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = -4 and y = -9, so the conjugate of -4 - 9i is -4 + 9i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -1x^2 + (10)x + (-9) = 0.",
+        "options": [
+            "x = 5 (repeated root)",
+            "x = 2 or x = 10",
+            "x = -1 or x = -9",
+            "x = 1 or x = 9"
+        ],
+        "correctAnswer": "x = 1 or x = 9",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -1, b = 10, c = -9. First find the discriminant: b^2 - 4ac = (10)^2 - 4(-1)(-9) = 100 - 36 = 64. Since this is a positive perfect square, sqrt(64) = 8. Substituting: x = (-(10) +/- 8) / (2 x -1) = (-10 +/- 8) / -2, giving x = 1 or x = 9.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "For the equation 1x^2 + (-9)x + (-8) = 0, find the product of the roots.",
+        "options": [
+            "8",
+            "-7",
+            "-9",
+            "-8"
+        ],
+        "correctAnswer": "-8",
+        "explanation": "For a quadratic ax^2 + bx + c = 0, the product of the roots is given by c/a. Here a = 1, c = -8, so the product of the roots = (-8)/1 = -8.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -2x^2 + (-3)x + (-1) = 0.",
+        "options": [
+            "x = 1 or x = 0.5",
+            "x = -1 or x = -0.5",
+            "x = 0 or x = 0.5",
+            "x = -0.75 (repeated root)"
+        ],
+        "correctAnswer": "x = -1 or x = -0.5",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -2, b = -3, c = -1. First find the discriminant: b^2 - 4ac = (-3)^2 - 4(-2)(-1) = 9 - 8 = 1. Since this is a positive perfect square, sqrt(1) = 1. Substituting: x = (-(-3) +/- 1) / (2 x -2) = (3 +/- 1) / -4, giving x = -1 or x = -0.5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Form the quadratic equation whose roots are 3 and -6.",
+        "options": [
+            "x^2 + 3x + 18 = 0",
+            "x^2 - 3x - 18 = 0",
+            "x^2 + 3x - 18 = 0",
+            "x^2 + -3x + -18 = 0"
+        ],
+        "correctAnswer": "x^2 + 3x - 18 = 0",
+        "explanation": "A quadratic equation with roots r1 and r2 can be written as x^2 - (sum of roots)x + (product of roots) = 0. Sum of roots = 3 + -6 = -3. Product of roots = 3 x -6 = -18. Substituting: x^2 - (-3)x + -18 = 0, which simplifies to x^2 + 3x - 18 = 0.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Given A = {c, k, q} and B = {a, b, c, g, m}, find A U B.",
+        "options": [
+            "{c}",
+            "{c, k, q}",
+            "{a, b, c, g, m}",
+            "{a, b, c, g, k, m, q}"
+        ],
+        "correctAnswer": "{a, b, c, g, k, m, q}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {c, k, q} and {a, b, c, g, m} and removing duplicates gives A U B = {a, b, c, g, k, m, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 40 and 35.",
+        "options": [
+            "5",
+            "9",
+            "35",
+            "40"
+        ],
+        "correctAnswer": "5",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 40 and 35 into their prime factors and taking the common factors at their lowest powers gives GCD(40, 35) = 5. You can verify this since 40 / 5 = 8 and 35 / 5 = 7 are both whole numbers, and no larger number divides both 40 and 35 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 3x^2 + (5)x + (2) = 0.",
+        "options": [
+            "x = 0 or x = 0.33",
+            "x = 1 or x = 0.67",
+            "x = -1 or x = -0.67",
+            "x = -0.83 (repeated root)"
+        ],
+        "correctAnswer": "x = -1 or x = -0.67",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 3, b = 5, c = 2. First find the discriminant: b^2 - 4ac = (5)^2 - 4(3)(2) = 25 - 24 = 1. Since this is a positive perfect square, sqrt(1) = 1. Substituting: x = (-(5) +/- 1) / (2 x 3) = (-5 +/- 1) / 6, giving x = -1 or x = -0.67.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Evaluate (-10) - (11).",
+        "options": [
+            "21",
+            "-21",
+            "-27",
+            "1"
+        ],
+        "correctAnswer": "-21",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-10) - (11) = (-10) + (-11) = -21. This is why '(-10) - (11)' does not equal '(11) - (-10)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "For the quadratic equation 5x^2 + (8)x + (2) = 0, what is the nature of its roots?",
+        "options": [
+            "Two distinct real roots",
+            "One repeated real root",
+            "No roots exist at all",
+            "Two complex (non-real) roots"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (8)^2 - 4(5)(2) = 64 - 40 = 24. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "What is the exact value of cos(90 degrees)?",
+        "options": [
+            "(sqrt(2))/2",
+            "(sqrt(3))/2",
+            "1",
+            "0"
+        ],
+        "correctAnswer": "0",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of cos(90 degrees) = 0. For example, at 90 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "In the 2nd quadrant, what is the sign of tangent?",
+        "options": [
+            "zero",
+            "undefined",
+            "positive",
+            "negative"
+        ],
+        "correctAnswer": "negative",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 2, tangent is negative.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Simplify i^40 (where i = sqrt(-1)).",
+        "options": [
+            "-i",
+            "-1",
+            "i",
+            "1"
+        ],
+        "correctAnswer": "1",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^40, divide 40 by 4 and use the remainder: 40 = 4 x 10 + 0, so i^40 = i^0 = 1. Therefore i^40 = 1.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Which of the following is a correct fundamental trigonometric identity for any angle x?",
+        "options": [
+            "sin^2(x) + cos^2(x) = 1",
+            "sin^2(x) x cos^2(x) = 1",
+            "sin(x) + cos(x) = 1",
+            "sin^2(x) - cos^2(x) = 1"
+        ],
+        "correctAnswer": "sin^2(x) + cos^2(x) = 1",
+        "explanation": "This is the Pythagorean identity, derived directly from the Pythagorean theorem applied to the unit circle: for a point (cos x, sin x) on a circle of radius 1, the horizontal and vertical coordinates satisfy (cos x)^2 + (sin x)^2 = 1^2 = 1. This identity holds for every angle x and is one of the most important results in trigonometry.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 5x - 14 = 0.",
+        "options": [
+            "x = -2 or x = 7",
+            "x = 7 or x = 2",
+            "x = -7 or x = 2",
+            "x = -1 or x = 8"
+        ],
+        "correctAnswer": "x = -2 or x = 7",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -14 and add to give b = -5 (the coefficient of x). Those numbers are -7 and 2, so the equation factors as (x - (7))(x - (-2)) = 0. Setting each factor to zero gives x = 7 or x = -2, i.e. x = -2 or x = 7.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Evaluate (9) - (8).",
+        "options": [
+            "17",
+            "1",
+            "6",
+            "-1"
+        ],
+        "correctAnswer": "1",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (9) - (8) = (9) + (-8) = 1. This is why '(9) - (8)' does not equal '(8) - (9)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Consider the sequence: -2, 4, -8, 16, ... Is this sequence an AP or a GP?",
+        "options": [
+            "AP",
+            "GP",
+            "Both AP and GP",
+            "Neither AP nor GP"
+        ],
+        "correctAnswer": "GP",
+        "explanation": "Checking the ratio between consecutive terms: 4/-2 = -2.00, -8/4 = -2.00, 16/-8 = -2.00. Since the ratio is constant, this is a Geometric Progression (GP), not an AP, because the difference between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "In an AP, the 1st term is 18 and the 4th term is -3. Find the common difference, d.",
+        "options": [
+            "-5",
+            "-21",
+            "-7",
+            "7"
+        ],
+        "correctAnswer": "-7",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (-3 - 18)/3 = -21/3 = -7.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {b, f, m} and B = {b, f, m, q, t}, is A a subset of B (A c B)?",
+        "options": [
+            "True",
+            "Only if A = B",
+            "False",
+            "Cannot be determined"
+        ],
+        "correctAnswer": "True",
+        "explanation": "A is a subset of B if every element of A also belongs to B. Checking each element of A = {b, f, m}, all of them appear in B = {b, f, m, q, t}, so A c B is True.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "What is the product (2) x (-12)?",
+        "options": [
+            "-10",
+            "-24",
+            "27",
+            "24"
+        ],
+        "correctAnswer": "-24",
+        "explanation": "Multiply the magnitudes: |2| x |-12| = 24. The sign of the result is negative, since the product of two integers with opposite signs is always negative. Therefore (2) x (-12) = -24.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify: (3i) + (7 - 6i)",
+        "options": [
+            "7 - 1i",
+            "9 - 3i",
+            "7 - 3i",
+            "-7 + 9i"
+        ],
+        "correctAnswer": "7 - 3i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 0 + 7 = 7. Imaginary part: 3 + -6 = -3. So (3i) + (7 - 6i) = 7 - 3i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Consider the sequence: 3, -2, -7, -12, ... Is this sequence an AP or a GP?",
+        "options": [
+            "AP",
+            "Neither AP nor GP",
+            "Both AP and GP",
+            "GP"
+        ],
+        "correctAnswer": "AP",
+        "explanation": "Checking the difference between consecutive terms: -2-3 = -5, -7--2 = -5, -12--7 = -5. Since the difference is constant, this is an Arithmetic Progression (AP), not a GP, because the ratio between consecutive terms is not constant here.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given that sin(45 degrees) = (sqrt(2))/2 and cos(45 degrees) = (sqrt(2))/2, find tan(45 degrees).",
+        "options": [
+            "1",
+            "1/sqrt(3)",
+            "sqrt(3)",
+            "(sqrt(2))/2"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The tangent of an angle is defined as the ratio of sine to cosine: tan(x) = sin(x) / cos(x). Substituting the given values: tan(45 degrees) = ((sqrt(2))/2) / ((sqrt(2))/2) = 1.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 25 and 58.",
+        "options": [
+            "25",
+            "3",
+            "58",
+            "1"
+        ],
+        "correctAnswer": "1",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 25 and 58 into their prime factors and taking the common factors at their lowest powers gives GCD(25, 58) = 1. You can verify this since 25 / 1 = 25 and 58 / 1 = 58 are both whole numbers, and no larger number divides both 25 and 58 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the complex conjugate of z = 2 - 8i.",
+        "options": [
+            "-2 + 8i",
+            "2 - 8i",
+            "2 + 8i",
+            "-2 - 8i"
+        ],
+        "correctAnswer": "2 + 8i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = 2 and y = -8, so the conjugate of 2 - 8i is 2 + 8i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Which of the following integers is the largest: -25, -22, -21, -16?",
+        "options": [
+            "-22",
+            "-25",
+            "-21",
+            "-16"
+        ],
+        "correctAnswer": "-16",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -25, -22, -21, -16, the number farthest to the right (largest) is -16, because -16 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "If the universal set U = {a, b, c, d, e, f, g, h, j, k} and A = {a, b, d, e, f}, find the complement A'.",
+        "options": [
+            "{c, g, h, j, k}",
+            "{c, g, h, j}",
+            "{a, b, d, e, f}",
+            "{a, b, c, d, e, f, g, h, j, k}"
+        ],
+        "correctAnswer": "{c, g, h, j, k}",
+        "explanation": "The complement of A (written A') consists of all elements in the universal set U that are NOT in A. Removing the elements of A = {a, b, d, e, f} from U = {a, b, c, d, e, f, g, h, j, k} leaves exactly A' = {c, g, h, j, k}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "If n(A) = 6 and n(B) = 7, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "44",
+            "42",
+            "13",
+            "43"
+        ],
+        "correctAnswer": "42",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 6 elements of A can be paired with each of the 7 elements of B, giving n(A x B) = n(A) x n(B) = 6 x 7 = 42 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Form the quadratic equation whose roots are -2 and 8.",
+        "options": [
+            "x^2 + 6x - 16 = 0",
+            "x^2 - 6x + 16 = 0",
+            "x^2 + 6x + -16 = 0",
+            "x^2 - 6x - 16 = 0"
+        ],
+        "correctAnswer": "x^2 - 6x - 16 = 0",
+        "explanation": "A quadratic equation with roots r1 and r2 can be written as x^2 - (sum of roots)x + (product of roots) = 0. Sum of roots = -2 + 8 = 6. Product of roots = -2 x 8 = -16. Substituting: x^2 - (6)x + -16 = 0, which simplifies to x^2 - 6x - 16 = 0.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Find the sum of the first 12 terms of an AP whose first term is -1 and common difference is -5.",
+        "options": [
+            "-337",
+            "-352",
+            "-330",
+            "-342"
+        ],
+        "correctAnswer": "-342",
+        "explanation": "The sum of the first n terms of an AP is Sn = (n/2)[2a + (n-1)d]. Substituting a = -1, d = -5, n = 12: S12 = (12/2)[2(-1) + (12-1)(-5)] = (12/2)[-2 + -55] = (12/2)(-57) = -342.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "In an AP, the 1st term is 12 and the 4th term is -6. Find the common difference, d.",
+        "options": [
+            "-6",
+            "6",
+            "-4",
+            "-18"
+        ],
+        "correctAnswer": "-6",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (-6 - 12)/3 = -18/3 = -6.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "In an AP, the 1st term is 12 and the 4th term is 3. Find the common difference, d.",
+        "options": [
+            "-1",
+            "3",
+            "-9",
+            "-3"
+        ],
+        "correctAnswer": "-3",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (3 - 12)/3 = -9/3 = -3.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {e, m} and B = {f, j, q}, is A a subset of B (A c B)?",
+        "options": [
+            "True",
+            "False",
+            "Only if A = B",
+            "Cannot be determined"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, e, m in A are not found in B = {f, j, q}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Convert 1*pi/2 radians to degrees.",
+        "options": [
+            "180",
+            "90",
+            "120",
+            "60"
+        ],
+        "correctAnswer": "90",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (1*pi/2) x (180/pi) = 1x180/2 = 90 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = -2 and common ratio r = -3. Find the 3th term.",
+        "options": [
+            "-18",
+            "-15",
+            "6",
+            "54"
+        ],
+        "correctAnswer": "-18",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = -2, r = -3, n = 3: T3 = -2 * (-3)^(3-1) = -2 * (-3)^2 = -2 * 9 = -18.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the sum to infinity of a GP with first term a = 12 and common ratio r = 0.5.",
+        "options": [
+            "25",
+            "8",
+            "6",
+            "24"
+        ],
+        "correctAnswer": "24",
+        "explanation": "Since |r| = |0.5| < 1, the GP converges and has a finite sum to infinity given by S(infinity) = a / (1 - r). Substituting a = 12 and r = 0.5: S(infinity) = 12 / (1 - (0.5)) = 12 / 0.5 = 24. This formula only works when the common ratio's magnitude is less than 1; otherwise the series does not converge.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Evaluate (8) - (-36).",
+        "options": [
+            "-44",
+            "-28",
+            "44",
+            "50"
+        ],
+        "correctAnswer": "44",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (8) - (-36) = (8) + (36) = 44. This is why '(8) - (-36)' does not equal '(-36) - (8)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2 - 3x - 10 = 0.",
+        "options": [
+            "x = 2 or x = -5",
+            "x = -1 or x = 6",
+            "x = -2 or x = -5",
+            "x = -2 or x = 5"
+        ],
+        "correctAnswer": "x = -2 or x = 5",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -10 and add to give b = -3 (the coefficient of x). Those numbers are 2 and -5, so the equation factors as (x - (-2))(x - (5)) = 0. Setting each factor to zero gives x = -2 or x = 5, i.e. x = -2 or x = 5.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Solve the quadratic equation: x^2  - 36 = 0.",
+        "options": [
+            "x = -6 or x = -6",
+            "x = -6 or x = 6",
+            "x = 6 or x = -6",
+            "x = -5 or x = 7"
+        ],
+        "correctAnswer": "x = -6 or x = 6",
+        "explanation": "To solve by factoring, find two numbers that multiply to give c = -36 and add to give b = 0 (the coefficient of x). Those numbers are 6 and -6, so the equation factors as (x - (-6))(x - (6)) = 0. Setting each factor to zero gives x = -6 or x = 6, i.e. x = -6 or x = 6.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "In an AP, the 1st term is -6 and the 4th term is -30. Find the common difference, d.",
+        "options": [
+            "-6",
+            "-24",
+            "-8",
+            "8"
+        ],
+        "correctAnswer": "-8",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (-30 - -6)/3 = -24/3 = -8.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "If n(A) = 6 and n(B) = 3, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "20",
+            "14",
+            "18",
+            "9"
+        ],
+        "correctAnswer": "18",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 6 elements of A can be paired with each of the 3 elements of B, giving n(A x B) = n(A) x n(B) = 6 x 3 = 18 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Is the number 67 prime or composite?",
+        "options": [
+            "Prime",
+            "Both prime and composite",
+            "Composite",
+            "Neither prime nor composite"
+        ],
+        "correctAnswer": "Prime",
+        "explanation": "A prime number has exactly two distinct positive factors: 1 and itself. Checking 67 against all integers from 2 up to its square root (about 8), none of them divide 67 exactly, so 67 has no factors other than 1 and 67. Therefore 67 is prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Convert 3*pi radians to degrees.",
+        "options": [
+            "540",
+            "570",
+            "630",
+            "510"
+        ],
+        "correctAnswer": "540",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (3*pi) x (180/pi) = 3x180 = 540 degrees.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "If n(A) = 2 and n(B) = 5, how many ordered pairs are in the Cartesian product A x B?",
+        "options": [
+            "32",
+            "7",
+            "10",
+            "13"
+        ],
+        "correctAnswer": "10",
+        "explanation": "The Cartesian product A x B consists of all ordered pairs (x, y) where x is from A and y is from B. Each of the 2 elements of A can be paired with each of the 5 elements of B, giving n(A x B) = n(A) x n(B) = 2 x 5 = 10 ordered pairs.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "In an AP, the 1st term is 14 and the 4th term is 23. Find the common difference, d.",
+        "options": [
+            "3",
+            "5",
+            "-3",
+            "9"
+        ],
+        "correctAnswer": "3",
+        "explanation": "Going from the 1st term to the 4th term involves adding the common difference 3 times, since T4 = T1 + 3d. So d = (T4 - T1)/3 = (23 - 14)/3 = 9/3 = 3.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Evaluate (-37) - (-5).",
+        "options": [
+            "-42",
+            "-34",
+            "-32",
+            "32"
+        ],
+        "correctAnswer": "-32",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-37) - (-5) = (-37) + (5) = -32. This is why '(-37) - (-5)' does not equal '(-5) - (-37)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the complex conjugate of z = 15 + 1i.",
+        "options": [
+            "15 + 1i",
+            "-15 + 1i",
+            "-15 - 1i",
+            "15 - 1i"
+        ],
+        "correctAnswer": "15 - 1i",
+        "explanation": "The complex conjugate of z = x + yi is written as z-bar and obtained by reversing the sign of the imaginary part only, giving z-bar = x - yi. Here x = 15 and y = 1, so the conjugate of 15 + 1i is 15 - 1i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Find the modulus |z| of the complex number z = -12 + 9i.",
+        "options": [
+            "15",
+            "225",
+            "16",
+            "21"
+        ],
+        "correctAnswer": "15",
+        "explanation": "The modulus of a complex number z = x + yi is |z| = sqrt(x^2 + y^2), representing its distance from the origin on the Argand diagram. Here x = -12, y = 9, so |z| = sqrt((-12)^2 + (9)^2) = sqrt(144 + 81) = sqrt(225) = 15.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "What is the exact value of tan(45 degrees)?",
+        "options": [
+            "undefined",
+            "1",
+            "0",
+            "sqrt(3)"
+        ],
+        "correctAnswer": "1",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of tan(45 degrees) = 1. For example, at 45 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "In the 3rd quadrant, what is the sign of tangent?",
+        "options": [
+            "undefined",
+            "zero",
+            "negative",
+            "positive"
+        ],
+        "correctAnswer": "positive",
+        "explanation": "Remember the mnemonic 'All Students Take Calculus' for which functions are positive in each quadrant: Quadrant 1 - All (sin, cos, tan) positive; Quadrant 2 - only Sine positive; Quadrant 3 - only Tangent positive; Quadrant 4 - only Cosine positive. In quadrant 3, tangent is positive.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Given A = {f, m, n} and B = {g, m}, is A a subset of B (A c B)?",
+        "options": [
+            "Cannot be determined",
+            "Only if A = B",
+            "False",
+            "True"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, f, n in A are not found in B = {g, m}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Is the number 50 prime or composite?",
+        "options": [
+            "Composite",
+            "Neither prime nor composite",
+            "Both prime and composite",
+            "Prime"
+        ],
+        "correctAnswer": "Composite",
+        "explanation": "A composite number has more than two factors. Since 50 = 2 x 25, 50 can be divided exactly by 2 (a number other than 1 and itself), so 50 is composite, not prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Find the arithmetic mean (the middle term of a 3-term AP) between 15 and 1.",
+        "options": [
+            "7",
+            "16",
+            "8",
+            "9"
+        ],
+        "correctAnswer": "8",
+        "explanation": "If 15, x, 1 form an AP, the middle term x is the arithmetic mean of the two outer terms, given by x = (15 + 1) / 2 = 16 / 2 = 8. This works because the common difference from 15 to x must equal the common difference from x to 1.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Simplify: (-5 + 1i) + (12 + 10i)",
+        "options": [
+            "9 + 11i",
+            "-17 - 9i",
+            "7 + 13i",
+            "7 + 11i"
+        ],
+        "correctAnswer": "7 + 11i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -5 + 12 = 7. Imaginary part: 1 + 10 = 11. So (-5 + 1i) + (12 + 10i) = 7 + 11i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Given A = {e, k, n, q} and B = {c, h, j, n, q}, find A U B.",
+        "options": [
+            "{c, h, j, n, q}",
+            "{e, k, n, q}",
+            "{c, e, h, j, k, n, q}",
+            "{n, q}"
+        ],
+        "correctAnswer": "{c, e, h, j, k, n, q}",
+        "explanation": "The union A U B contains every element that is in A, in B, or in both, with no element listed twice. Combining {e, k, n, q} and {c, h, j, n, q} and removing duplicates gives A U B = {c, e, h, j, k, n, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Given A = {d, j, p} and B = {a, h, p}, is A a subset of B (A c B)?",
+        "options": [
+            "Only if A = B",
+            "Cannot be determined",
+            "False",
+            "True"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, d, j in A are not found in B = {a, h, p}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify: (-1 + 8i) / (-1 - 2i)",
+        "options": [
+            "-2 - 3i",
+            "3 - 2i",
+            "-3 + 2i",
+            "-3 - 2i"
+        ],
+        "correctAnswer": "-3 - 2i",
+        "explanation": "To divide complex numbers, multiply the numerator and denominator by the conjugate of the denominator, which is -1 + 2i, to make the denominator real: denominator becomes (-1)^2 + (-2)^2 = 5. The numerator becomes (-1+8i)(-1--2i) = -15 + -10i (after simplifying using i^2 = -1). Dividing both parts by 5 gives -3 + -2i, i.e. -3 - 2i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Form the quadratic equation whose roots are -2 and -6.",
+        "options": [
+            "x^2 + 8x - 12 = 0",
+            "x^2 + 8x + 12 = 0",
+            "x^2 - 8x + 12 = 0",
+            "x^2 + -8x + 12 = 0"
+        ],
+        "correctAnswer": "x^2 + 8x + 12 = 0",
+        "explanation": "A quadratic equation with roots r1 and r2 can be written as x^2 - (sum of roots)x + (product of roots) = 0. Sum of roots = -2 + -6 = -8. Product of roots = -2 x -6 = 12. Substituting: x^2 - (-8)x + 12 = 0, which simplifies to x^2 + 8x + 12 = 0.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Simplify: (3 + 10i) + (-4 + 5i)",
+        "options": [
+            "7 + 5i",
+            "-1 + 15i",
+            "1 + 15i",
+            "-1 + 17i"
+        ],
+        "correctAnswer": "-1 + 15i",
+        "explanation": "To add complex numbers, combine the real parts together and the imaginary parts together separately. Real part: 3 + -4 = -1. Imaginary part: 10 + 5 = 15. So (3 + 10i) + (-4 + 5i) = -1 + 15i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "In a GP, the 1st term is 1 and the 2nd term is 4. Find the common ratio, r.",
+        "options": [
+            "5",
+            "0.25",
+            "3",
+            "4"
+        ],
+        "correctAnswer": "4",
+        "explanation": "In a GP, each term is obtained by multiplying the previous term by the common ratio r, so r = T2 / T1. Here, r = 4 / 1 = 4.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Given A = {h, j, k} and B = {n, p}, is A a subset of B (A c B)?",
+        "options": [
+            "False",
+            "Cannot be determined",
+            "Only if A = B",
+            "True"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A is a subset of B only if EVERY element of A also belongs to B. Here, h, j, k in A are not found in B = {n, p}, so A is NOT a subset of B; the statement is False.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Simplify i^30 (where i = sqrt(-1)).",
+        "options": [
+            "i",
+            "-i",
+            "-1",
+            "1"
+        ],
+        "correctAnswer": "-1",
+        "explanation": "Powers of i repeat in a cycle of 4: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1, and then the pattern repeats. To simplify i^30, divide 30 by 4 and use the remainder: 30 = 4 x 7 + 2, so i^30 = i^2 = -1. Therefore i^30 = -1.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Use the quadratic formula to solve: 2x^2 + (9)x + (10) = 0.",
+        "options": [
+            "x = 2.5 or x = 2",
+            "x = -2.25 (repeated root)",
+            "x = -2.5 or x = -2",
+            "x = -1.5 or x = -1"
+        ],
+        "correctAnswer": "x = -2.5 or x = -2",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = 2, b = 9, c = 10. First find the discriminant: b^2 - 4ac = (9)^2 - 4(2)(10) = 81 - 80 = 1. Since this is a positive perfect square, sqrt(1) = 1. Substituting: x = (-(9) +/- 1) / (2 x 2) = (-9 +/- 1) / 4, giving x = -2.5 or x = -2.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Evaluate (-4) - (25).",
+        "options": [
+            "-28",
+            "29",
+            "21",
+            "-29"
+        ],
+        "correctAnswer": "-29",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (-4) - (25) = (-4) + (-25) = -29. This is why '(-4) - (25)' does not equal '(25) - (-4)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Given A = {b, g, h, m, n, q} and B = {a, e, n}, find A - B (elements in A but not in B).",
+        "options": [
+            "{n}",
+            "{b, g, h, m, q}",
+            "{a, e}",
+            "{a, b, e, g, h, m, n, q}"
+        ],
+        "correctAnswer": "{b, g, h, m, q}",
+        "explanation": "A - B keeps only the elements of A that are NOT also found in B. Starting from A = {b, g, h, m, n, q} and removing any element that also appears in B = {a, e, n} gives A - B = {b, g, h, m, q}.",
+        "topic": "Basic Properties of Sets"
+    },
+    {
+        "question": "Which of the following integers is the largest: -14, -22, 29, -8?",
+        "options": [
+            "29",
+            "-22",
+            "-8",
+            "-14"
+        ],
+        "correctAnswer": "29",
+        "explanation": "On the number line, integers increase in value from left to right. Comparing -14, -22, 29, -8, the number farthest to the right (largest) is 29, because 29 is greater than each of the other values listed.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "A geometric progression (GP) has first term a = -3 and common ratio r = -2. Find the 6th term.",
+        "options": [
+            "93",
+            "-48",
+            "96",
+            "-192"
+        ],
+        "correctAnswer": "96",
+        "explanation": "The nth term of a GP is Tn = a * r^(n-1). Substituting a = -3, r = -2, n = 6: T6 = -3 * (-2)^(6-1) = -3 * (-2)^5 = -3 * -32 = 96.",
+        "topic": "Sequences and Series"
+    },
+    {
+        "question": "Find the Greatest Common Divisor (GCD) of 56 and 8.",
+        "options": [
+            "7",
+            "8",
+            "11",
+            "56"
+        ],
+        "correctAnswer": "8",
+        "explanation": "The GCD is the largest positive integer that divides both numbers exactly. Breaking 56 and 8 into their prime factors and taking the common factors at their lowest powers gives GCD(56, 8) = 8. You can verify this since 56 / 8 = 7 and 8 / 8 = 1 are both whole numbers, and no larger number divides both 56 and 8 exactly.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Evaluate |-35|, the absolute value of -35.",
+        "options": [
+            "-35",
+            "-37",
+            "36",
+            "35"
+        ],
+        "correctAnswer": "35",
+        "explanation": "The absolute value of a number is its distance from zero on the number line, and distance is always non-negative. Since -35 is 35 units to the left of zero, |-35| = 35. In general, for a negative integer n, |n| = -n.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Simplify: (-9) - (6 - 6i)",
+        "options": [
+            "-15 + 8i",
+            "-15 + 6i",
+            "-13 + 6i",
+            "-3 - 6i"
+        ],
+        "correctAnswer": "-15 + 6i",
+        "explanation": "To subtract complex numbers, combine the real parts together and the imaginary parts together separately. Real part: -9 - 6 = -15. Imaginary part: 0 - -6 = 6. So (-9) - (6 - 6i) = -15 + 6i.",
+        "topic": "Complex Numbers"
+    },
+    {
+        "question": "Is the number 19 prime or composite?",
+        "options": [
+            "Prime",
+            "Both prime and composite",
+            "Neither prime nor composite",
+            "Composite"
+        ],
+        "correctAnswer": "Prime",
+        "explanation": "A prime number has exactly two distinct positive factors: 1 and itself. Checking 19 against all integers from 2 up to its square root (about 4), none of them divide 19 exactly, so 19 has no factors other than 1 and 19. Therefore 19 is prime.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "Convert 135 degrees to radians (in terms of pi, fully simplified).",
+        "options": [
+            "3*pi/4",
+            "135*pi/180",
+            "4*pi/3",
+            "3*pi/5"
+        ],
+        "correctAnswer": "3*pi/4",
+        "explanation": "To convert degrees to radians, multiply by pi/180: 135 degrees x (pi/180) = (135/180) x pi radians. Simplifying the fraction 135/180 to lowest terms gives 3/4, so 135 degrees = 3*pi/4 radians.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Evaluate (13) - (34).",
+        "options": [
+            "47",
+            "-21",
+            "-12",
+            "21"
+        ],
+        "correctAnswer": "-21",
+        "explanation": "Subtracting an integer is the same as adding its opposite: (13) - (34) = (13) + (-34) = -21. This is why '(13) - (34)' does not equal '(34) - (13)' in general, since subtraction of integers is not commutative.",
+        "topic": "Basic Properties of Integers"
+    },
+    {
+        "question": "For the quadratic equation 4x^2 + (-5)x + (3) = 0, what is the nature of its roots?",
+        "options": [
+            "No roots exist at all",
+            "Two distinct real roots",
+            "Two complex (non-real) roots",
+            "One repeated real root"
+        ],
+        "correctAnswer": "Two complex (non-real) roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (-5)^2 - 4(4)(3) = 25 - 48 = -23. Since D < 0, the equation has two complex (non-real) roots, because a negative discriminant requires taking the square root of a negative number, which only exists in the complex number system.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "For the quadratic equation 5x^2 + (7)x + (-8) = 0, what is the nature of its roots?",
+        "options": [
+            "Two distinct real roots",
+            "One repeated real root",
+            "No roots exist at all",
+            "Two complex (non-real) roots"
+        ],
+        "correctAnswer": "Two distinct real roots",
+        "explanation": "The nature of the roots is determined by the discriminant, D = b^2 - 4ac. Here D = (7)^2 - 4(5)(-8) = 49 - -160 = 209. Since D > 0, the equation has two distinct real roots, because a positive discriminant means the square root term is a real, nonzero number, giving two different real solutions.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "What is the exact value of cos(60 degrees)?",
+        "options": [
+            "0",
+            "(sqrt(2))/2",
+            "1",
+            "1/2"
+        ],
+        "correctAnswer": "1/2",
+        "explanation": "This is one of the standard trigonometric ratios that should be memorized (or derived from the 30-60-90 and 45-45-90 special right triangles). The value of cos(60 degrees) = 1/2. For example, at 60 degrees the coordinates on the unit circle directly give the sine and cosine values, and tan is found from tan = sin/cos.",
+        "topic": "Trigonometry"
+    },
+    {
+        "question": "Use the quadratic formula to solve: -1x^2 + (2)x + (8) = 0.",
+        "options": [
+            "x = 1 (repeated root)",
+            "x = 2 or x = -4",
+            "x = -2 or x = 4",
+            "x = -1 or x = 5"
+        ],
+        "correctAnswer": "x = -2 or x = 4",
+        "explanation": "The quadratic formula states x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Here a = -1, b = 2, c = 8. First find the discriminant: b^2 - 4ac = (2)^2 - 4(-1)(8) = 4 - -32 = 36. Since this is a positive perfect square, sqrt(36) = 6. Substituting: x = (-(2) +/- 6) / (2 x -1) = (-2 +/- 6) / -2, giving x = -2 or x = 4.",
+        "topic": "Quadratic Equations"
+    },
+    {
+        "question": "Convert 1*pi/4 radians to degrees.",
+        "options": [
+            "135",
+            "75",
+            "15",
+            "45"
+        ],
+        "correctAnswer": "45",
+        "explanation": "To convert radians to degrees, multiply by 180/pi. (1*pi/4) x (180/pi) = 1x180/4 = 45 degrees.",
+        "topic": "Trigonometry"
+    }
+];
+
+// ======================================
+// COS101 QUESTIONS
+// PASTE NEW COS101 QUESTIONS BELOW
+// ======================================
+
+const COS101_Questions = [
+   {
+        "question": "Which of the following mechanical calculating devices, invented by Blaise Pascal in 1642, used a system of interlocking gears and wheels to perform automated addition and subtraction?",
+        "options": [
+            "The Analytical Engine",
+            "The Leibniz Multiplier",
+            "The Pascaline",
+            "Napier's Bones"
+        ],
+        "correctAnswer": "The Pascaline",
+        "explanation": "The Pascaline, invented by French mathematician Blaise Pascal, was the first functional mechanical calculator. It utilized a series of geared wheels labeled 0 through 9 to automatically carry digits to the next position during addition and subtraction operations."
+    },
+    {
+        "question": "Who is widely celebrated in computer history as the world's first computer programmer due to her work developing an algorithm for Charles Babbage's Analytical Engine?",
+        "options": [
+            "Grace Hopper",
+            "Ada Lovelace",
+            "Joan Clarke",
+            "Margaret Hamilton"
+        ],
+        "correctAnswer": "Ada Lovelace",
+        "explanation": "Ada Lovelace worked closely with Charles Babbage and recognized that his proposed mechanical machine could do more than just pure calculation. She wrote the first algorithm intended to be processed by such a machine, making her the first programmer."
+    },
+    {
+        "question": "The historical computing device known as 'Napier's Bones' was primarily designed to simplify which mathematical operations through the use of carved rods?",
+        "options": [
+            "Integration and Differentiation",
+            "Multiplication and Division",
+            "Binary Logical Operations",
+            "Matrix Inversion"
+        ],
+        "correctAnswer": "Multiplication and Division",
+        "explanation": "Invented by John Napier, 'Napier's Bones' is an artifact consisting of graduated rods used to perform multiplication and division based on the principle of Arab mathematics and lattice multiplication."
+    },
+    {
+        "question": "Which early electro-mechanical computer, developed by Howard Aiken at Harvard University and built by IBM in 1944, used relays and switching elements to read instructions from punched paper tape?",
+        "options": [
+            "ENIAC",
+            "UNIVAC I",
+            "Harvard Mark I",
+            "EDVAC"
+        ],
+        "correctAnswer": "Harvard Mark I",
+        "explanation": "The Harvard Mark I (or IBM Automatic Sequence Controlled Calculator) was a massive electro-mechanical computer that used mechanical switches and relays to execute calculations automatically based on instructions from paper tapes."
+    },
+    {
+        "question": "What is the primary defining characteristic of an analog computer compared to a digital computer?",
+        "options": [
+            "It processes data represented by continuous physical variables rather than discrete binary digits.",
+            "It relies entirely on mechanical gears and handles data in alphanumeric formats.",
+            "It stores programs inside non-volatile semiconductor memory arrays.",
+            "It can only process data in structured batch text files."
+        ],
+        "correctAnswer": "It processes data represented by continuous physical variables rather than discrete binary digits.",
+        "explanation": "Analog computers perform calculations by measuring continuous physical phenomena (such as voltage, pressure, temperature, or mechanical rotation) instead of processing discrete, symbolic binary counts like a digital computer."
+    },
+    {
+        "question": "Which architectural component defined by John von Neumann holds both the data currently being processed and the programmatic instructions driving that processing?",
+        "options": [
+            "The Arithmetic Logic Unit (ALU)",
+            "The Stored-Program Stored Memory Unit",
+            "The Hard Disk Drive Subsystem",
+            "The Input/Output Controller Channel"
+        ],
+        "correctAnswer": "The Stored-Program Stored Memory Unit",
+        "explanation": "The Von Neumann architecture introduced the 'Stored-Program' concept, meaning that both executable instructions and working data reside together in the same shared, addressable main memory workspace."
+    },
+    {
+        "question": "In a modern computer system, what specific sub-component of the Central Processing Unit (CPU) is responsible for decoding instructions and orchestrating the flow of data through the system?",
+        "options": [
+            "The Control Unit (CU)",
+            "The Arithmetic Logic Unit (ALU)",
+            "The Solid-State Drive (SSD)",
+            "The Random Access Memory (RAM)"
+        ],
+        "correctAnswer": "The Control Unit (CU)",
+        "explanation": "The Control Unit (CU) acts as the brain within the CPU. It fetches instructions from memory, decodes what actions need to occur, and directs the hardware signals to execute those instructions."
+    },
+    {
+        "question": "Which of the following items is explicitly categorized as an internal system bus used to transfer memory addresses between the CPU and RAM?",
+        "options": [
+            "The Data Bus",
+            "The Address Bus",
+            "The Control Bus",
+            "The Peripheral Component Interconnect (PCI) Slot"
+        ],
+        "correctAnswer": "The Address Bus",
+        "explanation": "The system bus contains three pathways. The Address Bus is a unidirectional pathway dedicated solely to carrying the specific memory addresses that the CPU wishes to read from or write to in RAM."
+    },
+    {
+        "question": "System software is fundamentally distinguished from application software because system software:",
+        "options": [
+            "Is designed exclusively to let users create documents, spreadsheets, and databases.",
+            "Manages, coordinates, and controls the underlying hardware components and provides a platform for application software to run.",
+            "Can run directly on a computer without requiring an operating system to be installed.",
+            "Is always stored permanently on external optical media discs."
+        ],
+        "correctAnswer": "Manages, coordinates, and controls the underlying hardware components and provides a platform for application software to run.",
+        "explanation": "System software, such as an operating system or device drivers, acts as an intermediary layer that manages hardware resources, schedules tasks, and ensures application software can execute smoothly without needing to know low-level hardware details."
+    },
+    {
+        "question": "Within the ecosystem of computing system components, what role does a 'Systems Analyst' play in the Humanware layer?",
+        "options": [
+            "Writing low-level machine code directly into hardware firmware chips.",
+            "Studying organizational problems, defining technical requirements, and designing information systems to solve them.",
+            "Physically cleaning dusty server racks and crimping ethernet cables.",
+            "Entering raw customer transaction details into a database form all day."
+        ],
+        "correctAnswer": "Studying organizational problems, defining technical requirements, and designing information systems to solve them.",
+        "explanation": "Systems Analysts are structural members of humanware who evaluate business needs and translate them into technological system blueprints for software developers to build."
+    },
+    {
+        "question": "Which type of software license allows users full access to view, modify, and redistribute the original source code without paying proprietary licensing fees?",
+        "options": [
+            "Shareware",
+            "Proprietary Software",
+            "Open-Source Software",
+            "Freeware"
+        ],
+        "correctAnswer": "Open-Source Software",
+        "explanation": "Open-Source software (like Linux or Apache) publishes its source code openly, granting anyone the legal right to inspect, customize, optimize, and redistribute it under collaborative terms."
+    },
+    {
+        "question": "The second generation of computers (roughly 1956–1963) experienced a massive reduction in size, heat generation, and power consumption due to the replacement of vacuum tubes with which component?",
+        "options": [
+            "Integrated Circuits",
+            "Microprocessors",
+            "Discrete Transistors",
+            "Magnetic Bubble Memory"
+        ],
+        "correctAnswer": "Discrete Transistors",
+        "explanation": "Transistors replaced bulky, fragile vacuum tubes in the second generation. Because transistors are solid-state electronic switches, they require far less electricity, run cooler, and allow computers to be much smaller."
+    },
+    {
+        "question": "What primary scale of integration enabled the fourth generation of computers to feature an entire central processing unit on a single silicon chip (the microprocessor)?",
+        "options": [
+            "SSI (Small Scale Integration)",
+            "MSI (Medium Scale Integration)",
+            "LSI and VLSI (Large and Very Large Scale Integration)",
+            "ULSI (Ultra Large Scale Integration)"
+        ],
+        "correctAnswer": "LSI and VLSI (Large and Very Large Scale Integration)",
+        "explanation": "Fourth-generation computers began utilizing Very Large Scale Integration (VLSI), packeting tens of thousands to millions of transistors onto one microchip, creating the modern microprocessor (e.g., Intel 4004)."
+    },
+    {
+        "question": "Which generation of computers is heavily characterized by ongoing research into Artificial Intelligence (AI), parallel processing architectures, quantum computing, and natural language processing?",
+        "options": [
+            "Third Generation",
+            "Fourth Generation",
+            "Fifth Generation",
+            "Sixth Generation"
+        ],
+        "correctAnswer": "Fifth Generation",
+        "explanation": "The Fifth Generation encompasses contemporary and emerging technologies centered around intelligence. It shifts focus from basic hardware transistor density to parallel processing speeds and smart software capabilities."
+    },
+    {
+        "question": "What form of high-speed primary memory is placed directly between the CPU registers and main RAM to store frequently accessed data and instructions to minimize latency?",
+        "options": [
+            "Virtual Memory",
+            "Cache Memory",
+            "Flash Memory",
+            "EEPROM"
+        ],
+        "correctAnswer": "Cache Memory",
+        "explanation": "Cache memory is static RAM (SRAM) that operates at speeds close to the processor core. It keeps copies of the most frequently used data from main memory so the CPU doesn't waste clock cycles waiting for slower RAM."
+    },
+    {
+        "question": "In modern data processing trends, what does the term 'Cloud Computing' fundamentally describe?",
+        "options": [
+            "Using localized weather satellite hardware systems to run calculations.",
+            "The delivery of on-demand computing services—including servers, storage, and databases—over the Internet on a pay-as-you-go basis.",
+            "Running computer systems inside high-altitude airplanes to avoid ground-level heat.",
+            "Encrypting files so heavily that their contents become foggy and invisible to hackers."
+        ],
+        "correctAnswer": "The delivery of on-demand computing services—including servers, storage, and databases—over the Internet on a pay-as-you-go basis.",
+        "explanation": "Cloud computing moves computational processing and storage off local desktop machines and into centralized, remote data centers accessed globally via internet networks."
+    },
+    {
+        "question": "Which concept describes the trend of connecting everyday physical objects—such as smart refrigerators, home thermostats, and wearable health monitors—to the internet to collect and exchange data?",
+        "options": [
+            "The Internet of Things (IoT)",
+            "Virtual Reality (VR)",
+            "Edge Processing Framework",
+            "Grid Computing Network"
+        ],
+        "correctAnswer": "The Internet of Things (IoT)",
+        "explanation": "The Internet of Things (IoT) refers to embedding network connectivity, sensors, and processors into non-traditional hardware items so they can automate data collection and interact autonomously over networks."
+    },
+    {
+        "question": "What is the primary operational mechanism of an online real-time processing system?",
+        "options": [
+            "Transactions are held in a queue for several days until system resources become inexpensive.",
+            "Data is processed immediately upon entry, and the master system files are updated instantaneously to reflect changes.",
+            "The computer system performs operations without being connected to a network loop.",
+            "All records are converted to physical paper printouts before computer input occurs."
+        ],
+        "correctAnswer": "Data is processed immediately upon entry, and the master system files are updated instantaneously to reflect changes.",
+        "explanation": "Real-time systems process input data instantly (within milliseconds or seconds) and feed back outputs fast enough to alter immediate environments or accurately show up-to-the-second details, such as airline ticket bookings."
+    },
+    {
+        "question": "Which of the following is an ideal application scenario for traditional batch processing modes?",
+        "options": [
+            "An anti-lock braking system (ABS) tracking wheel speed during an emergency stop.",
+            "A corporate payroll system calculating monthly salary distributions for 10,000 employees.",
+            "An interactive multiplayer online video game engine sync.",
+            "An air traffic control radar tracking system."
+        ],
+        "correctAnswer": "A corporate payroll system calculating monthly salary distributions for 10,000 employees.",
+        "explanation": "Payroll processing does not require instant interaction or live second-by-second updates. Gathering all timesheet data over a month and processing it at one time as a single unattended job is classic batch processing."
+    },
+    {
+        "question": "What processing mode allows multiple users located at different physical terminals to interactively access a single central mainframe computer simultaneously by swapping execution time slots rapidly?",
+        "options": [
+            "Time-Sharing Processing",
+            "Sequential Batch Processing",
+            "Offline Media Processing",
+            "Uniprocessing Mode"
+        ],
+        "correctAnswer": "Time-Sharing Processing",
+        "explanation": "Time-sharing assigns small processing windows (time slices) to each terminal user sequentially. Because the swapping happens at high speeds, every user gets the illusion of having sole, constant access to the main computer."
+    },
+    {
+        "question": "In the context of the data-to-knowledge hierarchy, what turns 'Data' into 'Information'?",
+        "options": [
+            "Storing the raw characters into magnetic tapes instead of solid-state chips.",
+            "Processing, organizing, and structuring raw facts so they possess context and usefulness to a human recipient.",
+            "Compressing the data into encrypted zip files to reduce storage footprints.",
+            "Transmitting the facts via high-speed fiber-optic telecommunication cables."
+        ],
+        "correctAnswer": "Processing, organizing, and structuring raw facts so they possess context and usefulness to a human recipient.",
+        "explanation": "Data refers to raw uncontextualized facts (e.g., '38'). Once structured or calculated into a meaningful format (e.g., 'Patient temperature is 38 degrees Celsius'), it is elevated to Information."
+    },
+    {
+        "question": "Which transmission mode allows data communication to flow in both directions across a channel, but only in one direction at a time (not simultaneously)?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Multiplex Mode"
+        ],
+        "correctAnswer": "Half-Duplex Mode",
+        "explanation": "In half-duplex communication (like a walkie-talkie), both devices can transmit and receive data, but they must take turns. They cannot send data at the same time over the active channel."
+    },
+    {
+        "question": "What component of data communications represents the established set of rules and conventions that govern how devices format, transmit, and verify data packets across a network?",
+        "options": [
+            "The Physical Medium",
+            "The Protocol",
+            "The Receiver Node",
+            "The Topology Map"
+        ],
+        "correctAnswer": "The Protocol",
+        "explanation": "Protocols (such as TCP/IP or HTTP) are digital rulebooks. Without them, devices might send signals to each other, but they would be unable to decode or understand what the other device is communicating."
+    },
+    {
+        "question": "Computer-Aided Design (CAD) software is primarily utilized in which application domain?",
+        "options": [
+            "Automating human resources payroll structures.",
+            "Engineering, architecture, and manufacturing to digitally create and simulate structural and mechanical parts.",
+            "Sending bulk email marketing newsletters to retail clients.",
+            "Scanning network storage drives for active malware infections."
+        ],
+        "correctAnswer": "Engineering, architecture, and manufacturing to digitally create and simulate structural and mechanical parts.",
+        "explanation": "CAD tools allow engineers and architects to draft precise 2D plans and 3D geometric models of buildings, engines, or electronics before manufacturing begins."
+    },
+    {
+        "question": "What computing system application allows banks to process high volumes of check payments by reading characters written in specialized magnetic ink at the bottom of checks?",
+        "options": [
+            "OMR (Optical Mark Recognition)",
+            "MICR (Magnetic Ink Character Recognition)",
+            "OCR (Optical Character Recognition)",
+            "RFID (Radio Frequency Identification)"
+        ],
+        "correctAnswer": "MICR (Magnetic Ink Character Recognition)",
+        "explanation": "MICR technology reads routing and account numbers printed with magnetic ink. It is a highly accurate method utilized universally within banking infrastructure to prevent fraud during automated document processing."
+    },
+    {
+        "question": "A computer virus is fundamentally defined as a type of:",
+        "options": [
+            "Hardware defect caused by bad chip manufacturing.",
+            "Malicious, self-replicating software program designed to infect files and execute unauthorized actions.",
+            "Naturally occurring electrical spike within a local power grid.",
+            "High-temperature systemic failure within server fans."
+        ],
+        "correctAnswer": "Malicious, self-replicating software program designed to infect files and execute unauthorized actions.",
+        "explanation": "A virus is an artificial program written by bad actors. It relies on attaching its code to clean files or host applications and forces the system to copy the infection further, often causing loss of data."
+    },
+    {
+        "question": "Which specific variant of malware targets a computer's Master Boot Record (MBR) or boot sector to run every single time the system is powered on before the operating system even loads?",
+        "options": [
+            "Macro Virus",
+            "Boot Sector Virus",
+            "Spyware Application",
+            "Trojan Horse"
+        ],
+        "correctAnswer": "Boot Sector Virus",
+        "explanation": "Boot sector viruses compromise the disk sector that contains the specific bootstrap program required to launch the operating system. By loading itself first, the virus can secure master control over basic hardware functions."
+    },
+    {
+        "question": "What primary defense mechanism is used to systematically evaluate computer software and files against known malicious definitions to identify, isolate, and remove computer viruses?",
+        "options": [
+            "Disk Defragmenter Utilities",
+            "Antivirus Software",
+            "Hardware Power Strips",
+            "Database Query Compilers"
+        ],
+        "correctAnswer": "Antivirus Software",
+        "explanation": "Antivirus programs run real-time background scans and look for matching data patterns (signatures) or suspicious behaviors that point to malware infection, allowing users to quarantine or eliminate threats."
+    },
+    {
+        "question": "The term 'Computer Appreciation' refers to the process of:",
+        "options": [
+            "Calculating the market value increase of corporate server systems over fiscal years.",
+            "Developing basic awareness, understanding capabilities, limitations, and learning how to utilize computers effectively in everyday tasks.",
+            "Upgrading hardware RAM sticks manually inside a laptop casing.",
+            "Writing complex object-oriented software scripts for mainframe deployment."
+        ],
+        "correctAnswer": "Developing basic awareness, understanding capabilities, limitations, and learning how to utilize computers effectively in everyday tasks.",
+        "explanation": "Computer appreciation is a foundational education concept aimed at introducing non-technical users to basic computer hardware, operating software, and digital literacy skills."
+    },
+    {
+        "question": "Which item represents a volatile primary memory storage component within a personal computer?",
+        "options": [
+            "Read-Only Memory (ROM)",
+            "Random Access Memory (RAM)",
+            "Solid-State Drive (SSD)",
+            "Magnetic Tape Unit"
+        ],
+        "correctAnswer": "Random Access Memory (RAM)",
+        "explanation": "RAM is highly volatile. It holds the active data the processor needs immediately, but the moment electrical power is turned off or lost, everything stored within RAM is lost."
+    },
+    {
+        "question": "What historical mechanical computer was designed by Charles Babbage in the 1820s to calculate mathematical polynomial tables automatically, though it was never completely finished during his lifetime?",
+        "options": [
+            "The Difference Engine",
+            "The Hollerith Desk",
+            "The Stepped Reckoner",
+            "The Analytical Engine"
+        ],
+        "correctAnswer": "The Difference Engine",
+        "explanation": "The Difference Engine was Babbage's initial mechanical design aimed specifically at computing mathematical tables via finite differences to remove human error from navigation and engineering charts."
+    },
+    {
+        "question": "In computer systems, the term 'Firmware' refers to software that is:",
+        "options": [
+            "Installed by regular users from external flash drives to play games.",
+            "Permanently or semi-permanently embedded into hardware chips like ROM to provide low-level device control.",
+            "Rented out via monthly internet cloud subscription software bundles.",
+            "Created automatically when a system recovers from a virus attack."
+        ],
+        "correctAnswer": "Permanently or semi-permanently embedded into hardware chips like ROM to provide low-level device control.",
+        "explanation": "Firmware is a specific type of background software flashed directly onto non-volatile memory chips (like BIOS/UEFI chips). It dictates how underlying hardware chips talk to each other."
+    },
+    {
+        "question": "Which computing device used punched cards to tabulate census data in the United States in 1890, paving the way for automated data processing corporations?",
+        "options": [
+            "Herman Hollerith's Tabulating Machine",
+            "Jacquard Loom",
+            "Leibniz Calculator",
+            "Z3 Computer"
+        ],
+        "correctAnswer": "Herman Hollerith's Tabulating Machine",
+        "explanation": "Herman Hollerith designed an electro-mechanical tabulating machine that read data from punched cards. It cut census processing times down dramatically and his company eventually merged to form IBM."
+    },
+    {
+        "question": "What is the primary function of an input device in a computer system?",
+        "options": [
+            "To convert processed binary data from the CPU into human-readable information.",
+            "To feed external data and user command actions into the computer system for processing.",
+            "To store archives of system configuration files safely.",
+            "To execute complex logical arithmetic statements inside the motherboard."
+        ],
+        "correctAnswer": "To feed external data and user command actions into the computer system for processing.",
+        "explanation": "Input devices (like keyboards, mice, and scanners) capture human gestures, physical sounds, or paper text and convert those physical states into digital signals that the processor can read."
+    },
+    {
+        "question": "Which generation of computer hardware introduced high-level programming languages like early versions of FORTRAN and COBOL into software development?",
+        "options": [
+            "First Generation",
+            "Second Generation",
+            "Third Generation",
+            "Fourth Generation"
+        ],
+        "correctAnswer": "Second Generation",
+        "explanation": "As computers transitioned from vacuum tubes to transistors in the second generation, developers moved away from tedious, error-prone machine language (0s and 1s) toward symbolic high-level languages like FORTRAN and COBOL."
+    },
+    {
+        "question": "The term 'GIGO' stands for 'Garbage In, Garbage Out'. Which core principle of computer system operations does this acronym highlight?",
+        "options": [
+            "Computers will run slower if physical dust accumulates inside the power supply units.",
+            "The accuracy of a computer's output depends directly on the accuracy and quality of the input data it receives.",
+            "Deleted files are held inside a system recycling bin before permanent erasure.",
+            "Wireless networks automatically drop corrupted data packets during active downloads."
+        ],
+        "correctAnswer": "The accuracy of a computer's output depends directly on the accuracy and quality of the input data it receives.",
+        "explanation": "Computers process data exactly as told without checking if the user made a logical mistake. If you input incorrect or corrupted data ('garbage in'), the calculated output will naturally be faulty ('garbage out')."
+    },
+    {
+        "question": "What technology trend involves using remote computing servers to simulate physical computer configurations, allowing one server to host multiple independent operating system instances at once?",
+        "options": [
+            "Virtualization",
+            "Quantum Superposition",
+            "Edge Computing Mesh",
+            "Nanotechnology Fabrication"
+        ],
+        "correctAnswer": "Virtualization",
+        "explanation": "Virtualization separates hardware from software systems. By using a hypervisor software layer, one single physical machine can run multiple isolated virtual machines (VMs), lowering hardware costs."
+    },
+    {
+        "question": "Which of the following data processing modes processes transactions in distinct blocks where there is a notable time delay between data collection and execution?",
+        "options": [
+            "Real-time processing",
+            "Interactive processing",
+            "Batch processing",
+            "Online transaction processing"
+        ],
+        "correctAnswer": "Batch processing",
+        "explanation": "Batch processing works by bundling transactions together to process them as a single group later. There is an inherent time gap between when data points are initially recorded and when processing finishes."
+    },
+    {
+        "question": "In a data communication network, what type of physical medium uses thin strands of glass or plastic to transmit data as modulated pulses of light?",
+        "options": [
+            "Coaxial Cable",
+            "Unshielded Twisted Pair (UTP) Cable",
+            "Fiber-Optic Cable",
+            "Shielded Ribbon Cable"
+        ],
+        "correctAnswer": "Fiber-Optic Cable",
+        "explanation": "Fiber-optic cables carry signals via light beams down glass or plastic tubes. This enables massive data bandwidth capacities over long distances without suffering from electromagnetic interference."
+    },
+    {
+        "question": "Which malicious software application hides its destructive nature inside an innocent-looking program file (like a free utility game) to trick users into running it?",
+        "options": [
+            "Trojan Horse",
+            "Network Worm",
+            "Ransomware Locker",
+            "Spyware Monitor"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "Named after the ancient Greek myth, a Trojan Horse masquerades as a legitimate or harmless file. Once the unsuspecting user executes the program, it delivers its hidden malicious payload."
+    },
+    {
+        "question": "What is the primary role of an Operating System's kernel component?",
+        "options": [
+            "Providing a graphical web browser application to surf the internet.",
+            "Acting as the core internal engine of the OS, managing low-level hardware memory, CPU tasks, and file interactions directly.",
+            "Formatting user documents with margins, borders, and custom fonts.",
+            "Holding system memory variables when the power grid is completely down."
+        ],
+        "correctAnswer": "Acting as the core internal engine of the OS, managing low-level hardware memory, CPU tasks, and file interactions directly.",
+        "explanation": "The kernel is the foundational core of an operating system. It boots up first and stays in main memory to handle direct operations between physical hardware chips and application software layers."
+    },
+    {
+        "question": "Which term describes a type of malicious software that can replicate itself across networks completely independently, without needing to attach to an existing host program file?",
+        "options": [
+            "File Infector Virus",
+            "Macro Virus",
+            "Worm",
+            "Logic Bomb"
+        ],
+        "correctAnswer": "Worm",
+        "explanation": "Unlike a standard virus which requires a user to run an infected host file, a computer worm is a standalone program. It exploits network security holes to copy itself from system to system entirely on its own."
+    },
+    {
+        "question": "In the business world, what does the abbreviation 'ERP' stand for when discussing integrated corporate software applications?",
+        "options": [
+            "Electronic Resource Processor",
+            "Enterprise Resource Planning",
+            "Extended Retail Protocol",
+            "Engineered Record Program"
+        ],
+        "correctAnswer": "Enterprise Resource Planning",
+        "explanation": "Enterprise Resource Planning (ERP) systems are comprehensive software suites businesses use to integrate and manage core operational processes like manufacturing, finance, supply chain, and human resources."
+    },
+    {
+        "question": "What category of computer hardware memory holds the basic bootstrap instructions required to initialize hardware components when the computer is first turned on?",
+        "options": [
+            "RAM",
+            "ROM (Read-Only Memory)",
+            "SSD Cache",
+            "Virtual Disk Partition"
+        ],
+        "correctAnswer": "ROM (Read-Only Memory)",
+        "explanation": "ROM chips hold non-volatile start-up firmware instructions (such as the BIOS or UEFI). These instructions never disappear when the machine loses power, ensuring the computer always knows how to start up."
+    },
+    {
+        "question": "Which communication topology connects every device on a network directly to a central connecting hub or switch device like the spokes of a wheel?",
+        "options": [
+            "Bus Topology",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Topology"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "In a Star topology, all network nodes route their communication through a central device. If one peripheral cable breaks, only that single node is disconnected, leaving the rest of the network running."
+    },
+    {
+        "question": "A macro virus is uniquely distinguished from other file viruses because it is designed to infect:",
+        "options": [
+            "The low-level hardware firmware of the graphics card chip.",
+            "Data documents created by productivity suites (like spreadsheets or word processing files) that support automated scripts.",
+            "The physical tracks found on old magnetic floppy disks.",
+            "Network router routing tables during data packet switching."
+        ],
+        "correctAnswer": "Data documents created by productivity suites (like spreadsheets or word processing files) that support automated scripts.",
+        "explanation": "Macro viruses are written in the macro scripting languages built into office applications like Microsoft Word or Excel. They spread when users open infected document attachments."
+    },
+    {
+        "question": "What processing mode divides computational tasks among multiple physical central processing units (CPUs) within a single computer system to speed up performance?",
+        "options": [
+            "Multiprocessing",
+            "Uniprocessing",
+            "Batch Processing",
+            "Offline Buffering"
+        ],
+        "correctAnswer": "Multiprocessing",
+        "explanation": "Multiprocessing involves equipping a computer system with two or more independent processing cores or CPUs. This setup allows the system to run multiple processing instructions at the exact same time."
+    },
+    {
+        "question": "Which metric is commonly used to measure the clock speed and raw internal cycle processing performance of modern computer microprocessors?",
+        "options": [
+            "Megabytes (MB)",
+            "Gigahertz (GHz)",
+            "Kilobits per second (Kbps)",
+            "Lines of Code (LOC)"
+        ],
+        "correctAnswer": "Gigahertz (GHz)",
+        "explanation": "CPU clock speeds are measured in Gigahertz (GHz), which represents billions of electrical clock cycles per second. Each cycle allows the processor to execute core atomic instructions."
+    },
+    {
+        "question": "In computer systems, the physical, tangible electronic circuitry and mechanical components are collectively classified as:",
+        "options": [
+            "Software",
+            "Humanware",
+            "Hardware",
+            "Firmware"
+        ],
+        "correctAnswer": "Hardware",
+        "explanation": "Hardware encompasses all the physical components of a computer system that you can touch, such as motherboards, memory chips, hard drives, monitors, and system cables."
+    },
+    {
+        "question": "What technological advancement represents the core shift defining third-generation computers (1964–1971)?",
+        "options": [
+            "The complete replacement of copper wiring with wireless bluetooth chips.",
+            "The invention of the Integrated Circuit (IC), which combined multiple transistors onto a single silicon chip.",
+            "The use of vacuum tubes to process binary data matrices.",
+            "The creation of optical holographic storage crystals."
+        ],
+        "correctAnswer": "The invention of the Integrated Circuit (IC), which combined multiple transistors onto a single silicon chip.",
+        "explanation": "The third generation began when engineers figured out how to fit hundreds of electronic components onto a single miniature silicon wafer called an Integrated Circuit (IC), making computers much faster and cheaper."
+    },
+    {
+        "question": "What computing term describes the deliberate application of computer systems to perform repetitive tasks automatically without human intervention, improving industrial efficiency?",
+        "options": [
+            "Manual Processing",
+            "Automation",
+            "Data Verification",
+            "System Fragmentation"
+        ],
+        "correctAnswer": "Automation",
+        "explanation": "Automation uses technology, control systems, and software programs to take over repetitive tasks previously handled by humans, increasing speed and reducing manual errors."
+    },
+    {
+        "question": "Which of the following serves as an essential software utility designed to protect computer networks by monitoring and filtering incoming and outgoing traffic based on security rules?",
+        "options": [
+            "A Web Compiler",
+            "A Firewall",
+            "A Device Driver",
+            "A Disk Optimizer"
+        ],
+        "correctAnswer": "A Firewall",
+        "explanation": "A firewall acts as a protective barrier between a trusted internal network and untrusted external networks (like the internet). It checks data packets against specific rules to block unauthorized access."
+    },
+    {
+        "question": "In the field of medical science, what computer-controlled technology allows doctors to view detailed, non-invasive cross-sectional images of the human body for diagnostic analysis?",
+        "options": [
+            "CAD/CAM Plotting",
+            "Computerized Axial Tomography (CAT Scan)",
+            "Electronic Funds Transfer (EFT)",
+            "Point of Sale Processing (POS)"
+        ],
+        "correctAnswer": "Computerized Axial Tomography (CAT Scan)",
+        "explanation": "CAT (or CT) scans combine a series of X-ray images taken from different angles around the body with computer processing to create highly detailed cross-sectional views of soft tissues and bones."
+    },
+    {
+        "question": "Which component of an operating system provides the direct visual environment—featuring windows, icons, and menus—that allows everyday users to interact with files using a mouse pointer?",
+        "options": [
+            "Command-Line Interface (CLI)",
+            "Graphical User Interface (GUI)",
+            "Assembler Language Linker",
+            "Network File Directory"
+        ],
+        "correctAnswer": "Graphical User Interface (GUI)",
+        "explanation": "A GUI allows users to interact with computer systems through visual elements like icons and windows instead of typing text commands into a blank screen."
+    },
+    {
+        "question": "What network scale classification describes a computer network that spans a large geographic region, such as across states, countries, or entire continents?",
+        "options": [
+            "LAN (Local Area Network)",
+            "PAN (Personal Area Network)",
+            "WAN (Wide Area Network)",
+            "CAN (Campus Area Network)"
+        ],
+        "correctAnswer": "WAN (Wide Area Network)",
+        "explanation": "A Wide Area Network (WAN) connects computers and smaller networks across large distances. The internet is the largest and most well-known example of a global WAN."
+    },
+    {
+        "question": "Which data communication transmission medium is immune to electromagnetic interference (EMI) because it transmits signals using light instead of electricity?",
+        "options": [
+            "Twisted Pair Copper Cable",
+            "Coaxial Cable",
+            "Fiber-Optic Cable",
+            "Microwave Radio Link"
+        ],
+        "correctAnswer": "Fiber-Optic Cable",
+        "explanation": "Since fiber-optic cables use light pulses rather than electrical currents to transmit data, they are completely unaffected by electromagnetic interference or radio frequencies."
+    },
+    {
+        "question": "What type of software application is designed to help users perform specific real-world tasks, such as writing an essay or editing a photograph?",
+        "options": [
+            "System Software",
+            "Utility Software",
+            "Application Software",
+            "Device Firmware"
+        ],
+        "correctAnswer": "Application Software",
+        "explanation": "Application software includes programs built for end-users to accomplish specific tasks, such as web browsers, word processors, photo editors, and video games."
+    },
+    {
+        "question": "The primary objective of a computer virus's 'payload' phase is to:",
+        "options": [
+            "Replicate the virus code silently into other storage directories.",
+            "Execute its intended malicious damage or unauthorized actions on the host machine, such as deleting files.",
+            "Scan the local area network to find unsecured IP addresses.",
+            "Compress system log files to save space on the drive."
+        ],
+        "correctAnswer": "Execute its intended malicious damage or unauthorized actions on the host machine, such as deleting files.",
+        "explanation": "The payload is the part of the malware code that carries out the actual attack, whether that means encrypting your files, stealing data, or displaying messages on your screen."
+    },
+    {
+        "question": "Which of the following refers to a temporary storage location inside the CPU that holds data or instructions during immediate execution?",
+        "options": [
+            "Main Memory Cache",
+            "A Register",
+            "A Hard Drive Sector",
+            "Virtual Page Block"
+        ],
+        "correctAnswer": "A Register",
+        "explanation": "Registers are tiny, ultra-fast storage spaces built directly inside the CPU core. They hold the immediate inputs, outputs, and status flags the processor needs to perform a calculation right now."
+    },
+    {
+        "question": "What type of data processing occurs when a system processes user inputs immediately, but does not necessarily update master files instantly, often used in interactive querying?",
+        "options": [
+            "Online Processing",
+            "Offline Batch Processing",
+            "Distributed Processing",
+            "Remote Spooling Mode"
+        ],
+        "correctAnswer": "Online Processing",
+        "explanation": "Online processing means a user terminal is directly connected to the central computer network, allowing interactive data input and querying, even if file updating happens slightly later."
+    },
+    {
+        "question": "Which historical figure designed the 'Stepped Reckoner' calculating machine in 1673, expanding on mechanical calculation by enabling direct multiplication and division?",
+        "options": [
+            "Gottfried Wilhelm Leibniz",
+            "Blaise Pascal",
+            "John Napier",
+            "Charles Babbage"
+        ],
+        "correctAnswer": "Gottfried Wilhelm Leibniz",
+        "explanation": "German mathematician Gottfried Wilhelm Leibniz invented the Stepped Reckoner, which introduced a special stepped gear wheel design to handle multiplication and division mechanically."
+    },
+    {
+        "question": "In a computing system context, 'Humanware' includes which of the following groups?",
+        "options": [
+            "The physical plastic cases protecting memory chips.",
+            "Computer programmers, database administrators, and end-users.",
+            "The automatic backup scripts written in high-level code.",
+            "The device drivers that control hardware printers."
+        ],
+        "correctAnswer": "Computer programmers, database administrators, and end-users.",
+        "explanation": "Humanware refers to the entire human element of a computing environment—the people who design, program, maintain, administer, and use computer systems to get things done."
+    },
+    {
+        "question": "Which computer component reads and writes data permanently on spinning magnetic platters?",
+        "options": [
+            "Solid-State Drive (SSD)",
+            "Hard Disk Drive (HDD)",
+            "Random Access Memory (RAM)",
+            "Read-Only Memory Chip"
+        ],
+        "correctAnswer": "Hard Disk Drive (HDD)",
+        "explanation": "Traditional Hard Disk Drives (HDDs) use mechanical read/write heads to access data magnetically stored on rapidly spinning circular platters."
+    },
+    {
+        "question": "What computing term describes the ability of a single operating system to run multiple distinct application tasks concurrently by switching the CPU's attention between them?",
+        "options": [
+            "Multitasking",
+            "Multiprocessing",
+            "Linear Batching",
+            "System Redundancy"
+        ],
+        "correctAnswer": "Multitasking",
+        "explanation": "Multitasking is an operating system feature that allows a user to run several programs at once (like a web browser and a media player) by quickly swapping CPU resources among them."
+    },
+    {
+        "question": "Which type of transmission channel allows data to travel in only one fixed direction, with no way to send data back the other way?",
+        "options": [
+            "Simplex Channel",
+            "Half-Duplex Channel",
+            "Full-Duplex Channel",
+            "Asynchronous Channel"
+        ],
+        "correctAnswer": "Simplex Channel",
+        "explanation": "In a simplex communication channel, data travels one way only. Examples include traditional television and radio broadcasts, where the receiver cannot send signals back to the station."
+    },
+    {
+        "question": "In business operations, what technology allows retail stores to instantly scan item barcodes at checkout to update inventory and calculate totals?",
+        "options": [
+            "Batch Processing Terminal",
+            "Point of Sale (POS) System",
+            "Mainframe Batch Matrix",
+            "Optical Mark Reader"
+        ],
+        "correctAnswer": "Point of Sale (POS) System",
+        "explanation": "A Point of Sale (POS) system combines hardware barcode scanners and checkout software to instantly process sales transactions and update retail inventory databases in real time."
+    },
+    {
+        "question": "Which component translates high-level programming code into machine language line-by-line during execution, stopping immediately if it hits an error?",
+        "options": [
+            "A Compiler",
+            "An Interpreter",
+            "An Assembler",
+            "A Text Editor"
+        ],
+        "correctAnswer": "An Interpreter",
+        "explanation": "An interpreter translates and runs source code one line at a time. This is different from a compiler, which translates the entire source code file into a standalone machine file before running it."
+    },
+    {
+        "question": "What type of computer virus infects the underlying code of executable program files (typically files ending in .exe or .com)?",
+        "options": [
+            "Boot Sector Virus",
+            "File Infector Virus",
+            "Macro Virus",
+            "Polymorphic Script"
+        ],
+        "correctAnswer": "File Infector Virus",
+        "explanation": "File infector viruses attach themselves to executable programs. When a user runs the infected application, the virus activates alongside it to infect more files on the drive."
+    },
+    {
+        "question": "The term 'Bandwidth' in data communications refers to:",
+        "options": [
+            "The physical length of a network cable running between rooms.",
+            "The maximum data transmission capacity of a communication channel over a given period of time.",
+            "The number of physical computers connected to a central server switch.",
+            "The thickness of the protective plastic coating on a copper wire."
+        ],
+        "correctAnswer": "The maximum data transmission capacity of a communication channel over a given period of time.",
+        "explanation": "Bandwidth measures how much data can travel through a network connection over a specific timeframe, typically measured in bits per second (bps), Megabits per second (Mbps), or Gigabits per second (Gbps)."
+    },
+    {
+        "question": "Which device serves as both an input and an output component for a computer system?",
+        "options": [
+            "Keyboard",
+            "Flatbed Scanner",
+            "Touchscreen Display",
+            "Laser Printer"
+        ],
+        "correctAnswer": "Touchscreen Display",
+        "explanation": "A touchscreen acts as an input device by registering where you place your fingers, and an output device by displaying the system's visual interface on the screen."
+    },
+    {
+        "question": "What programming language generation uses mnemonic codes (like ADD, SUB, MOV) instead of raw binary 0s and 1s to simplify programming?",
+        "options": [
+            "First Generation (Machine Language)",
+            "Second Generation (Assembly Language)",
+            "Third Generation (High-Level Language)",
+            "Fourth Generation (Declarative Language)"
+        ],
+        "correctAnswer": "Second Generation (Assembly Language)",
+        "explanation": "Assembly language introduced short, readable text commands (mnemonics) to replace binary machine codes, making it much easier for humans to read and write low-level instructions."
+    },
+    {
+        "question": "Which form of data processing spreads processing workloads across several independent computers connected over a network rather than relying on one central mainframe?",
+        "options": [
+            "Centralized Processing",
+            "Distributed Processing",
+            "Linear Batch Processing",
+            "Offline Spooling"
+        ],
+        "correctAnswer": "Distributed Processing",
+        "explanation": "Distributed processing splits up computing tasks and shares them across multiple interconnected computers on a network, improving speed and system reliability."
+    },
+    {
+        "question": "Which fundamental component of a data communication system physically carries a transmitted signal from the sender to the receiver device?",
+        "options": [
+            "The Data Packet Protocol",
+            "The Transmission Medium",
+            "The Signal Encoder Modulator",
+            "The Receiver Terminal Node"
+        ],
+        "correctAnswer": "The Transmission Medium",
+        "explanation": "The transmission medium is the physical pathway over which a signal travels, such as copper wires, fiber-optic cables, or wireless radio waves."
+    },
+    {
+        "question": "What is the primary function of a device driver within an operating system?",
+        "options": [
+            "To let users browse files stored on cloud servers.",
+            "To act as a translator that allows the operating system to communicate with specific physical hardware devices.",
+            "To scan computer storage for hidden malware signatures.",
+            "To clean out temporary cache folders on the main drive."
+        ],
+        "correctAnswer": "To act as a translator that allows the operating system to communicate with specific physical hardware devices.",
+        "explanation": "Device drivers are system software utilities that tell the operating system exactly how to talk to specific hardware parts, like a new printer or graphics card."
+    },
+    {
+        "question": "What computing trend focuses on designing energy-efficient computer systems and recycling tech components to minimize electronic waste and environmental impact?",
+        "options": [
+            "Green Computing",
+            "Edge Processing Frameworks",
+            "Grid Computing Networks",
+            "Ubiquitous Virtualization"
+        ],
+        "correctAnswer": "Green Computing",
+        "explanation": "Green computing involves using computing resources eco-friendly, focusing on energy efficiency, reducing hazardous materials, and properly recycling electronic waste."
+    },
+    {
+        "question": "Which of the following is considered an electronic spreadsheet software application primarily used for numeric calculations and data analysis?",
+        "options": [
+            "Microsoft Word",
+            "Microsoft Excel",
+            "MySQL Database Server",
+            "Adobe Photoshop"
+        ],
+        "correctAnswer": "Microsoft Excel",
+        "explanation": "Microsoft Excel is a dedicated spreadsheet application designed to organize, calculate, analyze, and graph numeric data using formulas and grid systems."
+    },
+    {
+        "question": "What type of computer virus activates its malicious payload only when a specific condition or real-world date is met (such as Friday the 13th)?",
+        "options": [
+            "Boot Sector Infector",
+            "Logic Bomb / Time Bomb",
+            "Polymorphic Engine",
+            "Macro Script Virus"
+        ],
+        "correctAnswer": "Logic Bomb / Time Bomb",
+        "explanation": "A logic bomb (or time bomb) stays hidden inside a system until a specific trigger event occurs—like a certain date or a user action—which then executes the malicious code."
+    },
+    {
+        "question": "In a computer system, the physical motherboard layout contains expansion slots. What is the primary purpose of an expansion slot?",
+        "options": [
+            "To cool down the main central processor chip using liquid channels.",
+            "To allow users to plug in extra hardware circuit boards to add features like better graphics or sound.",
+            "To store temporary system variables when the computer restarts.",
+            "To connect the power supply unit directly to wall electricity outlets."
+        ],
+        "correctAnswer": "To allow users to plug in extra hardware circuit boards to add features like better graphics or sound.",
+        "explanation": "Expansion slots let you upgrade a computer by adding specialized internal cards, such as dedicated video cards, sound cards, or wireless network cards."
+    },
+    {
+        "question": "Which of the following terms describes a step-by-step set of logical instructions written to solve a specific problem or complete a computing task?",
+        "options": [
+            "An Algorithm",
+            "A System Bus",
+            "A Cache Block",
+            "A Hardware Driver"
+        ],
+        "correctAnswer": "An Algorithm",
+        "explanation": "An algorithm is a clear, finite, step-by-step blueprint or procedure for solving a problem, which programmers use as a base before writing actual code."
+    },
+    {
+        "question": "The primary purpose of data verification during data entry is to:",
+        "options": [
+            "Compress text data to save room on hard drives.",
+            "Check that input data has been accurately copied from the original source document into the computer.",
+            "Encrypt sensitive information so hackers can't read it.",
+            "Translate high-level code into machine instructions."
+        ],
+        "correctAnswer": "Check that input data has been accurately copied from the original source document into the computer.",
+        "explanation": "Data verification double-checks that data was entered correctly into the system without transcription errors (for example, typing a value twice to confirm it matches)."
+    },
+    {
+        "question": "What computing infrastructure trend combines the processing power of multiple computers scattered across different locations to solve massive scientific problems?",
+        "options": [
+            "Grid Computing",
+            "Uniprocessing Mesh",
+            "Simplex Mainframe Array",
+            "Isolated Processing Mode"
+        ],
+        "correctAnswer": "Grid Computing",
+        "explanation": "Grid computing links separate computers over a network so they can pool their processing power and storage to tackle massive computing challenges, like weather forecasting or molecular modeling."
+    },
+    {
+        "question": "Which of the following is a key network device that routes data packets between different networks to ensure they reach their correct destination?",
+        "options": [
+            "A Repeater Station",
+            "A Router",
+            "A Network Interface Card (NIC)",
+            "A Physical Patch Panel"
+        ],
+        "correctAnswer": "A Router",
+        "explanation": "Routers look at destination IP addresses on incoming data packets and determine the best network path to send them along toward their final destination."
+    },
+    {
+        "question": "What type of computer memory is non-volatile and can be electronically erased and reprogrammed, commonly used for USB flash drives and solid-state drives?",
+        "options": [
+            "Static RAM (SRAM)",
+            "Flash Memory (EEPROM)",
+            "Dynamic RAM (DRAM)",
+            "Mask ROM"
+        ],
+        "correctAnswer": "Flash Memory (EEPROM)",
+        "explanation": "Flash memory is an advanced type of Electrically Erasable Programmable Read-Only Memory (EEPROM) that safely keeps data without power and allows quick digital reading and rewriting."
+    },
+    {
+        "question": "In computer systems, an application utility program known as a 'Disk Defragmenter' helps optimize performance by:",
+        "options": [
+            "Scanning and deleting active malware infections from the system boot files.",
+            "Reorganizing scattered fragments of files on a hard drive so they are stored in continuous blocks, speeding up file access.",
+            "Compressing video files to free up space on secondary storage drives.",
+            "Updating the operating system kernel with security patches."
+        ],
+        "correctAnswer": "Reorganizing scattered fragments of files on a hard drive so they are stored in continuous blocks, speeding up file access.",
+        "explanation": "As files are modified, they can become split up and scattered across different areas of a mechanical hard drive. Defragmentation groups those pieces back together, reducing the physical work the drive head has to do to read a file."
+    },
+    {
+        "question": "Which of the following represents an electronic component used in early mechanical and electro-mechanical computing machines before the invention of the vacuum tube?",
+        "options": [
+            "Silicon Transistor Chip",
+            "Electro-mechanical Relay",
+            "Integrated Core Wafer",
+            "Microprocessor Core"
+        ],
+        "correctAnswer": "Electro-mechanical Relay",
+        "explanation": "Before electronic vacuum tubes took over, early automated computing machines (like the Harvard Mark I) relied on electro-mechanical relays—physical switches flipped by electromagnets—to manage data paths."
+    },
+    {
+        "question": "What form of data communication transmission sends data packets one single bit at a time, sequentially, down a single communication wire channel?",
+        "options": [
+            "Parallel Transmission",
+            "Serial Transmission",
+            "Synchronous Bus Routing",
+            "Broadband Multiplexing"
+        ],
+        "correctAnswer": "Serial Transmission",
+        "explanation": "Serial transmission sends data bits one after another over a single wire loop. While it sounds slower than sending multiple bits at once (parallel), it is highly reliable over long distances and forms the basis of modern connections like USB."
+    },
+    {
+        "question": "Which of the following is considered software utility designed to compress large files into a smaller size for easier storage and faster network transfer?",
+        "options": [
+            "WinZip / WinRAR",
+            "Adobe Acrobat Reader",
+            "Microsoft PowerPoint",
+            "Windows Media Player"
+        ],
+        "correctAnswer": "WinZip / WinRAR",
+        "explanation": "Compression tools like WinZip or WinRAR use mathematical algorithms to reduce file sizes, making them easier to archive or send over the internet."
+    },
+    {
+        "question": "The primary function of the Arithmetic Logic Unit (ALU) within the central processing unit is to:",
+        "options": [
+            "Fetch program instructions from the computer's main RAM storage.",
+            "Perform mathematical calculations (addition, subtraction) and logical comparisons (AND, OR, equal to).",
+            "Control the physical speed of the system cooling fans.",
+            "Manage user account login credentials and access security levels."
+        ],
+        "correctAnswer": "Perform mathematical calculations (addition, subtraction) and logical comparisons (AND, OR, equal to).",
+        "explanation": "The ALU handles the heavy lifting for math and logic inside the CPU, executing core operations whenever a program needs to calculate values or compare data."
+    },
+    {
+        "question": "What network hardware component gives a computer a physical port to connect network cables and communicate over a local area network?",
+        "options": [
+            "Network Interface Card (NIC)",
+            "System Bus Interface",
+            "Power Supply Unit Connector",
+            "Graphics Processing Unit Port"
+        ],
+        "correctAnswer": "Network Interface Card (NIC)",
+        "explanation": "A Network Interface Card (NIC) is the hardware component (built into the motherboard or added via expansion slot) that lets a computer connect to a network cable or wireless Wi-Fi signal."
+    },
+    {
+        "question": "Which processing method allows a computer system to run processing tasks when the main computer is not directly connected to a live user terminal or network loop?",
+        "options": [
+            "Online Processing",
+            "Offline Processing",
+            "Interactive Processing",
+            "Real-time Processing"
+        ],
+        "correctAnswer": "Offline Processing",
+        "explanation": "Offline processing runs tasks on an independent device that isn't connected to the main central computer network, with data transferred over later using storage media."
+    },
+    {
+        "question": "In computer software development, what type of error occurs when a program runs completely without crashing but produces incorrect outputs due to a flaw in the programmer's math or reasoning?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Exception Error",
+            "Compilation Linking Failure"
+        ],
+        "correctAnswer": "Logical Error",
+        "explanation": "Logical errors happen when code follows the rules of the language perfectly (so it doesn't crash), but contains a mistake in the reasoning or math, leading to the wrong output."
+    },
+    {
+        "question": "Which type of computer system application uses advanced algorithms and knowledge bases to mimic human decision-making and provide expert advice in fields like medical diagnosis?",
+        "options": [
+            "Word Processing Engine",
+            "Expert System",
+            "Batch File Processing Script",
+            "Data Input Form Utility"
+        ],
+        "correctAnswer": "Expert System",
+        "explanation": "An expert system is an artificial intelligence application that uses a base of specialized knowledge and rules to solve complex problems, mimicking the decision-making skills of a human expert."
+    },
+    {
+        "question": "What is the primary function of secondary storage components (like hard drives and flash drives) in a computer system?",
+        "options": [
+            "To execute arithmetic instructions at high speeds.",
+            "To store data and programs permanently so they aren't lost when the power is turned off.",
+            "To manage data communication across local area networks.",
+            "To decode visual display signals for the computer monitor."
+        ],
+        "correctAnswer": "To store data and programs permanently so they aren't lost when the power is turned off.",
+        "explanation": "Secondary storage offers safe, non-volatile space to keep your files, software, and operating system intact long-term, unlike volatile primary memory (RAM) which clears out when powered off."
+    },
+    {
+        "question": "Which term describes a network that safely connects a company's internal team with trusted outside partners, like suppliers or customers, over a secure connection?",
+        "options": [
+            "Intranet",
+            "Extranet",
+            "Local Loop Network",
+            "Simplex Array Node"
+        ],
+        "correctAnswer": "Extranet",
+        "explanation": "An extranet is a controlled private network that allows specific outside partners (like vendors or clients) secure access to parts of a company's internal network."
+    },
+    {
+        "question": "What computing term refers to a computer on a network that requests services, files, or information from a centralized resource machine?",
+        "options": [
+            "A Server",
+            "A Client",
+            "A Gateway Controller",
+            "A Packet Router"
+        ],
+        "correctAnswer": "A Client",
+        "explanation": "In network architecture, a client is any device (like your laptop or phone) that connects to and requests data or services from a central server machine."
+    },
+    {
+        "question": "Which type of software is distributed completely free of charge for a limited trial period, after which the user must pay to unlock full features or continue using it legally?",
+        "options": [
+            "Open-Source Software",
+            "Shareware",
+            "Firmware Utility",
+            "Public Domain Code"
+        ],
+        "correctAnswer": "Shareware",
+        "explanation": "Shareware is a 'try before you buy' software distribution model, where users get a free trial version of a program before deciding whether to pay for the full license."
+    },
+    {
+        "question": "In a data communication system, what does the abbreviation 'ASCII' stand for when discussing text data encoding?",
+        "options": [
+            "American Standard Code for Information Interchange",
+            "Automated System Code for Input Integration",
+            "Advanced Symbol Control for Internet Interchange",
+            "All-purpose Serial Code for Information Indexing"
+        ],
+        "correctAnswer": "American Standard Code for Information Interchange",
+        "explanation": "ASCII is a standard character encoding system that assigns unique numeric binary codes to letters, numbers, and symbols so computers can store and share text accurately."
+    },
+    {
+        "question": "What type of computer printer works by spraying tiny, controlled drops of liquid ink directly onto paper to print text and images?",
+        "options": [
+            "Dot-Matrix Printer",
+            "Laser Printer",
+            "Inkjet Printer",
+            "Thermal Plotter"
+        ],
+        "correctAnswer": "Inkjet Printer",
+        "explanation": "Inkjet printers spray precise droplets of liquid ink through tiny nozzles onto paper, making them popular for high-quality everyday color printing."
+    },
+    {
+        "question": "Which network topology connects every computer directly to every other computer on the network, creating multiple redundant paths for data?",
+        "options": [
+            "Star Topology",
+            "Ring Topology",
+            "Mesh Topology",
+            "Bus Topology"
+        ],
+        "correctAnswer": "Mesh Topology",
+        "explanation": "In a full mesh topology, every single device has a direct connection to every other device. This provides incredible network reliability, as data can route around any broken link."
+    },
+    {
+        "question": "What form of high-level programming language code is written by a human programmer before it gets translated into machine language?",
+        "options": [
+            "Object Code File",
+            "Source Code",
+            "Binary Machine Matrix",
+            "Executable Code Block"
+        ],
+        "correctAnswer": "Source Code",
+        "explanation": "Source code refers to the human-readable programming instructions written in languages like Python or Java, before a compiler or interpreter converts it into machine-readable format."
+    },
+    {
+        "question": "Which input device uses an optical scanner to read hand-marked filled circles or brackets on specialized forms, commonly used to grade multiple-choice exams automatically?",
+        "options": [
+            "MICR Reader Scanner",
+            "Optical Mark Reader (OMR)",
+            "Magnetic Stripe Sweep",
+            "Barcode Digital Wand"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An Optical Mark Reader (OMR) senses physical marks on paper forms by measuring reflected light, making it a fast and reliable tool for grading multiple-choice tests."
+    },
+    {
+        "question": "In computer security, what term describes a deceptive technique where scammers send fake emails designed to look like trusted organizations to steal personal user data?",
+        "options": [
+            "Phishing",
+            "Data Spoofing",
+            "Data Encapsulation",
+            "Packet Sniffing"
+        ],
+        "correctAnswer": "Phishing",
+        "explanation": "Phishing is a form of social engineering where attackers trick people into sharing sensitive info—like passwords or credit card numbers—by masquerading as a trustworthy entity in electronic communications."
+    },
+    {
+        "question": "What type of operating system is designed to run on resource-constrained mobile devices like smartphones and tablets?",
+        "options": [
+            "Mainframe Batch OS",
+            "Mobile Operating System",
+            "Network Server Core OS",
+            "Distributed Grid Kernel"
+        ],
+        "correctAnswer": "Mobile Operating System",
+        "explanation": "Mobile operating systems (like Android and iOS) are specially optimized to manage cellular connectivity, touch screens, battery life, and apps on mobile hardware."
+    },
+    {
+        "question": "Which metric is commonly used to measure the physical storage capacity of modern secondary storage devices like hard drives or solid-state drives?",
+        "options": [
+            "Megahertz (MHz)",
+            "Gigabytes (GB) or Terabytes (TB)",
+            "Bits per second (bps)",
+            "Dots per inch (DPI)"
+        ],
+        "correctAnswer": "Gigabytes (GB) or Terabytes (TB)",
+        "explanation": "Data storage capacity is measured in bytes, with Gigabytes (billions of bytes) and Terabytes (trillions of bytes) used to describe the capacity of modern hard drives and storage arrays."
+    },
+    {
+        "question": "The primary purpose of data validation rules built into database applications is to:",
+        "options": [
+            "Speed up network data transfer rates.",
+            "Ensure that data entered by a user meets specific criteria and format constraints before it is accepted into the system.",
+            "Encrypt old records to save space.",
+            "Automatically back up files to cloud servers."
+        ],
+        "correctAnswer": "Ensure that data entered by a user meets specific criteria and format constraints before it is accepted into the system.",
+        "explanation": "Data validation prevents obvious input mistakes by checking that data fits set rules (like ensuring a date field only accepts actual dates) before saving it to the database."
+    },
+    {
+        "question": "Which of the following is an example of an open-source operating system widely used on both servers and personal computers?",
+        "options": [
+            "Microsoft Windows 11",
+            "Linux",
+            "Apple macOS",
+            "IBM z/OS Mainframe"
+        ],
+        "correctAnswer": "Linux",
+        "explanation": "Linux is a highly popular open-source operating system kernel. Its source code is freely available for anyone to modify, update, and distribute."
+    },
+    {
+        "question": "What type of internal system bus is used by the CPU to send signals coordination commands (such as read or write requests) to other hardware components?",
+        "options": [
+            "The Control Bus",
+            "The Data Bus",
+            "The Address Bus",
+            "The Expansion Port Bus"
+        ],
+        "correctAnswer": "The Control Bus",
+        "explanation": "The Control Bus carries operational signals and timing commands from the CPU to orchestrate actions across all other hardware components in the system."
+    },
+    {
+        "question": "In data communications, what does the term 'Latency' describe?",
+        "options": [
+            "The total amount of data that can be sent over a network wire channel.",
+            "The time delay it takes for a data packet to travel from its source destination to its receiver destination.",
+            "The physical weight of network routing gear boxes.",
+            "The process of encoding audio files into digital formats."
+        ],
+        "correctAnswer": "The time delay it takes for a data packet to travel from its source destination to its receiver destination.",
+        "explanation": "Latency measures network delay—the time it takes for a data packet to travel from the sender to the receiver and back again."
+    },
+    {
+        "question": "Which storage component uses non-volatile flash memory chips to store data permanently, offering much faster read and write speeds than traditional mechanical hard disk drives?",
+        "options": [
+            "Magnetic Tape Drive",
+            "Solid-State Drive (SSD)",
+            "Floppy Disk Unit",
+            "Dynamic RAM Stick"
+        ],
+        "correctAnswer": "Solid-State Drive (SSD)",
+        "explanation": "Solid-State Drives (SSDs) read and write data electronically using flash memory chips, making them significantly faster and more durable than traditional mechanical hard drives with moving parts."
+    },
+    {
+        "question": "What type of computer application software allows users to create, edit, format, and print text-based documents like letters and reports?",
+        "options": [
+            "Spreadsheet Software",
+            "Word Processing Software",
+            "Database Management System",
+            "Presentation Designer"
+        ],
+        "correctAnswer": "Word Processing Software",
+        "explanation": "Word processing software (like Microsoft Word or Google Docs) is designed to let users write, edit, and format text documents easily."
+    },
+    {
+        "question": "In the context of computer virus prevention, what is a 'heuristic analysis' scan?",
+        "options": [
+            "Looking up a file's exact binary match inside an old virus definition database.",
+            "Analyzing a program's code behavior and structural patterns to detect brand-new, unknown malware threats.",
+            "Physically wiping down hard drive circuit boards with cleaning fluid.",
+            "Compressing files to check if they shrink properly."
+        ],
+        "correctAnswer": "Analyzing a program's code behavior and structural patterns to detect brand-new, unknown malware threats.",
+        "explanation": "Heuristic analysis evaluates a program's structure and behavior for suspicious traits, helping antivirus software catch new or modified malware that doesn't have an established signature profile yet."
+    },
+    {
+        "question": "Which type of computer system is designed to handle massive computational challenges, like simulating global climate models or complex physics equations?",
+        "options": [
+            "Microcomputer Terminal",
+            "Supercomputer",
+            "Embedded Microcontroller",
+            "Workstation Client"
+        ],
+        "correctAnswer": "Supercomputer",
+        "explanation": "Supercomputers are the fastest, most powerful systems available, built to handle massive numbers of complex mathematical calculations for scientific research and advanced engineering."
+    },
+    {
+        "question": "What software translation tool converts a program written in low-level assembly language directly into binary machine language instructions?",
+        "options": [
+            "A Compiler",
+            "An Assembler",
+            "An Interpreter",
+            "A Defragmenter"
+        ],
+        "correctAnswer": "An Assembler",
+        "explanation": "An assembler is a specific translation tool that takes assembly language code (mnemonic commands) and converts it directly into binary machine code that the CPU can execute."
+    },
+    {
+        "question": "Which of the following data communication components converts digital signals from a computer into analog signals for transmission over traditional telephone lines, and vice versa?",
+        "options": [
+            "A Network Switch",
+            "A Modem",
+            "An Ethernet Hub",
+            "A Bridge Controller"
+        ],
+        "correctAnswer": "A Modem",
+        "explanation": "A modem (Modulator-Demodulator) translates digital computer data into analog signals that can travel over traditional telephone or cable lines, and converts incoming analog signals back into digital data."
+    },
+    {
+        "question": "What type of data processing mode handles data inputs immediately as they occur, providing output updates fast enough to control or influence the environment?",
+        "options": [
+            "Batch Processing",
+            "Real-Time Processing",
+            "Offline Buffering",
+            "Asynchronous Queue Processing"
+        ],
+        "correctAnswer": "Real-Time Processing",
+        "explanation": "Real-time processing handles data instantly, delivering immediate feedback to control systems where timing is critical, such as autopilot systems or banking transactions."
+    },
+    {
+        "question": "In a database management system, what term describes a complete horizontal row of related information that represents a single entity record?",
+        "options": [
+            "A Field Column",
+            "A Record / Tuple",
+            "A Data Attribute",
+            "A Table Index"
+        ],
+        "correctAnswer": "A Record / Tuple",
+        "explanation": "In a database table, a row represents a complete record (or tuple) that holds all the related pieces of information for a single item, like a specific student or transaction."
+    },
+    {
+        "question": "Which network topology connects devices in a closed loop, where data packets pass through each computer sequentially until they reach their destination?",
+        "options": [
+            "Bus Topology",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Topology"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "In a Ring topology, all computers are linked in a circular loop. Data travels in one direction around the ring, passing through each intermediate computer along the way."
+    },
+    {
+        "question": "The software application known as BIOS (Basic Input/Output System) is typically stored on what type of hardware memory component?",
+        "options": [
+            "Volatile DRAM Chip",
+            "Non-Volatile ROM/EEPROM Chip",
+            "Secondary Solid-State Partition",
+            "External Removable Flash Drive"
+        ],
+        "correctAnswer": "Non-Volatile ROM/EEPROM Chip",
+        "explanation": "The BIOS is low-level startup firmware stored on a non-volatile ROM or flash memory chip on the motherboard, ensuring it stays safe even when the computer is powered off."
+    },
+    {
+        "question": "What type of computer application software is used to design visual slide presentations for business meetings or educational lectures?",
+        "options": [
+            "Presentation Software",
+            "Word Processing System",
+            "Desktop Publishing Tool",
+            "Database Entry Compiler"
+        ],
+        "correctAnswer": "Presentation Software",
+        "explanation": "Presentation software (like Microsoft PowerPoint or Google Slides) lets users create visual slide shows combining text, images, and charts for meetings and lectures."
+    },
+    {
+        "question": "Which type of computer virus alters its own encrypted appearance and signature pattern every single time it infects a new file to hide from antivirus scans?",
+        "options": [
+            "Macro Virus",
+            "Polymorphic Virus",
+            "File Infector",
+            "Boot Sector Infector"
+        ],
+        "correctAnswer": "Polymorphic Virus",
+        "explanation": "Polymorphic viruses change their internal code structure and encryption keys every time they copy themselves, making them tough for traditional signature-based antivirus software to catch."
+    },
+    {
+        "question": "What type of computer system architecture is built directly into everyday devices—like washing machines, cars, or microwave ovens—to handle specific control tasks?",
+        "options": [
+            "Mainframe Architecture",
+            "Embedded System",
+            "Supercomputer Array",
+            "Desktop Workstation"
+        ],
+        "correctAnswer": "Embedded System",
+        "explanation": "An embedded system is a specialized computer system designed into a larger product to perform a specific, dedicated control function, usually running on a microcontroller."
+    },
+    {
+        "question": "The term 'Clock Speed' in reference to a computer's CPU measures:",
+        "options": [
+            "The physical time it takes for a hard drive disk platter to complete a full turn.",
+            "The number of operations or processing cycles the CPU can execute per second.",
+            "The time it takes for the system operating software to boot up.",
+            "The rate at which data travels over internet cables."
+        ],
+        "correctAnswer": "The number of operations or processing cycles the CPU can execute per second.",
+        "explanation": "Clock speed measures how fast a CPU can process instructions, calculated in cycles per second (Hertz) and typically measured in Gigahertz (GHz) today."
+    },
+    {
+        "question": "Which software utility scans an isolated computer network for open ports and system vulnerabilities that could be exploited by malicious actors?",
+        "options": [
+            "A Port Scanner / Vulnerability Scanner",
+            "A Disk Defragmenter",
+            "A File Compression Utility",
+            "A Device Driver Tool"
+        ],
+        "correctAnswer": "A Port Scanner / Vulnerability Scanner",
+        "explanation": "Vulnerability and port scanners check computers and networks for open communication paths or security gaps, helping administrators fix flaws before attackers can exploit them."
+    },
+    {
+        "question": "What type of application software allows a user to explore, view, and interact with web pages across the global internet?",
+        "options": [
+            "A Search Engine Database",
+            "A Web Browser",
+            "An Email Exchange Client",
+            "A File Transfer Protocol Terminal"
+        ],
+        "correctAnswer": "A Web Browser",
+        "explanation": "A web browser (like Google Chrome, Mozilla Firefox, or Microsoft Edge) translates web code (HTML/CSS) into the visual, interactive pages you see on your screen."
+    },
+    {
+        "question": "In data communication networks, what is the primary purpose of a network switch?",
+        "options": [
+            "To connect a computer system directly to traditional analog telephone systems.",
+            "To receive data packets and forward them specifically to the target device on a local network, rather than broadcasting them to all devices.",
+            "To permanently archive copies of network data traffic.",
+            "To translate high-level code instructions into machine language."
+        ],
+        "correctAnswer": "To receive data packets and forward them specifically to the target device on a local network, rather than broadcasting them to all devices.",
+        "explanation": "A network switch connects devices on a local area network (LAN) and uses MAC addresses to smart-route data directly to the specific destination device, saving network bandwidth."
+    },
+    {
+        "question": "Which historical device used an arrangement of sliding beads on parallel wires to help users perform basic arithmetic operations, predating written math systems?",
+        "options": [
+            "The Abacus",
+            "Napier's Bones",
+            "The Pascaline",
+            "The Slide Rule"
+        ],
+        "correctAnswer": "The Abacus",
+        "explanation": "The abacus is one of the oldest known calculation tools, using rows of sliding beads on rods to help users track place values and perform math quickly."
+    },
+    {
+        "question": "What form of system software handles formatting disk drives, managing backup copies, and scanning files for errors?",
+        "options": [
+            "Application software suites",
+            "Utility Programs",
+            "Programming Compilers",
+            "Database management engines"
+        ],
+        "correctAnswer": "Utility Programs",
+        "explanation": "Utility programs are a type of system software focused on maintaining, optimizing, and protecting a computer's files, storage drives, and operating system performance."
+    },
+    {
+        "question": "Which of the following describes a hardware component that projects visual outputs from a computer onto a wall or large screen for presentations?",
+        "options": [
+            "Flatbed Scanner",
+            "Data Projector",
+            "Optical Character Reader",
+            "Digital Plotter Unit"
+        ],
+        "correctAnswer": "Data Projector",
+        "explanation": "A projector takes the video output signal from a computer and shines it onto an external surface or screen, making it easy to share visuals with a large audience."
+    },
+    {
+        "question": "In computer systems, what is the main advantage of an Integrated Circuit (IC) over an array of separate, discrete transistors?",
+        "options": [
+            "It requires high voltage electricity to run safely.",
+            "It packs thousands to millions of tiny electronic parts onto a single small silicon chip, saving space and improving speed.",
+            "It can only process data using mechanical gear wheels.",
+            "It converts digital binary signals back into analog current waves."
+        ],
+        "correctAnswer": "It packs thousands to millions of tiny electronic parts onto a single small silicon chip, saving space and improving speed.",
+        "explanation": "Integrated circuits revolutionized tech by combining multiple electronic components onto a tiny slice of silicon, dramatically cutting down the size and cost of computers while making them vastly faster."
+    },
+    {
+        "question": "What type of computer network is completely confined within a small physical area, such as a single office room, home, or school building?",
+        "options": [
+            "LAN (Local Area Network)",
+            "WAN (Wide Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "Global Network Interconnect"
+        ],
+        "correctAnswer": "LAN (Local Area Network)",
+        "explanation": "A Local Area Network (LAN) links devices within a limited geographic space, like a home or school, using cables or Wi-Fi connections."
+    },
+    {
+        "question": "Which part of a data communication system defines the sender device that creates and transmits a data message?",
+        "options": [
+            "The Sink Node",
+            "The Source / Transmitter",
+            "The Protocol Interface",
+            "The Communication Channel"
+        ],
+        "correctAnswer": "The Source / Transmitter",
+        "explanation": "The source (or transmitter) is the part of a network loop that originates a data message, such as a computer sending an email or text file."
+    },
+    {
+        "question": "What form of software application is designed to help organizations manage, organize, update, and search large structures of corporate information?",
+        "options": [
+            "Word processing applications",
+            "Database Management System (DBMS)",
+            "File Compression software utilities",
+            "Operating System kernels"
+        ],
+        "correctAnswer": "Database Management System (DBMS)",
+        "explanation": "A Database Management System (DBMS), like Oracle or MySQL, provides the software tools needed to store, organize, modify, and securely search large volumes of data."
+    },
+    {
+        "question": "The computer security threat known as 'Spyware' is designed to:",
+        "options": [
+            "Encrypt your entire hard drive and demand a cash payment to unlock it.",
+            "Secretly monitor a user's computer habits and keystrokes to steal sensitive data without their knowledge.",
+            "Speed up the rotation speed of your system fans.",
+            "Delete old temporary browser history files automatically."
+        ],
+        "correctAnswer": "Secretly monitor a user's computer habits and keystrokes to steal sensitive data without their knowledge.",
+        "explanation": "Spyware is malicious software that secretly tracks your online habits, typed keystrokes, and personal data, sending that info back to attackers without your consent."
+    },
+    {
+        "question": "Which of the following is considered a primary computer input device used to control a visual graphical pointer on a monitor?",
+        "options": [
+            "Computer Mouse",
+            "Dot-Matrix Impact Printer",
+            "Audio Speaker System",
+            "Hard Disk Drive Unit"
+        ],
+        "correctAnswer": "Computer Mouse",
+        "explanation": "A computer mouse is a classic pointing input device that translates physical hand movements across a flat surface into matching pointer movements on the screen."
+    },
+    {
+        "question": "In computer software development, a 'Syntax Error' occurs when:",
+        "options": [
+            "A program runs perfectly but divides a number by zero during execution.",
+            "The programmer breaks the grammatical rules of the programming language, preventing the code from compiling.",
+            "A hardware component overheats while running a program.",
+            "A computer virus deletes part of the source code file."
+        ],
+        "correctAnswer": "The programmer breaks the grammatical rules of the programming language, preventing the code from compiling.",
+        "explanation": "Syntax errors are like grammar mistakes in code. If you mistype a command or forget a required punctuation mark, the compiler or interpreter won't understand it and will fail to build or run the program."
+    },
+    {
+        "question": "What form of data processing collects non-interactive transactions over a period, running them all together later as a single processing workload?",
+        "options": [
+            "Real-Time Processing",
+            "Batch Processing",
+            "Interactive Online Processing",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing runs accumulated data batches together without human intervention, making it highly efficient for recurring, non-urgent tasks like utility billing or payroll cycles."
+    },
+    {
+        "question": "Which transmission medium uses high-frequency radio waves transmitted across line-of-sight paths between tall ground stations or space satellites?",
+        "options": [
+            "Coaxial Cable Line",
+            "Microwave Transmission",
+            "Shielded Twisted Pair Wire",
+            "Fiber glass bundle"
+        ],
+        "correctAnswer": "Microwave Transmission",
+        "explanation": "Microwave communication is a wireless transmission method that sends high-frequency radio signals across line-of-sight paths between ground stations or orbiting satellites."
+    },
+    {
+        "question": "What type of software application is specifically used to design highly structured layouts for printed media, like magazines, books, or advertising brochures?",
+        "options": [
+            "Desktop Publishing (DTP) Software",
+            "Basic Text Editors",
+            "Electronic Spreadsheet Applications",
+            "Database Compiler Engines"
+        ],
+        "correctAnswer": "Desktop Publishing (DTP) Software",
+        "explanation": "Desktop Publishing (DTP) software (like Adobe InDesign) offers advanced layout and typography controls perfect for designing complex print media like magazines, flyers, and books."
+    },
+    {
+        "question": "Which type of computer virus alters its code structure with every new infection, while keeping its core malicious actions identical, to evade signature detection?",
+        "options": [
+            "Boot sector threat",
+            "Polymorphic Virus",
+            "Macro Word Script",
+            "Fixed Trojan"
+        ],
+        "correctAnswer": "Polymorphic Virus",
+        "explanation": "Polymorphic viruses dynamically alter their internal signature codes every time they replicate, creating a moving target that signature-based antivirus scanners struggle to recognize."
+    },
+    {
+        "question": "In a computer system, what is the role of the system clock?",
+        "options": [
+            "To show the user the local time and date on the screen.",
+            "To generate regular electronic timing pulses that synchronize operations across all components inside the computer.",
+            "To track how many hours a computer has been powered on.",
+            "To measure data transmission latency across internet paths."
+        ],
+        "correctAnswer": "To generate regular electronic timing pulses that synchronize operations across all components inside the computer.",
+        "explanation": "The system clock emits a steady stream of electronic pulses that act as a heartbeat for the computer, synchronizing actions across the CPU and other components."
+    },
+    {
+        "question": "Which of the following is an input device used to convert a physical paper document or photograph into a digital image file?",
+        "options": [
+            "Inkjet Plotter",
+            "Scanner",
+            "Laser Printer",
+            "Monitor Display"
+        ],
+        "correctAnswer": "Scanner",
+        "explanation": "A scanner captures images from physical documents or photos and converts them into digital files that a computer can process and store."
+    },
+    {
+        "question": "What type of computer software is distributed under a model that allows users a free trial period, but often displays reminder screens until they purchase a license?",
+        "options": [
+            "Freeware",
+            "Shareware",
+            "Open-Source Program",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Shareware",
+        "explanation": "Shareware provides a free trial version of software to let users test it out, but typically restricts full features or displays nag screens until a license is purchased."
+    },
+    {
+        "question": "Which historical calculation device, consisting of a set of numbered rods, was invented by John Napier to simplify multiplication?",
+        "options": [
+            "The Abacus",
+            "Napier's Bones",
+            "The Pascaline",
+            "The Difference Engine"
+        ],
+        "correctAnswer": "Napier's Bones",
+        "explanation": "Napier's Bones is a historical calculating tool using numbered rods to simplify complex multiplication and division down to easier addition steps."
+    },
+    {
+        "question": "In a computer network, what classification describes a network that covers a large city or municipal urban area?",
+        "options": [
+            "LAN (Local Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)",
+            "PAN (Personal Area Network)"
+        ],
+        "correctAnswer": "MAN (Metropolitan Area Network)",
+        "explanation": "A Metropolitan Area Network (MAN) is a mid-sized network designed to span an entire town or city, linking up multiple local networks across the urban area."
+    },
+    {
+        "question": "Which of the following is considered an essential hardware component responsible for converting alternating current (AC) power from a wall outlet into the low-voltage direct current (DC) power required by computer circuits?",
+        "options": [
+            "The Mainboard Controller",
+            "The Power Supply Unit (PSU)",
+            "The System Bus Loop",
+            "The Voltage Register Array"
+        ],
+        "correctAnswer": "The Power Supply Unit (PSU)",
+        "explanation": "The Power Supply Unit (PSU) converts hazardous AC power from a wall outlet into the stable, low-voltage DC power your computer's internal components need to run safely."
+    },
+    {
+        "question": "What component of data communications represents the specific destination device or node that receives a transmitted data packet?",
+        "options": [
+            "The Source Node",
+            "The Receiver",
+            "The Protocol Engine",
+            "The Channel Routing"
+        ],
+        "correctAnswer": "The Receiver",
+        "explanation": "The receiver is the target node or destination device on a network link that captures and decodes a transmitted data message."
+    },
+    {
+        "question": "Which type of computer software license allows an individual to use a program completely free of charge forever, though the developer keeps ownership of the source code?",
+        "options": [
+            "Shareware",
+            "Freeware",
+            "Open-Source Software",
+            "Proprietary Commercial Software"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware is proprietary software available to download and use for free indefinitely, though the creator retains legal copyright and keeps the source code hidden."
+    },
+    {
+        "question": "The malicious computer threat known as 'Ransomware' is designed to cause harm by:",
+        "options": [
+            "Stealing your computer's physical parts from an office environment.",
+            "Encrypting your critical data files and demanding a financial payment to provide the decryption key.",
+            "Modifying your printer settings to waste paper and ink.",
+            "Deleting temporary files to speed up the system's performance."
+        ],
+        "correctAnswer": "Encrypting your critical data files and demanding a financial payment to provide the decryption key.",
+        "explanation": "Ransomware targets your files, encrypting them so you can't access them, and displays a ransom note demanding payment before hackers will restore your data."
+    },
+    {
+        "question": "Which type of computer display screen works by passing electrical current through a liquid solution held between two sheets of polarizing glass?",
+        "options": [
+            "CRT (Cathode Ray Tube)",
+            "LCD (Liquid Crystal Display)",
+            "OLED Matrix Screen",
+            "Plasma Display Unit"
+        ],
+        "correctAnswer": "LCD (Liquid Crystal Display)",
+        "explanation": "LCD screens use liquid crystals sandwiched between glass layers that react to electrical currents to block or let light through, forming clear on-screen images."
+    },
+    {
+        "question": "In computer systems, the physical collection of copper tracks on a motherboard that transfers data between the CPU and other internal components is called:",
+        "options": [
+            "The System Bus",
+            "The Interface Slot",
+            "The Kernel Channel",
+            "The Drive Ribbon"
+        ],
+        "correctAnswer": "The System Bus",
+        "explanation": "The system bus is a set of internal parallel copper lines that act as a data highway, linking the CPU with primary memory and other essential hardware parts."
+    },
+    {
+        "question": "Which basic unit of computer storage represents a single binary digit, either a 0 or a 1?",
+        "options": [
+            "Byte",
+            "Bit",
+            "Nibble",
+            "Word"
+        ],
+        "correctAnswer": "Bit",
+        "explanation": "A bit (short for binary digit) is the smallest, most fundamental unit of data storage in a computer system, holding a value of either 0 or 1."
+    },
+    {
+        "question": "What is the name given to a group of exactly four bits of data storage?",
+        "options": [
+            "Byte",
+            "Nibble",
+            "Word",
+            "Kilobyte"
+        ],
+        "correctAnswer": "Nibble",
+        "explanation": "A nibble is a computing term for a four-bit aggregation, which represents exactly half of a standard eight-bit byte."
+    },
+    {
+        "question": "Which of the following is an example of an open-source operating system?",
+        "options": [
+            "Microsoft Windows",
+            "Apple macOS",
+            "Linux",
+            "IBM z/OS"
+        ],
+        "correctAnswer": "Linux",
+        "explanation": "Linux is developed under an open-source model, meaning its underlying source code is freely available for anyone to inspect, modify, and redistribute."
+    },
+    {
+        "question": "What structural bus component inside a computer determines the maximum amount of physical memory (RAM) the CPU can address?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "System Expansion Bus"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The physical width (number of parallel lines) of the Address Bus determines how many unique memory locations the CPU can point to. For example, a 32-bit address bus can access up to 4 GB of RAM."
+    },
+    {
+        "question": "Which early mechanical device, invented by Gottfried Wilhelm Leibniz in 1673, expanded on Pascal's design to perform multiplication and division directly?",
+        "options": [
+            "The Analytical Engine",
+            "The Stepped Reckoner",
+            "The Difference Engine",
+            "The Napier's Bones"
+        ],
+        "correctAnswer": "The Stepped Reckoner",
+        "explanation": "The Stepped Reckoner was a digital mechanical calculator invented by Leibniz that used a specialized fluted drum mechanism (the Leibniz wheel) to automate multiplication and division."
+    },
+    {
+        "question": "What classification applies to a small computer built into an everyday home appliance, like a smart microwave, to handle exclusive control operations?",
+        "options": [
+            "Mainframe Computer",
+            "Supercomputer",
+            "Embedded Computer",
+            "Minicomputer"
+        ],
+        "correctAnswer": "Embedded Computer",
+        "explanation": "Embedded computers are dedicated microcontrollers engineered into a larger physical machine to perform specific, repetitive control tasks automatically."
+    },
+    {
+        "question": "In a computer system framework, what term describes the logical instructions, programs, and documentation that command the physical hardware?",
+        "options": [
+            "Firmware",
+            "Humanware",
+            "Software",
+            "Liveware"
+        ],
+        "correctAnswer": "Software",
+        "explanation": "Software is the collection of programs, routines, and symbolic data that tells computer hardware exactly what tasks to perform."
+    },
+    {
+        "question": "The second generation of computers is historically defined by the transition from vacuum tubes to which electronic component?",
+        "options": [
+            "Integrated Circuits",
+            "Transistors",
+            "Microprocessors",
+            "Magnetic Core Rings"
+        ],
+        "correctAnswer": "Transistors",
+        "explanation": "The second generation of computers (late 1950s to mid-1960s) replaced fragile, high-heat vacuum tubes with solid-state transistors, making systems faster, smaller, and more efficient."
+    },
+    {
+        "question": "What network transmission device operates at the Physical layer to amplify or regenerate weak incoming signals, extending the maximum cable distance?",
+        "options": [
+            "Router",
+            "Switch",
+            "Repeater",
+            "Gateway"
+        ],
+        "correctAnswer": "Repeater",
+        "explanation": "A repeater takes an incoming electronic or optical network signal that has degraded due to travel distance, amplifies it, and retransmits it to prevent signal attenuation."
+    },
+    {
+        "question": "What type of malware tracks and logs every keystroke typed on a keyboard to steal usernames, passwords, and sensitive financial credentials?",
+        "options": [
+            "Ransomware",
+            "Keylogger",
+            "Rootkit",
+            "Logic Bomb"
+        ],
+        "correctAnswer": "Keylogger",
+        "explanation": "A keylogger is a type of spyware that records physical keyboard entries without the user's knowledge, saving the logs to steal confidential input text."
+    },
+    {
+        "question": "Which processing mode collects data files over time and processes them all at once during scheduled off-peak hours, such as overnight utility billing?",
+        "options": [
+            "Real-Time Processing",
+            "Batch Processing",
+            "Interactive Online Processing",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar data transactions into a single batch file to run sequentially without needing manual human intervention during execution."
+    },
+    {
+        "question": "What form of application software is specifically optimized to draft, edit, format, and print textual layouts like formal business letters and essays?",
+        "options": [
+            "Spreadsheet Software",
+            "Word Processor",
+            "Database Management System",
+            "Presentation Manager"
+        ],
+        "correctAnswer": "Word Processor",
+        "explanation": "Word processors (like Microsoft Word) provide specialized text tools for typing, spelling corrections, grammar checking, and layout formatting."
+    },
+    {
+        "question": "Which ancient calculation tool features wooden frames with parallel wires holding moveable beads, representing one of the earliest human computing devices?",
+        "options": [
+            "The Slide Rule",
+            "The Abacus",
+            "The Pascaline",
+            "The Napier's Bones"
+        ],
+        "correctAnswer": "The Abacus",
+        "explanation": "The abacus is a manual counting device invented thousands of years ago that uses sliding beads on rods to help perform basic arithmetic operations."
+    },
+    {
+        "question": "What specific humanware role involves writing the actual source code lines in languages like C++, Java, or Python based on technical design specs?",
+        "options": [
+            "Systems Analyst",
+            "Database Administrator",
+            "Computer Programmer",
+            "Data Entry Clerk"
+        ],
+        "correctAnswer": "Computer Programmer",
+        "explanation": "Programmers are the technical professionals who translate structural logic charts and design specifications into functional programming code languages."
+    },
+    {
+        "question": "Which secondary storage device offers the fastest read/write speeds because it relies entirely on flash-based silicon memory chips with no moving mechanical parts?",
+        "options": [
+            "Hard Disk Drive (HDD)",
+            "Solid-State Drive (SSD)",
+            "CD-RW Disc",
+            "Magnetic Tape Drive"
+        ],
+        "correctAnswer": "Solid-State Drive (SSD)",
+        "explanation": "SSDs use non-volatile flash memory to read and write data electronically, making them much faster and more shock-resistant than traditional mechanical hard drives."
+    },
+    {
+        "question": "What multi-user processing method splits a processor's active time into tiny structural windows (quanta) to handle operations from hundreds of interactive users simultaneously?",
+        "options": [
+            "Batch Processing",
+            "Real-Time Processing",
+            "Time-Sharing Processing",
+            "Offline Media Spooling"
+        ],
+        "correctAnswer": "Time-Sharing Processing",
+        "explanation": "Time-sharing allocates small slices of CPU time to multiple active tasks in rapid rotation, giving each user the impression that they have exclusive access to the system."
+    },
+    {
+        "question": "Which data communication channel type supports simultaneous, two-way data transmission between two network nodes?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Multiplex Mode"
+        ],
+        "correctAnswer": "Full-Duplex Mode",
+        "explanation": "Full-duplex communication (like a standard mobile phone call) allows data traffic to travel in both directions down the transmission line at the exact same time."
+    },
+    {
+        "question": "An anti-malware technique that flags suspicious program activities—like trying to modify critical operating system files—rather than relying on known signature strings is called:",
+        "options": [
+            "Signature Checking",
+            "Heuristic Analysis / Behavioral Detection",
+            "Disk Optimization Scanning",
+            "Defragmentation Filtering"
+        ],
+        "correctAnswer": "Heuristic Analysis / Behavioral Detection",
+        "explanation": "Heuristic analysis checks how a program behaves and looks for suspicious traits, helping catch brand-new malware variants before a specific signature patch is created."
+    },
+    {
+        "question": "What type of language translator processes a program's high-level source code file line-by-line, executing each instruction immediately rather than producing a separate binary file?",
+        "options": [
+            "Compiler",
+            "Interpreter",
+            "Assembler",
+            "Linker Loader"
+        ],
+        "correctAnswer": "Interpreter",
+        "explanation": "Interpreters translate and run source code line by line on the fly, which makes debugging easy but results in slower execution compared to pre-compiled binaries."
+    },
+    {
+        "question": "Which technical computing trend focuses on hosting distributed data management networks close to the physical location of the user or source device to minimize network latency?",
+        "options": [
+            "Cloud Hosting Arrays",
+            "Edge Computing",
+            "Mainframe Batching Nodes",
+            "Analog Matrix Splitting"
+        ],
+        "correctAnswer": "Edge Computing",
+        "explanation": "Edge computing processes data near the edge of the network—closer to where the data is collected—to cut down on latency, bandwidth use, and reliance on distant cloud servers."
+    },
+    {
+        "question": "What category of code error occurs when a program builds and runs completely fine but calculates incorrect or unexpected mathematical results?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Error",
+            "Compilation Error"
+        ],
+        "correctAnswer": "Logical Error",
+        "explanation": "Logical errors happen when the code follows the correct programming grammar but contains a flaw in the underlying math or reasoning, causing the program to output incorrect results."
+    },
+    {
+        "question": "Which automated input device tracks pre-printed pencil bubbles on specialized intake forms, commonly used to grade high-volume student examinations?",
+        "options": [
+            "Magnetic Ink Character Recognition (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Laser Scanner",
+            "Digital Graphics Tablet"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An OMR device works by bouncing light off a paper form to detect dark marks in specific positions, making it an efficient choice for grading standardized multiple-choice tests."
+    },
+    {
+        "question": "What is the primary operational role of an Ethernet network switch inside a Local Area Network?",
+        "options": [
+            "To translate digital pulses into analog acoustic phone waveforms.",
+            "To read destination hardware MAC addresses on data packets and forward them exclusively to the specific target port.",
+            "To protect local motherboard drives from macro virus payloads.",
+            "To distribute wide-area IP routing paths across separate global networks."
+        ],
+        "correctAnswer": "To read destination hardware MAC addresses on data packets and forward them exclusively to the specific target port.",
+        "explanation": "Switches are smart network components. They inspect the destination MAC address of incoming data packets and forward them directly to the matching device port, reducing overall network traffic."
+    },
+    {
+        "question": "The historical third generation of computer hardware is defined by which manufacturing breakthrough?",
+        "options": [
+            "Vacuum Tube Triodes",
+            "Discrete Germanium Transistors",
+            "Integrated Circuits (ICs)",
+            "Microprocessors (VLSI)"
+        ],
+        "correctAnswer": "Integrated Circuits (ICs)",
+        "explanation": "The third generation of computing took off when engineers learned to combine multiple transistors and supporting components onto a single small silicon chip called an Integrated Circuit."
+    },
+    {
+        "question": "Which software maintenance tool helps free up storage space by locating and removing temporary cache files, broken logs, and emptied trash items safely?",
+        "options": [
+            "Disk Defragmenter",
+            "Disk Cleanup Utility",
+            "File Zipper Program",
+            "Heuristic Filter Module"
+        ],
+        "correctAnswer": "Disk Cleanup Utility",
+        "explanation": "Disk cleanup utilities scan storage drives to find and delete unneeded files—like temporary internet files and installer caches—freeing up valuable disk space."
+    },
+    {
+        "question": "In the foundational data hierarchy framework, processed and organized facts that carry clear contextual meaning for a user are defined as:",
+        "options": [
+            "Raw Data",
+            "Information",
+            "Metadata Strings",
+            "Binary Bit Sequences"
+        ],
+        "correctAnswer": "Information",
+        "explanation": "Information is data that has been processed, structured, organized, or given context to make it useful and meaningful to someone."
+    },
+    {
+        "question": "Which operating system mode must process data inputs and deliver calculated outputs almost instantly to ensure safety, such as in nuclear powerplant cooling loops?",
+        "options": [
+            "Batch Processing Mode",
+            "Real-Time Processing System",
+            "Time-Slicing Manager",
+            "Offline Buffering Track"
+        ],
+        "correctAnswer": "Real-Time Processing System",
+        "explanation": "Real-time systems must process incoming signals and guarantee a response within strict, predictable time limits, making them essential for critical automation tasks."
+    },
+    {
+        "question": "What type of office productivity application uses interconnected rows and columns to handle numerical formulas, budgeting calculations, and charting functions?",
+        "options": [
+            "Word Processor",
+            "Spreadsheet Software",
+            "Database Manager System",
+            "Desktop Publishing Engine"
+        ],
+        "correctAnswer": "Spreadsheet Software",
+        "explanation": "Spreadsheets (like Microsoft Excel) organize data into a grid of cells, letting users write mathematical formulas to perform complex calculations and build data charts."
+    },
+    {
+        "question": "What type of malware blocks access to a user's computer files by encrypting them, demanding payment in exchange for the decryption key?",
+        "options": [
+            "Spyware Tracker",
+            "Ransomware",
+            "Macro Script Threat",
+            "Boot Sector Override"
+        ],
+        "correctAnswer": "Ransomware",
+        "explanation": "Ransomware holds a user's data hostage by encrypting their files and displaying a notice demanding payment before providing the decryption utility."
+    },
+    {
+        "question": "Which internal motherboard bus layer handles slow peripheral connections like legacy USB ports and storage drive controllers?",
+        "options": [
+            "Northbridge Link",
+            "Southbridge Link",
+            "Front Side CPU Bus",
+            "High-Speed Graphics Rail"
+        ],
+        "correctAnswer": "Southbridge Link",
+        "explanation": "In traditional motherboard chipsets, the Southbridge handles communication for slower I/O peripherals, including USB slots, storage controllers, and audio ports."
+    },
+    {
+        "question": "Which generation of programming languages introduced human-readable mnemonic abbreviations (like MOV, ADD, SUB) that correspond directly to machine code steps?",
+        "options": [
+            "First Generation (Machine Language)",
+            "Second Generation (Assembly Language)",
+            "Third Generation (High-Level Language)",
+            "Fourth Generation (Declarative Language)"
+        ],
+        "correctAnswer": "Second Generation (Assembly Language)",
+        "explanation": "Second-generation assembly language replaced raw binary instructions with short, human-readable mnemonic codes, which are then converted to machine language using an assembler."
+    },
+    {
+        "question": "What network topology connects all devices along a single shared linear cable, requiring physical terminators at both ends to stop signal reflection?",
+        "options": [
+            "Star Topology",
+            "Bus Topology",
+            "Ring Topology",
+            "Mesh Topology"
+        ],
+        "correctAnswer": "Bus Topology",
+        "explanation": "Bus topology links all devices along a single central cable backbone. End terminators are required to absorb signals when they reach the end of the line, preventing echo interference."
+    },
+    {
+        "question": "What type of memory chip holds standard system settings—like the active hardware clock—and relies on a tiny motherboard battery to keep data when the PC is off?",
+        "options": [
+            "Volatile Cache Memory",
+            "CMOS RAM",
+            "Optical Media Stacks",
+            "Hard Drive Sector Zero"
+        ],
+        "correctAnswer": "CMOS RAM",
+        "explanation": "CMOS RAM is a small, low-power storage area on the motherboard that holds hardware configuration details (like time and boot settings), kept alive by a button cell battery when the PC is unplugged."
+    },
+    {
+        "question": "Which data communication transmission mode allows data to travel in only one predetermined direction across a channel, with no way to send data back?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Asynchronous Multiplexing"
+        ],
+        "correctAnswer": "Simplex Mode",
+        "explanation": "Simplex communication is strictly one-way. A classic example is a public television broadcast or a computer sending a video signal to a standard monitor."
+    },
+    {
+        "question": "The computer axiom GIGO stands for 'Garbage In, Garbage Out'. This principle means that:",
+        "options": [
+            "Physical hard drives will fail if the system picks up dust.",
+            "Flawed or inaccurate input data will always result in flawed or incorrect output answers.",
+            "Deleting temporary files automatically speeds up the CPU clock rate.",
+            "Viruses can only infect a system through the operating system's recycle bin."
+        ],
+        "correctAnswer": "Flawed or inaccurate input data will always result in flawed or incorrect output answers.",
+        "explanation": "GIGO means computers process instructions exactly as given. If you provide incorrect data or logical rules, the system will accurately compute a flawed result."
+    },
+    {
+        "question": "What category applies to proprietary software that is distributed completely free of charge, but whose source code remains closed to modifications?",
+        "options": [
+            "Shareware Package",
+            "Freeware",
+            "Open-Source Framework",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware can be downloaded and used without cost, but unlike open-source software, the creator keeps the underlying source code private and maintains all copyrights."
+    },
+    {
+        "question": "Which device functions exclusively as an output component for a computer system?",
+        "options": [
+            "Electronic Touchpad",
+            "Video Projector",
+            "Digital Web Camera",
+            "Optical Barcode Wand"
+        ],
+        "correctAnswer": "Video Projector",
+        "explanation": "Projectors take digital display data from the computer and project it visually onto an external screen or wall, making them a pure output device."
+    },
+    {
+        "question": "What specific class of malware attaches its malicious programming directly to legitimate macro scripts built into office productivity documents?",
+        "options": [
+            "Boot Sector Virus",
+            "Macro Virus",
+            "Trojan Horse Engine",
+            "Network Core Worm"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written using the built-in automation scripting languages found in applications like Microsoft Word or Excel, spreading when users share infected templates."
+    },
+    {
+        "question": "Which unidirectional system bus layer is used exclusively by the CPU to specify the exact physical storage coordinates it wants to read or write?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "Peripheral PCI Track"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The Address Bus is a one-way path that the CPU uses to send memory addresses to RAM, pinpointing exactly where it wants to find or store data bits."
+    },
+    {
+        "question": "The fourth generation of computer hardware systems is defined by the introduction of which major component?",
+        "options": [
+            "Vacuum Tube Valves",
+            "Individual Germanium Transistors",
+            "Integrated Circuit Boards",
+            "Microprocessors using Very Large Scale Integration (VLSI)"
+        ],
+        "correctAnswer": "Microprocessors using Very Large Scale Integration (VLSI)",
+        "explanation": "The fourth generation began in the early 1971 window with VLSI technology, which packed thousands of transistors onto a single silicon chip to create the modern microprocessor."
+    },
+    {
+        "question": "Which network classification covers an infrastructure layout that connects devices across an entire metropolitan city or large municipal district?",
+        "options": [
+            "Local Area Network (LAN)",
+            "Personal Area Network (PAN)",
+            "Metropolitan Area Network (MAN)",
+            "Wide Area Network (WAN)"
+        ],
+        "correctAnswer": "Metropolitan Area Network (MAN)",
+        "explanation": "A MAN is engineered to cover a mid-sized geographic region, such as a city or a large university campus, linking multiple smaller local networks together."
+    },
+    {
+        "question": "What software licensing model gives users full access to view, edit, improve, and share the underlying source code freely?",
+        "options": [
+            "Shareware License Bundle",
+            "Freeware Utility",
+            "Open-Source Software",
+            "Proprietary Package"
+        ],
+        "correctAnswer": "Open-Source Software",
+        "explanation": "Open-source software licenses make the source code available to the public, allowing anyone to study, modify, and distribute the program under open terms."
+    },
+    {
+        "question": "Which foundational functional component inside the CPU fetches, decodes, and manages the execution of programmatic instructions?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Control Unit (CU)",
+            "System Bus Interface",
+            "Cache Storage Memory"
+        ],
+        "correctAnswer": "Control Unit (CU)",
+        "explanation": "The Control Unit manages the processor's work, retrieving instructions from memory, decoding them, and directing the flow of data through the ALU and registers."
+    },
+    {
+        "question": "What network model lets users lease scalable, on-demand computing power, databases, and application storage over the internet instead of maintaining local servers?",
+        "options": [
+            "Cloud Computing",
+            "Batch Spooling Arrays",
+            "Local Drive Virtualization",
+            "Analog Modeling Systems"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets individuals and businesses rent access to shared tech infrastructure—like storage and compute power—over the internet on a pay-as-you-go basis."
+    },
+    {
+        "question": "What type of computer virus targets physical disk sector zero, running its malicious code before the main operating system can load into memory?",
+        "options": [
+            "File Infector Virus",
+            "Macro Script Attachment",
+            "Boot Sector Virus",
+            "Polymorphic Code Strain"
+        ],
+        "correctAnswer": "Boot Sector Virus",
+        "explanation": "Boot sector viruses infect the Master Boot Record (MBR) or startup sector of a drive, letting the malicious code run first before safety features can load."
+    },
+    {
+        "question": "Which basic network device connects local equipment but broadcasts all incoming data packets to every single active port, generating high network traffic?",
+        "options": [
+            "Network Switch",
+            "Network Hub",
+            "Core Router Box",
+            "Fiber Transceiver"
+        ],
+        "correctAnswer": "Network Hub",
+        "explanation": "Hubs are simple hardware devices that cannot route data intelligently. When a data packet arrives at one port, the hub copies it and broadcasts it to every connected port, which can clutter network bandwidth."
+    },
+    {
+        "question": "What term defines the study of introductory computer skills, learning tech vocabulary, and understanding how applications fit into daily life?",
+        "options": [
+            "Systems Analysis",
+            "Computer Appreciation",
+            "Heuristic Evaluation",
+            "Data Parsing Methods"
+        ],
+        "correctAnswer": "Computer Appreciation",
+        "explanation": "Computer appreciation courses teach beginners foundational digital literacy, introducing hardware, operating systems, and common office software applications."
+    },
+    {
+        "question": "What type of internal storage memory is volatile, serving as the CPU's primary temporary workspace while active but clearing completely when power is lost?",
+        "options": [
+            "Read-Only Memory (ROM)",
+            "Random Access Memory (RAM)",
+            "Solid-State Disk Partition",
+            "Flash Storage Card"
+        ],
+        "correctAnswer": "Random Access Memory (RAM)",
+        "explanation": "RAM is the system's volatile primary memory. It holds the working data and programs currently in use by the CPU, but it clears out completely when the computer shuts down."
+    },
+    {
+        "question": "Which mechanical calculation machine was designed by Charles Babbage in 1822 to automate polynomial math tables using a series of interlocking gears?",
+        "options": [
+            "The Analytical Engine",
+            "The Difference Engine",
+            "The Stepped Reckoner",
+            "The Hollerith Tabulator"
+        ],
+        "correctAnswer": "The Difference Engine",
+        "explanation": "The Difference Engine was Babbage's early mechanical calculator, designed to compute mathematical tables automatically using the method of finite differences."
+    },
+    {
+        "question": "What communication hardware translates digital computer bits into analog frequencies to send data over legacy copper telephone lines?",
+        "options": [
+            "Network Switch Terminal",
+            "Modem",
+            "Core Router Unit",
+            "Patch Panel Hub"
+        ],
+        "correctAnswer": "Modem",
+        "explanation": "A modem (Modulator-Demodulator) converts digital signals from a computer into analog signals for telephone lines, and converts incoming analog signals back into digital bits."
+    },
+    {
+        "question": "Which system utility optimizes mechanical hard drives by collecting scattered pieces of files and rewriting them into continuous linear spaces?",
+        "options": [
+            "Disk Defragmenter",
+            "Disk Cleanup Assistant",
+            "File Zipper Compressor",
+            "Heuristic Registry Scan"
+        ],
+        "correctAnswer": "Disk Defragmenter",
+        "explanation": "A disk defragmenter reorganizes fragmented file data scattered across a mechanical platter, grouping file pieces together to speed up read and write times."
+    },
+    {
+        "question": "What type of language translator reads a high-level source code project and compiles it into a standalone machine language file *before* execution runs?",
+        "options": [
+            "Interpreter",
+            "Compiler",
+            "Assembler",
+            "Linker Manager"
+        ],
+        "correctAnswer": "Compiler",
+        "explanation": "A compiler translates an entire high-level program into machine code instructions all at once, saving the output as a standalone executable file (.exe)."
+    },
+    {
+        "question": "Which data communication channel setup allows signals to travel both ways between two points, but only in one direction at a time?",
+        "options": [
+            "Simplex Transmission",
+            "Half-Duplex Transmission",
+            "Full-Duplex Transmission",
+            "Synchronous Core Link"
+        ],
+        "correctAnswer": "Half-Duplex Transmission",
+        "explanation": "Half-duplex communication allows two-way traffic, but devices must take turns transmitting data. They cannot send and receive at the exact same time."
+    },
+    {
+        "question": "What type of computer printer feeds liquid ink through microscopic print nozzles to spray precise dots directly onto paper?",
+        "options": [
+            "Laser Printer",
+            "Inkjet Printer",
+            "Dot-Matrix Impact Unit",
+            "Thermal Heat Element"
+        ],
+        "correctAnswer": "Inkjet Printer",
+        "explanation": "Inkjet printers create text and images by spraying tiny droplets of liquid ink onto paper from precision nozzles on the print head."
+    },
+    {
+        "question": "Which type of malware can spread across computer networks independently by exploiting software vulnerabilities, without needing to attach to an existing host file?",
+        "options": [
+            "File Infector Virus",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Script"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are standalone malicious programs that don't need a host file or human action to spread; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "Which device uses a laser to read zebra-striped product identification numbers at retail checkout registers?",
+        "options": [
+            "Optical Mark Reader (OMR)",
+            "Barcode Reader / Scanner",
+            "Magnetic Ink Scanner (MICR)",
+            "Digital Graphics Board"
+        ],
+        "correctAnswer": "Barcode Reader / Scanner",
+        "explanation": "Barcode readers scan the dark and light lines of a barcode using a light sensor, converting the pattern into product numbers to look up pricing in a database."
+    },
+    {
+        "question": "In the humanware structure, what title refers to the administrative professional who manages, structures, and protects an organization's centralized database systems?",
+        "options": [
+            "Systems Analyst",
+            "Database Administrator (DBA)",
+            "Hardware Repair Expert",
+            "Data Entry Clerk"
+        ],
+        "correctAnswer": "Database Administrator (DBA)",
+        "explanation": "A Database Administrator (DBA) is responsible for configuring, maintaining, securing, and optimizing an organization's central database platforms."
+    },
+    {
+        "question": "Which computing application field involves tracking inventory stocks, calculating corporate sales records, and handling retail points of sale?",
+        "options": [
+            "Commercial / Business Data Processing",
+            "Scientific Weather Simulation",
+            "Desktop Publishing Layouts",
+            "Aviation Telemetry Loops"
+        ],
+        "correctAnswer": "Commercial / Business Data Processing",
+        "explanation": "Business data processing focuses on day-to-day commercial tasks, such as managing inventory, processing payroll, tracking sales, and maintaining customer ledgers."
+    },
+    {
+        "question": "What category of storage memory chip is written with permanent boot configuration data during manufacturing and cannot be altered by normal user operations?",
+        "options": [
+            "Random Access Memory (RAM)",
+            "Read-Only Memory (ROM)",
+            "Virtual Disk Partition",
+            "CMOS Clock Cache"
+        ],
+        "correctAnswer": "Read-Only Memory (ROM)",
+        "explanation": "ROM is non-volatile primary memory that holds essential system startup code (like firmware) securely, keeping its data even when the computer is turned off."
+    },
+    {
+        "question": "Which network topology connects every computer to a central hub or switch node, ensuring that a single broken device cable won't interrupt the rest of the network?",
+        "options": [
+            "Bus Topology",
+            "Star Topology",
+            "Ring Topology",
+            "Linear Mesh System"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "In a star topology, all network nodes connect back to a central hub or switch. If one peripheral cable fails, only that specific node goes offline."
+    },
+    {
+        "question": "What is the primary function of an antivirus software utility?",
+        "options": [
+            "To compress data files and optimize secondary drive storage space.",
+            "To detect, isolate, and eliminate malicious software threats from a computer system.",
+            "To boost the physical bandwidth of network routers.",
+            "To reorganize fragmented data clusters on mechanical platters."
+        ],
+        "correctAnswer": "To detect, isolate, and eliminate malicious software threats from a computer system.",
+        "explanation": "Antivirus tools protect systems by scanning drives and memory to identify, block, and remove malware threats like viruses, worms, and trojans."
+    },
+    {
+        "question": "Which operational component of the CPU handles all basic mathematical calculations and logical true/false comparisons?",
+        "options": [
+            "Control Unit (CU)",
+            "Arithmetic Logic Unit (ALU)",
+            "Internal Data Bus",
+            "Instruction Register"
+        ],
+        "correctAnswer": "Arithmetic Logic Unit (ALU)",
+        "explanation": "The ALU handles the math operations (like addition and subtraction) and logical tests (like checking if one value is greater than another) for the processor."
+    },
+    {
+        "question": "What term describes low-level code that is permanently written into non-volatile ROM chips to handle basic hardware initialization and control?",
+        "options": [
+            "Shareware Shell",
+            "Firmware",
+            "Application Toolkit",
+            "Heuristic Script"
+        ],
+        "correctAnswer": "Firmware",
+        "explanation": "Firmware is a specific class of background software written directly into hardware chips (like ROM or flash memory) to provide stable, low-level control for components."
+    },
+    {
+        "question": "Which data processing method runs transactions immediately as they occur, ensuring that data records stay fully updated in real time?",
+        "options": [
+            "Batch Processing Mode",
+            "Online Real-Time Processing",
+            "Offline Media Spooling",
+            "Asynchronous Batch Cluster"
+        ],
+        "correctAnswer": "Online Real-Time Processing",
+        "explanation": "Online real-time processing handles transactions the moment they are entered, updating database records immediately (essential for systems like airline ticket bookings)."
+    },
+    {
+        "question": "What manufacturing integration scale allowed engineers to place millions of discrete electronic components onto a single fifth-generation silicon chip?",
+        "options": [
+            "Small Scale Integration (SSI)",
+            "Medium Scale Integration (MSI)",
+            "Large Scale Integration (LSI)",
+            "Ultra Large Scale Integration (ULSI)"
+        ],
+        "correctAnswer": "Ultra Large Scale Integration (ULSI)",
+        "explanation": "Fifth-generation computing advancements rely on ULSI technology, which packs millions of micro-transistors onto a single chip to enable parallel processing architectures."
+    },
+    {
+        "question": "Which network interface component provides the physical connection port on a computer's motherboard for an Ethernet cable link?",
+        "options": [
+            "Graphics Card Rail",
+            "Network Interface Card (NIC)",
+            "System Bus Bridge",
+            "CMOS Power Terminal"
+        ],
+        "correctAnswer": "Network Interface Card (NIC)",
+        "explanation": "A Network Interface Card (NIC) provides the built-in hardware port and electronic circuitry a computer needs to connect to a network cable or wireless signal."
+    },
+    {
+        "question": "What type of application code error occurs when a programmer leaves out a required punctuation mark or mispells a command, preventing compilation?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Exception",
+            "Linker Fault"
+        ],
+        "correctAnswer": "Syntax Error",
+        "explanation": "Syntax errors are grammar mistakes in a programming language. If a command is typed incorrectly, the compiler cannot understand it and will fail to build the program."
+    },
+    {
+        "question": "In modern digital commerce, what secure network system allows immediate fund transfers between accounts at different banking institutions?",
+        "options": [
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Manufacturing (CAM)",
+            "Point of Sale Tracking (POS)",
+            "Optical Character Verification"
+        ],
+        "correctAnswer": "Electronic Funds Transfer (EFT)",
+        "explanation": "EFT systems move money electronically across secure banking networks, eliminating the need for paper cash or physical checks."
+    },
+    {
+        "question": "What type of computer virus modifies its underlying encrypted signature pattern every time it infects a new file to hide from standard antivirus scanners?",
+        "options": [
+            "Macro Document Infector",
+            "Polymorphic Virus",
+            "Boot Record Hijacker",
+            "Static Trojan File"
+        ],
+        "correctAnswer": "Polymorphic Virus",
+        "explanation": "Polymorphic viruses alter their code signature every time they replicate, creating a changing target that simple signature-based scanners struggle to recognize."
+    },
+    {
+        "question": "Which high-speed transmission medium uses core strands of flexible glass to carry data packets as pulses of light over very long distances?",
+        "options": [
+            "Coaxial Shielded Line",
+            "Twisted-Pair Copper Cable",
+            "Fiber-Optic Cable",
+            "Microwave Relay Wave"
+        ],
+        "correctAnswer": "Fiber-Optic Cable",
+        "explanation": "Fiber-optic cables carry data packets as pulses of light down glass fibers, providing massive bandwidth and long transmission distances without picking up electrical interference."
+    },
+    {
+        "question": "What type of ultra-fast primary memory sits directly inside or next to the CPU core to hold frequently used instructions, reducing access times to main RAM?",
+        "options": [
+            "Virtual Swap Space",
+            "Cache Memory",
+            "Secondary Flash Drive",
+            "CMOS Partition Allocation"
+        ],
+        "correctAnswer": "Cache Memory",
+        "explanation": "Cache memory uses high-speed Static RAM (SRAM) chips located close to the processor core, giving the CPU quick access to recent instructions and reducing wait times."
+    },
+    {
+        "question": "Which data validation check ensures that entered numerical figures fall within realistic high and low boundaries, such as a student's score being between 0 and 100?",
+        "options": [
+            "Format Check",
+            "Range Check",
+            "Check Digit Calculation",
+            "Double Entry Proofing"
+        ],
+        "correctAnswer": "Range Check",
+        "explanation": "A range check is a data validation rule that checks whether an input value falls within a specified minimum and maximum boundary limit."
+    },
+    {
+        "question": "What type of distributed network architecture pools the unused processing power of thousands of separate computers across different locations to solve massive scientific problems?",
+        "options": [
+            "Grid Computing",
+            "Offline Batch Processing",
+            "Local Virtualization Layouts",
+            "Analog System Modeling"
+        ],
+        "correctAnswer": "Grid Computing",
+        "explanation": "Grid computing links separate computers over a network so they can pool their processing power and storage to tackle massive computing challenges, like weather forecasting or molecular modeling."
+    },
+    {
+        "question": "Which network topology connects all devices in a closed continuous loop, passing data packets in one direction from node to node?",
+        "options": [
+            "Bus Topology",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "Ring topology connects network devices in a closed loop. Data packets move from node to node in one direction around the ring until they find the destination address."
+    },
+    {
+        "question": "What category applies to software that is distributed completely free of charge, but whose proprietary source code is kept secret by the developer?",
+        "options": [
+            "Shareware Trial",
+            "Freeware",
+            "Open-Source Framework",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware is free to download and use without cost, but unlike open-source software, the developer keeps the source code private and maintains all proprietary copyrights."
+    },
+    {
+        "question": "What is the primary role of the BIOS (Basic Input/Output System) firmware during a computer's startup sequence?",
+        "options": [
+            "To compress files on the fly and save drive space.",
+            "To run the Power-On Self-Test (POST) to initialize hardware components and locate the operating system boot drive.",
+            "To connect the network browser directly to web search gateways.",
+            "To scan active folder paths for hidden macro virus structures."
+        ],
+        "correctAnswer": "To run the Power-On Self-Test (POST) to initialize hardware components and locate the operating system boot drive.",
+        "explanation": "The BIOS handles the critical startup chores. It tests hardware circuits during POST, loads essential drivers, and looks for the boot drive to launch the operating system."
+    },
+    {
+        "question": "Which device functions exclusively as a data input component for a computer system?",
+        "options": [
+            "Visual Monitor Screen",
+            "Laser Document Printer",
+            "Flatbed Document Scanner",
+            "Audio Speaker Box"
+        ],
+        "correctAnswer": "Flatbed Document Scanner",
+        "explanation": "Scanners are dedicated input devices. They scan physical images or documents and convert them into digital image data files for the computer to use."
+    },
+    {
+        "question": "What type of office application software provides advanced layout and typesetting tools, ideal for formatting professional magazines, brochures, and books?",
+        "options": [
+            "Desktop Publishing (DTP) Software",
+            "Basic Terminal Code Screen",
+            "Electronic Ledger Sheets",
+            "System Optimization Utility"
+        ],
+        "correctAnswer": "Desktop Publishing (DTP) Software",
+        "explanation": "DTP software provides the layout controls and precision text options needed to design and print complex publications like magazines, newspapers, and books."
+    },
+    {
+        "question": "Which type of malware disguises itself inside a helpful, harmless program to trick users into running it, but does not self-replicate?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Virus Payload",
+            "Boot Record Hijacker"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "What components within the CPU act as small, ultra-fast temporary storage slots, holding immediate data values or address points for processing?",
+        "options": [
+            "Memory Cache Modules",
+            "Registers",
+            "System Bus Controllers",
+            "Secondary Partition Blocks"
+        ],
+        "correctAnswer": "Registers",
+        "explanation": "Registers are tiny, ultra-fast storage slots built directly into the CPU core to hold the immediate values, logic flags, and instruction addresses the processor needs right now."
+    },
+    {
+        "question": "Which network topology model features direct dedicated cable links between every single device on the network, providing ultimate path redundancy?",
+        "options": [
+            "Star Topology",
+            "Bus Backbone Setup",
+            "Mesh Topology",
+            "Ring Loop Network"
+        ],
+        "correctAnswer": "Mesh Topology",
+        "explanation": "Mesh topology links every device directly to every other device. This setup offers incredible reliability, as data can always find a backup route if one cable breaks."
+    },
+    {
+        "question": "What hardware component served as the electronic switching logic for first-generation computer systems, generating high heat and breaking down frequently?",
+        "options": [
+            "Silicon Transistor Triode",
+            "Vacuum Tube",
+            "Integrated Silicon Wafer",
+            "Magnetic Core Ring"
+        ],
+        "correctAnswer": "Vacuum Tube",
+        "explanation": "First-generation computers relied on vacuum tubes for circuitry. These large glass components generated intense heat, consumed lots of electricity, and broke down frequently."
+    },
+    {
+        "question": "In professional manufacturing and architecture fields, what does the abbreviation 'CAD' stand for?",
+        "options": [
+            "Computer-Aided Design",
+            "Central Algorithm Distribution",
+            "Computational Analysis of Data",
+            "Computerized Assembly Documentation"
+        ],
+        "correctAnswer": "Computer-Aided Design",
+        "explanation": "CAD stands for Computer-Aided Design. It refers to software engineering tools used to draft and simulate precise 2D or 3D technical product models."
+    },
+    {
+        "question": "What type of computer virus targets files made by productivity software by embedding malicious coding instructions into automated script shortcuts?",
+        "options": [
+            "File Infector",
+            "Macro Virus",
+            "Boot Sector Hijacker",
+            "Polymorphic Segment"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written in the macro automation languages built into office applications like Microsoft Word or Excel, spreading when users share infected document templates."
+    },
+    {
+        "question": "Which network cable type features pairs of insulated copper wires twisted together to minimize electromagnetic cross-talk interference?",
+        "options": [
+            "Coaxial Cable Shield",
+            "Twisted-Pair Cable",
+            "Fiber glass strand line",
+            "Microwave Line Link"
+        ],
+        "correctAnswer": "Twisted-Pair Cable",
+        "explanation": "Twisted-pair cabling twists wire pairs together to reduce electromagnetic interference and signal cross-talk, making it a staple for ethernet networks (like UTP cables)."
+    },
+    {
+        "question": "What specific system software tool translates source code written in assembly language mnemonics directly into binary machine language instructions?",
+        "options": [
+            "Compiler",
+            "Assembler",
+            "Interpreter",
+            "Linker Loader"
+        ],
+        "correctAnswer": "Assembler",
+        "explanation": "An assembler is a specific translation tool that takes assembly language code (mnemonic commands) and converts it directly into binary machine code that the CPU can execute."
+    },
+    {
+        "question": "Which peripheral device serves as both an input and an output component for a computer system?",
+        "options": [
+            "QWERTY Keyboard",
+            "Flatbed Optical Scanner",
+            "Touchscreen Display Panel",
+            "Laser Document Printer"
+        ],
+        "correctAnswer": "Touchscreen Display Panel",
+        "explanation": "Touchscreens work double duty: they serve as an input device by reading your finger taps, and an output device by showing the computer's visual interface on the screen."
+    },
+    {
+        "question": "What type of system software acts as the primary layer that manages physical hardware resources and runs user applications?",
+        "options": [
+            "Database Manager System",
+            "Operating System (OS)",
+            "Word Processing Application",
+            "File Zipper Program"
+        ],
+        "correctAnswer": "Operating System (OS)",
+        "explanation": "The operating system is the core software platform. It manages memory allocation, schedules CPU tasks, handles storage, and provides the user interface that applications run on."
+    },
+    {
+        "question": "Which network classification describes a short-range wireless network centered around an individual's workspace, usually spanning under 10 meters?",
+        "options": [
+            "Local Area Network (LAN)",
+            "Personal Area Network (PAN)",
+            "Metropolitan Area Network (MAN)",
+            "Wide Area Network (WAN)"
+        ],
+        "correctAnswer": "Personal Area Network (PAN)",
+        "explanation": "A Personal Area Network (PAN) handles short-range connections around a single person, like pairing your phone with wireless headphones or smartwatches over Bluetooth."
+    },
+    {
+        "question": "What operating system feature allows a single CPU to switch between multiple programs so quickly that they appear to run at the exact same time?",
+        "options": [
+            "Multiprocessing Mode",
+            "Multitasking / Time-Slicing",
+            "Linear Batch Spooling",
+            "Offline Media Buffering"
+        ],
+        "correctAnswer": "Multitasking / Time-Slicing",
+        "explanation": "Multitasking lets an operating system run several programs concurrently on one CPU by quickly swapping processing slices among them, giving the user a smooth, seamless experience."
+    },
+    {
+        "question": "The data entry control method called 'Verification' is used to double-check if:",
+        "options": [
+            "A file size can be compressed down further.",
+            "The input data matches the original source text exactly, catching any transcription mistakes.",
+            "The text matches known virus signature profiles.",
+            "The data fits numerical validation parameters."
+        ],
+        "correctAnswer": "The input data matches the original source text exactly, catching any transcription mistakes.",
+        "explanation": "Verification double-checks that data was transcribed correctly during entry (often by having two people type the same data or proofreading entries against the original paperwork)."
+    },
+    {
+        "question": "Which secondary storage device holds data permanently using read/write heads on rapidly spinning magnetic platters?",
+        "options": [
+            "Solid-State Drive (SSD)",
+            "Hard Disk Drive (HDD)",
+            "Compact Disc (CD-ROM)",
+            "Flash Memory Card"
+        ],
+        "correctAnswer": "Hard Disk Drive (HDD)",
+        "explanation": "Traditional Hard Disk Drives (HDDs) use mechanical read/write heads to access data magnetically stored on rapidly spinning circular platters."
+    },
+    {
+        "question": "What type of software package is distributed with a free evaluation period, but locks full features or displays notice screens until a user buys a license code?",
+        "options": [
+            "Freeware Utility",
+            "Shareware",
+            "Open-Source Framework",
+            "Public Domain Module"
+        ],
+        "correctAnswer": "Shareware",
+        "explanation": "Shareware provides a free trial version of software to let users test it out, but typically restricts full features or displays nag screens until a license is purchased."
+    },
+    {
+        "question": "Which fundamental component inside the CPU supervises operations, manages data traffic, and timing signals across the system hardware?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Control Unit (CU)",
+            "Solid State Cache block",
+            "Memory Address Register"
+        ],
+        "correctAnswer": "Control Unit (CU)",
+        "explanation": "The Control Unit acts as the brain's supervisor. It retrieves instructions from memory, decodes them into signals, and directs other parts of the CPU and hardware to execute them."
+    },
+    {
+        "question": "What scale of communication network spans across countries, oceans, or the entire globe?",
+        "options": [
+            "Local Area Network (LAN)",
+            "Metropolitan Area Network (MAN)",
+            "Wide Area Network (WAN)",
+            "Personal Area Network (PAN)"
+        ],
+        "correctAnswer": "Wide Area Network (WAN)",
+        "explanation": "A Wide Area Network (WAN) connects computers and smaller networks across large distances. The internet is the largest and most well-known example of a global WAN."
+    },
+    {
+        "question": "Which network cable type features a single central copper conductor wire wrapped in plastic insulation and a braided outer shield?",
+        "options": [
+            "Coaxial Cable",
+            "Unshielded Twisted Pair (UTP)",
+            "Fiber glass light strand",
+            "Microwave Link Track"
+        ],
+        "correctAnswer": "Coaxial Cable",
+        "explanation": "Coaxial cables use a solid core copper wire wrapped in insulation and a braided metal shield, making them a common choice for cable TV and older thick ethernet setups."
+    },
+    {
+        "question": "What type of impact printer uses physical pins to strike an inked fabric ribbon against paper, making it useful for multi-part carbon copies?",
+        "options": [
+            "Laser Jet Printer",
+            "Inkjet Sprayer Unit",
+            "Dot-Matrix Printer",
+            "Thermal Heat Element"
+        ],
+        "correctAnswer": "Dot-Matrix Printer",
+        "explanation": "Dot-matrix printers use a print head with physical pins that strike an inked ribbon against paper. This impact design allows them to print through multi-layer carbon forms, though they are loud and low-resolution."
+    },
+    {
+        "question": "In computer security protection, what method evaluates a file's behavioral traits and operational code patterns to spot unknown malware threats?",
+        "options": [
+            "Static Definition Check",
+            "Heuristic Analysis",
+            "Disk Defragmenting scan",
+            "File Compression filter"
+        ],
+        "correctAnswer": "Heuristic Analysis",
+        "explanation": "Heuristic analysis evaluates a program's structure and behavior for suspicious traits, helping antivirus software catch new or modified malware that doesn't have an established signature profile yet."
+    },
+    {
+        "question": "What system bus layer functions as a bidirectional highway, carrying actual instruction code and data values back and forth between the CPU and memory?",
+        "options": [
+            "Address Bus",
+            "Data Bus",
+            "Control Bus",
+            "Expansion Rail Line"
+        ],
+        "correctAnswer": "Data Bus",
+        "explanation": "The Data Bus is a bidirectional highway that carries actual data bits back and forth between the CPU, memory, and peripheral controllers."
+    },
+    {
+        "question": "Which historic computing milestone was a massive, fully electronic digital computer built in 1945 that used thousands of vacuum tubes to calculate artillery firing tables?",
+        "options": [
+            "Harvard Mark I",
+            "ENIAC",
+            "UNIVAC I",
+            "Difference Engine"
+        ],
+        "correctAnswer": "ENIAC",
+        "explanation": "ENIAC (Electronic Numerical Integrator and Computer) was the first general-purpose, fully electronic digital computer, constructed during World War II to compute ballistic tables."
+    },
+    {
+        "question": "In a network infrastructure, what term describes the set of formal rules and formatting standards that allows different computer hardware setups to exchange data?",
+        "options": [
+            "The Topology Map",
+            "A Protocol",
+            "The Transmission Medium",
+            "The Multiplexer Channel"
+        ],
+        "correctAnswer": "A Protocol",
+        "explanation": "Protocols are standardized rules that define how data is packed, addressed, transmitted, and decoded across networks, ensuring different systems can communicate."
+    },
+    {
+        "question": "What concept covers optimizing computer usage, maximizing hardware efficiency, and recycling materials responsibly to minimize tech's environmental impact?",
+        "options": [
+            "Green Computing",
+            "Cloud Multi-leasing",
+            "Edge Mesh Systems",
+            "Holographic Integration"
+        ],
+        "correctAnswer": "Green Computing",
+        "explanation": "Green computing focuses on reducing the environmental impact of technology by building energy-efficient hardware, managing power smart, and recycling tech waste responsibly."
+    },
+    {
+        "question": "Which optical input scanner reads marked response choices on pre-printed forms, making it ideal for grading multiple-choice sheets?",
+        "options": [
+            "Magnetic Ink Scanner (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Wand Tool",
+            "Flatbed Matrix Board"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An Optical Mark Reader (OMR) senses physical marks on paper forms by measuring reflected light, making it a fast and reliable tool for grading multiple-choice tests."
+    },
+    {
+        "question": "What software category covers programs created for end users to accomplish everyday creative or productive tasks, like web browsers and media players?",
+        "options": [
+            "System Software Layer",
+            "Application Software",
+            "Hardware Driver Utility",
+            "Database Table Package"
+        ],
+        "correctAnswer": "Application Software",
+        "explanation": "Application software includes programs built for end-users to accomplish specific tasks, such as web browsers, word processors, photo editors, and video games."
+    },
+    {
+        "question": "Which self-contained network threat replicates independently across local networks without needing a user to run an infected host file?",
+        "options": [
+            "File Infector",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Script"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are self-contained, malicious programs. Unlike traditional viruses, they don't need a human to run a host file; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "What type of non-volatile semiconductor memory can be electronically erased and rewritten in blocks, making it the foundational technology inside USB flash drives?",
+        "options": [
+            "Static RAM (SRAM)",
+            "Flash Memory (EEPROM)",
+            "Dynamic RAM (DRAM)",
+            "Mask ROM Chips"
+        ],
+        "correctAnswer": "Flash Memory (EEPROM)",
+        "explanation": "Flash memory is a non-volatile storage technology that can be electronically erased and rewritten, combining the durability of ROM with the flexibility of re-writable storage."
+    },
+    {
+        "question": "In the data processing lifecycle, what phase is responsible for sorting, calculating, and categorizing raw intake facts into meaningful information?",
+        "options": [
+            "Data Collection",
+            "Data Processing",
+            "Data Output",
+            "Data Archiving"
+        ],
+        "correctAnswer": "Data Processing",
+        "explanation": "The processing phase involves running computations, sorting records, and applying logical rules to raw data to transform it into useful information."
+    },
+    {
+        "question": "Which network topology layout links all computing nodes back to a central hub or switch routing terminal?",
+        "options": [
+            "Bus Backbone Setup",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "In a star topology, all network devices connect to a central hub or switch. This layout makes it easy to add new devices and isolate cable faults without bringing down the entire network."
+    },
+    {
+        "question": "What type of system translation software converts high-level source code instructions all at once into an executable binary file prior to program execution?",
+        "options": [
+            "An Interpreter",
+            "A Compiler",
+            "An Assembler",
+            "A Defragmenter Tool"
+        ],
+        "correctAnswer": "A Compiler",
+        "explanation": "A compiler scans an entire project's source code at once, translating everything into a standalone executable binary file (.exe) prior to deployment or execution."
+    },
+    {
+        "question": "Which digital commerce system tracks item barcode scans at checkout to process customer payments and update store inventory ledgers?",
+        "options": [
+            "Point of Sale (POS) System",
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Design (CAD)",
+            "Optical Mark Reader (OMR)"
+        ],
+        "correctAnswer": "Point of Sale (POS) System",
+        "explanation": "A Point of Sale (POS) system combines hardware barcode scanners and checkout software to instantly process sales transactions and update retail inventory databases in real time."
+    },
+    {
+        "question": "What category of computer virus hitches a ride inside standard executable program files, spreading across storage paths whenever those apps are opened?",
+        "options": [
+            "Boot Sector Threat",
+            "File Infector Virus",
+            "Macro Script Package",
+            "Polymorphic Engine"
+        ],
+        "correctAnswer": "File Infector Virus",
+        "explanation": "File infector viruses attach themselves to executable programs. When a user runs the infected application, the virus activates alongside it to infect more files on the drive."
+    },
+    {
+        "question": "Which tier of computing platforms represents the highest raw calculation power, engineered for massive computational tasks like global climate simulations?",
+        "options": [
+            "Microcomputer Client",
+            "Supercomputer",
+            "Mainframe Console",
+            "Embedded Core"
+        ],
+        "correctAnswer": "Supercomputer",
+        "explanation": "Supercomputers are the fastest, most powerful systems available, built to handle massive numbers of complex mathematical calculations for scientific research and advanced engineering."
+    },
+    {
+        "question": "What data communication term measures the total time delay it takes for a data packet to travel from its source node across a network path to its destination?",
+        "options": [
+            "Bandwidth Capacity",
+            "Latency",
+            "Attenuation Drop",
+            "Modulation Rate"
+        ],
+        "correctAnswer": "Latency",
+        "explanation": "Latency measures network delay—the time it takes for a data packet to travel from the sender to the receiver and back again."
+    },
+    {
+        "question": "Which administrative utility software scans an target system or network configuration to find open communication ports and potential security vulnerabilities?",
+        "options": [
+            "Vulnerability / Port Scanner",
+            "Disk Defragmenter",
+            "File Compression Utility",
+            "Device Driver Tool"
+        ],
+        "correctAnswer": "Vulnerability / Port Scanner",
+        "explanation": "Vulnerability and port scanners check computers and networks for open communication paths or security gaps, helping administrators fix flaws before attackers can exploit them."
+    },
+    {
+        "question": "What broad software category includes operating systems, device drivers, and diagnostic utility tools that manage physical computer hardware operations?",
+        "options": [
+            "Application Suites",
+            "System Software",
+            "Custom User Macros",
+            "Database Schema Scripts"
+        ],
+        "correctAnswer": "System Software",
+        "explanation": "System software includes the foundational programs—like the operating system, drivers, and utilities—that manage the computer's physical hardware so applications can run."
+    },
+    {
+        "question": "Which early manual calculating device was invented by John Napier in 1617, using a set of carved rods to perform multiplication and division calculations?",
+        "options": [
+            "The Pascaline",
+            "The Slide Rule",
+            "Napier's Bones",
+            "The Analytical Engine"
+        ],
+        "correctAnswer": "Napier's Bones",
+        "explanation": "Napier's Bones was an ingenious manual calculation tool consisting of carved rods inscribed with multiplication tables, helping users multiply and divide large numbers quickly."
+    },
+    {
+        "question": "Which data processing architecture aggregates transactions into closed batches to run at scheduled intervals without active human control?",
+        "options": [
+            "Real-Time Automation Loops",
+            "Batch Processing",
+            "Interactive Online Entry",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar transactions together to run later as a single, uninterrupted job, making it a great fit for predictable tasks like monthly billing."
+    },
+    {
+        "question": "What transmission channel type supports bidirectional data flow between two points, but requires devices to take turns transmitting because it cannot travel both ways at once?",
+        "options": [
+            "Simplex Channel",
+            "Half-Duplex Channel",
+            "Full-Duplex Channel",
+            "Asynchronous Router"
+        ],
+        "correctAnswer": "Half-Duplex Channel",
+        "explanation": "Half-duplex channels (like standard walkie-talkies) let both sides talk and listen, but they must take turns—data cannot travel both ways at the same time."
+    },
+    {
+        "question": "What type of security threat tricks users by appearing as an innocent or helpful application while hiding a malicious payload inside?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Document Loop",
+            "Boot Record Infector"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "Which unified computing architecture established the standard design of storing both execution program code and working variable data within the same shared main memory space?",
+        "options": [
+            "Von Neumann Architecture",
+            "Harvard Split Architecture",
+            "Analog Matrix Loop",
+            "Mechanical Relays Board"
+        ],
+        "correctAnswer": "Von Neumann Architecture",
+        "explanation": "The Von Neumann architecture established the standard design of storing both program instructions and working data in the same unified main memory space."
+    },
+    {
+        "question": "What user interface layout allows an operator to execute commands by using a mouse to click graphical icons, menus, and windows?",
+        "options": [
+            "Command-Line Prompt (CLI)",
+            "Graphical User Interface (GUI)",
+            "Assembly Language Linker",
+            "Network File System Directory"
+        ],
+        "correctAnswer": "Graphical User Interface (GUI)",
+        "explanation": "A GUI allows users to interact with computer systems through visual elements like icons and windows instead of typing text commands into a blank screen."
+    },
+    {
+        "question": "Which data processing trend allows organizations to lease elastic server capacity, storage arrays, and software services directly over the internet?",
+        "options": [
+            "Cloud Computing",
+            "Local Defragmentation Sets",
+            "Analog System Modeling",
+            "Batch Mainframe Processing"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets companies access tech resources—like servers, storage, and databases—over the internet on a flexible, pay-as-you-go model."
+    },
+    {
+        "question": "What is the structural term used to define a group of exactly eight bits of digital computer storage?",
+        "options": [
+            "Nibble",
+            "Byte",
+            "Word",
+            "Kilobit"
+        ],
+        "correctAnswer": "Byte",
+        "explanation": "A byte consists of exactly eight adjacent bits. It represents the standard unit of measurement used to encode a single character of text in memory."
+    },
+    {
+        "question": "Which of the following numbers represents the exact value of a Kilobyte (KB) in traditional binary computing storage measurements?",
+        "options": [
+            "1000 Bytes",
+            "1024 Bytes",
+            "1048 Bytes",
+            "512 Bytes"
+        ],
+        "correctAnswer": "1024 Bytes",
+        "explanation": "In computing, storage measurements use the base-2 system ($2^{10}$), making a Kilobyte equal to exactly 1,024 bytes rather than the base-10 metric value of 1,000."
+    },
+    {
+        "question": "Which software operating system layer handles core tasks like physical memory allocation, process scheduling, and device communication?",
+        "options": [
+            "The Desktop Hypervisor",
+            "The Operating System Kernel",
+            "The Command Shell",
+            "The File System Explorer"
+        ],
+        "correctAnswer": "The Operating System Kernel",
+        "explanation": "The kernel is the central core of an operating system, managing low-level hardware interactions, system resources, memory maps, and task scheduling."
+    },
+    {
+        "question": "Which internal system bus is used by the CPU to transmit operational synchronization pulses and state read/write instructions?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "PCI Express Rail"
+        ],
+        "correctAnswer": "Control Bus",
+        "explanation": "The Control Bus carries timing synchronization pulses, memory read/write commands, and hardware interrupt signals generated by the CPU's Control Unit."
+    },
+    {
+        "question": "Which historical calculation machine, built by French scientist Blaise Pascal in 1642, was the first operational mechanical calculator to use a series of eight geared dials?",
+        "options": [
+            "The Analytical Engine",
+            "The Slide Rule",
+            "The Pascaline",
+            "The Stepped Reckoner"
+        ],
+        "correctAnswer": "The Pascaline",
+        "explanation": "The Pascaline was the first functional mechanical arithmetic machine, utilizing interlocking wheels to carry out integer addition and subtraction automatically."
+    },
+    {
+        "question": "What classification applies to massive centralized computers engineered to handle high-volume business transactions, enterprise data warehouses, and banking ledgers securely?",
+        "options": [
+            "Supercomputers",
+            "Mainframe Computers",
+            "Workstation Nodes",
+            "Embedded Microcontrollers"
+        ],
+        "correctAnswer": "Mainframe Computers",
+        "explanation": "Mainframes are large, highly reliable computers built to process massive volumes of concurrent transactions and support thousands of enterprise users at once."
+    },
+    {
+        "question": "In a computer system framework, what term refers to the collection of utility tools, application suites, and operational scripts that direct hardware processing?",
+        "options": [
+            "Hardware Layer",
+            "Humanware Component",
+            "Software",
+            "Firmware Node"
+        ],
+        "correctAnswer": "Software",
+        "explanation": "Software encompasses all the intangible instructions, configurations, programs, and documentation that control physical computing hardware."
+    },
+    {
+        "question": "The first generation of electronic computing platforms is historically characterized by the use of which core hardware technology?",
+        "options": [
+            "Discrete Germanium Transistors",
+            "Vacuum Tubes",
+            "Integrated Circuits",
+            "Microprocessors"
+        ],
+        "correctAnswer": "Vacuum Tubes",
+        "explanation": "First-generation computers relied on glass vacuum tubes as internal electronic switching valves, which generated immense heat and required constant maintenance."
+    },
+    {
+        "question": "Which networking device operates at the Data Link layer to isolate local network chatter by mapping hardware MAC addresses to specific equipment ports?",
+        "options": [
+            "A Network Switch",
+            "An Ethernet Hub",
+            "A Signal Repeater",
+            "An Analog Modem"
+        ],
+        "correctAnswer": "A Network Switch",
+        "explanation": "Switches filter and forward local network frames intelligently by matching destination hardware MAC addresses to specific physical ports, preventing collision clutter."
+    },
+    {
+        "question": "What type of malware tracks internet browsing habits, displays unauthorized popup advertisements, and logs consumer telemetry without consent?",
+        "options": [
+            "Ransomware Encryption Engines",
+            "Adware / Spyware",
+            "Boot Sector Hijackers",
+            "Polymorphic Code Chains"
+        ],
+        "correctAnswer": "Adware / Spyware",
+        "explanation": "Adware and spyware are malicious or unwanted monitoring programs that log user activities, harvest configuration profiles, and push uninvited advertising pop-ups."
+    },
+    {
+        "question": "Which processing mode handles transactional inputs the exact millisecond they occur, providing real-time data adjustments across active systems?",
+        "options": [
+            "Offline Batch Processing",
+            "Online Real-Time Processing",
+            "Sequential Queue Stacking",
+            "Asynchronous Archiving Loops"
+        ],
+        "correctAnswer": "Online Real-Time Processing",
+        "explanation": "Online real-time systems compute transactional input immediately as it happens, ensuring database records stay current (vital for airline booking systems)."
+    },
+    {
+        "question": "What category of software allows users to construct data tables, design relational schemas, write queries, and filter record indices?",
+        "options": [
+            "Word Processing Applications",
+            "Spreadsheet Ledgers",
+            "Database Management System (DBMS)",
+            "Desktop Publishing Suits"
+        ],
+        "correctAnswer": "Database Management System (DBMS)",
+        "explanation": "A DBMS provides the structural engine and query tools needed to manage, index, search, update, and secure tables of structured records."
+    },
+    {
+        "question": "Which calculating innovation, introduced by John Napier in 1614, simplified long multiplication and division problems by converting them into basic addition and subtraction scales?",
+        "options": [
+            "The Abacus Rod Set",
+            "Logarithms",
+            "The Difference Engine",
+            "Punched Card Sheets"
+        ],
+        "correctAnswer": "Logarithms",
+        "explanation": "John Napier developed logarithms, mathematical scales that simplified complex multiplication and division operations by turning them into simpler addition and subtraction steps."
+    },
+    {
+        "question": "What specific humanware role involves analyzing data infrastructure anomalies, verifying operational continuity, and managing hardware component upgrades?",
+        "options": [
+            "System Administrator / Engineer",
+            "Data Entry Specialist",
+            "Application End User",
+            "Relational Database Designer"
+        ],
+        "correctAnswer": "System Administrator / Engineer",
+        "explanation": "System administrators oversee day-to-day server infrastructure, maintain security patches, configure hardware, and keep corporate networks running smoothly."
+    },
+    {
+        "question": "Which secondary storage device holds massive archives of history logs and offline backups using sequential magnetic tracking tracks?",
+        "options": [
+            "Solid-State Drives (SSD)",
+            "Magnetic Tape",
+            "DVD-RW Optical Discs",
+            "NVMe M.2 Cards"
+        ],
+        "correctAnswer": "Magnetic Tape",
+        "explanation": "Magnetic tape drives read and write data sequentially along coated reels. They are slower to access but offer a cost-effective option for long-term archive backups."
+    },
+    {
+        "question": "What processing concept allows an operating system to schedule and execute multiple separate programs concurrently on a single CPU core by swapping processing slices?",
+        "options": [
+            "Uniprocessing Management",
+            "Multitasking / Time-Slicing",
+            "Batch Spooling Arrays",
+            "Offline Pipeline Buffering"
+        ],
+        "correctAnswer": "Multitasking / Time-Slicing",
+        "explanation": "Multitasking uses quick context-switching (time-slicing) to allocate execution windows across multiple programs on a single processor, making them appear to run simultaneously."
+    },
+    {
+        "question": "Which data communication channel type allows data signals to move both ways down a path, but restricted to only one direction at any given moment?",
+        "options": [
+            "Simplex Transmission",
+            "Half-Duplex Transmission",
+            "Full-Duplex Transmission",
+            "Asynchronous Multiplexing"
+        ],
+        "correctAnswer": "Half-Duplex Transmission",
+        "explanation": "Half-duplex lines allow two-way communication, but devices must take turns transmitting data. They cannot send and receive at the exact same time."
+    },
+    {
+        "question": "What software security tool is engineered to check incoming data patterns against an indexed dictionary of threat signatures to block malware infections?",
+        "options": [
+            "A Disk Defragmenter",
+            "Antivirus Software",
+            "File Compressor",
+            "Device Configuration Driver"
+        ],
+        "correctAnswer": "Antivirus Software",
+        "explanation": "Antivirus software scans memory and files for known malware signature profiles, isolating or deleting threats before they can cause system damage."
+    },
+    {
+        "question": "What system software component processes a high-level source code file by checking its structural grammar and converting it directly into machine binary code prior to deployment?",
+        "options": [
+            "An Interpreter",
+            "A Compiler",
+            "An Assembler",
+            "A Linker Loader"
+        ],
+        "correctAnswer": "A Compiler",
+        "explanation": "A compiler scans an entire project's source code at once, translating everything into a standalone executable binary file (.exe) prior to deployment or execution."
+    },
+    {
+        "question": "Which modern technology trend focuses on delivering virtualized hardware processing nodes, data nodes, and applications on demand via the internet?",
+        "options": [
+            "Local Defragmentation Arrays",
+            "Cloud Computing",
+            "Batch Mainframe Processing",
+            "Analog System Mapping"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing allows organizations to rent access to shared technical infrastructure—like storage and compute power—over the internet on a pay-as-you-go model."
+    },
+    {
+        "question": "What type of program compilation error occurs when a developer writes an instruction that violates the grammatical syntax rules of that specific programming language?",
+        "options": [
+            "Syntax Error",
+            "Logical Defect",
+            "Runtime Exception",
+            "Math Overflow Error"
+        ],
+        "correctAnswer": "Syntax Error",
+        "explanation": "Syntax errors are grammar mistakes in code. If a command is typed incorrectly or leaves out a required symbol, the compiler cannot understand it and will fail to build the program."
+    },
+    {
+        "question": "Which automated input hardware scans routing profiles and clearing balances printed with magnetized ink along the bottom margin of financial checks?",
+        "options": [
+            "Optical Character Reader (OCR)",
+            "Magnetic Ink Character Recognition (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Wand Scanner"
+        ],
+        "correctAnswer": "Magnetic Ink Character Recognition (MICR)",
+        "explanation": "MICR scanners read specific routing numbers printed with iron oxide ink along the bottom of bank checks, providing a fast and secure method for financial processing."
+    },
+    {
+        "question": "What smart networking core component connects completely separate networks, inspecting target IP addresses to determine the most efficient routing pathway for data packets?",
+        "options": [
+            "An Network Hub",
+            "A Hardware Switch",
+            "A Router",
+            "A Fiber Optic Balun"
+        ],
+        "correctAnswer": "A Router",
+        "explanation": "Routers act as traffic managers between different networks, examining packet destination IP addresses to map out the most efficient data delivery path."
+    },
+    {
+        "question": "The second generation of electronic computer architecture is characterized by the widespread adoption of which breakthrough element?",
+        "options": [
+            "Vacuum Glass Envelopes",
+            "Solid-State Transistors",
+            "Silicon Integrated Circuits",
+            "Very Large Scale Integrated microchips"
+        ],
+        "correctAnswer": "Solid-State Transistors",
+        "explanation": "The second generation of computers replaced fragile vacuum tubes with solid-state transistors, which made systems smaller, cooler, and significantly more reliable."
+    },
+    {
+        "question": "Which storage utility reorganizes scattered clusters of file fragments on mechanical hard disk drives to improve overall read and write performance?",
+        "options": [
+            "Disk Cleanup Utility",
+            "Disk Defragmenter",
+            "File Compression Manager",
+            "Heuristic Filter Module"
+        ],
+        "correctAnswer": "Disk Defragmenter",
+        "explanation": "A disk defragmenter reorganizes fragmented file data scattered across a mechanical platter, grouping file pieces together to speed up read and write times."
+    },
+    {
+        "question": "In the structural framework of data processing, unprocessed facts and observations that lack contextual meaning are classified as:",
+        "options": [
+            "Information",
+            "Raw Data",
+            "Metadata Strings",
+            "Analytical Knowledge"
+        ],
+        "correctAnswer": "Raw Data",
+        "explanation": "Data represents raw, unorganized facts without context. Once these facts are sorted, calculated, or contextualized, they become meaningful information."
+    },
+    {
+        "question": "Which specific data processing system requires task responses to execute within strict millisecond boundaries to prevent physical automation damage?",
+        "options": [
+            "Batch Spooling System",
+            "Real-Time Processing System",
+            "Time-Sharing Network",
+            "Offline Linear Archiving"
+        ],
+        "correctAnswer": "Real-Time Processing System",
+        "explanation": "Real-time systems must process incoming signals and guarantee a response within strict, predictable time limits, making them essential for critical automation tasks."
+    },
+    {
+        "question": "Which software category covers engineering applications that allow developers to design, model, and simulate physical components in 3D digital environments before manufacturing?",
+        "options": [
+            "Computer-Aided Design (CAD)",
+            "Electronic Funds Transfer (EFT)",
+            "Point of Sale Systems (POS)",
+            "Desktop Publishing Engine"
+        ],
+        "correctAnswer": "Computer-Aided Design (CAD)",
+        "explanation": "CAD software provides the tools to draft and simulate precise 2D or 3D technical models, helping engineers evaluate parts before physical production."
+    },
+    {
+        "question": "What specific class of computer virus hides its execution instructions inside automated shortcut functions built into productivity documents?",
+        "options": [
+            "Boot Sector Hijacker",
+            "Macro Virus",
+            "Polymorphic Mutation",
+            "File Executable Infector"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written using the built-in automation scripting languages found in applications like Microsoft Word or Excel, spreading when users share infected templates."
+    },
+    {
+        "question": "Which motherboard component acts as the high-speed interface hub, connecting the CPU directly to system RAM and dedicated graphics processing slots?",
+        "options": [
+            "The Southbridge Controller",
+            "The Northbridge Controller",
+            "The Power Supply Inverter",
+            "The Peripheral PCI Rails"
+        ],
+        "correctAnswer": "The Northbridge Controller",
+        "explanation": "In classic motherboard layouts, the Northbridge handles communication between the CPU, RAM, and high-speed graphics slots, while the Southbridge manages slower peripheral I/O ports."
+    },
+    {
+        "question": "Which programming language tier is non-procedural, allowing developers to define *what* data output is required rather than detailing the step-by-step logic to fetch it?",
+        "options": [
+            "First Generation (Machine binary)",
+            "Second Generation (Assembly mnemonics)",
+            "Third Generation (Procedural structures)",
+            "Fourth Generation (Declarative languages like SQL)"
+        ],
+        "correctAnswer": "Fourth Generation (Declarative languages like SQL)",
+        "explanation": "Fourth-generation languages (4GL) are non-procedural. Users write declarations stating what data they need, and the underlying system determines the steps to fetch it."
+    },
+    {
+        "question": "What network topology maps all equipment nodes along a single shared linear cable backbone capped with terminators at both ends?",
+        "options": [
+            "Star Topology Layout",
+            "Bus Topology Layout",
+            "Ring Loop Infrastructure",
+            "Mesh Interconnected Grid"
+        ],
+        "correctAnswer": "Bus Topology Layout",
+        "explanation": "Bus topology links all devices along a single central cable backbone. End terminators are required to absorb signals when they reach the end of the line, preventing echo interference."
+    },
+    {
+        "question": "What category of non-volatile primary memory holds initialization parameters and real-time clock data, kept alive by a motherboard battery when power is disconnected?",
+        "options": [
+            "Main Volatile RAM Blocks",
+            "CMOS RAM",
+            "Hard Drive Sector Zero",
+            "Optical Media Stacks"
+        ],
+        "correctAnswer": "CMOS RAM",
+        "explanation": "CMOS RAM is a small, low-power storage area on the motherboard that holds hardware configuration details (like time and boot settings), kept alive by a button cell battery when the PC is unplugged."
+    },
+    {
+        "question": "Which data transmission channel mode supports data travel in only one fixed direction down a communication link, with no way to return signals?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Multiplexed Mode"
+        ],
+        "correctAnswer": "Simplex Mode",
+        "explanation": "Simplex communication is strictly one-way. A classic example is a public television broadcast or a computer sending a video signal to a standard monitor."
+    },
+    {
+        "question": "The computer data processing rule known as GIGO reminds us that:",
+        "options": [
+            "Systems slow down when physical trash logs accumulate.",
+            "Incorrect or poorly formatted data inputs will always produce flawed or incorrect output answers.",
+            "Malware can only infect a hard drive via email trash systems.",
+            "Primary memory clears completely whenever a power outage occurs."
+        ],
+        "correctAnswer": "Incorrect or poorly formatted data inputs will always produce flawed or incorrect output answers.",
+        "explanation": "GIGO stands for Garbage In, Garbage Out. It means computers process instructions exactly as given—if you feed them flawed data or logic, they will accurately compute a flawed result."
+    },
+    {
+        "question": "What software classification applies to proprietary applications available for use without any financial cost, but whose source code remains locked and private?",
+        "options": [
+            "Shareware Packages",
+            "Freeware",
+            "Open-Source Projects",
+            "Public Domain Utilities"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware can be downloaded and used without cost, but unlike open-source software, the creator keeps the underlying source code private and maintains all copyrights."
+    },
+    {
+        "question": "Which device serves exclusively as an output component for a computing system?",
+        "options": [
+            "USB Desktop Microphone",
+            "Audio Speaker",
+            "Capacitive Touchscreen",
+            "QWERTY Keyboard Matrix"
+        ],
+        "correctAnswer": "Audio Speaker",
+        "explanation": "Speakers take processed digital audio signals from the computer and convert them into audible sound waves for the user, making them a pure output device."
+    },
+    {
+        "question": "What type of malware tricks users by masquerading as a legitimate utility program file while opening security backdoors behind the scenes?",
+        "options": [
+            "Network Core Worm",
+            "Trojan Horse",
+            "Macro Word Script Virus",
+            "Master Boot Sector Corruptor"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "Which internal system bus layer is a unidirectional path used exclusively by the CPU to point to specific coordinates in primary RAM?",
+        "options": [
+            "Data Bus Track",
+            "Address Bus",
+            "Control Bus Sync Line",
+            "Peripheral PCI Express Track"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The Address Bus is a one-way path that the CPU uses to send memory addresses to RAM, pinpointing exactly where it wants to find or store data bits."
+    },
+    {
+        "question": "The historical fourth generation of computer systems is defined by which engineering milestone?",
+        "options": [
+            "The assembly of discrete germanium transistors.",
+            "The deployment of early integrated circuit plates.",
+            "Very Large Scale Integration (VLSI), which packed a complete CPU onto a single microprocessor chip.",
+            "The development of vacuum tubes for mainframe systems."
+        ],
+        "correctAnswer": "Very Large Scale Integration (VLSI), which packed a complete CPU onto a single microprocessor chip.",
+        "explanation": "The fourth generation began in the early 1971 window with VLSI technology, which packed thousands of transistors onto a single silicon chip to create the modern microprocessor."
+    },
+    {
+        "question": "Which network classification describes a digital data network that spans across an entire urban municipality or municipal cityscape layout?",
+        "options": [
+            "LAN (Local Area Network)",
+            "PAN (Personal Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)"
+        ],
+        "correctAnswer": "MAN (Metropolitan Area Network)",
+        "explanation": "A MAN is engineered to cover a mid-sized geographic region, such as a city or a large university campus, linking multiple smaller local networks together."
+    },
+    {
+        "question": "What type of software licensing agreement gives the general public full access to inspect, rewrite, optimize, and redistribute the program's underlying code?",
+        "options": [
+            "Shareware License Bundle",
+            "Open-Source Software",
+            "Freeware Utility License",
+            "Proprietary Closed-Source Agreement"
+        ],
+        "correctAnswer": "Open-Source Software",
+        "explanation": "Open-source software licenses make the source code available to the public, allowing anyone to study, modify, and distribute the program under open terms."
+    },
+    {
+        "question": "What is the primary operational objective of the CPU's Control Unit (CU)?",
+        "options": [
+            "To perform complex binary addition and logical evaluations.",
+            "To fetch, decode, and coordinate instructions, managing the flow of data across system components.",
+            "To hold active application document files long-term.",
+            "To convert alternating power currencies to stable direct currents."
+        ],
+        "correctAnswer": "To fetch, decode, and coordinate instructions, managing the flow of data across system components.",
+        "explanation": "The Control Unit acts as the brain's supervisor. It retrieves instructions from memory, decodes them into signals, and directs other parts of the CPU and hardware to execute them."
+    },
+    {
+        "question": "Which technical processing development allows users to lease scalable, on-demand infrastructure resources over the internet on a pay-as-you-go model?",
+        "options": [
+            "Cloud Computing",
+            "Batch Spooling Arrays",
+            "Local Terminal Mirroring",
+            "Analog Matrix Splitting"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets individuals and businesses rent access to shared tech infrastructure—like storage and compute power—over the internet on a pay-as-you-go basis."
+    },
+    {
+        "question": "What specific class of computer virus targets physical disk sector zero, executing its payload before the operating system kernel can initialize?",
+        "options": [
+            "File Infector Virus",
+            "Macro Script Vector",
+            "Boot Sector Virus",
+            "Polymorphic Engine"
+        ],
+        "correctAnswer": "Boot Sector Virus",
+        "explanation": "Boot sector viruses infect the Master Boot Record (MBR) or startup sector of a drive, letting the malicious code run first before safety features can load."
+    },
+    {
+        "question": "Which networking device connects multiple local components but replicates and broadcasts all incoming packets to every physical port, increasing collision potential?",
+        "options": [
+            "A Network Switch Terminal",
+            "An Ethernet Hub",
+            "A Core Router Engine",
+            "A Fiber Optic Balun"
+        ],
+        "correctAnswer": "An Ethernet Hub",
+        "explanation": "Hubs are simple hardware devices that cannot route data intelligently. When a data packet arrives at one port, the hub copies it and broadcasts it to every connected port, which can clutter network bandwidth."
+    },
+    {
+        "question": "What term defines the study of digital tech concepts, understanding computing terminology, and learning to navigate daily productivity applications?",
+        "options": [
+            "Computer Appreciation",
+            "Systems Analysis Logic",
+            "Heuristic Evaluation Method",
+            "Data Parsing Diagnostics"
+        ],
+        "correctAnswer": "Computer Appreciation",
+        "explanation": "Computer appreciation courses teach beginners foundational digital literacy, introducing hardware, operating systems, and common office software applications."
+    },
+    {
+        "question": "Which primary storage medium is volatile, serving as the central, high-speed workspace for the CPU but clearing completely during power disruptions?",
+        "options": [
+            "Read-Only Memory (ROM)",
+            "Random Access Memory (RAM)",
+            "Solid-State Drive Storage",
+            "Flash Memory Card"
+        ],
+        "correctAnswer": "Random Access Memory (RAM)",
+        "explanation": "RAM is the system's volatile primary memory. It holds the working data and programs currently in use by the CPU, but it clears out completely when the computer shuts down."
+    },
+    {
+        "question": "Which breakthrough mechanical design was drafted by Charles Babbage in the 1830s to feature an input unit, an internal processing engine, and memory storage slots?",
+        "options": [
+            "The Difference Engine",
+            "The Analytical Engine",
+            "The Hollerith Tabulator Desk",
+            "The Stepped Reckoner Drum"
+        ],
+        "correctAnswer": "The Analytical Engine",
+        "explanation": "Babbage's Analytical Engine design laid the structural groundwork for modern computers, detailing an input path, a mill (CPU), a store (memory), and a sequential card control system."
+    },
+    {
+        "question": "Which data communication device converts digital binary signals from a computer into analog wave frequencies to transmit over legacy telephone wires?",
+        "options": [
+            "A Network Switch Card",
+            "A Modem",
+            "A Core Router Chassis",
+            "A Patch Panel Enclosure"
+        ],
+        "correctAnswer": "A Modem",
+        "explanation": "A modem (Modulator-Demodulator) converts digital signals from a computer into analog signals for telephone lines, and converts incoming analog signals back into digital bits."
+    },
+    {
+        "question": "Which system maintenance utility scans storage paths to compress and group fragmented data sectors back into continuous linear configurations?",
+        "options": [
+            "Disk Defragmenter",
+            "Disk Cleanup Utility",
+            "File Zipper Program",
+            "Heuristic Definition Scan"
+        ],
+        "correctAnswer": "Disk Defragmenter",
+        "explanation": "A disk defragmenter reorganizes fragmented file data scattered across a mechanical platter, grouping file pieces together to speed up read and write times."
+    },
+    {
+        "question": "What form of high-level language translator scans and processes source code line-by-line, executing instructions on the fly and pausing immediately if an error is encountered?",
+        "options": [
+            "A Compiler",
+            "An Interpreter",
+            "An Assembler",
+            "A Linker Manager"
+        ],
+        "correctAnswer": "An Interpreter",
+        "explanation": "Interpreters translate and run source code line by line on the fly, which makes debugging easy but results in slower execution compared to pre-compiled binaries."
+    },
+    {
+        "question": "Which transmission mode allows bidirectional communication down a shared channel, but limits communication to only one direction at a time?",
+        "options": [
+            "Simplex Transmission Mode",
+            "Half-Duplex Transmission Mode",
+            "Full-Duplex Transmission Mode",
+            "Synchronous Serial Link"
+        ],
+        "correctAnswer": "Half-Duplex Transmission Mode",
+        "explanation": "Half-duplex communication allows two-way traffic, but devices must take turns transmitting data. They cannot send and receive at the exact same time."
+    },
+    {
+        "question": "Which class of computer printer uses a precision laser and high-heat rollers to fuse dry polymer toner powder onto paper sheets?",
+        "options": [
+            "Dot-Matrix Impact Printer",
+            "Inkjet Droplet Sprayer",
+            "Laser Printer",
+            "Thermal Paper Element"
+        ],
+        "correctAnswer": "Laser Printer",
+        "explanation": "Laser printers use a laser beam to create static electricity patterns on a drum, which attracts dry toner powder and fuses it onto paper using high-heat rollers."
+    },
+    {
+        "question": "Which network threat can spread independently across systems by scanning for open ports, without needing to attach to an existing host program or file?",
+        "options": [
+            "File Infector Virus",
+            "Computer Worm",
+            "Trojan Horse back-door",
+            "Macro Script Vector"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are standalone malicious programs that don't need a host file or human action to spread; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "Which optical hardware component scans geometric zebra-striped product tags to extract structural reference numbers at a retail point of sale?",
+        "options": [
+            "Optical Mark Reader (OMR)",
+            "Barcode Reader",
+            "Magnetic Ink Scanner (MICR)",
+            "Flatbed Matrix Slate"
+        ],
+        "correctAnswer": "Barcode Reader",
+        "explanation": "Barcode readers scan the dark and light lines of a barcode using a light sensor, converting the pattern into product numbers to look up pricing in a database."
+    },
+    {
+        "question": "In the humanware organizational layer, what title applies to the professional analyst responsible for auditing workflows and designing technical software system architectures?",
+        "options": [
+            "Data Entry Specialist",
+            "Systems Analyst",
+            "Hardware Bench Technician",
+            "Client End User"
+        ],
+        "correctAnswer": "Systems Analyst",
+        "explanation": "Systems analysts review operational problems, define technical requirements, and design the system architectures that programmers will build."
+    },
+    {
+        "question": "Which application area focuses on running mathematical climate models and atmospheric tracking indices to predict meteorological changes?",
+        "options": [
+            "Meteorology and Science Simulation",
+            "Point of Sale Ledger Tracking",
+            "Desktop Publishing Compilation",
+            "Electronic Funds Transfer Routing"
+        ],
+        "correctAnswer": "Meteorology and Science Simulation",
+        "explanation": "Weather forecasting uses powerful computers to crunch massive amounts of scientific atmospheric data, tracking complex pressure models to predict weather shifts."
+    },
+    {
+        "question": "What form of non-volatile primary storage contains permanent boot-up firmware configurations burned into the chip during manufacturing?",
+        "options": [
+            "Random Access Memory (RAM)",
+            "Read-Only Memory (ROM)",
+            "Virtual Disk Partition",
+            "CMOS Clock Scratchpad"
+        ],
+        "correctAnswer": "Read-Only Memory (ROM)",
+        "explanation": "ROM is non-volatile primary memory that holds essential system startup code (like firmware) securely, keeping its data even when the computer is turned off."
+    },
+    {
+        "question": "Which network topology routes all device connections through a central switch node, allowing individual cable failures to be isolated without interrupting network continuity?",
+        "options": [
+            "Bus Topology",
+            "Star Topology",
+            "Ring Topology",
+            "Linear Mesh System"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "In a star topology, all network nodes connect back to a central hub or switch. If one peripheral cable fails, only that specific node goes offline."
+    },
+    {
+        "question": "What is the primary role of an active background real-time antivirus scanner?",
+        "options": [
+            "To compress inactive storage files and free up disk sectors.",
+            "To monitor system memory and scan files as they are opened or downloaded to block threats immediately.",
+            "To maximize the data transfer rate of network lines.",
+            "To realign fragmented clusters on secondary drives."
+        ],
+        "correctAnswer": "To monitor system memory and scan files as they are opened or downloaded to block threats immediately.",
+        "explanation": "Real-time background protection monitors memory and file usage, checking data patterns against known malware profiles to block threats before they can execute."
+    },
+    {
+        "question": "Which internal CPU component performs arithmetic functions like binary addition and handles logical evaluations like matching variable states?",
+        "options": [
+            "Control Unit (CU)",
+            "Arithmetic Logic Unit (ALU)",
+            "Internal Management Bus",
+            "Instruction Register"
+        ],
+        "correctAnswer": "Arithmetic Logic Unit (ALU)",
+        "explanation": "The ALU handles the math operations (like addition and subtraction) and logical tests (like checking if one value is greater than another) for the processor."
+    },
+    {
+        "question": "What classification applies to low-level control code permanently stored on non-volatile ROM or EEPROM chips to handle hardware initialization?",
+        "options": [
+            "Shareware Interface",
+            "Firmware",
+            "Application Toolkit",
+            "Heuristic Definition Database"
+        ],
+        "correctAnswer": "Firmware",
+        "explanation": "Firmware is a specific class of background software written directly into hardware chips (like ROM or flash memory) to provide stable, low-level control for components."
+    },
+    {
+        "question": "Which transaction processing method pools grouped records into batch files to execute sequentially during scheduled off-peak window intervals?",
+        "options": [
+            "Interactive Online Entry",
+            "Batch Processing",
+            "Real-Time Automation Loops",
+            "Asynchronous Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar data transactions into a single batch file to run sequentially without needing manual human intervention during execution."
+    },
+    {
+        "question": "Which scale of semiconductor chip manufacturing enabled fifth-generation research to pack millions of active components onto a single microprocessor chip?",
+        "options": [
+            "Small Scale Integration (SSI)",
+            "Medium Scale Integration (MSI)",
+            "Large Scale Integration (LSI)",
+            "Ultra Large Scale Integration (ULSI)"
+        ],
+        "correctAnswer": "Ultra Large Scale Integration (ULSI)",
+        "explanation": "Fifth-generation computing advancements rely on ULSI technology, which packs millions of micro-transistors onto a single chip to enable parallel processing architectures."
+    },
+    {
+        "question": "Which core expansion hardware component provides the physical interface port on a computer case to attach local area network cables?",
+        "options": [
+            "Graphics Processing Bracket",
+            "Network Interface Card (NIC)",
+            "System Bus Bridging Bridge",
+            "CMOS Clock Power Terminal"
+        ],
+        "correctAnswer": "Network Interface Card (NIC)",
+        "explanation": "A Network Interface Card (NIC) provides the built-in hardware port and electronic circuitry a computer needs to connect to a network cable or wireless signal."
+    },
+    {
+        "question": "What class of application code error occurs when a developer violates the grammatical formatting layout rules of that programming language?",
+        "options": [
+            "Syntax Error",
+            "Logical Defect",
+            "Runtime Exception",
+            "Linker Resolution Fault"
+        ],
+        "correctAnswer": "Syntax Error",
+        "explanation": "Syntax errors are grammar mistakes in a programming language. If a command is typed incorrectly, the compiler cannot understand it and will fail to build the program."
+    },
+    {
+        "question": "In corporate finance networks, what automated framework allows secure cash asset distributions to move electronically between separate commercial banking portals?",
+        "options": [
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Manufacturing (CAM)",
+            "Point of Sale Validation (POS)",
+            "Optical Mark Recognition (OMR)"
+        ],
+        "correctAnswer": "Electronic Funds Transfer (EFT)",
+        "explanation": "EFT systems move money electronically across secure banking networks, eliminating the need for paper cash or physical checks."
+    },
+    {
+        "question": "What specific feature helps a polymorphic virus evade traditional static signature-based antivirus scanners?",
+        "options": [
+            "It targets and melts down physical silicon transistors on the motherboard.",
+            "It modifies its underlying decryption routine and signature pattern with each replication.",
+            "It spreads across local networks without using any software protocol layers.",
+            "It remains completely immune to deep storage formatting procedures."
+        ],
+        "correctAnswer": "It modifies its underlying decryption routine and signature pattern with each replication.",
+        "explanation": "Polymorphic viruses dynamically modify their code signatures every time they replicate, creating a changing target that simple signature-based scanners struggle to recognize."
+    },
+    {
+        "question": "Which network transmission path uses glass inner cores to send data packets over long distances via light amplification pulses?",
+        "options": [
+            "Shielded Coaxial Line",
+            "Twisted Pair Copper Link",
+            "Fiber-Optic Cable",
+            "Microwave Line of Sight Link"
+        ],
+        "correctAnswer": "Fiber-Optic Cable",
+        "explanation": "Fiber-optic cables carry data packets as pulses of light down glass fibers, providing massive bandwidth and long transmission distances without picking up electrical interference."
+    },
+    {
+        "question": "What category of ultra-fast storage memory is constructed from Static RAM (SRAM) and sits directly next to the CPU core to reduce main memory latency?",
+        "options": [
+            "Virtual Page Swapping File",
+            "Cache Memory",
+            "Secondary Solid-State Drive",
+            "CMOS Clock Partition Space"
+        ],
+        "correctAnswer": "Cache Memory",
+        "explanation": "Cache memory uses high-speed Static RAM (SRAM) chips located close to the processor core, giving the CPU quick access to recent instructions and reducing wait times."
+    },
+    {
+        "question": "Which data validation technique involves typing the same dataset twice using separate data input operators to catch clerical transcription discrepancies?",
+        "options": [
+            "Numerical Range Verification",
+            "Double Data Entry / Verification",
+            "Check Digit Evaluation",
+            "Heuristic Pattern Matching"
+        ],
+        "correctAnswer": "Double Data Entry / Verification",
+        "explanation": "Double data entry verification has two operators type the same source info separately. The system highlights any discrepancies to catch and fix human data entry mistakes."
+    },
+    {
+        "question": "What distributed processing trend links separate computing nodes across distinct global coordinates to pool resource capacities for major scientific challenges?",
+        "options": [
+            "Grid Computing",
+            "Offline Batch Clusters",
+            "Local Drive Partitioning Layouts",
+            "Analog System Processing Models"
+        ],
+        "correctAnswer": "Grid Computing",
+        "explanation": "Grid computing links separate computers over a network so they can pool their processing power and storage to tackle massive computing challenges, like weather forecasting or molecular modeling."
+    },
+    {
+        "question": "Which network topology model runs all network nodes in a continuous point-to-point sequence loop, passing data frames in a single direction around the circle?",
+        "options": [
+            "Bus Backbone Setup",
+            "Ring Topology",
+            "Star Hub Network",
+            "Mesh Interconnected Grid"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "Ring topology connects network devices in a closed loop. Data packets move from node to node in one direction around the ring until they find the destination address."
+    },
+    {
+        "question": "What category applies to proprietary software that is distributed completely free of charge, but whose source code is kept secret by the developer?",
+        "options": [
+            "Shareware Trial",
+            "Freeware",
+            "Open-Source Framework",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware is free to download and use without cost, but unlike open-source software, the developer keeps the source code private and maintains all proprietary copyrights."
+    },
+    {
+        "question": "What is the primary role of the BIOS startup sequence on a computer?",
+        "options": [
+            "Run automated file compression options to clear drive space.",
+            "Run the Power-On Self-Test (POST) to initialize hardware components and hand over control to the operating system.",
+            "Connect the browser directly to internet search gateways.",
+            "Scan active folder structures for hidden macro virus files."
+        ],
+        "correctAnswer": "Run the Power-On Self-Test (POST) to initialize hardware components and hand over control to the operating system.",
+        "explanation": "The BIOS handles the critical startup chores. It tests hardware circuits during POST, loads essential drivers, and looks for the boot drive to launch the operating system."
+    },
+    {
+        "question": "Which device serves as an exclusively input component for a computer system?",
+        "options": [
+            "Visual Monitor Screen",
+            "Laser Document Printer",
+            "Flatbed Document Scanner",
+            "Audio Speaker Box"
+        ],
+        "correctAnswer": "Flatbed Document Scanner",
+        "explanation": "Scanners are dedicated input devices. They scan physical images or documents and convert them into digital image data files for the computer to use."
+    },
+    {
+        "question": "What type of computer software application lets users build documents using advanced typesetting styles, perfect for formatting books and newsletter pamphlets?",
+        "options": [
+            "Desktop Publishing (DTP) Software",
+            "Basic Terminal Code Screen",
+            "Electronic Ledger Sheets",
+            "System Optimization Utility"
+        ],
+        "correctAnswer": "Desktop Publishing (DTP) Software",
+        "explanation": "DTP software provides the layout controls and precision text options needed to design and print complex publications like magazines, newspapers, and books."
+    },
+    {
+        "question": "Which computer security threat hides its malicious intent inside an innocent-looking program file, but cannot copy or replicate itself on its own?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Virus Payload",
+            "Boot Record Hijacker"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "What component within the CPU acts as a high-speed temporary scratchpad, holding data values or state flags for immediate processing?",
+        "options": [
+            "The Memory Cache Module",
+            "A Register",
+            "The System Bus Controller",
+            "A Secondary Partition Block"
+        ],
+        "correctAnswer": "A Register",
+        "explanation": "Registers are tiny, ultra-fast storage slots built directly into the CPU core to hold the immediate values, logic flags, and instruction addresses the processor needs right now."
+    },
+    {
+        "question": "Which network topology model features direct cable connections between every single device on the network, providing excellent path redundancy?",
+        "options": [
+            "Star Topology",
+            "Bus Backbone Setup",
+            "Mesh Topology",
+            "Ring Loop Network"
+        ],
+        "correctAnswer": "Mesh Topology",
+        "explanation": "Mesh topology links every device directly to every other device. This setup offers incredible reliability, as data can always find a backup route if one cable breaks."
+    },
+    {
+        "question": "What first-generation computing platform component acted as the primary electronic logic switch, generating massive heat and burning out frequently?",
+        "options": [
+            "Silicon Transistor Triode",
+            "Vacuum Tube",
+            "Integrated Silicon Wafer",
+            "Magnetic Core Ring"
+        ],
+        "correctAnswer": "Vacuum Tube",
+        "explanation": "First-generation computers relied on vacuum tubes for circuitry. These large glass components generated intense heat, consumed lots of electricity, and broke down frequently."
+    },
+    {
+        "question": "In the computing world, what does the abbreviation 'CAD' stand for within industrial design environments?",
+        "options": [
+            "Computer-Aided Design",
+            "Central Algorithm Distribution",
+            "Computational Analysis of Data",
+            "Computerized Assembly Documentation"
+        ],
+        "correctAnswer": "Computer-Aided Design",
+        "explanation": "CAD stands for Computer-Aided Design. It refers to software engineering tools used to draft and simulate precise 2D or 3D technical product models."
+    },
+    {
+        "question": "What type of computer virus infects data files generated by productivity suites by embedding malicious logic inside automated script shortcuts?",
+        "options": [
+            "File Infector",
+            "Macro Virus",
+            "Boot Sector Hijacker",
+            "Polymorphic Segment"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written in the macro automation languages built into office applications like Microsoft Word or Excel, spreading when users share infected document templates."
+    },
+    {
+        "question": "Which transmission medium type uses insulated copper wires twisted around each other in pairs to reduce cross-talk interference?",
+        "options": [
+            "Coaxial Cable Shield",
+            "Twisted-Pair Cable",
+            "Fiber glass strand line",
+            "Microwave Line Link"
+        ],
+        "correctAnswer": "Twisted-Pair Cable",
+        "explanation": "Twisted-pair cabling twists wire pairs together to reduce electromagnetic interference and signal cross-talk, making it a staple for ethernet networks (like UTP cables)."
+    },
+    {
+        "question": "What software translation tool takes code written in assembly language mnemonics and converts it into binary machine language?",
+        "options": [
+            "A Compiler",
+            "An Assembler",
+            "An Interpreter",
+            "A Linker Loader"
+        ],
+        "correctAnswer": "An Assembler",
+        "explanation": "An assembler is a specific translation tool that takes assembly language code (mnemonic commands) and converts it directly into binary machine code that the CPU can execute."
+    },
+    {
+        "question": "Which device serves as both a computer input and output component at the same time?",
+        "options": [
+            "Standard QWERTY Keyboard",
+            "Flatbed Optical Scanner",
+            "Touchscreen Display Panel",
+            "Laser Document Printer"
+        ],
+        "correctAnswer": "Touchscreen Display Panel",
+        "explanation": "Touchscreens work double duty: they serve as an input device by reading your finger taps, and an output device by showing the computer's visual interface on the screen."
+    },
+    {
+        "question": "What form of system software acts as the direct platform layer, managing hardware resources and providing the interface environment for user applications?",
+        "options": [
+            "Database Manager System",
+            "Operating System (OS)",
+            "Word Processing Application",
+            "File Zipper Program"
+        ],
+        "correctAnswer": "Operating System (OS)",
+        "explanation": "The operating system is the core software platform. It manages memory allocation, schedules CPU tasks, handles storage, and provides the user interface that applications run on."
+    },
+    {
+        "question": "Which network classification covers a personal wireless network workspace centered around an individual, typically spanning less than 10 meters?",
+        "options": [
+            "LAN (Local Area Network)",
+            "PAN (Personal Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)"
+        ],
+        "correctAnswer": "PAN (Personal Area Network)",
+        "explanation": "A Personal Area Network (PAN) handles short-range connections around a single person, like pairing your phone with wireless headphones or smartwatches over Bluetooth."
+    },
+    {
+        "question": "What type of processing space schedules multiple tasks to share execution windows on a single central processor unit sequentially?",
+        "options": [
+            "Multiprocessing Mode",
+            "Multitasking / Time-Slicing",
+            "Linear Batch Spooling",
+            "Offline Media Buffering"
+        ],
+        "correctAnswer": "Multitasking / Time-Slicing",
+        "explanation": "Multitasking lets an operating system run several programs concurrently on one CPU by quickly swapping processing slices among them, giving the user a smooth, seamless experience."
+    },
+    {
+        "question": "The computer data entry concept known as 'Verification' is used to determine if:",
+        "options": [
+            "A file size can be compressed down further.",
+            "The input data was copied accurately from the original source document without transcription errors.",
+            "The text matches known virus signature profiles.",
+            "The data fits numerical validation parameters."
+        ],
+        "correctAnswer": "The input data was copied accurately from the original source document without transcription errors.",
+        "explanation": "Verification double-checks that data was transcribed correctly during entry (often by having two people type the same data or proofreading entries against the original paperwork)."
+    },
+    {
+        "question": "Which secondary storage device holds data permanently using magnetized tracks on a series of rapidly spinning internal metal platters?",
+        "options": [
+            "Solid-State Drive (SSD)",
+            "Hard Disk Drive (HDD)",
+            "Compact Disc (CD-ROM)",
+            "Flash Memory Card"
+        ],
+        "correctAnswer": "Hard Disk Drive (HDD)",
+        "explanation": "Traditional Hard Disk Drives (HDDs) use mechanical read/write heads to access data magnetically stored on rapidly spinning circular platters."
+    },
+    {
+        "question": "What type of software package is distributed with a free trial license, but blocks advanced tools until the user pays for a registration code?",
+        "options": [
+            "Freeware Utility",
+            "Shareware",
+            "Open-Source Framework",
+            "Public Domain Module"
+        ],
+        "correctAnswer": "Shareware",
+        "explanation": "Shareware provides a free trial version of software to let users test it out, but typically restricts full features or displays nag screens until a license is purchased."
+    },
+    {
+        "question": "Which component inside the CPU coordinates data traffic and timing loops across the computer system?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Control Unit (CU)",
+            "Solid State Cache block",
+            "Memory Address Register"
+        ],
+        "correctAnswer": "Control Unit (CU)",
+        "explanation": "The Control Unit acts as the brain's supervisor. It retrieves instructions from memory, decodes them into signals, and directs other parts of the CPU and hardware to execute them."
+    },
+    {
+        "question": "What network scale class covers a massive geographic grid, connecting networks across states, oceans, or continents?",
+        "options": [
+            "LAN (Local Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)",
+            "PAN (Personal Area Network)"
+        ],
+        "correctAnswer": "WAN (Wide Area Network)",
+        "explanation": "A Wide Area Network (WAN) connects computers and smaller networks across large distances. The internet is the largest and most well-known example of a global WAN."
+    },
+    {
+        "question": "Which data communication transmission medium uses a central copper conductor wire wrapped in insulation and a braided metal shield to block interference?",
+        "options": [
+            "Coaxial Cable",
+            "Unshielded Twisted Pair (UTP)",
+            "Fiber glass light strand",
+            "Microwave Link Track"
+        ],
+        "correctAnswer": "Coaxial Cable",
+        "explanation": "Coaxial cables use a solid core copper wire wrapped in insulation and a braided metal shield, making them a common choice for cable TV and older thick ethernet setups."
+    },
+    {
+        "question": "What type of computer printer works by firing tiny pins against an inked fabric ribbon to strike characters onto paper, making it loud but great for multi-part carbon forms?",
+        "options": [
+            "Laser Jet Printer",
+            "Inkjet Sprayer Unit",
+            "Dot-Matrix Printer",
+            "Thermal Heat Element"
+        ],
+        "correctAnswer": "Dot-Matrix Printer",
+        "explanation": "Dot-matrix printers use a print head with physical pins that strike an inked ribbon against paper. This impact design allows them to print through multi-layer carbon forms, though they are loud and low-resolution."
+    },
+    {
+        "question": "In computer software protection, what approach checks an unknown program's behavioral patterns and traits for threats rather than looking for an exact matching signature string?",
+        "options": [
+            "Static Definition Check",
+            "Heuristic Analysis",
+            "Disk Defragmenting scan",
+            "File Compression filter"
+        ],
+        "correctAnswer": "Heuristic Analysis",
+        "explanation": "Heuristic analysis evaluates a program's structure and behavior for suspicious traits, helping antivirus software catch new or modified malware that doesn't have an established signature profile yet."
+    },
+    {
+        "question": "What structural path acts as a multi-lane highway, allowing binary data blocks to pass between the CPU registers and main RAM memory spaces?",
+        "options": [
+            "Address Bus",
+            "Data Bus",
+            "Control Bus",
+            "Expansion Rail Line"
+        ],
+        "correctAnswer": "Data Bus",
+        "explanation": "The Data Bus is a bidirectional highway that carries actual data bits back and forth between the CPU, memory, and peripheral controllers."
+    },
+    {
+        "question": "Which early electro-mechanical computer was built by IBM in 1944 for Harvard University, running automated calculation tracks via instructions read from punched paper tape?",
+        "options": [
+            "ENIAC Mainframe",
+            "Harvard Mark I",
+            "UNIVAC I core",
+            "EDVAC System"
+        ],
+        "correctAnswer": "Harvard Mark I",
+        "explanation": "The Harvard Mark I was a massive electro-mechanical computer that used mechanical switches and relays to execute calculations automatically based on instructions from paper tapes."
+    },
+    {
+        "question": "In data communication, what is the set of standardized formatting rules that lets different computer hardware setups share data packets across a network safely?",
+        "options": [
+            "The Topology Map",
+            "A Protocol",
+            "The Transmission Medium",
+            "The Multiplexer Channel"
+        ],
+        "correctAnswer": "A Protocol",
+        "explanation": "Protocols are standardized rules that define how data is packed, addressed, transmitted, and decoded across networks, ensuring different systems can communicate."
+    },
+    {
+        "question": "What computing trend describes the design and build of eco-friendly, energy-efficient hardware along with green tech recycling solutions?",
+        "options": [
+            "Green Computing",
+            "Cloud Multi-leasing",
+            "Edge Mesh Systems",
+            "Holographic Integration"
+        ],
+        "correctAnswer": "Green Computing",
+        "explanation": "Green computing focuses on reducing the environmental impact of technology by building energy-efficient hardware, managing power smart, and recycling tech waste responsibly."
+    },
+    {
+        "question": "Which input device uses an optical sensor to track filled bubbles on print sheets, making it a staple for grading multiple-choice exams quickly?",
+        "options": [
+            "Magnetic Ink Scanner (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Wand Tool",
+            "Flatbed Matrix Board"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An Optical Mark Reader (OMR) senses physical marks on paper forms by measuring reflected light, making it a fast and reliable tool for grading multiple-choice tests."
+    },
+    {
+        "question": "What category of software is designed to let users draft document papers, format layouts, and write essays easily?",
+        "options": [
+            "System Software Layer",
+            "Application Software",
+            "Hardware Driver Utility",
+            "Database Table Package"
+        ],
+        "correctAnswer": "Application Software",
+        "explanation": "Application software includes programs built for end-users to accomplish specific tasks, such as web browsers, word processors, photo editors, and video games."
+    },
+    {
+        "question": "Which computer security threat copies itself across systems independently by looking for open network ports, without needing to attach to an existing host file?",
+        "options": [
+            "File Infector",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Script"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are self-contained, malicious programs. Unlike traditional viruses, they don't need a human to run a host file; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "What type of computer memory can be electronically wiped and rewritten in blocks, making it the perfect fit for modern solid-state drives and USB flash drives?",
+        "options": [
+            "Static RAM (SRAM)",
+            "Flash Memory (EEPROM)",
+            "Dynamic RAM (DRAM)",
+            "Mask ROM Chips"
+        ],
+        "correctAnswer": "Flash Memory (EEPROM)",
+        "explanation": "Flash memory is a non-volatile storage technology that can be electronically erased and rewritten, combining the durability of ROM with the flexibility of re-writable storage."
+    },
+    {
+        "question": "In the data processing flow, what step is responsible for gathering raw facts and entering them into the computing system?",
+        "options": [
+            "Data Processing",
+            "Data Input / Collection",
+            "Data Distribution",
+            "Data Archiving"
+        ],
+        "correctAnswer": "Data Input / Collection",
+        "explanation": "Data collection and input involve gathering raw facts from source documents and entering them into the computer system to begin the processing loop."
+    },
+    {
+        "question": "Which network topology model runs devices in a sequential loop where data token blocks pass through each computer one by one?",
+        "options": [
+            "Bus Backbone Setup",
+            "Ring Topology",
+            "Star Hub Network",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "Ring topology connects network devices in a closed loop. Data packets move from node to node in one direction around the ring until they find the destination address."
+    },
+    {
+        "question": "What software component translates an entire file of high-level source code into a standalone machine language binary block *before* execution runs?",
+        "options": [
+            "An Interpreter",
+            "A Compiler",
+            "An Assembler",
+            "A Defragmenter Tool"
+        ],
+        "correctAnswer": "A Compiler",
+        "explanation": "A compiler scans an entire project's source code at once, translating everything into a standalone executable binary file (.exe) prior to deployment or execution."
+    },
+    {
+        "question": "Which computing application area handles scanning product barcodes at a checkout counter to update store inventory balances instantly?",
+        "options": [
+            "Point of Sale (POS) System",
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Design (CAD)",
+            "Optical Mark Reader (OMR)"
+        ],
+        "correctAnswer": "Point of Sale (POS) System",
+        "explanation": "A Point of Sale (POS) system combines hardware barcode scanners and checkout software to instantly process sales transactions and update retail inventory databases in real time."
+    },
+    {
+        "question": "What type of computer virus targets and hitches a ride on standard executable application files like those ending in .exe or .com?",
+        "options": [
+            "Boot Sector Threat",
+            "File Infector Virus",
+            "Macro Script Package",
+            "Polymorphic Engine"
+        ],
+        "correctAnswer": "File Infector Virus",
+        "explanation": "File infector viruses attach themselves to executable programs. When a user runs the infected application, the virus activates alongside it to infect more files on the drive."
+    },
+    {
+        "question": "Which computing system type represents the largest, fastest tier available, designed specifically to calculate massive scientific problems like global climate models?",
+        "options": [
+            "Microcomputer Client",
+            "Supercomputer",
+            "Mainframe Console",
+            "Embedded Core"
+        ],
+        "correctAnswer": "Supercomputer",
+        "explanation": "Supercomputers are the fastest, most powerful systems available, built to handle massive numbers of complex mathematical calculations for scientific research and advanced engineering."
+    },
+    {
+        "question": "What data communication metric tracks the total round-trip travel delay time for a data packet moving from its source to its destination node?",
+        "options": [
+            "Bandwidth Capacity",
+            "Latency",
+            "Attenuation Drop",
+            "Modulation Rate"
+        ],
+        "correctAnswer": "Latency",
+        "explanation": "Latency measures network delay—the time it takes for a data packet to travel from the sender to the receiver and back again."
+    },
+    {
+        "question": "Which software utility scans an isolated computer network for open ports and system vulnerabilities that could be exploited by malicious actors?",
+        "options": [
+            "A Port Scanner / Vulnerability Scanner",
+            "A Disk Defragmenter",
+            "A File Compression Utility",
+            "A Device Driver Tool"
+        ],
+        "correctAnswer": "A Port Scanner / Vulnerability Scanner",
+        "explanation": "Vulnerability and port scanners check computers and networks for open communication paths or security gaps, helping administrators fix flaws before attackers can exploit them."
+    },
+    {
+        "question": "What category of computer system software includes device drivers, operating system kernels, and file system managers?",
+        "options": [
+            "Application Suites",
+            "System Software",
+            "Custom User Macros",
+            "Database Schema Scripts"
+        ],
+        "correctAnswer": "System Software",
+        "explanation": "System software includes the foundational programs—like the operating system, drivers, and utilities—that manage the computer's physical hardware so applications can run."
+    },
+    {
+        "question": "Which historical calculation device used a system of interlocking wheels and gears to automate addition and subtraction chores back in 1642?",
+        "options": [
+            "The Analytical Engine",
+            "The Pascaline",
+            "The Stepped Reckoner",
+            "The Hollerith Desk"
+        ],
+        "correctAnswer": "The Pascaline",
+        "explanation": "The Pascaline, invented by Blaise Pascal, was a milestone mechanical calculator that used a system of geared dials to perform addition and subtraction."
+    },
+    {
+        "question": "What data processing mode runs grouped transaction cards across a system during off-peak hours without any direct human interaction required?",
+        "options": [
+            "Real-Time Automation Loops",
+            "Batch Processing",
+            "Interactive Online Entry",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar data transactions into a single batch file to run sequentially without needing manual human intervention during execution."
+    },
+    {
+        "question": "Which type of transmission channel allows data signals to move in only one direction at a time, forcing devices to take turns communicating?",
+        "options": [
+            "Simplex Channel",
+            "Half-Duplex Channel",
+            "Full-Duplex Channel",
+            "Asynchronous Router"
+        ],
+        "correctAnswer": "Half-Duplex Channel",
+        "explanation": "Half-duplex channels (like standard walkie-talkies) let both sides talk and listen, but they must take turns—data cannot travel both ways at the same time."
+    },
+    {
+        "question": "What type of computer virus masquerades as a safe, legitimate utility program to trick users into installing it, but does not self-replicate?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Document Loop",
+            "Boot Record Infector"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "Which hardware architecture component holds both active program execution instructions and working data blocks in a single shared memory space?",
+        "options": [
+            "The Von Neumann Architecture",
+            "The Harvard Split Architecture",
+            "The Analog Matrix Loop",
+            "The Mechanical Relays Board"
+        ],
+        "correctAnswer": "The Von Neumann Architecture",
+        "explanation": "The Von Neumann architecture established the standard design of storing both program instructions and working data in the same unified main memory space."
+    },
+    {
+        "question": "What type of application software gives users a visual dashboard of windows, menus, and file icons managed by a mouse pointer pointer?",
+        "options": [
+            "Command-Line Prompt (CLI)",
+            "Graphical User Interface (GUI)",
+            "Assembly Language Linker",
+            "Network File System Directory"
+        ],
+        "correctAnswer": "Graphical User Interface (GUI)",
+        "explanation": "A GUI allows users to interact with computer systems through visual elements like icons and windows instead of typing text commands into a blank screen."
+    },
+    {
+        "question": "Which computing trend involves leasing elastic data store networks and virtual processor platforms over the internet via a utility pricing model?",
+        "options": [
+            "Cloud Computing",
+            "Local Defragmentation Sets",
+            "Analog System Modeling",
+            "Batch Mainframe Processing"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets individuals and businesses rent access to shared tech infrastructure—like storage and compute power—over the internet on a pay-as-you-go basis."
+    }
+
+];
+
+const STA111_Questions = [
+    {
+    "question": "Which of the following describes the fundamental science of collecting, organizing, presenting, analyzing, and interpreting numerical data?",
+    "options": ["Mathematics", "Statistics", "Calculus", "Econometrics"],
+    "correctAnswer": "Statistics",
+    "explanation": "According to the course note, statistics is defined precisely as the science of collecting, organizing, presenting, analyzing, and interpreting numerical data to make decisions."
+  },
+  {
+    "question": "Statistics is broadly divided into how many major branches according to the introductory section?",
+    "options": ["Two", "Three", "Four", "Five"],
+    "correctAnswer": "Two",
+    "explanation": "The text explicitly states that statistics are broadly divided into two types: descriptive statistics and inferential statistics."
+  },
+  {
+    "question": "Which branch of statistics focuses specifically on summarizing and describing the main, important features and patterns of an existing dataset?",
+    "options": ["Inferential Statistics", "Differential Statistics", "Descriptive Statistics", "Applied Probability"],
+    "correctAnswer": "Descriptive Statistics",
+    "explanation": "Descriptive statistics deals directly with summarizing and describing the patterns and important features of a dataset so trends can be easily understood."
+  },
+  {
+    "question": "What is the primary objective of Inferential Statistics?",
+    "options": ["To collect original raw data from the field via questionnaires", "To sort categorical variables in alphabetical order", "To make inferences, predictions, or generalizations about a population based on sample data", "To plot direct rectangular bars over true class intervals"],
+    "correctAnswer": "To make inferences, predictions, or generalizations about a population based on sample data",
+    "explanation": "Inferential statistics deals with making inferences, predictions, or generalizations about a wider population based on observations from a collected sample."
+  },
+  {
+    "question": "When a government continuously collects large volumes of data regarding expenditure patterns, revenue, health, and defense, which statistical purpose is it primarily addressing?",
+    "options": ["Market preference tracking", "Enhancing effective decision making", "Measuring single psychological behaviors", "Categorizing continuous ordinal ranks"],
+    "correctAnswer": "Enhancing effective decision making",
+    "explanation": "The note emphasizes that the government requires massive up-to-date data continuously to enhance effective decision making."
+  },
+  {
+    "question": "In the context of marketing, what is a primary application of statistical tools mentioned in the material?",
+    "options": ["Calculating true upper boundaries of mechanical ranges", "Market research for the determination of consumer preferences and price structures", "Eliminating resource optimization challenges completely", "Converting qualitative values into pure ratio attributes"],
+    "correctAnswer": "Market research for the determination of consumer preferences and price structures",
+    "explanation": "Statistics is used in marketing research to discover consumer preferences, product quality requirements, price structures, and demand locations."
+  },
+  {
+    "question": "How is statistics applied within the discipline of Economics?",
+    "options": ["To change the qualitative attributes of historical events", "To make informed economic planning and optimal choices with limited resources", "To eliminate the need for sample surveys entirely", "To force all continuous indicators to remain perfectly static"],
+    "correctAnswer": "To make informed economic planning and optimal choices with limited resources",
+    "explanation": "Economics uses statistics for making informed economic planning decisions and optimal choices among competing needs with limited resources."
+  },
+  {
+    "question": "According to the course note, how does statistics contribute to understanding human interactions and behavior?",
+    "options": ["By generating subjective non-numerical opinions that cannot be tracked", "By providing factual information to measure attitudes, satisfaction, performance, and identify patterns that improve teamwork", "By ensuring that human behavior never shifts over continuous time intervals", "By converting all emotional responses into simple bar heights"],
+    "correctAnswer": "By providing factual information to measure attitudes, satisfaction, performance, and identify patterns that improve teamwork",
+    "explanation": "Statistics helps measure attitudes, satisfaction, and performance, providing factual evidence that helps identify patterns to improve teamwork and communication."
+  },
+  {
+    "question": "What does the term 'Statistical Data' specifically refer to?",
+    "options": ["Only equations containing unknown geometric symbols", "Numerical or qualitative information that is collected, organized, and analyzed to represent facts or observations", "The physical tools used to sketch rectangular figures on graph paper", "The historical background of early statisticians"],
+    "correctAnswer": "Numerical or qualitative information that is collected, organized, and analyzed to represent facts or observations",
+    "explanation": "Statistical data refers to numerical or qualitative information gathered, organized, and analyzed for statistical investigation."
+  },
+  {
+    "question": "What are the two sub-classifications of data when sorted strictly by its 'source'?",
+    "options": ["Quantitative and Qualitative data", "Nominal and Ordinal data", "Primary and Secondary data", "Interval and Ratio data"],
+    "correctAnswer": "Primary and Secondary data",
+    "explanation": "Data classification by source is explicitly split into two categories: Primary data and Secondary data."
+  },
+  {
+    "question": "Data collected directly from the original source by an investigator via tools like interviews, questionnaires, or experiments is called what?",
+    "options": ["Secondary data", "Primary data", "Nominal data", "Continuous interval data"],
+    "correctAnswer": "Primary data",
+    "explanation": "Primary data is defined as data collected directly from the original source by the investigator."
+  },
+  {
+    "question": "Which of the following is listed as an advantage of Primary Data?",
+    "options": ["It is exceptionally cheap to collect compared to published data", "The investigator has high confidence and reliability in the collected data", "It requires absolutely no time consumption or fieldwork plan", "It can be pulled effortlessly from old textbooks or television segments"],
+    "correctAnswer": "The investigator has high confidence and reliability in the collected data",
+    "explanation": "An advantage of primary data is that the investigator has full confidence in its integrity and alignment with the specific study objective."
+  },
+  {
+    "question": "What are the two major disadvantages of Primary Data mentioned in the note?",
+    "options": ["It lacks descriptive capabilities and cannot be categorized", "It is time-consuming and expensive to collect", "It is usually published before analysis and suffers from low confidentiality", "It cannot be measured or plotted on standard simple bar graphs"],
+    "correctAnswer": "It is time-consuming and expensive to collect",
+    "explanation": "The text lists being time-consuming and expensive as the main disadvantages of obtaining primary data."
+  },
+  {
+    "question": "What is Secondary Data?",
+    "options": ["Data that is collected directly through first-hand clinical laboratory experiments", "Data already collected and documented for some purpose by an individual or group and reused by another", "Data that has zero numerical value and cannot be sorted alphabetically", "Data obtained solely via original blank questionnaires distributed in real-time"],
+    "correctAnswer": "Data already collected and documented for some purpose by an individual or group and reused by another",
+    "explanation": "Secondary data is data that has already been collected, organized, and documented by somebody else prior to the current user's research."
+  },
+  {
+    "question": "Which of the following is considered a primary benefit of choosing Secondary Data over Primary Data?",
+    "options": ["It guarantees the investigator designed the initial structural phase perfectly", "It is cheap to collect and far less time-consuming", "It is always more reliable than direct first-hand experiments", "It removes the need to compute relative frequencies or class limits"],
+    "correctAnswer": "It is cheap to collect and far less time-consuming",
+    "explanation": "Secondary data has the benefit of being cheap and significantly less time-consuming since the fieldwork has already been executed."
+  },
+  {
+    "question": "Websites, published textbooks, and television reports serve as classic examples of which data category?",
+    "options": ["Primary data", "Secondary data", "Ratio metrics", "True class boundaries"],
+    "correctAnswer": "Secondary data",
+    "explanation": "Examples like websites, television, and existing registries fall under secondary sources of data."
+  },
+  {
+    "question": "When data is classified by its fundamental 'nature', what are the two main types?",
+    "options": ["Primary and Secondary data", "Qualitative and Quantitative data", "Nominal and Ordinal data", "Internal and External data"],
+    "correctAnswer": "Qualitative and Quantitative data",
+    "explanation": "By nature, data is classified as either Qualitative (categorical) or Quantitative (numerical)."
+  },
+  {
+    "question": "Qualitative data is alternatively referred to as what type of data?",
+    "options": ["Numerical data", "Categorical data", "Ratio data", "Continuous interval data"],
+    "correctAnswer": "Categorical data",
+    "explanation": "The material notes that qualitative data can also be called categorical data."
+  },
+  {
+    "question": "Which of the following metrics represents a valid example of Qualitative Data?",
+    "options": ["Height of students in meters", "Marital status, gender, and course of study", "Weight of objects in kilograms", "Age of participants in years"],
+    "correctAnswer": "Marital status, gender, and course of study",
+    "explanation": "Gender, religion, color, marital status, tribe, and course of study describe non-numerical attributes, making them qualitative/categorical data."
+  },
+  {
+    "question": "What defines Quantitative Data?",
+    "options": ["Data that represents pure names without any mathematical relationship or rank", "Data that can be measured and expressed explicitly in numbers", "Data that cannot be broken down into discrete frequencies", "Data collected exclusively from television segments or third-party web portals"],
+    "correctAnswer": "Data that can be measured and expressed explicitly in numbers",
+    "explanation": "Quantitative data (or numerical data) consists of observations that can be explicitly measured and stated numerically, such as height, weight, and age."
+  },
+  {
+    "question": "How many distinct levels are contained within the 'Scale of Measurement' classification mentioned in the text?",
+    "options": ["Two", "Three", "Four", "Five"],
+    "correctAnswer": "Four",
+    "explanation": "The note lists four distinct scales of measurement: Nominal, Ordinal, Interval, and Ratio."
+  },
+  {
+    "question": "Which measurement scale is used purely for labeling categorical variables without assigning any quantitative value or natural mathematical order?",
+    "options": ["Ordinal scale", "Interval scale", "Ratio scale", "Nominal scale"],
+    "correctAnswer": "Nominal scale",
+    "explanation": "Nominal data is used for labeling categorical variables without any quantitative value or inherent hierarchical order."
+  },
+  {
+    "question": "What is a defining characteristic of Nominal Scale categories?",
+    "options": ["They must have a specific measurable distance between points", "They represent names, labels, and mutually exclusive observations", "They always possess an absolute mathematical zero value", "They rank performance from highest to lowest automatically"],
+    "correctAnswer": "They represent names, labels, and mutually exclusive observations",
+    "explanation": "Nominal scale data represents names, labels, or mutually exclusive categories where an observation can belong to only one slot."
+  },
+  {
+    "question": "What makes the Ordinal Scale fundamentally different from the Nominal Scale?",
+    "options": ["It possesses an absolute zero point that signifies complete absence", "It contains a natural order or ranking among its categories", "It uses adjacent rectangles with proportional frequency surface areas", "It is only applicable to continuous machine-generated data sets"],
+    "correctAnswer": "It contains a natural order or ranking among its categories",
+    "explanation": "Ordinal data is categorical data that has a clear natural order or ranking among its levels, unlike nominal data."
+  },
+  {
+    "question": "Why can we not perform precise mathematical additions directly on the differences between ranks in an Ordinal scale?",
+    "options": ["Because ordinal scales have no categories at all", "Because the exact mathematical difference between the ranks is not measurable or equal", "Because it is classified under primary source parameters", "Because it requires conversion into a pie chart angle first"],
+    "correctAnswer": "Because the exact mathematical difference between the ranks is not measurable or equal",
+    "explanation": "In an ordinal scale, while a ranking exists, the true mathematical distance or difference between consecutive ranks is not quantifiable."
+  },
+  {
+    "question": "Which of the following examples fits perfectly onto an Ordinal Scale?",
+    "options": ["Tribe and marital status", "Level of education (Primary, Secondary, Tertiary)", "Exact weight measurements in grams", "The total count of individual students in an art department"],
+    "correctAnswer": "Level of education (Primary, Secondary, Tertiary)",
+    "explanation": "Educational level (Primary, Secondary, Tertiary) displays a progressive natural hierarchy, making it classic ordinal data."
+  },
+  {
+    "question": "What is a statistical 'Table'?",
+    "options": ["A circular display split into proportional sectors based on degrees", "A systematic arrangement of data organized neatly in rows and columns", "A series of adjacent rectangular blocks drawn over true class boundaries", "A set of lines connecting midpoints together at precise heights"],
+    "correctAnswer": "A systematic arrangement of data organized neatly in rows and columns",
+    "explanation": "The course note explicitly defines a table as a systematic arrangement of data in rows and columns used to present information clearly."
+  },
+  {
+    "question": "What is the primary design purpose of a statistical Chart?",
+    "options": ["To hide trends from competitors", "To make data information immediately digestible and interpretable visually", "To eliminate the need for any raw numeric measurements", "To convert secondary inputs back into primary observations"],
+    "correctAnswer": "To make data information immediately digestible and interpretable visually",
+    "explanation": "A chart is defined as a visual layout designed specifically to present data patterns clearly and make information quickly interpretable."
+  },
+  {
+    "question": "Which representation specifically maps out the direct mathematical relationship between variables visually?",
+    "options": ["A questionnaire blueprint", "A graph", "A summary table index", "An ordinal scale tier"],
+    "correctAnswer": "A graph",
+    "explanation": "The text defines a graph as a visual representation showing the explicit relationship between variable data coordinates."
+  },
+  {
+    "question": "Which of the following is NOT one of the explicit chart/diagram types listed on page 5 of the text?",
+    "options": ["Pie Chart", "Histogram", "Scatter Plot Matrix", "Bar Chart"],
+    "correctAnswer": "Scatter Plot Matrix",
+    "explanation": "Page 5 explicitly lists four types: Pie Chart, Histogram, Bar Chart, and Pictogram. 'Scatter Plot Matrix' is not in that list."
+  },
+  {
+    "question": "What visual element does a Bar Chart use to represent data categories?",
+    "options": ["Sectors within a 360-degree circular framework", "Parallel, rectangular bars where height or length corresponds directly to frequency value", "Single continuous wavy lines linking sample boundaries together", "Varying shades of colors within a static row framework"],
+    "correctAnswer": "Parallel, rectangular bars where height or length corresponds directly to frequency value",
+    "explanation": "A bar chart utilizes rectangular parallel bars where the height or length corresponds directly to the frequency or value of each category."
+  },
+  {
+    "question": "What are the three explicit classifications of Bar Charts outlined in the note?",
+    "options": ["Nominal, Ordinal, and Interval bar charts", "Simple, Multiple, and Component bar charts", "Primary, Secondary, and Tertiary bar charts", "Discrete, Continuous, and Absolute bar charts"],
+    "correctAnswer": "Simple, Multiple, and Component bar charts",
+    "explanation": "The note lists the types of bar charts as: 1. Simple bar chart, 2. Multiple bar chart, and 3. Component bar chart."
+  },
+  {
+    "question": "A Simple Bar Chart is designed to display what?",
+    "options": ["More than three complex overlapping variables at once", "One variable across different distinct categories", "The running total of cumulative frequency distributions", "The exact midpoint coordinates of continuous true boundaries"],
+    "correctAnswer": "One variable across different distinct categories",
+    "explanation": "A simple bar chart shows a single variable plotted cleanly across separate categories."
+  },
+  {
+    "question": "In the simple bar chart example regarding college student populations, which category possessed the highest frequency value?",
+    "options": ["Arts (850)", "Education (1000)", "Management (1800)", "Law (200)"],
+    "correctAnswer": "Management (1800)",
+    "explanation": "Based on the table on page 5, the student counts are: Art=850, Education=1000, Law=200, Management=1800. Management is the highest."
+  },
+  {
+    "question": "In that same college population dataset, which category registered the lowest overall frequency?",
+    "options": ["Science", "Social Science", "Law", "Arts"],
+    "correctAnswer": "Law",
+    "explanation": "The dataset contains a frequency of just 200 students for Law, which is the minimum value among all groups."
+  },
+  {
+    "question": "What is the primary function of a Multiple Bar Chart?",
+    "options": ["To segment a single bar into proportional internal fractions", "To enable the comparison of more than one variable side-by-side", "To calculate the total sum of angles within a circular framework", "To automatically turn primary variables into published records"],
+    "correctAnswer": "To enable the comparison of more than one variable side-by-side",
+    "explanation": "Multiple bar charts are defined as charts that enable the comparison of more than one variable across groups."
+  },
+  {
+    "question": "In the multiple bar chart example tracking weekly expenditures, which category had a value of 10,000 in the 2nd week?",
+    "options": ["Food", "House rent", "Fuel", "Travel"],
+    "correctAnswer": "House rent",
+    "explanation": "Looking at the 2nd-week dataset on page 6, House Rent is explicitly listed with an expenditure value of 10,000."
+  },
+  {
+    "question": "According to the weekly expenditure table, what was the exact amount spent on 'Health' during the 3rd week?",
+    "options": ["400", "1,500", "5,000", "1,200"],
+    "correctAnswer": "5,000",
+    "explanation": "The data table on page 6 lists the expenditure for 'Health' in the 3rd week as 5,000."
+  },
+  {
+    "question": "What is listed as a key advantage of utilizing Bar Charts?",
+    "options": ["They never look clustered regardless of the category volume", "They show relationships and trends clearly, and are suitable for discrete/categorical data", "They automatically compute continuous upper class limits", "They are strictly limited to a maximum of three items total"],
+    "correctAnswer": "They show relationships and trends clearly, and are suitable for discrete/categorical data",
+    "explanation": "The note lists showing relationships and trends clearly, along with suitability for both discrete and categorical data, as key advantages of bar charts."
+  },
+  {
+    "question": "What is a prominent disadvantage of a Multiple Bar Chart?",
+    "options": ["It cannot represent qualitative variables under any circumstances", "It can look highly clustered if there are too many variables and categories present", "It does not use rectangular bars to display raw facts", "It completely eliminates the true differences between ordinal ranks"],
+    "correctAnswer": "It can look highly clustered if there are too many variables and categories present",
+    "explanation": "A cited disadvantage of bar charts is that they can look cluttered if too many variables or categories are jammed into one graph."
+  },
+  {
+    "question": "Component Bar Charts are alternatively known by what common name?",
+    "options": ["Subdivided bar charts", "Frequency polygons", "Ogive distributions", "Pictogram blocks"],
+    "correctAnswer": "Subdivided bar charts",
+    "explanation": "The note states explicitly: 'Component bar charts: It is also known as a type of subdivided bar chart.'"
+  },
+  {
+    "question": "How is data structurally arranged within a Component Bar Chart?",
+    "options": ["Bars are placed in separate circular sectors across a 180-degree field", "Each bar is divided into distinct segments, with each segment representing a component making up the whole", "Data points are connected strictly via midpoints using a fine ink line", "Bars are drawn horizontally and must never touch the vertical axis"],
+    "correctAnswer": "Each bar is divided into distinct segments, with each segment representing a component making up the whole",
+    "explanation": "In a component (subdivided) bar chart, each single categorical bar is segmented into pieces to demonstrate how components build up the total value."
+  },
+  {
+    "question": "What is a Pie Chart?",
+    "options": ["A systematic layout made of rows and columns exclusively", "A circular chart divided into sectors whose areas and angles are proportional to the sizes of the items they represent", "A continuous frequency curve tracking accumulated lower boundaries", "A visual display that replaces all numerical data with geometric squares"],
+    "correctAnswer": "A circular chart divided into sectors whose areas and angles are proportional to the sizes of the items they represent",
+    "explanation": "A pie chart is a circular method where the area of a circle is divided into sectors proportional to the respective sizes of the values."
+  },
+  {
+    "question": "What is the standard formula used to compute a single Sector Angle in a Pie Chart?",
+    "options": ["(Item Value / 360) * Total Sum of values", "(Item Value / Total Sum of all item values) * 360", "(Total Sum of values / Item Value) * 100", "(Frequency * Class Interval) / 360"],
+    "correctAnswer": "(Item Value / Total Sum of all item values) * 360",
+    "explanation": "The exact mathematical formula given in the note is: Sector Angle = (Item Value / Total Sum of all item values) * 360 degrees."
+  },
+  {
+    "question": "To ensure absolute accuracy when constructing a pie chart, what must the sum of all calculated sector angles equal?",
+    "options": ["100 degrees", "180 degrees", "270 degrees", "360 degrees"],
+    "correctAnswer": "360 degrees",
+    "explanation": "Since a full circle forms a complete rotation, the sum of all individual item sector angles must equal 360 degrees."
+  },
+  {
+    "question": "In the sample problem on page 9, what was the computed total student population (N) across all colleges?",
+    "options": ["3,500 students", "4,800 students", "5,500 students", "6,200 students"],
+    "correctAnswer": "5,500 students",
+    "explanation": "Summing the items: 850 + 1000 + 200 + 1800 + 700 + 950 gives a total population value of 5,500 students."
+  },
+  {
+    "question": "Using the college population dataset, what is the correct sector angle for the 'Arts' department (850 students out of 5,500)?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "117.8 degrees"],
+    "correctAnswer": "55.6 degrees",
+    "explanation": "Applying the formula: (850 / 5500) * 360 = 55.63 degrees, which matches the 55.6 degrees listed on page 10."
+  },
+  {
+    "question": "What is the exact sector angle derived for the 'Education' department, which has a student frequency of 1,000?",
+    "options": ["13.1 degrees", "45.8 degrees", "65.5 degrees", "62.2 degrees"],
+    "correctAnswer": "65.5 degrees",
+    "explanation": "Calculation: (1000 / 5500) * 360 = 65.45 degrees, recorded in the notebook text as 65.5 degrees."
+  },
+  {
+    "question": "Which department yields a calculated pie chart sector angle of exactly 13.1 degrees?",
+    "options": ["Law", "Science", "Social Science", "Arts"],
+    "correctAnswer": "Law",
+    "explanation": "The Law department has 200 students. (200 / 5500) * 360 = 13.09 degrees, rounded to 13.1 degrees."
+  },
+  {
+    "question": "The 'Management' department has 1,800 students. What is its corresponding angle on the pie chart?",
+    "options": ["55.6 degrees", "117.8 degrees", "62.2 degrees", "45.8 degrees"],
+    "correctAnswer": "117.8 degrees",
+    "explanation": "Calculation: (1800 / 5500) * 360 = 117.81 degrees, which matches the 117.8 degrees calculated in the text."
+  },
+  {
+    "question": "What is the sector angle calculated for the 'Sciences' department, which has 700 students?",
+    "options": ["45.8 degrees", "62.2 degrees", "13.1 degrees", "55.6 degrees"],
+    "correctAnswer": "45.8 degrees",
+    "explanation": "Applying the formula: (700 / 5500) * 360 = 45.81 degrees, documented in the note as 45.8 degrees."
+  },
+  {
+    "question": "What sector angle corresponds to the 'Social Science' department with a population of 950 students?",
+    "options": ["65.5 degrees", "117.8 degrees", "62.2 degrees", "55.6 degrees"],
+    "correctAnswer": "62.2 degrees",
+    "explanation": "Calculation: (950 / 5500) * 360 = 62.18 degrees, which is rounded to 62.2 degrees in the summary."
+  },
+  {
+    "question": "Which of the following is listed as a primary advantage of a Pie Chart?",
+    "options": ["It easily displays over twenty individual items without clashing", "It is easy to understand and exceptionally good for showing proportions", "It displays true mathematical adjacent intervals without gaps", "It identifies exact maximum and minimum range differences automatically"],
+    "correctAnswer": "It is easy to understand and exceptionally good for showing proportions",
+    "explanation": "The text lists two advantages: 1. It is easy to understand, 2. It is good for showing proportion."
+  },
+  {
+    "question": "What is considered a specific disadvantage of using a Pie Chart?",
+    "options": ["It cannot be divided into distinct percentage sectors", "It is hard to compare similar slices (such as 21% and 23%)", "It requires discrete interval group sorting beforehand", "It completely replaces quantitative labels with alphanumeric lines"],
+    "correctAnswer": "It is hard to compare similar slices (such as 21% and 23%)",
+    "explanation": "The note explicitly explains that it is hard to visually compare slices that are very close or similar in size, such as 21% vs 23%."
+  },
+  {
+    "question": "According to the structural guidelines on page 10, a pie chart should ideally not contain more than how many categories?",
+    "options": ["3 categories", "5 categories", "7 categories", "10 categories"],
+    "correctAnswer": "7 categories",
+    "explanation": "The text explicitly states: 'A pie chart should not contain more than 7 items or categories' to avoid clarity issues."
+  },
+  {
+    "question": "What defines a Histogram?",
+    "options": ["A circle cut into several proportional component angles", "A widely used graphical frequency distribution consisting of adjacent rectangles drawn on a continuous base", "A collection of individual icons representing numerical tallies", "A baseline chart tracking only nominal label attributes"],
+    "correctAnswer": "A widely used graphical frequency distribution consisting of adjacent rectangles drawn on a continuous base",
+    "explanation": "A histogram is defined as the most widely used graphical frequency distribution consisting of rectangles drawn on a continuous base."
+  },
+  {
+    "question": "In a standard Histogram, what property of each rectangle is drawn to be directly proportional to the class frequency?",
+    "options": ["The ink color intensity", "The total surface area of each rectangle", "The absolute line thickness of the borders", "The distance from the chart origin point"],
+    "correctAnswer": "The total surface area of each rectangle",
+    "explanation": "The note states: 'the area of each rectangle is proportional to the frequency of the class it represents.'"
+  },
+  {
+    "question": "What boundaries form the horizontal baseline limits of each rectangle in a Histogram?",
+    "options": ["The nominal label names", "The lower class boundary and the upper class boundary of that class", "The accumulated relative frequency percentage values", "The dynamic range maximums only"],
+    "correctAnswer": "The lower class boundary and the upper class boundary of that class",
+    "explanation": "The baseline width of each rectangular block in a histogram stretches from the true lower class boundary to the true upper class boundary."
+  },
+  {
+    "question": "In the sample histogram problem on page 11 tracking temperatures across 50 states, what is the frequency of the first class boundary interval (99.5 - 104.5)?",
+    "options": ["2", "8", "18", "13"],
+    "correctAnswer": "2",
+    "explanation": "The data table on page 11 shows that the class boundary 99.5 - 104.5 has an explicit frequency value of 2."
+  },
+  {
+    "question": "Which class boundary interval in the state temperature dataset holds the absolute highest frequency of 18?",
+    "options": ["104.5 - 109.5", "109.5 - 114.5", "114.5 - 119.5", "119.5 - 124.5"],
+    "correctAnswer": "109.5 - 114.5",
+    "explanation": "The table maps the maximum frequency of 18 directly to the class boundary interval 109.5 - 114.5."
+  },
+  {
+    "question": "What is the frequency of the temperature class boundary interval 119.5 - 124.5?",
+    "options": ["1", "7", "13", "8"],
+    "correctAnswer": "7",
+    "explanation": "Looking across the row for 119.5 - 124.5 on page 11, the recorded frequency is exactly 7."
+  },
+  {
+    "question": "What frequencies are recorded for the final two temperature class intervals (124.5 - 129.5 and 129.5 - 134.5)?",
+    "options": ["2 and 2", "8 and 7", "1 and 1", "13 and 18"],
+    "correctAnswer": "1 and 1",
+    "explanation": "The bottom rows of the distribution table show a frequency value of 1 for both of the final two intervals."
+  },
+  {
+    "question": "What is listed as a major structural advantage of using a Histogram?",
+    "options": ["It is exceptionally good for large numerical data and better than a bar chart for continuous data because it handles intervals", "It can easily handle categorical, nominal profiles without any scale adjustment", "It automatically changes raw values into direct pie percentages", "It eliminates outliers from datasets completely"],
+    "correctAnswer": "It is exceptionally good for large numerical data and better than a bar chart for continuous data because it handles intervals",
+    "explanation": "The note lists under advantages that a histogram is ideal for large numerical datasets and handles continuous intervals rather than isolated categories."
+  },
+  {
+    "question": "Histograms are particularly useful for identifying which specific dataset anomalies?",
+    "options": ["Missing nominal labels", "Outliers (extreme values that sit far away from the rest of the data)", "Incorrectly spelled qualitative variables", "Missing column rows in original tables"],
+    "correctAnswer": "Outliers (extreme values that sit far away from the rest of the data)",
+    "explanation": "Advantage number 3 explicitly states that histograms are 'useful for spotting outliers (these are values that are of the extreme).'"
+  },
+  {
+    "question": "What example series of numbers does the note use to illustrate an extreme outlier scenario?",
+    "options": ["1, 2, 3, 4, 5", "99.5, 104.5, 109.5", "1, 10, 11, 12, 13, 100", "850, 1000, 1800"],
+    "correctAnswer": "1, 10, 11, 12, 13, 100",
+    "explanation": "The text provides the exact illustration example: 'e.g., 1, 10, 11, 12, 13, 100' where 100 (and potentially 1) acts as an outlier."
+  },
+  {
+    "question": "What is a major disadvantage of a Histogram noted on page 12?",
+    "options": ["It cannot show intervals at all", "It is not stable for categorical data and cannot compare many distributions easily", "It cannot display large datasets under any circumstance", "It requires computing circles with sector tools"],
+    "correctAnswer": "It is not stable for categorical data and cannot compare many distributions easily",
+    "explanation": "The disadvantages listed for histograms are: 1. It is not stable for categorical data, 2. It can't compare many distributions easily."
+  },
+  {
+    "question": "What is a Frequency Polygon?",
+    "options": ["A chart that relies strictly on icons or pictograms to show simple counts", "A graph that displays data by using lines that connect points plotted for the frequency at the midpoint of each class", "A circle divided into proportional percentage sectors", "A table summarizing primary source information"],
+    "correctAnswer": "A graph that displays data by using lines that connect points plotted for the frequency at the midpoint of each class",
+    "explanation": "A frequency polygon is defined as a graph displaying data by using lines that connect points plotted for the frequency at the class midpoint."
+  },
+  {
+    "question": "To plot a Frequency Polygon accurately, what coordinate metric must be computed for the horizontal position of each point?",
+    "options": ["The lower class boundary exclusively", "The midpoint of the class interval", "The cumulative frequency running total", "The relative frequency percentage ratio"],
+    "correctAnswer": "The midpoint of the class interval",
+    "explanation": "Points on a frequency polygon are plotted directly above the calculated midpoint of each respective class interval."
+  },
+  {
+    "question": "In the frequency polygon data chart on page 13, what is the calculated midpoint for the first class interval (99.5 - 104.5)?",
+    "options": ["102", "107", "112", "117"],
+    "correctAnswer": "102",
+    "explanation": "The table on page 13 explicitly lists the calculated midpoint for the 99.5 - 104.5 interval as 102."
+  },
+  {
+    "question": "What is the computed class midpoint for the second temperature interval (104.5 - 109.5)?",
+    "options": ["102", "107", "112", "122"],
+    "correctAnswer": "107",
+    "explanation": "The table explicitly pairs the 104.5 - 109.5 class boundary with a midpoint value of 107."
+  },
+  {
+    "question": "What is the class midpoint for the highest-frequency interval (109.5 - 114.5)?",
+    "options": ["112", "117", "127", "132"],
+    "correctAnswer": "112",
+    "explanation": "The midpoint for the 109.5 - 114.5 range is computed and listed in the table as 112."
+  },
+  {
+    "question": "For the temperature interval 114.5 - 119.5, what is the designated midpoint value?",
+    "options": ["112", "117", "122", "127"],
+    "correctAnswer": "117",
+    "explanation": "The text shows that the interval 114.5 - 119.5 has an explicit midpoint calculation of 117."
+  },
+  {
+    "question": "What is the calculated midpoint for the temperature interval 119.5 - 124.5?",
+    "options": ["117", "122", "127", "132"],
+    "correctAnswer": "122",
+    "explanation": "The table lists the midpoint for the 119.5 - 124.5 category as 122."
+  },
+  {
+    "question": "What are the final two midpoint values listed in the frequency polygon table on page 13?",
+    "options": ["102 and 107", "112 and 117", "127 and 132", "122 and 127"],
+    "correctAnswer": "127 and 132",
+    "explanation": "The final two rows of the data table contain midpoints calculated as 127 and 132 respectively."
+  },
+  {
+    "question": "What is an alternative name for an Ogive graph?",
+    "options": ["Frequency polygon curve", "Cumulative frequency graph", "Subdivided rectangular bar chart", "Categorical nominal layout"],
+    "correctAnswer": "Cumulative frequency graph",
+    "explanation": "Page 14 states clearly at the top: 'Ogive: It is also called Cumulative frequency graph.'"
+  },
+  {
+    "question": "What does an Ogive graph plot or represent?",
+    "options": ["The individual midpoints plotted against simple single tallies", "The sum of the frequencies accumulated up to the upper class boundary of each class in the distribution", "The nominal labels sorted strictly in reverse order", "The area of sectors inside a 360-degree circle structure"],
+    "correctAnswer": "The sum of the frequencies accumulated up to the upper class boundary of each class in the distribution",
+    "explanation": "An ogive represents the running total of frequencies accumulated progressively up to the upper boundary of each class."
+  },
+  {
+    "question": "In the Ogive data table on page 14, what is the cumulative frequency (Cf) for the first class interval (99.5 - 104.5)?",
+    "options": ["2", "10", "28", "41"],
+    "correctAnswer": "2",
+    "explanation": "Since it is the first interval, its cumulative frequency matches its base frequency, which is 2."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) for the second class boundary interval (104.5 - 109.5) after adding its frequency of 8?",
+    "options": ["2", "10", "28", "48"],
+    "correctAnswer": "10",
+    "explanation": "Accumulating the frequencies: 2 + 8 = 10. The table lists 10 as the Cf for this interval."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) for the interval 109.5 - 114.5 after incorporating its class frequency of 18?",
+    "options": ["10", "28", "41", "50"],
+    "correctAnswer": "28",
+    "explanation": "Adding the next frequency: 10 + 18 = 28. This matches the third entry in the Cf column."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) recorded for the interval 114.5 - 119.5?",
+    "options": ["28", "41", "48", "49"],
+    "correctAnswer": "41",
+    "explanation": "Adding the interval's frequency of 13 to the previous total: 28 + 13 = 41."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) for the interval 119.5 - 124.5?",
+    "options": ["41", "48", "49", "50"],
+    "correctAnswer": "48",
+    "explanation": "Adding its frequency of 7 to the previous running total: 41 + 7 = 48."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) for the interval 124.5 - 129.5?",
+    "options": ["48", "49", "50", "51"],
+    "correctAnswer": "49",
+    "explanation": "Adding its frequency of 1 to the previous total: 48 + 1 = 49."
+  },
+  {
+    "question": "What is the final cumulative frequency (Cf) value at the maximum interval boundary (129.5 - 134.5) which represents the total sample size?",
+    "options": ["41", "48", "49", "50"],
+    "correctAnswer": "50",
+    "explanation": "Adding the final frequency of 1 gives a grand total cumulative frequency of 50, representing the entire sample size."
+  },
+  {
+    "question": "What is a 'Frequency Distribution' as defined on page 15?",
+    "options": ["A process of selecting primary data through questionnaires exclusively", "A way of organizing data so that you can see how often each value occurs", "A method to calculate the absolute scale differences between nominal codes", "A diagrammatic sketch utilizing circles and arrows to show human behavior"],
+    "correctAnswer": "A way of organizing data so that you can see how often each value occurs",
+    "explanation": "The text states: 'Frequency distribution: This is a way of organizing data so that you can see how often each value occurs.'"
+  },
+  {
+    "question": "What is a primary practical benefit of building a Frequency Distribution for a large raw data set?",
+    "options": ["It hides all outlier values from the summary report", "It helps summarize large data sets so patterns become clear", "It turns numerical quantitative facts back into ordinal labels", "It removes the requirement of establishing lower class boundaries"],
+    "correctAnswer": "It helps summarize large data sets so patterns become clear",
+    "explanation": "Building a frequency distribution compresses messy data so structural patterns can be observed clearly."
+  },
+  {
+    "question": "How is the key term 'Frequency (f)' defined within a distribution context?",
+    "options": ["The numerical gap width between adjacent structural rectangles", "The number of times a value appears", "The absolute center coordinate of a range calculation", "The total surface area of a pie chart slice"],
+    "correctAnswer": "The number of times a value appears",
+    "explanation": "Frequency (f) is explicitly defined as the total number of times a specific value or observation appears in the data."
+  },
+  {
+    "question": "What is a 'Class Interval'?",
+    "options": ["The percentage proportion of total collected items", "A group or range of values used when the data is large or continuous", "The absolute mathematical limit that removes all whitespace gaps", "The running total of stacked rectangular bar lines"],
+    "correctAnswer": "A group or range of values used when the data is large or continuous",
+    "explanation": "A class interval is a designated group or range of values used to bundle data when dealing with large or continuous observations."
+  },
+  {
+    "question": "What are 'Class Boundaries'?",
+    "options": ["The individual midpoint averages plotted on polygons", "The true limits of each class interval in a grouped frequency distribution that remove gaps and make data continuous", "The absolute total sums of all frequencies combined", "The nominal names assigned to categorical measurement attributes"],
+    "correctAnswer": "The true limits of each class interval in a grouped frequency distribution that remove gaps and make data continuous",
+    "explanation": "Class boundaries represent the true mathematical limits of intervals, erasing gaps between adjacent blocks to establish continuity."
+  },
+  {
+    "question": "What is the structural definition of 'Cumulative Frequency (CF)'?",
+    "options": ["The proportion of times a specific class occurs out of a hundred", "The running total of frequencies", "The exact numerical midpoint calculated via adding limits", "The difference between the absolute highest and lowest raw records"],
+    "correctAnswer": "The running total of frequencies",
+    "explanation": "The note explicitly defines Cumulative Frequency (CF) as the running total of frequencies up to a given point."
+  },
+  {
+    "question": "What is the definition of 'Relative Frequency (RF)'?",
+    "options": ["The mathematical distance spanning from the minimum boundary to the maximum limit", "The proportion or percentage of time a particular value or class occurs compared to the total number of observations", "The running total accumulated up to the true upper boundary line", "The simple count of item values inside an art college graph"],
+    "correctAnswer": "The proportion or percentage of time a particular value or class occurs compared to the total number of observations",
+    "explanation": "Relative frequency describes the proportion or percentage a specific frequency represents out of the complete sample size."
+  },
+  {
+    "question": "What is the mathematical formula provided to compute Relative Frequency (RF)?",
+    "options": ["RF = (Total Frequency / Frequency of the class) * 100", "RF = (Frequency of the class / Total frequency) * 100%", "RF = (Class Interval * Midpoint) / Total Frequency", "RF = (Upper Boundary - Lower Boundary) * 100"],
+    "correctAnswer": "RF = (Frequency of the class / Total frequency) * 100%",
+    "explanation": "The note gives the formula as: RF = (Frequency of the class / Total frequency) * 100%."
+  },
+  {
+    "question": "What are the types of frequency distributions mentioned at the bottom of page 15?",
+    "options": ["Nominal and Ordinal distributions", "Ungrouped frequency distribution (and Grouped)", "Primary and Secondary source summaries", "Interval and Ratio distributions"],
+    "correctAnswer": "Ungrouped frequency distribution (and Grouped)",
+    "explanation": "The text lists 'Ungrouped frequency distribution' as item number 1 under 'Types of frequency distribution'."
+  },
+  {
+    "question": "When is it ideal to deploy an Ungrouped Frequency Distribution?",
+    "options": ["When data values are massive and cover millions of continuous metrics", "When the values are small or distinct", "When data points represent purely qualitative ordinal ranks", "When constructing curved cumulative ogives exclusively"],
+    "correctAnswer": "When the values are small or distinct",
+    "explanation": "The note states: 'Ungrouped frequency distribution: It is used when the values are small or distinct.'"
+  },
+  {
+    "question": "What basic operational step must be performed to find the 'Range' of a raw numerical dataset?",
+    "options": ["Divide the maximum value by the total frequency", "Subtract the lowest (minimum) value from the highest (maximum) value", "Calculate the average midpoint of all class intervals combined", "Multiply the relative frequency by 360 degrees"],
+    "correctAnswer": "Subtract the lowest (minimum) value from the highest (maximum) value",
+    "explanation": "The range is found by taking the difference between the absolute highest and lowest numbers in the dataset."
+  },
+  {
+    "question": "If an investigator reviews data already collected by the National Bureau of Statistics for an academic study, what classification of source is being utilized?",
+    "options": ["Primary data source", "Secondary data source", "Nominal label source", "Continuous interval source"],
+    "correctAnswer": "Secondary data source",
+    "explanation": "Since the data was collected and documented by a third-party organization previously, it constitutes secondary data for the current investigator."
+  },
+  {
+    "question": "If a researcher counts the number of cars passing through a checkpoint as 50, 65, and 80, what nature of data does this represent?",
+    "options": ["Qualitative data", "Quantitative data", "Nominal data", "Categorical data"],
+    "correctAnswer": "Quantitative data",
+    "explanation": "The counts are numerical values that explicitly measure an amount, making them quantitative data."
+  },
+  {
+    "question": "The variable 'Eye Color' (e.g., Blue, Brown, Green) belongs to which scale of measurement?",
+    "options": ["Nominal scale", "Ordinal scale", "Interval scale", "Ratio scale"],
+    "correctAnswer": "Nominal scale",
+    "explanation": "Eye color represents mutually exclusive descriptive categories with no mathematical ranking or order, placing it on a nominal scale."
+  },
+  {
+    "question": "A dataset contains class boundaries of 10.5 - 15.5 with a frequency of 5. If the total frequency of all classes is 50, what is the relative frequency of this class?",
+    "options": ["5%", "10%", "20%", "25%"],
+    "correctAnswer": "10%",
+    "explanation": "Using the formula: (5 / 50) * 100% = 10%."
+  },
+  {
+    "question": "What is the class width (interval size) for a class with boundaries stretching from 99.5 to 104.5?",
+    "options": ["4", "5", "10", "104.5"],
+    "correctAnswer": "5",
+    "explanation": "The width is found by subtracting the lower boundary from the upper boundary: 104.5 - 99.5 = 5."
+  },
+  {
+    "question": "Which graphic representation uses a line configuration drawn explicitly through midpoints to illustrate the shape of a continuous frequency profile?",
+    "options": ["Pie Chart", "Histogram", "Frequency Polygon", "Component Bar Graph"],
+    "correctAnswer": "Frequency Polygon",
+    "explanation": "The frequency polygon connects plotted midpoint coordinates with lines to depict the distribution's shape."
+  },
+  {
+    "question": "If you wish to visualize the cumulative growth and trace how frequencies stack up progressively to a grand total, which diagram should you select?",
+    "options": ["Simple Bar Chart", "Ogive", "Histogram", "Pictogram"],
+    "correctAnswer": "Ogive",
+    "explanation": "The ogive (cumulative frequency graph) tracks the running total of accumulated frequencies up to each upper boundary."
+  },
+  {
+    "question": "Which classification system groups variables such as 'Tribe' and 'Course of Study'?",
+    "options": ["Quantitative by nature", "Qualitative by nature", "Ratio scale of measurement", "Interval scale of measurement"],
+    "correctAnswer": "Qualitative by nature",
+    "explanation": "Tribe and course of study describe non-numeric attributes or categories, classifying them as qualitative data."
+  },
+  {
+    "question": "What happens to the visual layout of a multiple bar chart if an investigator tries to pack 30 different categories with 5 variables each onto one grid?",
+    "options": ["It scales down to form a clean pie sector automatically", "It becomes highly cluttered and hard to interpret easily", "It automatically calculates continuous class boundaries", "It converts the categorical blocks into straight midpoint values"],
+    "correctAnswer": "It becomes highly cluttered and hard to interpret easily",
+    "explanation": "As noted under disadvantages, a bar chart can look cluttered and confusing when too many categories and variables are combined."
+  },
+  {
+        "question": "Which basic function of a computer system is responsible for presenting processed results to the user in a human-understandable format?",
+        "options": [
+            "Input",
+            "Storage",
+            "Processing",
+            "Output"
+        ],
+        "correctAnswer": "Output",
+        "explanation": "Output is the operation where the computer translates binary-processed data into forms that humans can interact with or understand, such as text on a screen, printed documents, or audio."
+    },
+    {
+        "question": "What structural component of the Von Neumann architecture holds the address of the next programmatic instruction to be fetched and executed?",
+        "options": [
+            "Accumulator (AC)",
+            "Program Counter (PC)",
+            "Instruction Register (IR)",
+            "Memory Data Register (MDR)"
+        ],
+        "correctAnswer": "Program Counter (PC)",
+        "explanation": "The Program Counter (PC) is a special-purpose register inside the CPU that automatically updates to point to the memory address of the next sequential instruction waiting to be executed."
+    },
+    {
+        "question": "Which of the following is considered utility software rather than an application program or operating system?",
+        "options": [
+            "Microsoft Windows",
+            "Antivirus Software",
+            "Google Chrome",
+            "Linux Kernel"
+        ],
+        "correctAnswer": "Antivirus Software",
+        "explanation": "Utility software focuses on the maintenance, optimization, and security infrastructure of the computer itself. Antivirus tools fall directly into this category as they protect system health."
+    },
+    {
+        "question": "What is the primary operational difference between Static RAM (SRAM) and Dynamic RAM (DRAM)?",
+        "options": [
+            "SRAM is volatile while DRAM is completely non-volatile.",
+            "DRAM requires periodic electrical refreshing to keep its data, making it slower but cheaper than SRAM.",
+            "SRAM uses magnetic platters to hold binary data bits while DRAM uses glass rods.",
+            "DRAM is only used inside secondary solid-state storage devices."
+        ],
+        "correctAnswer": "DRAM requires periodic electrical refreshing to keep its data, making it slower but cheaper than SRAM.",
+        "explanation": "Dynamic RAM (DRAM) uses capacitors that leak charge and must be refreshed thousands of times per second. Static RAM (SRAM) uses transistors that hold state without refreshing as long as power flows, making it faster (used for cache) but more expensive."
+    },
+    {
+        "question": "The historical Jacquard Loom (1804) heavily influenced early computer designers because it controlled intricate weaving patterns using what conceptual method?",
+        "options": [
+            "Liquid mercury delay lines",
+            "Punched wooden cards",
+            "Vacuum tube diodes",
+            "Magnetic drum storage tracks"
+        ],
+        "correctAnswer": "Punched wooden cards",
+        "explanation": "Joseph Marie Jacquard invented a loom that read patterns from chains of punched cards. This mechanical concept of using holes in cards to store abstract instructions directly inspired Charles Babbage and Herman Hollerith."
+    },
+    {
+        "question": "Which classification of computers is optimized to handle a specific task like controlling the anti-lock braking system in a modern automobile?",
+        "options": [
+            "Mainframe Computer",
+            "Supercomputer",
+            "Embedded Computer",
+            "General-purpose Workstation"
+        ],
+        "correctAnswer": "Embedded Computer",
+        "explanation": "Embedded computers are dedicated microcontrollers built directly into a larger product to perform exclusive, predefined control operations reliably without needing a full operating system interface."
+    },
+    {
+        "question": "In the computing system framework, the physical layer containing elements like the central processing unit and system buses is called:",
+        "options": [
+            "Software",
+            "Humanware",
+            "Hardware",
+            "Firmware"
+        ],
+        "correctAnswer": "Hardware",
+        "explanation": "Hardware refers to all concrete, physical, electronic, and mechanical parts of a computer system that can be touched and maintained visually."
+    },
+    {
+        "question": "Which electronic component was the defining hardware hallmark of third-generation computing systems?",
+        "options": [
+            "Vacuum Tube Triodes",
+            "Discrete Germanium Transistors",
+            "Integrated Circuits (ICs)",
+            "VLSI Microprocessors"
+        ],
+        "correctAnswer": "Integrated Circuits (ICs)",
+        "explanation": "The third generation of computers emerged when engineers learned how to place multiple transistors and support circuits onto a single semiconductor wafer called an Integrated Circuit."
+    },
+    {
+        "question": "What data communication term describes the absolute maximum capacity of a transmission link, calculated as the volume of bits sent per second?",
+        "options": [
+            "Latency",
+            "Bandwidth",
+            "Attenuation",
+            "Modulation"
+        ],
+        "correctAnswer": "Bandwidth",
+        "explanation": "Bandwidth is the measurement of a communication channel's total raw capacity to carry data across a network path within a given timeframe, measured in bits per second."
+    },
+    {
+        "question": "What type of computer virus payload execution condition is tied to a specific calendar event or clock trigger?",
+        "options": [
+            "Macro Script",
+            "Time Bomb / Logic Bomb",
+            "Boot Sector Override",
+            "Polymorphic Mutation"
+        ],
+        "correctAnswer": "Time Bomb / Logic Bomb",
+        "explanation": "A time bomb is a specific subset of a logic bomb where the malicious code remains completely passive until the system clock hits a specific date or time flag."
+    },
+    {
+        "question": "Which form of data processing allows multiple processing tasks to execute simultaneously across several interconnected computing nodes?",
+        "options": [
+            "Centralized Processing",
+            "Distributed Processing",
+            "Offline Batch Processing",
+            "Uniprocessing Mode"
+        ],
+        "correctAnswer": "Distributed Processing",
+        "explanation": "Distributed processing spreads computational tasks across physically separate but network-connected computers, optimizing processing speeds and creating system fault tolerance."
+    },
+    {
+        "question": "In the context of office productivity software, what type of application is specifically designed to store, manage, and query relational text records like inventory lists?",
+        "options": [
+            "Word Processor",
+            "Spreadsheet Software",
+            "Database Management System (DBMS)",
+            "Desktop Publishing Tool"
+        ],
+        "correctAnswer": "Database Management System (DBMS)",
+        "explanation": "A DBMS is engineered to organize massive sets of structured tables, allowing users to query, update, filter, and secure data rows across interconnected records."
+    },
+    {
+        "question": "Which early computational device used standard sliding logarithmic scales to let engineers perform fast multiplication, division, and trigonometry?",
+        "options": [
+            "The Abacus",
+            "The Slide Rule",
+            "The Pascaline",
+            "The Leibniz Wheel"
+        ],
+        "correctAnswer": "The Slide Rule",
+        "explanation": "The slide rule is an analog computing device based on John Napier's logarithms. It allowed engineers to carry out quick multiplication, division, and roots by sliding scale markers manually."
+    },
+    {
+        "question": "What primary characteristic defines 'Humanware' within a modern computer system architecture?",
+        "options": [
+            "The electronic circuits controlling human input touchscreens.",
+            "The personnel responsible for developing, maintaining, managing, and utilizing computing systems.",
+            "The bio-metric scanners used to verify user login profiles.",
+            "The automation macros that mimic human speech patterns."
+        ],
+        "correctAnswer": "The personnel responsible for developing, maintaining, managing, and utilizing computing systems.",
+        "explanation": "Humanware represents the human component of computing infrastructure. It spans software engineers, system administrators, repair technicians, and the day-to-end users themselves."
+    },
+    {
+        "question": "Which secondary storage device uses an optical laser beam to read and write data pits onto a rotating reflective disc surface?",
+        "options": [
+            "Solid-State Drive (SSD)",
+            "DVD-ROM",
+            "Magnetic Tape Cassette",
+            "Hard Disk Drive (HDD)"
+        ],
+        "correctAnswer": "DVD-ROM",
+        "explanation": "Optical storage devices like CDs, DVDs, and Blu-ray discs utilize light amplification (laser beams) to read or burn microscopic physical pits on a spinning optical disc."
+    },
+    {
+        "question": "What type of processing mode splits a single processor's timeline into short slices, switching between active users so rapidly that each user feels they have private access?",
+        "options": [
+            "Batch Processing",
+            "Time-Sharing Processing",
+            "Real-Time Automation",
+            "Offline Media Spooling"
+        ],
+        "correctAnswer": "Time-Sharing Processing",
+        "explanation": "Time-sharing assigns tiny windows of execution time (quanta) to multiple users interactively. The rapid context-switching makes it look like the central computer is processing everyone's work at once."
+    },
+    {
+        "question": "Which data communication mode supports bidirectional data flow through a transmission channel simultaneously?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Multiplex Mode"
+        ],
+        "correctAnswer": "Full-Duplex Mode",
+        "explanation": "Full-duplex communication (like a standard telephone call) allows data traffic to travel in both directions at the same time down the same transmission pathway."
+    },
+    {
+        "question": "A polymorphic virus is exceptionally dangerous to computer systems primarily because it:",
+        "options": [
+            "Physically melts down the silicon chips of the motherboard.",
+            "Alters its underlying decryption routine and signature pattern with each replication, bypassing standard static signature scanners.",
+            "Can spread across local networks without any software protocol layers.",
+            "Is completely immune to deep hard drive formatting procedures."
+        ],
+        "correctAnswer": "Alters its underlying decryption routine and signature pattern with each replication, bypassing standard static signature scanners.",
+        "explanation": "Polymorphic viruses dynamically modify their code signatures every time they jump to a new file host. This makes it very hard for simple signature-based scanners to spot them without heuristic tools."
+    },
+    {
+        "question": "What software compilation component translates high-level source code completely into machine code files *before* any actual program execution starts?",
+        "options": [
+            "An Interpreter",
+            "A Compiler",
+            "An Assembler",
+            "A Linker Loader"
+        ],
+        "correctAnswer": "A Compiler",
+        "explanation": "A compiler scans an entire project's source code at once, translating everything into a standalone executable binary file (.exe) prior to deployment or execution."
+    },
+    {
+        "question": "Which modern computing trend focuses on linking individual smart household appliances into a unified network to share metric data automatically?",
+        "options": [
+            "The Internet of Things (IoT)",
+            "Grid Supercomputing Networks",
+            "Virtual Hypervisors",
+            "Batch Mainframe Processing"
+        ],
+        "correctAnswer": "The Internet of Things (IoT)",
+        "explanation": "The Internet of Things (IoT) involves embedding microcontrollers and wireless networking into everyday items so they can collect, transmit, and react to data automatically."
+    },
+    {
+        "question": "What type of application error occurs when a user tries to divide a number by zero, causing an active program to crash immediately mid-run?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Error / Exception",
+            "Compilation Link Error"
+        ],
+        "correctAnswer": "Runtime Error / Exception",
+        "explanation": "Runtime errors happen while a program is actively running. The code is grammatically correct (no syntax errors), but a bad operation like dividing by zero causes the system to fault."
+    },
+    {
+        "question": "Which input device uses magnetic scanning heads to read unique bank routing digits printed with specialized ferrous ink?",
+        "options": [
+            "Optical Mark Reader (OMR)",
+            "Barcode Laser Scanner",
+            "Magnetic Ink Character Recognition (MICR)",
+            "Flatbed Document Scanner"
+        ],
+        "correctAnswer": "Magnetic Ink Character Recognition (MICR)",
+        "explanation": "MICR scanners recognize numbers printed at the bottom of bank checks using magnetic ink, providing a fast, fraud-resistant method for high-volume financial sorting."
+    },
+    {
+        "question": "What is the primary function of a network router?",
+        "options": [
+            "Converting digital motherboard signals into analog telephone currents.",
+            "Connecting peripheral input mice to central processing unit slots.",
+            "Analyzing destination network addresses to steer data packets between different separate networks efficiently.",
+            "Scanning network server hard drives for hidden tracking spyware."
+        ],
+        "correctAnswer": "Analyzing destination network addresses to steer data packets between different separate networks efficiently.",
+        "explanation": "Routers are smart network core units. They inspect destination IP addresses on data packets to find the best pathway to guide those packets across connected networks."
+    },
+    {
+        "question": "The second generation of computers relied on which breakthrough technology to replace large, delicate glass vacuum tubes?",
+        "options": [
+            "Integrated Circuits",
+            "Silicon Transistors",
+            "Microprocessors",
+            "Holographic Memory Drums"
+        ],
+        "correctAnswer": "Silicon Transistors",
+        "explanation": "The shift from vacuum tubes to solid-state transistors launched the second generation. Transistors are smaller, cooler, and consume far less power, helping shrink the size of computers."
+    },
+    {
+        "question": "Which software utility helps improve mechanical hard disk speed by rearranging scattered clusters of file data back into continuous linear tracking spaces?",
+        "options": [
+            "Disk Cleanup Utility",
+            "Disk Defragmenter",
+            "File Zipper Compressor",
+            "Heuristic Scanner"
+        ],
+        "correctAnswer": "Disk Defragmenter",
+        "explanation": "As files are saved, modified, or deleted, their pieces become fragmented across a mechanical drive platter. Defragmentation pulls these scattered pieces back into order, cutting down on drive head movement."
+    },
+    {
+        "question": "In the data hierarchy, unstructured numbers, symbols, or observations that carry no contextual meaning on their own are classified as:",
+        "options": [
+            "Information",
+            "Knowledge",
+            "Data",
+            "Metadata"
+        ],
+        "correctAnswer": "Data",
+        "explanation": "Data represents raw, unprocessed facts or metrics without context. Once these facts are sorted, calculated, or given context, they become meaningful information."
+    },
+    {
+        "question": "What type of processing system ensures that file updates and transaction processing happen within milliseconds of input entry, crucial for flight control setups?",
+        "options": [
+            "Batch Processing",
+            "Real-Time Processing",
+            "Offline Spooling",
+            "Distributed Archiving"
+        ],
+        "correctAnswer": "Real-Time Processing",
+        "explanation": "Real-time systems must process input signals and return results almost instantly, ensuring the system can accurately control or adjust to live environments."
+    },
+    {
+        "question": "Which industrial computing technology allows engineers to simulate, analyze, and stress-test mechanical parts in 3D digital environments before manufacturing?",
+        "options": [
+            "Computer-Aided Design (CAD)",
+            "Electronic Funds Transfer (EFT)",
+            "Point of Sale Tracking (POS)",
+            "Automated Text Interpreter"
+        ],
+        "correctAnswer": "Computer-Aided Design (CAD)",
+        "explanation": "CAD software gives engineers, architects, and designers the tools to build precise digital blueprints and 3D models to test and analyze components before physical production."
+    },
+    {
+        "question": "What type of computer virus embeds its malicious scripting instructions into basic office document files that leverage automated productivity shortcuts?",
+        "options": [
+            "Boot Sector Virus",
+            "Macro Virus",
+            "Polymorphic Engine",
+            "File-Infecting Executable"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written in the macro automation languages built into office applications like Microsoft Word or Excel, spreading when users share infected document templates."
+    },
+    {
+        "question": "Which motherboard component acts as a high-speed traffic controller, connecting the CPU directly to high-speed components like RAM and graphics cards?",
+        "options": [
+            "The Southbridge Chip",
+            "The Northbridge Chip",
+            "The Power Inverter Module",
+            "The Expansion Card Rail"
+        ],
+        "correctAnswer": "The Northbridge Chip",
+        "explanation": "In traditional chipsets, the Northbridge handles high-speed communication between the CPU, RAM, and the graphics card slot, while the Southbridge manages slower I/O peripherals like storage or USB ports."
+    },
+    {
+        "question": "Which programming language category uses declarative statements to define *what* output is wanted rather than detailing the exact step-by-step procedural logic to get there?",
+        "options": [
+            "First Generation (Machine Language)",
+            "Second Generation (Assembly Language)",
+            "Third Generation (Procedural Language)",
+            "Fourth Generation (Non-Procedural Language / SQL)"
+        ],
+        "correctAnswer": "Fourth Generation (Non-Procedural Language / SQL)",
+        "explanation": "Fourth-generation languages (4GL), like SQL, are non-procedural. Users write declarations stating what data they need, and the underlying database engine determines the steps to fetch it."
+    },
+    {
+        "question": "What network topology links every computer in a straight line along a single shared main cable, capped with terminators at both ends?",
+        "options": [
+            "Star Topology",
+            "Bus Topology",
+            "Ring Topology",
+            "Mesh Topology"
+        ],
+        "correctAnswer": "Bus Topology",
+        "explanation": "Bus topology uses one central cable (the backbone) to connect all network nodes. If this main backbone cable breaks or loses a terminator, the entire network fails."
+    },
+    {
+        "question": "What form of primary memory holds configuration settings like the drive boot order and relies on a tiny CMOS motherboard battery to keep its data when the system shuts down?",
+        "options": [
+            "Main Volatile RAM",
+            "CMOS RAM",
+            "Hard Disk Sector Zero",
+            "Optical Media Stacks"
+        ],
+        "correctAnswer": "CMOS RAM",
+        "explanation": "CMOS RAM is a small amount of low-power memory on the motherboard that holds hardware configuration details (like time, date, and boot order), kept alive by a button cell battery when the PC is off."
+    },
+    {
+        "question": "Which data communication channel type allows signals to travel in only one fixed direction, with no way to send data back?",
+        "options": [
+            "Simplex Channel",
+            "Half-Duplex Channel",
+            "Full-Duplex Channel",
+            "Asynchronous Multiplexer"
+        ],
+        "correctAnswer": "Simplex Channel",
+        "explanation": "Simplex transmission is strictly one-way. A classic example is a public radio broadcast or a computer monitor receiving video signals from a desktop case."
+    },
+    {
+        "question": "The computer computing rule known as 'GIGO' tells us that:",
+        "options": [
+            "Operating systems automatically slow down when the physical recycle bin fills up.",
+            "Incorrect or poorly formatted inputs will inevitably produce inaccurate or useless system outputs.",
+            "Viruses can only infect a hard drive if users open email trash folders.",
+            "Primary memory clears completely whenever a power outage hits."
+        ],
+        "correctAnswer": "Incorrect or poorly formatted inputs will inevitably produce inaccurate or useless system outputs.",
+        "explanation": "GIGO stands for Garbage In, Garbage Out. It means computers follow instructions exactly as given—if you feed them flawed data or logic, they will accurately output a flawed answer."
+    },
+    {
+        "question": "What type of software is distributed completely free of charge, but cannot be modified or redistributed because its proprietary source code stays locked by the creator?",
+        "options": [
+            "Shareware",
+            "Freeware",
+            "Open-Source Software",
+            "Public Domain Scripts"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware is free to download and use without cost, but unlike open-source software, the developer keeps the source code private and maintains all proprietary copyrights."
+    },
+    {
+        "question": "Which device serves as an exclusively output component for a computer system?",
+        "options": [
+            "Digital Webcam",
+            "Audio Speaker",
+            "Touchscreen Sheet",
+            "Keyboard Interface"
+        ],
+        "correctAnswer": "Audio Speaker",
+        "explanation": "Speakers take processed digital audio signals from the computer and convert them into audible sound waves for the user, making them a pure output device."
+    },
+    {
+        "question": "What type of malware disguises itself inside a helpful utility file to trick users into running it, but does not replicate on its own?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Script Virus",
+            "Boot Sector Corruptor"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "What structural bus layer is a unidirectional path used exclusively by the CPU to point to specific storage coordinates in memory?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "Peripheral PCI Track"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The Address Bus is a one-way path. The CPU uses it to transmit physical memory addresses to RAM or system controllers, indicating exactly where it wants to read or write data."
+    },
+    {
+        "question": "The fourth generation of computer hardware is defined by which key manufacturing breakthrough?",
+        "options": [
+            "The introduction of individual discrete transistors.",
+            "The use of integrated circuits on small silicon plates.",
+            "Very Large Scale Integration (VLSI), which packed a complete CPU onto a single microprocessor chip.",
+            "The creation of vacuum tube valves for mainframe processing units."
+        ],
+        "correctAnswer": "Very Large Scale Integration (VLSI), which packed a complete CPU onto a single microprocessor chip.",
+        "explanation": "Fourth-generation computers began in the 1971 window with VLSI technology, which crammed thousands of transistors onto one microchip, creating the modern microprocessor."
+    },
+    {
+        "question": "Which data communication network type spans across an entire municipal territory or large urban cityscape layout?",
+        "options": [
+            "LAN (Local Area Network)",
+            "PAN (Personal Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)"
+        ],
+        "correctAnswer": "MAN (Metropolitan Area Network)",
+        "explanation": "A MAN is engineered to cover an entire city or large metropolitan region, bridging multiple local networks across the urban area."
+    },
+    {
+        "question": "What type of software license lets the general public view, rebuild, modify, and share the underlying code freely without proprietary restrictions?",
+        "options": [
+            "Shareware Bundle",
+            "Open-Source Software",
+            "Freeware Utility",
+            "Proprietary Package"
+        ],
+        "correctAnswer": "Open-Source Software",
+        "explanation": "Open-source projects share their source code openly under licenses that allow anyone to inspect, modify, optimize, and share the code freely."
+    },
+    {
+        "question": "The primary role of the CPU's Control Unit (CU) is to:",
+        "options": [
+            "Perform complex logical comparisons and floating-point math formulas.",
+            "Fetch, decode, and coordinate instructions, managing data flow through the processor components.",
+            "Hold active application document files long-term.",
+            "Convert alternating current power to low voltage options."
+        ],
+        "correctAnswer": "Fetch, decode, and coordinate instructions, managing data flow through the processor components.",
+        "explanation": "The Control Unit acts as the brain's supervisor. It retrieves instructions from memory, decodes them into signals, and directs other parts of the CPU and hardware to execute them."
+    },
+    {
+        "question": "Which data processing trend lets users lease on-demand computing power and storage over the internet instead of buying physical on-site servers?",
+        "options": [
+            "Cloud Computing",
+            "Batch Spooling Networks",
+            "Analog Modeling Arrays",
+            "Local Defragmentation Sets"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets companies access tech resources—like servers, storage, and databases—over the internet on a flexible, pay-as-you-go model."
+    },
+    {
+        "question": "What type of computer virus targets the Master Boot Record (MBR) area of a hard drive to run before the operating system even boots up?",
+        "options": [
+            "File Infector Virus",
+            "Macro Script Threat",
+            "Boot Sector Virus",
+            "Polymorphic Code"
+        ],
+        "correctAnswer": "Boot Sector Virus",
+        "explanation": "Boot sector viruses infect the drive partition that holds the computer's startup files, letting the virus execute first and take low-level control of the system."
+    },
+    {
+        "question": "Which network component connects multiple devices on a Local Area Network (LAN) and broadcasts incoming data to *every single connected port*, causing high network chatter?",
+        "options": [
+            "A Network Switch",
+            "An Ethernet Hub",
+            "A Core Router Unit",
+            "A Fiber Transceiver"
+        ],
+        "correctAnswer": "An Ethernet Hub",
+        "explanation": "Hubs are simple devices that cannot filter data traffic. When a packet arrives at one port, the hub replicates it and broadcasts it to every port, creating extra network traffic compared to a smart switch."
+    },
+    {
+        "question": "What term describes the educational process of understanding computer concepts, recognizing tech capabilities, and learning to use applications in daily life?",
+        "options": [
+            "Computer Appreciation",
+            "Systems Analysis",
+            "Heuristic Evaluation",
+            "Data Extraction Tracking"
+        ],
+        "correctAnswer": "Computer Appreciation",
+        "explanation": "Computer appreciation introduces non-technical beginners to basic hardware, operating systems, and core apps, building foundational digital literacy."
+    },
+    {
+        "question": "What hardware component is considered volatile memory, losing its entire data store the moment physical power drops?",
+        "options": [
+            "Read-Only Memory Chip (ROM)",
+            "Random Access Memory (RAM)",
+            "Solid-State Drive Storage (SSD)",
+            "Flash Storage Drive"
+        ],
+        "correctAnswer": "Random Access Memory (RAM)",
+        "explanation": "RAM is volatile primary memory. It holds the working data the CPU needs right now, but clears out completely when the computer restarts or loses power."
+    },
+    {
+        "question": "Which analytical machine, designed by Charles Babbage in the 1830s, introduced the foundational concept of a general-purpose programmable computer with a sequential engine and memory store?",
+        "options": [
+            "The Difference Engine",
+            "The Analytical Engine",
+            "The Hollerith Desk",
+            "The Stepped Reckoner"
+        ],
+        "correctAnswer": "The Analytical Engine",
+        "explanation": "Babbage's Analytical Engine design laid the structural groundwork for modern computers, detailing an input path, a mill (CPU), a store (memory), and a sequential card control system."
+    },
+    {
+        "question": "In the data transmission chain, what device changes digital computer signals into analog waves so they can travel across legacy telephone wires?",
+        "options": [
+            "A Network Router Box",
+            "A Switch Terminal Card",
+            "A Modem",
+            "A Patch Panel Array"
+        ],
+        "correctAnswer": "A Modem",
+        "explanation": "A modem (Modulator-Demodulator) modulates digital computer bits into analog wave signals for older phone lines, and demodulates incoming waves back into digital bits."
+    },
+    {
+        "question": "Which type of computer software utility shrinks files to save disk storage space and cut down network upload times?",
+        "options": [
+            "Disk Defragmenter",
+            "File Compression Program (e.g., WinZip)",
+            "Heuristic Scanner Module",
+            "Device Driver Package"
+        ],
+        "correctAnswer": "File Compression Program (e.g., WinZip)",
+        "explanation": "Compression utilities use algorithms to compress redundant patterns in files, shrinking their file size for quicker storage or email transfers."
+    },
+    {
+        "question": "What form of high-level language translation processes source code line-by-line, executing each instruction immediately and stopping if it runs into an error?",
+        "options": [
+            "A Compiler",
+            "An Interpreter",
+            "An Assembler",
+            "A Linker Manager"
+        ],
+        "correctAnswer": "An Interpreter",
+        "explanation": "Interpreters translate and execute source code one line at a time on the fly, which makes debugging easy but runs slower than pre-compiled machine code files."
+    },
+    {
+        "question": "Which data communication channel setup allows signals to flow back and forth between two points, but only in one direction at a time?",
+        "options": [
+            "Simplex Transmission",
+            "Half-Duplex Transmission",
+            "Full-Duplex Transmission",
+            "Synchronous Core Link"
+        ],
+        "correctAnswer": "Half-Duplex Transmission",
+        "explanation": "Half-duplex channels (like standard walkie-talkies) let both sides talk and listen, but they must take turns—data cannot travel both ways at the same time."
+    },
+    {
+        "question": "What type of computer printer uses a precision laser and heat rollers to bond dry toner powder onto paper sheets?",
+        "options": [
+            "Dot-Matrix Impact Printer",
+            "Inkjet Sprayer Unit",
+            "Laser Printer",
+            "Thermal Line Plotter"
+        ],
+        "correctAnswer": "Laser Printer",
+        "explanation": "Laser printers use a laser beam to create static electricity patterns on a drum, which attracts dry toner powder and fuses it onto paper using high-heat rollers."
+    },
+    {
+        "question": "Which computer security threat can replicate and spread across network connections automatically, without needing to attach to a host file or user action?",
+        "options": [
+            "File Infector Virus",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Threat"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are self-contained, malicious programs. Unlike traditional viruses, they don't need a human to run a host file; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "What type of computer input device uses infrared sensors or lasers to read zebra-striped product codes on packaging at retail cash registers?",
+        "options": [
+            "Optical Mark Reader (OMR)",
+            "Barcode Reader",
+            "Magnetic Ink Scanner (MICR)",
+            "Digital Flatbed Board"
+        ],
+        "correctAnswer": "Barcode Reader",
+        "explanation": "Barcode readers shine light across the dark and light lines of a barcode to read the product numbers instantly and match them with store inventory databases."
+    },
+    {
+        "question": "In the humanware structural layer, who is the technical professional responsible for analyzing an organization's workflow needs and mapping out technological solutions?",
+        "options": [
+            "Data Entry Clerk",
+            "Systems Analyst",
+            "Hardware Repair Specialist",
+            "End User Client"
+        ],
+        "correctAnswer": "Systems Analyst",
+        "explanation": "Systems analysts review operational problems, define technical requirements, and design the system architectures that programmers will build."
+    },
+    {
+        "question": "Which computing application area involves using specialized computer modeling and equipment to track atmospheric changes and forecast weather patterns?",
+        "options": [
+            "Meteorology and Science Simulation",
+            "Point of Sale Retail Bookings",
+            "Desktop Publishing Layouts",
+            "Electronic Funds Transfer Routing"
+        ],
+        "correctAnswer": "Meteorology and Science Simulation",
+        "explanation": "Weather forecasting uses powerful computers to crunch massive amounts of scientific atmospheric data, tracking complex pressure models to predict weather shifts."
+    },
+    {
+        "question": "What type of primary system memory chip holds non-volatile startup data that cannot be written over or changed by everyday software?",
+        "options": [
+            "Random Access Memory (RAM)",
+            "Read-Only Memory (ROM)",
+            "Virtual Disk Partition",
+            "CMOS Clock Cache"
+        ],
+        "correctAnswer": "Read-Only Memory (ROM)",
+        "explanation": "ROM chips hold the essential boot-up firmware instructions securely. This memory is non-volatile, meaning it stays intact even when the computer is turned completely off."
+    },
+    {
+        "question": "Which data communication network layout routes all device lines through a central switch node, making it easy to isolate a single broken line?",
+        "options": [
+            "Bus Topology",
+            "Star Topology",
+            "Ring Topology",
+            "Linear Mesh System"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "Star topology connects every network device to a central switch. If one device's cable breaks, only that node goes offline, keeping the rest of the network running normally."
+    },
+    {
+        "question": "What is the primary objective of real-time antivirus background scanners?",
+        "options": [
+            "To compress files on the fly and save storage space.",
+            "To monitor system activity constantly, scanning files as they are opened or downloaded to block malware attacks immediately.",
+            "To speed up the network's bandwidth transfer rates.",
+            "To reorganize fragmented data clusters on secondary storage drives."
+        ],
+        "correctAnswer": "To monitor system activity constantly, scanning files as they are opened or downloaded to block malware attacks immediately.",
+        "explanation": "Real-time background protection monitors memory and file usage, checking data patterns against known malware profiles to block threats before they can execute."
+    },
+    {
+        "question": "Which architectural component within the CPU performs binary addition, subtraction, logical shifts, and variable value evaluations?",
+        "options": [
+            "Control Unit (CU)",
+            "Arithmetic Logic Unit (ALU)",
+            "Internal Data Bus",
+            "Instruction Register (IR)"
+        ],
+        "correctAnswer": "Arithmetic Logic Unit (ALU)",
+        "explanation": "The ALU handles all the math calculations (like addition) and logical tests (like checking if two values are equal) within the central processing unit."
+    },
+    {
+        "question": "What software term describes low-level code that is permanently burned into non-volatile hardware chips to handle basic device control?",
+        "options": [
+            "Shareware Shell",
+            "Firmware",
+            "Application Toolkit",
+            "Heuristic Database"
+        ],
+        "correctAnswer": "Firmware",
+        "explanation": "Firmware is a specific class of background software written directly into hardware chips (like ROM or EEPROM) to provide stable, low-level control for components."
+    },
+    {
+        "question": "Which data processing mode collects transactions into grouped sets to be processed in sequence without needing live user interaction?",
+        "options": [
+            "Interactive Online Processing",
+            "Batch Processing",
+            "Real-Time Automation Loops",
+            "Asynchronous Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar transactions together to run later as a single, uninterrupted job, making it a great fit for predictable tasks like monthly billing."
+    },
+    {
+        "question": "What scale of electronic integration enabled fifth-generation computer research to focus on massively parallel processing systems?",
+        "options": [
+            "Small Scale Integration (SSI)",
+            "Medium Scale Integration (MSI)",
+            "Large Scale Integration (LSI)",
+            "Ultra Large Scale Integration (ULSI)"
+        ],
+        "correctAnswer": "Ultra Large Scale Integration (ULSI)",
+        "explanation": "Fifth-generation computers leverage ULSI and advanced manufacturing to pack millions of components onto single chips, opening doors for parallel processing and AI research."
+    },
+    {
+        "question": "Which network component provides a physical connection port on a computer motherboard to connect network cables?",
+        "options": [
+            "Graphics Processing Board",
+            "Network Interface Card (NIC)",
+            "System Bus Bridging Unit",
+            "CMOS Clock Connection"
+        ],
+        "correctAnswer": "Network Interface Card (NIC)",
+        "explanation": "A Network Interface Card (NIC) creates the physical and electronic port connection a computer needs to join local network setups via cables or wireless signals."
+    },
+    {
+        "question": "What type of application error happens when a programmer writes a line of code that violates the grammatical formatting rules of that programming language?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Exception",
+            "Linker Fault"
+        ],
+        "correctAnswer": "Syntax Error",
+        "explanation": "Syntax errors are like grammar mistakes in writing. If you mistype a command or leave out a bracket, the compiler won't understand the line and will fail to build the program."
+    },
+    {
+        "question": "In the business world, what system allows automated cash transfers between different corporate bank accounts over secure digital networks?",
+        "options": [
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Manufacturing (CAM)",
+            "Point of Sale Processing (POS)",
+            "Optical Mark Registration (OMR)"
+        ],
+        "correctAnswer": "Electronic Funds Transfer (EFT)",
+        "explanation": "EFT systems handle automated cash transfers securely across banking networks without needing physical paper checks or cash exchanges."
+    },
+    {
+        "question": "What type of computer virus targets and alters its own signature string every time it replicates to evade traditional antivirus software checks?",
+        "options": [
+            "Macro Document Infector",
+            "Polymorphic Virus",
+            "Boot Record Hijacker",
+            "Static Trojan File"
+        ],
+        "correctAnswer": "Polymorphic Virus",
+        "explanation": "Polymorphic viruses dynamically modify their code signatures every time they replicate, creating a moving target that signature-based antivirus scanners struggle to recognize."
+    },
+    {
+        "question": "Which transmission medium uses thin, flexible strands of glass to send data packets as pulses of light over incredibly long distances?",
+        "options": [
+            "Coaxial Shielded Line",
+            "Twisted Pair Copper Cable",
+            "Fiber-Optic Cable",
+            "Microwave Relay Wave"
+        ],
+        "correctAnswer": "Fiber-Optic Cable",
+        "explanation": "Fiber-optic lines carry data packets as pulses of light down glass fibers, providing massive bandwidth and long transmission distances without picking up electrical interference."
+    },
+    {
+        "question": "What category of computer hardware memory is incredibly fast and sits directly between CPU registers and main RAM to hold frequently used data?",
+        "options": [
+            "Virtual Swap File",
+            "Cache Memory",
+            "Secondary Solid State",
+            "CMOS Partition System"
+        ],
+        "correctAnswer": "Cache Memory",
+        "explanation": "Cache memory uses fast Static RAM (SRAM) chips placed close to the processor core, giving the CPU quick access to recent instructions and reducing wait times."
+    },
+    {
+        "question": "Which data verification method requires the same data sheet to be typed in by two separate operators to check for data entry differences?",
+        "options": [
+            "Range Checking",
+            "Double Data Entry / Verification",
+            "Check Digit Calculations",
+            "Heuristic File Review"
+        ],
+        "correctAnswer": "Double Data Entry / Verification",
+        "explanation": "Double data entry verification has two operators type the same source info separately. The system highlights any discrepancies to catch and fix human data entry mistakes."
+    },
+    {
+        "question": "What computing trend focuses on linking up scattered processing resources across different global locations to solve huge scientific computing problems?",
+        "options": [
+            "Grid Computing",
+            "Offline Batch Clusters",
+            "Local Virtualization Layouts",
+            "Analog System Modeling"
+        ],
+        "correctAnswer": "Grid Computing",
+        "explanation": "Grid computing links separate computers over a network so they can pool their processing power and storage to tackle massive computing challenges, like weather forecasting or molecular modeling."
+    },
+    {
+        "question": "Which data communication channel topology hooks up all network nodes in a continuous closed circle, passing tokens sequentially around the loop?",
+        "options": [
+            "Bus Topology",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "Ring topology connects network devices in a closed loop. Data packets move from node to node in one direction around the ring until they find the destination address."
+    },
+    {
+        "question": "What type of computer software is available for anyone to use completely free of charge, but comes with restrictive licensing that keeps the source code hidden from modification?",
+        "options": [
+            "Shareware Trial",
+            "Freeware",
+            "Open-Source Framework",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware is free to download and use without cost, but unlike open-source software, the developer keeps the source code private and maintains all proprietary copyrights."
+    },
+    {
+        "question": "The primary role of the BIOS startup sequence on a computer is to:",
+        "options": [
+            "Run automated file compression options to clear drive space.",
+            "Run the Power-On Self-Test (POST) to initialize hardware components and hand over control to the operating system.",
+            "Connect the browser directly to internet search gateways.",
+            "Scan active folder structures for hidden macro virus files."
+        ],
+        "correctAnswer": "Run the Power-On Self-Test (POST) to initialize hardware components and hand over control to the operating system.",
+        "explanation": "The BIOS handles the critical startup chores. It tests hardware circuits during POST, loads essential drivers, and looks for the boot drive to launch the operating system."
+    },
+    {
+        "question": "Which component is an exclusively input device for a computer system?",
+        "options": [
+            "Visual Monitor Screen",
+            "Laser Document Printer",
+            "Flatbed Document Scanner",
+            "Audio Speaker Box"
+        ],
+        "correctAnswer": "Flatbed Document Scanner",
+        "explanation": "Scanners are dedicated input devices. They scan physical images or documents and convert them into digital image data files for the computer to use."
+    },
+    {
+        "question": "What type of computer software application lets users build documents using advanced typesetting styles, perfect for formatting books and newsletter pamphlets?",
+        "options": [
+            "Desktop Publishing (DTP) Software",
+            "Basic Terminal Code Screen",
+            "Electronic Ledger Sheets",
+            "System Optimization Utility"
+        ],
+        "correctAnswer": "Desktop Publishing (DTP) Software",
+        "explanation": "DTP software provides the layout controls and precision text options needed to design and print complex publications like magazines, newspapers, and books."
+    },
+    {
+        "question": "Which computer security threat hides its malicious intent inside an innocent-looking program file, but cannot copy or replicate itself on its own?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Virus Payload",
+            "Boot Record Hijacker"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "What component within the CPU acts as a high-speed temporary scratchpad, holding data values or state flags for immediate processing?",
+        "options": [
+            "The Memory Cache Module",
+            "A Register",
+            "The System Bus Controller",
+            "A Secondary Partition Block"
+        ],
+        "correctAnswer": "A Register",
+        "explanation": "Registers are tiny, ultra-fast storage slots built directly into the CPU core to hold the immediate values, logic flags, and instruction addresses the processor needs right now."
+    },
+    {
+        "question": "Which network topology model features direct cable connections between every single device on the network, providing excellent path redundancy?",
+        "options": [
+            "Star Topology",
+            "Bus Backbone Setup",
+            "Mesh Topology",
+            "Ring Loop Network"
+        ],
+        "correctAnswer": "Mesh Topology",
+        "explanation": "Mesh topology links every device directly to every other device. This setup offers incredible reliability, as data can always find a backup route if one cable breaks."
+    },
+    {
+        "question": "What first-generation computing platform component acted as the primary electronic logic switch, generating massive heat and burning out frequently?",
+        "options": [
+            "Silicon Transistor Triode",
+            "Vacuum Tube",
+            "Integrated Silicon Wafer",
+            "Magnetic Core Ring"
+        ],
+        "correctAnswer": "Vacuum Tube",
+        "explanation": "First-generation computers relied on vacuum tubes for circuitry. These large glass components generated intense heat, consumed lots of electricity, and broke down frequently."
+    },
+    {
+        "question": "In the computing world, what does the abbreviation 'CAD' stand for within industrial design environments?",
+        "options": [
+            "Computer-Aided Design",
+            "Central Algorithm Distribution",
+            "Computational Analysis of Data",
+            "Computerized Assembly Documentation"
+        ],
+        "correctAnswer": "Computer-Aided Design",
+        "explanation": "CAD stands for Computer-Aided Design. It refers to software engineering tools used to draft and simulate precise 2D or 3D technical product models."
+    },
+    {
+        "question": "What type of computer virus infects data files generated by productivity suites by embedding malicious logic inside automated script shortcuts?",
+        "options": [
+            "File Infector",
+            "Macro Virus",
+            "Boot Sector Hijacker",
+            "Polymorphic Segment"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written in the macro automation languages built into office applications like Microsoft Word or Excel, spreading when users share infected document templates."
+    },
+    {
+        "question": "Which transmission medium type uses insulated copper wires twisted around each other in pairs to reduce cross-talk interference?",
+        "options": [
+            "Coaxial Cable Shield",
+            "Twisted-Pair Cable",
+            "Fiber glass strand line",
+            "Microwave Line Link"
+        ],
+        "correctAnswer": "Twisted-Pair Cable",
+        "explanation": "Twisted-pair cabling twists wire pairs together to reduce electromagnetic interference and signal cross-talk, making it a staple for ethernet networks (like UTP cables)."
+    },
+    {
+        "question": "What software translation tool takes code written in assembly language mnemonics and converts it into binary machine language?",
+        "options": [
+            "A Compiler",
+            "An Assembler",
+            "An Interpreter",
+            "A Linker Loader"
+        ],
+        "correctAnswer": "An Assembler",
+        "explanation": "An assembler is a specific translation tool that takes assembly language code (mnemonic commands) and converts it directly into binary machine code that the CPU can execute."
+    },
+    {
+        "question": "Which device serves as both a computer input and output component at the same time?",
+        "options": [
+            "Standard QWERTY Keyboard",
+            "Flatbed Optical Scanner",
+            "Touchscreen Display Panel",
+            "Laser Document Printer"
+        ],
+        "correctAnswer": "Touchscreen Display Panel",
+        "explanation": "Touchscreens work double duty: they serve as an input device by reading your finger taps, and an output device by showing the computer's visual interface on the screen."
+    },
+    {
+        "question": "What form of system software acts as the direct platform layer, managing hardware resources and providing the interface environment for user applications?",
+        "options": [
+            "Database Manager System",
+            "Operating System (OS)",
+            "Word Processing Application",
+            "File Zipper Program"
+        ],
+        "correctAnswer": "Operating System (OS)",
+        "explanation": "The operating system is the core software platform. It manages memory allocation, schedules CPU tasks, handles storage, and provides the user interface that applications run on."
+    },
+    {
+        "question": "Which network classification covers a personal wireless network workspace centered around an individual, typically spanning less than 10 meters?",
+        "options": [
+            "LAN (Local Area Network)",
+            "PAN (Personal Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)"
+        ],
+        "correctAnswer": "PAN (Personal Area Network)",
+        "explanation": "A Personal Area Network (PAN) handles short-range connections around a single person, like pairing your phone with wireless headphones or smartwatches over Bluetooth."
+    },
+    {
+        "question": "What type of processing setup schedules multiple tasks to share execution windows on a single central processor unit sequentially?",
+        "options": [
+            "Multiprocessing Mode",
+            "Multitasking / Time-Slicing",
+            "Linear Batch Spooling",
+            "Offline Media Buffering"
+        ],
+        "correctAnswer": "Multitasking / Time-Slicing",
+        "explanation": "Multitasking lets an operating system run several programs concurrently on one CPU by quickly swapping processing slices among them, giving the user a smooth, seamless experience."
+    },
+    {
+        "question": "The computer data entry concept known as 'Verification' is used to determine if:",
+        "options": [
+            "A file size can be compressed down further.",
+            "The input data was copied accurately from the original source document without transcription errors.",
+            "The text matches known virus signature profiles.",
+            "The data fits numerical validation parameters."
+        ],
+        "correctAnswer": "The input data was copied accurately from the original source document without transcription errors.",
+        "explanation": "Verification double-checks that data was transcribed correctly during entry (often by having two people type the same data or proofreading entries against the original paperwork)."
+    },
+    {
+        "question": "Which secondary storage device holds data permanently using magnetized tracks on a series of rapidly spinning internal metal platters?",
+        "options": [
+            "Solid-State Drive (SSD)",
+            "Hard Disk Drive (HDD)",
+            "Compact Disc (CD-ROM)",
+            "Flash Memory Card"
+        ],
+        "correctAnswer": "Hard Disk Drive (HDD)",
+        "explanation": "Traditional Hard Disk Drives (HDDs) use mechanical read/write heads to access data magnetically stored on rapidly spinning circular platters."
+    },
+    {
+        "question": "What type of software package is distributed with a free trial license, but blocks advanced tools until the user pays for a registration code?",
+        "options": [
+            "Freeware Utility",
+            "Shareware",
+            "Open-Source Framework",
+            "Public Domain Module"
+        ],
+        "correctAnswer": "Shareware",
+        "explanation": "Shareware provides a free trial version of software to let users test it out, but typically restricts full features or displays nag screens until a license is purchased."
+    },
+    {
+        "question": "Which component inside the CPU coordinates data traffic and timing loops across the computer system?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Control Unit (CU)",
+            "Solid State Cache block",
+            "Memory Address Register"
+        ],
+        "correctAnswer": "Control Unit (CU)",
+        "explanation": "The Control Unit acts as the brain's supervisor. It retrieves instructions from memory, decodes them into signals, and directs other parts of the CPU and hardware to execute them."
+    },
+    {
+        "question": "What network scale class covers a massive geographic grid, connecting networks across states, oceans, or continents?",
+        "options": [
+            "LAN (Local Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "WAN (Wide Area Network)",
+            "PAN (Personal Area Network)"
+        ],
+        "correctAnswer": "WAN (Wide Area Network)",
+        "explanation": "A Wide Area Network (WAN) connects computers and smaller networks across large distances. The internet is the largest and most well-known example of a global WAN."
+    },
+    {
+        "question": "Which data communication transmission medium uses a central copper conductor wire wrapped in insulation and a braided metal shield to block interference?",
+        "options": [
+            "Coaxial Cable",
+            "Unshielded Twisted Pair (UTP)",
+            "Fiber glass light strand",
+            "Microwave Link Track"
+        ],
+        "correctAnswer": "Coaxial Cable",
+        "explanation": "Coaxial cables use a solid core copper wire wrapped in insulation and a braided metal shield, making them a common choice for cable TV and older thick ethernet setups."
+    },
+    {
+        "question": "What type of computer printer works by firing tiny pins against an inked fabric ribbon to strike characters onto paper, making it loud but great for multi-part carbon forms?",
+        "options": [
+            "Laser Jet Printer",
+            "Inkjet Sprayer Unit",
+            "Dot-Matrix Printer",
+            "Thermal Heat Element"
+        ],
+        "correctAnswer": "Dot-Matrix Printer",
+        "explanation": "Dot-matrix printers use a print head with physical pins that strike an inked ribbon against paper. This impact design allows them to print through multi-layer carbon forms, though they are loud and low-resolution."
+    },
+    {
+        "question": "In computer software protection, what approach checks an unknown program's behavioral patterns and traits for threats rather than looking for an exact matching signature string?",
+        "options": [
+            "Static Definition Check",
+            "Heuristic Analysis",
+            "Disk Defragmenting scan",
+            "File Compression filter"
+        ],
+        "correctAnswer": "Heuristic Analysis",
+        "explanation": "Heuristic analysis evaluates a program's structure and behavior for suspicious traits, helping antivirus software catch new or modified malware that doesn't have an established signature profile yet."
+    },
+    {
+        "question": "What structural path acts as a multi-lane highway, allowing binary data blocks to pass between the CPU registers and main RAM memory spaces?",
+        "options": [
+            "Address Bus",
+            "Data Bus",
+            "Control Bus",
+            "Expansion Rail Line"
+        ],
+        "correctAnswer": "Data Bus",
+        "explanation": "The Data Bus is a bidirectional highway that carries actual data bits back and forth between the CPU, memory, and peripheral controllers."
+    },
+    {
+        "question": "Which early electro-mechanical computer was built by IBM in 1944 for Harvard University, running automated calculation tracks via instructions read from punched paper tape?",
+        "options": [
+            "ENIAC Mainframe",
+            "Harvard Mark I",
+            "UNIVAC I core",
+            "EDVAC System"
+        ],
+        "correctAnswer": "Harvard Mark I",
+        "explanation": "The Harvard Mark I was a massive electro-mechanical computer that used mechanical switches and relays to execute calculations automatically based on instructions from paper tapes."
+    },
+    {
+        "question": "In data communication, what is the set of standardized formatting rules that lets different computer hardware setups share data packets across a network safely?",
+        "options": [
+            "The Topology Map",
+            "A Protocol",
+            "The Transmission Medium",
+            "The Multiplexer Channel"
+        ],
+        "correctAnswer": "A Protocol",
+        "explanation": "Protocols are standardized rules that define how data is packed, addressed, transmitted, and decoded across networks, ensuring different systems can communicate."
+    },
+    {
+        "question": "What computing trend describes the design and build of eco-friendly, energy-efficient hardware along with green tech recycling solutions?",
+        "options": [
+            "Green Computing",
+            "Cloud Multi-leasing",
+            "Edge Mesh Systems",
+            "Holographic Integration"
+        ],
+        "correctAnswer": "Green Computing",
+        "explanation": "Green computing focuses on reducing the environmental impact of technology by building energy-efficient hardware, managing power smart, and recycling tech waste responsibly."
+    },
+    {
+        "question": "Which input device uses an optical sensor to track filled bubbles on print sheets, making it a staple for grading multiple-choice exams quickly?",
+        "options": [
+            "Magnetic Ink Scanner (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Wand Tool",
+            "Flatbed Matrix Board"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An Optical Mark Reader (OMR) senses physical marks on paper forms by measuring reflected light, making it a fast and reliable tool for grading multiple-choice tests."
+    },
+    {
+        "question": "What category of software is designed to let users draft document papers, format layouts, and write essays easily?",
+        "options": [
+            "System Software Layer",
+            "Application Software",
+            "Hardware Driver Utility",
+            "Database Table Package"
+        ],
+        "correctAnswer": "Application Software",
+        "explanation": "Application software includes programs built for end-users to accomplish specific tasks, such as web browsers, word processors, photo editors, and video games."
+    },
+    {
+        "question": "Which computer security threat copies itself across systems independently by looking for open network ports, without needing to attach to an existing host file?",
+        "options": [
+            "File Infector",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Script"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are self-contained, malicious programs. Unlike traditional viruses, they don't need a human to run a host file; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "What type of computer memory can be electronically wiped and rewritten in blocks, making it the perfect fit for modern solid-state drives and USB flash drives?",
+        "options": [
+            "Static RAM (SRAM)",
+            "Flash Memory (EEPROM)",
+            "Dynamic RAM (DRAM)",
+            "Mask ROM Chips"
+        ],
+        "correctAnswer": "Flash Memory (EEPROM)",
+        "explanation": "Flash memory is a non-volatile storage technology that can be electronically erased and rewritten, combining the durability of ROM with the flexibility of re-writable storage."
+    },
+    {
+        "question": "In the data processing flow, what step is responsible for gathering raw facts and entering them into the computing system?",
+        "options": [
+            "Data Processing",
+            "Data Input / Collection",
+            "Data Distribution",
+            "Data Archiving"
+        ],
+        "correctAnswer": "Data Input / Collection",
+        "explanation": "Data collection and input involve gathering raw facts from source documents and entering them into the computer system to begin the processing loop."
+    },
+    {
+        "question": "Which network topology model runs devices in a sequential loop where data token blocks pass through each computer one by one?",
+        "options": [
+            "Bus Backbone Setup",
+            "Ring Topology",
+            "Star Hub Network",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "Ring topology connects network devices in a closed loop. Data packets move from node to node in one direction around the ring until they find the destination address."
+    },
+    {
+        "question": "What software component translates an entire file of high-level source code into a standalone machine language binary block *before* execution runs?",
+        "options": [
+            "An Interpreter",
+            "A Compiler",
+            "An Assembler",
+            "A Defragmenter Tool"
+        ],
+        "correctAnswer": "A Compiler",
+        "explanation": "A compiler scans an entire project's source code at once, translating everything into a standalone executable binary file (.exe) prior to deployment or execution."
+    },
+    {
+        "question": "Which computing application area handles scanning product barcodes at a checkout counter to update store inventory balances instantly?",
+        "options": [
+            "Point of Sale (POS) System",
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Design (CAD)",
+            "Optical Mark Reader (OMR)"
+        ],
+        "correctAnswer": "Point of Sale (POS) System",
+        "explanation": "A Point of Sale (POS) system combines hardware barcode scanners and checkout software to instantly process sales transactions and update retail inventory databases in real time."
+    },
+    {
+        "question": "What type of computer virus targets and hitches a ride on standard executable application files like those ending in .exe or .com?",
+        "options": [
+            "Boot Sector Threat",
+            "File Infector Virus",
+            "Macro Script Package",
+            "Polymorphic Engine"
+        ],
+        "correctAnswer": "File Infector Virus",
+        "explanation": "File infector viruses attach themselves to executable programs. When a user runs the infected application, the virus activates alongside it to infect more files on the drive."
+    },
+    {
+        "question": "Which computing system type represents the largest, fastest tier available, designed specifically to calculate massive scientific problems like global climate models?",
+        "options": [
+            "Microcomputer Client",
+            "Supercomputer",
+            "Mainframe Console",
+            "Embedded Core"
+        ],
+        "correctAnswer": "Supercomputer",
+        "explanation": "Supercomputers are the fastest, most powerful systems available, built to handle massive numbers of complex mathematical calculations for scientific research and advanced engineering."
+    },
+    {
+        "question": "What data communication metric tracks the total round-trip travel delay time for a data packet moving from its source to its destination node?",
+        "options": [
+            "Bandwidth Capacity",
+            "Latency",
+            "Attenuation Drop",
+            "Modulation Rate"
+        ],
+        "correctAnswer": "Latency",
+        "explanation": "Latency measures network delay—the time it takes for a data packet to travel from the sender to the receiver and back again."
+    },
+    {
+        "question": "Which software utility scans an isolated computer network for open ports and system vulnerabilities that could be exploited by malicious actors?",
+        "options": [
+            "A Port Scanner / Vulnerability Scanner",
+            "A Disk Defragmenter",
+            "A File Compression Utility",
+            "A Device Driver Tool"
+        ],
+        "correctAnswer": "A Port Scanner / Vulnerability Scanner",
+        "explanation": "Vulnerability and port scanners check computers and networks for open communication paths or security gaps, helping administrators fix flaws before attackers can exploit them."
+    },
+    {
+        "question": "What category of computer system software includes device drivers, operating system kernels, and file system managers?",
+        "options": [
+            "Application Suites",
+            "System Software",
+            "Custom User Macros",
+            "Database Schema Scripts"
+        ],
+        "correctAnswer": "System Software",
+        "explanation": "System software includes the foundational programs—like the operating system, drivers, and utilities—that manage the computer's physical hardware so applications can run."
+    },
+    {
+        "question": "Which historical calculation device used a system of interlocking wheels and gears to automate addition and subtraction chores back in 1642?",
+        "options": [
+            "The Analytical Engine",
+            "The Pascaline",
+            "The Stepped Reckoner",
+            "The Hollerith Desk"
+        ],
+        "correctAnswer": "The Pascaline",
+        "explanation": "The Pascaline, invented by Blaise Pascal, was a milestone mechanical calculator that used a system of geared dials to perform addition and subtraction."
+    },
+    {
+        "question": "What data processing mode runs grouped transaction cards across a system during off-peak hours without any direct human interaction required?",
+        "options": [
+            "Real-Time Automation Loops",
+            "Batch Processing",
+            "Interactive Online Entry",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar transactions together to run later as a single, uninterrupted job, making it a great fit for predictable tasks like monthly billing."
+    },
+    {
+        "question": "Which type of transmission channel allows data signals to move in only one direction at a time, forcing devices to take turns communicating?",
+        "options": [
+            "Simplex Channel",
+            "Half-Duplex Channel",
+            "Full-Duplex Channel",
+            "Asynchronous Router"
+        ],
+        "correctAnswer": "Half-Duplex Channel",
+        "explanation": "Half-duplex channels (like standard walkie-talkies) let both sides talk and listen, but they must take turns—data cannot travel both ways at the same time."
+    },
+    {
+        "question": "What type of computer virus masquerades as a safe, legitimate utility program to trick users into installing it, but does not self-replicate?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Document Loop",
+            "Boot Record Infector"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "Which hardware architecture component holds both active program execution instructions and working data blocks in a single shared memory space?",
+        "options": [
+            "The Von Neumann Architecture",
+            "The Harvard Split Architecture",
+            "The Analog Matrix Loop",
+            "The Mechanical Relays Board"
+        ],
+        "correctAnswer": "The Von Neumann Architecture",
+        "explanation": "The Von Neumann architecture established the standard design of storing both program instructions and working data in the same unified main memory space."
+    },
+    {
+        "question": "What type of application software gives users a visual dashboard of windows, menus, and file icons managed by a mouse pointer pointer?",
+        "options": [
+            "Command-Line Prompt (CLI)",
+            "Graphical User Interface (GUI)",
+            "Assembly Language Linker",
+            "Network File System Directory"
+        ],
+        "correctAnswer": "Graphical User Interface (GUI)",
+        "explanation": "A GUI allows users to interact with computer systems through visual elements like icons and windows instead of typing text commands into a blank screen."
+    },
+    {
+        "question": "Which computing trend involves leasing elastic data store networks and virtual processor platforms over the internet via a utility pricing model?",
+        "options": [
+            "Cloud Computing",
+            "Local Defragmentation Sets",
+            "Analog System Modeling",
+            "Batch Mainframe Processing"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets companies access tech resources—like servers, storage, and databases—over the internet on a flexible, pay-as-you-go model."
+    },
+    {
+        "question": "Which basic unit of computer storage represents a single binary digit, either a 0 or a 1?",
+        "options": [
+            "Byte",
+            "Bit",
+            "Nibble",
+            "Word"
+        ],
+        "correctAnswer": "Bit",
+        "explanation": "A bit (short for binary digit) is the smallest, most fundamental unit of data storage in a computer system, holding a value of either 0 or 1."
+    },
+    {
+        "question": "What is the name given to a group of exactly four bits of data storage?",
+        "options": [
+            "Byte",
+            "Nibble",
+            "Word",
+            "Kilobyte"
+        ],
+        "correctAnswer": "Nibble",
+        "explanation": "A nibble is a computing term for a four-bit aggregation, which represents exactly half of a standard eight-bit byte."
+    },
+    {
+        "question": "Which of the following is an example of an open-source operating system?",
+        "options": [
+            "Microsoft Windows",
+            "Apple macOS",
+            "Linux",
+            "IBM z/OS"
+        ],
+        "correctAnswer": "Linux",
+        "explanation": "Linux is developed under an open-source model, meaning its underlying source code is freely available for anyone to inspect, modify, and redistribute."
+    },
+    {
+        "question": "What structural bus component inside a computer determines the maximum amount of physical memory (RAM) the CPU can address?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "System Expansion Bus"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The physical width (number of parallel lines) of the Address Bus determines how many unique memory locations the CPU can point to. For example, a 32-bit address bus can access up to 4 GB of RAM."
+    },
+    {
+        "question": "Which early mechanical device, invented by Gottfried Wilhelm Leibniz in 1673, expanded on Pascal's design to perform multiplication and division directly?",
+        "options": [
+            "The Analytical Engine",
+            "The Stepped Reckoner",
+            "The Difference Engine",
+            "The Napier's Bones"
+        ],
+        "correctAnswer": "The Stepped Reckoner",
+        "explanation": "The Stepped Reckoner was a digital mechanical calculator invented by Leibniz that used a specialized fluted drum mechanism (the Leibniz wheel) to automate multiplication and division."
+    },
+    {
+        "question": "What classification applies to a small computer built into an everyday home appliance, like a smart microwave, to handle exclusive control operations?",
+        "options": [
+            "Mainframe Computer",
+            "Supercomputer",
+            "Embedded Computer",
+            "Minicomputer"
+        ],
+        "correctAnswer": "Embedded Computer",
+        "explanation": "Embedded computers are dedicated microcontrollers engineered into a larger physical machine to perform specific, repetitive control tasks automatically."
+    },
+    {
+        "question": "In a computer system framework, what term describes the logical instructions, programs, and documentation that command the physical hardware?",
+        "options": [
+            "Firmware",
+            "Humanware",
+            "Software",
+            "Liveware"
+        ],
+        "correctAnswer": "Software",
+        "explanation": "Software is the collection of programs, routines, and symbolic data that tells computer hardware exactly what tasks to perform."
+    },
+    {
+        "question": "The second generation of computers is historically defined by the transition from vacuum tubes to which electronic component?",
+        "options": [
+            "Integrated Circuits",
+            "Transistors",
+            "Microprocessors",
+            "Magnetic Core Rings"
+        ],
+        "correctAnswer": "Transistors",
+        "explanation": "The second generation of computers (late 1950s to mid-1960s) replaced fragile, high-heat vacuum tubes with solid-state transistors, making systems faster, smaller, and more efficient."
+    },
+    {
+        "question": "What network transmission device operates at the Physical layer to amplify or regenerate weak incoming signals, extending the maximum cable distance?",
+        "options": [
+            "Router",
+            "Switch",
+            "Repeater",
+            "Gateway"
+        ],
+        "correctAnswer": "Repeater",
+        "explanation": "A repeater takes an incoming electronic or optical network signal that has degraded due to travel distance, amplifies it, and retransmits it to prevent signal attenuation."
+    },
+    {
+        "question": "What type of malware tracks and logs every keystroke typed on a keyboard to steal usernames, passwords, and sensitive financial credentials?",
+        "options": [
+            "Ransomware",
+            "Keylogger",
+            "Rootkit",
+            "Logic Bomb"
+        ],
+        "correctAnswer": "Keylogger",
+        "explanation": "A keylogger is a type of spyware that records physical keyboard entries without the user's knowledge, saving the logs to steal confidential input text."
+    },
+    {
+        "question": "Which processing mode collects data files over time and processes them all at once during scheduled off-peak hours, such as overnight utility billing?",
+        "options": [
+            "Real-Time Processing",
+            "Batch Processing",
+            "Interactive Online Processing",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar data transactions into a single batch file to run sequentially without needing manual human intervention during execution."
+    },
+    {
+        "question": "What form of application software is specifically optimized to draft, edit, format, and print textual layouts like formal business letters and essays?",
+        "options": [
+            "Spreadsheet Software",
+            "Word Processor",
+            "Database Management System",
+            "Presentation Manager"
+        ],
+        "correctAnswer": "Word Processor",
+        "explanation": "Word processors (like Microsoft Word) provide specialized text tools for typing, spelling corrections, grammar checking, and layout formatting."
+    },
+    {
+        "question": "Which ancient calculation tool features wooden frames with parallel wires holding moveable beads, representing one of the earliest human computing devices?",
+        "options": [
+            "The Slide Rule",
+            "The Abacus",
+            "The Pascaline",
+            "The Napier's Bones"
+        ],
+        "correctAnswer": "The Abacus",
+        "explanation": "The abacus is a manual counting device invented thousands of years ago that uses sliding beads on rods to help perform basic arithmetic operations."
+    },
+    {
+        "question": "What specific humanware role involves writing the actual source code lines in languages like C++, Java, or Python based on technical design specs?",
+        "options": [
+            "Systems Analyst",
+            "Database Administrator",
+            "Computer Programmer",
+            "Data Entry Clerk"
+        ],
+        "correctAnswer": "Computer Programmer",
+        "explanation": "Programmers are the technical professionals who translate structural logic charts and design specifications into functional programming code languages."
+    },
+    {
+        "question": "Which secondary storage device offers the fastest read/write speeds because it relies entirely on flash-based silicon memory chips with no moving mechanical parts?",
+        "options": [
+            "Hard Disk Drive (HDD)",
+            "Solid-State Drive (SSD)",
+            "CD-RW Disc",
+            "Magnetic Tape Drive"
+        ],
+        "correctAnswer": "Solid-State Drive (SSD)",
+        "explanation": "SSDs use non-volatile flash memory to read and write data electronically, making them much faster and more shock-resistant than traditional mechanical hard drives."
+    },
+    {
+        "question": "What multi-user processing method splits a processor's active time into tiny structural windows (quanta) to handle operations from hundreds of interactive users simultaneously?",
+        "options": [
+            "Batch Processing",
+            "Real-Time Processing",
+            "Time-Sharing Processing",
+            "Offline Media Spooling"
+        ],
+        "correctAnswer": "Time-Sharing Processing",
+        "explanation": "Time-sharing allocates small slices of CPU time to multiple active tasks in rapid rotation, giving each user the impression that they have exclusive access to the system."
+    },
+    {
+        "question": "Which data communication channel type supports simultaneous, two-way data transmission between two network nodes?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Multiplex Mode"
+        ],
+        "correctAnswer": "Full-Duplex Mode",
+        "explanation": "Full-duplex communication (like a standard mobile phone call) allows data traffic to travel in both directions down the transmission line at the exact same time."
+    },
+    {
+        "question": "An anti-malware technique that flags suspicious program activities—like trying to modify critical operating system files—rather than relying on known signature strings is called:",
+        "options": [
+            "Signature Checking",
+            "Heuristic Analysis / Behavioral Detection",
+            "Disk Optimization Scanning",
+            "Defragmentation Filtering"
+        ],
+        "correctAnswer": "Heuristic Analysis / Behavioral Detection",
+        "explanation": "Heuristic analysis checks how a program behaves and looks for suspicious traits, helping catch brand-new malware variants before a specific signature patch is created."
+    },
+    {
+        "question": "What type of language translator processes a program's high-level source code file line-by-line, executing each instruction immediately rather than producing a separate binary file?",
+        "options": [
+            "Compiler",
+            "Interpreter",
+            "Assembler",
+            "Linker Loader"
+        ],
+        "correctAnswer": "Interpreter",
+        "explanation": "Interpreters translate and run source code line by line on the fly, which makes debugging easy but results in slower execution compared to pre-compiled binaries."
+    },
+    {
+        "question": "Which technical computing trend focuses on hosting distributed data management networks close to the physical location of the user or source device to minimize network latency?",
+        "options": [
+            "Cloud Hosting Arrays",
+            "Edge Computing",
+            "Mainframe Batching Nodes",
+            "Analog Matrix Splitting"
+        ],
+        "correctAnswer": "Edge Computing",
+        "explanation": "Edge computing processes data near the edge of the network—closer to where the data is collected—to cut down on latency, bandwidth use, and reliance on distant cloud servers."
+    },
+    {
+        "question": "What category of code error occurs when a program builds and runs completely fine but calculates incorrect or unexpected mathematical results?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Error",
+            "Compilation Error"
+        ],
+        "correctAnswer": "Logical Error",
+        "explanation": "Logical errors happen when the code follows the correct programming grammar but contains a flaw in the underlying math or reasoning, causing the program to output incorrect results."
+    },
+    {
+        "question": "Which automated input device tracks pre-printed pencil bubbles on specialized intake forms, commonly used to grade high-volume student examinations?",
+        "options": [
+            "Magnetic Ink Character Recognition (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Laser Scanner",
+            "Digital Graphics Tablet"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An OMR device works by bouncing light off a paper form to detect dark marks in specific positions, making it an efficient choice for grading standardized multiple-choice tests."
+    },
+    {
+        "question": "What is the primary operational role of an Ethernet network switch inside a Local Area Network?",
+        "options": [
+            "To translate digital pulses into analog acoustic phone waveforms.",
+            "To read destination hardware MAC addresses on data packets and forward them exclusively to the specific target port.",
+            "To protect local motherboard drives from macro virus payloads.",
+            "To distribute wide-area IP routing paths across separate global networks."
+        ],
+        "correctAnswer": "To read destination hardware MAC addresses on data packets and forward them exclusively to the specific target port.",
+        "explanation": "Switches are smart network components. They inspect the destination MAC address of incoming data packets and forward them directly to the matching device port, reducing overall network traffic."
+    },
+    {
+        "question": "The historical third generation of computer hardware is defined by which manufacturing breakthrough?",
+        "options": [
+            "Vacuum Tube Triodes",
+            "Discrete Germanium Transistors",
+            "Integrated Circuits (ICs)",
+            "Microprocessors (VLSI)"
+        ],
+        "correctAnswer": "Integrated Circuits (ICs)",
+        "explanation": "The third generation of computing took off when engineers learned to combine multiple transistors and supporting components onto a single small silicon chip called an Integrated Circuit."
+    },
+    {
+        "question": "Which software maintenance tool helps free up storage space by locating and removing temporary cache files, broken logs, and emptied trash items safely?",
+        "options": [
+            "Disk Defragmenter",
+            "Disk Cleanup Utility",
+            "File Zipper Program",
+            "Heuristic Filter Module"
+        ],
+        "correctAnswer": "Disk Cleanup Utility",
+        "explanation": "Disk cleanup utilities scan storage drives to find and delete unneeded files—like temporary internet files and installer caches—freeing up valuable disk space."
+    },
+    {
+        "question": "In the foundational data hierarchy framework, processed and organized facts that carry clear contextual meaning for a user are defined as:",
+        "options": [
+            "Raw Data",
+            "Information",
+            "Metadata Strings",
+            "Binary Bit Sequences"
+        ],
+        "correctAnswer": "Information",
+        "explanation": "Information is data that has been processed, structured, organized, or given context to make it useful and meaningful to someone."
+    },
+    {
+        "question": "Which operating system mode must process data inputs and deliver calculated outputs almost instantly to ensure safety, such as in nuclear powerplant cooling loops?",
+        "options": [
+            "Batch Processing Mode",
+            "Real-Time Processing System",
+            "Time-Slicing Manager",
+            "Offline Buffering Track"
+        ],
+        "correctAnswer": "Real-Time Processing System",
+        "explanation": "Real-time systems must process incoming signals and guarantee a response within strict, predictable time limits, making them essential for critical automation tasks."
+    },
+    {
+        "question": "What type of office productivity application uses interconnected rows and columns to handle numerical formulas, budgeting calculations, and charting functions?",
+        "options": [
+            "Word Processor",
+            "Spreadsheet Software",
+            "Database Manager System",
+            "Desktop Publishing Engine"
+        ],
+        "correctAnswer": "Spreadsheet Software",
+        "explanation": "Spreadsheets (like Microsoft Excel) organize data into a grid of cells, letting users write mathematical formulas to perform complex calculations and build data charts."
+    },
+    {
+        "question": "What type of malware blocks access to a user's computer files by encrypting them, demanding payment in exchange for the decryption key?",
+        "options": [
+            "Spyware Tracker",
+            "Ransomware",
+            "Macro Script Threat",
+            "Boot Sector Override"
+        ],
+        "correctAnswer": "Ransomware",
+        "explanation": "Ransomware holds a user's data hostage by encrypting their files and displaying a notice demanding payment before providing the decryption utility."
+    },
+    {
+        "question": "Which internal motherboard bus layer handles slow peripheral connections like legacy USB ports and storage drive controllers?",
+        "options": [
+            "Northbridge Link",
+            "Southbridge Link",
+            "Front Side CPU Bus",
+            "High-Speed Graphics Rail"
+        ],
+        "correctAnswer": "Southbridge Link",
+        "explanation": "In traditional motherboard chipsets, the Southbridge handles communication for slower I/O peripherals, including USB slots, storage controllers, and audio ports."
+    },
+    {
+        "question": "Which generation of programming languages introduced human-readable mnemonic abbreviations (like MOV, ADD, SUB) that correspond directly to machine code steps?",
+        "options": [
+            "First Generation (Machine Language)",
+            "Second Generation (Assembly Language)",
+            "Third Generation (High-Level Language)",
+            "Fourth Generation (Declarative Language)"
+        ],
+        "correctAnswer": "Second Generation (Assembly Language)",
+        "explanation": "Second-generation assembly language replaced raw binary instructions with short, human-readable mnemonic codes, which are then converted to machine language using an assembler."
+    },
+    {
+        "question": "What network topology connects all devices along a single shared linear cable, requiring physical terminators at both ends to stop signal reflection?",
+        "options": [
+            "Star Topology",
+            "Bus Topology",
+            "Ring Topology",
+            "Mesh Topology"
+        ],
+        "correctAnswer": "Bus Topology",
+        "explanation": "Bus topology links all devices along a single central cable backbone. End terminators are required to absorb signals when they reach the end of the line, preventing echo interference."
+    },
+    {
+        "question": "What type of memory chip holds standard system settings—like the active hardware clock—and relies on a tiny motherboard battery to keep data when the PC is off?",
+        "options": [
+            "Volatile Cache Memory",
+            "CMOS RAM",
+            "Optical Media Stacks",
+            "Hard Drive Sector Zero"
+        ],
+        "correctAnswer": "CMOS RAM",
+        "explanation": "CMOS RAM is a small, low-power storage area on the motherboard that holds hardware configuration details (like time and boot settings), kept alive by a button cell battery when the PC is unplugged."
+    },
+    {
+        "question": "Which data communication transmission mode allows data to travel in only one predetermined direction across a channel, with no way to send data back?",
+        "options": [
+            "Simplex Mode",
+            "Half-Duplex Mode",
+            "Full-Duplex Mode",
+            "Asynchronous Multiplexing"
+        ],
+        "correctAnswer": "Simplex Mode",
+        "explanation": "Simplex communication is strictly one-way. A classic example is a public television broadcast or a computer sending a video signal to a standard monitor."
+    },
+    {
+        "question": "The computer axiom GIGO stands for 'Garbage In, Garbage Out'. This principle means that:",
+        "options": [
+            "Physical hard drives will fail if the system picks up dust.",
+            "Flawed or inaccurate input data will always result in flawed or incorrect output answers.",
+            "Deleting temporary files automatically speeds up the CPU clock rate.",
+            "Viruses can only infect a system through the operating system's recycle bin."
+        ],
+        "correctAnswer": "Flawed or inaccurate input data will always result in flawed or incorrect output answers.",
+        "explanation": "GIGO means computers process instructions exactly as given. If you provide incorrect data or logical rules, the system will accurately compute a flawed result."
+    },
+    {
+        "question": "What category applies to proprietary software that is distributed completely free of charge, but whose source code remains closed to modifications?",
+        "options": [
+            "Shareware Package",
+            "Freeware",
+            "Open-Source Framework",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware can be downloaded and used without cost, but unlike open-source software, the creator keeps the underlying source code private and maintains all copyrights."
+    },
+    {
+        "question": "Which device functions exclusively as an output component for a computer system?",
+        "options": [
+            "Electronic Touchpad",
+            "Video Projector",
+            "Digital Web Camera",
+            "Optical Barcode Wand"
+        ],
+        "correctAnswer": "Video Projector",
+        "explanation": "Projectors take digital display data from the computer and project it visually onto an external screen or wall, making them a pure output device."
+    },
+    {
+        "question": "What specific class of malware attaches its malicious programming directly to legitimate macro scripts built into office productivity documents?",
+        "options": [
+            "Boot Sector Virus",
+            "Macro Virus",
+            "Trojan Horse Engine",
+            "Network Core Worm"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written using the built-in automation scripting languages found in applications like Microsoft Word or Excel, spreading when users share infected templates."
+    },
+    {
+        "question": "Which unidirectional system bus layer is used exclusively by the CPU to specify the exact physical storage coordinates it wants to read or write?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "Peripheral PCI Track"
+        ],
+        "correctAnswer": "Address Bus",
+        "explanation": "The Address Bus is a one-way path that the CPU uses to send memory addresses to RAM, pinpointing exactly where it wants to find or store data bits."
+    },
+    {
+        "question": "The fourth generation of computer hardware systems is defined by the introduction of which major component?",
+        "options": [
+            "Vacuum Tube Valves",
+            "Individual Germanium Transistors",
+            "Integrated Circuit Boards",
+            "Microprocessors using Very Large Scale Integration (VLSI)"
+        ],
+        "correctAnswer": "Microprocessors using Very Large Scale Integration (VLSI)",
+        "explanation": "The fourth generation began in the early 1971 window with VLSI technology, which packed thousands of transistors onto a single silicon chip to create the modern microprocessor."
+    },
+    {
+        "question": "Which network classification covers an infrastructure layout that connects devices across an entire metropolitan city or large municipal district?",
+        "options": [
+            "Local Area Network (LAN)",
+            "Personal Area Network (PAN)",
+            "Metropolitan Area Network (MAN)",
+            "Wide Area Network (WAN)"
+        ],
+        "correctAnswer": "Metropolitan Area Network (MAN)",
+        "explanation": "A MAN is engineered to cover a mid-sized geographic region, such as a city or a large university campus, linking multiple smaller local networks together."
+    },
+    {
+        "question": "What software licensing model gives users full access to view, edit, improve, and share the underlying source code freely?",
+        "options": [
+            "Shareware License Bundle",
+            "Freeware Utility",
+            "Open-Source Software",
+            "Proprietary Package"
+        ],
+        "correctAnswer": "Open-Source Software",
+        "explanation": "Open-source software licenses make the source code available to the public, allowing anyone to study, modify, and distribute the program under open terms."
+    },
+    {
+        "question": "Which foundational functional component inside the CPU fetches, decodes, and manages the execution of programmatic instructions?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Control Unit (CU)",
+            "System Bus Interface",
+            "Cache Storage Memory"
+        ],
+        "correctAnswer": "Control Unit (CU)",
+        "explanation": "The Control Unit manages the processor's work, retrieving instructions from memory, decoding them, and directing the flow of data through the ALU and registers."
+    },
+    {
+        "question": "What network model lets users lease scalable, on-demand computing power, databases, and application storage over the internet instead of maintaining local servers?",
+        "options": [
+            "Cloud Computing",
+            "Batch Spooling Arrays",
+            "Local Drive Virtualization",
+            "Analog Modeling Systems"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets individuals and businesses rent access to shared tech infrastructure—like storage and compute power—over the internet on a pay-as-you-go basis."
+    },
+    {
+        "question": "What type of computer virus targets physical disk sector zero, running its malicious code before the main operating system can load into memory?",
+        "options": [
+            "File Infector Virus",
+            "Macro Script Attachment",
+            "Boot Sector Virus",
+            "Polymorphic Code Strain"
+        ],
+        "correctAnswer": "Boot Sector Virus",
+        "explanation": "Boot sector viruses infect the Master Boot Record (MBR) or startup sector of a drive, letting the malicious code run first before safety features can load."
+    },
+    {
+        "question": "Which basic network device connects local equipment but broadcasts all incoming data packets to every single active port, generating high network traffic?",
+        "options": [
+            "Network Switch",
+            "Network Hub",
+            "Core Router Box",
+            "Fiber Transceiver"
+        ],
+        "correctAnswer": "Network Hub",
+        "explanation": "Hubs are simple hardware devices that cannot route data intelligently. When a data packet arrives at one port, the hub copies it and broadcasts it to every connected port, which can clutter network bandwidth."
+    },
+    {
+        "question": "What term defines the study of introductory computer skills, learning tech vocabulary, and understanding how applications fit into daily life?",
+        "options": [
+            "Systems Analysis",
+            "Computer Appreciation",
+            "Heuristic Evaluation",
+            "Data Parsing Methods"
+        ],
+        "correctAnswer": "Computer Appreciation",
+        "explanation": "Computer appreciation courses teach beginners foundational digital literacy, introducing hardware, operating systems, and common office software applications."
+    },
+    {
+        "question": "What type of internal storage memory is volatile, serving as the CPU's primary temporary workspace while active but clearing completely when power is lost?",
+        "options": [
+            "Read-Only Memory (ROM)",
+            "Random Access Memory (RAM)",
+            "Solid-State Disk Partition",
+            "Flash Storage Card"
+        ],
+        "correctAnswer": "Random Access Memory (RAM)",
+        "explanation": "RAM is the system's volatile primary memory. It holds the working data and programs currently in use by the CPU, but it clears out completely when the computer shuts down."
+    },
+    {
+        "question": "Which mechanical calculation machine was designed by Charles Babbage in 1822 to automate polynomial math tables using a series of interlocking gears?",
+        "options": [
+            "The Analytical Engine",
+            "The Difference Engine",
+            "The Stepped Reckoner",
+            "The Hollerith Tabulator"
+        ],
+        "correctAnswer": "The Difference Engine",
+        "explanation": "The Difference Engine was Babbage's early mechanical calculator, designed to compute mathematical tables automatically using the method of finite differences."
+    },
+    {
+        "question": "What communication hardware translates digital computer bits into analog frequencies to send data over legacy copper telephone lines?",
+        "options": [
+            "Network Switch Terminal",
+            "Modem",
+            "Core Router Unit",
+            "Patch Panel Hub"
+        ],
+        "correctAnswer": "Modem",
+        "explanation": "A modem (Modulator-Demodulator) converts digital signals from a computer into analog signals for telephone lines, and converts incoming analog signals back into digital bits."
+    },
+    {
+        "question": "Which system utility optimizes mechanical hard drives by collecting scattered pieces of files and rewriting them into continuous linear spaces?",
+        "options": [
+            "Disk Defragmenter",
+            "Disk Cleanup Assistant",
+            "File Zipper Compressor",
+            "Heuristic Registry Scan"
+        ],
+        "correctAnswer": "Disk Defragmenter",
+        "explanation": "A disk defragmenter reorganizes fragmented file data scattered across a mechanical platter, grouping file pieces together to speed up read and write times."
+    },
+    {
+        "question": "What type of language translator reads a high-level source code project and compiles it into a standalone machine language file *before* execution runs?",
+        "options": [
+            "Interpreter",
+            "Compiler",
+            "Assembler",
+            "Linker Manager"
+        ],
+        "correctAnswer": "Compiler",
+        "explanation": "A compiler translates an entire high-level program into machine code instructions all at once, saving the output as a standalone executable file (.exe)."
+    },
+    {
+        "question": "Which data communication channel setup allows signals to travel both ways between two points, but only in one direction at a time?",
+        "options": [
+            "Simplex Transmission",
+            "Half-Duplex Transmission",
+            "Full-Duplex Transmission",
+            "Synchronous Core Link"
+        ],
+        "correctAnswer": "Half-Duplex Transmission",
+        "explanation": "Half-duplex communication allows two-way traffic, but devices must take turns transmitting data. They cannot send and receive at the exact same time."
+    },
+    {
+        "question": "What type of computer printer feeds liquid ink through microscopic print nozzles to spray precise dots directly onto paper?",
+        "options": [
+            "Laser Printer",
+            "Inkjet Printer",
+            "Dot-Matrix Impact Unit",
+            "Thermal Heat Element"
+        ],
+        "correctAnswer": "Inkjet Printer",
+        "explanation": "Inkjet printers create text and images by spraying tiny droplets of liquid ink onto paper from precision nozzles on the print head."
+    },
+    {
+        "question": "Which type of malware can spread across computer networks independently by exploiting software vulnerabilities, without needing to attach to an existing host file?",
+        "options": [
+            "File Infector Virus",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Script"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are standalone malicious programs that don't need a host file or human action to spread; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "Which device uses a laser to read zebra-striped product identification numbers at retail checkout registers?",
+        "options": [
+            "Optical Mark Reader (OMR)",
+            "Barcode Reader / Scanner",
+            "Magnetic Ink Scanner (MICR)",
+            "Digital Graphics Board"
+        ],
+        "correctAnswer": "Barcode Reader / Scanner",
+        "explanation": "Barcode readers scan the dark and light lines of a barcode using a light sensor, converting the pattern into product numbers to look up pricing in a database."
+    },
+    {
+        "question": "In the humanware structure, what title refers to the administrative professional who manages, structures, and protects an organization's centralized database systems?",
+        "options": [
+            "Systems Analyst",
+            "Database Administrator (DBA)",
+            "Hardware Repair Expert",
+            "Data Entry Clerk"
+        ],
+        "correctAnswer": "Database Administrator (DBA)",
+        "explanation": "A Database Administrator (DBA) is responsible for configuring, maintaining, securing, and optimizing an organization's central database platforms."
+    },
+    {
+        "question": "Which computing application field involves tracking inventory stocks, calculating corporate sales records, and handling retail points of sale?",
+        "options": [
+            "Commercial / Business Data Processing",
+            "Scientific Weather Simulation",
+            "Desktop Publishing Layouts",
+            "Aviation Telemetry Loops"
+        ],
+        "correctAnswer": "Commercial / Business Data Processing",
+        "explanation": "Business data processing focuses on day-to-day commercial tasks, such as managing inventory, processing payroll, tracking sales, and maintaining customer ledgers."
+    },
+    {
+        "question": "What category of storage memory chip is written with permanent boot configuration data during manufacturing and cannot be altered by normal user operations?",
+        "options": [
+            "Random Access Memory (RAM)",
+            "Read-Only Memory (ROM)",
+            "Virtual Disk Partition",
+            "CMOS Clock Cache"
+        ],
+        "correctAnswer": "Read-Only Memory (ROM)",
+        "explanation": "ROM is non-volatile primary memory that holds essential system startup code (like firmware) securely, keeping its data even when the computer is turned off."
+    },
+    {
+        "question": "Which network topology connects every computer to a central hub or switch node, ensuring that a single broken device cable won't interrupt the rest of the network?",
+        "options": [
+            "Bus Topology",
+            "Star Topology",
+            "Ring Topology",
+            "Linear Mesh System"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "In a star topology, all network nodes connect back to a central hub or switch. If one peripheral cable fails, only that specific node goes offline."
+    },
+    {
+        "question": "What is the primary function of an antivirus software utility?",
+        "options": [
+            "To compress data files and optimize secondary drive storage space.",
+            "To detect, isolate, and eliminate malicious software threats from a computer system.",
+            "To boost the physical bandwidth of network routers.",
+            "To reorganize fragmented data clusters on mechanical platters."
+        ],
+        "correctAnswer": "To detect, isolate, and eliminate malicious software threats from a computer system.",
+        "explanation": "Antivirus tools protect systems by scanning drives and memory to identify, block, and remove malware threats like viruses, worms, and trojans."
+    },
+    {
+        "question": "Which operational component of the CPU handles all basic mathematical calculations and logical true/false comparisons?",
+        "options": [
+            "Control Unit (CU)",
+            "Arithmetic Logic Unit (ALU)",
+            "Internal Data Bus",
+            "Instruction Register"
+        ],
+        "correctAnswer": "Arithmetic Logic Unit (ALU)",
+        "explanation": "The ALU handles the math operations (like addition and subtraction) and logical tests (like checking if one value is greater than another) for the processor."
+    },
+    {
+        "question": "What term describes low-level code that is permanently written into non-volatile ROM chips to handle basic hardware initialization and control?",
+        "options": [
+            "Shareware Shell",
+            "Firmware",
+            "Application Toolkit",
+            "Heuristic Script"
+        ],
+        "correctAnswer": "Firmware",
+        "explanation": "Firmware is a specific class of background software written directly into hardware chips (like ROM or flash memory) to provide stable, low-level control for components."
+    },
+    {
+        "question": "Which data processing method runs transactions immediately as they occur, ensuring that data records stay fully updated in real time?",
+        "options": [
+            "Batch Processing Mode",
+            "Online Real-Time Processing",
+            "Offline Media Spooling",
+            "Asynchronous Batch Cluster"
+        ],
+        "correctAnswer": "Online Real-Time Processing",
+        "explanation": "Online real-time processing handles transactions the moment they are entered, updating database records immediately (essential for systems like airline ticket bookings)."
+    },
+    {
+        "question": "What manufacturing integration scale allowed engineers to place millions of discrete electronic components onto a single fifth-generation silicon chip?",
+        "options": [
+            "Small Scale Integration (SSI)",
+            "Medium Scale Integration (MSI)",
+            "Large Scale Integration (LSI)",
+            "Ultra Large Scale Integration (ULSI)"
+        ],
+        "correctAnswer": "Ultra Large Scale Integration (ULSI)",
+        "explanation": "Fifth-generation computing advancements rely on ULSI technology, which packs millions of micro-transistors onto a single chip to enable parallel processing architectures."
+    },
+    {
+        "question": "Which network interface component provides the physical connection port on a computer's motherboard for an Ethernet cable link?",
+        "options": [
+            "Graphics Card Rail",
+            "Network Interface Card (NIC)",
+            "System Bus Bridge",
+            "CMOS Power Terminal"
+        ],
+        "correctAnswer": "Network Interface Card (NIC)",
+        "explanation": "A Network Interface Card (NIC) provides the built-in hardware port and electronic circuitry a computer needs to connect to a network cable or wireless signal."
+    },
+    {
+        "question": "What type of application code error occurs when a programmer leaves out a required punctuation mark or mispells a command, preventing compilation?",
+        "options": [
+            "Syntax Error",
+            "Logical Error",
+            "Runtime Exception",
+            "Linker Fault"
+        ],
+        "correctAnswer": "Syntax Error",
+        "explanation": "Syntax errors are grammar mistakes in a programming language. If a command is typed incorrectly, the compiler cannot understand it and will fail to build the program."
+    },
+    {
+        "question": "In modern digital commerce, what secure network system allows immediate fund transfers between accounts at different banking institutions?",
+        "options": [
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Manufacturing (CAM)",
+            "Point of Sale Tracking (POS)",
+            "Optical Character Verification"
+        ],
+        "correctAnswer": "Electronic Funds Transfer (EFT)",
+        "explanation": "EFT systems move money electronically across secure banking networks, eliminating the need for paper cash or physical checks."
+    },
+    {
+        "question": "What type of computer virus modifies its underlying encrypted signature pattern every time it infects a new file to hide from standard antivirus scanners?",
+        "options": [
+            "Macro Document Infector",
+            "Polymorphic Virus",
+            "Boot Record Hijacker",
+            "Static Trojan File"
+        ],
+        "correctAnswer": "Polymorphic Virus",
+        "explanation": "Polymorphic viruses alter their code signature every time they replicate, creating a changing target that simple signature-based scanners struggle to recognize."
+    },
+    {
+        "question": "Which high-speed transmission medium uses core strands of flexible glass to carry data packets as pulses of light over very long distances?",
+        "options": [
+            "Coaxial Shielded Line",
+            "Twisted-Pair Copper Cable",
+            "Fiber-Optic Cable",
+            "Microwave Relay Wave"
+        ],
+        "correctAnswer": "Fiber-Optic Cable",
+        "explanation": "Fiber-optic cables carry data packets as pulses of light down glass fibers, providing massive bandwidth and long transmission distances without picking up electrical interference."
+    },
+    {
+        "question": "What type of ultra-fast primary memory sits directly inside or next to the CPU core to hold frequently used instructions, reducing access times to main RAM?",
+        "options": [
+            "Virtual Swap Space",
+            "Cache Memory",
+            "Secondary Flash Drive",
+            "CMOS Partition Allocation"
+        ],
+        "correctAnswer": "Cache Memory",
+        "explanation": "Cache memory uses high-speed Static RAM (SRAM) chips located close to the processor core, giving the CPU quick access to recent instructions and reducing wait times."
+    },
+    {
+        "question": "Which data validation check ensures that entered numerical figures fall within realistic high and low boundaries, such as a student's score being between 0 and 100?",
+        "options": [
+            "Format Check",
+            "Range Check",
+            "Check Digit Calculation",
+            "Double Entry Proofing"
+        ],
+        "correctAnswer": "Range Check",
+        "explanation": "A range check is a data validation rule that checks whether an input value falls within a specified minimum and maximum boundary limit."
+    },
+    {
+        "question": "What type of distributed network architecture pools the unused processing power of thousands of separate computers across different locations to solve massive scientific problems?",
+        "options": [
+            "Grid Computing",
+            "Offline Batch Processing",
+            "Local Virtualization Layouts",
+            "Analog System Modeling"
+        ],
+        "correctAnswer": "Grid Computing",
+        "explanation": "Grid computing links separate computers over a network so they can pool their processing power and storage to tackle massive computing challenges, like weather forecasting or molecular modeling."
+    },
+    {
+        "question": "Which network topology connects all devices in a closed continuous loop, passing data packets in one direction from node to node?",
+        "options": [
+            "Bus Topology",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Ring Topology",
+        "explanation": "Ring topology connects network devices in a closed loop. Data packets move from node to node in one direction around the ring until they find the destination address."
+    },
+    {
+        "question": "What category applies to software that is distributed completely free of charge, but whose proprietary source code is kept secret by the developer?",
+        "options": [
+            "Shareware Trial",
+            "Freeware",
+            "Open-Source Framework",
+            "Public Domain Script"
+        ],
+        "correctAnswer": "Freeware",
+        "explanation": "Freeware is free to download and use without cost, but unlike open-source software, the developer keeps the source code private and maintains all proprietary copyrights."
+    },
+    {
+        "question": "What is the primary role of the BIOS (Basic Input/Output System) firmware during a computer's startup sequence?",
+        "options": [
+            "To compress files on the fly and save drive space.",
+            "To run the Power-On Self-Test (POST) to initialize hardware components and locate the operating system boot drive.",
+            "To connect the network browser directly to web search gateways.",
+            "To scan active folder paths for hidden macro virus structures."
+        ],
+        "correctAnswer": "To run the Power-On Self-Test (POST) to initialize hardware components and locate the operating system boot drive.",
+        "explanation": "The BIOS handles the critical startup chores. It tests hardware circuits during POST, loads essential drivers, and looks for the boot drive to launch the operating system."
+    },
+    {
+        "question": "Which device functions exclusively as a data input component for a computer system?",
+        "options": [
+            "Visual Monitor Screen",
+            "Laser Document Printer",
+            "Flatbed Document Scanner",
+            "Audio Speaker Box"
+        ],
+        "correctAnswer": "Flatbed Document Scanner",
+        "explanation": "Scanners are dedicated input devices. They scan physical images or documents and convert them into digital image data files for the computer to use."
+    },
+    {
+        "question": "What type of office application software provides advanced layout and typesetting tools, ideal for formatting professional magazines, brochures, and books?",
+        "options": [
+            "Desktop Publishing (DTP) Software",
+            "Basic Terminal Code Screen",
+            "Electronic Ledger Sheets",
+            "System Optimization Utility"
+        ],
+        "correctAnswer": "Desktop Publishing (DTP) Software",
+        "explanation": "DTP software provides the layout controls and precision text options needed to design and print complex publications like magazines, newspapers, and books."
+    },
+    {
+        "question": "Which type of malware disguises itself inside a helpful, harmless program to trick users into running it, but does not self-replicate?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Virus Payload",
+            "Boot Record Hijacker"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "What components within the CPU act as small, ultra-fast temporary storage slots, holding immediate data values or address points for processing?",
+        "options": [
+            "Memory Cache Modules",
+            "Registers",
+            "System Bus Controllers",
+            "Secondary Partition Blocks"
+        ],
+        "correctAnswer": "Registers",
+        "explanation": "Registers are tiny, ultra-fast storage slots built directly into the CPU core to hold the immediate values, logic flags, and instruction addresses the processor needs right now."
+    },
+    {
+        "question": "Which network topology model features direct dedicated cable links between every single device on the network, providing ultimate path redundancy?",
+        "options": [
+            "Star Topology",
+            "Bus Backbone Setup",
+            "Mesh Topology",
+            "Ring Loop Network"
+        ],
+        "correctAnswer": "Mesh Topology",
+        "explanation": "Mesh topology links every device directly to every other device. This setup offers incredible reliability, as data can always find a backup route if one cable breaks."
+    },
+    {
+        "question": "What hardware component served as the electronic switching logic for first-generation computer systems, generating high heat and breaking down frequently?",
+        "options": [
+            "Silicon Transistor Triode",
+            "Vacuum Tube",
+            "Integrated Silicon Wafer",
+            "Magnetic Core Ring"
+        ],
+        "correctAnswer": "Vacuum Tube",
+        "explanation": "First-generation computers relied on vacuum tubes for circuitry. These large glass components generated intense heat, consumed lots of electricity, and broke down frequently."
+    },
+    {
+        "question": "In professional manufacturing and architecture fields, what does the abbreviation 'CAD' stand for?",
+        "options": [
+            "Computer-Aided Design",
+            "Central Algorithm Distribution",
+            "Computational Analysis of Data",
+            "Computerized Assembly Documentation"
+        ],
+        "correctAnswer": "Computer-Aided Design",
+        "explanation": "CAD stands for Computer-Aided Design. It refers to software engineering tools used to draft and simulate precise 2D or 3D technical product models."
+    },
+    {
+        "question": "What type of computer virus targets files made by productivity software by embedding malicious coding instructions into automated script shortcuts?",
+        "options": [
+            "File Infector",
+            "Macro Virus",
+            "Boot Sector Hijacker",
+            "Polymorphic Segment"
+        ],
+        "correctAnswer": "Macro Virus",
+        "explanation": "Macro viruses are written in the macro automation languages built into office applications like Microsoft Word or Excel, spreading when users share infected document templates."
+    },
+    {
+        "question": "Which network cable type features pairs of insulated copper wires twisted together to minimize electromagnetic cross-talk interference?",
+        "options": [
+            "Coaxial Cable Shield",
+            "Twisted-Pair Cable",
+            "Fiber glass strand line",
+            "Microwave Line Link"
+        ],
+        "correctAnswer": "Twisted-Pair Cable",
+        "explanation": "Twisted-pair cabling twists wire pairs together to reduce electromagnetic interference and signal cross-talk, making it a staple for ethernet networks (like UTP cables)."
+    },
+    {
+        "question": "What specific system software tool translates source code written in assembly language mnemonics directly into binary machine language instructions?",
+        "options": [
+            "Compiler",
+            "Assembler",
+            "Interpreter",
+            "Linker Loader"
+        ],
+        "correctAnswer": "Assembler",
+        "explanation": "An assembler is a specific translation tool that takes assembly language code (mnemonic commands) and converts it directly into binary machine code that the CPU can execute."
+    },
+    {
+        "question": "Which peripheral device serves as both an input and an output component for a computer system?",
+        "options": [
+            "QWERTY Keyboard",
+            "Flatbed Optical Scanner",
+            "Touchscreen Display Panel",
+            "Laser Document Printer"
+        ],
+        "correctAnswer": "Touchscreen Display Panel",
+        "explanation": "Touchscreens work double duty: they serve as an input device by reading your finger taps, and an output device by showing the computer's visual interface on the screen."
+    },
+    {
+        "question": "What type of system software acts as the primary layer that manages physical hardware resources and runs user applications?",
+        "options": [
+            "Database Manager System",
+            "Operating System (OS)",
+            "Word Processing Application",
+            "File Zipper Program"
+        ],
+        "correctAnswer": "Operating System (OS)",
+        "explanation": "The operating system is the core software platform. It manages memory allocation, schedules CPU tasks, handles storage, and provides the user interface that applications run on."
+    },
+    {
+        "question": "Which network classification describes a short-range wireless network centered around an individual's workspace, usually spanning under 10 meters?",
+        "options": [
+            "Local Area Network (LAN)",
+            "Personal Area Network (PAN)",
+            "Metropolitan Area Network (MAN)",
+            "Wide Area Network (WAN)"
+        ],
+        "correctAnswer": "Personal Area Network (PAN)",
+        "explanation": "A Personal Area Network (PAN) handles short-range connections around a single person, like pairing your phone with wireless headphones or smartwatches over Bluetooth."
+    },
+    {
+        "question": "What operating system feature allows a single CPU to switch between multiple programs so quickly that they appear to run at the exact same time?",
+        "options": [
+            "Multiprocessing Mode",
+            "Multitasking / Time-Slicing",
+            "Linear Batch Spooling",
+            "Offline Media Buffering"
+        ],
+        "correctAnswer": "Multitasking / Time-Slicing",
+        "explanation": "Multitasking lets an operating system run several programs concurrently on one CPU by quickly swapping processing slices among them, giving the user a smooth, seamless experience."
+    },
+    {
+        "question": "The data entry control method called 'Verification' is used to double-check if:",
+        "options": [
+            "A file size can be compressed down further.",
+            "The input data matches the original source text exactly, catching any transcription mistakes.",
+            "The text matches known virus signature profiles.",
+            "The data fits numerical validation parameters."
+        ],
+        "correctAnswer": "The input data matches the original source text exactly, catching any transcription mistakes.",
+        "explanation": "Verification double-checks that data was transcribed correctly during entry (often by having two people type the same data or proofreading entries against the original paperwork)."
+    },
+    {
+        "question": "Which secondary storage device holds data permanently using read/write heads on rapidly spinning magnetic platters?",
+        "options": [
+            "Solid-State Drive (SSD)",
+            "Hard Disk Drive (HDD)",
+            "Compact Disc (CD-ROM)",
+            "Flash Memory Card"
+        ],
+        "correctAnswer": "Hard Disk Drive (HDD)",
+        "explanation": "Traditional Hard Disk Drives (HDDs) use mechanical read/write heads to access data magnetically stored on rapidly spinning circular platters."
+    },
+    {
+        "question": "What type of software package is distributed with a free evaluation period, but locks full features or displays notice screens until a user buys a license code?",
+        "options": [
+            "Freeware Utility",
+            "Shareware",
+            "Open-Source Framework",
+            "Public Domain Module"
+        ],
+        "correctAnswer": "Shareware",
+        "explanation": "Shareware provides a free trial version of software to let users test it out, but typically restricts full features or displays nag screens until a license is purchased."
+    },
+    {
+        "question": "Which fundamental component inside the CPU supervises operations, manages data traffic, and timing signals across the system hardware?",
+        "options": [
+            "Arithmetic Logic Unit (ALU)",
+            "Control Unit (CU)",
+            "Solid State Cache block",
+            "Memory Address Register"
+        ],
+        "correctAnswer": "Control Unit (CU)",
+        "explanation": "The Control Unit acts as the brain's supervisor. It retrieves instructions from memory, decodes them into signals, and directs other parts of the CPU and hardware to execute them."
+    },
+    {
+        "question": "What scale of communication network spans across countries, oceans, or the entire globe?",
+        "options": [
+            "Local Area Network (LAN)",
+            "Metropolitan Area Network (MAN)",
+            "Wide Area Network (WAN)",
+            "Personal Area Network (PAN)"
+        ],
+        "correctAnswer": "Wide Area Network (WAN)",
+        "explanation": "A Wide Area Network (WAN) connects computers and smaller networks across large distances. The internet is the largest and most well-known example of a global WAN."
+    },
+    {
+        "question": "Which network cable type features a single central copper conductor wire wrapped in plastic insulation and a braided outer shield?",
+        "options": [
+            "Coaxial Cable",
+            "Unshielded Twisted Pair (UTP)",
+            "Fiber glass light strand",
+            "Microwave Link Track"
+        ],
+        "correctAnswer": "Coaxial Cable",
+        "explanation": "Coaxial cables use a solid core copper wire wrapped in insulation and a braided metal shield, making them a common choice for cable TV and older thick ethernet setups."
+    },
+    {
+        "question": "What type of impact printer uses physical pins to strike an inked fabric ribbon against paper, making it useful for multi-part carbon copies?",
+        "options": [
+            "Laser Jet Printer",
+            "Inkjet Sprayer Unit",
+            "Dot-Matrix Printer",
+            "Thermal Heat Element"
+        ],
+        "correctAnswer": "Dot-Matrix Printer",
+        "explanation": "Dot-matrix printers use a print head with physical pins that strike an inked ribbon against paper. This impact design allows them to print through multi-layer carbon forms, though they are loud and low-resolution."
+    },
+    {
+        "question": "In computer security protection, what method evaluates a file's behavioral traits and operational code patterns to spot unknown malware threats?",
+        "options": [
+            "Static Definition Check",
+            "Heuristic Analysis",
+            "Disk Defragmenting scan",
+            "File Compression filter"
+        ],
+        "correctAnswer": "Heuristic Analysis",
+        "explanation": "Heuristic analysis evaluates a program's structure and behavior for suspicious traits, helping antivirus software catch new or modified malware that doesn't have an established signature profile yet."
+    },
+    {
+        "question": "What system bus layer functions as a bidirectional highway, carrying actual instruction code and data values back and forth between the CPU and memory?",
+        "options": [
+            "Address Bus",
+            "Data Bus",
+            "Control Bus",
+            "Expansion Rail Line"
+        ],
+        "correctAnswer": "Data Bus",
+        "explanation": "The Data Bus is a bidirectional highway that carries actual data bits back and forth between the CPU, memory, and peripheral controllers."
+    },
+    {
+        "question": "Which historic computing milestone was a massive, fully electronic digital computer built in 1945 that used thousands of vacuum tubes to calculate artillery firing tables?",
+        "options": [
+            "Harvard Mark I",
+            "ENIAC",
+            "UNIVAC I",
+            "Difference Engine"
+        ],
+        "correctAnswer": "ENIAC",
+        "explanation": "ENIAC (Electronic Numerical Integrator and Computer) was the first general-purpose, fully electronic digital computer, constructed during World War II to compute ballistic tables."
+    },
+    {
+        "question": "In a network infrastructure, what term describes the set of formal rules and formatting standards that allows different computer hardware setups to exchange data?",
+        "options": [
+            "The Topology Map",
+            "A Protocol",
+            "The Transmission Medium",
+            "The Multiplexer Channel"
+        ],
+        "correctAnswer": "A Protocol",
+        "explanation": "Protocols are standardized rules that define how data is packed, addressed, transmitted, and decoded across networks, ensuring different systems can communicate."
+    },
+    {
+        "question": "What concept covers optimizing computer usage, maximizing hardware efficiency, and recycling materials responsibly to minimize tech's environmental impact?",
+        "options": [
+            "Green Computing",
+            "Cloud Multi-leasing",
+            "Edge Mesh Systems",
+            "Holographic Integration"
+        ],
+        "correctAnswer": "Green Computing",
+        "explanation": "Green computing focuses on reducing the environmental impact of technology by building energy-efficient hardware, managing power smart, and recycling tech waste responsibly."
+    },
+    {
+        "question": "Which optical input scanner reads marked response choices on pre-printed forms, making it ideal for grading multiple-choice sheets?",
+        "options": [
+            "Magnetic Ink Scanner (MICR)",
+            "Optical Mark Reader (OMR)",
+            "Barcode Wand Tool",
+            "Flatbed Matrix Board"
+        ],
+        "correctAnswer": "Optical Mark Reader (OMR)",
+        "explanation": "An Optical Mark Reader (OMR) senses physical marks on paper forms by measuring reflected light, making it a fast and reliable tool for grading multiple-choice tests."
+    },
+    {
+        "question": "What software category covers programs created for end users to accomplish everyday creative or productive tasks, like web browsers and media players?",
+        "options": [
+            "System Software Layer",
+            "Application Software",
+            "Hardware Driver Utility",
+            "Database Table Package"
+        ],
+        "correctAnswer": "Application Software",
+        "explanation": "Application software includes programs built for end-users to accomplish specific tasks, such as web browsers, word processors, photo editors, and video games."
+    },
+    {
+        "question": "Which self-contained network threat replicates independently across local networks without needing a user to run an infected host file?",
+        "options": [
+            "File Infector",
+            "Computer Worm",
+            "Trojan Horse Mask",
+            "Macro Word Script"
+        ],
+        "correctAnswer": "Computer Worm",
+        "explanation": "Worms are self-contained, malicious programs. Unlike traditional viruses, they don't need a human to run a host file; they scan networks and copy themselves to vulnerable systems automatically."
+    },
+    {
+        "question": "What type of non-volatile semiconductor memory can be electronically erased and rewritten in blocks, making it the foundational technology inside USB flash drives?",
+        "options": [
+            "Static RAM (SRAM)",
+            "Flash Memory (EEPROM)",
+            "Dynamic RAM (DRAM)",
+            "Mask ROM Chips"
+        ],
+        "correctAnswer": "Flash Memory (EEPROM)",
+        "explanation": "Flash memory is a non-volatile storage technology that can be electronically erased and rewritten, combining the durability of ROM with the flexibility of re-writable storage."
+    },
+    {
+        "question": "In the data processing lifecycle, what phase is responsible for sorting, calculating, and categorizing raw intake facts into meaningful information?",
+        "options": [
+            "Data Collection",
+            "Data Processing",
+            "Data Output",
+            "Data Archiving"
+        ],
+        "correctAnswer": "Data Processing",
+        "explanation": "The processing phase involves running computations, sorting records, and applying logical rules to raw data to transform it into useful information."
+    },
+    {
+        "question": "Which network topology layout links all computing nodes back to a central hub or switch routing terminal?",
+        "options": [
+            "Bus Backbone Setup",
+            "Ring Topology",
+            "Star Topology",
+            "Mesh Infrastructure"
+        ],
+        "correctAnswer": "Star Topology",
+        "explanation": "In a star topology, all network devices connect to a central hub or switch. This layout makes it easy to add new devices and isolate cable faults without bringing down the entire network."
+    },
+    {
+        "question": "What type of system translation software converts high-level source code instructions all at once into an executable binary file prior to program execution?",
+        "options": [
+            "An Interpreter",
+            "A Compiler",
+            "An Assembler",
+            "A Defragmenter Tool"
+        ],
+        "correctAnswer": "A Compiler",
+        "explanation": "A compiler scans an entire project's source code at once, translating everything into a standalone executable binary file (.exe) prior to deployment or execution."
+    },
+    {
+        "question": "Which digital commerce system tracks item barcode scans at checkout to process customer payments and update store inventory ledgers?",
+        "options": [
+            "Point of Sale (POS) System",
+            "Electronic Funds Transfer (EFT)",
+            "Computer-Aided Design (CAD)",
+            "Optical Mark Reader (OMR)"
+        ],
+        "correctAnswer": "Point of Sale (POS) System",
+        "explanation": "A Point of Sale (POS) system combines hardware barcode scanners and checkout software to instantly process sales transactions and update retail inventory databases in real time."
+    },
+    {
+        "question": "What category of computer virus hitches a ride inside standard executable program files, spreading across storage paths whenever those apps are opened?",
+        "options": [
+            "Boot Sector Threat",
+            "File Infector Virus",
+            "Macro Script Package",
+            "Polymorphic Engine"
+        ],
+        "correctAnswer": "File Infector Virus",
+        "explanation": "File infector viruses attach themselves to executable programs. When a user runs the infected application, the virus activates alongside it to infect more files on the drive."
+    },
+    {
+        "question": "Which tier of computing platforms represents the highest raw calculation power, engineered for massive computational tasks like global climate simulations?",
+        "options": [
+            "Microcomputer Client",
+            "Supercomputer",
+            "Mainframe Console",
+            "Embedded Core"
+        ],
+        "correctAnswer": "Supercomputer",
+        "explanation": "Supercomputers are the fastest, most powerful systems available, built to handle massive numbers of complex mathematical calculations for scientific research and advanced engineering."
+    },
+    {
+        "question": "What data communication term measures the total time delay it takes for a data packet to travel from its source node across a network path to its destination?",
+        "options": [
+            "Bandwidth Capacity",
+            "Latency",
+            "Attenuation Drop",
+            "Modulation Rate"
+        ],
+        "correctAnswer": "Latency",
+        "explanation": "Latency measures network delay—the time it takes for a data packet to travel from the sender to the receiver and back again."
+    },
+    {
+        "question": "Which administrative utility software scans an target system or network configuration to find open communication ports and potential security vulnerabilities?",
+        "options": [
+            "Vulnerability / Port Scanner",
+            "Disk Defragmenter",
+            "File Compression Utility",
+            "Device Driver Tool"
+        ],
+        "correctAnswer": "Vulnerability / Port Scanner",
+        "explanation": "Vulnerability and port scanners check computers and networks for open communication paths or security gaps, helping administrators fix flaws before attackers can exploit them."
+    },
+    {
+        "question": "What broad software category includes operating systems, device drivers, and diagnostic utility tools that manage physical computer hardware operations?",
+        "options": [
+            "Application Suites",
+            "System Software",
+            "Custom User Macros",
+            "Database Schema Scripts"
+        ],
+        "correctAnswer": "System Software",
+        "explanation": "System software includes the foundational programs—like the operating system, drivers, and utilities—that manage the computer's physical hardware so applications can run."
+    },
+    {
+        "question": "Which early manual calculating device was invented by John Napier in 1617, using a set of carved rods to perform multiplication and division calculations?",
+        "options": [
+            "The Pascaline",
+            "The Slide Rule",
+            "Napier's Bones",
+            "The Analytical Engine"
+        ],
+        "correctAnswer": "Napier's Bones",
+        "explanation": "Napier's Bones was an ingenious manual calculation tool consisting of carved rods inscribed with multiplication tables, helping users multiply and divide large numbers quickly."
+    },
+    {
+        "question": "Which data processing architecture aggregates transactions into closed batches to run at scheduled intervals without active human control?",
+        "options": [
+            "Real-Time Automation Loops",
+            "Batch Processing",
+            "Interactive Online Entry",
+            "Distributed Time-Sharing"
+        ],
+        "correctAnswer": "Batch Processing",
+        "explanation": "Batch processing groups similar transactions together to run later as a single, uninterrupted job, making it a great fit for predictable tasks like monthly billing."
+    },
+    {
+        "question": "What transmission channel type supports bidirectional data flow between two points, but requires devices to take turns transmitting because it cannot travel both ways at once?",
+        "options": [
+            "Simplex Channel",
+            "Half-Duplex Channel",
+            "Full-Duplex Channel",
+            "Asynchronous Router"
+        ],
+        "correctAnswer": "Half-Duplex Channel",
+        "explanation": "Half-duplex channels (like standard walkie-talkies) let both sides talk and listen, but they must take turns—data cannot travel both ways at the same time."
+    },
+    {
+        "question": "What type of security threat tricks users by appearing as an innocent or helpful application while hiding a malicious payload inside?",
+        "options": [
+            "Computer Worm",
+            "Trojan Horse",
+            "Macro Document Loop",
+            "Boot Record Infector"
+        ],
+        "correctAnswer": "Trojan Horse",
+        "explanation": "A Trojan Horse masquerades as a legitimate file or application to trick users into downloading it. Once run, it opens security backdoors, but unlike a worm, it cannot copy itself across networks automatically."
+    },
+    {
+        "question": "Which unified computing architecture established the standard design of storing both execution program code and working variable data within the same shared main memory space?",
+        "options": [
+            "Von Neumann Architecture",
+            "Harvard Split Architecture",
+            "Analog Matrix Loop",
+            "Mechanical Relays Board"
+        ],
+        "correctAnswer": "Von Neumann Architecture",
+        "explanation": "The Von Neumann architecture established the standard design of storing both program instructions and working data in the same unified main memory space."
+    },
+    {
+        "question": "What user interface layout allows an operator to execute commands by using a mouse to click graphical icons, menus, and windows?",
+        "options": [
+            "Command-Line Prompt (CLI)",
+            "Graphical User Interface (GUI)",
+            "Assembly Language Linker",
+            "Network File System Directory"
+        ],
+        "correctAnswer": "Graphical User Interface (GUI)",
+        "explanation": "A GUI allows users to interact with computer systems through visual elements like icons and windows instead of typing text commands into a blank screen."
+    },
+    {
+        "question": "Which data processing trend allows organizations to lease elastic server capacity, storage arrays, and software services directly over the internet?",
+        "options": [
+            "Cloud Computing",
+            "Local Defragmentation Sets",
+            "Analog System Modeling",
+            "Batch Mainframe Processing"
+        ],
+        "correctAnswer": "Cloud Computing",
+        "explanation": "Cloud computing lets companies access tech resources—like servers, storage, and databases—over the internet on a flexible, pay-as-you-go model."
+    },
+    {
+    "question": "Which of the following describes the operational domain of Descriptive Statistics?",
+    "options": ["Testing hypotheses about unknown parameters", "Summarizing, organizing, and graphing the specific characteristics of a known dataset", "Predicting future trends using probability distribution models", "Drawing conclusions about a population from an unrepresentative sample"],
+    "correctAnswer": "Summarizing, organizing, and graphing the specific characteristics of a known dataset",
+    "explanation": "Descriptive statistics is concerned strictly with the collection, presentation, organization, and summarization of the features of an existing data set."
+  },
+  {
+    "question": "If an investigator measures the exact weight of 50 packages in grams, what classification scale is being utilized?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ratio Scale",
+    "explanation": "Weight possesses a natural ordering, equal measurable differences, and an absolute true zero point (where 0 grams means complete absence of weight), making it a classic ratio scale variable."
+  },
+  {
+    "question": "What primary limitation of a Histogram makes a Frequency Polygon a better choice when dealing with multi-group analysis?",
+    "options": ["Histograms can only be calculated in degrees out of 360", "Histograms require computing cumulative frequencies first", "Overlaying multiple histograms on the same set of axes creates an unreadable, overlapping mess of blocks", "Histograms cannot handle continuous variables or class intervals"],
+    "correctAnswer": "Overlaying multiple histograms on the same set of axes creates an unreadable, overlapping mess of blocks",
+    "explanation": "Because histograms use wide, solid rectangles, trying to display three or four distributions on one graph blocks the data lines. A frequency polygon uses thin lines, allowing clean overlays."
+  },
+  {
+    "question": "In a continuous frequency dataset, if the class boundaries are given as 49.5 - 54.5, what is the exact width of the class interval?",
+    "options": ["4 units", "5 units", "6 units", "49.5 units"],
+    "correctAnswer": "5 units",
+    "explanation": "The class width is found by taking the difference between the true upper boundary and true lower boundary: 54.5 - 49.5 = 5."
+  },
+  {
+    "question": "Which statistical display uses a circle divided into sectors where the size of each slice's angle corresponds directly to its relative size?",
+    "options": ["Histogram", "Ogive", "Pie Chart", "Frequency Polygon"],
+    "correctAnswer": "Pie Chart",
+    "explanation": "A pie chart is a circular diagram divided into slices or sectors, where each sector angle is proportional to the values being summarized."
+  },
+  {
+    "question": "What is the primary operational difference between 'Primary Data' and 'Secondary Data'?",
+    "options": ["Primary data can only be qualitative, while secondary data is always quantitative", "Primary data is collected firsthand by the researcher, while secondary data is obtained from existing published works", "Primary data requires a pie chart layout, while secondary data requires a histogram base", "Primary data uses nominal scales, while secondary data uses ordinal intervals"],
+    "correctAnswer": "Primary data is collected firsthand by the researcher, while secondary data is obtained from existing published works",
+    "explanation": "Primary data is original information gathered from the original source specifically for the study. Secondary data has already been collected and recorded by another party."
+  },
+  {
+    "question": "If you look at a table showing the frequency distribution of a dataset, what does a 'tally' column signify during construction?",
+    "options": ["The total sum of calculated midpoints", "A counting method used to systematically track and record observations into categories", "The final relative frequency percentage of the class", "The exact boundary range calculation value"],
+    "correctAnswer": "A counting method used to systematically track and record observations into categories",
+    "explanation": "Tallies are marks used during manual data organization to keep score of how many times values drop into individual intervals before adding up final numerical frequencies."
+  },
+  {
+    "question": "Which level of measurement allows for addition and subtraction but lacks an inherent, absolute mathematical zero point?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Interval Scale",
+    "explanation": "An interval scale features equal, measurable distances between points but has an arbitrary zero point, meaning a value of zero does not equal complete absence."
+  },
+  {
+    "question": "What type of graph displays a continuous, step-by-step accumulation of data frequencies plotted directly at upper boundaries?",
+    "options": ["Frequency Polygon", "Ogive", "Histogram", "Simple Bar Chart"],
+    "correctAnswer": "Ogive",
+    "explanation": "An ogive is specifically a cumulative frequency graph that charts running totals progressively up to the upper class boundaries."
+  },
+  {
+    "question": "In the state temperature dataset from your notes, what is the exact base frequency recorded for the interval 124.5 - 129.5?",
+    "options": ["1", "2", "7", "13"],
+    "correctAnswer": "1",
+    "explanation": "According to the table on page 11, the temperature interval 124.5 - 129.5 contains an explicit frequency value of 1."
+  },
+  {
+    "question": "If a researcher wants to compare the pass rates of male and female students across five different departments simultaneously using bars, which layout is best?",
+    "options": ["Simple Bar Chart", "Multiple Bar Chart", "Pie Circle Graph", "Ogive Plot Matrix"],
+    "correctAnswer": "Multiple Bar Chart",
+    "explanation": "A multiple bar chart places bars side-by-side inside each category, making it easy to compare more than one variable across different groups."
+  },
+  {
+    "question": "When data is organized by its nature into categories such as 'Tribe' or 'State of Origin', what classification does it belong to?",
+    "options": ["Quantitative Data", "Qualitative Data", "Interval Metrics", "Ratio Metrics"],
+    "correctAnswer": "Qualitative Data",
+    "explanation": "Tribe and State of Origin represent non-numerical, descriptive attributes, which classifies them as qualitative or categorical data."
+  },
+  {
+    "question": "What is the calculated class midpoint for a class interval that has boundaries stretching from 99.5 to 104.5?",
+    "options": ["101.0", "102.0", "103.0", "104.0"],
+    "correctAnswer": "102.0",
+    "explanation": "The formula for the midpoint is (Lower Limit + Upper Limit) / 2. Here: (99.5 + 104.5) / 2 = 204 / 2 = 102.0."
+  },
+  {
+    "question": "Which metric is calculated by subtracting the minimum observed value from the maximum observed value in a dataset?",
+    "options": ["Class Midpoint", "Relative Frequency", "Range", "Cumulative Total"],
+    "correctAnswer": "Range",
+    "explanation": "The range is explicitly defined in your notes as the difference between the absolute highest (maximum) value and the lowest (minimum) value."
+  },
+  {
+    "question": "What mathematical constraint is placed on the total sum of all relative frequencies when expressed as a percentage?",
+    "options": ["It must equal 50%", "It must equal 100%", "It must equal 180%", "It must equal 360%"],
+    "correctAnswer": "It must equal 100%",
+    "explanation": "Since relative frequencies represent fractions of the entire sample dataset, their combined percentages must total exactly 100%."
+  },
+  {
+    "question": "A Component Bar Chart is also known by which of the following names in statistics?",
+    "options": ["Subdivided Bar Chart", "Frequency Polygon Graph", "Ogive Distribution Index", "Continuous Variable Base"],
+    "correctAnswer": "Subdivided Bar Chart",
+    "explanation": "Your course notes explicitly state that a component bar chart is alternative known as a subdivided bar chart."
+  },
+  {
+    "question": "According to the notes, what is the recommended maximum number of categories to include in a single Pie Chart layout?",
+    "options": ["3 items", "5 items", "7 items", "10 items"],
+    "correctAnswer": "7 items",
+    "explanation": "The design text guidelines explicitly state: 'A pie chart should not contain more than 7 items or categories' to prevent it from becoming hard to read."
+  },
+  {
+    "question": "What visual feature characterizes a standard Histogram graph?",
+    "options": ["Separate horizontal bars that never approach the Y-axis", "Adjacent vertical rectangles drawn over continuous class boundaries with no spaces in between", "A series of curved sectors arranged around a central axis line", "Thin individual strokes tracking isolated nominal values"],
+    "correctAnswer": "Adjacent vertical rectangles drawn over continuous class boundaries with no spaces in between",
+    "explanation": "Histograms display continuous frequencies, meaning the vertical rectangles must touch side-by-side with zero whitespace gaps between adjacent intervals."
+  },
+  {
+    "question": "In the student body calculation example, what was the grand total number of students (N) analyzed across all categories?",
+    "options": ["3,500 students", "4,500 students", "5,500 students", "6,500 students"],
+    "correctAnswer": "5,500 students",
+    "explanation": "Summing the student numbers across all departments gives a total value of 5,500, which serves as the base for the sector angle calculations."
+  },
+  {
+    "question": "What is the primary role of Inferential Statistics?",
+    "options": ["To summarize data in simple, grouped grid tables", "To make predictions, inferences, or generalizations about a larger population based on sample data", "To extract historical records from third-party published textbooks", "To calculate the range of an ungrouped frequency table"],
+    "correctAnswer": "To make predictions, inferences, or generalizations about a larger population based on sample data",
+    "explanation": "Inferential statistics uses smaller sample measurements to draw wider conclusions or make assertions about an unmeasured parent population."
+  },
+  {
+    "question": "If an office clerk extracts last year's sales volumes directly from published company financial reports, what data classification are they handling?",
+    "options": ["Primary Data", "Secondary Data", "Nominal Scale Data", "Continuous Boundary Data"],
+    "correctAnswer": "Secondary Data",
+    "explanation": "Because the office clerk is using data that has already been collected, structured, and published by someone else, they are working with secondary data."
+  },
+  {
+    "question": "Which scale of measurement represents a simple classification system based on names or labels with no inherent numerical or hierarchical order?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Nominal Scale",
+    "explanation": "The nominal scale is the most basic level of measurement, serving purely to categorize data into distinct labeled bins without any ranking or numerical differences."
+  },
+  {
+    "question": "What mathematical coordinate forms the horizontal anchoring position for points plotted on a Frequency Polygon?",
+    "options": ["The lower class limit", "The upper class boundary", "The class midpoint", "The absolute frequency height"],
+    "correctAnswer": "The class midpoint",
+    "explanation": "Points on a frequency polygon are plotted directly above the calculated midpoint of each class interval, then connected with straight lines."
+  },
+  {
+    "question": "What is the precise structural definition of a 'Frequency Distribution'?",
+    "options": ["The method used to calculate the area of circular sectors", "A way of organizing data so that you can see how often each value or interval occurs", "The distance spanning from the minimum score to the maximum coordinate", "The collection of primary inputs using personal interviews"],
+    "correctAnswer": "A way of organizing data so that you can see how often each value or interval occurs",
+    "explanation": "A frequency distribution organizes raw data systematically, making it easy to see the occurrence frequency of values or groups."
+  },
+  {
+    "question": "In the multiple bar chart example on page 6, what was the exact expenditure amount recorded for 'Travel' during the 1st week?",
+    "options": ["4,000", "5,000", "6,200", "7,500"],
+    "correctAnswer": "7,500",
+    "explanation": "The multiple bar chart data table on page 6 explicitly lists the expenditure for 'Travel' in the 1st week as 7,500."
+  },
+  {
+    "question": "What is the uniform class width for a frequency distribution with true boundaries of 4.5 - 9.5, 9.5 - 14.5, and 14.5 - 19.5?",
+    "options": ["4 units", "5 units", "9.5 units", "14.5 units"],
+    "correctAnswer": "5 units",
+    "explanation": "The class width is the difference between boundaries: 9.5 - 4.5 = 5 units."
+  },
+  {
+    "question": "Which graphical display tracks a running total of frequencies accumulated up to the upper boundary of each class interval?",
+    "options": ["Histogram", "Frequency Polygon", "Ogive", "Simple Bar Chart"],
+    "correctAnswer": "Ogive",
+    "explanation": "An ogive—or cumulative frequency graph—plots running frequency totals against class upper boundaries."
+  },
+  {
+    "question": "What unique diagnostic benefit does a Histogram provide when evaluating data distributions?",
+    "options": ["It removes all zero parameters from ratio scales automatically", "It is useful for identifying outliers (extreme values that lie far away from the rest of the data)", "It changes qualitative indicators into numerical percentages", "It eliminates the need to compile frequency columns"],
+    "correctAnswer": "It is useful for identifying outliers (extreme values that lie far away from the rest of the data)",
+    "explanation": "Histograms display data spans clearly, making them highly effective for spotting extreme outliers that sit far away from the main distribution."
+  },
+  {
+    "question": "In the student body calculation, the 'Social Science' department has 950 students out of 5,500. What is its calculated Pie Chart angle?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "62.2 degrees"],
+    "correctAnswer": "62.2 degrees",
+    "explanation": "Using the sector formula: (950 / 5500) * 360 degrees = 62.18 degrees, which rounds to 62.2 degrees as listed on page 10."
+  },
+  {
+    "question": "What is listed as a major operational disadvantage of gathering Primary Data firsthand?",
+    "options": ["It lacks internal consistency and cannot be parsed numerically", "It is highly time-consuming and expensive to collect", "It relies entirely on old published materials and third-party textbooks", "It cannot be visualized using standard charts"],
+    "correctAnswer": "It is highly time-consuming and expensive to collect",
+    "explanation": "The notes state that while primary data is highly reliable, its main drawbacks are the high cost and significant time required for fieldwork."
+  },
+  {
+    "question": "What value do true limits called 'Class Boundaries' eliminate from a grouped frequency distribution?",
+    "options": ["The individual class midpoints entirely", "The numerical whitespace gaps between consecutive class intervals to make data continuous", "The dataset's maximum and minimum outliers", "The requirement to calculate relative percentages"],
+    "correctAnswer": "The numerical whitespace gaps between consecutive class intervals to make data continuous",
+    "explanation": "Class boundaries adjust adjacent limits to remove structural gaps, establishing a continuous scale for plotting graphs like histograms."
+  },
+  {
+    "question": "In the state temperature dataset on page 11, what is the recorded base frequency for the interval 114.5 - 119.5?",
+    "options": ["2", "8", "13", "18"],
+    "correctAnswer": "13",
+    "explanation": "The distribution data tables consistently record a base frequency value of 13 for the 114.5 - 119.5 interval."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) for the second class interval (104.5 - 109.5) in the state temperature dataset?",
+    "options": ["2", "10", "28", "41"],
+    "correctAnswer": "10",
+    "explanation": "The cumulative frequency adds the base frequencies sequentially: 2 (from the first class) + 8 (from the second class) = 10."
+  },
+  {
+    "question": "Which measurement scale is applicable to variables that have a natural ranking or hierarchy but lack equal mathematical intervals?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ordinal Scale",
+    "explanation": "The ordinal scale ranks data categories in a clear hierarchy (e.g., educational levels), but the actual distance between ranks is not equal or measurable."
+  },
+  {
+    "question": "Data extracted from an existing national database or public archive is classified as:",
+    "options": ["Primary Data", "Secondary Data", "Continuous Range Data", "Nominal Field Data"],
+    "correctAnswer": "Secondary Data",
+    "explanation": "Because the data was previously gathered, organized, and documented by an outside party, it serves as a secondary data source."
+  },
+  {
+    "question": "What is the standard formula used to calculate a class midpoint?",
+    "options": ["Midpoint = Upper Boundary - Lower Boundary", "Midpoint = (Lower Limit + Upper Limit) / 2", "Midpoint = Class Frequency * Range", "Midpoint = (Relative Frequency / 360) * 100"],
+    "correctAnswer": "Midpoint = (Lower Limit + Upper Limit) / 2",
+    "explanation": "The class midpoint represents the exact geometric center of an interval, calculated as the average of its lower and upper limits."
+  },
+  {
+    "question": "In the student population problem, the 'Education' department has 1,000 students out of 5,500. What is its calculated sector angle for a pie chart?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "117.8 degrees"],
+    "correctAnswer": "65.5 degrees",
+    "explanation": "Using the sector angle formula: (1000 / 5500) * 360 degrees = 65.45 degrees, which rounds to 65.5 degrees in the text."
+  },
+  {
+    "question": "If a meteorologist records daily rainfall measurements in millimeters, what nature of data is being collected?",
+    "options": ["Qualitative Data", "Quantitative Data", "Nominal Data", "Categorical Data"],
+    "correctAnswer": "Quantitative Data",
+    "explanation": "Rainfall measurements are numeric values that record an explicit amount on a continuous scale, classifying them as quantitative data."
+  },
+  {
+    "question": "Which branch of statistics focuses on summarizing and describing the main patterns and features of a dataset without making population extensions?",
+    "options": ["Descriptive Statistics", "Inferential Statistics", "Basic Data Entry Classification", "Subdivided Component Sorting"],
+    "correctAnswer": "Descriptive Statistics",
+    "explanation": "Descriptive statistics is concerned solely with summarizing and presenting a dataset's features clearly so trends can be easily understood."
+  },
+  {
+    "question": "What is a primary visual limitation of a Pie Chart when evaluating a dataset with a very high number of categories?",
+    "options": ["It can only display quantitative interval limits accurately", "It becomes visually cluttered, tightly packed, and difficult to interpret effectively", "It forces the total angle sum to exceed 360 degrees", "It alters the original primary sources into unverified information blocks"],
+    "correctAnswer": "It becomes visually cluttered, tightly packed, and difficult to interpret effectively",
+    "explanation": "Crowding a pie chart with too many categories makes the slices small and hard to read, which is why the notes recommend a maximum of 7 categories."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) of the absolute final class interval in a frequency distribution always identical to?",
+    "options": ["The uniform width of the intervals", "The total number of observations in the dataset (N)", "The calculated midpoint of the initial class", "Exactly 100 degrees"],
+    "correctAnswer": "The total number of observations in the dataset (N)",
+    "explanation": "The final cumulative frequency aggregates all class frequencies, meaning it must equal the complete sample size (N)."
+  },
+  {
+    "question": "In the state temperature dataset, which class interval recorded a base frequency of exactly 7?",
+    "options": ["99.5 - 104.5", "104.5 - 109.5", "114.5 - 119.5", "119.5 - 124.5"],
+    "correctAnswer": "119.5 - 124.5",
+    "explanation": "The distribution table on page 11 lists a frequency value of 7 for the temperature interval 119.5 - 124.5."
+  },
+  {
+    "question": "Which chart type displays parallel rectangular bars where the height or length corresponds directly to the frequency of separate, discrete categories?",
+    "options": ["Bar Chart", "Histogram", "Ogive curve graph", "Frequency Polygon"],
+    "correctAnswer": "Bar Chart",
+    "explanation": "Bar charts use parallel rectangular bars to display values for separate, discrete categories, keeping spaces between the bars."
+  },
+  {
+    "question": "What classification applies to data regarding an individual's 'Marital Status' (e.g., Single, Married, Divorced)?",
+    "options": ["Quantitative Data", "Qualitative Data", "Interval Scale Data", "Ratio Scale Data"],
+    "correctAnswer": "Qualitative Data",
+    "explanation": "Marital status describes non-numeric attributes or categories, classifying it as qualitative data."
+  },
+  {
+    "question": "What are the two primary branches of statistics?",
+    "options": ["Primary and Secondary Statistics", "Descriptive and Inferential Statistics", "Qualitative and Quantitative Statistics", "Nominal and Ordinal Statistics"],
+    "correctAnswer": "Descriptive and Inferential Statistics",
+    "explanation": "The course note explicitly divides statistics into two main branches: descriptive statistics and inferential statistics."
+  },
+  {
+    "question": "The process of organizing raw numerical data into a structured grid layout to show how frequently each value occurs is called a:",
+    "options": ["Nominal scale registration", "Frequency Distribution", "Primary resource interview", "Sector angle calculation"],
+    "correctAnswer": "Frequency Distribution",
+    "explanation": "A frequency distribution organizes raw data systematically to show the frequency of each score or interval."
+  },
+  {
+    "question": "What is the class width of an interval with a lower class boundary of 49.5 and an upper class boundary of 59.5?",
+    "options": ["5", "10", "15", "20"],
+    "correctAnswer": "10",
+    "explanation": "The class width is found by subtracting the lower boundary from the upper boundary: 59.5 - 49.5 = 10."
+  },
+  {
+    "question": "Which chart type utilizes a continuous line drawn through plotted midpoint coordinates to illustrate a distribution's frequency profile?",
+    "options": ["Pie Chart", "Histogram", "Frequency Polygon", "Component Bar Graph"],
+    "correctAnswer": "Frequency Polygon",
+    "explanation": "A frequency polygon is a line graph that connects points plotted at the frequency of each class midpoint."
+  },
+  {
+    "question": "What value do you get when you subtract the lowest score from the highest score in a dataset?",
+    "options": ["The class midpoint", "The uniform class interval size", "The Range", "The relative frequency ratio"],
+    "correctAnswer": "The Range",
+    "explanation": "The range measures the total spread of a dataset, calculated as the difference between the maximum and minimum values."
+  },
+  {
+    "question": "Which measurement scale possesses a natural order or ranking among its categories but lacks equal measurable intervals?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ordinal Scale",
+    "explanation": "The ordinal scale ranks data categories hierarchically (e.g., first, second, third), but the mathematical distance between ranks is not equal or measurable."
+  },
+  {
+    "question": "If a company reviews its monthly electrical expenditures by extracting values from past utility bills, what source of data is it using?",
+    "options": ["Primary Data", "Secondary Data", "Nominal framework data", "Continuous interval data"],
+    "correctAnswer": "Secondary Data",
+    "explanation": "Because the utility bills represent data already recorded and documented for another purpose, they serve as a secondary data source."
+  },
+  {
+    "question": "In a pie chart, what is the exact formula used to determine the angle of a single sector?",
+    "options": ["Angle = (Total Sum / Item Value) * 100", "Angle = (Item Value / Total Sum of all item values) * 360", "Angle = (Frequency * Class Width) / 100", "Angle = (Upper Boundary - Lower Boundary) * 360"],
+    "correctAnswer": "Angle = (Item Value / Total Sum of all item values) * 360",
+    "explanation": "The sector angle formula calculates an item's proportional share of a full 360-degree circle: (Item Value / Total Sum) * 360."
+  },
+  {
+    "question": "What type of statistical display features vertical bars drawn over continuous class boundaries with no spaces between adjacent blocks?",
+    "options": ["Simple Bar Chart", "Multiple Bar Chart", "Histogram", "Component Bar Chart"],
+    "correctAnswer": "Histogram",
+    "explanation": "Histograms are plotted over continuous class boundaries, resulting in adjacent vertical rectangles with no gaps between them."
+  },
+  {
+    "question": "What vertical coordinate is plotted on the Y-axis of an Ogive graph?",
+    "options": ["Simple single frequencies (f)", "Class midpoints", "Cumulative frequencies (Cf)", "Relative frequency percentages (RF)"],
+    "correctAnswer": "Cumulative frequencies (Cf)",
+    "explanation": "An ogive (cumulative frequency graph) plots cumulative frequency values on the vertical axis against upper class boundaries on the horizontal axis."
+  },
+  {
+    "question": "Which of the following descriptions matches the core concept of 'Primary Data'?",
+    "options": ["Data pulled from existing textbooks, websites, or registries", "Data collected directly from the original source by the investigator for a specific study", "Data that cannot be measured numerically or sorted hierarchically", "The running totals calculated within grouped distributions"],
+    "correctAnswer": "Data collected directly from the original source by the investigator for a specific study",
+    "explanation": "Primary data is original data gathered firsthand by the researcher for their specific project via surveys, interviews, or experiments."
+  },
+  {
+    "question": "In the student population problem on page 9, what is the calculated sector angle for the 'Management' department (1,800 students out of 5,500)?",
+    "options": ["55.6 degrees", "65.5 degrees", "117.8 degrees", "45.8 degrees"],
+    "correctAnswer": "117.8 degrees",
+    "explanation": "Using the sector angle formula: (1800 / 5500) * 360 degrees = 117.81 degrees, which is rounded to 117.8 degrees in the notes."
+  },
+  {
+    "question": "What unique advantage do Histograms offer when evaluating data distributions?",
+    "options": ["They can display nominal categorical data with zero scale adjustments", "They are useful for identifying outliers (extreme values that sit far away from the rest of the data)", "They automatically convert raw scores into pie chart degrees", "They eliminate the need to calculate class boundaries"],
+    "correctAnswer": "They are useful for identifying outliers (extreme values that sit far away from the rest of the data)",
+    "explanation": "The notes state that histograms are highly effective for spotting outliers—extreme data values that lie far outside the main distribution."
+  },
+  {
+    "question": "What is the calculated midpoint for a class interval spanning from 114.5 to 119.5?",
+    "options": ["115.0", "116.5", "117.0", "118.5"],
+    "correctAnswer": "117.0",
+    "explanation": "Calculating the class midpoint: (114.5 + 119.5) / 2 = 234 / 2 = 117.0."
+  },
+  {
+    "question": "Which measurement scale represents the most basic level of classification, serving only to label or name categories?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Nominal Scale",
+    "explanation": "The nominal scale is a qualitative classification system used purely to name or label categories, without any rank or numerical value."
+  },
+  {
+    "question": "What type of bar chart splits a single bar into distinct shaded segments to show how different sub-components build up a cumulative total?",
+    "options": ["Simple Bar Chart", "Component (Subdivided) Bar Chart", "Multiple Bar Chart", "Horizontal Range Bar Chart"],
+    "correctAnswer": "Component (Subdivided) Bar Chart",
+    "explanation": "A component or subdivided bar chart divides a single bar into proportional segments to illustrate its internal composition."
+  },
+  {
+    "question": "In a frequency distribution, the number of times a specific value or observation occurs is called its:",
+    "options": ["Range width", "Midpoint average", "Frequency (f)", "Relative percentage proportion"],
+    "correctAnswer": "Frequency (f)",
+    "explanation": "Frequency (f) measures how often a particular value or event appears within a dataset."
+  },
+  {
+    "question": "What is the primary objective of Descriptive Statistics?",
+    "options": ["To make generalized predictions about an unmeasured population", "To summarize and describe the main features and patterns of a data set clearly", "To gather primary data via laboratory experiments", "To convert nominal categories into ratio scales"],
+    "correctAnswer": "To summarize and describe the main features and patterns of a data set clearly",
+    "explanation": "Descriptive statistics focuses on organizing and summarizing a dataset to make its core features and trends easy to understand."
+  },
+  {
+    "question": "If a researcher reviews the 'Marital Status' of a study group (Single, Married, Divorced, Widowed), what nature of data is being analyzed?",
+    "options": ["Quantitative Data", "Qualitative Data", "Interval Scale Data", "Ratio Scale Data"],
+    "correctAnswer": "Qualitative Data",
+    "explanation": "Marital status describes non-numeric categories or attributes, classifying it as qualitative (categorical) data."
+  },
+  {
+    "question": "In the weekly expenditure example on page 6, what was the exact amount spent on 'Fuel' during the 3rd week?",
+    "options": ["1,200", "1,500", "1,800", "2,000"],
+    "correctAnswer": "1,800",
+    "explanation": "The multiple bar chart data table on page 6 records an expenditure value of 1,800 for 'Fuel' in the 3rd week."
+  },
+  {
+    "question": "What is the class width of an interval with true boundaries stretching from 109.5 to 114.5?",
+    "options": ["4", "5", "6", "10"],
+    "correctAnswer": "5",
+    "explanation": "The class width is the difference between the upper and lower boundaries: 114.5 - 109.5 = 5."
+  },
+  {
+    "question": "What mathematical property must the sum of all sector angles in a properly constructed pie chart equal?",
+    "options": ["100 degrees", "180 degrees", "270 degrees", "360 degrees"],
+    "correctAnswer": "360 degrees",
+    "explanation": "Because a pie chart is a circle representing the whole dataset, the individual sector angles must always total exactly 360 degrees."
+  },
+  {
+    "question": "Which graph tracks running frequency totals plotted against upper class boundaries?",
+    "options": ["Histogram", "Frequency Polygon", "Ogive", "Simple Bar Chart"],
+    "correctAnswer": "Ogive",
+    "explanation": "An ogive (cumulative frequency graph) plots the running total of accumulated frequencies against the upper boundaries of the class intervals."
+  },
+  {
+    "question": "If a student population consists of 850 Arts, 1000 Education, 200 Law, 1800 Management, 700 Science, and 950 Social Science, what is the calculated sector angle for the 'Science' department?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "45.8 degrees"],
+    "correctAnswer": "45.8 degrees",
+    "explanation": "Using the formula: (700 / 5500) * 360 degrees = 45.81 degrees, which rounds to 45.8 degrees."
+  },
+  {
+    "question": "Which of the following is listed as a distinct disadvantage of utilizing Primary Data?",
+    "options": ["It has very low reliability and cannot be verified by the investigator", "It is expensive and time-consuming to collect", "It can only be collected from websites or published text records", "It cannot be presented on standard frequency distributions"],
+    "correctAnswer": "It is expensive and time-consuming to collect",
+    "explanation": "The notes list being expensive and time-consuming as the primary drawbacks of gathering primary data firsthand."
+  },
+  {
+    "question": "What horizontal coordinate is used to plot the points for a Frequency Polygon graph?",
+    "options": ["The lower class boundary exclusively", "The upper class boundary only", "The class midpoint", "The simple single frequency height"],
+    "correctAnswer": "The class midpoint",
+    "explanation": "A frequency polygon plots each class frequency at its corresponding class midpoint along the horizontal axis."
+  },
+  {
+    "question": "What is the structural definition of 'Class Boundaries' in a frequency distribution?",
+    "options": ["The difference between the maximum value and the minimum value of a dataset", "The true limits of class intervals that remove mathematical gaps to make data continuous", "The running sum of frequencies calculated across rows", "The total percentage proportion an item represents out of a hundred"],
+    "correctAnswer": "The true limits of class intervals that remove mathematical gaps to make data continuous",
+    "explanation": "Class boundaries adjust class limits to eliminate numerical gaps between adjacent intervals, creating a continuous scale for data visualization."
+  },
+  {
+    "question": "In the state temperature dataset on page 11, what is the recorded frequency for the temperature class interval 109.5 - 114.5?",
+    "options": ["2", "8", "13", "18"],
+    "correctAnswer": "18",
+    "explanation": "The distribution table on page 11 records a frequency value of 18 for the 109.5 - 114.5 interval, making it the highest frequency class."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) for the third class interval (109.5 - 114.5) in the temperature dataset?",
+    "options": ["2", "10", "28", "41"],
+    "correctAnswer": "28",
+    "explanation": "The cumulative frequency adds frequencies sequentially: 2 (first class) + 8 (second class) + 18 (third class) = 28."
+  },
+  {
+    "question": "Which chart type uses vertical rectangular pillars placed side-by-side within each category to compare multiple variables simultaneously?",
+    "options": ["Simple Bar Chart", "Multiple Bar Chart", "Component Bar Chart", "Ogive graph"],
+    "correctAnswer": "Multiple Bar Chart",
+    "explanation": "Multiple bar charts group separate bars side-by-side for each category, allowing easy visual comparison of multiple variables."
+  },
+  {
+    "question": "What scale of measurement applies to a variable like 'Academic Degree Level' (B.Sc., M.Sc., Ph.D.)?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ordinal Scale",
+    "explanation": "Academic degrees follow a progressive educational hierarchy, making them a clear example of ordinal scale data."
+  },
+  {
+    "question": "Data extracted from an existing database or old census reports is classified as:",
+    "options": ["Primary Data", "Secondary Data", "Continuous range data", "Nominal field data"],
+    "correctAnswer": "Secondary Data",
+    "explanation": "Because the data was previously gathered and recorded by another party, it serves as a secondary data source for the current researcher."
+  },
+  {
+    "question": "What is the formula used to calculate a class midpoint?",
+    "options": ["Midpoint = Upper boundary - Lower boundary", "Midpoint = (Lower limit + Upper limit) / 2", "Midpoint = Class frequency * Range", "Midpoint = (Relative frequency / 360) * 100"],
+    "correctAnswer": "Midpoint = (Lower limit + Upper limit) / 2",
+    "explanation": "The class midpoint is the exact mathematical center of an interval, found by averaging its lower and upper limits."
+  },
+  {
+    "question": "In the student population problem, the 'Education' department has 1,000 students out of a total 5,500. What is its calculated sector angle for a pie chart?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "117.8 degrees"],
+    "correctAnswer": "65.5 degrees",
+    "explanation": "Using the sector angle formula: (1000 / 5500) * 360 degrees = 65.45 degrees, which rounds to 65.5 degrees."
+  },
+  {
+    "question": "If a medical researcher records the body temperatures of patients in degrees Celsius, what nature of data is being collected?",
+    "options": ["Qualitative Data", "Quantitative Data", "Nominal data", "Categorical data"],
+    "correctAnswer": "Quantitative Data",
+    "explanation": "Temperature readings are numerical measurements on a continuous scale, classifying them as quantitative data."
+  },
+  {
+    "question": "Which branch of statistics focuses on making generalizations about a population based on data collected from a sample?",
+    "options": ["Descriptive Statistics", "Inferential Statistics", "Basic Data Entry Classification", "Subdivided Component Sorting"],
+    "correctAnswer": "Inferential Statistics",
+    "explanation": "Inferential statistics uses sample data to draw conclusions, make predictions, and generalize findings about a larger population."
+  },
+  {
+    "question": "What is a primary disadvantage of a Pie Chart when dealing with a dataset that contains too many categories?",
+    "options": ["It can only display quantitative interval limits accurately", "It becomes visually cluttered, confusing, and difficult to interpret effectively", "It forces the total angle sum to exceed 360 degrees", "It alters the original primary sources into unverified information blocks"],
+    "correctAnswer": "It becomes visually cluttered, confusing, and difficult to interpret effectively",
+    "explanation": "Including too many categories in a single pie chart makes it cluttered and hard to read, which is why the notes recommend a maximum of 7 categories."
+  },
+  {
+    "question": "What is the cumulative frequency (Cf) of the final class interval in a frequency distribution always identical to?",
+    "options": ["The uniform width of the intervals", "The total number of observations in the dataset (N)", "The calculated midpoint of the initial class", "Exactly 100 degrees"],
+    "correctAnswer": "The total number of observations in the dataset (N)",
+    "explanation": "The cumulative frequency of the final class accumulates all frequencies across the distribution, meaning it must equal the total sample size (N)."
+  },
+  {
+    "question": "In the state temperature dataset, which class interval recorded a frequency of exactly 7?",
+    "options": ["99.5 - 104.5", "104.5 - 109.5", "114.5 - 119.5", "119.5 - 124.5"],
+    "correctAnswer": "119.5 - 124.5",
+    "explanation": "The distribution table on page 11 lists a frequency value of 7 for the temperature interval 119.5 - 124.5."
+  },
+  {
+    "question": "Which of the following is considered a primary purpose of constructing a statistical 'Frequency Table'?",
+    "options": ["To prove that a sample size perfectly matches a target population parameter", "To reduce a massive collection of raw data values into a structured, manageable format", "To compute the exact sector degree for a component bar chart segment", "To eliminate any qualitative data attributes from an ongoing study"],
+    "correctAnswer": "To reduce a manageable format into a structured, manageable format",
+    "explanation": "Raw numerical data is often highly chaotic and difficult to interpret by visual inspection alone. A frequency table arranges these disjointed data points systematically into rows, columns, intervals, and tallies, allowing an analyst to easily grasp patterns, frequencies, and data distributions at a glance."
+  },
+  {
+    "question": "In the context of statistical measurements, how is the 'Ratio Scale' uniquely distinguished from the 'Interval Scale'?",
+    "options": ["The ratio scale allows categories to be ranked but has no numerical value", "The ratio scale contains an absolute, true zero point indicating the complete absence of a characteristic", "The ratio scale can only be evaluated using qualitative bar charts", "The ratio scale lacks uniform distances between consecutive measurement markings"],
+    "correctAnswer": "The ratio scale contains an absolute, true zero point indicating the complete absence of a characteristic",
+    "explanation": "While both scales have equal intervals, the interval scale has an arbitrary zero point (e.g., 0°C doesn't mean there is no heat at all; it's just a defined marker). A ratio scale features an absolute true zero point (e.g., 0 kilograms means absolutely zero weight), which allows us to meaningfully multiply or say one value is 'twice as large' as another."
+  },
+  {
+    "question": "When constructing a continuous grouped frequency distribution, what is the consequence of selecting too few class intervals (e.g., 2 or 3 intervals for 1,000 observations)?",
+    "options": ["The class width automatically shrinks to zero", "Important details and features of the data distribution profile are lost or over-summarized", "The cumulative frequency curve will grow downwards", "The data scale transitions automatically from quantitative to nominal labels"],
+    "correctAnswer": "Important details and features of the data distribution profile are lost or over-summarized",
+    "explanation": "Selecting too few classes over-condenses the data, packing vastly different scores into the same broad intervals and wiping out the true underlying shape, trends, and variations of the dataset."
+  },
+  {
+    "question": "Why is a frequency polygon traditionally 'anchored' to the horizontal axis at both the beginning and the end of the distribution?",
+    "options": ["To force the total visual area under the polygon line to approximate the total area of the corresponding histogram rectangles", "To demonstrate that cumulative frequencies always return back to zero at the final upper boundary", "To comply with the 360-degree geometric rule recommended for pie charts", "To isolate outliers from affecting the midpoint coordinates"],
+    "correctAnswer": "To force the total visual area under the polygon line to approximate the total area of the corresponding histogram rectangles",
+    "explanation": "By extending the polygon line down to the midpoints of two theoretical empty classes (with zero frequency) at each end, the line chart forms a closed geometric polygon against the X-axis. This makes the total area bounded beneath the polygon curve visually equal to the total area enclosed within the blocks of a histogram."
+  },
+  {
+    "question": "Which type of statistical graph is specifically constructed by mapping individual frequency coordinates directly over the true class midpoints of a grouped dataset?",
+    "options": ["An Ogive Curve", "A Simple Bar Chart", "A Frequency Polygon", "A Component Subdivided Column Chart"],
+    "correctAnswer": "A Frequency Polygon",
+    "explanation": "A frequency polygon is a line graph where each plotted point's horizontal coordinate (X-axis) is the calculated class midpoint, and its vertical coordinate (Y-axis) is that class's single frequency. These coordinates are then connected sequentially using straight line segments."
+  },
+  {
+    "question": "What structural rule must be maintained when plotting a standard Histogram graph along a continuous horizontal axis?",
+    "options": ["The individual rectangular blocks must have variable white spaces between them based on nominal traits", "The blocks must be completely adjacent with zero gaps between them, because the underlying variable scale is continuous", "The height of every single rectangle must remain perfectly uniform across all class intervals", "The cumulative frequencies must replace single frequencies on the vertical scale"],
+    "correctAnswer": "The blocks must be completely adjacent with zero gaps between them, because the underlying variable scale is continuous",
+    "explanation": "Because histograms represent continuous data mapped over sequential, gap-free class boundaries, the vertical rectangles must touch one another side-by-side. Gaps are reserved exclusively for standard categorical bar charts."
+  },
+  {
+    "question": "If an investigator uses a published statistical abstract from the National Bureau of Statistics to study national inflation rates, how is this source materials categorized?",
+    "options": ["Primary Data", "Secondary Data", "Categorical Field Data", "Discrete Range Data"],
+    "correctAnswer": "Secondary Data",
+    "explanation": "Since the investigator did not collect the raw numbers firsthand via direct field surveys or live laboratory testing, but instead gathered data previously compiled, verified, and published by an outside agency, it is classified as secondary data."
+  },
+  {
+    "question": "What is the key disadvantage of presenting data through an ungrouped frequency distribution table when the dataset contains hundreds of unique numerical scores?",
+    "options": ["It forces the data to be calculated in radial degrees instead of base numbers", "The table becomes excessively long, visually overwhelming, and fails to serve its core purpose of summarizing data", "It eliminates the ability to locate the absolute maximum or minimum scores", "It automatically switches quantitative numbers into qualitative classifications"],
+    "correctAnswer": "The table becomes excessively long, visually overwhelming, and fails to serve its core purpose of summarizing data",
+    "explanation": "An ungrouped frequency table lists every single unique observed value in its own separate row. If there are hundreds of unique values, the table grows massive and sprawling, defeating the primary objective of statistics, which is to simplify and summarize raw information clearly."
+  },
+  {
+    "question": "In a pie chart, if Category A has a calculated sector angle of 90 degrees, what exact proportion or percentage of the grand total does Category A represent?",
+    "options": ["15%", "25%", "50%", "75%"],
+    "correctAnswer": "25%",
+    "explanation": "A full circle contains exactly 360 degrees. To find the percentage representation of a 90-degree slice, you evaluate the proportion: (90° / 360°) = 1/4. Expressed as a percentage, 1/4 multiplied by 100% equals exactly 25%."
+  },
+  {
+    "question": "Which of the following data types represents a strictly qualitative variable?",
+    "options": ["The monthly electric bill of a household measured in currency units", "The primary type of fuel used by a vehicle (e.g., Petrol, Diesel, Electric)", "The total count of registered students in an academic lecture hall", "The daily temperature recorded in degrees Celsius"],
+    "correctAnswer": "The primary type of fuel used by a vehicle (e.g., Petrol, Diesel, Electric)",
+    "explanation": "Qualitative variables describe non-numeric attributes, labels, or categories. The type of fuel is descriptive and cannot be inherently measured with numbers, whereas electricity costs, student counts, and temperatures are directly numerical (quantitative)."
+  },
+  {
+    "question": "What operational step must be taken to convert standard class limits (e.g., 20-24, 25-29) into continuous, gap-free class boundaries?",
+    "options": ["Multiply the class midpoint by the total sample size across all categories", "Subtract 0.5 from the lower class limit and add 0.5 to the upper class limit of each interval", "Divide the class single frequency by 360 degrees to yield an adjusted limit", "Calculate the cumulative frequency totals across all intervals sequentially"],
+    "correctAnswer": "Subtract 0.5 from the lower class limit and add 0.5 to the upper class limit of each interval",
+    "explanation": "Standard class limits leave a gap between the upper limit of one class (e.g., 24) and the lower limit of the next (e.g., 25). To eliminate this gap, you split the difference (which is 1 unit) by subtracting 0.5 from lower limits and adding 0.5 to upper limits, establishing continuous boundaries like 19.5-24.5 and 24.5-29.5."
+  },
+  {
+    "question": "When plotting a cumulative frequency graph (Ogive), what metrics anchor the plotted coordinate points on the horizontal (X) and vertical (Y) axes?",
+    "options": ["Lower class limits on X and single frequencies on Y", "Upper class boundaries on X and cumulative frequencies on Y", "Class midpoints on X and relative frequencies on Y", "Nominal text categories on X and item values on Y"],
+    "correctAnswer": "Upper class boundaries on X and cumulative frequencies on Y",
+    "explanation": "An ogive tracks the running total of frequencies accumulated up to a certain point. Therefore, each cumulative frequency value is plotted directly above the upper class boundary of its respective interval, indicating that a certain number of observations fall below that specific boundary marker."
+  },
+  {
+    "question": "What specific design rule does the course note give regarding the maximum structural limit for a Pie Chart?",
+    "options": ["It must have exactly three equal sectors total", "It should not contain more than 7 items or categories to preserve visual clarity", "It can only be used if all sector angles result in whole integers with no decimals", "It must represent primary experimental source data exclusively"],
+    "correctAnswer": "It should not contain more than 7 items or categories to preserve visual clarity",
+    "explanation": "According to page 10 of the lecture notes, an effective pie chart should not contain more than 7 items or categories. Shoving too many categories into a single circle forces the slices to become extremely thin, cluttered, and impossible for the human eye to distinguish or compare cleanly."
+  },
+  {
+    "question": "If a grouped frequency distribution consists of the continuous boundaries 14.5-19.5, 19.5-24.5, and 24.5-29.5, what is the uniform class width of these intervals?",
+    "options": ["4 units", "5 units", "10 units", "14.5 units"],
+    "correctAnswer": "5 units",
+    "explanation": "The class width (or interval size) is found by subtracting the true lower class boundary from the true upper class boundary of any single interval. For instance, 19.5 minus 14.5 equals exactly 5 units."
+  },
+  {
+    "question": "Which scale of measurement introduces a natural ranking or structural hierarchy among categories, but completely lacks equal measurable intervals and lacks a true absolute zero?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ordinal Scale",
+    "explanation": "The ordinal scale classifies data into categories that have a clear, logical order or hierarchy (e.g., Freshman, Sophomore, Junior, Senior, or Military ranks). However, it does not provide any measurable mathematical distance between these ranks, nor does it have a true zero point."
+  },
+  {
+    "question": "What term is used in the notes to describe an extreme data value that sits exceptionally far away from the main cluster of observations?",
+    "options": ["Class Midpoint", "Relative Frequency Index", "Outlier", "Cumulative Anchor Point"],
+    "correctAnswer": "Outlier",
+    "explanation": "An outlier is an extreme data point that differs significantly from the remaining observations in a sample. Histograms and dot plots are highly useful visual tools for diagnosing and identifying these distant values during data analysis."
+  },
+  {
+    "question": "What mathematical relationship exists between a standard Histogram and a Frequency Polygon graph?",
+    "options": ["A frequency polygon can be cleanly drawn by connecting the midpoints of the tops of the histogram's rectangles with straight lines", "A histogram can only be constructed after an ogive is fully completed", "They must always use completely different class intervals and frequencies on their vertical axes", "They represent qualitative nominal text categories exclusively"],
+    "correctAnswer": "A frequency polygon can be cleanly drawn by connecting the midpoints of the tops of the histogram's rectangles with straight lines",
+    "explanation": "Because a frequency polygon tracks frequencies over class midpoints, its coordinate points line up directly with the exact center point at the top edge of each corresponding histogram rectangle. Connecting these midpoints with line segments yields the frequency polygon graph."
+  },
+  {
+    "question": "In the weekly expenditure example across three weeks on page 6, which item maintained a flat, unchanging expenditure value of 5,000 every single week?",
+    "options": ["Food", "House Rent", "Fuel", "Travel"],
+    "correctAnswer": "House Rent",
+    "explanation": "Reviewing the multi-column dataset on page 6 of your notes reveals that 'House Rent' stands out because its recorded expense value was 5,000 in Week 1, 5,000 in Week 2, and 5,000 in Week 3, showing zero variance over time."
+  },
+  {
+    "question": "What mathematical property must the sum of all relative frequencies always satisfy when expressed as basic proportions or decimals?",
+    "options": ["It must equal 0.5", "It must equal 1.0", "It must equal 100.0", "It must equal 360.0"],
+    "correctAnswer": "It must equal 1.0",
+    "explanation": "Relative frequency represents a fraction of the whole dataset. When calculated as basic decimals or proportions (Class Frequency divided by Total Sample Size), adding up the relative frequencies of all classes must equal exactly 1.0 (which corresponds to 100% when converted to percentages)."
+  },
+  {
+    "question": "Which branch of statistics handles the task of drawing broader conclusions, predictions, or generalizations about an unmeasured population by studying a representative sample?",
+    "options": ["Descriptive Statistics", "Inferential Statistics", "Primary Sampling Statistics", "Subdivided Component Mapping"],
+    "correctAnswer": "Inferential Statistics",
+    "explanation": "Inferential statistics goes beyond merely describing what is observed in a known dataset. It applies mathematical models and probability theories to make wider assertions, estimations, or predictions about a larger parent population using a smaller measured sample."
+  },
+  {
+    "question": "What type of bar chart structures information by stacking separate component sub-values vertically inside a single rectangular pillar to show how they build up to a cumulative total category?",
+    "options": ["Simple Bar Chart", "Multiple Bar Chart", "Component (Subdivided) Bar Chart", "Horizontal Range Chart"],
+    "correctAnswer": "Component (Subdivided) Bar Chart",
+    "explanation": "A component bar chart (or subdivided bar chart) builds a single vertical bar whose overall height represents the grand total of a category, with the bar divided into shaded or colored sub-sections that represent the individual contributing parts."
+  },
+  {
+    "question": "In a continuous frequency distribution table, how is the 'Class Midpoint' calculated?",
+    "options": ["By finding the difference between the maximum and minimum values of the entire dataset", "By taking the average of the lower limit and upper limit of that specific class interval", "By dividing the single class frequency by the uniform class width", "By multiplying the relative frequency proportion by 360 degrees"],
+    "correctAnswer": "By taking the average of the lower limit and upper limit of that specific class interval",
+    "explanation": "The class midpoint represents the exact mathematical center of an individual interval. It is computed using the formula: Midpoint = (Lower Class Limit + Upper Class Limit) / 2."
+  },
+  {
+    "question": "In the student population problem across various departments on page 9, what was the exact calculated sector angle allocated to the 'Law' department?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "117.8 degrees"],
+    "correctAnswer": "13.1 degrees",
+    "explanation": "The Law department had a student count of 200 out of a grand total student population of 5,500. Applying the sector angle formula from your note: (200 / 5500) * 360° = 0.03636 * 360° = 13.09°, which rounds up to 13.1 degrees."
+  },
+  {
+    "question": "Why is up-to-date statistical data highly critical for a sovereign nation's government planning?",
+    "options": ["To eliminate all continuous numerical metrics from public ledgers", "To provide factual backing for effective planning, budgeting, healthcare, defense, and internal resource management", "To guarantee that the human population size never fluctuates across intervals", "To transform all ratio scale variables into basic nominal labels"],
+    "correctAnswer": "To provide factual backing for effective planning, budgeting, healthcare, defense, and internal resource management",
+    "explanation": "As emphasized on page 1 of the notes, governments cannot make sound policy decisions blindly. They rely on accurate, up-to-date data tracking expenditure patterns, national revenues, healthcare needs, defense costs, and human population sizes to plan and budget effectively."
+  },
+  {
+    "question": "What is the primary advantage of utilizing a 'Multiple Bar Chart' instead of a standard 'Simple Bar Chart'?",
+    "options": ["It can display sector angles up to 360 degrees with high precision", "It allows the direct, side-by-side comparison of multiple variables or groups within the same categorical axes", "It eliminates the need to collect secondary data streams", "It forces all continuous measurement values to anchor down to zero"],
+    "correctAnswer": "It allows the direct, side-by-side comparison of multiple variables or groups within the same categorical axes",
+    "explanation": "A simple bar chart can only map a single variable across different categories. A multiple bar chart groups separate blocks side-by-side inside each category row, allowing an analyst to easily compare different variables or groups simultaneously."
+  },
+  {
+    "question": "If a dataset has a maximum observed value of 189.5 and a minimum observed value of 124.5, what is its exact mathematical Range?",
+    "options": ["50.0", "65.0", "124.5", "189.5"],
+    "correctAnswer": "65.0",
+    "explanation": "The range is the absolute spread of the data, calculated by subtracting the minimum score from the maximum score. Therefore: 189.5 - 124.5 = 65.0."
+  },
+  {
+    "question": "Which scale of measurement represents the absolute lowest, most basic level of categorization because it functions strictly as a labeling mechanism?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Nominal Scale",
+    "explanation": "The nominal scale is purely qualitative, used strictly to name, label, or classify items into separate categories (e.g., Gender, Religion, Eye Color). It contains no rank, hierarchy, or mathematical distance, making it the most basic measurement scale."
+  },
+  {
+    "question": "What type of statistical graph is explicitly constructed to track a progressive running total of accumulated frequencies across sequential data blocks?",
+    "options": ["Histogram", "Frequency Polygon", "Ogive", "Simple Bar Chart"],
+    "correctAnswer": "Ogive",
+    "explanation": "An ogive is synonymous with a cumulative frequency graph. It maps how observations continually accumulate across class intervals, charting a line that slopes steadily upwards."
+  },
+  {
+    "question": "In the state temperature dataset on page 11, what is the total number of states analyzed (the complete sample size N)?",
+    "options": ["30 states", "40 states", "50 states", "60 states"],
+    "correctAnswer": "50 states",
+    "explanation": "Summing up all the individual class frequencies listed in the temperature distribution tables (2 + 8 + 18 + 13 + 7 + 1 + 1) yields a total sample size of exactly 50 states."
+  },
+  {
+    "question": "For the specific temperature class interval 109.5 - 114.5 in your notes, what is its recorded base frequency?",
+    "options": ["2", "8", "13", "18"],
+    "correctAnswer": "18",
+    "explanation": "The frequency distribution table on page 11 records a frequency value of 18 for the 109.5 - 114.5 temperature interval, making it the highest frequency class in that dataset."
+  },
+  {
+    "question": "If a class interval has a base frequency of 8 and the grand total number of observations (N) is 50, what is its Relative Frequency expressed as a percentage?",
+    "options": "Relative Frequency % = (Class Frequency / Total Observations) * 100%. For this interval: (8 / 50) * 100% = 0.16 * 100% = 16%."
+  },
+  {
+    "question": "What coordinate is plotted along the vertical axis (Y-axis) of a standard Histogram or Frequency Polygon?",
+    "options": ["Class Midpoints", "Class Boundaries", "Class Frequencies", "Cumulative Percentages"],
+    "correctAnswer": "Class Frequencies",
+    "explanation": "In standard histograms and frequency polygons, the vertical axis measures the frequency (the count of observations) belonging to each class interval."
+  },
+  {
+    "question": "Which of the following statements captures a major visual drawback of a Pie Chart highlighted on page 10 of your notes?",
+    "options": ["It can only represent variables that contain an absolute ratio zero point", "It is visually very difficult for the human eye to accurately compare or distinguish slices that are nearly identical in size", "It requires the immediate conversion of all integers into continuous class boundaries", "It completely alters primary field inputs into unverified secondary information rows"],
+    "correctAnswer": "It is visually very difficult for the human eye to accurately compare or distinguish slices that are nearly identical in size",
+    "explanation": "Page 10 states as a primary disadvantage that a pie chart makes it hard to distinguish between highly similar slices (such as a 21% slice and a 23% slice). Without explicit text labels, the eye cannot reliably rank their sizes."
+  },
+  {
+    "question": "What is the primary operational objective of Descriptive Statistics?",
+    "options": ["To guess unknown population parameters without taking measurements", "To collect, organize, graph, and summarize data clearly so its main features can be easily understood", "To test complex probability hypotheses regarding future market outcomes", "To replace all qualitative traits with strict multi-group line boundaries"],
+    "correctAnswer": "To collect, organize, graph, and summarize data clearly so its main features can be easily understood",
+    "explanation": "Descriptive statistics is limited strictly to summarizing and laying out the known features of a collected dataset through tables, charts, averages, and ranges, making the data digestible to an analyst."
+  },
+  {
+    "question": "If you add up the base frequencies of the first three consecutive classes in the state temperature data (2 + 8 + 18), what metric have you calculated for the third class interval?",
+    "options": ["Its uniform class width coordinate", "Its continuous relative percentage proportion", "Its cumulative frequency (Cf)", "Its total range distribution limit"],
+    "correctAnswer": "Its cumulative frequency (Cf)",
+    "explanation": "Summing frequencies sequentially up to a specific interval yields its cumulative frequency (2 + 8 + 18 = 28). This indicates that 28 total observations fall at or below the upper boundary of that third class."
+  },
+  {
+    "question": "What classification applies to an investigator's data if they gather it directly from original respondents via live interviews and tailored questionnaires?",
+    "options": ["Primary Data", "Secondary Data", "Nominal Abstract Data", "Ungrouped Reference Data"],
+    "correctAnswer": "Primary Data",
+    "explanation": "Because the investigator collects the fresh, raw numbers firsthand directly from the original source for their specific research goal, it is classified as primary data."
+  },
+  {
+    "question": "What is the class midpoint of the continuous temperature interval 114.5 - 119.5?",
+    "options": ["115.0", "116.5", "117.0", "118.5"],
+    "correctAnswer": "117.0",
+    "explanation": "The midpoint is the center point of the interval, calculated as: (114.5 + 119.5) / 2 = 234 / 2 = 117.0."
+  },
+  {
+    "question": "When data is classified strictly by a descriptive quality like an individual's 'Religion' (e.g., Christianity, Islam), what nature of variable is it?",
+    "options": ["Quantitative Variable", "Qualitative Variable", "Continuous Variable", "Ratio Scale Variable"],
+    "correctAnswer": "Qualitative Variable",
+    "explanation": "Religious affiliation describes a non-numerical attribute or quality rather than a measurable quantity, classifying it as a qualitative variable."
+  },
+  {
+    "question": "What type of graph is uniquely characterized by vertical rectangular bars placed side-by-side with spaces between them, representing discrete categories?",
+    "options": ["Histogram", "Bar Chart", "Ogive", "Frequency Polygon"],
+    "correctAnswer": "Bar Chart",
+    "explanation": "Bar charts use parallel rectangles to display discrete, non-continuous categories, which means there must be empty space or gaps separating the bars. Gaps are removed only in histograms, which represent continuous scales."
+  },
+  {
+    "question": "What are the two foundational branches of statistical science outlined on the very first page of your lecture note?",
+    "options": ["Primary and Secondary Statistics", "Descriptive and Inferential Statistics", "Qualitative and Quantitative Statistics", "Nominal and Ordinal Statistics"],
+    "correctAnswer": "Descriptive and Inferential Statistics",
+    "explanation": "Page 1 of your STA 111 note explicitly divides the entire discipline into two broad branches: descriptive statistics and inferential statistics."
+  },
+  {
+    "question": "In a pie chart calculation, if an item represents exactly one-quarter of the total sum of all item values, what will its sector angle be?",
+    "options": ["45 degrees", "90 degrees", "180 degrees", "360 degrees"],
+    "correctAnswer": "90 degrees",
+    "explanation": "Using the sector angle formula: Sector Angle = (Item Value / Total Sum) * 360°. Since the item represents exactly one-quarter (1/4), its angle is: (1/4) * 360° = 90°."
+  },
+  {
+    "question": "What is considered a primary disadvantage of gathering Primary Data firsthand?",
+    "options": ["It has extremely low accuracy and cannot be parsed systematically", "It is highly expensive, labor-intensive, and time-consuming to collect", "It relies entirely on third-party published records and corporate balance sheets", "It cannot be displayed using grouped continuous frequency distributions"],
+    "correctAnswer": "It is highly expensive, labor-intensive, and time-consuming to collect",
+    "explanation": "While primary data is highly accurate and custom-tailored to a study, its major drawbacks are the heavy financial cost and significant time required to coordinate field surveys, interviews, or experiments."
+  },
+  {
+    "question": "In the student population problem on page 9, what was the exact calculated sector angle for the 'Management' department (1,800 students out of 5,500)?",
+    "options": ["55.6 degrees", "65.5 degrees", "117.8 degrees", "45.8 degrees"],
+    "correctAnswer": "117.8 degrees",
+    "explanation": "Applying the sector angle formula: (1800 / 5500) * 360° = 0.32727 * 360° = 117.81°, which is rounded to 117.8 degrees in the text."
+  },
+  {
+    "question": "What scale of measurement applies to an attribute like 'Academic Performance Grade' (e.g., Distinction, Credit, Pass)?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ordinal Scale",
+    "explanation": "Performance grades carry an inherent ranking or logical order (Distinction is higher than Credit, which is higher than Pass), satisfying the requirements of the ordinal scale. However, the mathematical difference between a Distinction and a Credit cannot be quantified with an equal interval scale."
+  },
+  {
+    "question": "In the weekly expenditure multi-group example on page 6, what was the exact amount spent on 'Fuel' during the 3rd week?",
+    "options": ["1,200", "1,500", "1,800", "2,000"],
+    "correctAnswer": "1,800",
+    "explanation": "Looking across the data rows on page 6 of the notes, the entry for the 'Fuel' category under the Week 3 column records an expenditure value of 1,800."
+  },
+  {
+    "question": "What unique diagnostic benefit does a Histogram provide when evaluating continuous distributions?",
+    "options": ["It automatically eliminates all zero parameters from ratio scales", "It is highly useful for identifying outliers and checking the symmetry of a dataset", "It transforms qualitative descriptors into radial pie chart coordinates", "It removes the requirement to calculate continuous class widths"],
+    "correctAnswer": "It is highly useful for identifying outliers and checking the symmetry of a dataset",
+    "explanation": "Because a histogram shows the distribution of continuous data across intervals, it allows an analyst to easily spot extreme outliers separated from the main body of data, and evaluate whether the distribution is symmetric or skewed."
+  },
+  {
+    "question": "The total cumulative frequency at the absolute final class interval of an Ogive curve is always identical to which metric?",
+    "options": ["The class width of the final interval", "The calculated midpoint of the initial class", "The total number of observations in the dataset (N)", "Exactly 360 degrees"],
+    "correctAnswer": "The total number of observations in the dataset (N)",
+    "explanation": "Since an ogive accumulates frequencies step-by-step across all classes, the final plotted point must equal the complete sample size (N)."
+  },
+  {
+    "question": "What classification applies to data extracted from old census registers, company balance sheets, or historical textbooks?",
+    "options": ["Primary Data", "Secondary Data", "Continuous Range Data", "Nominal Field Data"],
+    "correctAnswer": "Secondary Data",
+    "explanation": "Because the current researcher is extracting data that was already collected, organized, and documented by another party for another purpose, it acts as secondary data."
+  },
+  {
+    "question": "What is the absolute mathematical minimum value that a frequency polygon's line can ever reach on the vertical axis?",
+    "options": ["-1.0", "0", "0.5", "1.0"],
+    "correctAnswer": "0",
+    "explanation": "Frequency measures how many times an event occurs, which can never be negative. The minimum possible frequency is zero (no observations), so the polygon line can never dip below the zero baseline on the Y-axis."
+  },
+  {
+    "question": "In the state temperature dataset on page 11, which continuous class interval recorded a frequency of exactly 7?",
+    "options": ["99.5 - 104.5", "104.5 - 109.5", "114.5 - 119.5", "119.5 - 124.5"],
+    "correctAnswer": "119.5 - 124.5",
+    "explanation": "The distribution table on page 11 explicitly lists a class frequency of 7 for the temperature interval spanning from 119.5 to 124.5."
+  },
+  {
+    "question": "Which of the following describes the fundamental mathematical difference between class limits and class boundaries?",
+    "options": ["Class limits are always larger than class boundaries by exactly 10 units", "Class limits have structural gaps between consecutive intervals, whereas class boundaries are continuous with no gaps", "Class limits represent the vertical axis heights, whereas class boundaries represent sector angles", "Class limits are applied only to qualitative variables, whereas class boundaries apply to quantitative ones"],
+    "correctAnswer": "Class limits have structural gaps between consecutive intervals, whereas class boundaries are continuous with no gaps",
+    "explanation": "Class limits leave numerical gaps between consecutive intervals (for example, 10–14 and 15–19 leave a gap between 14 and 15). Class boundaries eliminate these gaps by extending the limits by half of the gap unit on both sides (e.g., 9.5–14.5 and 14.5–19.5), creating a continuous mathematical framework for plotting continuous graphs like histograms."
+  },
+  {
+    "question": "In a continuous frequency distribution, if the lower class boundary of an interval is 24.5 and its class midpoint is 27.0, what is the exact upper class boundary of this interval?",
+    "options": ["28.5", "29.5", "30.0", "32.0"],
+    "correctAnswer": "29.5",
+    "explanation": "The class midpoint lies exactly in the geometric center of the lower and upper boundaries. The distance from the lower boundary to the midpoint is 27.0 - 24.5 = 2.5 units. Adding this same distance to the midpoint gives the upper boundary: 27.0 + 2.5 = 29.5."
+  },
+  {
+    "question": "What happens to the total visual area of a Histogram's rectangles if you construct a corresponding Frequency Polygon over it?",
+    "options": ["The frequency polygon encloses an area that is mathematically double the area of the histogram", "The total area enclosed under the frequency polygon line is practically equal to the total area of the histogram's rectangles", "The frequency polygon reduces the visual area to exactly zero", "The frequency polygon area fluctuates depending on whether the data scale is nominal or ordinal"],
+    "correctAnswer": "The total area enclosed under the frequency polygon line is practically equal to the total area of the histogram's rectangles",
+    "explanation": "When a frequency polygon is properly anchored to the horizontal axis by extending its line to the midpoints of empty theoretical classes at both ends, the triangular areas excluded outside the polygon line perfectly compensate for the triangular areas included inside. This makes the total area beneath the polygon line equal to the area within the histogram rectangles."
+  },
+  {
+    "question": "Which scale of measurement is being used when a hospital registers patients based on their blood type (A, B, AB, O)?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Nominal Scale",
+    "explanation": "Blood groups represent distinct, non-numerical categories or labels without any inherent mathematical order, preference, or ranking. This makes it a clear application of a nominal scale variable."
+  },
+  {
+    "question": "When presenting data using a Pie Chart, why is it mathematically vital that the sum of all calculated sector angles equals exactly 360 degrees?",
+    "options": ["To ensure that all data values are automatically converted into integers", "Because a pie chart is a circle, and its sectors must collectively account for 100% of the total distribution's values", "To force the cumulative frequencies to match the sample range", "To prevent qualitative data traits from becoming quantitative metrics"],
+    "correctAnswer": "Because a pie chart is a circle, and its sectors must collectively account for 100% of the total distribution's values",
+    "explanation": "A pie chart represents a complete sample or population using a circle. Since a full geometric circle contains exactly 360 degrees around its center, the individual slices (sectors) must sum up to 360 degrees to accurately represent 100% of the accumulated data values without gaps or overlaps."
+  },
+  {
+    "question": "If an investigator records the exact height of 100 seedlings in centimeters, what type of variable are they measuring?",
+    "options": ["Qualitative and Nominal Variable", "Quantitative and Continuous Variable", "Discrete and Categorical Variable", "Secondary Arbitrary Variable"],
+    "correctAnswer": "Quantitative and Continuous Variable",
+    "explanation": "Height is a numerical measurement that can take on any infinitely divisible fractional or decimal value within a given range (e.g., 12.34 cm, 15.60 cm), which makes it a quantitative and continuous variable."
+  },
+  {
+    "question": "According to the practical design constraints listed on page 10 of your notes, what is a primary structural disadvantage of a Pie Chart?",
+    "options": ["It can only be constructed using primary field interviews", "It is not effective for datasets with a large number of categories, and it is hard to visually distinguish highly similar slices", "It forces all single frequencies to anchor at a negative baseline", "It requires class intervals to be perfectly uniform in width"],
+    "correctAnswer": "It is not effective for datasets with a large number of categories, and it is hard to visually distinguish highly similar slices",
+    "explanation": "Your notes explicitly state that a pie chart is not good for too many categories (recommending a maximum of 7 items) and that it is hard to compare similar slices (such as telling a 21% slice apart from a 23% slice without looking at text numbers)."
+  },
+  {
+    "question": "In the student enrollment problem on page 9, if the total student population across all departments is 5,500, what is the sector angle for the 'Arts' department which has 850 students?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "45.8 degrees"],
+    "correctAnswer": "55.6 degrees",
+    "explanation": "Using the sector angle formula from your note: Sector Angle = (Item Value / Total Sum) * 360°. For the Arts department: (850 / 5500) * 360° = 0.15454 * 360° = 55.63°, which rounds directly to 55.6 degrees."
+  },
+  {
+    "question": "What geometric feature uniquely separates a Histogram from a traditional Simple Bar Chart?",
+    "options": ["Histograms use horizontal bars exclusively, while bar charts must be vertical", "Histograms are plotted over continuous boundaries with no spaces between adjacent blocks, while bar charts feature distinct spaces between bars", "Histograms use circular slices to track relative percentage proportions", "Histograms require plotting cumulative totals on the horizontal line axis"],
+    "correctAnswer": "Histograms are plotted over continuous boundaries with no spaces between adjacent blocks, while bar charts feature distinct spaces between bars",
+    "explanation": "Simple bar charts are used for discrete categories or qualitative labels, which requires drawing spaces between parallel bars. Histograms are drawn over continuous class boundaries representing quantitative intervals, meaning the vertical bars must touch with zero whitespace between them."
+  },
+  {
+    "question": "What is the primary operational limitation of utilizing purely 'Secondary Data' for an important research project?",
+    "options": ["It cannot be parsed using any numerical software or basic tables", "The data may be outdated, contain collector bias, or fail to precisely fit the specific objectives of the current study", "It relies heavily on setting up live laboratory field trials", "It automatically strips out all ratio scales and absolute zero markers"],
+    "correctAnswer": "The data may be outdated, contain collector bias, or fail to precisely fit the specific objectives of the current study",
+    "explanation": "Because secondary data was collected by an outside party for a separate primary purpose, a researcher using it runs the risk that the figures may be obsolete, lack verification, or use definitions and intervals that do not perfectly line up with their current research goals."
+  },
+  {
+    "question": "If you are drawing an Ogive curve for a grouped dataset, what coordinate values must be plotted on the horizontal axis (X-axis)?",
+    "options": ["The individual class frequencies", "The calculated class midpoints", "The upper class boundaries of the intervals", "The lower class limits exclusively"],
+    "correctAnswer": "The upper class boundaries of the intervals",
+    "explanation": "An ogive is a cumulative frequency graph. Because a cumulative frequency aggregates all occurrences up to a certain threshold, each cumulative frequency point must be plotted directly against the upper class boundary of its respective interval."
+  },
+  {
+    "question": "In the state temperature distribution on page 11, what is the exact base frequency recorded for the class interval spanning 119.5 to 124.5?",
+    "options": ["1", "2", "7", "13"],
+    "correctAnswer": "7",
+    "explanation": "By reading the continuous grouped frequency table for the 50 states on page 11 of your notes, the class interval 119.5 - 124.5 has a recorded single frequency value of exactly 7."
+  },
+  {
+    "question": "What value do you obtain if you add together all individual class single frequencies in a standard, properly completed frequency distribution table?",
+    "options": ["The uniform class width", "The absolute mathematical range of the observations", "The total sample size (N) of the monitored dataset", "The maximum sector angle coordinate"],
+    "correctAnswer": "The total sample size (N) of the monitored dataset",
+    "explanation": "A frequency table places every single observation into an appropriate class interval. Therefore, adding up the counts (frequencies) across all classes must exactly equal the total number of items or individuals observed in the entire sample (N)."
+  },
+  {
+    "question": "Which scale of measurement is the only one that allows you to mathematically state that one value is exactly twice as large or three times as intense as another?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ratio Scale",
+    "explanation": "Because the ratio scale possesses a true, absolute zero point (representing the complete absence of the measured trait), ratios between numbers become meaningful. For example, 20 kg is twice as heavy as 10 kg. In contrast, 20°C is not 'twice as hot' as 10°C because the Celsius zero point is arbitrary."
+  },
+  {
+    "question": "In the multi-week expenditure dataset on page 6, what was the exact amount spent on 'Travel' during the 1st week?",
+    "options": ["4,000", "5,000", "6,200", "7,500"],
+    "correctAnswer": "7,500",
+    "explanation": "Referring directly to the baseline expenditure chart/table on page 6 of the course notes, the travel column under the Week 1 marker tracks a financial value of 7,500."
+  },
+  {
+    "question": "What is the structural definition of an ' ungrouped frequency distribution table'?",
+    "options": ["A table that collects data using secondary textbooks exclusively", "A table that lists every single unique data value individually alongside its specific frequency count without grouping them into ranges", "A chart that divides a circular region into distinct proportional sectors", "A continuous line graph anchored tightly to upper limits"],
+    "correctAnswer": "A table that lists every single unique data value individually alongside its specific frequency count without grouping them into ranges",
+    "explanation": "An ungrouped frequency table does not combine individual observations into bracketed intervals. Instead, it preserves every distinct value as its own row and tallies how many times that exact value appears in the raw dataset."
+  },
+  {
+    "question": "What branch of statistics handles the task of organizing, graphing, and highlighting patterns in an existing dataset without drawing conclusions about a larger group?",
+    "options": ["Descriptive Statistics", "Inferential Statistics", "Predictive Analytics Scale", "Subdivided Interval Sorting"],
+    "correctAnswer": "Descriptive Statistics",
+    "explanation": "Descriptive statistics focuses entirely on describing, summarizing, and presenting data that has already been collected, using visual aids like tables, graphs, and summary statistics to make the dataset's features clear."
+  },
+  {
+    "question": "When constructing a grouped frequency table, what is the mathematical consequence of using class intervals that overlap (e.g., 10-20, 20-30, 30-40)?",
+    "options": ["The class midpoints cannot be calculated using averages", "It creates ambiguity, as an observation of exactly 20 could be placed into two different classes simultaneously", "The cumulative frequency curve will begin to slope downward", "The total sum of relative frequencies will exceed 100 percent"],
+    "correctAnswer": "It creates ambiguity, as an observation of exactly 20 could be placed into two different classes simultaneously",
+    "explanation": "Class intervals must be mutually exclusive. If intervals overlap at the boundaries (like 10-20 and 20-30), a data point that lands exactly on the boundary value (20) has no unique home, violating the core rule of statistical classification."
+  },
+  {
+    "question": "What mathematical value do you get when you subtract the absolute minimum value from the absolute maximum value in a raw dataset?",
+    "options": ["The class midpoint", "The uniform class width", "The Range", "The relative frequency proportion"],
+    "correctAnswer": "The Range",
+    "explanation": "The Range is defined as the simplest measure of dispersion or data spread, calculated explicitly as: Range = Maximum Value - Minimum Value."
+  },
+  {
+    "question": "In a pie chart, if a certain category represents exactly 50% of the complete dataset, what will its calculated sector angle be?",
+    "options": ["90 degrees", "120 degrees", "180 degrees", "360 degrees"],
+    "correctAnswer": "180 degrees",
+    "explanation": "A full circular chart contains 360 degrees. If a category accounts for exactly half (50% or 0.50) of the entire data pool, its sector angle is computed as: 0.50 * 360° = 180° (which forms a perfect straight semi-circle)."
+  },
+  {
+    "question": "What type of statistical display breaks down a single vertical bar into multiple colored or shaded segments to illustrate how various parts contribute to a total category?",
+    "options": ["Simple Bar Chart", "Multiple Bar Chart", "Component (Subdivided) Bar Chart", "Continuous Ogive Line Plot"],
+    "correctAnswer": "Component (Subdivided) Bar Chart",
+    "explanation": "As detailed on page 5 of your course text, a component bar chart (also called a subdivided bar chart) shows the total size of a primary category as a single bar, with that bar broken down internally into stacked sub-sections representing the individual component parts."
+  },
+  {
+    "question": "What structural element is plotted on the vertical axis (Y-axis) of an Ogive curve graph?",
+    "options": ["Simple single frequencies", "Class midpoints", "Cumulative frequencies", "Relative frequency angles"],
+    "correctAnswer": "Cumulative frequencies",
+    "explanation": "An ogive is specifically designed as a cumulative frequency graph. Therefore, while the X-axis tracks the continuous upper boundaries, the vertical Y-axis must always plot the running totals of cumulative frequencies."
+  },
+  {
+    "question": "If a city researcher collects traffic information by counting the exact number of operational cars owned by 40 different families, what classification of data is this?",
+    "options": ["Qualitative Data", "Quantitative and Discrete Data", "Continuous Variable Scale Data", "Nominal Field Data"],
+    "correctAnswer": "Quantitative and Discrete Data",
+    "explanation": "The count of cars is numerical, making it quantitative. It is also discrete because it can only take on distinct whole integers (a family can own 1, 2, or 3 cars, but never 2.45 cars), meaning there are no fractional values between counts."
+  },
+  {
+    "question": "In the student distribution problem on page 9, what is the calculated sector angle for the 'Social Science' department which houses 950 students out of 5,500?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "62.2 degrees"],
+    "correctAnswer": "62.2 degrees",
+    "explanation": "Applying the standard sector angle formula: (950 / 5500) * 360° = 0.172727 * 360° = 62.18°, which rounds directly to 62.2 degrees as displayed in your lecture notes."
+  },
+  {
+    "question": "What formula is used to calculate the 'Relative Frequency' of a specific class interval?",
+    "options": ["Relative Frequency = Class Frequency / Total Sample Size (N)", "Relative Frequency = Upper Boundary - Lower Boundary", "Relative Frequency = Class Midpoint * 360 Degrees", "Relative Frequency = (Lower Limit + Upper Limit) / 2"],
+    "correctAnswer": "Relative Frequency = Class Frequency / Total Sample Size (N)",
+    "explanation": "Relative frequency measures the proportional share of a single interval relative to the entire sample size. It is calculated by dividing that individual class frequency by the grand total number of observations (N)."
+  },
+  {
+    "question": "Which of the following describes the level of measurement known as the 'Interval Scale'?",
+    "options": ["It uses arbitrary labels without any ranking or order", "It possesses an absolute true zero point where zero means complete absence", "It has equal, measurable distances between data points, but features an arbitrary zero point", "It can only be graphed using cumulative ogive curves"],
+    "correctAnswer": "It has equal, measurable distances between data points, but features an arbitrary zero point",
+    "explanation": "An interval scale features equal, mathematically measurable distances between consecutive values (such as temperature in Celsius or Fahrenheit). However, its zero point is a chosen convention rather than a true absolute zero—0°C does not mean there is a complete absence of heat energy."
+  },
+  {
+    "question": "What are the two major sources of data collection available to researchers in statistics?",
+    "options": ["Nominal and Ordinal Data Sources", "Primary and Secondary Data Sources", "Descriptive and Inferential Data Sources", "Interval and Ratio Data Sources"],
+    "correctAnswer": "Primary and Secondary Data Sources",
+    "explanation": "Statistics categorizes data sources based on who collected the information. Primary sources provide fresh data collected firsthand by the researcher for their specific project, while secondary sources provide existing data previously compiled and published by others."
+  },
+  {
+    "question": "In the state temperature grouped dataset on page 11, what is the cumulative frequency (Cf) recorded for the second class interval (104.5 - 109.5)?",
+    "options": ["2", "10", "28", "41"],
+    "correctAnswer": "10",
+    "explanation": "The first class interval (99.5 - 104.5) has a base frequency of 2. The second class interval (104.5 - 109.5) has a base frequency of 8. To find the cumulative frequency of the second class, you sum these frequencies sequentially: 2 + 8 = 10."
+  },
+  {
+    "question": "What coordinate point forms the horizontal positioning for a standard Frequency Polygon graph?",
+    "options": ["The lower class boundary exclusively", "The upper class limit exclusively", "The calculated class midpoint", "The individual class frequency value"],
+    "correctAnswer": "The calculated class midpoint",
+    "explanation": "To construct a frequency polygon, each class frequency value is plotted directly above the calculated class midpoint along the horizontal X-axis, and the resulting points are connected with straight lines."
+  },
+  {
+    "question": "What is the class width of a grouped frequency interval that has a true lower class boundary of 49.5 and a true upper class boundary of 54.5?",
+    "options": ["4 units", "5 units", "6 units", "54.5 units"],
+    "correctAnswer": "5 units",
+    "explanation": "The uniform class width is the exact distance between an interval's true boundaries, calculated as: Upper Boundary - Lower Boundary. Here, 54.5 - 49.5 = 5 units."
+  },
+  {
+    "question": "If an administrative assistant extracts the complete population data of a country from an official 2016 National Census Report, what classification of data source are they handling?",
+    "options": ["Primary Data Source", "Secondary Data Source", "Continuous Metric Source", "Discrete Tally Source"],
+    "correctAnswer": "Secondary Data Source",
+    "explanation": "Since the assistant is extracting data from an existing public report that was already collected and published by a census bureau years prior, they are working with a secondary data source."
+  },
+  {
+    "question": "Which type of statistical graph utilizes parallel rectangular bars separated by explicit empty spaces to display frequencies across discrete categorical data?",
+    "options": ["Histogram", "Bar Chart", "Ogive Curve Plot", "Frequency Polygon"],
+    "correctAnswer": "Bar Chart",
+    "explanation": "Bar charts are used to display separate categories or discrete variables, which requires drawing empty spaces (gaps) between parallel bars. Histograms remove these gaps because they represent continuous data scales."
+  },
+  {
+    "question": "In the student enrollment dataset on page 9, what is the calculated sector angle for the 'Science' department which has 700 students out of 5,500 total students?",
+    "options": ["55.6 degrees", "65.5 degrees", "13.1 degrees", "45.8 degrees"],
+    "correctAnswer": "45.8 degrees",
+    "explanation": "Using the sector angle formula: (700 / 5500) * 360° = 0.12727 * 360° = 45.81°, which rounds directly to 45.8 degrees as shown on page 10 of your lecture notes."
+  },
+  {
+    "question": "What is considered a primary operational advantage of using 'Primary Data' for an investigator's statistical research project?",
+    "options": ["It is completely free to obtain and requires zero field planning", "The data is original, highly accurate, and custom-tailored to meet the exact goals of the study", "It relies entirely on historical records from national textbooks", "It removes the need to construct frequency tables or compute midpoints"],
+    "correctAnswer": "The data is original, highly accurate, and custom-tailored to meet the exact goals of the study",
+    "explanation": "The main benefit of primary data is that the researcher has direct control over how it is collected. This ensures that the definitions, measurements, and sample selection align perfectly with their specific study objectives, leading to high relevance and data integrity."
+  },
+  {
+    "question": "What formula is used to calculate the exact geometric center or 'Class Midpoint' of a frequency interval?",
+    "options": ["Midpoint = Upper Boundary - Lower Boundary", "Midpoint = (Lower Limit + Upper Limit) / 2", "Midpoint = Class Frequency * Range", "Midpoint = (Relative Frequency / 360) * 100"],
+    "correctAnswer": "Midpoint = (Lower Limit + Upper Limit) / 2",
+    "explanation": "The class midpoint is the mathematical average of an interval's limits, computed using the formula: Midpoint = (Lower Class Limit + Upper Class Limit) / 2."
+  },
+  {
+    "question": "In the multi-week expenditure example on page 6, which item recorded an expenditure value of 4,000 in Week 1, 3,500 in Week 2, and 6,200 in Week 3?",
+    "options": ["Food", "Fuel", "House Rent", "Travel"],
+    "correctAnswer": "Food",
+    "explanation": "Reviewing the multi-column data table on page 6 of your notes shows that the category tracking expenditure values of 4,000 (Week 1), 3,500 (Week 2), and 6,200 (Week 3) is 'Food'."
+  },
+  {
+    "question": "What mathematical constraint must the sum of all relative frequencies satisfy when they are expressed as percentages?",
+    "options": ["It must sum to 50%", "It must sum to 100%", "It must sum to 180%", "It must sum to 360%"],
+    "correctAnswer": "It must sum to 100%",
+    "explanation": "Because relative frequencies measure each category's fractional share of the whole dataset, converting these fractions into percentages and adding them together must equal exactly 100% of the sample."
+  },
+  {
+    "question": "Which scale of measurement represents the most basic level of classification, serving only to name or label categories without any ranking?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Nominal Scale",
+    "explanation": "The nominal scale is purely qualitative, functioning as a basic labeling system to classify data into separate categories (e.g., gender, nationality) without any numeric value or rank."
+  },
+  {
+    "question": "In the state temperature dataset on page 11, what is the calculated cumulative frequency (Cf) for the third class interval (109.5 - 114.5)?",
+    "options": ["2", "10", "28", "41"],
+    "correctAnswer": "28",
+    "explanation": "By summing the frequencies sequentially up to the third class: 2 (from class 1) + 8 (from class 2) + 18 (from class 3) = 28. This means 28 states have recorded temperatures falling at or below 114.5 degrees."
+  },
+  {
+    "question": "What type of statistical display uses parallel vertical bars placed side-by-side inside each category to compare multiple variables simultaneously?",
+    "options": ["Simple Bar Chart", "Multiple Bar Chart", "Component Bar Chart", "Ogive Line Plot"],
+    "correctAnswer": "Multiple Bar Chart",
+    "explanation": "As defined on page 5 of your notes, a multiple bar chart groups separate blocks side-by-side inside each category row, allowing you to easily compare more than one variable across different groups simultaneously."
+  },
+  {
+    "question": "What historical reference or example does page 1 of your lecture notes use to show why governments collect large amounts of statistical data?",
+    "options": ["To track stock market changes in foreign countries", "To improve decision-making by tracking patterns in expenditure, revenue, human population, health, and defense", "To convert nominal categories into ratio scales automatically", "To eliminate the need for primary data collection during elections"],
+    "correctAnswer": "To improve decision-making by tracking patterns in expenditure, revenue, human population, health, and defense",
+    "explanation": "Page 1 of your notes explicitly states that a large volume of data is collected at all levels of government to enhance effective decision-making, requiring up-to-date knowledge of expenditure patterns, revenue, human population, health, defense, and internal issues."
+  },
+  {
+    "question": "If a grouped frequency distribution contains the continuous intervals 19.5 - 24.5, 24.5 - 29.5, and 29.5 - 34.5, what is the uniform class width across these intervals?",
+    "options": ["4 units", "5 units", "10 units", "24.5 units"],
+    "correctAnswer": "5 units",
+    "explanation": "The class width is found by subtracting the true lower boundary from the true upper boundary of an interval: 24.5 - 19.5 = 5 units."
+  },
+  {
+    "question": "What coordinate is plotted along the vertical axis (Y-axis) of a standard Frequency Polygon or Histogram graph?",
+    "options": ["Class Midpoints", "Class Boundaries", "Class Frequencies (f)", "Cumulative Frequencies (Cf)"],
+    "correctAnswer": "Class Frequencies (f)",
+    "explanation": "Standard histograms and frequency polygons display the count of observations falling within each interval, meaning the vertical Y-axis tracks single class frequencies."
+  },
+  {
+    "question": "Which scale of measurement features an inherent ranking or logical order among its categories but completely lacks equal measurable distances between those ranks?",
+    "options": ["Nominal Scale", "Ordinal Scale", "Interval Scale", "Ratio Scale"],
+    "correctAnswer": "Ordinal Scale",
+    "explanation": "The ordinal scale ranks categories hierarchically (e.g., sorting performance into Excellent, Good, or Poor). However, it does not provide an equal mathematical distance between these ranks."
+  },
+  {
+    "question": "In a pie chart, if Category X has a calculated sector angle of exactly 120 degrees, what proportional share or fraction of the entire dataset does Category X represent?",
+    "options": ["One-quarter (1/4)", "One-third (1/3)", "One-half (1/2)", "Two-thirds (2/3)"],
+    "correctAnswer": "One-third (1/3)",
+    "explanation": "A full circular chart contains 360 degrees. To find the proportional share of a 120-degree sector, you evaluate the fraction: 120° / 360° = 1/3."
+  },
+  {
+    "question": "What unique diagnostic benefit does a Histogram provide when analyzing continuous data distributions?",
+    "options": ["It converts qualitative descriptors into radial pie chart coordinates", "It is useful for identifying outliers and checking the symmetry or skewness of a dataset", "It automatically eliminates all zero parameters from ratio scales", "It removes the requirement to calculate continuous class widths"],
+    "correctAnswer": "It is useful for identifying outliers and checking the symmetry or skewness of a dataset",
+    "explanation": "Because a histogram maps continuous data across sequential intervals, it allows an analyst to easily spot outliers that lie far away from the main distribution and check if the dataset is symmetric or skewed."
+  },
+  {
+    "question": "The total cumulative frequency at the absolute final class interval of an Ogive curve is always identical to which metric?",
+    "options": ["The class width of the final interval", "The total number of observations in the dataset (N)", "The calculated midpoint of the initial class", "Exactly 360 degrees"],
+    "correctAnswer": "The total number of observations in the dataset (N)",
+    "explanation": "An ogive accumulates frequencies step-by-step across all classes. As a result, its final plotted point must equal the complete sample size of the dataset (N)."
+  },
+  {
+    "question": "What is the calculated class midpoint for a temperature interval with continuous boundaries stretching from 119.5 to 124.5?",
+    "options": ["120.0", "121.5", "122.0", "123.5"],
+    "correctAnswer": "122.0",
+    "explanation": "The class midpoint is the average of the limits, calculated as: (119.5 + 124.5) / 2 = 244 / 2 = 122.0."
+  },
+  {
+    "question": "Which branch of statistics focuses on using probability models to draw conclusions and make predictions about an unmeasured population based on sample data?",
+    "options": ["Descriptive Statistics", "Inferential Statistics", "Primary Sampling Statistics", "Subdivided Component Mapping"],
+    "correctAnswer": "Inferential Statistics",
+    "explanation": "Inferential statistics uses smaller sample measurements to draw conclusions, make predictions, and generalize findings about a larger parent population."
+  },
+  {
+    "question": "In the state temperature dataset on page 11, what is the recorded single frequency for the absolute final class interval (129.5 - 134.5)?",
+    "options": ["1", "2", "7", "13"],
+    "correctAnswer": "1",
+    "explanation": "By reading the final row of the frequency distribution table on page 11 of your notes, the temperature interval 129.5 - 134.5 has a recorded frequency value of exactly 1."
+  }
+]
 
 // ======================================
 // COS102 QUESTIONS
@@ -25486,6 +39036,9 @@ const BUT_ICT118_Questions = [
 // ======================================
 
 const QuestionBanks = {
+    MTH101: MTH101_Questions,
+    COS101: COS101_Questions,
+    STA111: STA111_Questions,
     COS102: COS102_Questions,
     MTH102: MTH102_Questions,
     PHY102: PHY102_Questions,

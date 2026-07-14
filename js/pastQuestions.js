@@ -40,6 +40,46 @@ const PastQuestionsDatabase = {
     //     2023: "assets/past-questions/COS102_2023.pdf",
     //     2024: "assets/past-questions/COS102_2024.pdf"
     // },
+    MTH101: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    PHY101: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    STA111: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    COS101: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    BUT_ICT131: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    BUT_BIO101: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    BUT_GST107: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
+    GST111: {
+        2022: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2023: "assets/notes/BUT-CSC 104 NTE.pdf",
+        2024: "assets/notes/BUT-CSC 104 NOE.pdf"
+    },
     MTH102: {
         2022: "assets/notes/BUT-CSC 104 NTE.pdf",
         2023: "assets/notes/BUT-CSC 104 NTE.pdf",
@@ -75,3 +115,127 @@ const PastQuestionsDatabase = {
     },
 
 };
+
+// Optional mapping of courses to metadata like level and semester
+const CourseMeta = {
+    // Example: 'COS102': { level: '100', semester: '1' }
+    MTH101: { level: '100', semester: 'First' },
+    PHY101: { level: '100', semester: 'First' },
+    STA111: { level: '100', semester: 'First' },
+    COS101: { level: '100', semester: 'First' },
+    BUT_ICT131: { level: '100', semester: 'First' },
+    BUT_BIO101: { level: '100', semester: 'First' },
+    BUT_GST107: { level: '100', semester: 'First' },
+    GST111: { level: '100', semester: 'First' },
+    MTH102: { level: '100', semester: 'Second' },
+    PHY102: { level: '100', semester: 'Second' },
+    GST102: { level: '100', semester: 'Second' },
+    COS102: { level: '100', semester: 'Second' },
+    BUT_CSC104: { level: '100', semester: 'Second' },
+    BUT_BIO102: { level: '100', semester: 'Second' },
+    BUT_ICT118: { level: '100', semester: 'Second' }
+};
+
+// DOM elements
+const pqLevel = document.getElementById('pqLevel');
+const pqSemester = document.getElementById('pqSemester');
+const pqCourse = document.getElementById('pqCourse');
+const pqYear = document.getElementById('pqYear');
+const pqViewer = document.getElementById('pqViewer');
+
+function initPastQuestionsUI() {
+    populateLevelOptions();
+    populateSemesterOptions();
+    populateCourseOptions();
+    pqLevel.addEventListener('change', handleFilterChange);
+    pqSemester.addEventListener('change', handleFilterChange);
+    pqCourse.addEventListener('change', handleCourseChange);
+    pqYear.addEventListener('change', handleYearChange);
+}
+
+function populateLevelOptions() {
+    const levels = Array.from(new Set(Object.values(CourseMeta).map(m => m.level))).sort();
+    levels.forEach(l => {
+        const opt = document.createElement('option');
+        opt.value = l;
+        opt.textContent = l;
+        pqLevel.appendChild(opt);
+    });
+}
+
+function populateSemesterOptions() {
+    const semesters = Array.from(new Set(Object.values(CourseMeta).map(m => m.semester))).sort();
+    semesters.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        pqSemester.appendChild(opt);
+    });
+}
+
+function populateCourseOptions(filteredCourses) {
+    // preserve selected value
+    const prev = pqCourse.value || '';
+    pqCourse.innerHTML = '<option value="">Select Course</option>';
+    const courses = filteredCourses || Object.keys(PastQuestionsDatabase).sort();
+    courses.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        pqCourse.appendChild(opt);
+    });
+    // restore if still available
+    if (prev) pqCourse.value = prev;
+}
+
+function handleFilterChange() {
+    const level = pqLevel.value;
+    const semester = pqSemester.value;
+    let filtered = Object.keys(PastQuestionsDatabase);
+    if (level) filtered = filtered.filter(c => CourseMeta[c] && CourseMeta[c].level === level);
+    if (semester) filtered = filtered.filter(c => CourseMeta[c] && CourseMeta[c].semester === semester);
+    populateCourseOptions(filtered);
+    // clear year and viewer
+    pqYear.innerHTML = '<option value="">Select Year</option>';
+    pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+}
+
+function handleCourseChange() {
+    const course = pqCourse.value;
+    pqYear.innerHTML = '<option value="">Select Year</option>';
+    if (!course) return;
+    const years = Object.keys(PastQuestionsDatabase[course] || {}).sort();
+    years.forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        pqYear.appendChild(opt);
+    });
+    pqViewer.innerHTML = '<p class="placeholder-text">Select a year to view the PDF</p>';
+}
+
+function handleYearChange() {
+    const course = pqCourse.value;
+    const year = pqYear.value;
+    if (!course || !year) return;
+    const path = PastQuestionsDatabase[course] && PastQuestionsDatabase[course][year];
+    if (!path) {
+        pqViewer.innerHTML = '<p class="placeholder-text">PDF not found for selected course/year</p>';
+        return;
+    }
+    // Show PDF using an iframe for simplicity
+    pqViewer.innerHTML = '';
+    const iframe = document.createElement('iframe');
+    iframe.src = path;
+    iframe.style.width = '100%';
+    iframe.style.height = '800px';
+    iframe.onload = () => console.log('PDF loaded', path);
+    pqViewer.appendChild(iframe);
+}
+
+// initialize UI when DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPastQuestionsUI);
+} else {
+    initPastQuestionsUI();
+}

@@ -41,6 +41,54 @@ const NotesDatabase = {
     //     title: "Introduction to Computing",
     //     pdf: "assets/notes/COS102.pdf"
     // },
+    MTH101: {
+        level: "100",
+        semester: "First",
+        title: "Elementry Mathematics I",
+        pdf: "assets/notes/MTH101.pdf"
+    },
+    PHY101: {
+        level: "100",
+        semester: "First",
+        title: "General Physics I: Mechanics",
+        pdf: "assets/notes/PHY101.pdf"
+    },
+    STA111: {
+        level: "100",
+        semester: "First",
+        title: "Descriptive Statistics",
+        pdf: "assets/notes/STA11.pdf"
+    },
+    COS101: {
+        level: "100",
+        semester: "First",
+        title: "Intoduction to Computing Sciences",
+        pdf: "assets/notes/COS101.pdf"
+    },
+    BUT_ICT131: {
+        level: "100",
+        semester: "First",
+        title: "CompTIA A+",
+        pdf: "assets/notes/BUT_ICT131.pdf"
+    },
+    BUT_BIO101: {
+        level: "100",
+        semester: "First",
+        title: "General Biology I",
+        pdf: "assets/notes/BUT_BIO101.pdf"
+    },
+    BUT_GST107: {
+        level: "100",
+        semester: "First",
+        title: "Use of Library and Study Skills",
+        pdf: "assets/notes/BUT_GST107.pdf"
+    },
+    GST111: {
+        level: "100",
+        semester: "First",
+        title: "Communication in English",
+        pdf: "assets/notes/GST111.pdf"
+    },
     MTH102: {
         level: "100",
         semester: "Second",
@@ -69,7 +117,7 @@ const NotesDatabase = {
         level: "100",
         semester: "Second",
         title: "Computer Hardware & Assembly Language Programming",
-        pdf: "assets/notes/BUT-CSC 104 NOT.pdf"
+        pdf: "assets/notes/BUT-CSC 104 NOTE.pdf"
     },
      BUT_BIO102: {
         level: "100",
