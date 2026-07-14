@@ -34,18 +34,25 @@
         <div class="container">
             <h2 class="section-title">Past Questions</h2>
             <div class="content-selector">
-                <select id="pqLevel">
+                <select id="pqCollege">
+                    <option value="">Select College</option>
+                </select>
+                <select id="pqProgramme" disabled>
+                    <option value="">Select Programme</option>
+                </select>
+                <select id="pqLevel" disabled>
                     <option value="">Select Level</option>
                 </select>
-                <select id="pqSemester">
+                <select id="pqSemester" disabled>
                     <option value="">Select Semester</option>
                 </select>
-                <select id="pqCourse">
+                <select id="pqCourse" disabled>
                     <option value="">Select Course</option>
                 </select>
-                <select id="pqYear">
+                <select id="pqYear" disabled>
                     <option value="">Select Year</option>
                 </select>
+                <button type="button" class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
             </div>
             <div class="pdf-viewer-container" id="pqViewer">
                 <p class="placeholder-text">Select a course and year to view past questions</p>
@@ -66,6 +73,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
     <script src="js/app.js"></script> -->
+    <script src="js/courseCatalog.js"></script>
     <script src="js/notes.js"></script>
     <script src="js/pastQuestions.js"></script>
     <script src="js/questions.js"></script>

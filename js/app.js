@@ -14,6 +14,7 @@ function getQueryParam(name) {
 
 const pageType = document.body.dataset.page || 'home';
 const courseParam = getQueryParam('course');
+const FILTER_STORAGE_KEY = 'studyhubFilters';
 
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
@@ -49,6 +50,165 @@ const allCourses = Object.keys(NotesDatabase).map(code => ({
     code,
     ...NotesDatabase[code]
 }));
+
+function buildCourseCard(c) {
+    return `
+        <div class="course-header">
+            <span class="course-code">${c.code}</span>
+            <span class="course-level">${c.level} Level</span>
+        </div>
+        <h3>${c.title}</h3>
+        <p>${c.semester} Semester</p>
+        <div class="course-actions">
+            <button class="btn btn-sm" onclick="event.stopPropagation(); openNotes('${c.code}')">Notes</button>
+            <button class="btn btn-sm" onclick="event.stopPropagation(); openPastQuestions('${c.code}')">Past Questions</button>
+            <button class="btn btn-sm" onclick="event.stopPropagation(); openQuiz('${c.code}')">Quiz</button>
+        </div>
+    `;
+}
+
+function getStoredFilterState() {
+    try {
+        return JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}');
+    } catch (error) {
+        return {};
+    }
+}
+
+function saveStoredFilterState(patch) {
+    const state = getStoredFilterState();
+    Object.assign(state, patch);
+    localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(state));
+}
+
+function clearStoredFilterState() {
+    localStorage.removeItem(FILTER_STORAGE_KEY);
+}
+
+function setSelectValue(selectEl, value) {
+    if (!selectEl) return false;
+    const hasValue = Array.from(selectEl.options).some(option => option.value === value);
+    if (!value || !hasValue) {
+        selectEl.value = '';
+        return false;
+    }
+    selectEl.value = value;
+    return true;
+}
+
+function persistSelectionState(patch) {
+    if (Object.keys(patch).length) {
+        saveStoredFilterState(patch);
+    }
+}
+
+function resetPageFilters(pageName) {
+    clearStoredFilterState();
+
+    if (pageName === 'home') {
+        const collegeFilterEl = document.getElementById('collegeFilter');
+        const programmeFilterEl = document.getElementById('programmeFilter');
+        const levelFilterEl = document.getElementById('levelFilter');
+        const semesterFilterEl = document.getElementById('semesterFilter');
+        const courseSearchEl = document.getElementById('courseSearch');
+
+        if (collegeFilterEl) {
+            populateSelect(collegeFilterEl, StudyHubCatalog.getCollegeOptions(), 'Select College');
+        }
+        resetSelect(programmeFilterEl, 'Select Programme');
+        resetSelect(levelFilterEl, 'Select Level');
+        resetSelect(semesterFilterEl, 'Select Semester');
+        if (courseSearchEl) {
+            courseSearchEl.value = '';
+        }
+        if (typeof renderCourses === 'function') {
+            renderCourses();
+        }
+        return;
+    }
+
+    if (pageName === 'notes') {
+        const notesCollege = document.getElementById('notesCollege');
+        const notesProgramme = document.getElementById('notesProgramme');
+        const notesLevel = document.getElementById('notesLevel');
+        const notesSemester = document.getElementById('notesSemester');
+        const notesCourse = document.getElementById('notesCourse');
+        const notesViewer = document.getElementById('notesViewer');
+        if (notesCollege) {
+            populateSelect(notesCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
+        }
+        resetSelect(notesProgramme, 'Select Programme');
+        resetSelect(notesLevel, 'Select Level');
+        resetSelect(notesSemester, 'Select Semester');
+        resetSelect(notesCourse, 'Select Course');
+        if (notesViewer) {
+            notesViewer.innerHTML = '<p class="placeholder-text">Select a course above to view notes</p>';
+        }
+        return;
+    }
+
+    if (pageName === 'past-questions') {
+        const pqCollege = document.getElementById('pqCollege');
+        const pqProgramme = document.getElementById('pqProgramme');
+        const pqLevel = document.getElementById('pqLevel');
+        const pqSemester = document.getElementById('pqSemester');
+        const pqCourse = document.getElementById('pqCourse');
+        const pqYear = document.getElementById('pqYear');
+        const pqViewer = document.getElementById('pqViewer');
+        if (pqCollege) {
+            populateSelect(pqCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
+        }
+        resetSelect(pqProgramme, 'Select Programme');
+        resetSelect(pqLevel, 'Select Level');
+        resetSelect(pqSemester, 'Select Semester');
+        resetSelect(pqCourse, 'Select Course');
+        resetSelect(pqYear, 'Select Year');
+        if (pqViewer) {
+            pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+        }
+        return;
+    }
+
+    if (pageName === 'quiz') {
+        const quizCollege = document.getElementById('quizCollege');
+        const quizProgramme = document.getElementById('quizProgramme');
+        const quizLevel = document.getElementById('quizLevel');
+        const quizSemester = document.getElementById('quizSemester');
+        const quizCourse = document.getElementById('quizCourse');
+        if (quizCollege) {
+            populateSelect(quizCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
+        }
+        resetSelect(quizProgramme, 'Select Programme');
+        resetSelect(quizLevel, 'Select Level');
+        resetSelect(quizSemester, 'Select Semester');
+        resetSelect(quizCourse, 'Select Course');
+    }
+}
+
+function getCatalogCourseEntry(code) {
+    return StudyHubCatalog.getCourseEntry(code) || null;
+}
+
+function populateSelect(selectEl, options, placeholder, selectedValue) {
+    if (!selectEl) return;
+    const placeholderText = placeholder || 'Select an option';
+    selectEl.innerHTML = `<option value="">${placeholderText}</option>`;
+    options.forEach(option => {
+        const opt = document.createElement('option');
+        opt.value = option.value;
+        opt.textContent = option.label;
+        selectEl.appendChild(opt);
+    });
+    if (selectedValue) {
+        selectEl.value = selectedValue;
+    }
+}
+
+function resetSelect(selectEl, placeholder) {
+    if (!selectEl) return;
+    selectEl.innerHTML = `<option value="">${placeholder}</option>`;
+    selectEl.disabled = true;
+}
 
 function getCourseInfo(code) {
     return {
@@ -214,23 +374,29 @@ window.openQuiz = (code) => navigateTo('quiz.html', code);
 window.openCourseDashboard = (code) => navigateTo('course.html', code);
 
 function renderCourses() {
+    const collegeFilter = document.getElementById('collegeFilter');
+    const programmeFilter = document.getElementById('programmeFilter');
     const levelFilter = document.getElementById('levelFilter');
     const semesterFilter = document.getElementById('semesterFilter');
     const courseSearch = document.getElementById('courseSearch');
     const courseGrid = document.getElementById('courseGrid');
 
-    if (!levelFilter || !semesterFilter || !courseSearch || !courseGrid) return;
+    if (!collegeFilter || !programmeFilter || !levelFilter || !semesterFilter || !courseSearch || !courseGrid) return;
 
+    const college = collegeFilter.value;
+    const programme = programmeFilter.value;
     const level = levelFilter.value;
     const semester = semesterFilter.value;
     const search = courseSearch.value.toLowerCase();
 
     courseGrid.innerHTML = '';
     const filtered = allCourses.filter(c => {
-        const matchLevel = level === 'all' || c.level === level;
-        const matchSemester = semester === 'all' || c.semester === semester;
+        const catalogEntry = getCatalogCourseEntry(c.code);
+        const matchesCatalog = !catalogEntry || StudyHubCatalog.matchesCourseAffiliation(catalogEntry, college, programme);
+        const matchLevel = !level || c.level === level;
+        const matchSemester = !semester || c.semester === semester;
         const matchSearch = c.code.toLowerCase().includes(search) || c.title.toLowerCase().includes(search);
-        return matchLevel && matchSemester && matchSearch;
+        return matchesCatalog && matchLevel && matchSemester && matchSearch;
     });
 
     if (filtered.length === 0) {
@@ -241,19 +407,7 @@ function renderCourses() {
     filtered.forEach(c => {
         const card = document.createElement('div');
         card.className = 'course-card';
-        card.innerHTML = `
-            <div class="course-header">
-                <span class="course-code">${c.code}</span>
-                <span class="course-level">${c.level} Level</span>
-            </div>
-            <h3>${c.title}</h3>
-            <p>${c.semester} Semester</p>
-            <div class="course-actions">
-                <button class="btn btn-sm" onclick="event.stopPropagation(); openNotes('${c.code}')">Notes</button>
-                <button class="btn btn-sm" onclick="event.stopPropagation(); openPastQuestions('${c.code}')">Past Questions</button>
-                <button class="btn btn-sm" onclick="event.stopPropagation(); openQuiz('${c.code}')">Quiz</button>
-            </div>
-        `;
+        card.innerHTML = buildCourseCard(c);
         card.addEventListener('click', () => openCourseDashboard(c.code));
         courseGrid.appendChild(card);
     });
@@ -341,6 +495,7 @@ function renderPastQuestionViewer(code) {
 
     const years = Object.keys(PastQuestionsDatabase[code] || {}).sort((a, b) => b - a);
     pqYear.innerHTML = '<option value="">Select Year</option>';
+    pqYear.disabled = false;
 
     if (years.length === 0) {
         pqViewer.innerHTML = '<p class="placeholder-text">No past questions available for this course.</p>';
@@ -415,49 +570,78 @@ function markdownToHtml(markdown) {
 }
 
 function setupNotesPage() {
+    const notesCollege = document.getElementById('notesCollege');
+    const notesProgramme = document.getElementById('notesProgramme');
     const notesLevel = document.getElementById('notesLevel');
     const notesSemester = document.getElementById('notesSemester');
     const notesCourse = document.getElementById('notesCourse');
     const notesViewer = document.getElementById('notesViewer');
-    if (!notesLevel || !notesSemester || !notesCourse || !notesViewer) return;
+    if (!notesCollege || !notesProgramme || !notesLevel || !notesSemester || !notesCourse || !notesViewer) return;
 
-    const notesLevels = [...new Set(allCourses.map(c => c.level))].sort();
-    notesLevels.forEach(l => {
-        const opt = document.createElement('option');
-        opt.value = l;
-        opt.textContent = l + ' Level';
-        notesLevel.appendChild(opt);
+    populateSelect(notesCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
+    const resetNotesBtn = document.getElementById('resetFiltersBtn');
+
+    notesCollege.addEventListener('change', () => {
+        const college = notesCollege.value;
+        resetSelect(notesProgramme, 'Select Programme');
+        resetSelect(notesLevel, 'Select Level');
+        resetSelect(notesSemester, 'Select Semester');
+        resetSelect(notesCourse, 'Select Course');
+        notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
+        persistSelectionState({ notesCollege: college, notesProgramme: '', notesLevel: '', notesSemester: '', notesCourse: '' });
+        if (!college) return;
+        populateSelect(notesProgramme, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
+        notesProgramme.disabled = false;
+    });
+
+    notesProgramme.addEventListener('change', () => {
+        const college = notesCollege.value;
+        const programme = notesProgramme.value;
+        resetSelect(notesLevel, 'Select Level');
+        resetSelect(notesSemester, 'Select Semester');
+        resetSelect(notesCourse, 'Select Course');
+        notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
+        persistSelectionState({ notesCollege: college, notesProgramme: programme, notesLevel: '', notesSemester: '', notesCourse: '' });
+        if (!college || !programme) return;
+        populateSelect(notesLevel, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
+        notesLevel.disabled = false;
     });
 
     notesLevel.addEventListener('change', () => {
-        notesSemester.innerHTML = '<option value="">Select Semester</option>';
-        notesCourse.innerHTML = '<option value="">Select Course</option>';
+        const college = notesCollege.value;
+        const programme = notesProgramme.value;
+        const level = notesLevel.value;
+        resetSelect(notesSemester, 'Select Semester');
+        resetSelect(notesCourse, 'Select Course');
         notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-
-        const sems = [...new Set(allCourses.filter(c => c.level === notesLevel.value).map(c => c.semester))];
-        sems.forEach(s => {
-            const opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s + ' Semester';
-            notesSemester.appendChild(opt);
-        });
+        persistSelectionState({ notesCollege: college, notesProgramme: programme, notesLevel: level, notesSemester: '', notesCourse: '' });
+        if (!college || !programme || !level) return;
+        populateSelect(notesSemester, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
+        notesSemester.disabled = false;
     });
 
     notesSemester.addEventListener('change', () => {
-        notesCourse.innerHTML = '<option value="">Select Course</option>';
+        const college = notesCollege.value;
+        const programme = notesProgramme.value;
+        const level = notesLevel.value;
+        const semester = notesSemester.value;
+        resetSelect(notesCourse, 'Select Course');
         notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-
-        const courses = allCourses.filter(c => c.level === notesLevel.value && c.semester === notesSemester.value);
-        courses.forEach(c => {
-            const opt = document.createElement('option');
-            opt.value = c.code;
-            opt.textContent = `${c.code} — ${c.title}`;
-            notesCourse.appendChild(opt);
-        });
+        persistSelectionState({ notesCollege: college, notesProgramme: programme, notesLevel: level, notesSemester: semester, notesCourse: '' });
+        if (!college || !programme || !level || !semester) return;
+        const courses = StudyHubCatalog.getCourseOptions({ college, programme, level, semester, sourceCodes: Object.keys(NotesDatabase) });
+        if (!courses.length) {
+            notesCourse.innerHTML = '<option value="">No courses available</option>';
+            notesCourse.disabled = true;
+            return;
+        }
+        populateSelect(notesCourse, courses.map(course => ({ value: course.code, label: `${course.code} — ${NotesDatabase[course.code]?.title || course.code}` })), 'Select Course');
+        notesCourse.disabled = false;
     });
 
     notesCourse.addEventListener('change', async () => {
         const code = notesCourse.value;
+        persistSelectionState({ notesCollege: notesCollege.value, notesProgramme: notesProgramme.value, notesLevel: notesLevel.value, notesSemester: notesSemester.value, notesCourse: code || '' });
         if (code) {
             await renderNotesViewer(code);
         } else {
@@ -465,66 +649,380 @@ function setupNotesPage() {
         }
     });
 
-    if (courseParam && NotesDatabase[courseParam]) {
-        const course = NotesDatabase[courseParam];
-        notesLevel.value = course.level;
-        notesLevel.dispatchEvent(new Event('change'));
+    if (resetNotesBtn) {
+        resetNotesBtn.addEventListener('click', () => {
+            resetPageFilters('notes');
+            const savedState = getStoredFilterState();
+            persistSelectionState({ notesCollege: '', notesProgramme: '', notesLevel: '', notesSemester: '', notesCourse: '' });
+            if (savedState.notesCollege) {
+                notesCollege.value = '';
+            }
+        });
+    }
+
+    const savedState = getStoredFilterState();
+    const collegeValue = savedState.notesCollege || '';
+    const programmeValue = savedState.notesProgramme || '';
+    const levelValue = savedState.notesLevel || '';
+    const semesterValue = savedState.notesSemester || '';
+    const courseValue = savedState.notesCourse || '';
+
+    if (collegeValue) {
+        setSelectValue(notesCollege, collegeValue);
+        notesCollege.dispatchEvent(new Event('change'));
         setTimeout(() => {
-            notesSemester.value = course.semester;
-            notesSemester.dispatchEvent(new Event('change'));
+            if (programmeValue) {
+                setSelectValue(notesProgramme, programmeValue);
+                notesProgramme.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    if (levelValue) {
+                        setSelectValue(notesLevel, levelValue);
+                        notesLevel.dispatchEvent(new Event('change'));
+                        setTimeout(() => {
+                            if (semesterValue) {
+                                setSelectValue(notesSemester, semesterValue);
+                                notesSemester.dispatchEvent(new Event('change'));
+                                setTimeout(() => {
+                                    if (courseValue) {
+                                        setSelectValue(notesCourse, courseValue);
+                                        notesCourse.dispatchEvent(new Event('change'));
+                                    }
+                                }, 60);
+                            }
+                        }, 60);
+                    }
+                }, 60);
+            }
+        }, 60);
+    }
+
+    if (courseParam && NotesDatabase[courseParam]) {
+        const course = StudyHubCatalog.getCourseEntry(courseParam);
+        if (course) {
+            notesCollege.value = course.college;
+            notesCollege.dispatchEvent(new Event('change'));
             setTimeout(() => {
-                notesCourse.value = courseParam;
-                notesCourse.dispatchEvent(new Event('change'));
+                notesProgramme.value = course.programme;
+                notesProgramme.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    notesLevel.value = course.level;
+                    notesLevel.dispatchEvent(new Event('change'));
+                    setTimeout(() => {
+                        notesSemester.value = course.semester;
+                        notesSemester.dispatchEvent(new Event('change'));
+                        setTimeout(() => {
+                            notesCourse.value = courseParam;
+                            notesCourse.dispatchEvent(new Event('change'));
+                        }, 50);
+                    }, 50);
+                }, 50);
             }, 50);
-        }, 50);
+        }
     }
 }
 
 function setupPastQuestionsPage() {
+    const pqCollege = document.getElementById('pqCollege');
+    const pqProgramme = document.getElementById('pqProgramme');
+    const pqLevel = document.getElementById('pqLevel');
+    const pqSemester = document.getElementById('pqSemester');
     const pqCourse = document.getElementById('pqCourse');
     const pqYear = document.getElementById('pqYear');
     const pqViewer = document.getElementById('pqViewer');
-    if (!pqCourse || !pqYear || !pqViewer) return;
+    if (!pqCollege || !pqProgramme || !pqLevel || !pqSemester || !pqCourse || !pqYear || !pqViewer) return;
 
-    Object.keys(PastQuestionsDatabase).sort().forEach(code => {
-        const opt = document.createElement('option');
-        opt.value = code;
-        opt.textContent = code;
-        pqCourse.appendChild(opt);
+    populateSelect(pqCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
+    const resetPastQuestionsBtn = document.getElementById('resetFiltersBtn');
+
+    pqCollege.addEventListener('change', () => {
+        const college = pqCollege.value;
+        resetSelect(pqProgramme, 'Select Programme');
+        resetSelect(pqLevel, 'Select Level');
+        resetSelect(pqSemester, 'Select Semester');
+        resetSelect(pqCourse, 'Select Course');
+        resetSelect(pqYear, 'Select Year');
+        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+        persistSelectionState({ pqCollege: college, pqProgramme: '', pqLevel: '', pqSemester: '', pqCourse: '', pqYear: '' });
+        if (!college) return;
+        populateSelect(pqProgramme, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
+        pqProgramme.disabled = false;
+    });
+
+    pqProgramme.addEventListener('change', () => {
+        const college = pqCollege.value;
+        const programme = pqProgramme.value;
+        resetSelect(pqLevel, 'Select Level');
+        resetSelect(pqSemester, 'Select Semester');
+        resetSelect(pqCourse, 'Select Course');
+        resetSelect(pqYear, 'Select Year');
+        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+        persistSelectionState({ pqCollege: college, pqProgramme: programme, pqLevel: '', pqSemester: '', pqCourse: '', pqYear: '' });
+        if (!college || !programme) return;
+        populateSelect(pqLevel, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
+        pqLevel.disabled = false;
+    });
+
+    pqLevel.addEventListener('change', () => {
+        const college = pqCollege.value;
+        const programme = pqProgramme.value;
+        const level = pqLevel.value;
+        resetSelect(pqSemester, 'Select Semester');
+        resetSelect(pqCourse, 'Select Course');
+        resetSelect(pqYear, 'Select Year');
+        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+        persistSelectionState({ pqCollege: college, pqProgramme: programme, pqLevel: level, pqSemester: '', pqCourse: '', pqYear: '' });
+        if (!college || !programme || !level) return;
+        populateSelect(pqSemester, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
+        pqSemester.disabled = false;
+    });
+
+    pqSemester.addEventListener('change', () => {
+        const college = pqCollege.value;
+        const programme = pqProgramme.value;
+        const level = pqLevel.value;
+        const semester = pqSemester.value;
+        resetSelect(pqCourse, 'Select Course');
+        resetSelect(pqYear, 'Select Year');
+        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+        persistSelectionState({ pqCollege: college, pqProgramme: programme, pqLevel: level, pqSemester: semester, pqCourse: '', pqYear: '' });
+        if (!college || !programme || !level || !semester) return;
+        const courses = StudyHubCatalog.getCourseOptions({ college, programme, level, semester, sourceCodes: Object.keys(PastQuestionsDatabase) });
+        if (!courses.length) {
+            pqCourse.innerHTML = '<option value="">No courses available</option>';
+            pqCourse.disabled = true;
+            return;
+        }
+        populateSelect(pqCourse, courses.map(course => ({ value: course.code, label: course.code })), 'Select Course');
+        pqCourse.disabled = false;
     });
 
     pqCourse.addEventListener('change', () => {
         const code = pqCourse.value;
+        resetSelect(pqYear, 'Select Year');
+        persistSelectionState({ pqCollege: pqCollege.value, pqProgramme: pqProgramme.value, pqLevel: pqLevel.value, pqSemester: pqSemester.value, pqCourse: code || '', pqYear: '' });
+        if (!code) {
+            pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
+            return;
+        }
         renderPastQuestionViewer(code);
     });
 
     pqYear.addEventListener('change', async () => {
         const code = pqCourse.value;
         const year = pqYear.value;
+        persistSelectionState({ pqCollege: pqCollege.value, pqProgramme: pqProgramme.value, pqLevel: pqLevel.value, pqSemester: pqSemester.value, pqCourse: code || '', pqYear: year || '' });
         if (code && year) {
             await openPastQuestionYear(code, year);
         }
     });
 
+    if (resetPastQuestionsBtn) {
+        resetPastQuestionsBtn.addEventListener('click', () => {
+            resetPageFilters('past-questions');
+        });
+    }
+
+    const savedState = getStoredFilterState();
+    const collegeValue = savedState.pqCollege || '';
+    const programmeValue = savedState.pqProgramme || '';
+    const levelValue = savedState.pqLevel || '';
+    const semesterValue = savedState.pqSemester || '';
+    const courseValue = savedState.pqCourse || '';
+    const yearValue = savedState.pqYear || '';
+
+    if (collegeValue) {
+        setSelectValue(pqCollege, collegeValue);
+        pqCollege.dispatchEvent(new Event('change'));
+        setTimeout(() => {
+            if (programmeValue) {
+                setSelectValue(pqProgramme, programmeValue);
+                pqProgramme.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    if (levelValue) {
+                        setSelectValue(pqLevel, levelValue);
+                        pqLevel.dispatchEvent(new Event('change'));
+                        setTimeout(() => {
+                            if (semesterValue) {
+                                setSelectValue(pqSemester, semesterValue);
+                                pqSemester.dispatchEvent(new Event('change'));
+                                setTimeout(() => {
+                                    if (courseValue) {
+                                        setSelectValue(pqCourse, courseValue);
+                                        pqCourse.dispatchEvent(new Event('change'));
+                                        setTimeout(() => {
+                                            if (yearValue) {
+                                                setSelectValue(pqYear, yearValue);
+                                                pqYear.dispatchEvent(new Event('change'));
+                                            }
+                                        }, 60);
+                                    }
+                                }, 60);
+                            }
+                        }, 60);
+                    }
+                }, 60);
+            }
+        }, 60);
+    }
+
     if (courseParam && PastQuestionsDatabase[courseParam]) {
-        pqCourse.value = courseParam;
-        pqCourse.dispatchEvent(new Event('change'));
+        const course = StudyHubCatalog.getCourseEntry(courseParam);
+        if (course) {
+            pqCollege.value = course.college;
+            pqCollege.dispatchEvent(new Event('change'));
+            setTimeout(() => {
+                pqProgramme.value = course.programme;
+                pqProgramme.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    pqLevel.value = course.level;
+                    pqLevel.dispatchEvent(new Event('change'));
+                    setTimeout(() => {
+                        pqSemester.value = course.semester;
+                        pqSemester.dispatchEvent(new Event('change'));
+                        setTimeout(() => {
+                            pqCourse.value = courseParam;
+                            pqCourse.dispatchEvent(new Event('change'));
+                        }, 50);
+                    }, 50);
+                }, 50);
+            }, 50);
+        }
     }
 }
 
 function setupQuizPage() {
+    const quizCollege = document.getElementById('quizCollege');
+    const quizProgramme = document.getElementById('quizProgramme');
+    const quizLevel = document.getElementById('quizLevel');
+    const quizSemester = document.getElementById('quizSemester');
     const quizCourse = document.getElementById('quizCourse');
-    if (!quizCourse) return;
+    if (!quizCollege || !quizProgramme || !quizLevel || !quizSemester || !quizCourse) return;
 
-    Object.keys(QuestionBanks).sort().forEach(code => {
-        const opt = document.createElement('option');
-        opt.value = code;
-        opt.textContent = code;
-        quizCourse.appendChild(opt);
+    populateSelect(quizCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
+    const resetQuizBtn = document.getElementById('resetFiltersBtn');
+
+    quizCollege.addEventListener('change', () => {
+        const college = quizCollege.value;
+        resetSelect(quizProgramme, 'Select Programme');
+        resetSelect(quizLevel, 'Select Level');
+        resetSelect(quizSemester, 'Select Semester');
+        resetSelect(quizCourse, 'Select Course');
+        persistSelectionState({ quizCollege: college, quizProgramme: '', quizLevel: '', quizSemester: '', quizCourse: '' });
+        if (!college) return;
+        populateSelect(quizProgramme, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
+        quizProgramme.disabled = false;
     });
 
+    quizProgramme.addEventListener('change', () => {
+        const college = quizCollege.value;
+        const programme = quizProgramme.value;
+        resetSelect(quizLevel, 'Select Level');
+        resetSelect(quizSemester, 'Select Semester');
+        resetSelect(quizCourse, 'Select Course');
+        persistSelectionState({ quizCollege: college, quizProgramme: programme, quizLevel: '', quizSemester: '', quizCourse: '' });
+        if (!college || !programme) return;
+        populateSelect(quizLevel, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
+        quizLevel.disabled = false;
+    });
+
+    quizLevel.addEventListener('change', () => {
+        const college = quizCollege.value;
+        const programme = quizProgramme.value;
+        const level = quizLevel.value;
+        resetSelect(quizSemester, 'Select Semester');
+        resetSelect(quizCourse, 'Select Course');
+        persistSelectionState({ quizCollege: college, quizProgramme: programme, quizLevel: level, quizSemester: '', quizCourse: '' });
+        if (!college || !programme || !level) return;
+        populateSelect(quizSemester, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
+        quizSemester.disabled = false;
+    });
+
+    quizSemester.addEventListener('change', () => {
+        const college = quizCollege.value;
+        const programme = quizProgramme.value;
+        const level = quizLevel.value;
+        const semester = quizSemester.value;
+        resetSelect(quizCourse, 'Select Course');
+        persistSelectionState({ quizCollege: college, quizProgramme: programme, quizLevel: level, quizSemester: semester, quizCourse: '' });
+        if (!college || !programme || !level || !semester) return;
+        const courses = StudyHubCatalog.getCourseOptions({ college, programme, level, semester, sourceCodes: Object.keys(QuestionBanks) });
+        if (!courses.length) {
+            quizCourse.innerHTML = '<option value="">No courses available</option>';
+            quizCourse.disabled = true;
+            return;
+        }
+        populateSelect(quizCourse, courses.map(course => ({ value: course.code, label: course.code })), 'Select Course');
+        quizCourse.disabled = false;
+    });
+
+    quizCourse.addEventListener('change', () => {
+        persistSelectionState({ quizCollege: quizCollege.value, quizProgramme: quizProgramme.value, quizLevel: quizLevel.value, quizSemester: quizSemester.value, quizCourse: quizCourse.value || '' });
+    });
+
+    if (resetQuizBtn) {
+        resetQuizBtn.addEventListener('click', () => {
+            resetPageFilters('quiz');
+        });
+    }
+
+    const savedState = getStoredFilterState();
+    const collegeValue = savedState.quizCollege || '';
+    const programmeValue = savedState.quizProgramme || '';
+    const levelValue = savedState.quizLevel || '';
+    const semesterValue = savedState.quizSemester || '';
+    const courseValue = savedState.quizCourse || '';
+
+    if (collegeValue) {
+        setSelectValue(quizCollege, collegeValue);
+        quizCollege.dispatchEvent(new Event('change'));
+        setTimeout(() => {
+            if (programmeValue) {
+                setSelectValue(quizProgramme, programmeValue);
+                quizProgramme.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    if (levelValue) {
+                        setSelectValue(quizLevel, levelValue);
+                        quizLevel.dispatchEvent(new Event('change'));
+                        setTimeout(() => {
+                            if (semesterValue) {
+                                setSelectValue(quizSemester, semesterValue);
+                                quizSemester.dispatchEvent(new Event('change'));
+                                setTimeout(() => {
+                                    if (courseValue) {
+                                        setSelectValue(quizCourse, courseValue);
+                                        quizCourse.dispatchEvent(new Event('change'));
+                                    }
+                                }, 60);
+                            }
+                        }, 60);
+                    }
+                }, 60);
+            }
+        }, 60);
+    }
+
     if (courseParam && QuestionBanks[courseParam]) {
-        quizCourse.value = courseParam;
+        const course = StudyHubCatalog.getCourseEntry(courseParam);
+        if (course) {
+            quizCollege.value = course.college;
+            quizCollege.dispatchEvent(new Event('change'));
+            setTimeout(() => {
+                quizProgramme.value = course.programme;
+                quizProgramme.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    quizLevel.value = course.level;
+                    quizLevel.dispatchEvent(new Event('change'));
+                    setTimeout(() => {
+                        quizSemester.value = course.semester;
+                        quizSemester.dispatchEvent(new Event('change'));
+                        setTimeout(() => {
+                            quizCourse.value = courseParam;
+                            quizCourse.dispatchEvent(new Event('change'));
+                        }, 50);
+                    }, 50);
+                }, 50);
+            }, 50);
+        }
     }
 }
 
@@ -555,12 +1053,107 @@ function setupCoursePage() {
 if (pageType === 'home') {
     renderCourses();
     setupCarousel();
+    const collegeFilterEl = document.getElementById('collegeFilter');
+    const programmeFilterEl = document.getElementById('programmeFilter');
     const levelFilterEl = document.getElementById('levelFilter');
     const semesterFilterEl = document.getElementById('semesterFilter');
     const courseSearchEl = document.getElementById('courseSearch');
-    if (levelFilterEl && semesterFilterEl && courseSearchEl) {
-        [levelFilterEl, semesterFilterEl].forEach(el => el.addEventListener('change', renderCourses));
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    if (collegeFilterEl && programmeFilterEl && levelFilterEl && semesterFilterEl && courseSearchEl) {
+        [collegeFilterEl, programmeFilterEl, levelFilterEl, semesterFilterEl].forEach(el => el.addEventListener('change', renderCourses));
         courseSearchEl.addEventListener('input', renderCourses);
+
+        populateSelect(collegeFilterEl, StudyHubCatalog.getCollegeOptions(), 'Select College');
+        collegeFilterEl.addEventListener('change', () => {
+            const college = collegeFilterEl.value;
+            resetSelect(programmeFilterEl, 'Select Programme');
+            resetSelect(levelFilterEl, 'Select Level');
+            resetSelect(semesterFilterEl, 'Select Semester');
+            persistSelectionState({ college, programme: '', level: '', semester: '' });
+            if (!college) {
+                renderCourses();
+                return;
+            }
+            populateSelect(programmeFilterEl, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
+            programmeFilterEl.disabled = false;
+            renderCourses();
+        });
+
+        programmeFilterEl.addEventListener('change', () => {
+            const college = collegeFilterEl.value;
+            const programme = programmeFilterEl.value;
+            resetSelect(levelFilterEl, 'Select Level');
+            resetSelect(semesterFilterEl, 'Select Semester');
+            persistSelectionState({ college, programme, level: '', semester: '' });
+            if (!college || !programme) {
+                renderCourses();
+                return;
+            }
+            populateSelect(levelFilterEl, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
+            levelFilterEl.disabled = false;
+            renderCourses();
+        });
+
+        levelFilterEl.addEventListener('change', () => {
+            const college = collegeFilterEl.value;
+            const programme = programmeFilterEl.value;
+            const level = levelFilterEl.value;
+            resetSelect(semesterFilterEl, 'Select Semester');
+            persistSelectionState({ college, programme, level, semester: '' });
+            if (!college || !programme || !level) {
+                renderCourses();
+                return;
+            }
+            populateSelect(semesterFilterEl, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
+            semesterFilterEl.disabled = false;
+            renderCourses();
+        });
+
+        semesterFilterEl.addEventListener('change', () => {
+            const college = collegeFilterEl.value;
+            const programme = programmeFilterEl.value;
+            const level = levelFilterEl.value;
+            const semester = semesterFilterEl.value;
+            persistSelectionState({ college, programme, level, semester });
+            renderCourses();
+        });
+
+        if (resetFiltersBtn) {
+            resetFiltersBtn.addEventListener('click', () => {
+                resetPageFilters('home');
+            });
+        }
+
+        const savedState = getStoredFilterState();
+        const collegeValue = savedState.college || '';
+        const programmeValue = savedState.programme || '';
+        const levelValue = savedState.level || '';
+        const semesterValue = savedState.semester || '';
+
+        if (collegeValue) {
+            setSelectValue(collegeFilterEl, collegeValue);
+            collegeFilterEl.dispatchEvent(new Event('change'));
+            setTimeout(() => {
+                if (programmeValue) {
+                    setSelectValue(programmeFilterEl, programmeValue);
+                    programmeFilterEl.dispatchEvent(new Event('change'));
+                    setTimeout(() => {
+                        if (levelValue) {
+                            setSelectValue(levelFilterEl, levelValue);
+                            levelFilterEl.dispatchEvent(new Event('change'));
+                            setTimeout(() => {
+                                if (semesterValue) {
+                                    setSelectValue(semesterFilterEl, semesterValue);
+                                    semesterFilterEl.dispatchEvent(new Event('change'));
+                                }
+                            }, 60);
+                        }
+                    }, 60);
+                }
+            }, 60);
+        } else {
+            renderCourses();
+        }
     }
 }
 if (pageType === 'course') {

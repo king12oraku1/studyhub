@@ -233,9 +233,3 @@ function handleYearChange() {
     pqViewer.appendChild(iframe);
 }
 
-// initialize UI when DOM ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPastQuestionsUI);
-} else {
-    initPastQuestionsUI();
-}

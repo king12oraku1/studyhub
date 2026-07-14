@@ -38,20 +38,32 @@
                 <div class="setup-card">
                     <h3>Configure Your Quiz</h3>
                     <div class="setup-group">
+                        <label for="quizCollege">College</label>
+                        <select id="quizCollege">
+                            <option value="">Select College</option>
+                        </select>
+                    </div>
+                    <div class="setup-group">
+                        <label for="quizProgramme">Programme</label>
+                        <select id="quizProgramme" disabled>
+                            <option value="">Select Programme</option>
+                        </select>
+                    </div>
+                    <div class="setup-group">
                         <label for="quizLevel">Level</label>
-                        <select id="quizLevel">
+                        <select id="quizLevel" disabled>
                             <option value="">Select Level</option>
                         </select>
                     </div>
                     <div class="setup-group">
                         <label for="quizSemester">Semester</label>
-                        <select id="quizSemester">
+                        <select id="quizSemester" disabled>
                             <option value="">Select Semester</option>
                         </select>
                     </div>
                     <div class="setup-group">
                         <label for="quizCourse">Course</label>
-                        <select id="quizCourse"></select>
+                        <select id="quizCourse" disabled></select>
                     </div>
                     <div class="setup-group">
                         <label for="quizCount">Number of Questions</label>
@@ -74,6 +86,7 @@
                         </select>
                     </div>
                     <button class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
+                    <button type="button" class="btn btn-outline" id="resetFiltersBtn" style="margin-top: 1rem;">Reset Filters</button>
                 </div>
             </div>
 
@@ -122,6 +135,7 @@
         </div>
     </footer>
 
+    <script src="js/courseCatalog.js"></script>
     <script src="js/questions.js"></script>
     <script src="js/notes.js"></script>
     <script src="js/pastQuestions.js"></script>

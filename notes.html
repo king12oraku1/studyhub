@@ -36,15 +36,22 @@
         <div class="container">
             <h2 class="section-title">Course Notes</h2>
             <div class="content-selector">
-                <select id="notesLevel">
+                <select id="notesCollege">
+                    <option value="">Select College</option>
+                </select>
+                <select id="notesProgramme" disabled>
+                    <option value="">Select Programme</option>
+                </select>
+                <select id="notesLevel" disabled>
                     <option value="">Select Level</option>
                 </select>
-                <select id="notesSemester">
+                <select id="notesSemester" disabled>
                     <option value="">Select Semester</option>
                 </select>
-                <select id="notesCourse">
+                <select id="notesCourse" disabled>
                     <option value="">Select Course</option>
                 </select>
+                <button type="button" class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
             </div>
             <div class="pdf-viewer-container" id="notesViewer">
                 <p class="placeholder-text">Select a course above to view notes</p>
@@ -58,6 +65,7 @@
         </div>
     </footer>
 
+    <script src="js/courseCatalog.js"></script>
     <script src="js/notes.js"></script>
     <script src="js/pastQuestions.js"></script>
     <script src="js/questions.js"></script>

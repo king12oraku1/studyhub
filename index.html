@@ -74,20 +74,20 @@
         <div class="container">
             <h2 class="section-title">Available Courses</h2>
             <div class="filter-bar">
-                <select id="levelFilter">
-                    <option value="all">All Levels</option>
-                    <option value="100">Level 100</option>
-                    <option value="200">Level 200</option>
-                    <option value="300">Level 300</option>
-                    <option value="400">Level 400</option>
-                    <option value="500">Level 500</option>
+                <select id="collegeFilter">
+                    <option value="">Select College</option>
                 </select>
-                <select id="semesterFilter">
-                    <option value="all">All Semesters</option>
-                    <option value="First">First Semester</option>
-                    <option value="Second">Second Semester</option>
+                <select id="programmeFilter" disabled>
+                    <option value="">Select Programme</option>
+                </select>
+                <select id="levelFilter" disabled>
+                    <option value="">Select Level</option>
+                </select>
+                <select id="semesterFilter" disabled>
+                    <option value="">Select Semester</option>
                 </select>
                 <input type="text" id="courseSearch" placeholder="Search courses...">
+                <button type="button" class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
             </div>
             <div class="course-carousel-wrapper">
                 <button class="carousel-button prev" id="coursePrev" aria-label="Previous courses">‹</button>
@@ -146,10 +146,11 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
     
 
+    <script defer src="js/courseCatalog.js"></script>
     <script defer src="js/questions.js"></script>
-<script defer src="js/notes.js"></script>
-<script defer src="js/pastQuestions.js"></script>
-<script defer src="js/quiz.js"></script>
-<script defer src="js/app.js"></script>
+    <script defer src="js/notes.js"></script>
+    <script defer src="js/pastQuestions.js"></script>
+    <script defer src="js/quiz.js"></script>
+    <script defer src="js/app.js"></script>
 </body>
 </html>

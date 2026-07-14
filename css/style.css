@@ -358,6 +358,13 @@ section {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.filter-bar select:disabled,
+.content-selector select:disabled,
+.setup-group select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 /* ======================================
    COURSE CARDS
    ====================================== */
@@ -1322,6 +1329,18 @@ section {
 
 /* Mobile Navigation (below 768px) */
 @media (max-width: 767px) {
+    .filter-bar,
+    .content-selector {
+        flex-direction: column;
+    }
+
+    .filter-bar select,
+    .filter-bar input,
+    .content-selector select {
+        width: 100%;
+        min-width: 100%;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
