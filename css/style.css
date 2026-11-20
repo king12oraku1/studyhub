@@ -1208,7 +1208,7 @@ select.filter-chip:disabled {
     padding-top: var(--nav-h);
     background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 55%, #1E40AF 100%);
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* prevents pseudo-element and long text from widening layout */
 }
 
 .page-banner::before {
@@ -1425,6 +1425,9 @@ select.filter-chip:disabled {
     max-width: 900px;
     margin: 0 auto;
 }
+
+/* quiz-section replaces inline style="padding-top:2rem;" */
+.quiz-section { padding-top: 2rem; }
 
 .quiz-wizard-card {
     background: var(--surface);
@@ -3201,7 +3204,14 @@ select.filter-chip:disabled {
    ============================================================ */
 
 /* ── Fluid base: container, sections, resource-title ── */
-.container { padding: 0 clamp(1rem, 4vw, 2rem); }
+.container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    /* Ensure container never exceeds viewport */
+    width: 100%;
+    box-sizing: border-box;
+}
 .section   { padding: clamp(2rem, 5vw, 3.5rem) 0; }
 .resource-title { white-space: normal; word-break: break-word; }
 
@@ -3313,6 +3323,9 @@ select.filter-chip:disabled {
     /* ── Root ── */
     :root { --nav-h: 60px; }
     body  { padding-bottom: 72px; /* clearance for bottom nav */ }
+
+    /* Contain the layout width on mobile */
+    .container { max-width: 100%; width: 100%; }
 
     /* ── Navbar ── */
     .navbar      { height: var(--nav-h); box-shadow: 0 1px 0 var(--border); }
@@ -3526,16 +3539,68 @@ select.filter-chip:disabled {
     .cd-actions       { width: 100%; gap: .5rem; }
     .cd-actions .btn  { flex: 1; }
 
-    /* ── Quiz wizard ── */
-    .quiz-wizard      { grid-template-columns: 1fr; gap: 1rem; max-width: 100%; }
-    .quiz-wizard-card { padding: 1.25rem; border-radius: var(--r-xl); }
+    /* ── Quiz section spacing ── */
+    .quiz-section { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+
+    /* ── Quiz wizard: explicitly constrain to viewport ── */
+    #quizSetup         { width: 100%; max-width: 100%; overflow: hidden; }
+    .quiz-wizard       { grid-template-columns: 1fr; gap: .875rem; width: 100%; max-width: 100%; }
+    .quiz-wizard-card  { padding: 1.25rem 1rem; border-radius: var(--r-xl); gap: .875rem; width: 100%; max-width: 100%; overflow: hidden; }
     .quiz-wizard-card h3 { font-size: 1.0625rem; }
-    .wiz-group label  { font-size: .9375rem; }
-    .wiz-group select { font-size: 1rem; padding: .6875rem .875rem; padding-right: 2rem; }
-    .count-pills      { gap: .375rem; flex-wrap: wrap; }
-    .count-pill       { font-size: .9375rem; padding: .5625rem .9375rem; min-height: 44px; }
-    .quiz-summary-row span:first-child { font-size: .9375rem; }
-    .quiz-summary-row span:last-child  { font-size: 1rem; }
+    .quiz-wizard-card-header { padding-bottom: .75rem; gap: .625rem; }
+
+    .wiz-step-num  { width: 26px; height: 26px; font-size: .75rem; flex-shrink: 0; }
+    .wiz-group     { gap: .3125rem; min-width: 0; width: 100%; }
+    .wiz-group label  { font-size: .875rem; font-weight: 600; }
+    .wiz-group select {
+        font-size: 1rem;
+        padding: .6875rem .875rem;
+        padding-right: 2rem;
+        min-height: 46px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Count/duration pills: equal-width grid so they never overflow */
+    .count-pills  { display: grid; grid-template-columns: repeat(5, 1fr); gap: .3125rem; }
+    .count-pill   {
+        font-size: .8125rem;
+        font-weight: 600;
+        padding: .5rem .25rem;
+        min-height: 42px;
+        text-align: center;
+        justify-content: center;
+        border-radius: var(--r-md);
+    }
+
+    /* Summary rows */
+    .quiz-summary-list    { gap: .5rem; }
+    .quiz-summary-row     { padding: .625rem .75rem; border-radius: var(--r-md); }
+    .quiz-summary-row span:first-child { font-size: .875rem; }
+    .quiz-summary-row span:last-child  { font-size: .9375rem; font-weight: 700; }
+
+    /* Start button: tall, prominent, easy to tap */
+    .quiz-start-wrap { margin-top: .75rem; }
+    #startQuizBtn    {
+        width: 100% !important;
+        padding: 1rem 1.25rem !important;
+        font-size: 1.0625rem !important;
+        font-weight: 700 !important;
+        min-height: 54px;
+        border-radius: var(--r-lg) !important;
+    }
+
+    /* Reset link: readable, comfortably tappable */
+    .quiz-wizard-card .reset-link {
+        font-size: .9375rem;
+        padding: .5rem 0;
+        display: inline-block;
+    }
+
+    /* ── Quiz interface + results: full viewport width on mobile ── */
+    .quiz-interface { max-width: 100%; }
+    .quiz-results   { max-width: 100%; }
 
     /* ── Quiz interface ── */
     .quiz-header-bar {
@@ -3617,6 +3682,9 @@ select.filter-chip:disabled {
     .filter-chip-group { grid-template-columns: 1fr; }
     .hero-content h1   { font-size: 1.875rem; }
     .results-grid  { grid-template-columns: 1fr 1fr; }
+    /* Pills: tighter at 320px to prevent overflow */
+    .count-pills   { gap: .25rem; }
+    .count-pill    { font-size: .75rem; padding: .5rem .125rem; }
 }
 
 /* ── Very narrow (≤ 350px) ── */
