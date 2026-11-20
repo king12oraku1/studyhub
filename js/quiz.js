@@ -1,7 +1,7 @@
 /* ======================================
    STUDYHUB - QUIZ ENGINE
-   Handles: Randomization, Timer, Scoring,
-   Results, Review, Explanations
+   Handles: Step Wizard, Randomization,
+   Timer, Scoring, Results, Review
    ====================================== */
 
 // Helper: safe HTML escape while preserving LaTeX delimiters, then run KaTeX auto-render
@@ -18,7 +18,6 @@ function _escapeHtml(str) {
 function safeRenderMathInto(element, raw) {
     element.innerHTML = '';
     const container = document.createElement('span');
-    // escape HTML but keep $ and backslashes for LaTeX
     container.innerHTML = _escapeHtml(raw);
     element.appendChild(container);
     if (typeof renderMathInElement === 'function') {
@@ -77,6 +76,7 @@ class QuizEngine {
         this.timer = null;
         this.timeRemaining = 0;
         this.totalTime = 0;
+        this.currentStep = 1;
 
         this.setupEl = document.getElementById('quizSetup');
         this.interfaceEl = document.getElementById('quizInterface');
@@ -96,6 +96,20 @@ class QuizEngine {
         this.retakeBtn = document.getElementById('retakeBtn');
         this.newQuizBtn = document.getElementById('newQuizBtn');
 
+        // Step wizard elements
+        this.step1El = document.getElementById('quizStep1');
+        this.step2El = document.getElementById('quizStep2');
+        this.step3El = document.getElementById('quizStep3');
+        this.step1NextBtn = document.getElementById('quizStep1Next');
+        this.step2NextBtn = document.getElementById('quizStep2Next');
+        this.step2BackBtn = document.getElementById('quizStep2Back');
+        this.step3BackBtn = document.getElementById('quizStep3Back');
+
+        // Modal elements
+        this.submitModal = document.getElementById('submitModal');
+        this.cancelSubmitBtn = document.getElementById('cancelSubmitBtn');
+        this.confirmSubmitBtn = document.getElementById('confirmSubmitBtn');
+
         this.questionText = document.getElementById('questionText');
         this.optionsGrid = document.getElementById('optionsGrid');
         this.progressFill = document.getElementById('progressFill');
@@ -110,14 +124,106 @@ class QuizEngine {
         this.startBtn.addEventListener('click', () => this.startQuiz());
         this.prevBtn.addEventListener('click', () => this.prevQuestion());
         this.nextBtn.addEventListener('click', () => this.nextQuestion());
-        this.submitBtn.addEventListener('click', () => this.submitQuiz());
+        this.submitBtn.addEventListener('click', () => this.showSubmitModal());
         this.retakeBtn.addEventListener('click', () => this.retakeQuiz());
         this.newQuizBtn.addEventListener('click', () => this.resetQuiz());
+
+        // Step navigation
+        this.step1NextBtn?.addEventListener('click', () => this.goToStep(2));
+        this.step2NextBtn?.addEventListener('click', () => this.goToStep(3));
+        this.step2BackBtn?.addEventListener('click', () => this.goToStep(1));
+        this.step3BackBtn?.addEventListener('click', () => this.goToStep(2));
+
+        // Modal
+        this.cancelSubmitBtn?.addEventListener('click', () => this.hideSubmitModal());
+        this.confirmSubmitBtn?.addEventListener('click', () => {
+            this.hideSubmitModal();
+            this.submitQuiz();
+        });
+
+        // Close modal on overlay click
+        this.submitModal?.addEventListener('click', (e) => {
+            if (e.target === this.submitModal) this.hideSubmitModal();
+        });
+    }
+
+    goToStep(step) {
+        // Validate step 1 → 2 transition
+        if (step === 2 && !this.courseSelect.value) {
+            if (typeof showToast === 'function') {
+                showToast('Please select a course first', 'error');
+            } else {
+                alert('Please select a course first');
+            }
+            return;
+        }
+
+        this.currentStep = step;
+
+        // Update step indicators
+        document.querySelectorAll('.quiz-step').forEach((el) => {
+            const stepNum = parseInt(el.dataset.step, 10);
+            el.classList.toggle('active', stepNum === step);
+            el.classList.toggle('completed', stepNum < step);
+        });
+
+        // Update connectors
+        document.querySelectorAll('.quiz-step-connector').forEach((el) => {
+            const connectorNum = parseInt(el.dataset.connector, 10);
+            el.classList.toggle('completed', connectorNum < step);
+        });
+
+        // Show/hide step content
+        this.step1El?.classList.toggle('hidden', step !== 1);
+        this.step2El?.classList.toggle('hidden', step !== 2);
+        this.step3El?.classList.toggle('hidden', step !== 3);
+
+        // Update summary on step 3
+        if (step === 3) {
+            this.updateSummary();
+        }
+
+        // Scroll to top of setup
+        this.setupEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    updateSummary() {
+        const course = this.courseSelect.value || '—';
+        const count = this.countSelect.value;
+        const duration = this.durationSelect.value;
+
+        const summaryCourse = document.getElementById('summaryCourse');
+        const summaryCount = document.getElementById('summaryCount');
+        const summaryDuration = document.getElementById('summaryDuration');
+
+        if (summaryCourse) summaryCourse.textContent = course;
+        if (summaryCount) summaryCount.textContent = count + ' Questions';
+        if (summaryDuration) summaryDuration.textContent = duration + ' Minutes';
+    }
+
+    showSubmitModal() {
+        // Count answered questions for the modal text
+        const answered = Object.keys(this.answers).length;
+        const total = this.questions.length;
+        const unanswered = total - answered;
+        const modalText = document.getElementById('submitModalText');
+        if (modalText) {
+            if (unanswered > 0) {
+                modalText.textContent = `You have ${unanswered} unanswered question${unanswered !== 1 ? 's' : ''} out of ${total}. Are you sure you want to submit?`;
+            } else {
+                modalText.textContent = 'You are about to submit your quiz. This action cannot be undone.';
+            }
+        }
+        this.submitModal?.classList.add('active');
+    }
+
+    hideSubmitModal() {
+        this.submitModal?.classList.remove('active');
     }
 
     initQuizFilters() {
         if (!this.collegeSelect || !this.programmeSelect || !this.levelSelect || !this.semesterSelect || !this.courseSelect) return;
-        populateSelect(this.collegeSelect, StudyHubCatalog.getCollegeOptions(), 'Select College');
+        populateSelect(this.collegeSelect, StudyHubCatalog.getCollegeOptions(), 'Select college');
 
         this.collegeSelect.addEventListener('change', () => {
             const college = this.collegeSelect.value;
@@ -171,18 +277,26 @@ class QuizEngine {
     }
 
     startQuiz() {
-        const course = this.courseSelect.value;
-        const count = parseInt(this.countSelect.value);
-        const duration = parseInt(this.durationSelect.value);
+        const course   = this.courseSelect ? this.courseSelect.value : '';
+        const count    = parseInt(this.countSelect   ? this.countSelect.value   : '10');
+        const duration = parseInt(this.durationSelect ? this.durationSelect.value : '10');
 
         const bank = QuestionBanks[course];
         if (!bank || bank.length === 0) {
-            alert('No questions available for the selected course. Please add questions in js/questions.js');
+            if (typeof showToast === 'function') {
+                showToast('No questions available for the selected course.', 'error');
+            } else {
+                alert('No questions available for the selected course. Please add questions in js/questions.js');
+            }
             return;
         }
 
         if (bank.length < count) {
-            alert(`Only ${bank.length} questions available. Please select a lower number.`);
+            if (typeof showToast === 'function') {
+                showToast(`Only ${bank.length} questions available. Please select a lower number.`, 'error');
+            } else {
+                alert(`Only ${bank.length} questions available. Please select a lower number.`);
+            }
             return;
         }
 
@@ -208,7 +322,7 @@ class QuizEngine {
 
         this.startTimer();
         this.renderQuestion();
-        this.buildNavigator();        // <-- ADD THIS
+        this.buildNavigator();
         this.updateProgress();
     }
 
@@ -238,7 +352,6 @@ class QuizEngine {
 
     renderQuestion() {
         const q = this.questions[this.currentIndex];
-        // Render question number and text (safe, then KaTeX render)
         this.questionText.innerHTML = '';
         const qnum = document.createElement('strong');
         qnum.textContent = `${this.currentIndex + 1}. `;
@@ -247,7 +360,6 @@ class QuizEngine {
         safeRenderMathInto(qspan, q.question);
         this.questionText.appendChild(qspan);
 
-        // Render options and support math inside options
         this.optionsGrid.innerHTML = '';
         q.options.forEach((opt, idx) => {
             const btn = document.createElement('button');
@@ -262,13 +374,13 @@ class QuizEngine {
 
         this.questionCounter.textContent = `${this.currentIndex + 1} / ${this.questions.length}`;
         this.updateNavButtons();
-        this.updateNavigator();       // <-- ADD THIS
+        this.updateNavigator();
     }
 
     selectAnswer(index) {
         this.answers[this.currentIndex] = index;
         this.renderQuestion();
-        this.updateNavigator();       // <-- ADD THIS
+        this.updateNavigator();
     }
 
     nextQuestion() {
@@ -341,7 +453,7 @@ class QuizEngine {
                 <div class="result-item correct"><span>${correct}</span><label>Correct</label></div>
                 <div class="result-item incorrect"><span>${incorrect}</span><label>Incorrect</label></div>
                 <div class="result-item unanswered"><span>${unanswered}</span><label>Unanswered</label></div>
-                <div class="result-item score"><span>${score}</span><label>Score</label></div>
+                <div class="result-item"><span>${score}</span><label>Score</label></div>
                 <div class="result-item percentage ${ratingClass}"><span>${percentage}%</span><label>${rating}</label></div>
             </div>
         `;
@@ -357,7 +469,6 @@ class QuizEngine {
             const div = document.createElement('div');
             div.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
 
-            // Question
             const pQ = document.createElement('p');
             pQ.className = 'review-question';
             const strong = document.createElement('strong');
@@ -369,7 +480,6 @@ class QuizEngine {
             pQ.appendChild(qspan);
             div.appendChild(pQ);
 
-            // Your Answer
             const pA = document.createElement('p');
             pA.className = 'review-answer';
             pA.innerHTML = '<span>Your Answer:</span> ';
@@ -378,7 +488,6 @@ class QuizEngine {
             pA.appendChild(asp);
             div.appendChild(pA);
 
-            // Correct Answer
             const pC = document.createElement('p');
             pC.className = 'review-correct';
             pC.innerHTML = '<span>Correct Answer:</span> ';
@@ -387,7 +496,6 @@ class QuizEngine {
             pC.appendChild(csp);
             div.appendChild(pC);
 
-            // Explanation
             const pE = document.createElement('p');
             pE.className = 'review-explanation';
             const esp = document.createElement('span');
@@ -398,37 +506,37 @@ class QuizEngine {
             details.appendChild(div);
         });
 
-        // Scroll to results top
         this.resultsEl.scrollIntoView({ behavior: 'smooth' });
     }
 
     buildNavigator() {
-    const nav = document.getElementById('questionNavigator');
-    nav.innerHTML = '';
-    this.questions.forEach((_, idx) => {
-        const btn = document.createElement('button');
-        btn.className = 'nav-pill';
-        btn.textContent = idx + 1;
-        btn.addEventListener('click', () => this.jumpToQuestion(idx));
-        nav.appendChild(btn);
-    });
-    this.updateNavigator();
-}
+        const nav = document.getElementById('questionNavigator');
+        if (!nav) return;
+        nav.innerHTML = '';
+        this.questions.forEach((_, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'nav-pill';
+            btn.textContent = idx + 1;
+            btn.addEventListener('click', () => this.jumpToQuestion(idx));
+            nav.appendChild(btn);
+        });
+        this.updateNavigator();
+    }
 
-updateNavigator() {
-    const pills = document.querySelectorAll('.nav-pill');
-    pills.forEach((pill, idx) => {
-        pill.classList.toggle('current', idx === this.currentIndex);
-        pill.classList.toggle('answered', this.answers[idx] !== undefined);
-    });
-}
+    updateNavigator() {
+        const pills = document.querySelectorAll('.nav-pill');
+        pills.forEach((pill, idx) => {
+            pill.classList.toggle('current', idx === this.currentIndex);
+            pill.classList.toggle('answered', this.answers[idx] !== undefined);
+        });
+    }
 
-jumpToQuestion(index) {
-    this.currentIndex = index;
-    this.renderQuestion();
-    this.updateProgress();
-    this.updateNavButtons();
-}
+    jumpToQuestion(index) {
+        this.currentIndex = index;
+        this.renderQuestion();
+        this.updateProgress();
+        this.updateNavButtons();
+    }
 
     retakeQuiz() {
         this.currentIndex = 0;
@@ -441,6 +549,7 @@ jumpToQuestion(index) {
         this.startTimer();
         this.renderQuestion();
         this.updateProgress();
+        this.buildNavigator();
     }
 
     resetQuiz() {
@@ -448,6 +557,7 @@ jumpToQuestion(index) {
         this.setupEl.classList.remove('hidden');
         this.questions = [];
         this.answers = {};
+        this.goToStep(1);
     }
 }
 

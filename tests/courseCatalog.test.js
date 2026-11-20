@@ -2,10 +2,10 @@ const assert = require('assert');
 const StudyHubCatalog = require('../js/courseCatalog.js');
 
 assert.ok(StudyHubCatalog.getCollegeOptions().some(college => college.value === 'COLNAS'));
-assert.ok(StudyHubCatalog.getProgrammeOptions('COLNAS').some(option => option.value === 'Computer Science'));
+assert.ok(StudyHubCatalog.getProgrammeOptions('COLCOMP').some(option => option.value === 'Computer Science'));
 
 const courses = StudyHubCatalog.getCourseOptions({
-  college: 'COLNAS',
+  college: 'COLCOMP',
   programme: 'Computer Science',
   level: '100',
   semester: 'First',

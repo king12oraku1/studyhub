@@ -63,7 +63,7 @@ const NotesDatabase = {
         level: "100",
         semester: "First",
         title: "Intoduction to Computing Sciences",
-        pdf: "assets/notes/COS101.pdf"
+        pdf: "assets/notes/BUT-CSC 104 NOTE.pdf"
     },
     BUT_ICT131: {
         level: "100",
@@ -105,19 +105,19 @@ const NotesDatabase = {
         level: "100",
         semester: "Second",
         title: "Nigerian People and Culture",
-        pdf: "assets/notes/GST112.pdf"
+        pdf: "assets/notes/Culture%20and%20Tradition%3BMarriage%20and%20Language.pdf.pdf"
     },
     COS102: {
         level: "100",
         semester: "Second",
         title: "Problem Solving",
-        pdf: "assets/notes/BUT-CSC 104 NOT.pdf"
+        pdf: "assets/notes/BUT-CSC 104 NOTE.pdf"
     },
     BUT_CSC104: {
         level: "100",
         semester: "Second",
         title: "Computer Hardware & Assembly Language Programming",
-        pdf: "assets/notes/BUT-CSC 104 NOT.pdf"
+        pdf: "assets/notes/BUT-CSC 104 NOT5.pdf"
     },
     BUT_BIO102: {
         level: "100",
@@ -573,7 +573,7 @@ const NotesDatabase = {
         level: "500",
         semester: "First",
         title: "Computer System Performance Evaluation",
-        pdf: "assets/notes/BUT_CSC505.pdf"
+        pdf: "assets/notes/Culture%20and%20Tradition%3BMarriage%20and%20Language.pdf.pdf"
     },
 
     BUT_CSC503: {

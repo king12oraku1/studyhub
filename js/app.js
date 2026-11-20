@@ -1,1175 +1,868 @@
+/* =====================================================
+   StudyHub — Main Application
+   Wires: Theme · Nav · Courses · Notes · Past Qs · Quiz
+   ===================================================== */
 
+/* ── helpers ─────────────────────────────────────── */
+function getQueryParam(n) { return new URLSearchParams(location.search).get(n); }
 
-
-/* ======================================
-   STUDYHUB - MAIN APPLICATION
-   Handles: Theme, Navigation, Courses,
-   Notes, Past Questions, Course Pages
-   ====================================== */
-
-function getQueryParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
-}
-
-const pageType = document.body.dataset.page || 'home';
+const pageType   = document.body.dataset.page || 'home';
 const courseParam = getQueryParam('course');
-const FILTER_STORAGE_KEY = 'studyhubFilters';
+const FKEY = 'studyhubFilters';
 
-const themeToggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-const currentTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', currentTheme);
-if (themeToggle) {
-    themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
-    themeToggle.addEventListener('click', () => {
-        const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
-    });
+/* ── theme ───────────────────────────────────────── */
+const themeBtn = document.getElementById('themeToggle');
+const html     = document.documentElement;
+const saved    = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', saved);
+if (themeBtn) {
+  themeBtn.textContent = saved === 'light' ? '🌙' : '☀️';
+  themeBtn.addEventListener('click', () => {
+    const t = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', t);
+    localStorage.setItem('theme', t);
+    themeBtn.textContent = t === 'light' ? '🌙' : '☀️';
+  });
 }
 
-const mobileToggle = document.getElementById('mobileToggle');
-const navMenu = document.getElementById('navMenu');
-if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
-    });
+/* ── mobile nav ──────────────────────────────────── */
+const mobToggle = document.getElementById('mobileToggle');
+const navMenu   = document.getElementById('navMenu');
+if (mobToggle && navMenu) {
+  mobToggle.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('active');
+    mobToggle.classList.toggle('active', open);
+    mobToggle.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.nav-link').forEach(l =>
+    l.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      mobToggle.classList.remove('active');
+      mobToggle.setAttribute('aria-expanded', 'false');
+    })
+  );
 }
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navMenu) navMenu.classList.remove('active');
-        if (mobileToggle) mobileToggle.classList.remove('active');
-    });
-});
+/* ── toast ───────────────────────────────────────── */
+function showToast(msg, type) {
+  let wrap = document.querySelector('.toast-container');
+  if (!wrap) { wrap = document.createElement('div'); wrap.className = 'toast-container'; document.body.appendChild(wrap); }
+  const t = document.createElement('div');
+  t.className = 'toast' + (type ? ' toast-' + type : '');
+  t.textContent = msg;
+  wrap.appendChild(t);
+  setTimeout(() => t.remove(), 3200);
+}
+window.showToast = showToast;
 
+/* ── pdf helpers ─────────────────────────────────── */
+window.viewPdf     = url => window.open(encodeURI(url), '_blank');
+window.downloadPdf = (url, fname) => {
+  const a = document.createElement('a');
+  a.href = encodeURI(url); a.download = fname || url.split('/').pop();
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+};
+
+/* ── select utilities ────────────────────────────── */
+function populateSel(el, opts, placeholder, selected) {
+  if (!el) return;
+  el.innerHTML = `<option value="">${placeholder}</option>`;
+  opts.forEach(o => {
+    const opt = document.createElement('option');
+    opt.value = o.value; opt.textContent = o.label;
+    el.appendChild(opt);
+  });
+  if (selected) el.value = selected;
+}
+function resetSel(el, placeholder) {
+  if (!el) return;
+  el.innerHTML = `<option value="">${placeholder}</option>`;
+  el.disabled = true;
+}
+function setVal(el, v) {
+  if (!el || !v) return false;
+  const ok = Array.from(el.options).some(o => o.value === v);
+  if (ok) el.value = v;
+  return ok;
+}
+
+/* ── filter persistence ──────────────────────────── */
+function loadFilters()       { try { return JSON.parse(localStorage.getItem(FKEY) || '{}'); } catch { return {}; } }
+function saveFilters(patch)  { const s = loadFilters(); Object.assign(s, patch); localStorage.setItem(FKEY, JSON.stringify(s)); }
+function clearFilters()      { localStorage.removeItem(FKEY); }
+
+/* ── course icon assignment ──────────────────────── */
+const CODE_COLORS = {
+  MTH:'blue', PHY:'orange', COS:'blue', STA:'cyan', GST:'green',
+  ENT:'green', IFT:'purple', SEN:'purple', CYB:'rose', DTS:'cyan',
+  INS:'orange', CSC:'blue', ICT:'blue', BUT:'green', NS:'purple',
+  BIO:'green'
+};
+const ICONS = {
+  math: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>`,
+  science:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2v17.5c0 1.4-1.3 2.5-3 2.5s-3-1.1-3-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></svg>`,
+  computer:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+  book:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+  security:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  bio:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9z"/></svg>`,
+};
+
+function courseIcon(code) {
+  const prefix = code.replace(/^BUT_/, '').match(/^[A-Z]+/)?.[0] || 'GST';
+  const color   = CODE_COLORS[prefix] || 'blue';
+  let   icon    = ICONS.computer;
+  if (['MTH','STA'].includes(prefix))             icon = ICONS.math;
+  else if (['PHY','CHE'].includes(prefix))        icon = ICONS.science;
+  else if (prefix === 'CYB')                      icon = ICONS.security;
+  else if (['BIO','BUT_BIO'].includes(prefix))    icon = ICONS.bio;
+  else if (['GST','ENT'].includes(prefix))        icon = ICONS.book;
+  return { color, icon };
+}
+
+/* ── course navigation ───────────────────────────── */
 const allCourses = Object.keys(NotesDatabase).map(code => ({
-    code,
-    ...NotesDatabase[code]
+  code,
+  title:    NotesDatabase[code].title,
+  level:    NotesDatabase[code].level,
+  semester: NotesDatabase[code].semester,
+  pdf:      NotesDatabase[code].pdf,
+  catalog:  StudyHubCatalog.getCourseEntry(code)
 }));
 
+window.openNotes          = code => location.href = `notes.html?course=${encodeURIComponent(code)}`;
+window.openPastQuestions  = code => location.href = `past-questions.html?course=${encodeURIComponent(code)}`;
+window.openQuiz           = code => location.href = `quiz.html?course=${encodeURIComponent(code)}`;
+window.openCourseDashboard= code => location.href = `course.html?course=${encodeURIComponent(code)}`;
+
+/* ── course card HTML ────────────────────────────── */
 function buildCourseCard(c) {
-    return `
-        <div class="course-header">
-            <span class="course-code">${c.code}</span>
-            <span class="course-level">${c.level} Level</span>
-        </div>
-        <h3>${c.title}</h3>
-        <p>${c.semester} Semester</p>
-        <div class="course-actions">
-            <button class="btn btn-sm" onclick="event.stopPropagation(); openNotes('${c.code}')">Notes</button>
-            <button class="btn btn-sm" onclick="event.stopPropagation(); openPastQuestions('${c.code}')">Past Questions</button>
-            <button class="btn btn-sm" onclick="event.stopPropagation(); openQuiz('${c.code}')">Quiz</button>
-        </div>
-    `;
+  const { color, icon } = courseIcon(c.code);
+  return `
+    <div class="cc-header">
+      <div class="cc-icon ${color}">${icon}</div>
+      <div>
+        <div class="cc-code">${c.code}</div>
+        <div class="cc-level">Level ${c.level} · Sem ${c.semester === 'First' ? '1' : '2'}</div>
+      </div>
+    </div>
+    <div class="cc-title">${c.title}</div>
+    <div class="cc-meta">
+      <span class="cc-tag">${c.level} Level</span>
+      <span class="cc-tag">${c.semester}</span>
+    </div>
+    <div class="cc-actions">
+      <button class="btn btn-primary btn-sm"
+        onclick="event.stopPropagation(); openNotes('${c.code}')">View Details</button>
+      <button class="btn btn-secondary btn-sm"
+        onclick="event.stopPropagation(); openQuiz('${c.code}')">View Quizzes</button>
+    </div>`;
 }
 
-function getStoredFilterState() {
-    try {
-        return JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}');
-    } catch (error) {
-        return {};
-    }
-}
+/* ── render course grid ──────────────────────────── */
+function renderCourses() {
+  const grid      = document.getElementById('courseGrid');
+  const countEl   = document.getElementById('courseResultCount');
+  const viewAll   = document.getElementById('viewAllCoursesWrap');
+  const college   = document.getElementById('collegeFilter')?.value   || '';
+  const programme = document.getElementById('programmeFilter')?.value || '';
+  const level     = document.getElementById('levelFilter')?.value     || '';
+  const semester  = document.getElementById('semesterFilter')?.value  || '';
+  const search    = (document.getElementById('courseSearch')?.value || '').toLowerCase().trim();
+  if (!grid) return;
 
-function saveStoredFilterState(patch) {
-    const state = getStoredFilterState();
-    Object.assign(state, patch);
-    localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(state));
-}
+  /* On the homepage, show only 8 featured courses when no filter is active */
+  const isHomepage      = pageType === 'home';
+  const hasActiveFilter = college || programme || level || semester || search;
 
-function clearStoredFilterState() {
-    localStorage.removeItem(FILTER_STORAGE_KEY);
-}
-
-function setSelectValue(selectEl, value) {
-    if (!selectEl) return false;
-    const hasValue = Array.from(selectEl.options).some(option => option.value === value);
-    if (!value || !hasValue) {
-        selectEl.value = '';
-        return false;
-    }
-    selectEl.value = value;
+  const filtered = allCourses.filter(c => {
+    if (college   && c.catalog && !c.catalog.colleges.includes(college))     return false;
+    if (programme && c.catalog && !c.catalog.programmes.includes(programme)) return false;
+    if (level     && c.level    !== level)                                    return false;
+    if (semester  && c.semester !== semester)                                 return false;
+    if (search && !c.code.toLowerCase().includes(search) && !c.title.toLowerCase().includes(search)) return false;
     return true;
+  });
+
+  /* homepage without filters: show a curated featured slice */
+  const FEATURED_CODES = ['MTH102','COS102','PHY102','GST112','MTH101','COS101','BUT_BIO102','BUT_CSC104'];
+  const displayList = (isHomepage && !hasActiveFilter)
+    ? allCourses.filter(c => FEATURED_CODES.includes(c.code))
+    : filtered;
+
+  /* Show/hide "View all" button on homepage */
+  if (viewAll) viewAll.style.display = (isHomepage && !hasActiveFilter) ? 'block' : 'none';
+
+  if (countEl) {
+    if (isHomepage && !hasActiveFilter) {
+      countEl.innerHTML = `Showing <strong>${displayList.length}</strong> featured courses`;
+    } else {
+      countEl.innerHTML = `Showing <strong>${filtered.length}</strong> course${filtered.length !== 1 ? 's' : ''}`;
+    }
+  }
+
+  grid.innerHTML = '';
+  if (!displayList.length) {
+    grid.innerHTML = '<div class="no-results"><h3>No courses found</h3><p>Try adjusting your filters or search term.</p></div>';
+    return;
+  }
+  displayList.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'course-card';
+    card.innerHTML = buildCourseCard(c);
+    card.addEventListener('click', () => openCourseDashboard(c.code));
+    grid.appendChild(card);
+  });
 }
 
-function persistSelectionState(patch) {
-    if (Object.keys(patch).length) {
-        saveStoredFilterState(patch);
-    }
+/* ── render stats banner from real data ──────────── */
+function renderStats() {
+  const banner = document.getElementById('statsBanner');
+  if (!banner) return;
+
+  const courseCount = Object.keys(NotesDatabase).length;
+  const notesCount  = Object.keys(NotesDatabase).filter(k => NotesDatabase[k].pdf).length;
+  const pqCount     = Object.values(PastQuestionsDatabase)
+    .reduce((sum, years) => sum + Object.keys(years).length, 0);
+
+  const STAT_ICON_COURSE = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`;
+  const STAT_ICON_NOTES  = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`;
+  const STAT_ICON_PQ     = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`;
+
+  banner.innerHTML = `
+    <div class="stat-item">
+      <div class="stat-icon-wrap">${STAT_ICON_COURSE}</div>
+      <div class="stat-number">${courseCount}</div>
+      <div class="stat-label">Courses Available</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon-wrap">${STAT_ICON_NOTES}</div>
+      <div class="stat-number">${notesCount}</div>
+      <div class="stat-label">Lecture Note Sets</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon-wrap">${STAT_ICON_PQ}</div>
+      <div class="stat-number">${pqCount}</div>
+      <div class="stat-label">Past Question Papers</div>
+    </div>`;
 }
 
-function resetPageFilters(pageName) {
-    clearStoredFilterState();
+/* ── course discovery setup (home + courses pages) ── */
+function setupCourseDiscovery() {
+  const colEl  = document.getElementById('collegeFilter');
+  const progEl = document.getElementById('programmeFilter');
+  const lvlEl  = document.getElementById('levelFilter');
+  const semEl  = document.getElementById('semesterFilter');
+  const srchEl = document.getElementById('courseSearch');
+  const rstBtn = document.getElementById('resetFiltersBtn');
+  if (!colEl) return;
 
-    if (pageName === 'home') {
-        const collegeFilterEl = document.getElementById('collegeFilter');
-        const programmeFilterEl = document.getElementById('programmeFilter');
-        const levelFilterEl = document.getElementById('levelFilter');
-        const semesterFilterEl = document.getElementById('semesterFilter');
-        const courseSearchEl = document.getElementById('courseSearch');
+  /* populate college */
+  populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'College ▾');
 
-        if (collegeFilterEl) {
-            populateSelect(collegeFilterEl, StudyHubCatalog.getCollegeOptions(), 'Select College');
-        }
-        resetSelect(programmeFilterEl, 'Select Programme');
-        resetSelect(levelFilterEl, 'Select Level');
-        resetSelect(semesterFilterEl, 'Select Semester');
-        if (courseSearchEl) {
-            courseSearchEl.value = '';
-        }
-        if (typeof renderCourses === 'function') {
-            renderCourses();
-        }
-        return;
-    }
+  /* level & semester are always enabled */
+  const levels = [...new Set(allCourses.map(c => c.level))].sort();
+  populateSel(lvlEl, levels.map(l => ({ value:l, label:`${l} Level` })), 'Level ▾');
+  if (lvlEl) lvlEl.disabled = false;
 
-    if (pageName === 'notes') {
-        const notesCollege = document.getElementById('notesCollege');
-        const notesProgramme = document.getElementById('notesProgramme');
-        const notesLevel = document.getElementById('notesLevel');
-        const notesSemester = document.getElementById('notesSemester');
-        const notesCourse = document.getElementById('notesCourse');
-        const notesViewer = document.getElementById('notesViewer');
-        if (notesCollege) {
-            populateSelect(notesCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
-        }
-        resetSelect(notesProgramme, 'Select Programme');
-        resetSelect(notesLevel, 'Select Level');
-        resetSelect(notesSemester, 'Select Semester');
-        resetSelect(notesCourse, 'Select Course');
-        if (notesViewer) {
-            notesViewer.innerHTML = '<p class="placeholder-text">Select a course above to view notes</p>';
-        }
-        return;
-    }
+  populateSel(semEl, [
+    { value:'First',  label:'First Semester'  },
+    { value:'Second', label:'Second Semester' }
+  ], 'Semester ▾');
+  if (semEl) semEl.disabled = false;
 
-    if (pageName === 'past-questions') {
-        const pqCollege = document.getElementById('pqCollege');
-        const pqProgramme = document.getElementById('pqProgramme');
-        const pqLevel = document.getElementById('pqLevel');
-        const pqSemester = document.getElementById('pqSemester');
-        const pqCourse = document.getElementById('pqCourse');
-        const pqYear = document.getElementById('pqYear');
-        const pqViewer = document.getElementById('pqViewer');
-        if (pqCollege) {
-            populateSelect(pqCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
-        }
-        resetSelect(pqProgramme, 'Select Programme');
-        resetSelect(pqLevel, 'Select Level');
-        resetSelect(pqSemester, 'Select Semester');
-        resetSelect(pqCourse, 'Select Course');
-        resetSelect(pqYear, 'Select Year');
-        if (pqViewer) {
-            pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
-        }
-        return;
-    }
+  /* college → programme cascade */
+  colEl.addEventListener('change', () => {
+    const col = colEl.value;
+    if (col) {
+      populateSel(progEl, StudyHubCatalog.getProgrammeOptions(col), 'Programme ▾');
+      progEl.disabled = false;
+    } else resetSel(progEl, 'Programme ▾');
+    saveFilters({ college:col, programme:'' }); renderCourses();
+  });
+  progEl?.addEventListener('change', () => { saveFilters({ programme: progEl.value }); renderCourses(); });
+  lvlEl?.addEventListener('change',  () => { saveFilters({ level:    lvlEl.value  }); renderCourses(); });
+  semEl?.addEventListener('change',  () => { saveFilters({ semester: semEl.value  }); renderCourses(); });
+  srchEl?.addEventListener('input',  renderCourses);
 
-    if (pageName === 'quiz') {
-        const quizCollege = document.getElementById('quizCollege');
-        const quizProgramme = document.getElementById('quizProgramme');
-        const quizLevel = document.getElementById('quizLevel');
-        const quizSemester = document.getElementById('quizSemester');
-        const quizCourse = document.getElementById('quizCourse');
-        if (quizCollege) {
-            populateSelect(quizCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
-        }
-        resetSelect(quizProgramme, 'Select Programme');
-        resetSelect(quizLevel, 'Select Level');
-        resetSelect(quizSemester, 'Select Semester');
-        resetSelect(quizCourse, 'Select Course');
-    }
+  rstBtn?.addEventListener('click', () => {
+    clearFilters();
+    populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'College ▾');
+    resetSel(progEl, 'Programme ▾');
+    populateSel(lvlEl, levels.map(l => ({ value:l, label:`${l} Level` })), 'Level ▾');
+    if (lvlEl) lvlEl.disabled = false;
+    populateSel(semEl, [
+      { value:'First',  label:'First Semester'  },
+      { value:'Second', label:'Second Semester' }
+    ], 'Semester ▾');
+    if (semEl) semEl.disabled = false;
+    if (srchEl) srchEl.value = '';
+    renderCourses();
+  });
+
+  /* restore saved state */
+  const s = loadFilters();
+  if (s.college) {
+    setVal(colEl, s.college);
+    populateSel(progEl, StudyHubCatalog.getProgrammeOptions(s.college), 'Programme ▾');
+    progEl.disabled = false;
+    if (s.programme) setVal(progEl, s.programme);
+  }
+  if (s.level)    setVal(lvlEl, s.level);
+  if (s.semester) setVal(semEl, s.semester);
+
+  renderCourses();
 }
 
-function getCatalogCourseEntry(code) {
-    return StudyHubCatalog.getCourseEntry(code) || null;
+/* ── resource list HTML helpers ──────────────────── */
+const PDF_ICON = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>`;
+
+function buildResourceItem({ title, sub, url, filename }) {
+  return `
+    <div class="resource-item">
+      <div class="resource-pdf-icon">${PDF_ICON}</div>
+      <div class="resource-body">
+        <div class="resource-title">${title}</div>
+        <div class="resource-sub">${sub}</div>
+      </div>
+      <div class="resource-actions">
+        <button class="btn btn-primary btn-sm"  onclick="viewPdf('${url}')">View</button>
+        <button class="btn btn-secondary btn-sm" onclick="downloadPdf('${url}','${filename}')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </button>
+      </div>
+    </div>`;
 }
 
-function populateSelect(selectEl, options, placeholder, selectedValue) {
-    if (!selectEl) return;
-    const placeholderText = placeholder || 'Select an option';
-    selectEl.innerHTML = `<option value="">${placeholderText}</option>`;
-    options.forEach(option => {
-        const opt = document.createElement('option');
-        opt.value = option.value;
-        opt.textContent = option.label;
-        selectEl.appendChild(opt);
+/* ── NOTES PAGE ──────────────────────────────────── */
+function setupNotesPage() {
+  const colEl  = document.getElementById('notesCollege');
+  const progEl = document.getElementById('notesProgramme');
+  const lvlEl  = document.getElementById('notesLevel');
+  const semEl  = document.getElementById('notesSemester');
+  const crsEl  = document.getElementById('notesCourse');
+  const srchEl = document.getElementById('notesSearch');
+  const viewer = document.getElementById('notesViewer');
+  const cntEl  = document.getElementById('notesResultCount');
+  const rstBtn = document.getElementById('resetFiltersBtn');
+  if (!colEl || !viewer) return;
+
+  /* build full notes list with catalog info */
+  const allNotes = Object.keys(NotesDatabase).map(code => ({
+    code, pdf: NotesDatabase[code].pdf,
+    title: NotesDatabase[code].title,
+    level: NotesDatabase[code].level,
+    semester: NotesDatabase[code].semester,
+    catalog: StudyHubCatalog.getCourseEntry(code)
+  }));
+
+  const levels = [...new Set(allNotes.map(c => c.level))].sort();
+
+  populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'College ▾');
+  populateSel(lvlEl, levels.map(l => ({ value:l, label:`${l} Level` })), 'Level ▾');
+  if (lvlEl) lvlEl.disabled = false;
+  populateSel(semEl, [
+    { value:'First',  label:'First Semester'  },
+    { value:'Second', label:'Second Semester' }
+  ], 'Semester ▾');
+  if (semEl) semEl.disabled = false;
+
+  function getFiltered() {
+    const col  = colEl.value; const prog = progEl.value;
+    const lvl  = lvlEl.value; const sem  = semEl.value;
+    const crs  = crsEl.value;
+    const q    = (srchEl?.value || '').toLowerCase().trim();
+    return allNotes.filter(c => {
+      if (col  && c.catalog && !c.catalog.colleges.includes(col))     return false;
+      if (prog && c.catalog && !c.catalog.programmes.includes(prog))  return false;
+      if (lvl  && c.level    !== lvl)                                  return false;
+      if (sem  && c.semester !== sem)                                  return false;
+      if (crs  && c.code     !== crs)                                  return false;
+      if (q && !c.code.toLowerCase().includes(q) && !c.title.toLowerCase().includes(q)) return false;
+      return true;
     });
-    if (selectedValue) {
-        selectEl.value = selectedValue;
+  }
+
+  function refreshCourseDropdown() {
+    const avail = getFiltered();
+    const prev  = crsEl.value;
+    populateSel(crsEl, avail.map(c => ({ value:c.code, label:`${c.code} — ${c.title}` })), 'Course ▾');
+    crsEl.disabled = false;
+    if (avail.some(c => c.code === prev)) crsEl.value = prev;
+  }
+
+  function render() {
+    const list = getFiltered();
+    const hasCourseSelected = !!crsEl.value;
+    const hasSearch = !!(srchEl?.value || '').trim();
+
+    /* Show prompt when no specific course or search is active */
+    if (!hasCourseSelected && !hasSearch) {
+      if (cntEl) cntEl.innerHTML = '';
+      viewer.innerHTML = `
+        <div class="resource-empty-state">
+          <div class="res-empty-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3>Select a course to view lecture notes</h3>
+          <p>Use the filters above to narrow down by college, level, or semester, then pick a course.</p>
+        </div>`;
+      return;
     }
-}
 
-function resetSelect(selectEl, placeholder) {
-    if (!selectEl) return;
-    selectEl.innerHTML = `<option value="">${placeholder}</option>`;
-    selectEl.disabled = true;
-}
-
-function getCourseInfo(code) {
-    return {
-        code,
-        notes: NotesDatabase[code] || null,
-        past: PastQuestionsDatabase[code] || null,
-        quiz: QuestionBanks[code] || null,
-        title: (NotesDatabase[code] && NotesDatabase[code].title) || code,
-        level: (NotesDatabase[code] && NotesDatabase[code].level) || '',
-        semester: (NotesDatabase[code] && NotesDatabase[code].semester) || ''
-    };
-}
-
-function navigateTo(page, code) {
-    if (!code) {
-        window.location.href = page;
-        return;
+    if (cntEl) cntEl.innerHTML = `Showing <strong>${list.length}</strong> result${list.length !== 1 ? 's' : ''}`;
+    if (!list.length) {
+      viewer.innerHTML = '<div class="no-results"><h3>No lecture notes available</h3><p>No notes found for the selected filters. Try a different course or check back later.</p></div>';
+      return;
     }
-    window.location.href = `${page}?course=${encodeURIComponent(code)}`;
+    viewer.innerHTML = `<div class="resource-list">${list.map(c => buildResourceItem({
+      title:    `${c.title}`,
+      sub:      `${c.code} <span class="dot"></span> Level ${c.level} <span class="dot"></span> ${c.semester} Semester`,
+      url:      c.pdf,
+      filename: `${c.code}_Notes.pdf`
+    })).join('')}</div>`;
+  }
+
+  function onChange() { refreshCourseDropdown(); render(); }
+
+  colEl.addEventListener('change', () => {
+    const col = colEl.value;
+    if (col) { populateSel(progEl, StudyHubCatalog.getProgrammeOptions(col), 'Programme ▾'); progEl.disabled = false; }
+    else resetSel(progEl, 'Programme ▾');
+    onChange();
+  });
+  progEl.addEventListener('change', onChange);
+  lvlEl.addEventListener('change',  onChange);
+  semEl.addEventListener('change',  onChange);
+  crsEl.addEventListener('change',  render);
+  srchEl?.addEventListener('input', render);  /* search doesn't change dropdown, just re-renders */
+
+  rstBtn?.addEventListener('click', () => {
+    populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'College ▾');
+    resetSel(progEl, 'Programme ▾');
+    populateSel(lvlEl, levels.map(l => ({ value:l, label:`${l} Level` })), 'Level ▾');
+    if (lvlEl) lvlEl.disabled = false;
+    populateSel(semEl, [{ value:'First',label:'First Semester'},{value:'Second',label:'Second Semester'}], 'Semester ▾');
+    if (semEl) semEl.disabled = false;
+    if (srchEl) srchEl.value = '';
+    refreshCourseDropdown(); render();
+  });
+
+  /* handle ?course= param */
+  if (courseParam && NotesDatabase[courseParam]) {
+    const e = StudyHubCatalog.getCourseEntry(courseParam);
+    const n = NotesDatabase[courseParam];
+    if (e) { setVal(colEl, e.college); colEl.dispatchEvent(new Event('change')); }
+    setTimeout(() => {
+      if (e?.programme) setVal(progEl, e.programme);
+      setVal(lvlEl, n.level || '');
+      setVal(semEl, n.semester || '');
+      refreshCourseDropdown();
+      setVal(crsEl, courseParam);
+      render();
+    }, 50);
+  } else {
+    /* No ?course= param — show empty state, populate course dropdown silently */
+    refreshCourseDropdown();
+    render(); /* render() will show the empty-state prompt since no course is selected */
+  }
 }
 
+/* ── PAST QUESTIONS PAGE ─────────────────────────── */
+function setupPastQuestionsPage() {
+  const colEl  = document.getElementById('pqCollege');
+  const progEl = document.getElementById('pqProgramme');
+  const lvlEl  = document.getElementById('pqLevel');
+  const semEl  = document.getElementById('pqSemester');
+  const crsEl  = document.getElementById('pqCourse');
+  const yrEl   = document.getElementById('pqYear');
+  const srchEl = document.getElementById('pqSearch');
+  const viewer = document.getElementById('pqViewer');
+  const cntEl  = document.getElementById('pqResultCount');
+  const rstBtn = document.getElementById('resetFiltersBtn');
+  if (!colEl || !viewer) return;
+
+  /* flatten PQ database into items */
+  const allPQ = [];
+  Object.keys(PastQuestionsDatabase).forEach(code => {
+    const n = NotesDatabase[code];
+    const cat = StudyHubCatalog.getCourseEntry(code);
+    Object.keys(PastQuestionsDatabase[code]).forEach(year => {
+      allPQ.push({
+        code, year,
+        url:      PastQuestionsDatabase[code][year],
+        title:    n?.title || code,
+        level:    n?.level || '',
+        semester: n?.semester || '',
+        catalog:  cat
+      });
+    });
+  });
+
+  const levels   = [...new Set(allPQ.map(i => i.level).filter(Boolean))].sort();
+  const semesters= [...new Set(allPQ.map(i => i.semester).filter(Boolean))].sort();
+  const allYears = [...new Set(allPQ.map(i => i.year))].sort((a,b) => b - a);
+
+  populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'College ▾');
+  populateSel(lvlEl, levels.map(l => ({ value:l, label:`${l} Level` })), 'Level ▾');
+  if (lvlEl) lvlEl.disabled = false;
+  populateSel(semEl, semesters.map(s => ({ value:s, label:`${s} Semester` })), 'Semester ▾');
+  if (semEl) semEl.disabled = false;
+  populateSel(yrEl, allYears.map(y => ({ value:y, label:y })), 'Year ▾');
+  if (yrEl) yrEl.disabled = false;
+
+  function getFiltered() {
+    const col  = colEl.value; const prog = progEl.value;
+    const lvl  = lvlEl.value; const sem  = semEl.value;
+    const crs  = crsEl.value; const yr   = yrEl.value;
+    const q    = (srchEl?.value || '').toLowerCase().trim();
+    return allPQ.filter(i => {
+      if (col  && i.catalog && !i.catalog.colleges.includes(col))     return false;
+      if (prog && i.catalog && !i.catalog.programmes.includes(prog))  return false;
+      if (lvl  && i.level    !== lvl)                                  return false;
+      if (sem  && i.semester !== sem)                                  return false;
+      if (crs  && i.code     !== crs)                                  return false;
+      if (yr   && i.year     !== yr)                                   return false;
+      if (q && !i.code.toLowerCase().includes(q) && !i.title.toLowerCase().includes(q)) return false;
+      return true;
+    });
+  }
+
+  function refreshCourseDropdown() {
+    const codes = [...new Set(getFiltered().map(i => i.code))].sort();
+    const prev  = crsEl.value;
+    populateSel(crsEl, codes.map(code => {
+      const item = allPQ.find(i => i.code === code);
+      return { value:code, label:`${code} — ${item.title}` };
+    }), 'Course ▾');
+    crsEl.disabled = false;
+    if (codes.includes(prev)) crsEl.value = prev;
+  }
+
+  function render() {
+    const list = getFiltered();
+    const hasCourseSelected = !!crsEl.value;
+    const hasYearSelected   = !!yrEl.value;
+    const hasSearch = !!(srchEl?.value || '').trim();
+
+    /* Show prompt when no specific course/year/search is active */
+    if (!hasCourseSelected && !hasYearSelected && !hasSearch) {
+      if (cntEl) cntEl.innerHTML = '';
+      viewer.innerHTML = `
+        <div class="resource-empty-state">
+          <div class="res-empty-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          </div>
+          <h3>Select a course to view past questions</h3>
+          <p>Use the filters above to narrow down by college, level, or semester, then pick a course or year.</p>
+        </div>`;
+      return;
+    }
+
+    if (cntEl) cntEl.innerHTML = `Showing <strong>${list.length}</strong> result${list.length !== 1 ? 's' : ''}`;
+    if (!list.length) {
+      viewer.innerHTML = '<div class="no-results"><h3>No past questions available</h3><p>No papers found for the selected filters. Try a different course or year.</p></div>';
+      return;
+    }
+    viewer.innerHTML = `<div class="resource-list">${list.map(i => buildResourceItem({
+      title:    `${i.title} — ${i.year} Paper`,
+      sub:      `${i.code} <span class="dot"></span> ${i.year} <span class="dot"></span> Level ${i.level}`,
+      url:      i.url,
+      filename: `${i.code}_${i.year}.pdf`
+    })).join('')}</div>`;
+  }
+
+  function onChange() { refreshCourseDropdown(); render(); }
+
+  colEl.addEventListener('change', () => {
+    const col = colEl.value;
+    if (col) { populateSel(progEl, StudyHubCatalog.getProgrammeOptions(col), 'Programme ▾'); progEl.disabled = false; }
+    else resetSel(progEl, 'Programme ▾');
+    onChange();
+  });
+  progEl.addEventListener('change', onChange);
+  lvlEl.addEventListener('change',  onChange);
+  semEl.addEventListener('change',  onChange);
+  crsEl.addEventListener('change',  render);
+  yrEl.addEventListener('change',   render);
+  srchEl?.addEventListener('input', render);
+
+  rstBtn?.addEventListener('click', () => {
+    populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'College ▾');
+    resetSel(progEl, 'Programme ▾');
+    populateSel(lvlEl, levels.map(l => ({value:l,label:`${l} Level`})), 'Level ▾');
+    if (lvlEl) lvlEl.disabled = false;
+    populateSel(semEl, semesters.map(s => ({value:s,label:`${s} Semester`})), 'Semester ▾');
+    if (semEl) semEl.disabled = false;
+    populateSel(yrEl, allYears.map(y => ({value:y,label:y})), 'Year ▾');
+    if (yrEl) yrEl.disabled = false;
+    if (srchEl) srchEl.value = '';
+    refreshCourseDropdown(); render();
+  });
+
+  if (courseParam && PastQuestionsDatabase[courseParam]) {
+    const e = StudyHubCatalog.getCourseEntry(courseParam);
+    if (e) { setVal(colEl, e.college); colEl.dispatchEvent(new Event('change')); }
+    setTimeout(() => {
+      if (e?.programme) setVal(progEl, e.programme);
+      refreshCourseDropdown();
+      setVal(crsEl, courseParam);
+      render();
+    }, 50);
+  } else {
+    refreshCourseDropdown();
+    /* Do NOT call render() — show empty state until student selects a course */
+    render();
+  }
+}
+
+/* ── COURSES PAGE (dashboard for ?course=) ───────── */
+function setupCoursesPage() {
+  const section  = document.getElementById('courseDashboard');
+  if (!section) return;
+  if (!courseParam) { section.classList.add('hidden'); return; }
+  section.classList.remove('hidden');
+  const c = {
+    code:     courseParam,
+    title:    NotesDatabase[courseParam]?.title    || courseParam,
+    level:    NotesDatabase[courseParam]?.level    || '',
+    semester: NotesDatabase[courseParam]?.semester || ''
+  };
+  section.innerHTML = `
+    <div class="cd-header">
+      <div>
+        <span style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--accent);background:var(--accent-light);padding:.2rem .625rem;border-radius:var(--r-full);">${c.code}</span>
+        <h3 style="margin-top:.5rem;">${c.title}</h3>
+        ${c.level ? `<p style="color:var(--text-3);font-size:.875rem;margin-top:.25rem;">Level ${c.level} · ${c.semester} Semester</p>` : ''}
+      </div>
+      <div class="cd-actions">
+        <button class="btn btn-primary"   onclick="openNotes('${c.code}')">Notes</button>
+        <button class="btn btn-secondary" onclick="openPastQuestions('${c.code}')">Past Questions</button>
+        <button class="btn btn-outline"   onclick="openQuiz('${c.code}')">Quiz</button>
+      </div>
+    </div>`;
+}
+
+/* ── QUIZ PAGE (pill wiring + filter restore) ──────── */
+function setupQuizPage() {
+  /* sync count pills → hidden select */
+  document.querySelectorAll('.count-pill[data-count]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.count-pill[data-count]').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const sel = document.getElementById('quizCount');
+      if (sel) sel.value = pill.dataset.count;
+      updateSummary();
+    });
+  });
+
+  /* sync duration pills → hidden select */
+  document.querySelectorAll('.count-pill[data-duration]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.count-pill[data-duration]').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const sel = document.getElementById('quizDuration');
+      if (sel) sel.value = pill.dataset.duration;
+      updateSummary();
+    });
+  });
+
+  /* update summary card live */
+  function updateSummary() {
+    const course   = document.getElementById('quizCourse')?.value   || '—';
+    const count    = document.getElementById('quizCount')?.value    || '10';
+    const duration = document.getElementById('quizDuration')?.value || '10';
+    const sc = document.getElementById('summaryCourse');
+    const sq = document.getElementById('summaryCount');
+    const sd = document.getElementById('summaryDuration');
+    if (sc) sc.textContent = course;
+    if (sq) sq.textContent = count + ' Questions';
+    if (sd) sd.textContent = duration + ' min';
+  }
+
+  /* update summary whenever course changes */
+  document.getElementById('quizCourse')?.addEventListener('change', updateSummary);
+
+  /* reset btn */
+  document.getElementById('resetFiltersBtn')?.addEventListener('click', () => {
+    clearFilters();
+    const colEl = document.getElementById('quizCollege');
+    populateSel(colEl, StudyHubCatalog.getCollegeOptions(), 'Select college');
+    resetSel(document.getElementById('quizProgramme'), 'Select programme');
+    resetSel(document.getElementById('quizLevel'),     'Select level');
+    resetSel(document.getElementById('quizSemester'),  'Select semester');
+    resetSel(document.getElementById('quizCourse'),    'Select course');
+    updateSummary();
+  });
+
+  /* restore saved filter state */
+  const s = loadFilters();
+  if (s.quizCollege) {
+    const colEl  = document.getElementById('quizCollege');
+    const progEl = document.getElementById('quizProgramme');
+    const lvlEl  = document.getElementById('quizLevel');
+    const semEl  = document.getElementById('quizSemester');
+    const crsEl  = document.getElementById('quizCourse');
+    setVal(colEl, s.quizCollege);
+    populateSel(progEl, StudyHubCatalog.getProgrammeOptions(s.quizCollege), 'Select programme');
+    progEl.disabled = false;
+    if (s.quizProgramme) {
+      setVal(progEl, s.quizProgramme);
+      populateSel(lvlEl, StudyHubCatalog.getLevelOptions(s.quizCollege, s.quizProgramme), 'Select level');
+      lvlEl.disabled = false;
+      if (s.quizLevel) {
+        setVal(lvlEl, s.quizLevel);
+        populateSel(semEl, StudyHubCatalog.getSemesterOptions(s.quizCollege, s.quizProgramme, s.quizLevel), 'Select semester');
+        semEl.disabled = false;
+        if (s.quizSemester) {
+          setVal(semEl, s.quizSemester);
+          const courses = StudyHubCatalog.getCourseOptions({
+            college:s.quizCollege, programme:s.quizProgramme,
+            level:s.quizLevel, semester:s.quizSemester,
+            sourceCodes: Object.keys(QuestionBanks)
+          });
+          if (courses.length) {
+            populateSel(crsEl, courses.map(c => ({value:c.code,label:c.code})), 'Select course');
+            crsEl.disabled = false;
+            if (s.quizCourse) setVal(crsEl, s.quizCourse);
+          }
+        }
+      }
+    }
+    updateSummary();
+  }
+
+  /* handle ?course= param */
+  if (courseParam && QuestionBanks[courseParam]) {
+    const e = StudyHubCatalog.getCourseEntry(courseParam);
+    if (e) {
+      const colEl = document.getElementById('quizCollege');
+      setVal(colEl, e.college); colEl.dispatchEvent(new Event('change'));
+      setTimeout(() => {
+        if (e.programme) {
+          const progEl = document.getElementById('quizProgramme');
+          setVal(progEl, e.programme); progEl.dispatchEvent(new Event('change'));
+          setTimeout(() => {
+            if (e.level) {
+              const lvlEl = document.getElementById('quizLevel');
+              setVal(lvlEl, e.level); lvlEl.dispatchEvent(new Event('change'));
+              setTimeout(() => {
+                if (e.semester) {
+                  const semEl = document.getElementById('quizSemester');
+                  setVal(semEl, e.semester); semEl.dispatchEvent(new Event('change'));
+                  setTimeout(() => {
+                    setVal(document.getElementById('quizCourse'), courseParam);
+                    updateSummary();
+                  }, 50);
+                }
+              }, 50);
+            }
+          }, 50);
+        }
+      }, 50);
+    }
+  }
+
+  updateSummary();
+}
+
+/* ── PDF VIEWER (backward compat for course dashboard) */
 function initializePdfJs() {
-    if (window.pdfjsLib && window.pdfjsLib.GlobalWorkerOptions) {
-        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.122/build/pdf.worker.min.js';
-    }
+  if (window.pdfjsLib?.GlobalWorkerOptions)
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.122/build/pdf.worker.min.js';
 }
 
 async function loadPdfViewer(container, url, title) {
-    
-    initializePdfJs();
-    const viewerHtml = `
-        <div class="pdf-viewer-shell">
-            <div class="pdf-toolbar">
-                <div class="pdf-info">
-                    <strong>${title}</strong>
-                    <span class="pdf-page-count" id="pdfPageCountLabel"></span>
-                </div>
-                <div class="pdf-control-group">
-                    <button type="button" class="btn btn-icon" id="pdfPrevPage" aria-label="Previous page">◀</button>
-                    <div class="pdf-page-input-wrapper">
-                        <label class="visually-hidden" for="pdfPageNumber">Page</label>
-                        <input id="pdfPageNumber" class="pdf-page-number" type="number" min="1" value="1">
-                        <span>/ <span id="pdfPageCount">0</span></span>
-                    </div>
-                    <button type="button" class="btn btn-icon" id="pdfNextPage" aria-label="Next page">▶</button>
-                    <button type="button" class="btn btn-icon" id="pdfZoomOut" aria-label="Zoom out">−</button>
-                    <button type="button" class="btn btn-icon" id="pdfZoomIn" aria-label="Zoom in">+</button>
-                    <span class="pdf-scale-label" id="pdfScaleLabel">100%</span>
-                </div>
-            </div>
-            <div class="pdf-canvas-wrapper">
-                <canvas id="pdfCanvas"></canvas>
-            </div>
-            <div class="pdf-status" id="pdfStatus">Loading PDF…</div>
+  initializePdfJs();
+  container.innerHTML = `
+    <div class="pdf-viewer-shell">
+      <div class="pdf-toolbar">
+        <div class="pdf-info"><strong>${title}</strong><span id="pdfPageCountLabel"></span></div>
+        <div class="pdf-control-group">
+          <button type="button" class="btn-icon" id="pdfPrevPage" aria-label="Prev">◀</button>
+          <div class="pdf-page-input-wrapper">
+            <label class="sr-only" for="pdfPageNumber">Page</label>
+            <input id="pdfPageNumber" class="pdf-page-number" type="number" min="1" value="1">
+            <span>/ <span id="pdfPageCount">0</span></span>
+          </div>
+          <button type="button" class="btn-icon" id="pdfNextPage" aria-label="Next">▶</button>
+          <button type="button" class="btn-icon" id="pdfZoomOut" aria-label="Zoom out">−</button>
+          <button type="button" class="btn-icon" id="pdfZoomIn"  aria-label="Zoom in">+</button>
+          <span class="pdf-scale-label" id="pdfScaleLabel">100%</span>
         </div>
-    `;
+      </div>
+      <div class="pdf-canvas-wrapper"><canvas id="pdfCanvas"></canvas></div>
+      <div class="pdf-status" id="pdfStatus">Loading PDF…</div>
+    </div>`;
 
-    container.innerHTML = viewerHtml;
+  const status    = container.querySelector('#pdfStatus');
+  const pageNum   = container.querySelector('#pdfPageNumber');
+  const pageCount = container.querySelector('#pdfPageCount');
+  const pageLabel = container.querySelector('#pdfPageCountLabel');
+  const scaleEl   = container.querySelector('#pdfScaleLabel');
+  const canvas    = container.querySelector('#pdfCanvas');
+  const ctx       = canvas.getContext('2d');
+  let doc = null, cur = 1, scale = 1.0;
+  const clamp = v => Math.min(2.5, Math.max(0.5, v));
 
-    const pdfStatus = container.querySelector('#pdfStatus');
-    const pdfPageNumber = container.querySelector('#pdfPageNumber');
-    const pdfPageCount = container.querySelector('#pdfPageCount');
-    const pdfPageCountLabel = container.querySelector('#pdfPageCountLabel');
-    const pdfScaleLabel = container.querySelector('#pdfScaleLabel');
-    const pdfCanvas = container.querySelector('#pdfCanvas');
-    const ctx = pdfCanvas.getContext('2d');
+  function toolbar() {
+    pageNum.value      = cur;
+    pageCount.textContent = doc ? doc.numPages : '0';
+    pageLabel.textContent = doc ? `Page ${cur} of ${doc.numPages}` : '';
+    scaleEl.textContent   = `${Math.round(scale * 100)}%`;
+    container.querySelector('#pdfPrevPage').disabled = cur <= 1;
+    container.querySelector('#pdfNextPage').disabled = doc ? cur >= doc.numPages : true;
+  }
 
-    let pdfDoc = null;
-    let currentPage = 1;
-    let scale = 1.0;
+  async function renderPg(n) {
+    if (!doc) return;
+    const page = await doc.getPage(n);
+    const vp   = page.getViewport({ scale });
+    const os   = window.devicePixelRatio || 1;
+    const ovp  = page.getViewport({ scale: scale * os });
+    canvas.width  = Math.floor(ovp.width);
+    canvas.height = Math.floor(ovp.height);
+    canvas.style.width  = `${Math.floor(vp.width)}px`;
+    canvas.style.height = `${Math.floor(vp.height)}px`;
+    await page.render({ canvasContext:ctx, viewport:ovp }).promise;
+    status.textContent = ''; toolbar();
+  }
 
-    const clampScale = (value) => Math.min(2.5, Math.max(0.6, value));
+  function go(n) {
+    cur = Math.min(Math.max(n, 1), doc?.numPages || 1);
+    renderPg(cur).catch(e => { status.textContent = 'Failed to render page.'; console.error(e); });
+  }
 
-    function updateToolbar() {
-        pdfPageNumber.value = currentPage;
-        pdfPageCount.textContent = pdfDoc ? pdfDoc.numPages : '0';
-        pdfPageCountLabel.textContent = pdfDoc ? `Page ${currentPage} of ${pdfDoc.numPages}` : '';
-        pdfScaleLabel.textContent = `${Math.round(scale * 100)}%`;
-        document.getElementById('pdfPrevPage').disabled = currentPage <= 1;
-        document.getElementById('pdfNextPage').disabled = pdfDoc ? currentPage >= pdfDoc.numPages : true;
-    }
+  container.querySelector('#pdfPrevPage').addEventListener('click', () => go(cur - 1));
+  container.querySelector('#pdfNextPage').addEventListener('click', () => go(cur + 1));
+  container.querySelector('#pdfZoomOut').addEventListener('click',  () => { scale = clamp(scale - 0.15); go(cur); });
+  container.querySelector('#pdfZoomIn').addEventListener('click',   () => { scale = clamp(scale + 0.15); go(cur); });
+  pageNum.addEventListener('change', () => { const n = parseInt(pageNum.value,10); if (!isNaN(n)) go(n); });
 
-    async function renderPage(pageNumber) {
-        if (!pdfDoc) return;
-        const page = await pdfDoc.getPage(pageNumber);
-        const viewport = page.getViewport({ scale });
-        const outputScale = window.devicePixelRatio || 1;
-        const outputViewport = page.getViewport({ scale: scale * outputScale });
-
-        pdfCanvas.width = Math.floor(outputViewport.width);
-        pdfCanvas.height = Math.floor(outputViewport.height);
-        pdfCanvas.style.width = `${Math.floor(viewport.width)}px`;
-        pdfCanvas.style.height = `${Math.floor(viewport.height)}px`;
-
-        await page.render({ canvasContext: ctx, viewport: outputViewport }).promise;
-        pdfStatus.textContent = '';
-        updateToolbar();
-    }
-
-    function queueRender(pageNum) {
-        currentPage = Math.min(Math.max(pageNum, 1), pdfDoc.numPages);
-        renderPage(currentPage).catch(err => {
-            pdfStatus.textContent = 'Unable to render PDF. Please refresh or try another file.';
-            console.error(err);
-        });
-    }
-
-    document.getElementById('pdfPrevPage').addEventListener('click', () => {
-        if (currentPage <= 1) return;
-        queueRender(currentPage - 1);
+  if (!window.pdfjsLib) {
+    await new Promise(res => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.min.js';
+      s.onload = res; document.head.appendChild(s);
     });
+  }
+  window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.worker.min.js';
 
-    document.getElementById('pdfNextPage').addEventListener('click', () => {
-        if (!pdfDoc || currentPage >= pdfDoc.numPages) return;
-        queueRender(currentPage + 1);
-    });
-
-    document.getElementById('pdfZoomOut').addEventListener('click', () => {
-        scale = clampScale(scale - 0.1);
-        queueRender(currentPage);
-    });
-
-    document.getElementById('pdfZoomIn').addEventListener('click', () => {
-        scale = clampScale(scale + 0.1);
-        queueRender(currentPage);
-    });
-    
-
-    pdfPageNumber.addEventListener('change', () => {
-        const requestedPage = parseInt(pdfPageNumber.value, 10);
-        if (!isNaN(requestedPage)) {
-            queueRender(requestedPage);
-        }
-    });
-// Automatically load the library dynamically if it isn't ready
-    if (!window.pdfjsLib) {
-        await new Promise((resolve) => {
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.min.js';
-            script.onload = resolve;
-            document.head.appendChild(script);
-        });
-    }
-
-    // Set the complete worker URL path
-    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.worker.min.js';
-    try {
-        pdfStatus.textContent = 'Loading PDF…';
-        const pdfUrl = encodeURI(url);
-        pdfDoc = await window.pdfjsLib.getDocument({ url: pdfUrl }).promise;
-        updateToolbar();
-        await renderPage(currentPage);
-    } catch (error) {
-        pdfStatus.textContent = `Failed to load PDF. Please check the file path: ${url}`;
-        console.error('PDF load error:', error);
-    }
-    
+  try {
+    doc = await window.pdfjsLib.getDocument({ url: encodeURI(url) }).promise;
+    toolbar(); await renderPg(1);
+  } catch (e) {
+    status.textContent = `Failed to load PDF: ${url}`; console.error(e);
+  }
 }
-
-window.openNotes = (code) => navigateTo('notes.html', code);
-window.openPastQuestions = (code) => navigateTo('past-questions.html', code);
-window.openQuiz = (code) => navigateTo('quiz.html', code);
-window.openCourseDashboard = (code) => navigateTo('course.html', code);
-
-function renderCourses() {
-    const collegeFilter = document.getElementById('collegeFilter');
-    const programmeFilter = document.getElementById('programmeFilter');
-    const levelFilter = document.getElementById('levelFilter');
-    const semesterFilter = document.getElementById('semesterFilter');
-    const courseSearch = document.getElementById('courseSearch');
-    const courseGrid = document.getElementById('courseGrid');
-
-    if (!collegeFilter || !programmeFilter || !levelFilter || !semesterFilter || !courseSearch || !courseGrid) return;
-
-    const college = collegeFilter.value;
-    const programme = programmeFilter.value;
-    const level = levelFilter.value;
-    const semester = semesterFilter.value;
-    const search = courseSearch.value.toLowerCase();
-
-    courseGrid.innerHTML = '';
-    const filtered = allCourses.filter(c => {
-        const catalogEntry = getCatalogCourseEntry(c.code);
-        const matchesCatalog = !catalogEntry || StudyHubCatalog.matchesCourseAffiliation(catalogEntry, college, programme);
-        const matchLevel = !level || c.level === level;
-        const matchSemester = !semester || c.semester === semester;
-        const matchSearch = c.code.toLowerCase().includes(search) || c.title.toLowerCase().includes(search);
-        return matchesCatalog && matchLevel && matchSemester && matchSearch;
-    });
-
-    if (filtered.length === 0) {
-        courseGrid.innerHTML = '<p class="no-results">No courses found matching your criteria.</p>';
-        return;
-    }
-
-    filtered.forEach(c => {
-        const card = document.createElement('div');
-        card.className = 'course-card';
-        card.innerHTML = buildCourseCard(c);
-        card.addEventListener('click', () => openCourseDashboard(c.code));
-        courseGrid.appendChild(card);
-    });
-}
-
-function setupCarousel() {
-    const courseGrid = document.getElementById('courseGrid');
-    const coursePrev = document.getElementById('coursePrev');
-    const courseNext = document.getElementById('courseNext');
-    if (!courseGrid || !coursePrev || !courseNext) return;
-
-    function scrollCourses(direction) {
-        const card = courseGrid.querySelector('.course-card');
-        if (!card) return;
-        const gap = parseFloat(getComputedStyle(courseGrid).gap) || 24;
-        const step = card.offsetWidth + gap;
-        const maxScroll = courseGrid.scrollWidth - courseGrid.clientWidth;
-
-        if (direction > 0 && courseGrid.scrollLeft >= maxScroll - 2) {
-            courseGrid.scrollTo({ left: 0, behavior: 'smooth' });
-            return;
-        }
-        if (direction < 0 && courseGrid.scrollLeft <= 2) {
-            courseGrid.scrollTo({ left: maxScroll, behavior: 'smooth' });
-            return;
-        }
-        courseGrid.scrollBy({ left: direction * step, behavior: 'smooth' });
-    }
-
-    coursePrev.addEventListener('click', () => scrollCourses(-1));
-    courseNext.addEventListener('click', () => scrollCourses(1));
-
-    let courseDrag = { active: false, startX: 0, scrollLeft: 0 };
-    courseGrid.addEventListener('pointerdown', (e) => {
-        if (e.target.closest('button')) return;
-        courseDrag.active = true;
-        courseGrid.setPointerCapture(e.pointerId);
-        courseDrag.startX = e.pageX - courseGrid.offsetLeft;
-        courseDrag.scrollLeft = courseGrid.scrollLeft;
-        courseGrid.classList.add('dragging');
-    });
-    courseGrid.addEventListener('pointermove', (e) => {
-        if (!courseDrag.active) return;
-        e.preventDefault();
-        const x = e.pageX - courseGrid.offsetLeft;
-        const walk = x - courseDrag.startX;
-        courseGrid.scrollLeft = courseDrag.scrollLeft - walk;
-    });
-    ['pointerup', 'pointerleave', 'lostpointercapture'].forEach(evt => {
-        courseGrid.addEventListener(evt, () => {
-            courseDrag.active = false;
-            courseGrid.classList.remove('dragging');
-        });
-    });
-}
-
-async function renderNotesViewer(code) {
-    const course = NotesDatabase[code];
-    if (!course || !document.getElementById('notesViewer')) return;
-    const viewer = document.getElementById('notesViewer');
-
-    if (course.html) {
-        viewer.innerHTML = `<div class="notes-content">${course.html}</div>`;
-    } else if (course.markdown) {
-        viewer.innerHTML = `<div class="notes-content">${markdownToHtml(course.markdown)}</div>`;
-    } else if (course.pdf) {
-        await loadPdfViewer(viewer, course.pdf, `${code} Notes`);
-    }
-
-    if (typeof renderMathInElement === 'function') {
-        renderMathInElement(viewer, {
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false }
-            ],
-            throwOnError: false
-        });
-    }
-}
-
-function renderPastQuestionViewer(code) {
-    const pqYear = document.getElementById('pqYear');
-    const pqViewer = document.getElementById('pqViewer');
-    if (!pqYear || !pqViewer) return;
-
-    const years = Object.keys(PastQuestionsDatabase[code] || {}).sort((a, b) => b - a);
-    pqYear.innerHTML = '<option value="">Select Year</option>';
-    pqYear.disabled = false;
-
-    if (years.length === 0) {
-        pqViewer.innerHTML = '<p class="placeholder-text">No past questions available for this course.</p>';
-        return;
-    }
-
-    years.forEach(y => {
-        const opt = document.createElement('option');
-        opt.value = y;
-        opt.textContent = y;
-        pqYear.appendChild(opt);
-    });
-
-    const yearButtons = years.map(y => `
-        <button type="button" class="pq-year-item" data-year="${y}">
-            ${y} PDF
-        </button>
-    `).join('');
-
-    pqViewer.innerHTML = `
-        <div class="pq-year-list">${yearButtons}</div>
-        <div class="pq-frame-container">
-            <p class="placeholder-text">Select a year to view past questions</p>
-        </div>
-    `;
-
-    pqViewer.querySelectorAll('.pq-year-item').forEach(btn => {
-        btn.addEventListener('click', async () => {
-            await openPastQuestionYear(code, btn.dataset.year);
-        });
-    });
-}
-
-async function openPastQuestionYear(code, year) {
-    const pqViewer = document.getElementById('pqViewer');
-    if (!pqViewer) return;
-    const url = PastQuestionsDatabase[code] && PastQuestionsDatabase[code][year];
-    if (!url) return;
-    const yearButtons = pqViewer.querySelectorAll('.pq-year-item');
-    yearButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.year === year);
-    });
-
-    const frameContainer = pqViewer.querySelector('.pq-frame-container');
-    if (!frameContainer) return;
-    await loadPdfViewer(frameContainer, url, `${code} Past Questions ${year}`);
-}
-
-function markdownToHtml(markdown) {
-    return markdown
-        .replace(/\r\n/g, '\n')
-        .replace(/^###### (.*$)/gim, '<h6>$1</h6>')
-        .replace(/^##### (.*$)/gim, '<h5>$1</h5>')
-        .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
-        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/gim, '<em>$1</em>')
-        .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img alt="$1" src="$2">')
-        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')
-        .replace(/\|(.+)\|/gim, (match) => {
-            const rows = match.trim().split('\n').filter(Boolean);
-            if (rows.length < 2) return match;
-            const [header, separator, ...body] = rows;
-            const headers = header.split('|').map(cell => cell.trim()).filter(Boolean);
-            const bodyRows = body.map(row => row.split('|').map(cell => `<td>${cell.trim()}</td>`).filter(Boolean).join(''));
-            return `<table><thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${bodyRows.map(r => `<tr>${r}</tr>`).join('')}</tbody></table>`;
-        })
-        .replace(/\n{2,}/g, '</p><p>')
-        .replace(/\n/g, '<br>');
-}
-
-function setupNotesPage() {
-    const notesCollege = document.getElementById('notesCollege');
-    const notesProgramme = document.getElementById('notesProgramme');
-    const notesLevel = document.getElementById('notesLevel');
-    const notesSemester = document.getElementById('notesSemester');
-    const notesCourse = document.getElementById('notesCourse');
-    const notesViewer = document.getElementById('notesViewer');
-    if (!notesCollege || !notesProgramme || !notesLevel || !notesSemester || !notesCourse || !notesViewer) return;
-
-    populateSelect(notesCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
-    const resetNotesBtn = document.getElementById('resetFiltersBtn');
-
-    notesCollege.addEventListener('change', () => {
-        const college = notesCollege.value;
-        resetSelect(notesProgramme, 'Select Programme');
-        resetSelect(notesLevel, 'Select Level');
-        resetSelect(notesSemester, 'Select Semester');
-        resetSelect(notesCourse, 'Select Course');
-        notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-        persistSelectionState({ notesCollege: college, notesProgramme: '', notesLevel: '', notesSemester: '', notesCourse: '' });
-        if (!college) return;
-        populateSelect(notesProgramme, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
-        notesProgramme.disabled = false;
-    });
-
-    notesProgramme.addEventListener('change', () => {
-        const college = notesCollege.value;
-        const programme = notesProgramme.value;
-        resetSelect(notesLevel, 'Select Level');
-        resetSelect(notesSemester, 'Select Semester');
-        resetSelect(notesCourse, 'Select Course');
-        notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-        persistSelectionState({ notesCollege: college, notesProgramme: programme, notesLevel: '', notesSemester: '', notesCourse: '' });
-        if (!college || !programme) return;
-        populateSelect(notesLevel, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
-        notesLevel.disabled = false;
-    });
-
-    notesLevel.addEventListener('change', () => {
-        const college = notesCollege.value;
-        const programme = notesProgramme.value;
-        const level = notesLevel.value;
-        resetSelect(notesSemester, 'Select Semester');
-        resetSelect(notesCourse, 'Select Course');
-        notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-        persistSelectionState({ notesCollege: college, notesProgramme: programme, notesLevel: level, notesSemester: '', notesCourse: '' });
-        if (!college || !programme || !level) return;
-        populateSelect(notesSemester, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
-        notesSemester.disabled = false;
-    });
-
-    notesSemester.addEventListener('change', () => {
-        const college = notesCollege.value;
-        const programme = notesProgramme.value;
-        const level = notesLevel.value;
-        const semester = notesSemester.value;
-        resetSelect(notesCourse, 'Select Course');
-        notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-        persistSelectionState({ notesCollege: college, notesProgramme: programme, notesLevel: level, notesSemester: semester, notesCourse: '' });
-        if (!college || !programme || !level || !semester) return;
-        const courses = StudyHubCatalog.getCourseOptions({ college, programme, level, semester, sourceCodes: Object.keys(NotesDatabase) });
-        if (!courses.length) {
-            notesCourse.innerHTML = '<option value="">No courses available</option>';
-            notesCourse.disabled = true;
-            return;
-        }
-        populateSelect(notesCourse, courses.map(course => ({ value: course.code, label: `${course.code} — ${NotesDatabase[course.code]?.title || course.code}` })), 'Select Course');
-        notesCourse.disabled = false;
-    });
-
-    notesCourse.addEventListener('change', async () => {
-        const code = notesCourse.value;
-        persistSelectionState({ notesCollege: notesCollege.value, notesProgramme: notesProgramme.value, notesLevel: notesLevel.value, notesSemester: notesSemester.value, notesCourse: code || '' });
-        if (code) {
-            await renderNotesViewer(code);
-        } else {
-            notesViewer.innerHTML = '<p class="placeholder-text">Select a course to view notes</p>';
-        }
-    });
-
-    if (resetNotesBtn) {
-        resetNotesBtn.addEventListener('click', () => {
-            resetPageFilters('notes');
-            const savedState = getStoredFilterState();
-            persistSelectionState({ notesCollege: '', notesProgramme: '', notesLevel: '', notesSemester: '', notesCourse: '' });
-            if (savedState.notesCollege) {
-                notesCollege.value = '';
-            }
-        });
-    }
-
-    const savedState = getStoredFilterState();
-    const collegeValue = savedState.notesCollege || '';
-    const programmeValue = savedState.notesProgramme || '';
-    const levelValue = savedState.notesLevel || '';
-    const semesterValue = savedState.notesSemester || '';
-    const courseValue = savedState.notesCourse || '';
-
-    if (collegeValue) {
-        setSelectValue(notesCollege, collegeValue);
-        notesCollege.dispatchEvent(new Event('change'));
-        setTimeout(() => {
-            if (programmeValue) {
-                setSelectValue(notesProgramme, programmeValue);
-                notesProgramme.dispatchEvent(new Event('change'));
-                setTimeout(() => {
-                    if (levelValue) {
-                        setSelectValue(notesLevel, levelValue);
-                        notesLevel.dispatchEvent(new Event('change'));
-                        setTimeout(() => {
-                            if (semesterValue) {
-                                setSelectValue(notesSemester, semesterValue);
-                                notesSemester.dispatchEvent(new Event('change'));
-                                setTimeout(() => {
-                                    if (courseValue) {
-                                        setSelectValue(notesCourse, courseValue);
-                                        notesCourse.dispatchEvent(new Event('change'));
-                                    }
-                                }, 60);
-                            }
-                        }, 60);
-                    }
-                }, 60);
-            }
-        }, 60);
-    }
-
-    if (courseParam && NotesDatabase[courseParam]) {
-        const course = StudyHubCatalog.getCourseEntry(courseParam);
-        if (course) {
-            notesCollege.value = course.college;
-            notesCollege.dispatchEvent(new Event('change'));
-            setTimeout(() => {
-                notesProgramme.value = course.programme;
-                notesProgramme.dispatchEvent(new Event('change'));
-                setTimeout(() => {
-                    notesLevel.value = course.level;
-                    notesLevel.dispatchEvent(new Event('change'));
-                    setTimeout(() => {
-                        notesSemester.value = course.semester;
-                        notesSemester.dispatchEvent(new Event('change'));
-                        setTimeout(() => {
-                            notesCourse.value = courseParam;
-                            notesCourse.dispatchEvent(new Event('change'));
-                        }, 50);
-                    }, 50);
-                }, 50);
-            }, 50);
-        }
-    }
-}
-
-function setupPastQuestionsPage() {
-    const pqCollege = document.getElementById('pqCollege');
-    const pqProgramme = document.getElementById('pqProgramme');
-    const pqLevel = document.getElementById('pqLevel');
-    const pqSemester = document.getElementById('pqSemester');
-    const pqCourse = document.getElementById('pqCourse');
-    const pqYear = document.getElementById('pqYear');
-    const pqViewer = document.getElementById('pqViewer');
-    if (!pqCollege || !pqProgramme || !pqLevel || !pqSemester || !pqCourse || !pqYear || !pqViewer) return;
-
-    populateSelect(pqCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
-    const resetPastQuestionsBtn = document.getElementById('resetFiltersBtn');
-
-    pqCollege.addEventListener('change', () => {
-        const college = pqCollege.value;
-        resetSelect(pqProgramme, 'Select Programme');
-        resetSelect(pqLevel, 'Select Level');
-        resetSelect(pqSemester, 'Select Semester');
-        resetSelect(pqCourse, 'Select Course');
-        resetSelect(pqYear, 'Select Year');
-        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
-        persistSelectionState({ pqCollege: college, pqProgramme: '', pqLevel: '', pqSemester: '', pqCourse: '', pqYear: '' });
-        if (!college) return;
-        populateSelect(pqProgramme, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
-        pqProgramme.disabled = false;
-    });
-
-    pqProgramme.addEventListener('change', () => {
-        const college = pqCollege.value;
-        const programme = pqProgramme.value;
-        resetSelect(pqLevel, 'Select Level');
-        resetSelect(pqSemester, 'Select Semester');
-        resetSelect(pqCourse, 'Select Course');
-        resetSelect(pqYear, 'Select Year');
-        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
-        persistSelectionState({ pqCollege: college, pqProgramme: programme, pqLevel: '', pqSemester: '', pqCourse: '', pqYear: '' });
-        if (!college || !programme) return;
-        populateSelect(pqLevel, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
-        pqLevel.disabled = false;
-    });
-
-    pqLevel.addEventListener('change', () => {
-        const college = pqCollege.value;
-        const programme = pqProgramme.value;
-        const level = pqLevel.value;
-        resetSelect(pqSemester, 'Select Semester');
-        resetSelect(pqCourse, 'Select Course');
-        resetSelect(pqYear, 'Select Year');
-        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
-        persistSelectionState({ pqCollege: college, pqProgramme: programme, pqLevel: level, pqSemester: '', pqCourse: '', pqYear: '' });
-        if (!college || !programme || !level) return;
-        populateSelect(pqSemester, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
-        pqSemester.disabled = false;
-    });
-
-    pqSemester.addEventListener('change', () => {
-        const college = pqCollege.value;
-        const programme = pqProgramme.value;
-        const level = pqLevel.value;
-        const semester = pqSemester.value;
-        resetSelect(pqCourse, 'Select Course');
-        resetSelect(pqYear, 'Select Year');
-        pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
-        persistSelectionState({ pqCollege: college, pqProgramme: programme, pqLevel: level, pqSemester: semester, pqCourse: '', pqYear: '' });
-        if (!college || !programme || !level || !semester) return;
-        const courses = StudyHubCatalog.getCourseOptions({ college, programme, level, semester, sourceCodes: Object.keys(PastQuestionsDatabase) });
-        if (!courses.length) {
-            pqCourse.innerHTML = '<option value="">No courses available</option>';
-            pqCourse.disabled = true;
-            return;
-        }
-        populateSelect(pqCourse, courses.map(course => ({ value: course.code, label: course.code })), 'Select Course');
-        pqCourse.disabled = false;
-    });
-
-    pqCourse.addEventListener('change', () => {
-        const code = pqCourse.value;
-        resetSelect(pqYear, 'Select Year');
-        persistSelectionState({ pqCollege: pqCollege.value, pqProgramme: pqProgramme.value, pqLevel: pqLevel.value, pqSemester: pqSemester.value, pqCourse: code || '', pqYear: '' });
-        if (!code) {
-            pqViewer.innerHTML = '<p class="placeholder-text">Select a course and year to view past questions</p>';
-            return;
-        }
-        renderPastQuestionViewer(code);
-    });
-
-    pqYear.addEventListener('change', async () => {
-        const code = pqCourse.value;
-        const year = pqYear.value;
-        persistSelectionState({ pqCollege: pqCollege.value, pqProgramme: pqProgramme.value, pqLevel: pqLevel.value, pqSemester: pqSemester.value, pqCourse: code || '', pqYear: year || '' });
-        if (code && year) {
-            await openPastQuestionYear(code, year);
-        }
-    });
-
-    if (resetPastQuestionsBtn) {
-        resetPastQuestionsBtn.addEventListener('click', () => {
-            resetPageFilters('past-questions');
-        });
-    }
-
-    const savedState = getStoredFilterState();
-    const collegeValue = savedState.pqCollege || '';
-    const programmeValue = savedState.pqProgramme || '';
-    const levelValue = savedState.pqLevel || '';
-    const semesterValue = savedState.pqSemester || '';
-    const courseValue = savedState.pqCourse || '';
-    const yearValue = savedState.pqYear || '';
-
-    if (collegeValue) {
-        setSelectValue(pqCollege, collegeValue);
-        pqCollege.dispatchEvent(new Event('change'));
-        setTimeout(() => {
-            if (programmeValue) {
-                setSelectValue(pqProgramme, programmeValue);
-                pqProgramme.dispatchEvent(new Event('change'));
-                setTimeout(() => {
-                    if (levelValue) {
-                        setSelectValue(pqLevel, levelValue);
-                        pqLevel.dispatchEvent(new Event('change'));
-                        setTimeout(() => {
-                            if (semesterValue) {
-                                setSelectValue(pqSemester, semesterValue);
-                                pqSemester.dispatchEvent(new Event('change'));
-                                setTimeout(() => {
-                                    if (courseValue) {
-                                        setSelectValue(pqCourse, courseValue);
-                                        pqCourse.dispatchEvent(new Event('change'));
-                                        setTimeout(() => {
-                                            if (yearValue) {
-                                                setSelectValue(pqYear, yearValue);
-                                                pqYear.dispatchEvent(new Event('change'));
-                                            }
-                                        }, 60);
-                                    }
-                                }, 60);
-                            }
-                        }, 60);
-                    }
-                }, 60);
-            }
-        }, 60);
-    }
-
-    if (courseParam && PastQuestionsDatabase[courseParam]) {
-        const course = StudyHubCatalog.getCourseEntry(courseParam);
-        if (course) {
-            pqCollege.value = course.college;
-            pqCollege.dispatchEvent(new Event('change'));
-            setTimeout(() => {
-                pqProgramme.value = course.programme;
-                pqProgramme.dispatchEvent(new Event('change'));
-                setTimeout(() => {
-                    pqLevel.value = course.level;
-                    pqLevel.dispatchEvent(new Event('change'));
-                    setTimeout(() => {
-                        pqSemester.value = course.semester;
-                        pqSemester.dispatchEvent(new Event('change'));
-                        setTimeout(() => {
-                            pqCourse.value = courseParam;
-                            pqCourse.dispatchEvent(new Event('change'));
-                        }, 50);
-                    }, 50);
-                }, 50);
-            }, 50);
-        }
-    }
-}
-
-function setupQuizPage() {
-    const quizCollege = document.getElementById('quizCollege');
-    const quizProgramme = document.getElementById('quizProgramme');
-    const quizLevel = document.getElementById('quizLevel');
-    const quizSemester = document.getElementById('quizSemester');
-    const quizCourse = document.getElementById('quizCourse');
-    if (!quizCollege || !quizProgramme || !quizLevel || !quizSemester || !quizCourse) return;
-
-    populateSelect(quizCollege, StudyHubCatalog.getCollegeOptions(), 'Select College');
-    const resetQuizBtn = document.getElementById('resetFiltersBtn');
-
-    quizCollege.addEventListener('change', () => {
-        const college = quizCollege.value;
-        resetSelect(quizProgramme, 'Select Programme');
-        resetSelect(quizLevel, 'Select Level');
-        resetSelect(quizSemester, 'Select Semester');
-        resetSelect(quizCourse, 'Select Course');
-        persistSelectionState({ quizCollege: college, quizProgramme: '', quizLevel: '', quizSemester: '', quizCourse: '' });
-        if (!college) return;
-        populateSelect(quizProgramme, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
-        quizProgramme.disabled = false;
-    });
-
-    quizProgramme.addEventListener('change', () => {
-        const college = quizCollege.value;
-        const programme = quizProgramme.value;
-        resetSelect(quizLevel, 'Select Level');
-        resetSelect(quizSemester, 'Select Semester');
-        resetSelect(quizCourse, 'Select Course');
-        persistSelectionState({ quizCollege: college, quizProgramme: programme, quizLevel: '', quizSemester: '', quizCourse: '' });
-        if (!college || !programme) return;
-        populateSelect(quizLevel, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
-        quizLevel.disabled = false;
-    });
-
-    quizLevel.addEventListener('change', () => {
-        const college = quizCollege.value;
-        const programme = quizProgramme.value;
-        const level = quizLevel.value;
-        resetSelect(quizSemester, 'Select Semester');
-        resetSelect(quizCourse, 'Select Course');
-        persistSelectionState({ quizCollege: college, quizProgramme: programme, quizLevel: level, quizSemester: '', quizCourse: '' });
-        if (!college || !programme || !level) return;
-        populateSelect(quizSemester, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
-        quizSemester.disabled = false;
-    });
-
-    quizSemester.addEventListener('change', () => {
-        const college = quizCollege.value;
-        const programme = quizProgramme.value;
-        const level = quizLevel.value;
-        const semester = quizSemester.value;
-        resetSelect(quizCourse, 'Select Course');
-        persistSelectionState({ quizCollege: college, quizProgramme: programme, quizLevel: level, quizSemester: semester, quizCourse: '' });
-        if (!college || !programme || !level || !semester) return;
-        const courses = StudyHubCatalog.getCourseOptions({ college, programme, level, semester, sourceCodes: Object.keys(QuestionBanks) });
-        if (!courses.length) {
-            quizCourse.innerHTML = '<option value="">No courses available</option>';
-            quizCourse.disabled = true;
-            return;
-        }
-        populateSelect(quizCourse, courses.map(course => ({ value: course.code, label: course.code })), 'Select Course');
-        quizCourse.disabled = false;
-    });
-
-    quizCourse.addEventListener('change', () => {
-        persistSelectionState({ quizCollege: quizCollege.value, quizProgramme: quizProgramme.value, quizLevel: quizLevel.value, quizSemester: quizSemester.value, quizCourse: quizCourse.value || '' });
-    });
-
-    if (resetQuizBtn) {
-        resetQuizBtn.addEventListener('click', () => {
-            resetPageFilters('quiz');
-        });
-    }
-
-    const savedState = getStoredFilterState();
-    const collegeValue = savedState.quizCollege || '';
-    const programmeValue = savedState.quizProgramme || '';
-    const levelValue = savedState.quizLevel || '';
-    const semesterValue = savedState.quizSemester || '';
-    const courseValue = savedState.quizCourse || '';
-
-    if (collegeValue) {
-        setSelectValue(quizCollege, collegeValue);
-        quizCollege.dispatchEvent(new Event('change'));
-        setTimeout(() => {
-            if (programmeValue) {
-                setSelectValue(quizProgramme, programmeValue);
-                quizProgramme.dispatchEvent(new Event('change'));
-                setTimeout(() => {
-                    if (levelValue) {
-                        setSelectValue(quizLevel, levelValue);
-                        quizLevel.dispatchEvent(new Event('change'));
-                        setTimeout(() => {
-                            if (semesterValue) {
-                                setSelectValue(quizSemester, semesterValue);
-                                quizSemester.dispatchEvent(new Event('change'));
-                                setTimeout(() => {
-                                    if (courseValue) {
-                                        setSelectValue(quizCourse, courseValue);
-                                        quizCourse.dispatchEvent(new Event('change'));
-                                    }
-                                }, 60);
-                            }
-                        }, 60);
-                    }
-                }, 60);
-            }
-        }, 60);
-    }
-
-    if (courseParam && QuestionBanks[courseParam]) {
-        const course = StudyHubCatalog.getCourseEntry(courseParam);
-        if (course) {
-            quizCollege.value = course.college;
-            quizCollege.dispatchEvent(new Event('change'));
-            setTimeout(() => {
-                quizProgramme.value = course.programme;
-                quizProgramme.dispatchEvent(new Event('change'));
-                setTimeout(() => {
-                    quizLevel.value = course.level;
-                    quizLevel.dispatchEvent(new Event('change'));
-                    setTimeout(() => {
-                        quizSemester.value = course.semester;
-                        quizSemester.dispatchEvent(new Event('change'));
-                        setTimeout(() => {
-                            quizCourse.value = courseParam;
-                            quizCourse.dispatchEvent(new Event('change'));
-                        }, 50);
-                    }, 50);
-                }, 50);
-            }, 50);
-        }
-    }
-}
-
-function setupCoursePage() {
-    const courseDashboard = document.getElementById('courseDashboard');
-    if (!courseDashboard) return;
-    if (!courseParam) {
-        courseDashboard.innerHTML = '<p class="placeholder-text">Select a course from the home page to view details.</p>';
-        return;
-    }
-    const course = getCourseInfo(courseParam);
-    courseDashboard.innerHTML = `
-        <div class="course-dashboard-header">
-            <div>
-                <span class="course-code">${course.code}</span>
-                <h3>${course.title}</h3>
-                ${course.level && course.semester ? `<p>${course.level} Level · ${course.semester} Semester</p>` : ''}
-            </div>
-            <div class="course-dashboard-actions">
-                <button class="btn btn-primary" type="button" onclick="openNotes('${course.code}')">Notes</button>
-                <button class="btn btn-outline" type="button" onclick="openPastQuestions('${course.code}')">Past Questions</button>
-                <button class="btn btn-secondary" type="button" onclick="openQuiz('${course.code}')">Quiz</button>
-            </div>
-        </div>
-    `;
-}
-
-if (pageType === 'home') {
-    renderCourses();
-    setupCarousel();
-    const collegeFilterEl = document.getElementById('collegeFilter');
-    const programmeFilterEl = document.getElementById('programmeFilter');
-    const levelFilterEl = document.getElementById('levelFilter');
-    const semesterFilterEl = document.getElementById('semesterFilter');
-    const courseSearchEl = document.getElementById('courseSearch');
-    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
-    if (collegeFilterEl && programmeFilterEl && levelFilterEl && semesterFilterEl && courseSearchEl) {
-        [collegeFilterEl, programmeFilterEl, levelFilterEl, semesterFilterEl].forEach(el => el.addEventListener('change', renderCourses));
-        courseSearchEl.addEventListener('input', renderCourses);
-
-        populateSelect(collegeFilterEl, StudyHubCatalog.getCollegeOptions(), 'Select College');
-        collegeFilterEl.addEventListener('change', () => {
-            const college = collegeFilterEl.value;
-            resetSelect(programmeFilterEl, 'Select Programme');
-            resetSelect(levelFilterEl, 'Select Level');
-            resetSelect(semesterFilterEl, 'Select Semester');
-            persistSelectionState({ college, programme: '', level: '', semester: '' });
-            if (!college) {
-                renderCourses();
-                return;
-            }
-            populateSelect(programmeFilterEl, StudyHubCatalog.getProgrammeOptions(college), 'Select Programme');
-            programmeFilterEl.disabled = false;
-            renderCourses();
-        });
-
-        programmeFilterEl.addEventListener('change', () => {
-            const college = collegeFilterEl.value;
-            const programme = programmeFilterEl.value;
-            resetSelect(levelFilterEl, 'Select Level');
-            resetSelect(semesterFilterEl, 'Select Semester');
-            persistSelectionState({ college, programme, level: '', semester: '' });
-            if (!college || !programme) {
-                renderCourses();
-                return;
-            }
-            populateSelect(levelFilterEl, StudyHubCatalog.getLevelOptions(college, programme), 'Select Level');
-            levelFilterEl.disabled = false;
-            renderCourses();
-        });
-
-        levelFilterEl.addEventListener('change', () => {
-            const college = collegeFilterEl.value;
-            const programme = programmeFilterEl.value;
-            const level = levelFilterEl.value;
-            resetSelect(semesterFilterEl, 'Select Semester');
-            persistSelectionState({ college, programme, level, semester: '' });
-            if (!college || !programme || !level) {
-                renderCourses();
-                return;
-            }
-            populateSelect(semesterFilterEl, StudyHubCatalog.getSemesterOptions(college, programme, level), 'Select Semester');
-            semesterFilterEl.disabled = false;
-            renderCourses();
-        });
-
-        semesterFilterEl.addEventListener('change', () => {
-            const college = collegeFilterEl.value;
-            const programme = programmeFilterEl.value;
-            const level = levelFilterEl.value;
-            const semester = semesterFilterEl.value;
-            persistSelectionState({ college, programme, level, semester });
-            renderCourses();
-        });
-
-        if (resetFiltersBtn) {
-            resetFiltersBtn.addEventListener('click', () => {
-                resetPageFilters('home');
-            });
-        }
-
-        const savedState = getStoredFilterState();
-        const collegeValue = savedState.college || '';
-        const programmeValue = savedState.programme || '';
-        const levelValue = savedState.level || '';
-        const semesterValue = savedState.semester || '';
-
-        if (collegeValue) {
-            setSelectValue(collegeFilterEl, collegeValue);
-            collegeFilterEl.dispatchEvent(new Event('change'));
-            setTimeout(() => {
-                if (programmeValue) {
-                    setSelectValue(programmeFilterEl, programmeValue);
-                    programmeFilterEl.dispatchEvent(new Event('change'));
-                    setTimeout(() => {
-                        if (levelValue) {
-                            setSelectValue(levelFilterEl, levelValue);
-                            levelFilterEl.dispatchEvent(new Event('change'));
-                            setTimeout(() => {
-                                if (semesterValue) {
-                                    setSelectValue(semesterFilterEl, semesterValue);
-                                    semesterFilterEl.dispatchEvent(new Event('change'));
-                                }
-                            }, 60);
-                        }
-                    }, 60);
-                }
-            }, 60);
-        } else {
-            renderCourses();
-        }
-    }
-}
-if (pageType === 'course') {
-    setupCoursePage();
-}
-if (pageType === 'notes') {
-    setupNotesPage();
-}
-if (pageType === 'past-questions') {
-    setupPastQuestionsPage();
-}
-if (pageType === 'quiz') {
-    setupQuizPage();
-}
-
-
-
-
-
+window.loadPdfViewer = loadPdfViewer;
+
+/* ── BOOT ──────────────────────────────────────────── */
+if (pageType === 'home'    || pageType === 'courses') setupCourseDiscovery();
+if (pageType === 'home')                              renderStats();
+if (pageType === 'courses')                           setupCoursesPage();
+if (pageType === 'notes')                             setupNotesPage();
+if (pageType === 'past-questions')                    setupPastQuestionsPage();
+if (pageType === 'quiz')                              setupQuizPage();

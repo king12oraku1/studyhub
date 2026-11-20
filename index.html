@@ -3,154 +3,573 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudiyHub - University Learning Platform</title>
+    <title>StudyHub — Your Academic Journey, All in One Place</title>
+    <meta name="description" content="Access lecture materials, explore past questions and test your understanding with interactive quizzes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.css">
-    <!-- KaTeX for math rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf_viewer.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.122/pdf.min.css">
-  <link rel="icon" href="assets/FAVICON.png" type="image/x-icon">
+    <link rel="icon" href="assets/FAVICON.png" type="image/x-icon">
 </head>
 <body data-page="home">
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">StudiyHub</a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="notes.html" class="nav-link">Notes</a></li>
-                <li><a href="past-questions.html" class="nav-link">Past Questions</a></li>
-                <li><a href="quiz.html" class="nav-link">Practice Quiz</a></li>
-                <li><a href="index.html#courses" class="nav-link">Courses</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ══════════════════════════════════════════════════
+     ONBOARDING MODAL  (first-time visitor)
+     Hidden by default; profile.js shows it when needed
+══════════════════════════════════════════════════ -->
+<div class="profile-overlay" id="onboardingOverlay" role="dialog"
+     aria-modal="true" aria-labelledby="ob-title" aria-hidden="true">
+  <div class="profile-modal">
+
+    <div class="ob-header">
+      <div class="ob-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
+      <h2 id="ob-title">Welcome to StudyHub!</h2>
+      <p>Tell us a little about yourself so we can personalise your experience.</p>
+    </div>
+
+    <form id="onboardingForm" novalidate>
+
+      <div class="modal-form-group">
+        <label for="ob-name">Your name</label>
+        <input type="text" id="ob-name" name="name"
+               placeholder="e.g. Israel" autocomplete="given-name"
+               maxlength="80" required>
+      </div>
+
+      <div class="modal-form-group">
+        <label for="ob-level">Academic level</label>
+        <select id="ob-level" name="level" required>
+          <option value="">Select your level</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+          <option value="500">500 Level</option>
+        </select>
+      </div>
+
+      <div class="modal-form-group">
+        <label for="ob-programme">Department / Programme</label>
+        <select id="ob-programme" name="programme" required>
+          <option value="">Select your programme</option>
+          <!-- populated by profile.js from StudyHubCatalog -->
+        </select>
+      </div>
+
+      <div class="modal-field-error" id="ob-error" role="alert"></div>
+
+      <button type="submit" class="modal-submit-btn">
+        Get Started
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+             style="margin-left:.375rem; vertical-align:-.125em;">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </button>
+
+    </form>
+
+    <div class="ob-storage-note">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      Your profile is saved on this device only. Clearing browser storage or switching devices will remove it.
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROFILE EDITOR MODAL
+     Opened by the "My Profile" nav button on any page
+══════════════════════════════════════════════════ -->
+<div class="profile-overlay" id="profileModalOverlay" role="dialog"
+     aria-modal="true" aria-labelledby="pm-title" aria-hidden="true">
+  <div class="profile-modal">
+
+    <div class="pm-header">
+      <h2 id="pm-title">My Profile</h2>
+      <button class="pm-close-btn" id="pmCloseBtn" aria-label="Close profile editor">✕</button>
+    </div>
+
+    <form id="profileModalForm" novalidate>
+
+      <div class="modal-form-group">
+        <label for="pm-name">Name</label>
+        <input type="text" id="pm-name" name="name"
+               placeholder="Your name" autocomplete="given-name"
+               maxlength="80" required>
+      </div>
+
+      <div class="modal-form-group">
+        <label for="pm-level">Academic level</label>
+        <select id="pm-level" name="level" required>
+          <option value="">Select your level</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+          <option value="500">500 Level</option>
+        </select>
+      </div>
+
+      <div class="modal-form-group">
+        <label for="pm-programme">Department / Programme</label>
+        <select id="pm-programme" name="programme" required>
+          <option value="">Select your programme</option>
+          <!-- populated by profile.js -->
+        </select>
+      </div>
+
+      <div class="modal-field-error" id="pm-error" role="alert"></div>
+
+      <button type="submit" class="modal-submit-btn">Save Changes</button>
+
+    </form>
+
+    <div class="pm-divider"></div>
+
+    <button type="button" class="modal-danger-btn" id="pm-reset">
+      Reset Profile
+    </button>
+
+    <div class="ob-storage-note" style="margin-top:.75rem;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      Profile data is stored only on this device. Clearing browser storage removes it permanently.
+    </div>
+
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </span>
+      StudyHub
+    </a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"          class="nav-link active">Home</a></li>
+      <li><a href="course.html"         class="nav-link">Courses</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true">
+          Study Materials <span class="dropdown-arrow">▾</span>
+        </button>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li role="none"><a href="notes.html"          class="nav-link" role="menuitem">Lecture Notes</a></li>
+          <li role="none"><a href="past-questions.html" class="nav-link" role="menuitem">Past Questions</a></li>
+        </ul>
+      </li>
+      <li><a href="quiz.html"  class="nav-link">Practice</a></li>
+      <li><a href="#about"     class="nav-link">About</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle"   id="themeToggle"   aria-label="Toggle dark mode">🌙</button>
+      <!-- Profile nav button — opens dropdown, label filled by profile.js -->
+      <div class="profile-nav-wrap" id="profileNavWrap">
+        <button class="profile-nav-btn" id="profileNavBtn" type="button"
+                aria-label="My Profile" aria-haspopup="true" aria-expanded="false">
+          <span class="profile-nav-avatar" id="profileNavAvatar" aria-hidden="true">?</span>
+          <span class="profile-nav-label" id="profileNavLabel">Profile</span>
+          <svg class="profile-nav-caret" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <!-- Dropdown popover -->
+        <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
+          <div class="profile-dropdown-header">
+            <div class="pd-avatar" id="pdAvatar">?</div>
+            <div class="pd-info">
+              <span class="pd-name"  id="pdName">—</span>
+              <span class="pd-meta"  id="pdMeta">—</span>
+            </div>
+          </div>
+          <div class="profile-dropdown-divider"></div>
+          <button class="profile-dropdown-item" id="pdEditBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            Edit Profile
+          </button>
+          <button class="profile-dropdown-item profile-dropdown-item--danger" id="pdResetBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 1 0 .49-3.1"/>
+            </svg>
+            Reset Profile
+          </button>
         </div>
-    </nav>
+      </div>
+      <a href="course.html" class="btn btn-primary btn-sm nav-cta">Explore</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Welcome to StudiyHub</h1>
-            <p>Your complete university learning companion. Access course notes, past questions, and practice quizzes — all in one place.</p>
-            <div class="hero-buttons">
-                <a href="#courses" class="btn btn-primary">Explore Courses</a>
-                <a href="quiz.html" class="btn btn-secondary">Start Quiz</a>
-            </div>
+<main id="main">
+
+<!-- welcomeSection intentionally removed — greeting lives inside the hero -->
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left: copy — text replaced by profile.js for returning students -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Learn · Prepare · Excel
         </div>
-    </section>
-
-    <!-- Statistics -->
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-card">
-                <h3>50+</h3>
-                <p>Courses</p>
-            </div>
-            <div class="stat-card">
-                <h3>1000+</h3>
-                <p>Questions</p>
-            </div>
-            <div class="stat-card">
-                <h3>500+</h3>
-                <p>Notes</p>
-            </div>
-            <div class="stat-card">
-                <h3>24/7</h3>
-                <p>Access</p>
-            </div>
+        <h1>Your Academic Journey,<br>All in One Place.</h1>
+        <p>Access lecture materials, explore past questions and test your understanding with interactive quizzes. Everything you need to prepare and stay organised, in one place.</p>
+        <div class="hero-cta">
+          <a href="course.html" class="btn btn-primary btn-lg">
+            Explore Courses
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="quiz.html" class="btn btn-outline-white btn-lg">Start Practising</a>
         </div>
-    </section>
+      </div>
 
-    <!-- Courses -->
-    <section id="courses" class="courses">
-        <div class="container">
-            <h2 class="section-title">Available Courses</h2>
-            <div class="filter-bar">
-                <select id="collegeFilter">
-                    <option value="">Select College</option>
-                </select>
-                <select id="programmeFilter" disabled>
-                    <option value="">Select Programme</option>
-                </select>
-                <select id="levelFilter" disabled>
-                    <option value="">Select Level</option>
-                </select>
-                <select id="semesterFilter" disabled>
-                    <option value="">Select Semester</option>
-                </select>
-                <input type="text" id="courseSearch" placeholder="Search courses...">
-                <button type="button" class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
+      <!-- Right: floating panel — cards replaced by profile.js for returning students -->
+      <div class="hero-visual">
+        <div class="hero-panel">
+          <div class="hero-panel-header">
+            <span class="hero-panel-title">My Courses</span>
+            <a href="course.html" class="hero-panel-link">View all →</a>
+          </div>
+          <!-- id="heroPanelBody" is targeted by profile.js updateHeroPanel() -->
+          <div class="hero-panel-body" id="heroPanelBody">
+            <div class="hero-course-card">
+              <div class="hero-cc-badge blue">CSC</div>
+              <div class="hero-cc-code">CSC101</div>
+              <div class="hero-cc-title">Intro to Computing</div>
+              <div class="hero-cc-tags"><span class="hero-cc-tag">Level 100</span><span class="hero-cc-tag">Sem 1</span></div>
             </div>
-            <div class="course-carousel-wrapper">
-                <button class="carousel-button prev" id="coursePrev" aria-label="Previous courses">‹</button>
-                <div class="course-carousel">
-                    <div class="course-grid" id="courseGrid"></div>
-                </div>
-                <button class="carousel-button next" id="courseNext" aria-label="Next courses">›</button>
+            <div class="hero-course-card">
+              <div class="hero-cc-badge green">MTH</div>
+              <div class="hero-cc-code">MTH101</div>
+              <div class="hero-cc-title">Elementary Mathematics I</div>
+              <div class="hero-cc-tags"><span class="hero-cc-tag">Level 100</span><span class="hero-cc-tag">Sem 1</span></div>
             </div>
-            <div class="course-dashboard hidden" id="courseDashboard"></div>
-        </div>
-    </section>
-
-
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About StudiyHub</h2>
-            <p class="about-text">
-                StudiyHub is a comprehensive learning platform designed specifically for university students. 
-                Our mission is to make quality educational resources accessible, organized, and easy to use. 
-                Whether you are preparing for exams with past questions, reviewing course notes, or testing your knowledge with practice quizzes, 
-                StudiyHub is your trusted academic companion.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h4>Email</h4>
-                     <a style="color: #007bff; text-decoration: none;" href="mailto:studiyhub@gmail.com"><p>For support, email us at studiyhub@gmail.com</p></a>
-                </div>
-                <div class="contact-item">
-                    <h4>Location</h4>
-                    <p>University Campus, Learning Center</p>
-                </div>
-                <div class="contact-item">
-                    <h4>Hours</h4>
-                    <p>24 / 7 Online Access</p>
-                </div>
+            <div class="hero-course-card">
+              <div class="hero-cc-badge orange">PHY</div>
+              <div class="hero-cc-code">PHY102</div>
+              <div class="hero-cc-title">General Physics II</div>
+              <div class="hero-cc-tags"><span class="hero-cc-tag">Level 100</span><span class="hero-cc-tag">Sem 2</span></div>
             </div>
+            <div class="hero-course-card">
+              <div class="hero-cc-badge purple">COS</div>
+              <div class="hero-cc-code">COS102</div>
+              <div class="hero-cc-title">Problem Solving</div>
+              <div class="hero-cc-tags"><span class="hero-cc-tag">Level 100</span><span class="hero-cc-tag">Sem 2</span></div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 StudiyHub. All rights reserved.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Quick Access</p>
+    <h2 class="section-heading">Everything you need, organised</h2>
+    <p class="section-sub">Jump straight to the resources you need.</p>
+
+    <div class="features-grid" style="margin-top:1.75rem;">
+
+      <a href="notes.html" class="feature-card">
+        <div class="feature-icon-wrap blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
         </div>
-    </footer>
+        <h3>Lecture Notes</h3>
+        <p>Browse course notes and open available PDFs for your courses.</p>
+        <span class="feature-link">View Notes →</span>
+      </a>
 
-    <!-- KaTeX scripts (loaded once globally) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
-    
+      <a href="past-questions.html" class="feature-card">
+        <div class="feature-icon-wrap orange">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="15" y2="17"/>
+          </svg>
+        </div>
+        <h3>Past Questions</h3>
+        <p>Access previous examination papers organised by course and year.</p>
+        <span class="feature-link">View Questions →</span>
+      </a>
 
-    <script defer src="js/courseCatalog.js"></script>
-    <script defer src="js/questions.js"></script>
-    <script defer src="js/notes.js"></script>
-    <script defer src="js/pastQuestions.js"></script>
-    <script defer src="js/quiz.js"></script>
-    <script defer src="js/app.js"></script>
+      <a href="quiz.html" class="feature-card">
+        <div class="feature-icon-wrap green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h3>Practice Quizzes</h3>
+        <p>Test your knowledge with timed quizzes. Select duration and question count.</p>
+        <span class="feature-link">Start Quiz →</span>
+      </a>
+
+      <a href="course.html" class="feature-card">
+        <div class="feature-icon-wrap purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <h3>Explore Courses</h3>
+        <p>Discover available courses across programmes. Navigate by level and semester.</p>
+        <span class="feature-link">Browse Courses →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── YOUR COURSES (personalised — hidden until profile.js runs) ── -->
+<section id="yourCoursesSection" style="display:none; background:var(--surface-2); padding: 2rem 0 2.5rem;">
+  <div class="container">
+    <div class="your-courses-header">
+      <h2 id="yourCoursesHeading">Your Courses</h2>
+      <a href="course.html" class="your-courses-link">Explore all courses →</a>
+    </div>
+
+    <!-- Search + filter bar -->
+    <div class="discover-filters" style="margin-bottom:1.25rem;">
+      <div class="discover-search">
+        <span class="search-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <input type="search" id="yourCoursesSearch"
+               placeholder="Search any course across StudyHub…"
+               autocomplete="off">
+      </div>
+      <div class="filter-chip-group">
+        <select id="ycCollegeFilter" class="filter-chip"><option value="">College ▾</option></select>
+        <select id="ycDeptFilter"    class="filter-chip"><option value="">Department ▾</option></select>
+        <select id="ycLevelFilter"   class="filter-chip"><option value="">Level ▾</option></select>
+        <select id="ycSemFilter"     class="filter-chip"><option value="">Semester ▾</option></select>
+        <button type="button" id="yourCoursesClearSearch" class="reset-link">Reset</button>
+      </div>
+    </div>
+
+    <div class="result-meta" id="yourCoursesResultMeta" style="display:none;">
+      <span class="result-count" id="yourCoursesResultCount"></span>
+    </div>
+
+    <!-- Grid — populated by profile.js; replaced by search results when query is active -->
+    <div class="course-grid" id="yourCoursesGrid"></div>
+  </div>
+</section>
+
+<!-- ── STATS BANNER ── -->
+<section class="stats-banner">
+  <div class="container">
+    <div class="stats-grid" id="statsBanner">
+      <!-- populated by app.js renderStats() from real data -->
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div>
+          <div class="about-visual-icon">🎓</div>
+          <h3>About StudyHub</h3>
+          <p>Empowering students with the tools they need to succeed.</p>
+          <a href="#courses" class="about-btn">Our Mission</a>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-label">About Us</p>
+        <h2>About StudyHub</h2>
+        <p>StudyHub is a comprehensive learning platform designed specifically for university students. Our mission is to make quality educational resources accessible, organised, and easy to use.</p>
+        <p>Whether you are preparing for exams with past questions, reviewing course notes, or testing your knowledge with practice quizzes, StudyHub is your trusted academic companion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </span>
+          StudyHub
+        </a>
+        <p>Your one-stop platform for academic excellence. Access study materials and quizzes anytime.</p>
+        <div class="footer-social">
+          <a href="mailto:studiyhub@gmail.com" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="mailto:studiyhub@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Study Resources</h4>
+        <ul class="footer-links">
+          <li><a href="notes.html">Lecture Notes</a></li>
+          <li><a href="past-questions.html">Past Questions</a></li>
+          <li><a href="quiz.html">Practice Quizzes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:studiyhub@gmail.com">Help &amp; Support</a></li>
+          <li><a href="#about">Privacy Policy</a></li>
+          <li><a href="#about">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 StudyHub. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#about">Privacy</a>
+        <a href="#about">Terms</a>
+      </div>
+      <span>Learn Today. Excel Tomorrow.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── BOTTOM NAV (mobile) ── -->
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      Home
+    </a>
+    <a href="course.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      </svg>
+      Courses
+    </a>
+    <a href="notes.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+      Notes
+    </a>
+    <a href="quiz.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      Practice
+    </a>
+    <a href="past-questions.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
+      Past Questions
+    </a>
+  </div>
+</nav>
+
+<!-- Scripts: profile.js before app.js so profile is ready when app.js boots -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script src="js/courseCatalog.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/pastQuestions.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Wire the profile-editor close button (can't use onclick= because the modal
+     exists in this file, not in a module; keeps CSP clean) -->
+<!-- pmCloseBtn is wired in profile.js DOMContentLoaded -->
 </body>
 </html>

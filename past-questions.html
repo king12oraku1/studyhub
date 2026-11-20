@@ -3,90 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudiyHub - Past Questions</title>
+    <title>StudyHub — Past Questions</title>
+    <meta name="description" content="Prepare for your examinations with previous course examination papers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <link rel="icon" href="assets/FAVICON.png" type="image/x-icon">
 </head>
 <body data-page="past-questions">
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">StudiyHub</a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="notes.html" class="nav-link">Notes</a></li>
-                <li><a href="past-questions.html" class="nav-link">Past Questions</a></li>
-                <li><a href="quiz.html" class="nav-link">Practice Quiz</a></li>
-                <li><a href="index.html#courses" class="nav-link">Courses</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-        </div>
-    </nav>
+<a href="#main" class="skip-link">Skip to content</a>
 
-    <section class="past-questions" style="margin-top: 80px;">
-        <div class="container">
-            <h2 class="section-title">Past Questions</h2>
-            <div class="content-selector">
-                <select id="pqCollege">
-                    <option value="">Select College</option>
-                </select>
-                <select id="pqProgramme" disabled>
-                    <option value="">Select Programme</option>
-                </select>
-                <select id="pqLevel" disabled>
-                    <option value="">Select Level</option>
-                </select>
-                <select id="pqSemester" disabled>
-                    <option value="">Select Semester</option>
-                </select>
-                <select id="pqCourse" disabled>
-                    <option value="">Select Course</option>
-                </select>
-                <select id="pqYear" disabled>
-                    <option value="">Select Year</option>
-                </select>
-                <button type="button" class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
+<!-- ── PROFILE EDITOR MODAL ── -->
+<div class="profile-overlay" id="profileModalOverlay" role="dialog"
+     aria-modal="true" aria-labelledby="pm-title" aria-hidden="true">
+  <div class="profile-modal">
+    <div class="pm-header">
+      <h2 id="pm-title">My Profile</h2>
+      <button class="pm-close-btn" id="pmCloseBtn" aria-label="Close profile editor">✕</button>
+    </div>
+    <form id="profileModalForm" novalidate>
+      <div class="modal-form-group">
+        <label for="pm-name">Name</label>
+        <input type="text" id="pm-name" name="name" placeholder="Your name"
+               autocomplete="given-name" maxlength="80" required>
+      </div>
+      <div class="modal-form-group">
+        <label for="pm-level">Academic level</label>
+        <select id="pm-level" name="level" required>
+          <option value="">Select your level</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+          <option value="500">500 Level</option>
+        </select>
+      </div>
+      <div class="modal-form-group">
+        <label for="pm-programme">Department / Programme</label>
+        <select id="pm-programme" name="programme" required>
+          <option value="">Select your programme</option>
+        </select>
+      </div>
+      <div class="modal-field-error" id="pm-error" role="alert"></div>
+      <button type="submit" class="modal-submit-btn">Save Changes</button>
+    </form>
+    <div class="pm-divider"></div>
+    <button type="button" class="modal-danger-btn" id="pm-reset">Reset Profile</button>
+    <div class="ob-storage-note" style="margin-top:.75rem;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      Profile data is stored only on this device. Clearing browser storage removes it permanently.
+    </div>
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </span>
+      StudyHub
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"          class="nav-link">Home</a></li>
+      <li><a href="course.html"         class="nav-link">Courses</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle active" type="button" aria-haspopup="true">
+          Study Materials <span class="dropdown-arrow">▾</span>
+        </button>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li role="none"><a href="notes.html"          class="nav-link"        role="menuitem">Lecture Notes</a></li>
+          <li role="none"><a href="past-questions.html" class="nav-link active" role="menuitem">Past Questions</a></li>
+        </ul>
+      </li>
+      <li><a href="quiz.html"        class="nav-link">Practice</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle"    id="themeToggle"   aria-label="Toggle dark mode">🌙</button>
+      <div class="profile-nav-wrap" id="profileNavWrap">
+        <button class="profile-nav-btn" id="profileNavBtn" type="button"
+                aria-label="My Profile" aria-haspopup="true" aria-expanded="false">
+          <span class="profile-nav-avatar" id="profileNavAvatar" aria-hidden="true">?</span>
+          <span class="profile-nav-label" id="profileNavLabel">Profile</span>
+          <svg class="profile-nav-caret" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
+          <div class="profile-dropdown-header">
+            <div class="pd-avatar" id="pdAvatar">?</div>
+            <div class="pd-info">
+              <span class="pd-name" id="pdName">—</span>
+              <span class="pd-meta" id="pdMeta">—</span>
             </div>
-            <div class="pdf-viewer-container" id="pqViewer">
-                <p class="placeholder-text">Select a course and year to view past questions</p>
-            </div>
+          </div>
+          <div class="profile-dropdown-divider"></div>
+          <button class="profile-dropdown-item" id="pdEditBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Edit Profile
+          </button>
+          <button class="profile-dropdown-item profile-dropdown-item--danger" id="pdResetBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.1"/></svg>
+            Reset Profile
+          </button>
         </div>
-    </section>
+      </div>
+      <a href="course.html" class="btn btn-primary btn-sm nav-cta">Explore</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 StudiyHub. All rights reserved.</p>
+<main id="main">
+
+<div class="page-banner">
+  <div class="container page-banner-inner">
+    <h1>Past Questions</h1>
+    <p>Prepare for your examinations with previous course examination papers.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+
+    <div class="filter-bar-inline">
+      <select id="pqCollege"   title="College"><option value="">College ▾</option></select>
+      <select id="pqProgramme" title="Programme" disabled><option value="">Programme ▾</option></select>
+      <select id="pqLevel"     title="Level"    disabled><option value="">Level ▾</option></select>
+      <select id="pqSemester"  title="Semester" disabled><option value="">Semester ▾</option></select>
+      <select id="pqCourse"    title="Course"   disabled><option value="">Course ▾</option></select>
+      <select id="pqYear"      title="Year"     disabled><option value="">Year ▾</option></select>
+      <input  type="search" id="pqSearch" placeholder="Search past questions…"
+              autocomplete="off" style="min-width:180px;">
+      <button type="button" id="resetFiltersBtn" class="reset-link">Reset</button>
+    </div>
+
+    <div class="result-meta">
+      <span class="result-count" id="pqResultCount"></span>
+    </div>
+
+    <div id="pqViewer">
+      <div class="resource-empty-state">
+        <div class="res-empty-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="15" y2="17"/>
+          </svg>
         </div>
-    </footer>
+        <h3>Select a course to view past questions</h3>
+        <p>Use the filters above to narrow down by college, level, or semester, then pick a course or year.</p>
+      </div>
+    </div>
 
-    <!-- <script src="js/notes.js"></script>
-    <script src="js/pastQuestions.js"></script>
-    <script src="js/questions.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.122/build/pdf.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
-    <script src="js/app.js"></script> -->
-    <script src="js/courseCatalog.js"></script>
-    <script src="js/notes.js"></script>
-    <script src="js/pastQuestions.js"></script>
-    <script src="js/questions.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.122/build/pdf.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
-                                                                                                                                                                                        
+  </div>
+</section>
+</main>
 
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </span>StudyHub
+        </a>
+        <p>Your one-stop platform for academic excellence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="mailto:studiyhub@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Study Resources</h4>
+        <ul class="footer-links">
+          <li><a href="notes.html">Lecture Notes</a></li>
+          <li><a href="past-questions.html">Past Questions</a></li>
+          <li><a href="quiz.html">Practice Quizzes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:studiyhub@gmail.com">Help &amp; Support</a></li>
+          <li><a href="index.html#about">Privacy Policy</a></li>
+          <li><a href="index.html#about">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 StudyHub. All rights reserved.</span>
+      <span>Learn Today. Excel Tomorrow.</span>
+    </div>
+  </div>
+</footer>
 
-    <canvas id="pdf-canvas" style="border: 1px solid black; width: 100%; max-width: 800px;"></canvas>
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home
+    </a>
+    <a href="course.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Courses
+    </a>
+    <a href="notes.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Notes
+    </a>
+    <a href="quiz.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Practice
+    </a>
+    <a href="past-questions.html" class="bottom-nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Past Questions
+    </a>
+  </div>
+</nav>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
-    <script src="js/app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script src="js/courseCatalog.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/pastQuestions.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/app.js"></script>
+<!-- pmCloseBtn is wired in profile.js DOMContentLoaded -->
 </body>
 </html>
