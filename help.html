@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub — Help & Support</title>
+    <meta name="description" content="Get help with StudyHub. Find answers to common questions about notes, past questions, quizzes, and your student profile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/FAVICON.png" type="image/x-icon">
+    <style>
+        /* ── Help page specific styles ── */
+        .help-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .help-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .help-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .help-card {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-xl);
+            padding: 1.5rem;
+            transition: border-color var(--t), box-shadow var(--t);
+        }
+        .help-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--sh-md);
+        }
+        .help-card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--r-lg);
+            background: var(--accent-light);
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .help-card h3 {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            margin-bottom: .375rem;
+        }
+        .help-card p {
+            font-size: .9rem;
+            color: var(--text-3);
+            line-height: 1.6;
+        }
+
+        /* FAQ */
+        .faq-section { margin-top: 3rem; }
+        .faq-item {
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-lg);
+            margin-bottom: .75rem;
+            overflow: hidden;
+            transition: border-color var(--t);
+        }
+        .faq-item:focus-within { border-color: var(--accent); }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.125rem 1.375rem;
+            background: var(--surface);
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            text-align: left;
+            transition: background var(--t);
+        }
+        .faq-question:hover { background: var(--surface-2); }
+        .faq-chevron {
+            flex-shrink: 0;
+            transition: transform .25s ease;
+            color: var(--text-3);
+        }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+        .faq-answer {
+            display: none;
+            padding: 0 1.375rem 1.25rem;
+            background: var(--surface);
+            font-size: .9375rem;
+            color: var(--text-3);
+            line-height: 1.7;
+        }
+        .faq-answer a { color: var(--accent); font-weight: 500; }
+        .faq-item.open .faq-answer { display: block; }
+
+        /* Contact card */
+        .contact-card {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+            border-radius: var(--r-2xl);
+            padding: 2.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .contact-card h2 { color: #fff; font-size: 1.5rem; margin-bottom: .625rem; }
+        .contact-card p  { color: rgba(255,255,255,.72); margin-bottom: 1.5rem; font-size: 1rem; }
+        .contact-card .btn-primary {
+            background: #fff;
+            color: var(--accent);
+            border-color: #fff;
+        }
+        .contact-card .btn-primary:hover { background: #f1f5f9; }
+
+        /* Content prose */
+        .prose { max-width: 760px; }
+        .prose h2 {
+            font-size: 1.375rem;
+            font-weight: 800;
+            margin: 2.5rem 0 1rem;
+            padding-top: 2rem;
+            border-top: 1.5px solid var(--border);
+            color: var(--text);
+        }
+        .prose h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+        .prose p  { font-size: .9375rem; color: var(--text-3); line-height: 1.75; margin-bottom: 1rem; }
+        .prose ul { margin: .75rem 0 1rem 1.25rem; display: flex; flex-direction: column; gap: .5rem; }
+        .prose li { font-size: .9375rem; color: var(--text-3); line-height: 1.6; }
+        .prose strong { color: var(--text); font-weight: 600; }
+    </style>
+</head>
+<body data-page="help">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ── PROFILE EDITOR MODAL ── -->
+<div class="profile-overlay" id="profileModalOverlay" role="dialog"
+     aria-modal="true" aria-labelledby="pm-title" aria-hidden="true">
+  <div class="profile-modal">
+    <div class="pm-header">
+      <h2 id="pm-title">My Profile</h2>
+      <button class="pm-close-btn" id="pmCloseBtn" aria-label="Close profile editor">✕</button>
+    </div>
+    <form id="profileModalForm" novalidate>
+      <div class="modal-form-group">
+        <label for="pm-name">Name</label>
+        <input type="text" id="pm-name" name="name" placeholder="Your name"
+               autocomplete="given-name" maxlength="80" required>
+      </div>
+      <div class="modal-form-group">
+        <label for="pm-level">Academic level</label>
+        <select id="pm-level" name="level" required>
+          <option value="">Select your level</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+          <option value="500">500 Level</option>
+        </select>
+      </div>
+      <div class="modal-form-group">
+        <label for="pm-programme">Department / Programme</label>
+        <select id="pm-programme" name="programme" required>
+          <option value="">Select your programme</option>
+        </select>
+      </div>
+      <div class="modal-field-error" id="pm-error" role="alert"></div>
+      <button type="submit" class="modal-submit-btn">Save Changes</button>
+    </form>
+    <div class="pm-divider"></div>
+    <button type="button" class="modal-danger-btn" id="pm-reset">Reset Profile</button>
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </span>
+      StudyHub
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"          class="nav-link">Home</a></li>
+      <li><a href="course.html"         class="nav-link">Courses</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true">
+          Study Materials <span class="dropdown-arrow">▾</span>
+        </button>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li role="none"><a href="notes.html"          class="nav-link" role="menuitem">Lecture Notes</a></li>
+          <li role="none"><a href="past-questions.html" class="nav-link" role="menuitem">Past Questions</a></li>
+        </ul>
+      </li>
+      <li><a href="quiz.html"        class="nav-link">Practice</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <div class="profile-nav-wrap" id="profileNavWrap">
+        <button class="profile-nav-btn" id="profileNavBtn" type="button"
+                aria-label="My Profile" aria-haspopup="true" aria-expanded="false">
+          <span class="profile-nav-avatar" id="profileNavAvatar" aria-hidden="true">?</span>
+          <span class="profile-nav-label"  id="profileNavLabel">Profile</span>
+          <svg class="profile-nav-caret" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
+          <div class="profile-dropdown-header">
+            <div class="pd-avatar" id="pdAvatar">?</div>
+            <div class="pd-info">
+              <span class="pd-name" id="pdName">—</span>
+              <span class="pd-meta" id="pdMeta">—</span>
+            </div>
+          </div>
+          <div class="profile-dropdown-divider"></div>
+          <button class="profile-dropdown-item" id="pdEditBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Edit Profile
+          </button>
+          <button class="profile-dropdown-item profile-dropdown-item--danger" id="pdResetBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.1"/></svg>
+            Reset Profile
+          </button>
+        </div>
+      </div>
+      <a href="course.html" class="btn btn-primary btn-sm nav-cta">Explore Courses</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ── PAGE BANNER ── -->
+<div class="page-banner">
+  <div class="container page-banner-inner">
+    <h1>Help &amp; Support</h1>
+    <p>Everything you need to get the most out of StudyHub.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <!-- Quick-help cards -->
+    <p class="section-label">Quick Help</p>
+    <h2 class="section-heading">What do you need help with?</h2>
+
+    <div class="help-grid">
+
+      <div class="help-card">
+        <div class="help-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h3>Lecture Notes</h3>
+        <p>Learn how to find, view and download lecture notes for your courses. Notes are organised by college, programme, level and semester.</p>
+      </div>
+
+      <div class="help-card">
+        <div class="help-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3>Past Questions</h3>
+        <p>Access previous examination papers organised by course and year. Use the filters to narrow down to your specific course.</p>
+      </div>
+
+      <div class="help-card">
+        <div class="help-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Practice Quizzes</h3>
+        <p>Configure timed practice quizzes by selecting your college, programme, level and course. Review your answers and explanations after each quiz.</p>
+      </div>
+
+      <div class="help-card">
+        <div class="help-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h3>Student Profile</h3>
+        <p>Set up your profile with your name, academic level and programme. StudyHub uses this to personalise your course recommendations.</p>
+      </div>
+
+      <div class="help-card">
+        <div class="help-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3>Course Discovery</h3>
+        <p>Browse all available courses using the Courses page. Filter by college, programme, level and semester, or search by course code or title.</p>
+      </div>
+
+      <div class="help-card">
+        <div class="help-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <h3>Technical Issues</h3>
+        <p>If a PDF won't load, try refreshing the page or opening it in a different browser. If a problem persists, contact us by email.</p>
+      </div>
+
+    </div>
+
+    <!-- ── HOW TO sections ── -->
+    <div class="prose" style="margin-top:3rem;">
+
+      <h2>How to access lecture notes</h2>
+      <p>Navigate to <strong>Study Materials → Lecture Notes</strong> in the top navigation, or tap <strong>Notes</strong> in the mobile bottom bar.</p>
+      <ul>
+        <li>Select your <strong>College</strong> from the dropdown to filter by institution.</li>
+        <li>Select your <strong>Programme</strong>. This list updates based on the college you chose.</li>
+        <li>Choose your <strong>Level</strong> and <strong>Semester</strong>.</li>
+        <li>Pick a specific <strong>Course</strong> from the final dropdown.</li>
+        <li>Click <strong>View</strong> to open the PDF in a new tab, or <strong>Download</strong> to save it.</li>
+      </ul>
+      <p>You can also search by course code or title using the search bar at the top of the filter panel.</p>
+
+      <h2>How to access past questions</h2>
+      <p>Navigate to <strong>Study Materials → Past Questions</strong> in the top navigation, or tap <strong>Past Questions</strong> in the mobile bottom bar.</p>
+      <ul>
+        <li>Use the filter bar to select College, Programme, Level, Semester, Course and Year.</li>
+        <li>Click <strong>View Paper</strong> to open the examination paper in a new tab.</li>
+        <li>Click <strong>Download</strong> to save the paper to your device.</li>
+      </ul>
+      <p>Not all courses have past questions uploaded yet. Papers are added as they become available.</p>
+
+      <h2>How to take a practice quiz</h2>
+      <p>Navigate to <strong>Practice</strong> in the navigation bar.</p>
+      <ul>
+        <li><strong>Step 1 — Select Your Course:</strong> Choose your College, Programme, Level, Semester and Course.</li>
+        <li><strong>Step 2 — Configure:</strong> Select how many questions you want and your preferred duration.</li>
+        <li><strong>Step 3 — Review &amp; Start:</strong> Check the summary and click <strong>Start Practice Quiz</strong>.</li>
+        <li>During the quiz, use the question navigator dots to jump between questions.</li>
+        <li>When you are ready to finish, click <strong>Submit Quiz</strong> and confirm.</li>
+        <li>After submission you will see your score, correct answers and explanations for every question.</li>
+      </ul>
+
+      <h2>How to set up and edit your profile</h2>
+      <p>Your profile appears automatically the first time you visit StudyHub on a new device. You can change it at any time.</p>
+      <ul>
+        <li>Click your name or the profile button in the top-right corner of any page.</li>
+        <li>Select <strong>Edit Profile</strong> from the dropdown.</li>
+        <li>Update your name, academic level or department/programme.</li>
+        <li>Click <strong>Save Changes</strong>. The homepage will update immediately to show your new personalised courses.</li>
+      </ul>
+      <p><strong>Note:</strong> Your profile is stored only on your current device using browser local storage. Clearing your browser data or switching devices will require you to set up your profile again.</p>
+
+      <h2>Supported browsers</h2>
+      <p>StudyHub works best in modern browsers. We recommend:</p>
+      <ul>
+        <li>Google Chrome (latest version)</li>
+        <li>Mozilla Firefox (latest version)</li>
+        <li>Apple Safari (iOS 15 and above)</li>
+        <li>Microsoft Edge (latest version)</li>
+      </ul>
+      <p>JavaScript must be enabled for all features to work. PDF viewing requires a browser with built-in PDF support or a PDF viewer plugin.</p>
+
+      <h2>PDF files are not loading</h2>
+      <p>If a PDF fails to open or download, try the following steps:</p>
+      <ul>
+        <li>Refresh the page and try again.</li>
+        <li>Try a different browser.</li>
+        <li>Check that you have a working internet connection.</li>
+        <li>If the issue persists, the file may not yet be uploaded. Contact us and we will investigate.</li>
+      </ul>
+
+    </div>
+
+    <!-- ── FAQ ── -->
+    <div class="faq-section">
+      <p class="section-label" style="margin-top:0;">FAQ</p>
+      <h2 class="section-heading">Frequently asked questions</h2>
+
+      <div class="faq-list" style="margin-top:1.5rem;">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is StudyHub free to use?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. StudyHub is completely free. There are no subscriptions, no accounts and no payment required. All lecture notes, past questions and practice quizzes are free to access.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do I need to create an account?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No account is required. StudyHub only asks for your name, academic level and department so it can personalise your homepage. This information is saved only on your device — it is never sent to any server.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will my profile be remembered next time I visit?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, as long as you use the same browser on the same device and have not cleared your browser storage. Your profile is stored in your browser's local storage with no expiry date. It will persist across browser restarts and long periods without visiting. Clearing browser data or using a different device will remove it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I access courses outside my own department?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Your homepage shows courses personalised to your profile by default, but you can browse the entire course catalog through the <a href="course.html">Courses page</a>. The search bar in the Your Courses section also searches all available courses, regardless of your programme.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I switch between light and dark mode?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Click the moon/sun icon in the top navigation bar on any page. Your theme preference is saved and will be remembered the next time you visit.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I download PDFs for offline use?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Every lecture note and past question paper has a <strong>Download</strong> button that saves the PDF directly to your device for offline reading.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            My course or department is missing. What should I do?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>StudyHub is actively growing. If your programme or a specific course is not listed, please contact us at <a href="mailto:studiyhub@gmail.com">studiyhub@gmail.com</a> and we will work to add it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How can I contribute notes or past questions?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We welcome contributions from students and educators. Send your materials to <a href="mailto:studiyhub@gmail.com">studiyhub@gmail.com</a> and include the course code, course title, level and semester. We will review and upload them as soon as possible.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Contact card ── -->
+    <div class="contact-card">
+      <h2>Still need help?</h2>
+      <p>Send us an email and we will get back to you as soon as we can.</p>
+      <a href="mailto:studiyhub@gmail.com" class="btn btn-primary btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        studiyhub@gmail.com
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </span>
+          StudyHub
+        </a>
+        <p>Your one-stop platform for academic excellence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="mailto:studiyhub@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Study Resources</h4>
+        <ul class="footer-links">
+          <li><a href="notes.html">Lecture Notes</a></li>
+          <li><a href="past-questions.html">Past Questions</a></li>
+          <li><a href="quiz.html">Practice Quizzes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="help.html" class="active">Help &amp; Support</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 StudyHub. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <span>Learn Today. Excel Tomorrow.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── BOTTOM NAV ── -->
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home
+    </a>
+    <a href="course.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Courses
+    </a>
+    <a href="notes.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Notes
+    </a>
+    <a href="quiz.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="bn-label">Practice</span></a>
+    <a href="past-questions.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span class="bn-label">Past Qs</span></a>
+  </div>
+</nav>
+
+<script src="js/courseCatalog.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/pastQuestions.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // open this one if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+<!-- pmCloseBtn is wired in profile.js DOMContentLoaded -->
+</body>
+</html>

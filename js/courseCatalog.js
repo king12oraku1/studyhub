@@ -8,402 +8,527 @@
         { value: 'COLMANS', label: 'COLMANS' }
     ];
 
-    
+
 
     const programmeCatalog = {
-    COLCOMP: {
-        'Computer Science': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'MTH101' },
-                    { code: 'COS101' },
-                    { code: 'BUT_GST107' },
-                    { code: 'BUT_BIO101' },
-                    { code: 'STA111' },
-                    { code: 'BUT_ICT131' },
-                    { code: 'PHY101' }
-                ],
-                'Second': [
-                    { code: 'MTH102' },
-                    { code: 'COS102' },
-                    { code: 'GST112' },
-                    { code: 'BUT_BIO102' },
-                    { code: 'BUT_ICT118' },
-                    { code: 'BUT_CSC104' },
-                    { code: 'PHY102' }
-                ]
+        COLCOMP: {
+            'Computer Science': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'MTH101' },
+                        { code: 'COS101' },
+                        { code: 'BUT_GST107' },
+                        { code: 'BUT_BIO101' },
+                        { code: 'STA111' },
+                        { code: 'BUT_ICT131' },
+                        { code: 'PHY101' }
+                    ],
+                    'Second': [
+                        { code: 'MTH102' },
+                        { code: 'COS102' },
+                        { code: 'GST112' },
+                        { code: 'BUT_BIO102' },
+                        { code: 'BUT_ICT118' },
+                        { code: 'BUT_CSC104' },
+                        { code: 'PHY102' }
+                    ]
+                },
+                '200': {
+                    'First': [
+                        { code: 'ENT211' },
+                        { code: 'MTH201' },
+                        { code: 'COS201' },
+                        { code: 'BUT_GST207' },
+                        { code: 'IFT211' },
+                        { code: 'SEN201' },
+                        { code: 'IFT203' },
+                        { code: 'COS203' },
+                        { code: 'BUT_ICT235' },
+                        { code: 'BUT_CSC205' }
+                    ],
+                    'Second': [
+                        { code: 'GST212' },
+                        { code: 'MTH202' },
+                        { code: 'COS202' },
+                        { code: 'IFT212' },
+                        { code: 'INS202' },
+                        { code: 'BUT_CSC204' },
+                        { code: 'BUT_CSC206' },
+                        { code: 'BUT_CSC208' },
+                        { code: 'BUT_GST208' },
+                        { code: 'BUT_ICT236' }
+                    ]
+                },
+                '300': {
+                    'First': [
+                        { code: 'CSC301' },
+                        { code: 'CSC309' },
+                        { code: 'CYB201' },
+                        { code: 'ICT305' },
+                        { code: 'SEN301' },
+                        { code: 'BUT_CSC303' },
+                        { code: 'BUT_CSC311' },
+                        { code: 'BUT_ICT323' }
+                    ],
+                    'Second': [
+                        { code: 'GST312' },
+                        { code: 'ENT312' },
+                        { code: 'CSC308' },
+                        { code: 'CSC322' },
+                        { code: 'DTS304' },
+                        { code: 'IFT302' },
+                        { code: 'BUT_CSC304' },
+                        { code: 'BUT_ICT324' }
+                    ]
+                },
+                '400': {
+                    'First': [
+                        { code: 'COS409' },
+                        { code: 'CSC401' },
+                        { code: 'INS401' },
+                        { code: 'CSC402' },
+                        { code: 'BUT_CSC407' },
+                        { code: 'BUT_CSC403' },
+                        { code: 'BUT_CSC405' },
+                        { code: 'BUT_CSC409' },
+                        { code: 'BUT_ICT423' }
+                    ]
+                },
+                '500': {
+                    'First': [
+                        { code: 'BUT_CSC501' },
+                        { code: 'BUT_CSC515' },
+                        { code: 'BUT_IFT509' },
+                        { code: 'BUT_CSC505' },
+                        { code: 'BUT_CSC503' },
+                        { code: 'BUT_CSC507' },
+                        { code: 'BUT_CSC509' },
+                        { code: 'BUT_CSC513' },
+                        { code: 'BUT_ICT521' }
+                    ],
+                    'Second': [
+                        { code: 'BUT_IFT502' },
+                        { code: 'BUT_SEN510' },
+                        { code: 'BUT_CSC504' },
+                        { code: 'CYB404' },
+                        { code: 'DTS316' },
+                        { code: 'BUT_ICT522' }
+                    ]
+                }
             },
-            '200': {
-                'First': [
-                    { code: 'ENT211' },
-                    { code: 'MTH201' },
-                    { code: 'COS201' },
-                    { code: 'BUT_GST207' },
-                    { code: 'IFT211' },
-                    { code: 'SEN201' },
-                    { code: 'IFT203' },
-                    { code: 'COS203' },
-                    { code: 'BUT_ICT235' },
-                    { code: 'BUT_CSC205' }
-                ],
-                'Second': [
-                    { code: 'GST212' },
-                    { code: 'MTH202' },
-                    { code: 'COS202' },
-                    { code: 'IFT212' },
-                    { code: 'INS202' },
-                    { code: 'BUT_CSC204' },
-                    { code: 'BUT_CSC206' },
-                    { code: 'BUT_CSC208' },
-                    { code: 'BUT_GST208' },
-                    { code: 'BUT_ICT236' }
-                ]
+
+            'Information Technology': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'MTH101' },
+                        { code: 'COS101' },
+                        { code: 'BUT_GST107' },
+                        { code: 'BUT_BIO101' },
+                        { code: 'STA111' },
+                        { code: 'BUT_ICT131' },
+                        { code: 'PHY101' }
+                    ],
+                    'Second': [
+                        { code: 'MTH102' },
+                        { code: 'COS102' },
+                        { code: 'GST112' },
+                        { code: 'BUT_BIO102' },
+                        { code: 'BUT_ICT118' },
+                        { code: 'BUT_CSC104' },
+                        { code: 'PHY102' }
+                    ]
+                },
+                '200': {
+                    'First': [
+                        { code: 'ENT211' },
+                        { code: 'MTH201' },
+                        { code: 'COS201' },
+                        { code: 'COS203' },
+                        { code: 'IFT203' },
+                        { code: 'IFT205' },
+                        { code: 'IFT211' },
+                        { code: 'SEN201' },
+                        { code: 'BUT_ICT235' },
+                        { code: 'BUT_GST207' }
+                    ],
+                    'Second': [
+                        { code: 'GST212' },
+                        { code: 'MTH202' },
+                        { code: 'COS202' },
+                        { code: 'IFT212' },
+                        { code: 'INS202' },
+                        { code: 'INS204' },
+                        { code: 'BUT_CSC206' },
+                        { code: 'BUT_CSC208' },
+                        { code: 'BUT_GST208' },
+                        { code: 'BUT_ICT236' }
+                    ]
+                },
+                '300': {
+                    'First': [
+                        { code: 'CSC301' },
+                        { code: 'CSC309' },
+                        { code: 'CYB201' },
+                        { code: 'ICT305' },
+                        { code: 'SEN301' },
+                        { code: 'BUT_BIO209' },
+                        { code: 'BUT_IFT301' },
+                        { code: 'BUT_CSC311' },
+                        { code: 'BUT_ICT323' }
+                    ],
+                    'Second': [
+                        { code: 'GST312' },
+                        { code: 'ENT312' },
+                        { code: 'IFT302' },
+                        { code: 'IFT304' },
+                        { code: 'IFT342' },
+                        { code: 'CSC308' },
+                        { code: 'IFT308' },
+                        { code: 'BUT_CSC304' },
+                        { code: 'BUT_ICT324' }
+                    ]
+                },
+                '400': {
+                    'First': [
+                        { code: 'COS409' },
+                        { code: 'IFT403' },
+                        { code: 'INS401' },
+                        { code: 'CSC432' },
+                        { code: 'BUT_IFT405' },
+                        { code: 'BUT_CSC407' },
+                        { code: 'BUT_CSC411' },
+                        { code: 'BUT_ICT423' }
+                    ]
+                },
+                '500': {
+                    'First': [
+                        { code: 'BUT_CSC501' },
+                        { code: 'BUT_IFT503' },
+                        { code: 'BUT_CSC505' },
+                        { code: 'BUT_IFT507' },
+                        { code: 'BUT_IFT509' },
+                        { code: 'BUT_IFT515' },
+                        { code: 'BUT_IFT513' },
+                        { code: 'BUT_ICT521' }
+                    ],
+                    'Second': [
+                        { code: 'IFT310' },
+                        { code: 'IFT322' },
+                        { code: 'IFT410' },
+                        { code: 'IFT442' },
+                        { code: 'BUT_IFT502' },
+                        { code: 'BUT_IFT506' },
+                        { code: 'BUT_IFT512' },
+                        { code: 'BUT_ICT522' }
+                    ]
+                }
             },
-            '300': {
-                'First': [
-                    { code: 'CSC301' },
-                    { code: 'CSC309' },
-                    { code: 'CYB201' },
-                    { code: 'ICT305' },
-                    { code: 'SEN301' },
-                    { code: 'BUT_CSC303' },
-                    { code: 'BUT_CSC311' },
-                    { code: 'BUT_ICT323' }
-                ],
-                'Second': [
-                    { code: 'GST312' },
-                    { code: 'ENT312' },
-                    { code: 'CSC308' },
-                    { code: 'CSC322' },
-                    { code: 'DTS304' },
-                    { code: 'IFT302' },
-                    { code: 'BUT_CSC304' },
-                    { code: 'BUT_ICT324' }
-                ]
+
+            'Cyber Security': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'MTH101' },
+                        { code: 'COS101' },
+                        { code: 'PHY101' }
+                    ],
+                    'Second': [
+                        { code: 'MTH102' },
+                        { code: 'COS102' },
+                        { code: 'PHY102' }
+                    ]
+                }
             },
-            '400': {
-                'First': [
-                    { code: 'COS409' },
-                    { code: 'CSC401' },
-                    { code: 'INS401' },
-                    { code: 'CSC402' },
-                    { code: 'BUT_CSC407' },
-                    { code: 'BUT_CSC403' },
-                    { code: 'BUT_CSC405' },
-                    { code: 'BUT_CSC409' },
-                    { code: 'BUT_ICT423' }
-                ]
+
+            'Software Engineering': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'MTH101' },
+                        { code: 'COS101' },
+                        { code: 'PHY101' }
+                    ],
+                    'Second': [
+                        { code: 'MTH102' },
+                        { code: 'COS102' },
+                        { code: 'PHY102' }
+                    ]
+                }
             },
-            '500': {
-                'First': [
-                    { code: 'BUT_CSC501' },
-                    { code: 'BUT_CSC515' },
-                    { code: 'BUT_IFT509' },
-                    { code: 'BUT_CSC505' },
-                    { code: 'BUT_CSC503' },
-                    { code: 'BUT_CSC507' },
-                    { code: 'BUT_CSC509' },
-                    { code: 'BUT_CSC513' },
-                    { code: 'BUT_ICT521' }
-                ],
-                'Second': [
-                    { code: 'BUT_IFT502' },
-                    { code: 'BUT_SEN510' },
-                    { code: 'BUT_CSC504' },
-                    { code: 'CYB404' },
-                    { code: 'DTS316' },
-                    { code: 'BUT_ICT522' }
-                ]
-            }
+
+            'Data Science': {}
         },
 
-        'Information Technology': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'MTH101' },
-                    { code: 'COS101' },
-                    { code: 'BUT_GST107' },
-                    { code: 'BUT_BIO101' },
-                    { code: 'STA111' },
-                    { code: 'BUT_ICT131' },
-                    { code: 'PHY101' }
-                ],
-                'Second': [
-                    { code: 'MTH102' },
-                    { code: 'COS102' },
-                    { code: 'GST112' },
-                    { code: 'BUT_BIO102' },
-                    { code: 'BUT_ICT118' },
-                    { code: 'BUT_CSC104' },
-                    { code: 'PHY102' }
-                ]
+        COLENG: {
+            'Electrical Engineering': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'MTH101' },
+                        { code: 'BUT_ICT131' },
+                        { code: 'BUT_BIO101' }
+                    ],
+                    'Second': [
+                        { code: 'BUT_CSC104' },
+                        { code: 'BUT_BIO102' },
+                        { code: 'BUT_ICT118' }
+                    ]
+                }
             },
-            '200': {
-                'First': [
-                    { code: 'ENT211' },
-                    { code: 'MTH201' },
-                    { code: 'COS201' },
-                    { code: 'COS203' },
-                    { code: 'IFT203' },
-                    { code: 'IFT205' },
-                    { code: 'IFT211' },
-                    { code: 'SEN201' },
-                    { code: 'BUT_ICT235' },
-                    { code: 'BUT_GST207' }
-                ],
-                'Second': [
-                    { code: 'GST212' },
-                    { code: 'MTH202' },
-                    { code: 'COS202' },
-                    { code: 'IFT212' },
-                    { code: 'INS202' },
-                    { code: 'INS204' },
-                    { code: 'BUT_CSC206' },
-                    { code: 'BUT_CSC208' },
-                    { code: 'BUT_GST208' },
-                    { code: 'BUT_ICT236' }
-                ]
+
+            'Mechanical Engineering': {
+                '100': {
+                    'First': [
+                        { code: 'BUT_GST107' },
+                        { code: 'CHM107' },
+                        { code: 'PHY107' },
+                        { code: 'BUT_CPE103' },
+                        { code: 'BUT_MTH103' },
+                        { code: 'BUT_STA112' },
+                        { code: 'CHM101' },
+                        { code: 'PHY101' },
+                        { code: 'MTH101' },
+                        { code: 'BUT_ICT115' },
+                        { code: 'GST111' }
+                    ],
+                    'Second': [
+                        { code: 'GST112' },
+                        { code: 'GET102' },
+                        { code: 'CHM102' },
+                        { code: 'CHM108' },
+                        { code: 'MTH102' },
+                        { code: 'PHY102' },
+                        { code: 'PHY108' },
+                        { code: 'BUT_PHY104' },
+                        { code: 'MEE101' },
+                        { code: 'GET101' },
+                        { code: 'BUT_ICT116' }
+                    ]
+                }
             },
-            '300': {
-                'First': [
-                    { code: 'CSC301' },
-                    { code: 'CSC309' },
-                    { code: 'CYB201' },
-                    { code: 'ICT305' },
-                    { code: 'SEN301' },
-                    { code: 'BUT_BIO209' },
-                    { code: 'BUT_IFT301' },
-                    { code: 'BUT_CSC311' },
-                    { code: 'BUT_ICT323' }
-                ],
-                'Second': [
-                    { code: 'GST312' },
-                    { code: 'ENT312' },
-                    { code: 'IFT302' },
-                    { code: 'IFT304' },
-                    { code: 'IFT342' },
-                    { code: 'CSC308' },
-                    { code: 'IFT308' },
-                    { code: 'BUT_CSC304' },
-                    { code: 'BUT_ICT324' }
-                ]
+
+            'Agricultural and Biosystems Engineering': {},
+
+            'Biomedical Engineering': {
+                '100': {
+                    'First': [],
+                    'Second': [
+                        { code: 'GST112' },
+                        { code: 'MTH102' },
+                        { code: 'PHY102' },
+                        { code: 'PHY108' },
+                        { code: 'BIO101' },
+                        { code: 'BIO107' },
+                        { code: 'GET101' },
+                        { code: 'GET102' },
+                        { code: 'BME102' },
+                        { code: 'BUT_PHY104' },
+                        { code: 'BUT_ICT116' }
+                    ]
+                }
             },
-            '400': {
-                'First': [
-                    { code: 'COS409' },
-                    { code: 'IFT403' },
-                    { code: 'INS401' },
-                    { code: 'CSC432' },
-                    { code: 'BUT_IFT405' },
-                    { code: 'BUT_CSC407' },
-                    { code: 'BUT_CSC411' },
-                    { code: 'BUT_ICT423' }
-                ]
+
+            'Mechatronics Engineering': {
+                '100': {
+                    'First': [
+                        { code: 'BUT_GST107' },
+                        { code: 'CHM107' },
+                        { code: 'MTH101' },
+                        { code: 'PHY107' },
+                        { code: 'BUT_CPE103' },
+                        { code: 'BUT_MTH103' },
+                        { code: 'BUT_STA112' },
+                        { code: 'CHM101' },
+                        { code: 'PHY101' },
+                        { code: 'BUT_ICT115' },
+                        { code: 'GST111' }
+                    ],
+                    'Second': [
+                        { code: 'PHY108' },
+                        { code: 'GET102' },
+                        { code: 'MCE101' },
+                        { code: 'GET101' },
+                        { code: 'CHM108' },
+                        { code: 'BUT_PHY104' },
+                        { code: 'GST112' },
+                        { code: 'PHY102' },
+                        { code: 'MTH102' },
+                        { code: 'CHM102' },
+                        { code: 'BUT_ICT116' }
+                    ]
+                }
             },
-            '500': {
-                'First': [
-                    { code: 'BUT_CSC501' },
-                    { code: 'BUT_IFT503' },
-                    { code: 'BUT_CSC505' },
-                    { code: 'BUT_IFT507' },
-                    { code: 'BUT_IFT509' },
-                    { code: 'BUT_IFT515' },
-                    { code: 'BUT_IFT513' },
-                    { code: 'BUT_ICT521' }
-                ],
-                'Second': [
-                    { code: 'IFT310' },
-                    { code: 'IFT322' },
-                    { code: 'IFT410' },
-                    { code: 'IFT442' },
-                    { code: 'BUT_IFT502' },
-                    { code: 'BUT_IFT506' },
-                    { code: 'BUT_IFT512' },
-                    { code: 'BUT_ICT522' }
-                ]
-            }
+
+            'Civil Engineering': {},
+
+            'Computer Engineering': {
+                '100': {
+                    'First': [
+                        { code: 'BUT_ICT131' },
+                        { code: 'BUT_GST107' },
+                        { code: 'MTH101' },
+                        { code: 'PHY107' },
+                        { code: 'BUT_CPE103' },
+                        { code: 'BUT_MTH103' },
+                        { code: 'BUT_STA112' },
+                        { code: 'PHY101' },
+                        { code: 'BUT_CHM101' },
+                        { code: 'BUT_CHM107' },
+                        { code: 'GST111' }
+                    ],
+                    'Second': [
+                        { code: 'GST112' },
+                        { code: 'MTH102' },
+                        { code: 'PHY108' },
+                        { code: 'GET102' },
+                        { code: 'CPE112' },
+                        { code: 'BUT_CHM102' },
+                        { code: 'BUT_CHM108' },
+                        { code: 'GET101' },
+                        { code: 'BUT_PHY104' },
+                        { code: 'BUT_ICT132' },
+                        { code: 'PHY102' }
+                    ]
+                }
+            },
+
+            'Electrical, Electronics Engineering': {},
+
+            'Telecommunications Engineering': {}
         },
 
-        'Cyber Security': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'MTH101' },
-                    { code: 'COS101' },
-                    { code: 'PHY101' }
-                ],
-                'Second': [
-                    { code: 'MTH102' },
-                    { code: 'COS102' },
-                    { code: 'PHY102' }
-                ]
-            }
+        COLENVS: {
+            'Environmental Science': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'BUT_GST107' }
+                    ],
+                    'Second': [
+                        { code: 'PHY102' },
+                        { code: 'GST112' },
+                        { code: 'GST102' }
+                    ]
+                }
+            },
+
+            'Architecture': {},
+
+            'Building Technology': {},
+
+            'Estate Management': {},
+
+            'Quantity Surveying': {},
+
+            'Surveying and Geoinformatics': {},
+
+            'Urban and Regional Planning': {},
+
+            'Environmental Management': {}
         },
 
-        'Software Engineering': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'MTH101' },
-                    { code: 'COS101' },
-                    { code: 'PHY101' }
-                ],
-                'Second': [
-                    { code: 'MTH102' },
-                    { code: 'COS102' },
-                    { code: 'PHY102' }
-                ]
-            }
-        },
+        COLFAST: {
+            'Food Science': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'BUT_GST107' }
+                    ],
+                    'Second': [
+                        { code: 'GST102' }
+                    ]
+                }
+            },
 
-        'Data Science': {}
-    },
-
-    COLENG: {
-        'Electrical Engineering': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'MTH101' },
-                    { code: 'BUT_ICT131' },
-                    { code: 'BUT_BIO101' }
-                ],
-                'Second': [
-                    { code: 'BUT_CSC104' },
-                    { code: 'BUT_BIO102' },
-                    { code: 'BUT_ICT118' }
-                ]
-            }
-        },
-
-        'Mechanical Engineering': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'MTH101' },
-                    { code: 'BUT_ICT131' },
-                    { code: 'BUT_BIO101' }
-                ],
-                'Second': [
-                    { code: 'BUT_CSC104' },
-                    { code: 'BUT_BIO102' },
-                    { code: 'BUT_ICT118' }
-                ]
-            }
-        },
-
-        'Agricultural and Biosystems Engineering': {},
-
-        'Biomedical Engineering': {},
-
-        'Mechatronics Engineering': {},
-
-        'Civil Engineering': {},
-
-        'Computer Engineering': {},
-
-        'Electrical, Electronics Engineering': {},
-
-        'Telecommunications Engineering': {}
-    },
-
-    COLENVS: {
-        'Environmental Science': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'BUT_GST107' }
-                ],
-                'Second': [
-                    { code: 'PHY102' },
-                    { code: 'GST112' },
-                    { code: 'GST102' }
-                ]
-            }
-        },
-
-        'Architecture': {},
-
-        'Building Technology': {},
-
-        'Estate Management': {},
-
-        'Quantity Surveying': {},
-
-        'Surveying and Geoinformatics': {},
-
-        'Urban and Regional Planning': {},
-
-        'Environmental Management': {}
-    },
-
-    COLFAST: {
-        'Food Science': {
-            '100': {
-                'First': [
-                    { code: 'GST111' },
-                    { code: 'BUT_GST107' }
-                ],
-                'Second': [
-                    { code: 'GST102' }
-                ]
-            }
-        },
-
-        'Food Technology': {},
-
-        'Nutrition and Dietetics': {},
-
-        'Agriculture and Agricultural Technology': {}
-    },
-
-    COLNAS: {
-        'Applied Mathematics': {},
-
-        'Statistics': {},
-
-        'Physics with Electronics': {},
-
-        'Applied Geophysics': {},
-
-        'Medical Physics': {},
-
-        'Microbiology': {},
-
-        'Biochemistry': {},
-
-        'Industrial Chemistry': {},
-
-        'Biotechnology': {}
-    },
-
-    COLMANS: {
-        'Business Administration': {
-            '200': {
-                'First': [
-                    { code: 'MTH103' },
-                    { code: 'ACC101' }
-                ]
-            }
-        },
-
-        'Human Resource Management': {},
-
-        'Marketing': {},
-
-        'Accounting': {},
-
-        'Economics': {},
-
-        'Finance and Banking': {},
-
-        'Project Management': {},
-
-        'Transport Management': {}
+            'Food Technology': {
+                '100': {
+        'First': [
+            { code: 'GST111' },
+            { code: 'BUT_LIS107' },
+            { code: 'CHM101' },
+            { code: 'CHM107' },
+            { code: 'MTH101' },
+            { code: 'PHY101' },
+            { code: 'PHY107' },
+            { code: 'BIO101' },
+            { code: 'BIO107' },
+            { code: 'BUT_ICT113' },
+            { code: 'BUT_FST101' }
+        ],
+        'Second': []
     }
-};
+            },
+
+            'Nutrition and Dietetics': {
+                '100': {
+                    'First': [
+                        { code: 'GST111' },
+                        { code: 'CHM101' },
+                        { code: 'CHM107' },
+                        { code: 'MTH101' },
+                        { code: 'PHY101' },
+                        { code: 'PHY107' },
+                        { code: 'BIO101' },
+                        { code: 'BIO107' },
+                        { code: 'BUT_ICT113' },
+                        { code: 'COS101' },
+                        { code: 'BUT_LIS107' }
+                    ],
+                    'Second': []
+                }
+
+            },
+
+            'Agriculture and Agricultural Technology': {}
+        },
+
+        COLNAS: {
+            'Applied Mathematics': {},
+
+            'Statistics': {},
+
+            'Physics with Electronics': {},
+
+            'Applied Geophysics': {},
+
+            'Medical Physics': {},
+
+            'Microbiology': {},
+
+            'Biochemistry': {},
+
+            'Industrial Chemistry': {},
+
+            'Biotechnology': {}
+        },
+
+        COLMANS: {
+            'Business Administration': {
+                '200': {
+                    'First': [
+                        { code: 'MTH103' },
+                        { code: 'ACC101' }
+                    ]
+                }
+            },
+
+            'Human Resource Management': {},
+
+            'Marketing': {},
+
+            'Accounting': {},
+
+            'Economics': {},
+
+            'Finance and Banking': {},
+
+            'Project Management': {},
+
+            'Transport Management': {}
+        }
+    };
 
     function getCollegeOptions() {
         return collegeDefinitions.map(college => ({ value: college.value, label: college.label }));

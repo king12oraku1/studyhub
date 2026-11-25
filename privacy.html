@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub — Privacy Policy</title>
+    <meta name="description" content="StudyHub Privacy Policy — how we handle your information.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/FAVICON.png" type="image/x-icon">
+    <style>
+        .prose { max-width: 760px; }
+        .prose h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin: 2.5rem 0 .875rem;
+            padding-top: 2rem;
+            border-top: 1.5px solid var(--border);
+            color: var(--text);
+            letter-spacing: -.01em;
+        }
+        .prose h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+        .prose h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 1.5rem 0 .5rem;
+            color: var(--text);
+        }
+        .prose p  { font-size: .9375rem; color: var(--text-3); line-height: 1.8; margin-bottom: .875rem; }
+        .prose ul { margin: .625rem 0 .875rem 1.375rem; display: flex; flex-direction: column; gap: .4375rem; }
+        .prose li { font-size: .9375rem; color: var(--text-3); line-height: 1.6; }
+        .prose strong { color: var(--text); font-weight: 600; }
+        .prose a { color: var(--accent); font-weight: 500; }
+
+        .policy-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: .8125rem;
+            font-weight: 600;
+            padding: .375rem .875rem;
+            border-radius: var(--r-full);
+            margin-bottom: 1.75rem;
+        }
+
+        .highlight-box {
+            background: var(--accent-light);
+            border: 1.5px solid var(--accent-mid);
+            border-radius: var(--r-lg);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box p { color: var(--accent); font-weight: 500; margin-bottom: 0; }
+
+        .toc {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-xl);
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .toc h3 { font-size: .9375rem; font-weight: 700; margin-bottom: .875rem; color: var(--text); }
+        .toc ol  { margin-left: 1.25rem; display: flex; flex-direction: column; gap: .4375rem; }
+        .toc li  { font-size: .875rem; }
+        .toc a   { color: var(--accent); font-weight: 500; }
+    </style>
+</head>
+<body data-page="privacy">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ── PROFILE EDITOR MODAL ── -->
+<div class="profile-overlay" id="profileModalOverlay" role="dialog"
+     aria-modal="true" aria-labelledby="pm-title" aria-hidden="true">
+  <div class="profile-modal">
+    <div class="pm-header">
+      <h2 id="pm-title">My Profile</h2>
+      <button class="pm-close-btn" id="pmCloseBtn" aria-label="Close profile editor">✕</button>
+    </div>
+    <form id="profileModalForm" novalidate>
+      <div class="modal-form-group">
+        <label for="pm-name">Name</label>
+        <input type="text" id="pm-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="80" required>
+      </div>
+      <div class="modal-form-group">
+        <label for="pm-level">Academic level</label>
+        <select id="pm-level" name="level" required>
+          <option value="">Select your level</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+          <option value="500">500 Level</option>
+        </select>
+      </div>
+      <div class="modal-form-group">
+        <label for="pm-programme">Department / Programme</label>
+        <select id="pm-programme" name="programme" required><option value="">Select your programme</option></select>
+      </div>
+      <div class="modal-field-error" id="pm-error" role="alert"></div>
+      <button type="submit" class="modal-submit-btn">Save Changes</button>
+    </form>
+    <div class="pm-divider"></div>
+    <button type="button" class="modal-danger-btn" id="pm-reset">Reset Profile</button>
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </span>
+      StudyHub
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"          class="nav-link">Home</a></li>
+      <li><a href="course.html"         class="nav-link">Courses</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true">
+          Study Materials <span class="dropdown-arrow">▾</span>
+        </button>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li role="none"><a href="notes.html"          class="nav-link" role="menuitem">Lecture Notes</a></li>
+          <li role="none"><a href="past-questions.html" class="nav-link" role="menuitem">Past Questions</a></li>
+        </ul>
+      </li>
+      <li><a href="quiz.html"        class="nav-link">Practice</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <div class="profile-nav-wrap" id="profileNavWrap">
+        <button class="profile-nav-btn" id="profileNavBtn" type="button" aria-label="My Profile" aria-haspopup="true" aria-expanded="false">
+          <span class="profile-nav-avatar" id="profileNavAvatar" aria-hidden="true">?</span>
+          <span class="profile-nav-label"  id="profileNavLabel">Profile</span>
+          <svg class="profile-nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
+          <div class="profile-dropdown-header">
+            <div class="pd-avatar" id="pdAvatar">?</div>
+            <div class="pd-info"><span class="pd-name" id="pdName">—</span><span class="pd-meta" id="pdMeta">—</span></div>
+          </div>
+          <div class="profile-dropdown-divider"></div>
+          <button class="profile-dropdown-item" id="pdEditBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Edit Profile
+          </button>
+          <button class="profile-dropdown-item profile-dropdown-item--danger" id="pdResetBtn" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.1"/></svg>
+            Reset Profile
+          </button>
+        </div>
+      </div>
+      <a href="course.html" class="btn btn-primary btn-sm nav-cta">Explore Courses</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<div class="page-banner">
+  <div class="container page-banner-inner">
+    <h1>Privacy Policy</h1>
+    <p>How StudyHub handles your information.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+    <div class="prose">
+
+      <div class="policy-meta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Last updated: November 2026
+      </div>
+
+      <div class="highlight-box">
+        <p>
+          <strong>The short version:</strong> StudyHub is a static website. We do not collect, store or transmit any personal data to any server. The only information saved about you is stored locally in your own browser on your own device.
+        </p>
+      </div>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#s1">Who we are</a></li>
+          <li><a href="#s2">Information we do not collect</a></li>
+          <li><a href="#s3">Information stored on your device</a></li>
+          <li><a href="#s4">How your profile data is used</a></li>
+          <li><a href="#s5">Cookies and tracking</a></li>
+          <li><a href="#s6">Third-party services</a></li>
+          <li><a href="#s7">External links</a></li>
+          <li><a href="#s8">Children's privacy</a></li>
+          <li><a href="#s9">Changes to this policy</a></li>
+          <li><a href="#s10">Contact us</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="s1">1. Who we are</h2>
+      <p>StudyHub is a free, static educational platform designed for university students. The platform is accessible at <strong>studiyhub.netlify.app</strong> and hosted on Netlify's static hosting infrastructure. StudyHub is not a registered company and operates as a student resource project.</p>
+      <p>Contact: <a href="mailto:studiyhub@gmail.com">studiyhub@gmail.com</a></p>
+
+      <h2 id="s2">2. Information we do not collect</h2>
+      <p>StudyHub does not collect, process or store any of the following:</p>
+      <ul>
+        <li>Names, email addresses or any personal contact information on our servers</li>
+        <li>Academic records or institutional identifiers</li>
+        <li>Payment information of any kind</li>
+        <li>IP addresses beyond what is automatically processed by Netlify's hosting infrastructure</li>
+        <li>Browser fingerprints or device identifiers</li>
+        <li>Usage behaviour, click patterns or analytics events</li>
+        <li>Cookies set by StudyHub itself</li>
+      </ul>
+      <p>No user database exists. No account creation is required. We have no mechanism to identify individual users.</p>
+
+      <h2 id="s3">3. Information stored on your device</h2>
+      <p>StudyHub stores two categories of data in your browser's <strong>local storage</strong>. This data never leaves your device.</p>
+
+      <h3>Student profile</h3>
+      <p>When you complete the onboarding setup, the following is saved to <code>localStorage</code> under the key <code>studiyhub_student_profile</code>:</p>
+      <ul>
+        <li>Your first name (as you typed it)</li>
+        <li>Your selected academic level (100–500)</li>
+        <li>Your selected department or programme</li>
+        <li>Timestamps for when the profile was created and last updated</li>
+      </ul>
+      <p>This data is used exclusively to personalise your homepage — displaying relevant courses, greeting you by name and pre-filling filters on the notes and past questions pages. It is never transmitted to any external system.</p>
+
+      <h3>Filter preferences</h3>
+      <p>Your most recent course filter selections (college, programme, level, semester) are stored in <code>localStorage</code> under the key <code>studyhubFilters</code> so they are remembered when you return to the same page. This data is also never transmitted externally.</p>
+
+      <h3>Theme preference</h3>
+      <p>Your chosen visual theme (light or dark mode) is stored in <code>localStorage</code> under the key <code>theme</code>.</p>
+
+      <h3>Removing your stored data</h3>
+      <p>You can remove all locally stored data at any time by:</p>
+      <ul>
+        <li>Clicking your profile name in the navigation and selecting <strong>Reset Profile</strong>, which removes your profile data.</li>
+        <li>Clearing your browser's site data or local storage for studiyhub.netlify.app through your browser settings.</li>
+      </ul>
+
+      <h2 id="s4">4. How your profile data is used</h2>
+      <p>Your locally stored profile is used only to:</p>
+      <ul>
+        <li>Display a personalised greeting on the homepage</li>
+        <li>Show course cards relevant to your programme and level</li>
+        <li>Pre-select matching filters on the Notes and Past Questions pages</li>
+        <li>Show your name and profile details in the navigation dropdown</li>
+      </ul>
+      <p>No profiling, targeting or sharing of this information occurs.</p>
+
+      <h2 id="s5">5. Cookies and tracking</h2>
+      <p>StudyHub does not set any cookies. We do not use Google Analytics, Meta Pixel, or any other third-party analytics, tracking or advertising tools.</p>
+      <p>Netlify, our hosting provider, may log standard web server request data (such as IP address and request timestamps) for security and operational purposes in accordance with their own privacy policy at <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a>. This data is not shared with StudyHub.</p>
+
+      <h2 id="s6">6. Third-party services</h2>
+      <p>StudyHub loads the following resources from external CDNs when you visit the site:</p>
+      <ul>
+        <li><strong>Google Fonts</strong> — to load the Inter typeface. Google's servers may log the request. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+        <li><strong>KaTeX (jsDelivr CDN)</strong> — for rendering mathematical notation in quiz questions.</li>
+        <li><strong>PDF.js (Cloudflare CDN)</strong> — for in-browser PDF rendering.</li>
+      </ul>
+      <p>These services are used only for rendering content. We do not share any user data with them and do not control their data practices.</p>
+
+      <h2 id="s7">7. External links</h2>
+      <p>StudyHub may contain links to external websites. We are not responsible for the privacy practices or content of those sites. We encourage you to read their privacy policies when you visit them.</p>
+
+      <h2 id="s8">8. Children's privacy</h2>
+      <p>StudyHub is designed for university students aged 16 and above. We do not knowingly collect personal data from children under the age of 13. If you believe a child has submitted personal information through this platform, please contact us and we will take appropriate steps.</p>
+
+      <h2 id="s9">9. Changes to this policy</h2>
+      <p>This privacy policy may be updated from time to time. Changes will be reflected on this page with an updated date at the top. We encourage you to review this page periodically. Continued use of StudyHub after any change constitutes acceptance of the updated policy.</p>
+
+      <h2 id="s10">10. Contact us</h2>
+      <p>If you have questions or concerns about this privacy policy, please contact us:</p>
+      <ul>
+        <li>Email: <a href="mailto:studiyhub@gmail.com">studiyhub@gmail.com</a></li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </span>
+          StudyHub
+        </a>
+        <p>Your one-stop platform for academic excellence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="mailto:studiyhub@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Study Resources</h4>
+        <ul class="footer-links">
+          <li><a href="notes.html">Lecture Notes</a></li>
+          <li><a href="past-questions.html">Past Questions</a></li>
+          <li><a href="quiz.html">Practice Quizzes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="help.html">Help &amp; Support</a></li>
+          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 StudyHub. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="active">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <span>Learn Today. Excel Tomorrow.</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span class="bn-label">Home</span></a>
+    <a href="course.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span class="bn-label">Courses</span></a>
+    <a href="notes.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="bn-label">Notes</span></a>
+    <a href="quiz.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="bn-label">Practice</span></a>
+    <a href="past-questions.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span class="bn-label">Past Qs</span></a>
+  </div>
+</nav>
+
+<script src="js/courseCatalog.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/pastQuestions.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/app.js"></script>
+<!-- pmCloseBtn is wired in profile.js DOMContentLoaded -->
+</body>
+</html>
